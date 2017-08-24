@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_AbstractAxis" Id="{356f5c5c-e85f-42f2-be6a-6902339105cd}">
+    <Declaration><![CDATA[TYPE ST_AbstractAxis :
+STRUCT
+(* ST_BasicAxis was created for basic motion controls. AbstractAxis
+is similar, but removes some unused elements that don't apply to axes
+that are not directly linked to hardware, eg. axes that are combinations 
+of more than one physical actuator. *)
+
+(* Controls *)
+xEnable	:	BOOL;
+rReqAbsPos	:	REAL;
+lrVelocity	:	REAL	:=1; //mm/s
+xStartAbsMove	:	BOOL;
+xStop	:	BOOL;
+xReset	:	BOOL;
+//Tweak Requests
+bTwkFwd : BOOL;
+bTwkBwd : BOOL;
+rTweak  : REAL;
+//External motor interlock, overrides axis enable
+i_xMotorInterlock	:	BOOL := FALSE;
+
+xHiLS	:	BOOL;
+xLoLS	:	BOOL;
+
+(* Status *)
+bBusy 	:	BOOL;
+bDone 	:	BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

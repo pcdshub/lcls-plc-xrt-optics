@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_GantryDiffVirtualLimitSwitch" Id="{ae668e37-4b4c-400f-bda9-27f8d308d0b6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_GantryDiffVirtualLimitSwitch
+VAR_IN_OUT
+	PAxis	:	HOMS_GantryAxis; //Upstream axis
+	SAxis	:	HOMS_GantryAxis; //Downstream axis
+END_VAR
+VAR_INPUT
+	GantryDiff	:	LREAL; //Gantry difference
+	GantryDiffFlt	:	BOOL; //Gantry difference is above limit
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Gantry Difference Virtual Limit Switch
+A. Wallace 17-2-15
+
+Determines which direction is disabled due to it increasing the gantry difference.
+Refer to the ESD for actual conventions.
+
+A positive gantry error refers to a CCW clocked assembly:
+eg. for X
+X1 upstream, X2 downstream. Primary axis is always upstream.
+Gantry difference > 0 when
+X2>X1
+Therefore
+X2 positive direction disabled
+X1 negative direction disabled
+*)
+IF GantryDiffFlt THEN
+	IF GantryDiff < 0  THEN
+		PAxis.DecoupledNegativeEnable := FALSE;
+		SAxis.DecoupledPositiveEnable := FALSE;
+	ELSE	
+		PAxis.DecoupledNegativeEnable := TRUE;
+		SAxis.DecoupledPositiveEnable := TRUE;
+	END_IF
+	IF GantryDiff > 0 THEN
+		PAxis.DecoupledPositiveEnable := FALSE;
+		SAxis.DecoupledNegativeEnable := FALSE;
+	ELSE
+		PAxis.DecoupledPositiveEnable := TRUE;
+		SAxis.DecoupledNegativeEnable := TRUE;
+	END_IF
+ELSE
+	//If there is no fault, all directions are enabled,
+	// remember there is some hystersis built into the 
+	// gantry difference function (should be)
+	PAxis.DecoupledNegativeEnable := TRUE;
+	PAxis.DecoupledPositiveEnable := TRUE;
+	SAxis.DecoupledPositiveEnable := TRUE;
+	SAxis.DecoupledNegativeEnable := TRUE;
+END_IF
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_GantryDiffVirtualLimitSwitch">
+      <LineId Id="3" Count="14" />
+      <LineId Id="52" Count="22" />
+      <LineId Id="35" Count="3" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

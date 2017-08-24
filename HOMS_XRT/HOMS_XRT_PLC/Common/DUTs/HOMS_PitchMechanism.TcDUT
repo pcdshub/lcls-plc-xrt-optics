@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="HOMS_PitchMechanism" Id="{47ab44fa-385a-4709-a811-d01bc2afbb1a}">
+    <Declaration><![CDATA[TYPE HOMS_PitchMechanism :
+STRUCT
+	Piezo	:	ST_PiezoAxis;	//Piezo
+	Axis	:	ST_AbstractAxis; //Abstract pitch axis
+	Stepper	:	ST_HOMSStepper; //Pitch stepper axis
+	
+	(* Soft limits, egu urad *)
+	ReqPosLimHi	:	REAL;
+	ReqPosLimLo	:	REAL;
+	
+	(* Hard limits, egu INC *)
+	(* These are discovered during installation, and represent encoder ticks, unbiased *)
+	(* We changed to these when our pitch mechanism limit switches were insufficient for
+	good control. They had too much hysteresis/ lack of precision. At this point the limit
+	switches are ignored, and instead their function is carried out by these. *)
+	diEncPosLimHi	:	DINT;
+	diEncPosLimLo	:	DINT;
+	//Raw encoder count
+	diEncCnt	AT %I*	:	DINT;
+	
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

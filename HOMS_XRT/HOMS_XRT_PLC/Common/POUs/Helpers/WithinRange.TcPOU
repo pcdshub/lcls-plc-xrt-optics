@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="WithinRange" Id="{665d2067-503e-41d4-add4-3ba7efc451a5}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION WithinRange : BOOL
+VAR_INPUT
+	ValA	:	REAL; //New position to evaluate
+	Center :	REAL; //Current position
+	Range : REAL; //Span of the range
+	Offset	:	REAL := 0; //Offset from center if the range is non-symetric
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF ValA < (Center + Offset - (Range/2) ) THEN
+	WithinRange := FALSE;
+ELSIF ValA > (Center + Offset + (Range/2) ) THEN
+	WithinRange := FALSE;
+ELSE
+	WithinRange := TRUE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="WithinRange">
+      <LineId Id="3" Count="5" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

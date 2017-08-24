@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_LimitSwitchState" Id="{b186eb7c-ca72-42e0-b2ec-6cc7d83a7a1f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_LimitSwitchState
+VAR_INPUT
+	diInputs	:	DINT;
+END_VAR
+VAR_OUTPUT
+	xHiLS	:	BOOL;
+	xLoLS	:	BOOL;
+	STO: BOOL;
+END_VAR
+VAR
+	di_1: BOOL;
+	di_2: BOOL;
+	FLS: BOOL; //TRUE is active (ie. limit switch is hit, drive is configured normally-closed). This is bad.
+	RLS: BOOL; 
+	
+END_VAR
+VAR CONSTANT
+	cHighVal	:	UDINT := 16#00010002;
+	cLowVal		:	UDINT := 16#00020001;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* ElmoMC Limit State
+A. Wallace 2017-2-25
+
+Sets the high and low limit switch bools based on input status dint from ElmoMC Drives *)
+
+
+RLS		:= diInputs.0;
+FLS		:= diInputs.1;
+
+STO 	:= diInputs.3;
+
+di_1	:= diInputs.16;
+di_2	:= diInputs.17;
+
+//
+
+xHiLS := NOT FLS AND STO;
+xLoLS := NOT RLS AND STO;
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_LimitSwitchState">
+      <LineId Id="3" Count="2" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="91" Count="1" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="94" Count="1" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

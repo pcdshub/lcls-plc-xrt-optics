@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <GVL Name="GVL_SerialIO" Id="{e2338c89-1965-407c-b604-590f80e0dc24}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	//Better have your inputs and outputs!
+	Serial_P1_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
+	Serial_P1_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	Serial_P2_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
+	Serial_P2_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	Serial_P3_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
+	Serial_P3_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

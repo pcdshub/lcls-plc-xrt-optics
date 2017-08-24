@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="MAIN" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	tpImAPLC : TP := (PT:=T#10S);
+	
+	XRTM1PitchControl	:	FB_PitchControl;
+	XRTM1Y_GantryControl	:	FB_Gantry;
+	XRTM1X_GantryControl	:	FB_Gantry;
+	XRTM2PitchControl	    :	FB_PitchControl;
+	XRTM2Y_GantryControl	:	FB_Gantry;
+	XRTM2X_GantryControl	:	FB_Gantry;
+	XRTM3PitchControl	    :	FB_PitchControl;
+	XRTM3Y_GantryControl	:	FB_Gantry;
+	XRTM3X_GantryControl	:	FB_Gantry;
+	
+	
+	// Expert mode permits direct access to individual acutators.
+	ExpertMode	:	BOOL := FALSE;
+	PitchManualMode: BOOL := FALSE;
+	
+	//Limit switch evaluation blocks
+	fbM1Y1LS	:	FB_LimitSwitchState;
+	fbM1Y2LS	:	FB_LimitSwitchState;
+	fbM1X1LS	:	FB_LimitSwitchState;
+	fbM1X2LS	:	FB_LimitSwitchState;
+	fbM1P1LS	:	FB_PitchSoftLimits;
+	
+	fbM2Y1LS	:	FB_LimitSwitchState;
+	fbM2Y2LS	:	FB_LimitSwitchState;
+	fbM2X1LS	:	FB_LimitSwitchState;
+	fbM2X2LS	:	FB_LimitSwitchState;
+	fbM2P1LS	:	FB_PitchSoftLimits;	
+	
+	fbM3Y1LS	:	FB_LimitSwitchState;
+	fbM3Y2LS	:	FB_LimitSwitchState;
+	fbM3X1LS	:	FB_LimitSwitchState;
+	fbM3X2LS	:	FB_LimitSwitchState;
+	fbM3P1LS	:	FB_PitchSoftLimits;	
+	
+	//Drive CoE Fb
+	fbY1CoE	:	FB_ElmoGDCBellCoE;
+	fbY2CoE	:	FB_ElmoGDCBellCoE;
+	
+	fbX1CoE	:	FB_ElmoGDCBellCoE;
+	fbX2CoE	:	FB_ElmoGDCBellCoE;
+	
+	fbP1CoE	:	FB_ElmoGDCBellCoE;
+	fbB1CoE	:	FB_ElmoGDCBellCoE;
+	
+	
+	//Init params trigger
+	rtInitParams	:	R_TRIG;
+	
+	//Test Parameters
+		rStepSize: REAL;
+	SettleTime: TON := (
+	PT:=T#2s);
+	TestUpperVoltage: REAL := 100;
+	TestLowerVoltage: REAL := 10;
+	xRunPiezoRepeatTest: BOOL;
+	
+	//Drive reference initializations
+	fbInitDriveRef	:	FB_InitDriveRefs;
+	//MPS Information
+	fbMPS_States :  FB_MPS_STATES;
+	M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
+	M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//System IO
+/////////////////////////////
+p_ModbusRx_OutputCoils();
+p_ModbusRx_PLCMemory();
+
+
+//InitParams
+////////////////////
+rtInitParams(CLK:=gFirstPass);
+IF rtInitParams.Q THEN
+	Init_XRTM1();
+	Init_XRTM2();
+	Init_XRTM3();
+	gFirstPass := FALSE;
+END_IF
+
+//System Error Handling
+/////////////////////////////////////
+//SystemErrorSummary(); //Check this action for a summary of all system faults
+					  
+//SystemError();
+
+//Driver Parameter Verification
+/////////////////////////////////////
+
+//Gantry Interlock Logic
+/////////////////////////////////////
+	//SimGantry.VAxis.i_xMotorInterlock := TRUE;
+	//SimGantry.PAxis.i_xMotorInterlock := TRUE;
+	//SimGantry.SAxis.i_xMotorInterlock := TRUE;
+
+LimitSwitchIO();
+	
+// Pitch control
+/////////////////////////////////////
+XRTM1PitchControl(Pitch:=HOMS1_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS1_Pitch.Axis.bDone, q_xBusy => HOMS1_Pitch.Axis.bBusy);
+XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
+XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS3_Pitch.Axis.bDone, q_xBusy => HOMS3_Pitch.Axis.bBusy);
+
+//Y motion
+/////////////////////////////////////
+//XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
+//XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
+//XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
+	
+//X Motion
+/////////////////////////////////////
+XRTM1X_GantryControl(Gantry:=HOMS1_XGantry);
+XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
+XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
+
+//Communicate state to MPS
+////////////////////////////////
+fbMPS_States(GANTRY:=HOMS2_XGantry,
+			 OUT_LS:=NOT HOMS2_XGantry.PAxis.xHiLS OR NOT HOMS2_XGantry.SAxis.xLoLS,
+			 IN_RANGE:=M2_INRANGE,
+			 OUT_RANGE:=M2_OUTRANGE);
+			 
+bXRT_M2_IN  := fbMPS_States.IN;
+bXRT_M2_OUT := fbMPS_States.OUT;
+
+//EPICS Tx Update
+////////////////////
+p_ModbusTx_InputCoils();
+//p_ModbusTx_OutputCoils();
+p_ModbusTx_InputReg();
+p_ModbusTx_PLCMemory();]]></ST>
+    </Implementation>
+    <Action Name="Init_XRTM1" Id="{a11eaaff-25fb-4e40-9807-fb1f683338da}">
+      <Implementation>
+        <ST><![CDATA[//FEE-M1
+///////////////////////////
+
+//Initialize ELMO Drive references
+fbInitDriveRef(stCoE:=HOMS1_XGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS1_XGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS1_YGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS1_YGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS1_Pitch.Stepper.stCoE);
+
+//Initialze Drive Speeds and Accelerations
+//////////////////////////////////////////
+HOMS1_XGantry.PAxis.fAcceleration := 0.02;
+HOMS1_XGantry.SAxis.fAcceleration := 0.02;
+HOMS1_YGantry.PAxis.fAcceleration := 0.02;
+HOMS1_YGantry.SAxis.fAcceleration := 0.02;
+
+HOMS1_XGantry.PAxis.fDeceleration := 0.02;
+HOMS1_XGantry.SAxis.fDeceleration := 0.02;
+HOMS1_YGantry.PAxis.fDeceleration := 0.02;
+HOMS1_YGantry.SAxis.fDeceleration := 0.02;
+
+HOMS1_XGantry.PAxis.fVelocity := 0.1;
+HOMS1_XGantry.SAxis.fVelocity := 0.1;
+HOMS1_YGantry.PAxis.fVelocity := 0.1;
+HOMS1_YGantry.SAxis.fVelocity := 0.1;
+
+HOMS1_Pitch.Stepper.fAcceleration := 39;
+HOMS1_Pitch.Stepper.fDeceleration := 39;
+HOMS1_Pitch.Stepper.fVelocity     := 39;
+
+
+//Initialize Piezo Driver
+/////////////////////////////////////
+HOMS1_Pitch.Piezo.stPIParams.fKp := 0.001;
+HOMS1_Pitch.Piezo.stPIParams.tTn := T#500MS;
+HOMS1_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
+HOMS1_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+                                                                                                                                          
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Init_XRTM2" Id="{5f4f0886-bfe6-466e-ab0f-beab0308d09d}">
+      <Implementation>
+        <ST><![CDATA[//FEE-M2
+///////////////////////////
+
+
+//Initialize ELMO Drive references
+fbInitDriveRef(stCoE:=HOMS2_XGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_XGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_YGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_YGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_Pitch.Stepper.stCoE);
+
+//Initialze Drive Speeds and Accelerations
+//////////////////////////////////////////
+HOMS2_XGantry.PAxis.fAcceleration := 0.02;
+HOMS2_XGantry.SAxis.fAcceleration := 0.02;
+HOMS2_YGantry.PAxis.fAcceleration := 0.02;
+HOMS2_YGantry.SAxis.fAcceleration := 0.02;
+
+HOMS2_XGantry.PAxis.fDeceleration := 0.02;
+HOMS2_XGantry.SAxis.fDeceleration := 0.02;
+HOMS2_YGantry.PAxis.fDeceleration := 0.02;
+HOMS2_YGantry.SAxis.fDeceleration := 0.02;
+
+HOMS2_XGantry.PAxis.fVelocity := 0.1;
+HOMS2_XGantry.SAxis.fVelocity := 0.1;
+HOMS2_YGantry.PAxis.fVelocity := 0.1;
+HOMS2_YGantry.SAxis.fVelocity := 0.1;
+
+HOMS2_Pitch.Stepper.fAcceleration := 39;
+HOMS2_Pitch.Stepper.fDeceleration := 39;
+HOMS2_Pitch.Stepper.fVelocity     := 100;
+
+//Initialize Piezo Driver
+/////////////////////////////////////
+HOMS2_Pitch.Piezo.stPIParams.fKp := 0.001;
+HOMS2_Pitch.Piezo.stPIParams.tTn := T#500MS;
+HOMS2_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
+HOMS2_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+
+
+	
+
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Init_XRTM3" Id="{4cd8bf74-eac1-478e-83ee-065628004dc5}">
+      <Implementation>
+        <ST><![CDATA[//FEE-M3
+///////////////////////////
+
+
+//Initialize ELMO Drive references
+fbInitDriveRef(stCoE:=HOMS3_XGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_XGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_YGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_YGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_Pitch.Stepper.stCoE);
+
+//Initialze Drive Speeds and Accelerations
+//////////////////////////////////////////
+HOMS3_XGantry.PAxis.fAcceleration := 0.02;
+HOMS3_XGantry.SAxis.fAcceleration := 0.02;
+HOMS3_YGantry.PAxis.fAcceleration := 0.02;
+HOMS3_YGantry.SAxis.fAcceleration := 0.02;
+
+HOMS3_XGantry.PAxis.fDeceleration := 0.02;
+HOMS3_XGantry.SAxis.fDeceleration := 0.02;
+HOMS3_YGantry.PAxis.fDeceleration := 0.02;
+HOMS3_YGantry.SAxis.fDeceleration := 0.02;
+
+HOMS3_XGantry.PAxis.fVelocity := 0.1;
+HOMS3_XGantry.SAxis.fVelocity := 0.1;
+HOMS3_YGantry.PAxis.fVelocity := 0.1;
+HOMS3_YGantry.SAxis.fVelocity := 0.1;
+
+HOMS3_Pitch.Stepper.fAcceleration := 39;
+HOMS3_Pitch.Stepper.fDeceleration := 39;
+HOMS3_Pitch.Stepper.fVelocity     := 100;
+
+//Initialize Piezo Driver
+/////////////////////////////////////
+HOMS3_Pitch.Piezo.stPIParams.fKp := 0.001;
+HOMS3_Pitch.Piezo.stPIParams.tTn := T#500MS;
+HOMS3_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
+HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">
+      <Implementation>
+        <ST><![CDATA[//XRT M1
+///////////////////
+fbM1Y1LS(diInputs:=HOMS1_YGantry.PAxis.diInputs, 
+xHiLS=>HOMS1_YGantry.PAxis.xHiLS,
+xLoLS=>HOMS1_YGantry.PAxis.xLoLS,
+STO => gM1STO);
+
+fbM1Y2LS(diInputs:=HOMS1_YGantry.SAxis.diInputs, 
+xHiLS=>HOMS1_YGantry.SAxis.xHiLS,
+xLoLS=>HOMS1_YGantry.SAxis.xLoLS);
+
+fbM1X1LS(diInputs:=HOMS1_XGantry.PAxis.diInputs, 
+xHiLS=>HOMS1_XGantry.PAxis.xHiLS,
+xLoLS=>HOMS1_XGantry.PAxis.xLoLS);
+
+fbM1X2LS(diInputs:=HOMS1_XGantry.SAxis.diInputs, 
+xHiLS=>HOMS1_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS1_XGantry.SAxis.xLoLS);
+
+(* Pitch "soft" limit *)
+
+fbM1P1LS(Pitch:=HOMS1_Pitch,
+xHiLS=>HOMS1_Pitch.Stepper.xHiLS,
+xLoLS=>HOMS1_Pitch.Stepper.xLoLS);
+
+//XRT M2
+//////////////////////////
+fbM2Y1LS(diInputs:=HOMS2_YGantry.PAxis.diInputs, 
+xHiLS=>HOMS2_YGantry.PAxis.xHiLS,
+xLoLS=>HOMS2_YGantry.PAxis.xLoLS,
+STO => gM2STO);
+
+fbM2Y2LS(diInputs:=HOMS2_YGantry.SAxis.diInputs, 
+xHiLS=>HOMS2_YGantry.SAxis.xHiLS,
+xLoLS=>HOMS2_YGantry.SAxis.xLoLS);
+
+fbM2X1LS(diInputs:=HOMS2_XGantry.PAxis.diInputs, 
+xHiLS=>HOMS2_XGantry.PAxis.xHiLS,
+xLoLS=>HOMS2_XGantry.PAxis.xLoLS);
+
+fbM2X2LS(diInputs:=HOMS2_XGantry.SAxis.diInputs, 
+xHiLS=>HOMS2_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS2_XGantry.SAxis.xLoLS);
+
+fbM2P1LS(Pitch:=HOMS2_Pitch,
+xHiLS=>HOMS2_Pitch.Stepper.xHiLS,
+xLoLS=>HOMS2_Pitch.Stepper.xLoLS);
+
+//XRT M3
+//////////////////////////
+fbM3Y1LS(diInputs:=HOMS3_YGantry.PAxis.diInputs, 
+xHiLS=>HOMS3_YGantry.PAxis.xHiLS,
+xLoLS=>HOMS3_YGantry.PAxis.xLoLS,
+STO => gM3STO);
+
+fbM3Y2LS(diInputs:=HOMS3_YGantry.SAxis.diInputs, 
+xHiLS=>HOMS3_YGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_YGantry.SAxis.xLoLS);
+
+fbM3X1LS(diInputs:=HOMS3_XGantry.PAxis.diInputs, 
+xHiLS=>HOMS3_XGantry.PAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.PAxis.xLoLS);
+
+fbM3X2LS(diInputs:=HOMS3_XGantry.PAxis.diInputs,  //Paxis is here on purpose <HACK>
+xHiLS=>HOMS3_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.SAxis.xLoLS);
+
+fbM3P1LS(Pitch:=HOMS3_Pitch,
+xHiLS=>HOMS3_Pitch.Stepper.xHiLS,
+xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="103" Count="0" />
+      <LineId Id="598" Count="2" />
+      <LineId Id="365" Count="0" />
+      <LineId Id="232" Count="2" />
+      <LineId Id="236" Count="1" />
+      <LineId Id="414" Count="0" />
+      <LineId Id="947" Count="0" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="28" Count="1" />
+      <LineId Id="538" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="310" Count="0" />
+      <LineId Id="44" Count="1" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="141" Count="0" />
+      <LineId Id="140" Count="0" />
+      <LineId Id="159" Count="1" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="203" Count="0" />
+      <LineId Id="198" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="130" Count="3" />
+      <LineId Id="1017" Count="0" />
+      <LineId Id="477" Count="0" />
+      <LineId Id="134" Count="2" />
+      <LineId Id="876" Count="0" />
+      <LineId Id="470" Count="0" />
+      <LineId Id="137" Count="2" />
+      <LineId Id="471" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="877" Count="0" />
+      <LineId Id="797" Count="4" />
+      <LineId Id="1085" Count="0" />
+      <LineId Id="802" Count="3" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="601" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM1">
+      <LineId Id="17" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="73" Count="1" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="79" Count="3" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="83" Count="0" />
+      <LineId Id="91" Count="2" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="98" Count="3" />
+      <LineId Id="103" Count="3" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="32" Count="5" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM2">
+      <LineId Id="2" Count="2" />
+      <LineId Id="10" Count="5" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="26" Count="14" />
+      <LineId Id="42" Count="4" />
+      <LineId Id="17" Count="5" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="23" Count="2" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM3">
+      <LineId Id="2" Count="36" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.LimitSwitchIO">
+      <LineId Id="45" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="10" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="87" Count="1" />
+      <LineId Id="19" Count="2" />
+      <LineId Id="47" Count="2" />
+      <LineId Id="24" Count="2" />
+      <LineId Id="90" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="28" Count="14" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="52" Count="4" />
+      <LineId Id="92" Count="0" />
+      <LineId Id="57" Count="11" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="84" Count="1" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

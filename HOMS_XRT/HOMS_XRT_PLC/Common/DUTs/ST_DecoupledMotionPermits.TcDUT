@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_DecoupledMotionPermits" Id="{39d01fdf-d9f0-4e20-b338-e66764cc7a2c}">
+    <Declaration><![CDATA[TYPE ST_DecoupledMotionPermits :
+STRUCT
+	// Positive direction permit in decoupled mode
+	Positive	:	BOOL; 
+	// Negative direction permit in decoupled mode
+	Negative	:	BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

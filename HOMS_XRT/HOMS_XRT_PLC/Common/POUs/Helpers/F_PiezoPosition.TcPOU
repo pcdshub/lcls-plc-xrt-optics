@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="F_PiezoPosition" Id="{8747c015-2551-44e3-ba56-f7fc68122f76}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_PiezoPosition : REAL
+VAR_INPUT
+	rPiezoVoltage	:	LREAL; //The readback piezo voltage
+	arCalibrationTable	:	LREAL; //Piezo Calibration Table for interpolation
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Piezo Position
+
+This function attempts to provide an estimated piezo position given
+a calibration table and a readback piezo voltage.
+
+Notes:
+-calibration table may be >2D, with the extra dimension relating to anticipated loading
+-calibration table may be offset by some dc value
+-thinking along the lines of piezo loading, if the force on the actuator follows
+Hooke's law or just increases with travel from normal, the piezo voltage required
+for a desired displacement will increase. Maybe this is overkill. Maybe we should
+just implement a realtime feedback and let the center-point finder do the work...
+
+*)]]></ST>
+    </Implementation>
+    <LineIds Name="F_PiezoPosition">
+      <LineId Id="3" Count="12" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

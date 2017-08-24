@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="ST_ElmoGDCBellCoEParams" Id="{adc45910-3b48-4ab5-8e09-e1d3c97a2d8c}">
+    <Declaration><![CDATA[TYPE ST_ElmoGDCBellCoEParams :
+STRUCT
+		//Drive Reference (for CoE)
+		stDriveRef	 :	ST_DriveRef; //Note, ignore the ams id and type parameters for our purposes.
+		//Ams id comes from a linked global variable
+		stPlcDriveRef AT %I* : ST_PlcDriveRef;
+		
+		AmsID	:	T_AmsNetId;
+		nSlave	:	UINT;
+		
+		//Additional drive parameters
+		//5V supply for encoders/ misc
+		ui5VSupply :	UINT;
+		//Drive temperature, C
+		uiDriveTemp	:	UINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

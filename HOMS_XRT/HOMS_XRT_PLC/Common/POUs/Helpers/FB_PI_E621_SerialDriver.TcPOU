@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_PI_E621_SerialDriver" Id="{70cebafc-4342-47f0-b840-ef59112aefde}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PI_E621_SerialDriver
+VAR_INPUT
+	/// rising edge execute 
+	i_xExecute: BOOL;
+	/// Maximum wait time for reply 
+	i_tTimeOut: TIME := TIME#1S0MS;
+//	i_xReset : BOOL := FALSE; //reset function, for timeout etc
+END_VAR
+VAR_OUTPUT
+	q_xDone: BOOL;
+	q_xError: BOOL;
+	q_sResult: STRING(255);
+	/// Last Strings Sent to Serial Device - for debugging 
+	q_asLastSentStrings: ARRAY[1..50] OF STRING;
+	/// Last Strings Received from Serial Device - for debugging 
+	q_asLastReceivedStrings: ARRAY[1..50] OF STRING;
+END_VAR
+VAR_IN_OUT
+	iq_stPiezoAxis	:	ST_PiezoAxis;
+	iq_stSerialRXBuffer: ComBuffer;
+	iq_stSerialTXBuffer: ComBuffer;
+END_VAR
+VAR
+	rtExecute		: R_TRIG;
+	rtTransDone		: R_TRIG;
+	iStep: INT;
+	sSendData: STRING;
+	fbPITransaction: FB_PI_E621_SerialTransaction;
+	fbFormatString: FB_FormatString;
+	sErrMesg : STRING := 'In step %d fbPITransaction failed with message: %s';
+	i		: INT := 1;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* S. Stubbs, 2-23-2017 *)
+(* This function block drives serial communication with a PI E-816 or compatible comm module. 
+   Note this needs to be re-jiggered if the E-517 is used, uses number rather than letter for axis *)
+
+(* RS232 default settings: 115200 8N1, RTS/CTS
+
+All commands follow format:
+CMD X sV.V(Line feed)
+Where CMD is the command, X is axis, and sV.V is sign and number (float or int).
+Not all commands use axis and parameter, for example ERR?
+*)
+
+(* rising edge trigger *)
+rtExecute(CLK:= i_xExecute);
+IF rtExecute.Q THEN
+	q_xDone	:= FALSE;
+	q_xError := FALSE;
+	q_sResult:= '';
+	iq_stPiezoAxis.xDriverError := FALSE;
+//	i_xReset := FALSE;
+	a_ClearTrans();  (* to provide rising edge for execute *)
+	IF iq_stPiezoAxis.sIdn= '' THEN (* Should only need to check identity once *)
+		iStep := 5;
+	ELSE
+		iStep := 10;
+	END_IF
+END_IF
+
+
+CASE iStep OF
+	0: (* idle *)
+		;
+
+	(* Commands *)
+	5: (* Get Identity *)
+			fbPITransaction.i_xExecute:= TRUE;
+			fbPITransaction.i_sCmd:= '*IDN?';
+		IF fbPITransaction.q_xDone THEN
+				iq_stPiezoAxis.sIdn := fbPITransaction.q_sResponseData; //Hello I am a piezo
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := 10;
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+		
+	10: (* Check Servo Mode 
+		To use manual voltage servo mode must be off *)
+		(* Response: 0$L or 1$L *)
+		fbPITransaction.i_xExecute:= TRUE;
+		fbPITransaction.i_sCmd:= 'SVO?';
+		fbPITransaction.i_sAxis:= iq_stPiezoAxis.sAxis;
+		IF fbPITransaction.q_xDone THEN
+			IF FIND('1',fbPITransaction.q_sResponseData) <> 0 THEN //Iff in servo mode, turn it off
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := iStep + 10;
+			ELSE 
+				a_ClearTrans();
+				iStep := iStep + 20;  //Skip setting servo mode
+			END_IF
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+
+	20: (* Set Servo Mode *)
+		fbPITransaction.i_xExecute:= TRUE;
+		fbPITransaction.i_sCmd:= 'SVO';
+		fbPITransaction.i_sAxis:= iq_stPiezoAxis.sAxis;
+		fbPITransaction.i_sParam:= '0';
+		fbPITransaction.i_xExpectReply:= FALSE;
+		IF fbPITransaction.q_xDone THEN
+			a_ClearTrans();  (* to provide rising edge for execute *)
+			iStep := iStep + 10;
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+		
+	30: (* Set Voltage, only if needed *)
+		IF iq_stPiezoAxis.rSetVoltage <> iq_stPiezoAxis.rLastReqVoltage THEN
+			fbPITransaction.i_xExecute:= TRUE;
+			fbPITransaction.i_sCmd:= 'SVA';
+			fbPITransaction.i_sAxis:= iq_stPiezoAxis.sAxis;
+			fbPITransaction.i_sParam:=REAL_TO_STRING(iq_stPiezoAxis.rSetVoltage);
+			fbPITransaction.i_xExpectReply:= FALSE;
+			IF fbPITransaction.q_xDone THEN
+					a_ClearTrans();  (* to provide rising edge for execute *)
+					iStep := iStep + 10;
+			ELSIF fbPITransaction.q_xError THEN
+				a_ErrorMesg();
+				iStep := 9000;
+			END_IF
+		ELSE
+			iStep := iStep + 30; //Should only need to check error and setpoint if setting voltage
+		END_IF
+
+	40: (* Get Error Code, also resets current error *)
+	(* Response: integer error code *)
+			fbPITransaction.i_xExecute:= TRUE;
+			fbPITransaction.i_sCmd:= 'ERR?';
+		IF fbPITransaction.q_xDone THEN
+				iq_stPiezoAxis.iCurError := STRING_TO_INT(fbPITransaction.q_sResponseData);
+				IF iq_stPiezoAxis.iCurError <> 0 THEN
+					iq_stPiezoAxis.iLastError:= iq_stPiezoAxis.iCurError;
+				END_IF
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := iStep + 10;
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+
+	50: (* Get Last Requested Piezo Voltage *)
+	(* Response: (float)$L *)
+			fbPITransaction.i_xExecute:= TRUE;
+			fbPITransaction.i_sCmd:= 'SVA?';
+			fbPITransaction.i_sAxis:= iq_stPiezoAxis.sAxis;
+		IF fbPITransaction.q_xDone THEN
+			iq_stPiezoAxis.rLastReqVoltage := STRING_TO_REAL(fbPITransaction.q_sResponseData);
+			//Check and reset attempts if it went through
+			a_ClearTrans();  (* to provide rising edge for execute *)
+			iStep := iStep + 10;
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+		
+	60: (* Get Actual Piezo Voltage *)
+	(* Response: (float)$L *)
+			fbPITransaction.i_xExecute:= TRUE;
+			fbPITransaction.i_sCmd:= 'VOL?';
+			// E-517 works differently, uses number rather than letter for axis
+			fbPITransaction.i_sAxis:= iq_stPiezoAxis.sAxis;
+		IF fbPITransaction.q_xDone THEN
+				iq_stPiezoAxis.rActVoltage := STRING_TO_REAL(fbPITransaction.q_sResponseData);
+				a_ClearTrans();  (* to provide rising edge for execute *)
+				iStep := 8000; (* Done *)
+		ELSIF fbPITransaction.q_xError THEN
+			a_ErrorMesg();
+			iStep := 9000;
+		END_IF
+		
+	8000: (* done *)
+		q_xDone := TRUE;
+		IF  i_xExecute = FALSE THEN
+			q_xDone:= FALSE;
+			iStep := 0;
+		END_IF
+
+	9000: (* Error *)
+		a_ClearTrans();  (* to provide rising edge for execute *)
+		IF fbPITransaction.q_xTimeout THEN
+			iStep:=10;//start over
+		ELSE
+		q_xError := TRUE;
+		iq_stPiezoAxis.xDriverError := TRUE;
+		END_IF	
+
+END_CASE
+
+//call transaction
+fbPITransaction(
+	iq_stSerialRXBuffer:= iq_stSerialRXBuffer, 
+	iq_stSerialTXBuffer:= iq_stSerialTXBuffer);
+
+iq_stPiezoAxis.xTimeout:=fbPITransaction.q_xTimeout;
+(* Rising edge trigger to take care of debugging history *)
+rtTransDone(CLK:= fbPITransaction.q_xDone);
+IF rtTransDone.Q THEN
+q_asLastSentStrings[i] := fbPITransaction.q_sLastSentString;
+q_asLastReceivedStrings[i] := fbPITransaction.q_sLastReceivedString;
+i := i + 1; 
+END_IF
+IF i = 51 THEN i := 1; END_IF]]></ST>
+    </Implementation>
+    <Action Name="a_ClearTrans" Id="{cbc46b91-bc1a-4d15-840f-cb6f0aaaf34d}">
+      <Implementation>
+        <ST><![CDATA[(* Refactor this action to match your transaction *)
+fbPITransaction.i_xExecute := TRUE;
+fbPITransaction.i_sCmd:= ''; //Input args are Cmd, Axis and Param
+fbPITransaction.i_sAxis:= '';
+fbPITransaction.i_sParam:= '';
+fbPITransaction(
+	i_tTimeOut:= i_tTimeOut, 
+	iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+	iq_stSerialTXBuffer:= iq_stSerialTXBuffer );
+fbPITransaction.i_xExecute := FALSE;
+fbPITransaction(
+	i_tTimeOut:= i_tTimeOut, 
+	iq_stSerialRXBuffer:= iq_stSerialRXBuffer,
+	iq_stSerialTXBuffer:= iq_stSerialTXBuffer );
+fbPITransaction.i_xExpectReply:=TRUE;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="a_ErrorMesg" Id="{b3a6f4e0-9fb2-41d0-94af-43ceed0c99de}">
+      <Implementation>
+        <ST><![CDATA[fbFormatString( sformat:=sErrMesg, 
+	arg1:=F_INT(iStep), 
+	arg2:=F_STRING(fbPITransaction.q_sResult),
+	sOut => q_sResult);
+	]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="a_UnknownError" Id="{2912ef3a-1234-4e86-ad85-52ea704cf66e}">
+      <Implementation>
+        <ST><![CDATA[q_sResult:= 'Unknown error';
+
+fbFormatString( sformat:=sErrMesg, 
+	arg1:=F_INT(iStep), 
+	arg2:=F_STRING(q_sResult), //Little silly, but have to do this because F_STRING requires read/write access
+	sOut => q_sResult);]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_PI_E621_SerialDriver">
+      <LineId Id="3" Count="173" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PI_E621_SerialDriver.a_ClearTrans">
+      <LineId Id="2" Count="13" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PI_E621_SerialDriver.a_ErrorMesg">
+      <LineId Id="2" Count="3" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_PI_E621_SerialDriver.a_UnknownError">
+      <LineId Id="2" Count="4" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

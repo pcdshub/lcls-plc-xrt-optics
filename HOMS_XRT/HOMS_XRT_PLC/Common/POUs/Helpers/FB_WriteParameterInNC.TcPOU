@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_WriteParameterInNC" Id="{6673d97b-1e19-4087-a5db-e589c5b40bd6}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_WriteParameterInNC
+VAR_INPUT
+	bExecute: BOOL;
+	///16#4000=Axisdata, 16#5000=Encoderdata, 16#6000=Controldata, 16#7000=Drivedata
+	nDeviceGroup: UDINT;
+	nIndexOffset: UDINT;
+	nData: DWORD;
+END_VAR
+VAR_OUTPUT
+	bBusy: BOOL;
+	bDone: BOOL;
+	bError: BOOL;
+	nErrorId: UDINT;
+END_VAR
+VAR_IN_OUT
+	Axis: AXIS_REF;
+END_VAR
+VAR
+	nState: UINT;
+	fbADSWRITE: ADSWRITE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*Sequence to write parameter in Nc*)
+CASE nState OF
+0:  (*Start sequence. Wait until bExecute is TRUE*)
+	IF bExecute THEN
+		bBusy:=TRUE;
+		bError:=FALSE;
+		nErrorId:=0;
+		nState:=10;
+	END_IF
+
+10: (*Write parameter in Nc*)
+	fbADSWRITE(
+		PORT:=500,
+		IDXGRP:=nDeviceGroup+Axis.NcToPlc.AxisId,
+		IDXOFFS:=nIndexOffset,
+		LEN:=SIZEOF(nData),
+		SRCADDR:=ADR(nData),
+		WRITE:=TRUE);
+
+	(*Wait until it's done or if an error occurs*)
+	IF NOT fbADSWRITE.ERR THEN
+		IF NOT fbADSWRITE.BUSY THEN
+			fbADSWRITE(WRITE:=FALSE);
+			nState:=20;
+		END_IF
+	ELSE
+		nErrorId:=fbADSWRITE.ERRID;
+		nState:=999;
+	END_IF
+
+20: (*Sequense is done. Waits until bExecute is FALSE*)
+	bBusy:=FALSE;
+	bDone:=TRUE;
+	IF NOT bExecute THEN
+		bDone:=FALSE;
+		nState:=0;
+	END_IF
+
+999: (*Error in sequence*)
+	bError:=TRUE;
+	bBusy:=FALSE;
+	bDone:=FALSE;
+	fbADSWRITE(WRITE:=FALSE);
+	IF NOT bExecute THEN
+		nState:=0;
+	END_IF
+
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_WriteParameterInNC">
+      <LineId Id="3" Count="46" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

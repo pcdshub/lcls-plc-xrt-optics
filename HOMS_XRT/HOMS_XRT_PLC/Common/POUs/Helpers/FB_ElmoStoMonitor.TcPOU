@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_ElmoStoMonitor" Id="{7f75316a-ba7e-44eb-b301-e3f2f8b6651c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ElmoStoMonitor
+VAR_INPUT
+	YGantry : HOMS_Gantry;
+	XGantry : HOMS_Gantry;
+END_VAR
+VAR_OUTPUT
+	q_xSTO   : BOOL; //Whether any controller is not receiving Safe Torque signal
+	q_xSIMUL : BOOL; //Whether all controllers are seeing the same Safe Torque signal
+END_VAR
+VAR
+	STO_ERROR   : UDINT := 18000;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Gantry STO Monitoring
+T. Rendahl 17-2-16
+
+The STO monitoring block watches two sets of coupled axes for a total of four ELMO
+controllers. By monitoring each ELMO controller for errors, we can recognize that 
+the STO circuit has been interrupted.
+
+There are two modes of Safe Torque Off off that the function block monitors. The first being if any
+drive receives reports it is not receiving 24V, i.e. STO . In order to help determine whether
+this is a purposeful press of the Emergency Stop button, or if there is a failure in the circuit.
+We compare the values of all of the STO status registers to make sure the circuit is cutting power
+to all of the ELMO drives associated with the gantry.
+*)
+
+IF (YGantry.PAxis.stAxis.Status.Error AND YGantry.PAxis.stAxis.Status.ErrorID = STO_ERROR) OR
+   (YGantry.SAxis.stAxis.Status.Error AND YGantry.SAxis.stAxis.Status.ErrorID = STO_ERROR) OR
+   (XGantry.PAxis.stAxis.Status.Error AND XGantry.PAxis.stAxis.Status.ErrorID = STO_ERROR) OR
+   (XGantry.SAxis.stAxis.Status.Error AND XGantry.SAxis.stAxis.Status.ErrorID = STO_ERROR) THEN
+    q_xSTO := TRUE;
+   
+	IF YGantry.PAxis.stAxis.Status.ErrorID = STO_ERROR AND
+   	   YGantry.SAxis.stAxis.Status.ErrorID = STO_ERROR AND
+       XGantry.PAxis.stAxis.Status.ErrorID = STO_ERROR AND
+       XGantry.SAxis.stAxis.Status.ErrorID = STO_ERROR THEN
+	   q_xSIMUL := TRUE;
+	ELSE
+		q_xSIMUL := FALSE;   
+    END_IF
+
+ELSE
+	
+   q_xSTO   := FALSE;
+   q_xSIMUL := TRUE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ElmoStoMonitor">
+      <LineId Id="3" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

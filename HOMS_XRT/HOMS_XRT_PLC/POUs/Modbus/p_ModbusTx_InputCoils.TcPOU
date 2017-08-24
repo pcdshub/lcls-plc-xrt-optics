@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="p_ModbusTx_InputCoils" Id="{b7e18312-80ba-4297-9b98-214f322b6e9d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_ModbusTx_InputCoils
+VAR
+
+END_VAR
+
+VAR_OUTPUT
+
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[mb_Input_Coils[0]:=HOMS1_XGantry.PAxis.bBusy;
+mb_Input_Coils[1]:=HOMS1_XGantry.PAxis.bDone;
+mb_Input_Coils[2]:=HOMS1_XGantry.PAxis.xHiLS;
+mb_Input_Coils[3]:=HOMS1_XGantry.PAxis.xLoLS;
+mb_Input_Coils[4]:=HOMS1_XGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[5]:=HOMS1_XGantry.PAxis.xEnable ;
+mb_Input_Coils[6]:=HOMS1_XGantry.SAxis.bBusy;
+mb_Input_Coils[7]:=HOMS1_XGantry.SAxis.bDone;
+mb_Input_Coils[8]:=HOMS1_XGantry.SAxis.xHiLS;
+mb_Input_Coils[9]:=HOMS1_XGantry.SAxis.xLoLS;
+mb_Input_Coils[10]:=HOMS1_XGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[11]:=HOMS1_XGantry.SAxis.xEnable ;
+mb_Input_Coils[12]:=HOMS1_YGantry.PAxis.bBusy;
+mb_Input_Coils[13]:=HOMS1_YGantry.PAxis.bDone;
+mb_Input_Coils[14]:=HOMS1_YGantry.PAxis.xHiLS;
+mb_Input_Coils[15]:=HOMS1_YGantry.PAxis.xLoLS;
+mb_Input_Coils[16]:=HOMS1_YGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[17]:=HOMS1_YGantry.PAxis.xEnable ;
+mb_Input_Coils[18]:=HOMS1_YGantry.SAxis.bBusy;
+mb_Input_Coils[19]:=HOMS1_YGantry.SAxis.bDone;
+mb_Input_Coils[20]:=HOMS1_YGantry.SAxis.xHiLS;
+mb_Input_Coils[21]:=HOMS1_YGantry.SAxis.xLoLS;
+mb_Input_Coils[22]:=HOMS1_YGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[23]:=HOMS1_YGantry.SAxis.xEnable ;
+mb_Input_Coils[24]:=HOMS1_Pitch.Axis.bBusy;
+mb_Input_Coils[25]:=HOMS1_Pitch.Axis.bDone;
+mb_Input_Coils[26]:=HOMS1_Pitch.Stepper.xHiLS;
+mb_Input_Coils[27]:=HOMS1_Pitch.Stepper.xLoLS;
+mb_Input_Coils[28]:=HOMS1_Pitch.Stepper.i_xMotorInterlock;
+mb_Input_Coils[29]:=HOMS1_Pitch.Stepper.xEnable ;
+mb_Input_Coils[30]:=HOMS2_XGantry.PAxis.bBusy;
+mb_Input_Coils[31]:=HOMS2_XGantry.PAxis.bDone;
+mb_Input_Coils[32]:=HOMS2_XGantry.PAxis.xHiLS;
+mb_Input_Coils[33]:=HOMS2_XGantry.PAxis.xLoLS;
+mb_Input_Coils[34]:=HOMS2_XGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[35]:=HOMS2_XGantry.PAxis.xEnable ;
+mb_Input_Coils[36]:=HOMS2_XGantry.SAxis.bBusy;
+mb_Input_Coils[37]:=HOMS2_XGantry.SAxis.bDone;
+mb_Input_Coils[38]:=HOMS2_XGantry.SAxis.xHiLS;
+mb_Input_Coils[39]:=HOMS2_XGantry.SAxis.xLoLS;
+mb_Input_Coils[40]:=HOMS2_XGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[41]:=HOMS2_XGantry.SAxis.xEnable ;
+mb_Input_Coils[42]:=HOMS2_YGantry.PAxis.bBusy;
+mb_Input_Coils[43]:=HOMS2_YGantry.PAxis.bDone;
+mb_Input_Coils[44]:=HOMS2_YGantry.PAxis.xHiLS;
+mb_Input_Coils[45]:=HOMS2_YGantry.PAxis.xLoLS;
+mb_Input_Coils[46]:=HOMS2_YGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[47]:=HOMS2_YGantry.PAxis.xEnable ;
+mb_Input_Coils[48]:=HOMS2_YGantry.SAxis.bBusy;
+mb_Input_Coils[49]:=HOMS2_YGantry.SAxis.bDone;
+mb_Input_Coils[50]:=HOMS2_YGantry.SAxis.xHiLS;
+mb_Input_Coils[51]:=HOMS2_YGantry.SAxis.xLoLS;
+mb_Input_Coils[52]:=HOMS2_YGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[53]:=HOMS2_YGantry.SAxis.xEnable ;
+mb_Input_Coils[54]:=HOMS2_Pitch.Axis.bBusy;
+mb_Input_Coils[55]:=HOMS2_Pitch.Axis.bDone;
+mb_Input_Coils[56]:=HOMS2_Pitch.Stepper.xHiLS;
+mb_Input_Coils[57]:=HOMS2_Pitch.Stepper.xLoLS;
+mb_Input_Coils[58]:=HOMS2_Pitch.Stepper.i_xMotorInterlock;
+mb_Input_Coils[59]:=HOMS2_Pitch.Stepper.xEnable ;
+mb_Input_Coils[60]:=HOMS1_XGantry.DiffFlt;
+mb_Input_Coils[61]:=HOMS1_XGantry.vAxis.xHiLS;
+mb_Input_Coils[62]:=HOMS1_XGantry.vAxis.xLoLS;
+mb_Input_Coils[63]:=HOMS1_XGantry.VAxis.xEnable;
+mb_Input_Coils[64]:=HOMS1_YGantry.DiffFlt;
+mb_Input_Coils[65]:=HOMS1_YGantry.vAxis.xHiLS;
+mb_Input_Coils[66]:=HOMS1_YGantry.vAxis.xLoLS;
+mb_Input_Coils[67]:=HOMS1_YGantry.VAxis.xEnable;
+mb_Input_Coils[68]:=HOMS2_XGantry.DiffFlt;
+mb_Input_Coils[69]:=HOMS2_XGantry.vAxis.xHiLS;
+mb_Input_Coils[70]:=HOMS2_XGantry.vAxis.xLoLS;
+mb_Input_Coils[71]:=HOMS2_XGantry.VAxis.xEnable;
+mb_Input_Coils[72]:=HOMS2_YGantry.DiffFlt;
+mb_Input_Coils[73]:=HOMS2_YGantry.vAxis.xHiLS;
+mb_Input_Coils[74]:=HOMS2_YGantry.vAxis.xLoLS;
+mb_Input_Coils[75]:=HOMS2_YGantry.VAxis.xEnable;
+mb_Input_Coils[76]:=NOT HOMS1_Pitch.Piezo.xIdleMode;
+mb_Input_Coils[77]:=NOT HOMS2_Pitch.Piezo.xIdleMode;
+mb_Input_Coils[78]:=HOMS3_XGantry.PAxis.bBusy;
+mb_Input_Coils[79]:=HOMS3_XGantry.PAxis.bDone;
+mb_Input_Coils[80]:=HOMS3_XGantry.PAxis.xHiLS;
+mb_Input_Coils[81]:=HOMS3_XGantry.PAxis.xLoLS;
+mb_Input_Coils[82]:=HOMS3_XGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[83]:=HOMS3_XGantry.PAxis.xEnable ;
+mb_Input_Coils[84]:=HOMS3_XGantry.SAxis.bBusy;
+mb_Input_Coils[85]:=HOMS3_XGantry.SAxis.bDone;
+mb_Input_Coils[86]:=HOMS3_XGantry.SAxis.xHiLS;
+mb_Input_Coils[87]:=HOMS3_XGantry.SAxis.xLoLS;
+mb_Input_Coils[88]:=HOMS3_XGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[89]:=HOMS3_XGantry.SAxis.xEnable ;
+mb_Input_Coils[90]:=HOMS3_YGantry.PAxis.bBusy;
+mb_Input_Coils[91]:=HOMS3_YGantry.PAxis.bDone;
+mb_Input_Coils[92]:=HOMS3_YGantry.PAxis.xHiLS;
+mb_Input_Coils[93]:=HOMS3_YGantry.PAxis.xLoLS;
+mb_Input_Coils[94]:=HOMS3_YGantry.PAxis.i_xMotorInterlock;
+mb_Input_Coils[95]:=HOMS3_YGantry.PAxis.xEnable ;
+mb_Input_Coils[96]:=HOMS3_YGantry.SAxis.bBusy;
+mb_Input_Coils[97]:=HOMS3_YGantry.SAxis.bDone;
+mb_Input_Coils[98]:=HOMS3_YGantry.SAxis.xHiLS;
+mb_Input_Coils[99]:=HOMS3_YGantry.SAxis.xLoLS;
+mb_Input_Coils[100]:=HOMS3_YGantry.SAxis.i_xMotorInterlock;
+mb_Input_Coils[101]:=HOMS3_YGantry.SAxis.xEnable ;
+mb_Input_Coils[102]:=HOMS3_Pitch.Axis.bBusy;
+mb_Input_Coils[103]:=HOMS3_Pitch.Axis.bDone;
+mb_Input_Coils[104]:=HOMS3_Pitch.Stepper.xHiLS;
+mb_Input_Coils[105]:=HOMS3_Pitch.Stepper.xLoLS;
+mb_Input_Coils[106]:=HOMS3_Pitch.Stepper.i_xMotorInterlock;
+mb_Input_Coils[107]:=HOMS3_Pitch.Stepper.xEnable ;
+mb_Input_Coils[108]:=HOMS3_XGantry.DiffFlt;
+mb_Input_Coils[109]:=HOMS3_XGantry.vAxis.xHiLS;
+mb_Input_Coils[110]:=HOMS3_XGantry.vAxis.xLoLS;
+mb_Input_Coils[111]:=HOMS3_XGantry.VAxis.xEnable;
+mb_Input_Coils[112]:=HOMS3_YGantry.DiffFlt;
+mb_Input_Coils[113]:=HOMS3_YGantry.vAxis.xHiLS;
+mb_Input_Coils[114]:=HOMS3_YGantry.vAxis.xLoLS;
+mb_Input_Coils[115]:=HOMS3_YGantry.VAxis.xEnable;
+mb_Input_Coils[116]:=NOT HOMS3_Pitch.Piezo.xIdleMode;
+mb_Input_Coils[117]:=HOMS1_XGantry.xCoupled;
+mb_Input_Coils[118]:=HOMS1_YGantry.xCoupled;
+mb_Input_Coils[119]:=HOMS2_XGantry.xCoupled;
+mb_Input_Coils[120]:=HOMS2_YGantry.xCoupled;
+mb_Input_Coils[121]:=HOMS3_XGantry.xCoupled;
+mb_Input_Coils[122]:=HOMS3_YGantry.xCoupled;]]></ST>
+    </Implementation>
+    <LineIds Name="p_ModbusTx_InputCoils">
+      <LineId Id="4" Count="74" />
+      <LineId Id="88" Count="1" />
+      <LineId Id="97" Count="29" />
+      <LineId Id="157" Count="0" />
+      <LineId Id="176" Count="6" />
+      <LineId Id="173" Count="0" />
+      <LineId Id="190" Count="0" />
+      <LineId Id="174" Count="0" />
+      <LineId Id="191" Count="3" />
+      <LineId Id="80" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

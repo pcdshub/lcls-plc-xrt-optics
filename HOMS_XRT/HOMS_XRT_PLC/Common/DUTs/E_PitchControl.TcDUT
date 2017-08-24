@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <DUT Name="E_PitchControl" Id="{15e5f421-b8c8-457a-9ec3-ba6c1bfbee8f}">
+    <Declaration><![CDATA[TYPE E_PitchControl :
+(
+	//Pitch Control Machine
+	PCM_Init := 0,
+	PCM_Standby := 1,
+	PCM_MoveRequested := 10,
+	PCM_Coarse50Piezo	:= 20,
+	PCM_CoarseMove	:= 21,
+	PCM_CoarseMoveCleanup := 22,
+	PCM_FineMove	:= 30,
+	PCM_Halt		:= 50,
+	PCM_Done	:= 8000, //why is 8000 done? Where did this come from??
+	PCM_Error   := 9000, //Anything above 9000 is considered an error
+	PCM_StepperError	:= 9100,
+	PCM_PiezoError	:= 9200,
+	PCM_OtherError := 9300
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

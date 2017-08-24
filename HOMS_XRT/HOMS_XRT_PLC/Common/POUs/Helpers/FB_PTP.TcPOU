@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="FB_PTP" Id="{6cbfaf46-a20b-4169-b47c-2f4b0f6df043}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PTP
+VAR_IN_OUT
+	Stepper   : ST_HOMSStepper;
+END_VAR
+VAR
+	Drive         : FB_DRIVE;
+	fbCoE         : FB_ElmoGDCBellCoE;
+	nCommand      : UINT;
+	bExecute      : BOOL;
+	
+	rLastSetpoint : REAL;
+	rtTweakFwd    : R_TRIG;
+	rtTweakBwd    : R_TRIG;
+	rtExecute     : R_TRIG;
+	bRequesting   : BOOL;
+	rtReset: R_TRIG;
+END_VAR
+VAR_OUTPUT
+	rSetpoint     : REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Point to Point
+T. Rendahl 17-5-05
+
+Provides a conveinent wrapper for EPICS to instruct Point to Point motion of 
+an axis. The function block supplies support for three basic kinds of motion,
+absolute, tweak forward and tweak backwards. The ladder has a single reference
+for distance to move, however the actual motion is triggered by a rising edge on
+either bTwkFwd, or bTwkBwd. Absolute positioning works differently in order to
+mimic the way EPICS motor record. In this case, simply changing the rAbsolute 
+setpoint will start the motion
+
+The management of setpoint, velocity, and the general control of the Axis are
+derived HomsStepper DUT. This allows for easy mapping of status variables to 
+EPICS modbus maps.
+
+TODO
+****
+Pause : The drive will Halt if we change bExecute to False
+Stop  : Not included in FB_Drive, similar to Pause except
+		requires explicit clearing before moving again 
+*)
+//Read CoE Parameters
+/////////////////////////
+fbCoE(stCoE:=Stepper.stCoE);
+
+//Tweak Triggers
+/////////////////////////////////////////////
+rtTweakFwd(CLK:=Stepper.bTwkFwd);
+rtTweakBwd(CLK:=Stepper.bTwkBwd);
+rtExecute(CLK:=NOT Stepper.stAxis.Status.NotMoving);
+
+
+//Tweak Forward
+/////////////////////
+IF rtTweakFwd.Q THEN
+	//Setup move
+	nCommand  := 2;
+	rSetpoint := Stepper.rTweak;
+	//Execute
+	bExecute := TRUE;
+	bRequesting := TRUE;	
+//Tweak Backwards
+/////////////////////
+ELSIF rtTweakBwd.Q THEN
+	//Setup move
+	nCommand  := 2;
+	rSetpoint := -Stepper.rTweak;
+	//Execute
+	bExecute := TRUE;
+	bRequesting := TRUE;
+
+//Setpoint change
+///////////////////////
+ELSIF Stepper.rReqAbsolute <> rLastSetpoint THEN //AND NOT Drive.bBusy THEN
+	//Setup move
+	rSetpoint := LREAL_TO_REAL(Stepper.rReqAbsolute);
+	nCommand  := 3;
+	//Execute
+	bExecute := TRUE;
+	bRequesting := TRUE;
+	//Store last request so we don't repeat
+	rLastSetpoint := Stepper.rReqAbsolute;
+
+ELSE
+	bRequesting := FALSE;
+END_IF
+
+//Trigger reset on rising edge
+rtReset(CLK:=Stepper.xReset);
+
+//Give control of the axis to the Drive function block
+///////////////////////////////////////////////////////
+Drive(bEnable  := Stepper.xEnable,
+	  Axis     := Stepper.stAxis,
+	  nCommand := nCommand,
+	  bExecute := bExecute,
+	  bReset := rtReset.Q,
+	  fPosition     := rSetpoint,
+	  fAcceleration := Stepper.fAcceleration,
+	  fDeceleration := Stepper.fDeceleration,
+	  fVelocity     := Stepper.fVelocity,
+	  bLimitFwd     := Stepper.xHiLS,
+	  bLimitBwd     := Stepper.xLoLS,  
+	  );
+
+//Reset Execute to wait for next motion command
+////////////////////////////////////////////////
+bExecute R= Drive.Status.NotMoving AND NOT bRequesting;
+
+//Link the output of the Drive back to the struct
+Stepper.stStatus := Drive.stStepperStatus;
+//Explicit output of busy
+Stepper.bBusy := Drive.bBusy;
+//Gather done flag because it is not storted in status
+Stepper.bDone := bExecute;
+
+	  
+	  
+	  ]]></ST>
+    </Implementation>
+    <LineIds Name="FB_PTP">
+      <LineId Id="3" Count="64" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="116" Count="1" />
+      <LineId Id="68" Count="5" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="74" Count="21" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

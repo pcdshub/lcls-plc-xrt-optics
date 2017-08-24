@@ -1,0 +1,3469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <Visu Name="GantryControls" Id="{94c9a656-b0ea-44da-b7d8-a5b59824712a}">
+    <XmlArchive>
+      <Data>
+        <o xml:space="preserve" t="VisualObject">
+          <n n="LastVisuLanguageModelEntry" />
+          <v n="UniqueIdGenerator">"3"</v>
+          <o n="VisualElemList" t="VisualElemList">
+            <l n="VisualElementList" t="VisualElemCollection" cet="GenericVisualElem">
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" cet="GenericVisualElem">
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">1931512087L</v>
+                          <v n="Value">"TOGGLE"</v>
+                        </o>
+                        <o>
+                          <v n="Id">300685745L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">11</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Switch-PowerSwitch-Blue"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"Gantry.PAxis.xEnable"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"PowerSwitch"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemPowerSwitch"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_2"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{7e2cc03e-468d-4643-82dc-61ea42f6bbdb}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">1</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">61</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Lamp-Lamp1-Green"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"NOT Gantry.PAxis.stAxis.Status.Disabled"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"Lamp1"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemLamp"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_3"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{36eee5df-8996-4c8f-8c8c-fff4596cff3d}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">2</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                </l>
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">3549563837L</v>
+                      <v n="Value">"FIXED"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2341735680L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">438423234L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value" t="Int16">1</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value" t="Int16">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value" t="Int16">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">110</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">1165035537L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">2182350452L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">394923068L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">3069297334L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"Primary Axis"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">55</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">35</v>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"42"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"GroupBox"</v>
+                <v n="VisualElementTypeName">"VisuFbGroupBox"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_4"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{b1292517-014a-4fda-b7e2-b35d6aea0831}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">3</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" cet="GenericVisualElem">
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">1931512087L</v>
+                          <v n="Value">"TOGGLE"</v>
+                        </o>
+                        <o>
+                          <v n="Id">300685745L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">11</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Switch-PowerSwitch-Blue"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"Gantry.SAxis.xEnable"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"PowerSwitch"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemPowerSwitch"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_6"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{025293ac-69c3-48e4-b7eb-883bcbe2606d}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">5</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">61</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Lamp-Lamp1-Green"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"NOT Gantry.SAxis.stAxis.Status.Disabled"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"Lamp1"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemLamp"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_7"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{cc00a828-daed-4ee8-bb0c-707f74a0e5a1}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">6</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                </l>
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">3549563837L</v>
+                      <v n="Value">"FIXED"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2341735680L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">438423234L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value" t="Int16">1</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">110</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">1165035537L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">2182350452L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">394923068L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">3069297334L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"Secondary Axis"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">55</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">105</v>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"43"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"GroupBox"</v>
+                <v n="VisualElementTypeName">"VisuFbGroupBox"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_8"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{1b2666f6-f9a3-455a-93de-05cc54d463ca}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">7</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-1</v>
+                          <v n="CanonicalName">"Element-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-12337</v>
+                          <v n="CanonicalName">"Element-Alarm-Fill-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">132</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">44</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">150</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">30</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">1337389588L</v>
+                      <v n="Value">"FROM_STYLE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"%s"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2477733581L</v>
+                      <v n="Value">"Gantry.Mode"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"44"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"Textfield"</v>
+                <v n="VisualElementTypeName">"VisuFbElemTextfield"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_10"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{9bb1e6c4-77b9-4b98-b038-c5ee2ce030b1}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">9</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">133</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">16</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">150</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">30</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"Gantry Mode"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"45"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"Label"</v>
+                <v n="VisualElementTypeName">"VisuFbLabel"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_11"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{6c88203e-f990-441a-8d33-f26c2324271e}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">0</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" />
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">2539963283L</v>
+                      <v n="Value" t="Int16">1</v>
+                    </o>
+                    <o>
+                      <v n="Id">1119343303L</v>
+                      <v n="Value">"LEFT_TO_RIGHT"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1722894619L</v>
+                      <v n="Value" t="Int16">-1</v>
+                    </o>
+                    <o>
+                      <v n="Id">867425343L</v>
+                      <v n="Value" t="Int16">-1</v>
+                    </o>
+                    <o>
+                      <v n="Id">686910351L</v>
+                      <v n="Value">"OWN"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2028009121L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3191134607L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3218484809L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2919971128L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1546705513L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">3398726742L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">596717991L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2814868741L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">130</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">82</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">150</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">63</v>
+                    </o>
+                    <o>
+                      <v n="Id">1506785947L</v>
+                      <o n="Value" t="StructuredTypeNode">
+                        <v n="StructuredTypeNodeIsAnimation">false</v>
+                        <l n="TypeNodeChildren" t="ArrayList">
+                          <o t="DynamicArrayNode">
+                            <o n="DynamicArrayNodeCounterNode" t="BasicTypeNode">
+                              <v n="Flags">0L</v>
+                              <v n="BasicTypeNodeValue" t="Int16">2</v>
+                              <v n="BasicTypeNodeAcceptsExpression">false</v>
+                              <n n="BasicTypeNodeFastAccess" />
+                              <a n="BasicTypeNodeEnumValues" et="String" />
+                              <n n="EnumValueDisplayTextIds" />
+                              <n n="EnumValueVisibilityAttributeValues" />
+                              <n n="EnumValueLibraryId" />
+                              <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                              <l n="TypeNodeChildren" t="ArrayList" />
+                              <o n="TypeNodeType" t="TypeNodeType">
+                                <v n="TypeClass" t="TypeClass">Int</v>
+                                <v n="QualifiedName">"INT"</v>
+                                <v n="Name">"INT"</v>
+                              </o>
+                              <v n="TypeNodeName">"iAreasCount"</v>
+                              <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                <v n="AttrFlags">1UL</v>
+                                <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                  <v>Visible</v>
+                                  <v>False</v>
+                                  <v>''DOCU__COMMENT</v>
+                                  <v> This variable holds the current number of Radiobuttons in the variable "Areas"</v>
+                                </d>
+                                <v n="ConvDone">true</v>
+                              </o>
+                              <v n="TypeNodeId" t="Int16">31</v>
+                              <v n="TypeNodeIdLong">1124813175L</v>
+                              <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                              <n n="DisplayTextId" />
+                              <n n="DescriptionTextID" />
+                              <v n="DescriptionUseParent">false</v>
+                            </o>
+                            <n n="DynamicArrayNodeFastAccess" />
+                            <o n="ChildTemplate" t="StructuredTypeNode">
+                              <v n="StructuredTypeNodeIsAnimation">false</v>
+                              <l n="TypeNodeChildren" t="ArrayList">
+                                <o t="StructuredTypeNode">
+                                  <v n="StructuredTypeNodeIsAnimation">false</v>
+                                  <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">Int</v>
+                                        <v n="QualifiedName">"INT"</v>
+                                        <v n="Name">"INT"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"iX"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">0UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>DescriptionUseFromParent</v>
+                                          <v></v>
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.XCoordinate</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">3</v>
+                                      <v n="TypeNodeIdLong">2313923777L</v>
+                                      <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.XCoordinate"</v>
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">true</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">Int</v>
+                                        <v n="QualifiedName">"INT"</v>
+                                        <v n="Name">"INT"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"iY"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">0UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>DescriptionUseFromParent</v>
+                                          <v></v>
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.YCoordinate</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">4</v>
+                                      <v n="TypeNodeIdLong">4276919383L</v>
+                                      <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.YCoordinate"</v>
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">true</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">Int</v>
+                                        <v n="QualifiedName">"INT"</v>
+                                        <v n="Name">"INT"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"iWidth"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">0UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.Width</v>
+                                          <v>DescriptionUseFromParent</v>
+                                          <v></v>
+                                          <v>''NORMAL__COMMENT</v>
+                                          <v> Needed to adjust configuration members of visualization elements, that
+ have the attribute "ElementOrientation": If the width or height changes,
+ the element orientation can also change
+ The attribute "StaticElementWidth" is used to search the width component from
+ an element having the attribute "StaticElementPosition"</v>
+                                          <v>StaticElementWidth</v>
+                                          <v></v>
+                                          <v>ComplexPropertyChangeListener</v>
+                                          <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">5</v>
+                                      <v n="TypeNodeIdLong">2510551780L</v>
+                                      <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.Width"</v>
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">true</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">Int</v>
+                                        <v n="QualifiedName">"INT"</v>
+                                        <v n="Name">"INT"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"iHeight"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">0UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.Height</v>
+                                          <v>DescriptionUseFromParent</v>
+                                          <v></v>
+                                          <v>ComplexPropertyChangeListener</v>
+                                          <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                          <v>StaticElementHeight</v>
+                                          <v></v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">6</v>
+                                      <v n="TypeNodeIdLong">4192356232L</v>
+                                      <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.Height"</v>
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">true</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">Int</v>
+                                        <v n="QualifiedName">"INT"</v>
+                                        <v n="Name">"INT"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"m_iAngle"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">1UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.Angle</v>
+                                          <v>DescriptionUseFromParent</v>
+                                          <v></v>
+                                          <v>''NORMAL__COMMENT</v>
+                                          <v> only used offline </v>
+                                          <v>Visible</v>
+                                          <v>False</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">7</v>
+                                      <v n="TypeNodeIdLong">1481575397L</v>
+                                      <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.Angle"</v>
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">true</v>
+                                    </o>
+                                  </l>
+                                  <o n="TypeNodeType" t="TypeNodeType">
+                                    <v n="TypeClass" t="TypeClass">Userdef</v>
+                                    <v n="QualifiedName">"VisuStructRectangle"</v>
+                                    <v n="Name">"VisuStructRectangle"</v>
+                                  </o>
+                                  <v n="TypeNodeName">"Position"</v>
+                                  <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                    <v n="AttrFlags">1048577UL</v>
+                                    <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                      <v>Visible</v>
+                                      <v>False</v>
+                                      <v>StaticElementPosition</v>
+                                      <v></v>
+                                      <v>VisibleChildren</v>
+                                      <v>False</v>
+                                      <v>''NORMAL__COMMENT</v>
+                                      <v> The position of the element</v>
+                                      <v>conditionalshow</v>
+                                      <v>visu_elemdev</v>
+                                    </d>
+                                    <v n="ConvDone">false</v>
+                                  </o>
+                                  <v n="TypeNodeId" t="Int16">2</v>
+                                  <v n="TypeNodeIdLong">3126598249L</v>
+                                  <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                  <n n="DisplayTextId" />
+                                  <n n="DescriptionTextID" />
+                                  <v n="DescriptionUseParent">false</v>
+                                </o>
+                                <o t="StructuredTypeNode">
+                                  <v n="StructuredTypeNodeIsAnimation">false</v>
+                                  <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">String</v>
+                                        <v n="QualifiedName">"STRING"</v>
+                                        <v n="Name">"STRING"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"pstText"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">32UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>StringSize</v>
+                                          <v>80</v>
+                                          <v>I18nText</v>
+                                          <v></v>
+                                          <v>DescriptionTextId</v>
+                                          <v>TL_ElementProperties.Desc_Text</v>
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.Text</v>
+                                          <v>Visu_TypeString</v>
+                                          <v></v>
+                                          <v>''DOCU__COMMENT</v>
+                                          <v> The text, the user entered resp. can modify.</v>
+                                          <v>DirectlyAssignable</v>
+                                          <v></v>
+                                          <v>AllocateText</v>
+                                          <v></v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">9</v>
+                                      <v n="TypeNodeIdLong">312410466L</v>
+                                      <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.Text"</v>
+                                      <v n="DescriptionTextID">"TL_ElementProperties.Desc_Text"</v>
+                                      <v n="DescriptionUseParent">false</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">String</v>
+                                        <v n="QualifiedName">"STRING"</v>
+                                        <v n="Name">"STRING"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"sTextId"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">1UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>Visible</v>
+                                          <v>False</v>
+                                          <v>I18nId</v>
+                                          <v></v>
+                                          <v>''DOCU__COMMENT</v>
+                                          <v> The id of the text, needed for internationalisation</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">10</v>
+                                      <v n="TypeNodeIdLong">1219780180L</v>
+                                      <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                      <n n="DisplayTextId" />
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">false</v>
+                                    </o>
+                                  </l>
+                                  <o n="TypeNodeType" t="TypeNodeType">
+                                    <v n="TypeClass" t="TypeClass">Userdef</v>
+                                    <v n="QualifiedName">"VisuStructRadioText"</v>
+                                    <v n="Name">"VisuStructRadioText"</v>
+                                  </o>
+                                  <v n="TypeNodeName">"Texts"</v>
+                                  <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                    <v n="AttrFlags">1UL</v>
+                                    <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                      <v>I18n</v>
+                                      <v></v>
+                                      <v>conditionalshow</v>
+                                      <v>visu_coredev</v>
+                                      <v>''NORMAL__COMMENT</v>
+                                      <v>The texts of the single radio button	</v>
+                                      <v>Visible</v>
+                                      <v>False</v>
+                                      <v>''DOCU__COMMENT</v>
+                                      <v> This structure represents an internationalized text of the radiobutton</v>
+                                    </d>
+                                    <v n="ConvDone">false</v>
+                                  </o>
+                                  <v n="TypeNodeId" t="Int16">8</v>
+                                  <v n="TypeNodeIdLong">3031615540L</v>
+                                  <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                  <n n="DisplayTextId" />
+                                  <n n="DescriptionTextID" />
+                                  <v n="DescriptionUseParent">false</v>
+                                </o>
+                                <o t="StructuredTypeNode">
+                                  <v n="StructuredTypeNodeIsAnimation">false</v>
+                                  <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">String</v>
+                                        <v n="QualifiedName">"STRING"</v>
+                                        <v n="Name">"STRING"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"pstTooltip"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">32UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>StringSize</v>
+                                          <v>80</v>
+                                          <v>I18nText</v>
+                                          <v></v>
+                                          <v>DescriptionTextId</v>
+                                          <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
+                                          <v>DisplayTextId</v>
+                                          <v>TL_ElementProperties.Tooltip</v>
+                                          <v>Visu_TypeString</v>
+                                          <v></v>
+                                          <v>''DOCU__COMMENT</v>
+                                          <v> The tooltip, the user entered resp. can modify.</v>
+                                          <v>DirectlyAssignable</v>
+                                          <v></v>
+                                          <v>AllocateText</v>
+                                          <v></v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">12</v>
+                                      <v n="TypeNodeIdLong">1155648077L</v>
+                                      <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                      <v n="DisplayTextId">"TL_ElementProperties.Tooltip"</v>
+                                      <v n="DescriptionTextID">"TL_ElementProperties.Desc_StaticTextsTooltipOnly"</v>
+                                      <v n="DescriptionUseParent">false</v>
+                                    </o>
+                                    <o>
+                                      <v n="Flags">0L</v>
+                                      <n n="BasicTypeNodeValue" />
+                                      <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                      <n n="BasicTypeNodeFastAccess" />
+                                      <a n="BasicTypeNodeEnumValues" et="String" />
+                                      <n n="EnumValueDisplayTextIds" />
+                                      <n n="EnumValueVisibilityAttributeValues" />
+                                      <n n="EnumValueLibraryId" />
+                                      <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                      <l n="TypeNodeChildren" t="ArrayList" />
+                                      <o n="TypeNodeType" t="TypeNodeType">
+                                        <v n="TypeClass" t="TypeClass">String</v>
+                                        <v n="QualifiedName">"STRING"</v>
+                                        <v n="Name">"STRING"</v>
+                                      </o>
+                                      <v n="TypeNodeName">"sTooltipId"</v>
+                                      <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                        <v n="AttrFlags">1UL</v>
+                                        <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                          <v>Visible</v>
+                                          <v>False</v>
+                                          <v>I18nId</v>
+                                          <v></v>
+                                          <v>''DOCU__COMMENT</v>
+                                          <v> The id of the text, needed for internationalisation</v>
+                                        </d>
+                                        <v n="ConvDone">false</v>
+                                      </o>
+                                      <v n="TypeNodeId" t="Int16">13</v>
+                                      <v n="TypeNodeIdLong">3973988093L</v>
+                                      <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                      <n n="DisplayTextId" />
+                                      <n n="DescriptionTextID" />
+                                      <v n="DescriptionUseParent">false</v>
+                                    </o>
+                                  </l>
+                                  <o n="TypeNodeType" t="TypeNodeType">
+                                    <v n="TypeClass" t="TypeClass">Userdef</v>
+                                    <v n="QualifiedName">"VisuStructRadioTooltip"</v>
+                                    <v n="Name">"VisuStructRadioTooltip"</v>
+                                  </o>
+                                  <v n="TypeNodeName">"Tooltip"</v>
+                                  <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                    <v n="AttrFlags">1UL</v>
+                                    <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                      <v>Visible</v>
+                                      <v>False</v>
+                                      <v>conditionalshow</v>
+                                      <v>visu_coredev</v>
+                                      <v>''NORMAL__COMMENT</v>
+                                      <v>The tooltips of the single radio button</v>
+                                      <v>I18n</v>
+                                      <v></v>
+                                      <v>''DOCU__COMMENT</v>
+                                      <v> This structure represents an internationalized tooltip-text of the radiobutton</v>
+                                    </d>
+                                    <v n="ConvDone">false</v>
+                                  </o>
+                                  <v n="TypeNodeId" t="Int16">11</v>
+                                  <v n="TypeNodeIdLong">1758445547L</v>
+                                  <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                  <n n="DisplayTextId" />
+                                  <n n="DescriptionTextID" />
+                                  <v n="DescriptionUseParent">false</v>
+                                </o>
+                                <o t="BasicTypeNode">
+                                  <v n="Flags">0L</v>
+                                  <n n="BasicTypeNodeValue" />
+                                  <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                  <n n="BasicTypeNodeFastAccess" />
+                                  <a n="BasicTypeNodeEnumValues" et="String" />
+                                  <n n="EnumValueDisplayTextIds" />
+                                  <n n="EnumValueVisibilityAttributeValues" />
+                                  <n n="EnumValueLibraryId" />
+                                  <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                  <l n="TypeNodeChildren" t="ArrayList" />
+                                  <o n="TypeNodeType" t="TypeNodeType">
+                                    <v n="TypeClass" t="TypeClass">Int</v>
+                                    <v n="QualifiedName">"INT"</v>
+                                    <v n="Name">"INT"</v>
+                                  </o>
+                                  <v n="TypeNodeName">"iPixelOffset"</v>
+                                  <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                    <v n="AttrFlags">0UL</v>
+                                    <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                      <v>DescriptionTextId</v>
+                                      <v>TL_ElementProperties.Desc_RadioButtonPixelOffset</v>
+                                      <v>DisplayTextId</v>
+                                      <v>TL_ElementProperties.PixelOffset</v>
+                                    </d>
+                                    <v n="ConvDone">false</v>
+                                  </o>
+                                  <v n="TypeNodeId" t="Int16">14</v>
+                                  <v n="TypeNodeIdLong">548010321L</v>
+                                  <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                  <v n="DisplayTextId">"TL_ElementProperties.PixelOffset"</v>
+                                  <v n="DescriptionTextID">"TL_ElementProperties.Desc_RadioButtonPixelOffset"</v>
+                                  <v n="DescriptionUseParent">false</v>
+                                </o>
+                              </l>
+                              <o n="TypeNodeType" t="TypeNodeType">
+                                <v n="TypeClass" t="TypeClass">Userdef</v>
+                                <v n="QualifiedName">"VisuFbRadioButtonEntry"</v>
+                                <v n="Name">"VisuFbRadioButtonEntry"</v>
+                              </o>
+                              <v n="TypeNodeName">""</v>
+                              <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                <v n="AttrFlags">0UL</v>
+                                <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                  <v>ieccodeconversion_creategenericsetter</v>
+                                  <v></v>
+                                  <v>''NORMAL__COMMENT</v>
+                                  <v>this Fb handles the entry for a radio button</v>
+                                  <v>ieccodeconversion_creategenericgetter</v>
+                                  <v></v>
+                                  <v>conditionalshow</v>
+                                  <v>visu_coredev</v>
+                                  <v>ieccodeconversion_createarrayfactorymethod</v>
+                                  <v></v>
+                                  <v>ProvideDeleteButton</v>
+                                  <v></v>
+                                </d>
+                                <v n="ConvDone">true</v>
+                              </o>
+                              <v n="TypeNodeId" t="Int16">1</v>
+                              <v n="TypeNodeIdLong">1393515506L</v>
+                              <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                              <n n="DisplayTextId" />
+                              <n n="DescriptionTextID" />
+                              <v n="DescriptionUseParent">false</v>
+                            </o>
+                            <l n="TypeNodeChildren" t="ArrayList" cet="StructuredTypeNode">
+                              <o>
+                                <v n="StructuredTypeNodeIsAnimation">false</v>
+                                <l n="TypeNodeChildren" t="ArrayList">
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iX"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.XCoordinate</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">3</v>
+                                        <v n="TypeNodeIdLong">1039532756L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.XCoordinate"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iY"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.YCoordinate</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">4</v>
+                                        <v n="TypeNodeIdLong">1257321026L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.YCoordinate"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iWidth"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Width</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>''NORMAL__COMMENT</v>
+                                            <v> Needed to adjust configuration members of visualization elements, that
+ have the attribute "ElementOrientation": If the width or height changes,
+ the element orientation can also change
+ The attribute "StaticElementWidth" is used to search the width component from
+ an element having the attribute "StaticElementPosition"</v>
+                                            <v>StaticElementWidth</v>
+                                            <v></v>
+                                            <v>ComplexPropertyChangeListener</v>
+                                            <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">5</v>
+                                        <v n="TypeNodeIdLong">316815018L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Width"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iHeight"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Height</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>ComplexPropertyChangeListener</v>
+                                            <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                            <v>StaticElementHeight</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">6</v>
+                                        <v n="TypeNodeIdLong">1744923347L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Height"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"m_iAngle"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Angle</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>''NORMAL__COMMENT</v>
+                                            <v> only used offline </v>
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">7</v>
+                                        <v n="TypeNodeIdLong">2758238388L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Angle"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRectangle"</v>
+                                      <v n="Name">"VisuStructRectangle"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Position"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1048577UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>StaticElementPosition</v>
+                                        <v></v>
+                                        <v>VisibleChildren</v>
+                                        <v>False</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v> The position of the element</v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_elemdev</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">2</v>
+                                    <v n="TypeNodeIdLong">2332717735L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <v n="BasicTypeNodeValue">"Radiobutton"</v>
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"pstText"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">32UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>StringSize</v>
+                                            <v>80</v>
+                                            <v>I18nText</v>
+                                            <v></v>
+                                            <v>DescriptionTextId</v>
+                                            <v>TL_ElementProperties.Desc_Text</v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Text</v>
+                                            <v>Visu_TypeString</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The text, the user entered resp. can modify.</v>
+                                            <v>DirectlyAssignable</v>
+                                            <v></v>
+                                            <v>AllocateText</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">9</v>
+                                        <v n="TypeNodeIdLong">340057476L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Text"</v>
+                                        <v n="DescriptionTextID">"TL_ElementProperties.Desc_Text"</v>
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"sTextId"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                            <v>I18nId</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The id of the text, needed for internationalisation</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">10</v>
+                                        <v n="TypeNodeIdLong">1315930802L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <n n="DisplayTextId" />
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRadioText"</v>
+                                      <v n="Name">"VisuStructRadioText"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Texts"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>I18n</v>
+                                        <v></v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_coredev</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v>The texts of the single radio button	</v>
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>''DOCU__COMMENT</v>
+                                        <v> This structure represents an internationalized text of the radiobutton</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">8</v>
+                                    <v n="TypeNodeIdLong">967815635L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"pstTooltip"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">32UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>StringSize</v>
+                                            <v>80</v>
+                                            <v>I18nText</v>
+                                            <v></v>
+                                            <v>DescriptionTextId</v>
+                                            <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Tooltip</v>
+                                            <v>Visu_TypeString</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The tooltip, the user entered resp. can modify.</v>
+                                            <v>DirectlyAssignable</v>
+                                            <v></v>
+                                            <v>AllocateText</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">12</v>
+                                        <v n="TypeNodeIdLong">1483834180L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Tooltip"</v>
+                                        <v n="DescriptionTextID">"TL_ElementProperties.Desc_StaticTextsTooltipOnly"</v>
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"sTooltipId"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                            <v>I18nId</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The id of the text, needed for internationalisation</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">13</v>
+                                        <v n="TypeNodeIdLong">4031674356L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <n n="DisplayTextId" />
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRadioTooltip"</v>
+                                      <v n="Name">"VisuStructRadioTooltip"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Tooltip"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_coredev</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v>The tooltips of the single radio button</v>
+                                        <v>I18n</v>
+                                        <v></v>
+                                        <v>''DOCU__COMMENT</v>
+                                        <v> This structure represents an internationalized tooltip-text of the radiobutton</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">11</v>
+                                    <v n="TypeNodeIdLong">1344904773L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="BasicTypeNode">
+                                    <v n="Flags">0L</v>
+                                    <n n="BasicTypeNodeValue" />
+                                    <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                    <n n="BasicTypeNodeFastAccess" />
+                                    <a n="BasicTypeNodeEnumValues" et="String" />
+                                    <n n="EnumValueDisplayTextIds" />
+                                    <n n="EnumValueVisibilityAttributeValues" />
+                                    <n n="EnumValueLibraryId" />
+                                    <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                    <l n="TypeNodeChildren" t="ArrayList" />
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Int</v>
+                                      <v n="QualifiedName">"INT"</v>
+                                      <v n="Name">"INT"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"iPixelOffset"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">0UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>DescriptionTextId</v>
+                                        <v>TL_ElementProperties.Desc_RadioButtonPixelOffset</v>
+                                        <v>DisplayTextId</v>
+                                        <v>TL_ElementProperties.PixelOffset</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">14</v>
+                                    <v n="TypeNodeIdLong">1304428564L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <v n="DisplayTextId">"TL_ElementProperties.PixelOffset"</v>
+                                    <v n="DescriptionTextID">"TL_ElementProperties.Desc_RadioButtonPixelOffset"</v>
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                </l>
+                                <o n="TypeNodeType" t="TypeNodeType">
+                                  <v n="TypeClass" t="TypeClass">Userdef</v>
+                                  <v n="QualifiedName">"VisuFbRadioButtonEntry"</v>
+                                  <v n="Name">"VisuFbRadioButtonEntry"</v>
+                                </o>
+                                <v n="TypeNodeName">"[0]"</v>
+                                <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                  <v n="AttrFlags">0UL</v>
+                                  <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                    <v>ieccodeconversion_creategenericsetter</v>
+                                    <v></v>
+                                    <v>''NORMAL__COMMENT</v>
+                                    <v>this Fb handles the entry for a radio button</v>
+                                    <v>ieccodeconversion_creategenericgetter</v>
+                                    <v></v>
+                                    <v>conditionalshow</v>
+                                    <v>visu_coredev</v>
+                                    <v>ieccodeconversion_createarrayfactorymethod</v>
+                                    <v></v>
+                                    <v>ProvideDeleteButton</v>
+                                    <v></v>
+                                  </d>
+                                  <v n="ConvDone">true</v>
+                                </o>
+                                <v n="TypeNodeId" t="Int16">1</v>
+                                <v n="TypeNodeIdLong">713309466L</v>
+                                <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                <n n="DisplayTextId" />
+                                <n n="DescriptionTextID" />
+                                <v n="DescriptionUseParent">false</v>
+                              </o>
+                              <o>
+                                <v n="StructuredTypeNodeIsAnimation">false</v>
+                                <l n="TypeNodeChildren" t="ArrayList">
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iX"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.XCoordinate</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">3</v>
+                                        <v n="TypeNodeIdLong">2700731298L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.XCoordinate"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iY"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.YCoordinate</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">4</v>
+                                        <v n="TypeNodeIdLong">3623801652L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.YCoordinate"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iWidth"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Width</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>''NORMAL__COMMENT</v>
+                                            <v> Needed to adjust configuration members of visualization elements, that
+ have the attribute "ElementOrientation": If the width or height changes,
+ the element orientation can also change
+ The attribute "StaticElementWidth" is used to search the width component from
+ an element having the attribute "StaticElementPosition"</v>
+                                            <v>StaticElementWidth</v>
+                                            <v></v>
+                                            <v>ComplexPropertyChangeListener</v>
+                                            <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">5</v>
+                                        <v n="TypeNodeIdLong">4256202827L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Width"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"iHeight"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">0UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Height</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>ComplexPropertyChangeListener</v>
+                                            <v>AEF0ADFC-5918-4a69-9DED-D5857F5CF29C</v>
+                                            <v>StaticElementHeight</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">6</v>
+                                        <v n="TypeNodeIdLong">3219384971L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Height"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">Int</v>
+                                          <v n="QualifiedName">"INT"</v>
+                                          <v n="Name">"INT"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"m_iAngle"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Angle</v>
+                                            <v>DescriptionUseFromParent</v>
+                                            <v></v>
+                                            <v>''NORMAL__COMMENT</v>
+                                            <v> only used offline </v>
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">7</v>
+                                        <v n="TypeNodeIdLong">3238026226L</v>
+                                        <v n="LibraryId">"visuelembase, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Angle"</v>
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">true</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRectangle"</v>
+                                      <v n="Name">"VisuStructRectangle"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Position"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1048577UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>StaticElementPosition</v>
+                                        <v></v>
+                                        <v>VisibleChildren</v>
+                                        <v>False</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v> The position of the element</v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_elemdev</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">2</v>
+                                    <v n="TypeNodeIdLong">1250209127L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <v n="BasicTypeNodeValue">"Radiobutton"</v>
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"pstText"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">32UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>StringSize</v>
+                                            <v>80</v>
+                                            <v>I18nText</v>
+                                            <v></v>
+                                            <v>DescriptionTextId</v>
+                                            <v>TL_ElementProperties.Desc_Text</v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Text</v>
+                                            <v>Visu_TypeString</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The text, the user entered resp. can modify.</v>
+                                            <v>DirectlyAssignable</v>
+                                            <v></v>
+                                            <v>AllocateText</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">9</v>
+                                        <v n="TypeNodeIdLong">3123465237L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Text"</v>
+                                        <v n="DescriptionTextID">"TL_ElementProperties.Desc_Text"</v>
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"sTextId"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                            <v>I18nId</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The id of the text, needed for internationalisation</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">10</v>
+                                        <v n="TypeNodeIdLong">3758560035L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <n n="DisplayTextId" />
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRadioText"</v>
+                                      <v n="Name">"VisuStructRadioText"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Texts"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>I18n</v>
+                                        <v></v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_coredev</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v>The texts of the single radio button	</v>
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>''DOCU__COMMENT</v>
+                                        <v> This structure represents an internationalized text of the radiobutton</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">8</v>
+                                    <v n="TypeNodeIdLong">4110790989L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="StructuredTypeNode">
+                                    <v n="StructuredTypeNodeIsAnimation">false</v>
+                                    <l n="TypeNodeChildren" t="ArrayList" cet="BasicTypeNode">
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"pstTooltip"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">32UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>StringSize</v>
+                                            <v>80</v>
+                                            <v>I18nText</v>
+                                            <v></v>
+                                            <v>DescriptionTextId</v>
+                                            <v>TL_ElementProperties.Desc_StaticTextsTooltipOnly</v>
+                                            <v>DisplayTextId</v>
+                                            <v>TL_ElementProperties.Tooltip</v>
+                                            <v>Visu_TypeString</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The tooltip, the user entered resp. can modify.</v>
+                                            <v>DirectlyAssignable</v>
+                                            <v></v>
+                                            <v>AllocateText</v>
+                                            <v></v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">12</v>
+                                        <v n="TypeNodeIdLong">3349872858L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <v n="DisplayTextId">"TL_ElementProperties.Tooltip"</v>
+                                        <v n="DescriptionTextID">"TL_ElementProperties.Desc_StaticTextsTooltipOnly"</v>
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                      <o>
+                                        <v n="Flags">0L</v>
+                                        <n n="BasicTypeNodeValue" />
+                                        <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                        <n n="BasicTypeNodeFastAccess" />
+                                        <a n="BasicTypeNodeEnumValues" et="String" />
+                                        <n n="EnumValueDisplayTextIds" />
+                                        <n n="EnumValueVisibilityAttributeValues" />
+                                        <n n="EnumValueLibraryId" />
+                                        <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                        <l n="TypeNodeChildren" t="ArrayList" />
+                                        <o n="TypeNodeType" t="TypeNodeType">
+                                          <v n="TypeClass" t="TypeClass">String</v>
+                                          <v n="QualifiedName">"STRING"</v>
+                                          <v n="Name">"STRING"</v>
+                                        </o>
+                                        <v n="TypeNodeName">"sTooltipId"</v>
+                                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                          <v n="AttrFlags">1UL</v>
+                                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                            <v>Visible</v>
+                                            <v>False</v>
+                                            <v>I18nId</v>
+                                            <v></v>
+                                            <v>''DOCU__COMMENT</v>
+                                            <v> The id of the text, needed for internationalisation</v>
+                                          </d>
+                                          <v n="ConvDone">false</v>
+                                        </o>
+                                        <v n="TypeNodeId" t="Int16">13</v>
+                                        <v n="TypeNodeIdLong">1872032874L</v>
+                                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                        <n n="DisplayTextId" />
+                                        <n n="DescriptionTextID" />
+                                        <v n="DescriptionUseParent">false</v>
+                                      </o>
+                                    </l>
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Userdef</v>
+                                      <v n="QualifiedName">"VisuStructRadioTooltip"</v>
+                                      <v n="Name">"VisuStructRadioTooltip"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"Tooltip"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">1UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>Visible</v>
+                                        <v>False</v>
+                                        <v>conditionalshow</v>
+                                        <v>visu_coredev</v>
+                                        <v>''NORMAL__COMMENT</v>
+                                        <v>The tooltips of the single radio button</v>
+                                        <v>I18n</v>
+                                        <v></v>
+                                        <v>''DOCU__COMMENT</v>
+                                        <v> This structure represents an internationalized tooltip-text of the radiobutton</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">11</v>
+                                    <v n="TypeNodeIdLong">3219912059L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <n n="DisplayTextId" />
+                                    <n n="DescriptionTextID" />
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                  <o t="BasicTypeNode">
+                                    <v n="Flags">0L</v>
+                                    <n n="BasicTypeNodeValue" />
+                                    <v n="BasicTypeNodeAcceptsExpression">false</v>
+                                    <n n="BasicTypeNodeFastAccess" />
+                                    <a n="BasicTypeNodeEnumValues" et="String" />
+                                    <n n="EnumValueDisplayTextIds" />
+                                    <n n="EnumValueVisibilityAttributeValues" />
+                                    <n n="EnumValueLibraryId" />
+                                    <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                                    <l n="TypeNodeChildren" t="ArrayList" />
+                                    <o n="TypeNodeType" t="TypeNodeType">
+                                      <v n="TypeClass" t="TypeClass">Int</v>
+                                      <v n="QualifiedName">"INT"</v>
+                                      <v n="Name">"INT"</v>
+                                    </o>
+                                    <v n="TypeNodeName">"iPixelOffset"</v>
+                                    <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                      <v n="AttrFlags">0UL</v>
+                                      <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                        <v>DescriptionTextId</v>
+                                        <v>TL_ElementProperties.Desc_RadioButtonPixelOffset</v>
+                                        <v>DisplayTextId</v>
+                                        <v>TL_ElementProperties.PixelOffset</v>
+                                      </d>
+                                      <v n="ConvDone">false</v>
+                                    </o>
+                                    <v n="TypeNodeId" t="Int16">14</v>
+                                    <v n="TypeNodeIdLong">4097563644L</v>
+                                    <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                    <v n="DisplayTextId">"TL_ElementProperties.PixelOffset"</v>
+                                    <v n="DescriptionTextID">"TL_ElementProperties.Desc_RadioButtonPixelOffset"</v>
+                                    <v n="DescriptionUseParent">false</v>
+                                  </o>
+                                </l>
+                                <o n="TypeNodeType" t="TypeNodeType">
+                                  <v n="TypeClass" t="TypeClass">Userdef</v>
+                                  <v n="QualifiedName">"VisuFbRadioButtonEntry"</v>
+                                  <v n="Name">"VisuFbRadioButtonEntry"</v>
+                                </o>
+                                <v n="TypeNodeName">"[1]"</v>
+                                <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                                  <v n="AttrFlags">0UL</v>
+                                  <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                    <v>ieccodeconversion_creategenericsetter</v>
+                                    <v></v>
+                                    <v>''NORMAL__COMMENT</v>
+                                    <v>this Fb handles the entry for a radio button</v>
+                                    <v>ieccodeconversion_creategenericgetter</v>
+                                    <v></v>
+                                    <v>conditionalshow</v>
+                                    <v>visu_coredev</v>
+                                    <v>ieccodeconversion_createarrayfactorymethod</v>
+                                    <v></v>
+                                    <v>ProvideDeleteButton</v>
+                                    <v></v>
+                                  </d>
+                                  <v n="ConvDone">true</v>
+                                </o>
+                                <v n="TypeNodeId" t="Int16">1</v>
+                                <v n="TypeNodeIdLong">866061403L</v>
+                                <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                                <n n="DisplayTextId" />
+                                <n n="DescriptionTextID" />
+                                <v n="DescriptionUseParent">false</v>
+                              </o>
+                            </l>
+                            <o n="TypeNodeType" t="TypeNodeType">
+                              <v n="TypeClass" t="TypeClass">Userdef</v>
+                              <v n="QualifiedName">"VisuFbRadioButtonEntry"</v>
+                              <v n="Name">"VisuFbRadioButtonEntry"</v>
+                            </o>
+                            <v n="TypeNodeName">"Areas"</v>
+                            <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                              <v n="AttrFlags">0UL</v>
+                              <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                <v>DisplayTextId</v>
+                                <v>TL_ElementProperties.Areas</v>
+                                <v>DescriptionUseFromParent</v>
+                                <v></v>
+                                <v>DefaultArraySize</v>
+                                <v>100</v>
+                                <v>''DOCU__COMMENT</v>
+                                <v> Points to an array, that containts the configuration of each color area</v>
+                              </d>
+                              <v n="ConvDone">true</v>
+                            </o>
+                            <v n="TypeNodeId" t="Int16">30</v>
+                            <v n="TypeNodeIdLong">3013784314L</v>
+                            <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                            <v n="DisplayTextId">"TL_ElementProperties.Areas"</v>
+                            <n n="DescriptionTextID" />
+                            <v n="DescriptionUseParent">true</v>
+                          </o>
+                          <o t="BasicTypeNode">
+                            <v n="Flags">0L</v>
+                            <v n="BasicTypeNodeValue" t="Int16">2</v>
+                            <v n="BasicTypeNodeAcceptsExpression">false</v>
+                            <n n="BasicTypeNodeFastAccess" />
+                            <a n="BasicTypeNodeEnumValues" et="String" />
+                            <n n="EnumValueDisplayTextIds" />
+                            <n n="EnumValueVisibilityAttributeValues" />
+                            <n n="EnumValueLibraryId" />
+                            <n n="DynamicEnumMemberVisibilityCheckerTypeGuid" />
+                            <l n="TypeNodeChildren" t="ArrayList" />
+                            <o n="TypeNodeType" t="TypeNodeType">
+                              <v n="TypeClass" t="TypeClass">Int</v>
+                              <v n="QualifiedName">"INT"</v>
+                              <v n="Name">"INT"</v>
+                            </o>
+                            <v n="TypeNodeName">"iAreasCount"</v>
+                            <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                              <v n="AttrFlags">1UL</v>
+                              <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                                <v>Visible</v>
+                                <v>False</v>
+                                <v>''DOCU__COMMENT</v>
+                                <v> This variable holds the current number of Radiobuttons in the variable "Areas"</v>
+                              </d>
+                              <v n="ConvDone">true</v>
+                            </o>
+                            <v n="TypeNodeId" t="Int16">31</v>
+                            <v n="TypeNodeIdLong">1124813175L</v>
+                            <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                            <n n="DisplayTextId" />
+                            <n n="DescriptionTextID" />
+                            <v n="DescriptionUseParent">false</v>
+                          </o>
+                        </l>
+                        <o n="TypeNodeType" t="TypeNodeType">
+                          <v n="TypeClass" t="TypeClass">Userdef</v>
+                          <v n="QualifiedName">"VisuStructRadioButtonArea"</v>
+                          <v n="Name">"VisuStructRadioButtonArea"</v>
+                        </o>
+                        <v n="TypeNodeName">"RadioButtonArea"</v>
+                        <o n="TypeNodeAttributes" t="TypeNodeAttributes2">
+                          <v n="AttrFlags">0UL</v>
+                          <d n="TypeNodeAttributesData" t="CaseInsensitiveHashtable" ckt="String" cvt="String">
+                            <v>DisplayValue</v>
+                            <v></v>
+                            <v>DescriptionUseFromParent</v>
+                            <v></v>
+                            <v>''DOCU__COMMENT</v>
+                            <v> This structure contains the definition of the Radiobuttons of the element.</v>
+                            <v>ProvideInsertButton</v>
+                            <v></v>
+                            <v>DisplayTextId</v>
+                            <v>TL_ElementProperties.RadioButtonArea</v>
+                            <v>''NORMAL__COMMENT</v>
+                            <v> the structure with the dynamic array nodes	</v>
+                            <v>conditionalshow</v>
+                            <v>visu_coredev</v>
+                            <v>DynamicArray</v>
+                            <v></v>
+                          </d>
+                          <v n="ConvDone">true</v>
+                        </o>
+                        <v n="TypeNodeId" t="Int16">29</v>
+                        <v n="TypeNodeIdLong">1506785947L</v>
+                        <v n="LibraryId">"visuelemswincontrols, 3.5.8.40 (system)"</v>
+                        <v n="DisplayTextId">"TL_ElementProperties.RadioButtonArea"</v>
+                        <n n="DescriptionTextID" />
+                        <v n="DescriptionUseParent">true</v>
+                      </o>
+                    </o>
+                    <o>
+                      <v n="Id">340057476L</v>
+                      <v n="Value">"Coupled"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3123465237L</v>
+                      <v n="Value">"Decoupled"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4010712728L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">2703123772L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value">1U</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">""</v>
+                    </o>
+                    <o>
+                      <v n="Id">397264524L</v>
+                      <v n="Value">"Gantry.ModeReq"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">1315930802L</v>
+                      <v n="Value">"46"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3758560035L</v>
+                      <v n="Value">"47"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2496894244L</v>
+                      <v n="Value">"Gantry.PAxis.stAxis.Status.Moving"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"RadioButton"</v>
+                <v n="VisualElementTypeName">"VisuFbRadioButton"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_12"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{5dd6e429-6910-4a8c-80de-4f8486bd18fb}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">4</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+              <o>
+                <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                <l n="Elements" t="ArrayList" cet="GenericVisualElem">
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">1931512087L</v>
+                          <v n="Value">"TOGGLE"</v>
+                        </o>
+                        <o>
+                          <v n="Id">300685745L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">11</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Switch-PowerSwitch-Blue"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"Gantry.VAxis.xEnable"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"PowerSwitch"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemPowerSwitch"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_15"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{bd7b8a78-21ce-4a2a-a03a-cd7d2a18964f}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">12</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                  <o>
+                    <a n="ConfiguredComplexInputs" et="ComplexInput" />
+                    <l n="Elements" t="ArrayList" />
+                    <n n="VisualElementDescription" />
+                    <o n="VisualElemMemberList" t="VisualElemMemberList">
+                      <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                        <o>
+                          <v n="Id">2812299069L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">494569607L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">1649127785L</v>
+                          <v n="Value">61</v>
+                        </o>
+                        <o>
+                          <v n="Id">357335551L</v>
+                          <v n="Value">23</v>
+                        </o>
+                        <o>
+                          <v n="Id">2422045748L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">2134141914L</v>
+                          <v n="Value">40</v>
+                        </o>
+                        <o>
+                          <v n="Id">4062784938L</v>
+                          <v n="Value">"Element-Lamp-Lamp1-Green"</v>
+                        </o>
+                        <o>
+                          <v n="Id">493260384L</v>
+                          <v n="Value">4294967295U</v>
+                        </o>
+                        <o>
+                          <v n="Id">135947015L</v>
+                          <v n="Value">4278190080U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2678395525L</v>
+                          <v n="Value">1U</v>
+                        </o>
+                        <o>
+                          <v n="Id">2340015797L</v>
+                          <v n="Value">"HCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2565699834L</v>
+                          <v n="Value">"VCENTER"</v>
+                        </o>
+                        <o>
+                          <v n="Id">296037572L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">390574330L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">571893170L</v>
+                          <v n="Value">""</v>
+                        </o>
+                        <o>
+                          <v n="Id">743958181L</v>
+                          <v n="Value">"Gantry.SAxis.stAxis.Status.Coupled AND NOT Gantry.PAxis.stAxis.Status.Disabled AND NOT Gantry.SAxis.stAxis.Status.Disabled"</v>
+                        </o>
+                        <o>
+                          <v n="Id">2597686782L</v>
+                          <v n="Value">false</v>
+                        </o>
+                      </l>
+                    </o>
+                    <v n="VisualElementName">"Lamp1"</v>
+                    <v n="VisualElementTypeName">"VisuFbElemLamp"</v>
+                    <v n="VisualElementIsRectangle">true</v>
+                    <v n="VisualElementIdentifier">"GenElemInst_16"</v>
+                    <n n="VisualElementOfflinePaintCommands" />
+                    <n n="VisualElementFrameInformation" />
+                    <d n="VisualElementInputActions" t="Hashtable" />
+                    <v n="VisualElementIdentification">{8bdcc4da-b8f1-4768-85a0-b1687d8a5a6b}</v>
+                    <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                    <a n="LMGuids" et="Guid" />
+                    <d n="SubElements" t="Hashtable" />
+                    <v n="VisualElementId">13</v>
+                    <l n="UserManagementAccessRights" t="ArrayList" />
+                  </o>
+                </l>
+                <n n="VisualElementDescription" />
+                <o n="VisualElemMemberList" t="VisualElemMemberList">
+                  <l n="VisualElemMemberList" t="VisualElemMemberCollection" cet="VisualElemMember">
+                    <o>
+                      <v n="Id">3549563837L</v>
+                      <v n="Value">"FIXED"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2341735680L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-2830136</v>
+                          <v n="CanonicalName">"Element-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">438423234L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleColor">
+                        <o>
+                          <v n="Color">-65536</v>
+                          <v n="CanonicalName">"Element-Alarm-Frame-Color"</v>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">2678395525L</v>
+                      <v n="Value" t="Int16">1</v>
+                    </o>
+                    <o>
+                      <v n="Id">2340015797L</v>
+                      <v n="Value">"HCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2565699834L</v>
+                      <v n="Value">"VCENTER"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4134387352L</v>
+                      <v n="Value">"NONE"</v>
+                    </o>
+                    <o>
+                      <v n="Id">1603690730L</v>
+                      <v n="Value">"Arial"</v>
+                    </o>
+                    <o>
+                      <v n="Id">4253639993L</v>
+                      <v n="Value" t="Int16">12</v>
+                    </o>
+                    <o>
+                      <v n="Id">2729990903L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1213979116L</v>
+                      <v n="Value">0U</v>
+                    </o>
+                    <o>
+                      <v n="Id">3488306084L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1999528970L</v>
+                      <v n="Value">"&lt;toggle/tap variable&gt;"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2812299069L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">494569607L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">1649127785L</v>
+                      <v n="Value">0</v>
+                    </o>
+                    <o>
+                      <v n="Id">357335551L</v>
+                      <v n="Value">139</v>
+                    </o>
+                    <o>
+                      <v n="Id">2422045748L</v>
+                      <v n="Value">110</v>
+                    </o>
+                    <o>
+                      <v n="Id">2134141914L</v>
+                      <v n="Value">70</v>
+                    </o>
+                    <o>
+                      <v n="Id">1165035537L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">2182350452L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">394923068L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">3069297334L</v>
+                      <v n="Value">true</v>
+                    </o>
+                    <o>
+                      <v n="Id">390574330L</v>
+                      <v n="Value">"Virtual Axis"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3729828405L</v>
+                      <l n="Value" t="ArrayList" cet="NamedStyleFont">
+                        <o>
+                          <v n="FontStyle">0</v>
+                          <v n="ExplicitColor">-16777216</v>
+                          <v n="CanonicalName">"Font-Standard"</v>
+                          <v n="FontName">"Arial"</v>
+                          <v n="FontSize">12</v>
+                          <o n="NamedColor" t="NamedStyleColor">
+                            <v n="Color">-16777216</v>
+                            <v n="CanonicalName">"Font-Default-Color"</v>
+                          </o>
+                        </o>
+                      </l>
+                    </o>
+                    <o>
+                      <v n="Id">550940142L</v>
+                      <v n="Value">55</v>
+                    </o>
+                    <o>
+                      <v n="Id">1473355128L</v>
+                      <v n="Value">174</v>
+                    </o>
+                    <o>
+                      <v n="Id">493260384L</v>
+                      <v n="Value">4294967295U</v>
+                    </o>
+                    <o>
+                      <v n="Id">135947015L</v>
+                      <v n="Value">4278190080U</v>
+                    </o>
+                    <o>
+                      <v n="Id">571893170L</v>
+                      <v n="Value">"For controlling coupled movement"</v>
+                    </o>
+                    <o>
+                      <v n="Id">2597686782L</v>
+                      <v n="Value">false</v>
+                    </o>
+                    <o>
+                      <v n="Id">823443203L</v>
+                      <v n="Value">"48"</v>
+                    </o>
+                    <o>
+                      <v n="Id">3438453433L</v>
+                      <v n="Value">"49"</v>
+                    </o>
+                  </l>
+                </o>
+                <v n="VisualElementName">"GroupBox"</v>
+                <v n="VisualElementTypeName">"VisuFbGroupBox"</v>
+                <v n="VisualElementIsRectangle">true</v>
+                <v n="VisualElementIdentifier">"GenElemInst_17"</v>
+                <n n="VisualElementOfflinePaintCommands" />
+                <n n="VisualElementFrameInformation" />
+                <d n="VisualElementInputActions" t="Hashtable" />
+                <v n="VisualElementIdentification">{f264e974-6d88-4d16-b8ec-bf883fa180ea}</v>
+                <v n="VisualElementOwningObjectGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+                <a n="LMGuids" et="Guid" />
+                <d n="SubElements" t="Hashtable" />
+                <v n="VisualElementId">14</v>
+                <l n="UserManagementAccessRights" t="ArrayList" />
+              </o>
+            </l>
+            <v n="BackgroundBitmapId">""</v>
+            <v n="BackgroundColor">16777215</v>
+            <o n="Background" t="BackgroundSettings">
+              <n n="BgGradient" />
+              <n n="BgNamedColor" />
+              <v n="BgBmpId">""</v>
+              <v n="BgUseBmp">false</v>
+              <v n="BgColor">false</v>
+              <v n="BgUseColor">16777215</v>
+              <v n="BgUseGradient">false</v>
+            </o>
+          </o>
+          <o n="GeneratedLMMDescriptions" t="GeneratedLanguageModelEntriesData">
+            <o n="GeneratedVisuFbDescription" t="GenericFbDescription">
+              <d n="FbMethods" t="CaseInsensitiveHashtable_1" ckt="String" cvt="Guid">
+                <v>HasVisibilityAccess</v>
+                <v>85b4f8fb-25ec-4ca3-984d-32dfaf78650b</v>
+                <v>ContainsPoint</v>
+                <v>92f1cbb2-43b0-4e70-8878-17788e5c04ba</v>
+                <v>HasInputAccess</v>
+                <v>62f514d5-9083-4d84-8fba-5c6e145c08de</v>
+                <v>HasInputAccessIntern</v>
+                <v>786a1a4f-0c2d-4ac1-ae7a-9fec33f13c58</v>
+                <v>GetTooltip</v>
+                <v>e21bbbea-e3ad-46bf-b491-d675d3fb221a</v>
+                <v>GetDialogInterfaceSize</v>
+                <v>89e431f0-c5cd-40d1-be8c-21cae5b6c826</v>
+                <v>GetUpdateRects</v>
+                <v>9dee81d3-0383-42b8-9c7b-bca0f26ce0f4</v>
+                <v>GetNamespace</v>
+                <v>ebeded27-c39e-45c2-abb6-7be8d5bba3a7</v>
+                <v>SetResult</v>
+                <v>721856d6-32cc-4442-86d8-db48d87987b4</v>
+                <v>GetTranslator</v>
+                <v>84573511-2c8e-49ab-be42-f3b3e7378d16</v>
+                <v>Update</v>
+                <v>d1f0a0c7-c8e4-4fd0-b1db-e31cf4ee2564</v>
+                <v>SetClientData</v>
+                <v>5e3b6976-8ff5-43f1-9804-2c37d091fabf</v>
+                <v>HasVisibilityAccessIntern</v>
+                <v>08f33ecf-421b-4237-bf38-c762f2dc61fc</v>
+                <v>GetInstance</v>
+                <v>d64bad8b-9c68-4f8d-a56b-8c0517f4fb84</v>
+                <v>GetClientData</v>
+                <v>52118559-74e1-41cd-86a2-9107d33a3522</v>
+                <v>Paint</v>
+                <v>873669a1-e927-4341-ae83-2655b9e797a0</v>
+                <v>GetElementArray</v>
+                <v>6248db5a-4a8d-42ad-9d77-ef69539934e1</v>
+                <v>SetVisuFlagsInternal</v>
+                <v>53c649f8-350f-489d-9291-0d01950ce4a8</v>
+                <v>GetText</v>
+                <v>e27087b7-d766-427b-8f87-8ec52c5e2927</v>
+                <v>GetTextProperties</v>
+                <v>93b735c8-e145-4ce7-b2ff-9d37f7874a70</v>
+                <v>Initialize</v>
+                <v>1e858594-40da-4580-84d1-13e00da0fdb7</v>
+                <v>Destruct</v>
+                <v>fc7ec75a-3ec6-4e81-9c77-300e8ff776a6</v>
+                <v>SetStaticState</v>
+                <v>2e5c3432-aae7-4fd3-bc66-d9ea2812999b</v>
+                <v>GetSurroundingRect</v>
+                <v>8a31dda5-861b-4716-81fb-d7043cf69025</v>
+                <v>GetResult</v>
+                <v>0947a843-0ecb-4cc7-b0c7-8752591810e2</v>
+                <v>GetLocalUsergroup</v>
+                <v>0bcf6076-f692-4d6a-8e87-96ce1cf714c4</v>
+                <v>GetName</v>
+                <v>3a0e48b8-7559-46b9-8df1-12de35ff1d8b</v>
+                <v>GetSize</v>
+                <v>00c4755b-d172-4a11-9203-90dbace7cefa</v>
+                <v>SetDialogInterface</v>
+                <v>b6ceb84d-a366-43fe-934f-901d4b05b3af</v>
+                <v>FB_Reinit</v>
+                <v>884c2fa1-6bf8-4c07-aaff-3ceae1d76d2c</v>
+                <v>FB_Exit</v>
+                <v>c4d342ae-933f-4925-bbf3-976a8f0da075</v>
+                <v>GetInitializeVersion</v>
+                <v>e6812d91-d21c-4a79-ad83-0b8277d39724</v>
+                <v>GetDialogInterface</v>
+                <v>b1ecd61a-0908-44fa-bdde-94e37052d466</v>
+                <v>GetElementIdArray</v>
+                <v>d71a085a-4a85-4228-ba89-c16a28c7c9ed</v>
+                <v>HandleInput</v>
+                <v>15705ed1-cd3e-49b1-8c5b-c7fc85804d8b</v>
+                <v>ElementInfo</v>
+                <v>7b927244-66c8-451c-aa4f-27bc8d58f5e8</v>
+              </d>
+              <v n="FbName">"NotImportant"</v>
+              <v n="FbGuid">{94c9a656-b0ea-44da-b7d8-a5b59824712a}</v>
+            </o>
+            <v n="GeneratedGlobalVisuVarsGuid">{1bb939c5-4cbd-4f78-bad7-a021afaf8efb}</v>
+            <v n="GeneratedGlobalTheVisuVarlistGuid">{2238a02a-200d-4cce-878f-dfb16ad01e8f}</v>
+            <v n="GeneratedGlobalVisuConstants">{757dbf9d-f8b0-472c-848c-d3c44725f9e2}</v>
+            <d n="GeneratedAllElementsEntries" t="Hashtable" />
+            <o n="VisuRegDesc" t="GenericFbDescription">
+              <d n="FbMethods" t="CaseInsensitiveHashtable_1" ckt="String" cvt="Guid">
+                <v>FB_Init</v>
+                <v>09f9f66d-1493-4b07-8e45-51f30659e100</v>
+                <v>FB_Exit</v>
+                <v>2b5aeb6f-77c8-49a9-8d09-c21bf89295a8</v>
+                <v>FB_Reinit</v>
+                <v>3ef814d9-b188-459a-9a9c-b3e4b729e79b</v>
+              </d>
+              <v n="FbName">"NotImportant"</v>
+              <v n="FbGuid">{da6140ea-70bb-4046-94a4-2729f3ad4694}</v>
+            </o>
+            <v n="VisuRegisterGvl">{9ef04dab-302c-4231-9785-ec4c8cf2670b}</v>
+            <n n="SettingsPou" />
+            <n n="MemManPou" />
+            <o n="InputsPou" t="GenericFbDescription">
+              <d n="FbMethods" t="CaseInsensitiveHashtable_1" ckt="String" cvt="Guid">
+                <v>ExecuteLooseCapture</v>
+                <v>ed3953d5-a3da-4e16-93b0-1b41bf2d75c2</v>
+                <v>ExecuteMouseDblClick</v>
+                <v>5ed444ec-47e8-451a-b795-f55ed1391853</v>
+                <v>ExecuteMouseDown</v>
+                <v>8f81ddde-d14f-4019-b6cc-32c636150d7c</v>
+                <v>ExecuteMouseUp</v>
+                <v>914615d6-da58-4151-a75e-09ada2579a8d</v>
+                <v>GetElementInfo</v>
+                <v>e7974b57-a4ad-4e68-a446-805492edc7bb</v>
+                <v>abstrGetDefaultCursor</v>
+                <v>4c9f3090-cac3-4fe0-889d-3daa86c58cae</v>
+                <v>ExecuteDialogClosed</v>
+                <v>ad314d11-08ae-40b5-876b-e2a041490c89</v>
+                <v>ExecuteKeyUp</v>
+                <v>fc964e15-cf57-4de2-8c73-1ebdc8834f6b</v>
+                <v>ExecuteKeyDown</v>
+                <v>f4490365-b202-4bcf-992d-7e6dcdf79368</v>
+                <v>ExecuteMouseMove</v>
+                <v>9120027b-638d-4da2-9359-781d7ece022c</v>
+                <v>Initialize</v>
+                <v>de832641-60fc-4f70-a9c3-51b26fb85d5b</v>
+                <v>ExecuteMouseEnter</v>
+                <v>a3026381-b15d-46c9-a2f7-1bf5e9a82a64</v>
+                <v>ExecuteMouseLeave</v>
+                <v>d23a4ea1-efa5-4a15-b73b-d13995ea71ff</v>
+                <v>ExecuteMouseClick</v>
+                <v>1807a090-427c-4b73-9abc-d8470c87c0e6</v>
+              </d>
+              <v n="FbName">"NotImportant"</v>
+              <v n="FbGuid">{b37bd557-f36a-4e6f-87cd-500aaf3b219b}</v>
+            </o>
+            <v n="DialogDut">{7a730536-41c2-444c-9370-045531962e12}</v>
+          </o>
+          <v n="LastUsedIdForIdentifier">22</v>
+          <o n="TextDocument" t="TextDocument">
+            <a n="TextLines" cet="TextLine">
+              <o>
+                <v n="Id">2L</v>
+                <n n="Tag" />
+                <v n="Text">"VAR_IN_OUT"</v>
+              </o>
+              <o>
+                <v n="Id">3L</v>
+                <n n="Tag" />
+                <v n="Text">"	Gantry	:	HOMS_Gantry;"</v>
+              </o>
+              <o>
+                <v n="Id">1L</v>
+                <n n="Tag" />
+                <v n="Text">"END_VAR"</v>
+              </o>
+            </a>
+          </o>
+          <v n="GvlCreated">false</v>
+          <n n="LMEntry" />
+          <v n="ProfileCompatibilityId">4140216668L</v>
+          <v n="LMVerMinor">0</v>
+          <v n="LMVerMajor">1</v>
+          <o n="Hotkeys" t="HotkeyConfiguration">
+            <v n="IdMin">481037385728L</v>
+            <v n="IdMax">549755813887L</v>
+            <v n="Id">481037385728L</v>
+            <v n="IdMask">549754765312L</v>
+            <v n="IdStep">1048576L</v>
+            <l2 n="Inputs" />
+          </o>
+        </o>
+      </Data>
+      <TypeList>
+        <Type n="ArrayList">System.Collections.ArrayList</Type>
+        <Type n="BackgroundSettings">{1038f12c-dd4b-4f96-87a3-a350fe8f3552}</Type>
+        <Type n="BasicTypeNode">{f7e1e748-ea0f-4fcb-b563-94837ee17e8d}</Type>
+        <Type n="Boolean">System.Boolean</Type>
+        <Type n="CaseInsensitiveHashtable">{02a85e84-ef2d-46fc-93f2-acb0bbff3eda}</Type>
+        <Type n="CaseInsensitiveHashtable_1">{7df88604-7ac5-4e36-91c4-55e4fdad3e68}</Type>
+        <Type n="ComplexInput">{1de566f6-72a7-494c-9353-9a418172c96e}</Type>
+        <Type n="DynamicArrayNode">{6c16f79c-dd98-4c29-b3ba-7042e3055542}</Type>
+        <Type n="GeneratedLanguageModelEntriesData">{703465dc-4679-4ff2-bcc3-c57d0a204da3}</Type>
+        <Type n="GenericFbDescription">{40d6dd8d-dfd0-493a-8e29-c9a35e1e6539}</Type>
+        <Type n="GenericVisualElem">{f86c2928-8614-4cca-824b-e819ac4d58c4}</Type>
+        <Type n="Guid">System.Guid</Type>
+        <Type n="Hashtable">System.Collections.Hashtable</Type>
+        <Type n="HotkeyConfiguration">{6b108d46-58af-4e41-a3f4-174d8f160cc4}</Type>
+        <Type n="Int16">System.Int16</Type>
+        <Type n="Int32">System.Int32</Type>
+        <Type n="Int64">System.Int64</Type>
+        <Type n="NamedStyleColor">{fa491db2-51ff-4bc1-9cd0-ce8c94ff6216}</Type>
+        <Type n="NamedStyleFont">{9e842eb2-1463-4af2-b605-4fbb17044f94}</Type>
+        <Type n="String">System.String</Type>
+        <Type n="StructuredTypeNode">{503c5b2e-e80e-4ee7-ae00-c5b93a62b1aa}</Type>
+        <Type n="TextDocument">{f3878285-8e4f-490b-bb1b-9acbb7eb04db}</Type>
+        <Type n="TextLine">{a5de0b0b-1cb5-4913-ac21-9d70293ec00d}</Type>
+        <Type n="TypeClass">{16f7aa24-038f-444e-9d81-b001bc091d35}</Type>
+        <Type n="TypeNodeAttributes2">{c1464dbe-c10d-4717-be8f-63efe8638434}</Type>
+        <Type n="TypeNodeType">{b12a9636-e818-4598-ae0d-fb6a2446102c}</Type>
+        <Type n="UInt32">System.UInt32</Type>
+        <Type n="UInt64">System.UInt64</Type>
+        <Type n="VisualElemCollection">{ef9d0b20-c96e-48db-b361-2ded4063150e}</Type>
+        <Type n="VisualElemList">{f285c9a3-7019-446b-b98c-ccec3a0af8fa}</Type>
+        <Type n="VisualElemMember">{c694e3a2-5c0b-4177-ab35-cb06bd5a6a02}</Type>
+        <Type n="VisualElemMemberCollection">{a4b83bea-3742-489c-9fe8-d96d68dba7ab}</Type>
+        <Type n="VisualElemMemberList">{17e26cd1-bb9b-47fe-a3d5-18fcd63b9c96}</Type>
+        <Type n="VisualObject">{f18bec89-9fef-401d-9953-2f11739a6808}</Type>
+      </TypeList>
+    </XmlArchive>
+  </Visu>
+</TcPlcObject>
