@@ -7,11 +7,11 @@
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>HOMS_XRT_PLC</Name>
     <ProgramVersion>3.1.4020.4</ProgramVersion>
-    <Application>{e2afe066-51fe-4a04-82c8-b3b36a96f66e}</Application>
-    <TypeSystem>{80410f3f-c24c-4498-adfe-a8f4099c6e9b}</TypeSystem>
-    <Implicit_Task_Info>{6369d2a6-e754-428b-adf9-c3fd6685371b}</Implicit_Task_Info>
-    <Implicit_KindOfTask>{434b7531-3ad6-4e09-9b5e-558ebc6146b7}</Implicit_KindOfTask>
-    <Implicit_Jitter_Distribution>{ca248f6b-856b-45a4-a865-35d66cbc09b2}</Implicit_Jitter_Distribution>
+    <Application>{6782d19e-49e6-4e53-a280-fb39675852df}</Application>
+    <TypeSystem>{bcee03c3-6843-469b-b208-f02b1b0e970f}</TypeSystem>
+    <Implicit_Task_Info>{33acdab4-7164-4a43-b80e-435504d1638e}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{b7fcfe33-57a5-4431-9044-fff88d5a1a73}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{a7be9a3a-c180-4c55-9ac6-625deb645db5}</Implicit_Jitter_Distribution>
     <LibraryReferences>{6a9b97b5-70a7-4994-bdd9-b8b413673c84}</LibraryReferences>
     <SccProjectName>Svn</SccProjectName>
     <SccProvider>SubversionScc</SccProvider>
