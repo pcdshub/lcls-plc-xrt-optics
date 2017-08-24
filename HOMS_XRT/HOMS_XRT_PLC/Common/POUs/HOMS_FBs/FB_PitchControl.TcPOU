@@ -73,7 +73,7 @@ VAR
 	rtHalt: R_TRIG;
 END_VAR
 VAR CONSTANT
-	cPiezoRange	:	REAL := 60; //90um of stroke to the piezo
+	cPiezoRange	:	REAL := 60; // 90um of stroke to the piezo, which means a 180urad stroke...
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* HOMS Pitch Control
