@@ -38,7 +38,6 @@ VAR
 	fPiezoBias: LREAL := 60;
 	fScale: REAL := -60;
 	tonPiezoDone: TON := (PT:=T#2S);
-	rSettledRange : REAL := 1;
 	tonPiezoLimited: TON := (PT:=T#500MS);
 	xVoltageLimited: BOOL;
 	ftEnPos	:	F_TRIG;
@@ -167,7 +166,7 @@ ELSE
 	
 END_IF
 
-tonPiezoDone.IN := WithinRange(ValA:=iq_Piezo.rActPos, Center:=iq_Piezo.rReqAbsPos, Range:=rSettledRange, Offset:=0) 
+tonPiezoDone.IN := WithinRange(ValA:=iq_Piezo.rActPos, Center:=iq_Piezo.rReqAbsPos, Range:=iq_Piezo.rPiezoDmovRange, Offset:=0) 
 					AND NOT rtStartMove.Q; //rtStartMove interrupts the timer, resetting it
 tonPiezoDone();
 
@@ -215,9 +214,9 @@ xFirstPass := FALSE;]]></ST>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">true</v>
                               <v n="Boolean">false</v>
@@ -227,13 +226,11 @@ xFirstPass := FALSE;]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
-                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="ContainsExtensibleInputs">false</v>
-                          <v n="ProvidesSTSnippet">false</v>
                           <v n="BoxType">"FB_CTRL_PI"</v>
                           <o n="Instance" t="Operand">
                             <v n="Operand">"fbPI"</v>
@@ -242,9 +239,9 @@ xFirstPass := FALSE;]]></ST>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
                             <o n="Flags" t="Flags">
-                              <v n="Extensible">false</v>
                               <v n="Flags">0</v>
                               <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
                             </o>
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
@@ -261,9 +258,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -277,9 +274,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -293,9 +290,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -309,9 +306,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">true</v>
                                 <v n="Boolean">false</v>
@@ -321,9 +318,9 @@ xFirstPass := FALSE;]]></ST>
                             </l2>
                           </o>
                           <o n="Flags" t="Flags">
-                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">true</v>
+                            <v n="Extensible">false</v>
                           </o>
                           <n n="InputFlags" />
                           <l2 n="InputItems">
@@ -335,9 +332,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -354,9 +351,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -373,9 +370,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -385,8 +382,6 @@ xFirstPass := FALSE;]]></ST>
                               <v n="Id">12L</v>
                             </o>
                             <o t="BoxTreeBox">
-                              <v n="ContainsExtensibleInputs">false</v>
-                              <v n="ProvidesSTSnippet">false</v>
                               <v n="BoxType">"OR"</v>
                               <o n="Instance" t="Operand">
                                 <n n="Operand" />
@@ -395,9 +390,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -410,20 +405,20 @@ xFirstPass := FALSE;]]></ST>
                                 </l2>
                               </o>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <l2 n="InputFlags" cet="Flags">
                                 <o>
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">1</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <o>
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                               </l2>
                               <l2 n="InputItems" cet="BoxTreeOperand">
@@ -435,9 +430,9 @@ xFirstPass := FALSE;]]></ST>
                                     <v n="SymbolComment">""</v>
                                     <v n="Address">""</v>
                                     <o n="Flags" t="Flags">
-                                      <v n="Extensible">false</v>
                                       <v n="Flags">0</v>
                                       <v n="Fixed">true</v>
+                                      <v n="Extensible">false</v>
                                     </o>
                                     <v n="LValue">false</v>
                                     <v n="Boolean">false</v>
@@ -454,9 +449,9 @@ xFirstPass := FALSE;]]></ST>
                                     <v n="SymbolComment">""</v>
                                     <v n="Address">""</v>
                                     <o n="Flags" t="Flags">
-                                      <v n="Extensible">false</v>
                                       <v n="Flags">0</v>
                                       <v n="Fixed">true</v>
+                                      <v n="Extensible">false</v>
                                     </o>
                                     <v n="LValue">false</v>
                                     <v n="Boolean">false</v>
@@ -482,6 +477,8 @@ xFirstPass := FALSE;]]></ST>
                               <n n="EN" />
                               <n n="ENO" />
                               <n n="STSnippet" />
+                              <v n="ContainsExtensibleInputs">false</v>
+                              <v n="ProvidesSTSnippet">false</v>
                               <v n="Id">15L</v>
                             </o>
                             <o t="BoxTreeOperand">
@@ -492,9 +489,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -511,9 +508,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -530,9 +527,9 @@ xFirstPass := FALSE;]]></ST>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
                                 <o n="Flags" t="Flags">
-                                  <v n="Extensible">false</v>
                                   <v n="Flags">0</v>
                                   <v n="Fixed">true</v>
+                                  <v n="Extensible">false</v>
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
@@ -582,6 +579,8 @@ xFirstPass := FALSE;]]></ST>
                           <n n="EN" />
                           <n n="ENO" />
                           <n n="STSnippet" />
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
                           <v n="Id">3L</v>
                         </o>
                         <v n="Id">27L</v>

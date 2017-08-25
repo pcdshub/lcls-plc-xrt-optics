@@ -37,6 +37,13 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[54]), destAddr:=ADR(HOMS3_YGantry.SAxis.rTweak
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[56]), destAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Axis.rReqAbsPos));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[58]), destAddr:=ADR(HOMS3_Pitch.Axis.rTweak), n:=SIZEOF(HOMS3_Pitch.Stepper.rTweak));
 
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[60]), destAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[62]), destAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[64]), destAddr:=ADR(HOMS2_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS2_Pitch.Stepper.rStepperDmovRange));
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[66]), destAddr:=ADR(HOMS2_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS2_Pitch.Piezo.rPiezoDmovRange));
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[68]), destAddr:=ADR(HOMS3_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS3_Pitch.Stepper.rStepperDmovRange));
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[70]), destAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS3_Pitch.Piezo.rPiezoDmovRange));
+
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[140]), destAddr:=ADR(HOMS1_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS1_Pitch.Piezo.rReqVoltage));
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[142]), destAddr:=ADR(HOMS2_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS2_Pitch.Piezo.rReqVoltage));
 ]]></ST>
@@ -44,6 +51,10 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[58]), destAddr:=ADR(HOMS3_Pitch.Axis.rTweak), 
     <LineIds Name="p_ModbusRx_PLCMemory">
       <LineId Id="30" Count="18" />
       <LineId Id="55" Count="10" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="71" Count="1" />
+      <LineId Id="76" Count="2" />
+      <LineId Id="70" Count="0" />
       <LineId Id="49" Count="2" />
       <LineId Id="26" Count="0" />
     </LineIds>
