@@ -36,7 +36,6 @@ VAR
 		tonStepperHold	:	TON := (PT := T#100MS); //Timer to hold stepper position while the system relaxes
 		FirstPass	:	BOOL := TRUE; //set false after first pass, used for initializations
 		Coarse50PiezoMove	:	BOOL;
-		rSettledRange	:	REAL := 1;
 		OriginalPosRequest: REAL;
 		//PTP
 		/////////////////////////
@@ -224,7 +223,7 @@ CASE PC_State OF
 			Drive.fPosition := lrActPos;
 			xLimitHit	:= TRUE; //set this flag here.
 		END_IF
-		tonStepperHold.IN := WithinRange(ValA:=LREAL_TO_REAL(lrActPos), Center:=rSetpoint, Range:=rSettledRange, Offset:=0);
+		tonStepperHold.IN := WithinRange(ValA:=LREAL_TO_REAL(lrActPos), Center:=rSetpoint, Range:=Pitch.Stepper.rStepperDmovRange, Offset:=0);
 		tonStepperHold(); //call this here to reset Q just below on first cycle
 		//If the coarse move is complete, finish position correction with the piezo
 		IF tonStepperHold.Q  OR ftLimitSwitch.Q THEN

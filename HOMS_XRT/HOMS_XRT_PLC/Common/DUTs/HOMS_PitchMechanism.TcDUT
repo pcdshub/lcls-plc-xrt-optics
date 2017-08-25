@@ -10,6 +10,7 @@ STRUCT
 	(* Soft limits, egu urad *)
 	ReqPosLimHi	:	REAL;
 	ReqPosLimLo	:	REAL;
+
 	
 	(* Hard limits, egu INC *)
 	(* These are discovered during installation, and represent encoder ticks, unbiased *)
