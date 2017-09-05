@@ -49,14 +49,29 @@ HOMS3_Pitch.Piezo.xEnable:=mb_Output_Coils[88];
 HOMS3_Pitch.Axis.xStop:=mb_Output_Coils[89];
 HOMS3_XGantry.xUncouple:=mb_Output_Coils[90];
 HOMS3_YGantry.xUncouple:=mb_Output_Coils[91];
-
+HOMS1_XGantry.PAxis.xReset := mb_Output_Coils[92];
+HOMS1_YGantry.PAxis.xReset := mb_Output_Coils[93];
+HOMS1_Pitch.Axis.xReset := mb_Output_Coils[94];
+HOMS2_XGantry.PAxis.xReset := mb_Output_Coils[95];
+HOMS2_YGantry.PAxis.xReset := mb_Output_Coils[96];
+HOMS2_Pitch.Axis.xReset := mb_Output_Coils[97];
+HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
+HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
+HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];
 ]]></ST>
     </Implementation>
     <LineIds Name="p_ModbusRx_OutputCoils">
       <LineId Id="37" Count="26" />
       <LineId Id="97" Count="9" />
       <LineId Id="117" Count="1" />
-      <LineId Id="121" Count="2" />
+      <LineId Id="121" Count="1" />
+      <LineId Id="128" Count="1" />
+      <LineId Id="133" Count="0" />
+      <LineId Id="130" Count="1" />
+      <LineId Id="134" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="132" Count="0" />
+      <LineId Id="135" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="32" Count="0" />
     </LineIds>

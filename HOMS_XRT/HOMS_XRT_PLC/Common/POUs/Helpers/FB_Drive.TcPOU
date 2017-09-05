@@ -5,6 +5,7 @@
 VAR
 	sVersion: STRING:='1.0.2';
 	bMovingRelOrAbs: BOOL;
+	rtReset: R_TRIG;
 END_VAR
 VAR_INPUT
 	En: BOOL;
@@ -129,12 +130,13 @@ END_VAR
 
 bHomed:=Axis.Status.Homed; //Add in DUT_AxisStatus later
 bDone:=FALSE;
+rtReset(CLK:=bReset);
 
 //Update Axis status
 Axis();
 (*Reset*)
 fbReset(
-	Execute:=bReset AND Axis.Status.Error,
+	Execute:=rtReset.Q AND Axis.Status.Error,
 	Axis:=Axis,
 	Done=> ,
 	Busy=> ,
@@ -389,7 +391,9 @@ IF bFirstScan THEN
 END_IF]]></ST>
     </Implementation>
     <LineIds Name="FB_Drive">
-      <LineId Id="3" Count="260" />
+      <LineId Id="3" Count="2" />
+      <LineId Id="386" Count="0" />
+      <LineId Id="6" Count="257" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
