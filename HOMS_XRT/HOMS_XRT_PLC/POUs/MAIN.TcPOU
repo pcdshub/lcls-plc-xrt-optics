@@ -67,6 +67,7 @@ VAR
 	fbMPS_States :  FB_MPS_STATES;
 	M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
 	M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
+	noConsequence	:	BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>

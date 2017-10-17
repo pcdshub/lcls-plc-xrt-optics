@@ -35,7 +35,7 @@
     </DeploymentEvents>
     <CombineIds>false</CombineIds>
     <Released>true</Released>
-    <ProjectVersion>0.2.0</ProjectVersion>
+    <ProjectVersion>1.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
