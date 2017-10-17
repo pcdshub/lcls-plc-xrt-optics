@@ -4,9 +4,9 @@
   <Title>Scope YT Project1</Title>
   <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="eb997f29-a6ce-4d60-892d-e6de29489f4b" LastFocused="131448678039385381" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="2" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
-  &lt;Window Guid="b221edb9-f6c0-4814-8df3-9de8b1f53a1d" LastFocused="131448673801798380" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="1" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
-  &lt;Window Guid="97332cdc-477f-498a-a8da-59f3e238ae5a" LastFocused="131448674781869662" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="eb997f29-a6ce-4d60-892d-e6de29489f4b" LastFocused="131515239559760728" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="2" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="b221edb9-f6c0-4814-8df3-9de8b1f53a1d" LastFocused="131515239397150728" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="1" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="97332cdc-477f-498a-a8da-59f3e238ae5a" LastFocused="131515214165900728" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="e3627557-a720-4c2a-9af0-d310b5d3d828" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="e3627557-a720-4c2a-9af0-d310b5d3d828" Collapsed="0" SelectedControl="eb997f29-a6ce-4d60-892d-e6de29489f4b"&gt;
@@ -113,13 +113,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>569280</IndexOffset>
+                <IndexOffset>1007208</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS1_Pitch.Piezo.rActVoltage</SymbolName>
                 <SymbolComment>Actual voltage</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>10</FileHandle>
+                <FileHandle>1</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -169,13 +169,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>569288</IndexOffset>
+                <IndexOffset>1007216</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS1_Pitch.Piezo.rSetVoltage</SymbolName>
                 <SymbolComment>this parameter is set by the control loop/ voltage mode</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>11</FileHandle>
+                <FileHandle>2</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -260,7 +260,7 @@
                 <SymbolName>Axes.M1 P.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>12</FileHandle>
+                <FileHandle>3</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -319,7 +319,7 @@
         <HexValues>false</HexValues>
       </CursorModule>
       <Operating>
-        <DisplayWidth>400000000</DisplayWidth>
+        <DisplayWidth>580000000</DisplayWidth>
       </Operating>
       <ChartType>XT</ChartType>
       <SortPriority>-1</SortPriority>
@@ -406,13 +406,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>570904</IndexOffset>
+                <IndexOffset>1016640</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS2_Pitch.Piezo.rActVoltage</SymbolName>
                 <SymbolComment>Actual voltage</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>13</FileHandle>
+                <FileHandle>4</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -462,13 +462,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>570912</IndexOffset>
+                <IndexOffset>1016648</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS2_Pitch.Piezo.rSetVoltage</SymbolName>
                 <SymbolComment>this parameter is set by the control loop/ voltage mode</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>14</FileHandle>
+                <FileHandle>5</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -553,7 +553,7 @@
                 <SymbolName>Axes.M2 P.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>15</FileHandle>
+                <FileHandle>6</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -612,7 +612,7 @@
         <HexValues>false</HexValues>
       </CursorModule>
       <Operating>
-        <DisplayWidth>2700000000</DisplayWidth>
+        <DisplayWidth>4200000000</DisplayWidth>
       </Operating>
       <ChartType>XT</ChartType>
       <SortPriority>-1</SortPriority>
@@ -699,13 +699,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>572528</IndexOffset>
+                <IndexOffset>1026072</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS3_Pitch.Piezo.rActVoltage</SymbolName>
                 <SymbolComment>Actual voltage</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>16</FileHandle>
+                <FileHandle>7</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -755,13 +755,13 @@
               <Acquisition>
                 <DataType>REAL32</DataType>
                 <IndexGroup>16448</IndexGroup>
-                <IndexOffset>572536</IndexOffset>
+                <IndexOffset>1026080</IndexOffset>
                 <TargetPort>851</TargetPort>
                 <VariableSize>4</VariableSize>
                 <SymbolName>GVL_Devices.HOMS3_Pitch.Piezo.rSetVoltage</SymbolName>
                 <SymbolComment>this parameter is set by the control loop/ voltage mode</SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>17</FileHandle>
+                <FileHandle>8</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -846,7 +846,7 @@
                 <SymbolName>Axes.M3 P.ActPos</SymbolName>
                 <SymbolComment></SymbolComment>
                 <IsSymbolBased>true</IsSymbolBased>
-                <FileHandle>18</FileHandle>
+                <FileHandle>9</FileHandle>
                 <UseLocalServer>true</UseLocalServer>
                 <AmsNetIdString>5.41.150.248.1.1</AmsNetIdString>
                 <SampleTime>20000</SampleTime>
@@ -905,7 +905,7 @@
         <HexValues>false</HexValues>
       </CursorModule>
       <Operating>
-        <DisplayWidth>100000000</DisplayWidth>
+        <DisplayWidth>580000000</DisplayWidth>
       </Operating>
       <ChartType>XT</ChartType>
       <SortPriority>-1</SortPriority>
