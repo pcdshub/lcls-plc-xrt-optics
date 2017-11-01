@@ -73,6 +73,7 @@ VAR
 END_VAR
 VAR CONSTANT
 	cPiezoRange	:	REAL := 60; // 90um of stroke to the piezo, which means a 180urad stroke...
+    cOperatingRegion : REAL := 0.75; // Only use a fraction of the piezo range before forcing a coarse move    
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* HOMS Pitch Control
@@ -181,8 +182,15 @@ CASE PC_State OF
 		
 	PCM_MoveRequested: 
 		//A move has been requested, is it within range of the piezo?
-		IF WithinRange(ValA:=rSetpoint, Center:=rPrevStepperPos, Range:=cPiezoRange, Offset:=0) THEN
-			//Move is within the nominal range of the piezo
+		IF WithinRange(ValA:=rSetpoint, Center:=rPrevStepperPos, Range:=cPiezoRange, Offset:=0)
+                //Ensure that the piezo is not currently outside the operating range
+                //Otherwise, force a coarse move that will rezero the piezo travel
+	        AND WithinRange(ValA:=Pitch.Piezo.rActVoltage,
+                                Center:=(Pitch.Piezo.LowerVoltage + Pitch.Piezo.UpperVoltage)/2.0,
+                                Range:=cOperatingRegion*(Pitch.Piezo.UpperVoltage - Pitch.Piezo.LowerVoltage)/2.0,
+                                Offset:=0)
+                THEN
+            		//Move is within the nominal range of the piezo
 			fbFormatString.sFormat := 'Within range, fine move %f';
 			fbFormatString.arg1 := F_REAL(rSetpoint);
 			fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
