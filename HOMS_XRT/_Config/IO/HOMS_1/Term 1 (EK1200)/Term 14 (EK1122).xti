@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.32" ClassName="CFlbTermDef" SubType="60">
+	<Box Id="14" Disabled="true" BoxType="60">
+		<Name>__FILENAME__</Name>
+		<Comment>
+			<![CDATA[C:\Users\awallace-a\Source\Repos\HOMS_XRT\HOMS_XRT\_Config\IO\HOMS\Term 1 (EK1200)\Term 14 (EK1122).xti]]>
+		</Comment>
+		<ImageId>114</ImageId>
+		<Xml>Box</Xml>
+		<EtherCAT CycleMBoxPollingTime="0" InfoDataState="false" WdDivider0400="0" WdTime0410="0" DdTime0420="0"/>
+	</Box>
+</TcSmItem>
