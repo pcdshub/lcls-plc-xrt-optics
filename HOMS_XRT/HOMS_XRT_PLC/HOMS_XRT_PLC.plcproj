@@ -101,9 +101,6 @@
     <Compile Include="Common\POUs\Helpers\FB_LimitSwitchState.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\POUs\Helpers\FB_SmoothAxis.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Common\POUs\Helpers\FB_PitchSoftLimits.TcPOU">
       <SubType>Code</SubType>
     </Compile>
