@@ -7,7 +7,7 @@ VAR_IN_OUT
 END_VAR
 VAR_INPUT
 	Velocity : LREAL;
-	ReqAbsPos : LREAL; //A
+	ReqAbsPos : LREAL; //New requested position
 	Enable	:	BOOL; //While true the block will accept new positions and attempt to move to them if they are different
 	Execute	:	BOOL; //Will retry a move if the target position is the same
 END_VAR
@@ -30,7 +30,7 @@ END_VAR
 A. Wallace
 
 Enable means the block will always aquire new positions as they are updated. Execute
-can be used to retry a move.
+can be used to retry a move. Axis must be enabled by a power block.
 *)
 
 
