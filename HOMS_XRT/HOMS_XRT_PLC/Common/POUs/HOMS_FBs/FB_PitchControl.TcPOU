@@ -143,6 +143,34 @@ Now it will be validated against the soft-limits
 		PC_State := PCM_Halt;
 	END_IF
 
+//Check for new position requests, and sanitize
+///////////////////////////////////////////////
+	IF (rLastSetpoint <> Pitch.Axis.rReqAbsPos) THEN
+		//We don't want to initiate any kind of a move if we don't have to.
+		IF 	Pitch.Axis.rReqAbsPos > Pitch.ReqPosLimHi OR Pitch.Axis.rReqAbsPos < Pitch.ReqPosLimLo OR
+			(Pitch.Axis.rReqAbsPos < lrActPos) AND Pitch.Axis.xLoLS OR (Pitch.Axis.rReqAbsPos > lrActPos) AND Pitch.Axis.xHiLS THEN
+			//Requested move is outside of travel limits
+			OriginalPosRequest	:= Pitch.Axis.rReqAbsPos;
+			Pitch.Axis.rReqAbsPos := LIMIT(Pitch.ReqPosLimLo, Pitch.Axis.rReqAbsPos, Pitch.ReqPosLimHi);
+			//Only want to log one warning about a bad position request.
+			IF OriginalPosRequest <> Pitch.Axis.rReqAbsPos THEN
+				//Log a warning
+				fbFormatString.sFormat := 'Pitch req OoR fb (%s), reset within limits, %f';
+				fbFormatString.arg1 := F_STRING(POUName);
+				fbFormatString.arg2 := F_REAL(OriginalPosRequest);
+				//fbFormatString(sOut=>fbLogMessage.i_sMsg);
+				fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+				//fbLogMessage(i_eSevr:= Warning, i_eSubsystem:=gDefaultSubsystem);
+			END_IF
+		END_IF
+		// At this point Pitch.Axis.rReqAbsPos is considered clean and safe, so we pass to a holding variable
+		rSetpoint := Pitch.Axis.rReqAbsPos;
+		//New position request, no longer done.
+		q_xDone := FALSE;
+		q_xBusy	:= TRUE;
+		PC_State := PCM_MoveRequested;
+	END_IF
+	
 //State Machine
 //////////////////////////////////
 CASE PC_State OF
@@ -152,33 +180,8 @@ CASE PC_State OF
 		PC_State := PCM_Standby;
 		
 	PCM_Standby:
-		(* In standby, the piezo 
-		*)
-		IF (rLastSetpoint <> Pitch.Axis.rReqAbsPos) THEN
-			//We don't want to initiate any kind of a move if we don't have to.
-			IF 	Pitch.Axis.rReqAbsPos > Pitch.ReqPosLimHi OR Pitch.Axis.rReqAbsPos < Pitch.ReqPosLimLo OR
-				(Pitch.Axis.rReqAbsPos < lrActPos) AND Pitch.Axis.xLoLS OR (Pitch.Axis.rReqAbsPos > lrActPos) AND Pitch.Axis.xHiLS THEN
-				//Requested move is outside of travel limits
-				OriginalPosRequest	:= Pitch.Axis.rReqAbsPos;
-				Pitch.Axis.rReqAbsPos := LIMIT(Pitch.ReqPosLimLo, Pitch.Axis.rReqAbsPos, Pitch.ReqPosLimHi);
-				//Only want to log one warning about a bad position request.
-				IF OriginalPosRequest <> Pitch.Axis.rReqAbsPos THEN
-					//Log a warning
-					fbFormatString.sFormat := 'Pitch req OoR fb (%s), reset within limits, %f';
-					fbFormatString.arg1 := F_STRING(POUName);
-					fbFormatString.arg2 := F_REAL(OriginalPosRequest);
-					//fbFormatString(sOut=>fbLogMessage.i_sMsg);
-					fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-					//fbLogMessage(i_eSevr:= Warning, i_eSubsystem:=gDefaultSubsystem);
-				END_IF
-			END_IF
-			// At this point Pitch.Axis.rReqAbsPos is considered clean and safe, so we pass to a holding variable
-			rSetpoint := Pitch.Axis.rReqAbsPos;
-			//New position request, no longer done.
-			q_xDone := FALSE;
-			q_xBusy	:= TRUE;
-			PC_State := PCM_MoveRequested;
-		END_IF
+		;
+		
 		
 	PCM_MoveRequested: 
 		//A move has been requested, is it within range of the piezo?
@@ -384,13 +387,14 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
       <LineId Id="397" Count="0" />
       <LineId Id="392" Count="2" />
       <LineId Id="389" Count="0" />
+      <LineId Id="602" Count="1" />
+      <LineId Id="576" Count="0" />
+      <LineId Id="578" Count="23" />
+      <LineId Id="577" Count="0" />
       <LineId Id="57" Count="6" />
       <LineId Id="378" Count="0" />
-      <LineId Id="64" Count="5" />
-      <LineId Id="278" Count="0" />
-      <LineId Id="70" Count="17" />
-      <LineId Id="472" Count="0" />
-      <LineId Id="88" Count="1" />
+      <LineId Id="64" Count="1" />
+      <LineId Id="67" Count="0" />
       <LineId Id="377" Count="0" />
       <LineId Id="90" Count="14" />
       <LineId Id="376" Count="0" />
@@ -428,6 +432,8 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
       <LineId Id="477" Count="0" />
       <LineId Id="186" Count="20" />
       <LineId Id="2" Count="0" />
+      <LineId Id="245" Count="5" />
+      <LineId Id="478" Count="0" />
     </LineIds>
     <LineIds Name="FB_PitchControl.A_ModeSwitch">
       <LineId Id="2" Count="11" />
