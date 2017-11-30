@@ -125,6 +125,9 @@
     <Compile Include="Common\POUs\Helpers\F_PiezoPosition.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\POUs\Helpers\MC_SmoothMover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Common\POUs\Helpers\WithinRange.TcPOU">
       <SubType>Code</SubType>
     </Compile>

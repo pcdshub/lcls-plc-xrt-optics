@@ -48,11 +48,11 @@ VAR
 				rtExecute     : R_TRIG;
 				bRequesting   : BOOL;
 				rSetpoint     : REAL; //Adjusted based on abs pos request or tweaks.
+				mcSmoothMover	:	MC_SmoothMover;
 	
 	//Axis Control Blocks
 	/////////////////////////////
 		fbPiezoControl	:	FB_PiezoControl;
-		fbPitchStepper   :   FB_PTP;
 	
 	
 	//Triggers
@@ -70,6 +70,7 @@ VAR
 	xLimitHit: BOOL;
 	rtPiezoMoveDone: R_TRIG;
 	rtHalt: R_TRIG;
+	bCoarseMoveComplete	:	BOOL; //Set after a coarse move completes, added because coarse moves can be interrupted
 END_VAR
 VAR CONSTANT
 	cPiezoRange	:	REAL := 60; // 90um of stroke to the piezo, which means a 180urad stroke...
@@ -143,6 +144,34 @@ Now it will be validated against the soft-limits
 		PC_State := PCM_Halt;
 	END_IF
 
+//Check for new position requests, and sanitize
+///////////////////////////////////////////////
+	IF (rLastSetpoint <> Pitch.Axis.rReqAbsPos) THEN
+		//We don't want to initiate any kind of a move if we don't have to.
+		IF 	Pitch.Axis.rReqAbsPos > Pitch.ReqPosLimHi OR Pitch.Axis.rReqAbsPos < Pitch.ReqPosLimLo OR
+			(Pitch.Axis.rReqAbsPos < lrActPos) AND Pitch.Axis.xLoLS OR (Pitch.Axis.rReqAbsPos > lrActPos) AND Pitch.Axis.xHiLS THEN
+			//Requested move is outside of travel limits
+			OriginalPosRequest	:= Pitch.Axis.rReqAbsPos;
+			Pitch.Axis.rReqAbsPos := LIMIT(Pitch.ReqPosLimLo, Pitch.Axis.rReqAbsPos, Pitch.ReqPosLimHi);
+			//Only want to log one warning about a bad position request.
+			IF OriginalPosRequest <> Pitch.Axis.rReqAbsPos THEN
+				//Log a warning
+				fbFormatString.sFormat := 'Pitch req OoR fb (%s), reset within limits, %f';
+				fbFormatString.arg1 := F_STRING(POUName);
+				fbFormatString.arg2 := F_REAL(OriginalPosRequest);
+				//fbFormatString(sOut=>fbLogMessage.i_sMsg);
+				fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+				//fbLogMessage(i_eSevr:= Warning, i_eSubsystem:=gDefaultSubsystem);
+			END_IF
+		END_IF
+		// At this point Pitch.Axis.rReqAbsPos is considered clean and safe, so we pass to a holding variable
+		rSetpoint := Pitch.Axis.rReqAbsPos;
+		//New position request, no longer done.
+		q_xDone := FALSE;
+		q_xBusy	:= TRUE;
+		PC_State := PCM_MoveRequested;
+	END_IF
+	
 //State Machine
 //////////////////////////////////
 CASE PC_State OF
@@ -152,33 +181,7 @@ CASE PC_State OF
 		PC_State := PCM_Standby;
 		
 	PCM_Standby:
-		(* In standby, the piezo 
-		*)
-		IF (rLastSetpoint <> Pitch.Axis.rReqAbsPos) THEN
-			//We don't want to initiate any kind of a move if we don't have to.
-			IF 	Pitch.Axis.rReqAbsPos > Pitch.ReqPosLimHi OR Pitch.Axis.rReqAbsPos < Pitch.ReqPosLimLo OR
-				(Pitch.Axis.rReqAbsPos < lrActPos) AND Pitch.Axis.xLoLS OR (Pitch.Axis.rReqAbsPos > lrActPos) AND Pitch.Axis.xHiLS THEN
-				//Requested move is outside of travel limits
-				OriginalPosRequest	:= Pitch.Axis.rReqAbsPos;
-				Pitch.Axis.rReqAbsPos := LIMIT(Pitch.ReqPosLimLo, Pitch.Axis.rReqAbsPos, Pitch.ReqPosLimHi);
-				//Only want to log one warning about a bad position request.
-				IF OriginalPosRequest <> Pitch.Axis.rReqAbsPos THEN
-					//Log a warning
-					fbFormatString.sFormat := 'Pitch req OoR fb (%s), reset within limits, %f';
-					fbFormatString.arg1 := F_STRING(POUName);
-					fbFormatString.arg2 := F_REAL(OriginalPosRequest);
-					//fbFormatString(sOut=>fbLogMessage.i_sMsg);
-					fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-					//fbLogMessage(i_eSevr:= Warning, i_eSubsystem:=gDefaultSubsystem);
-				END_IF
-			END_IF
-			// At this point Pitch.Axis.rReqAbsPos is considered clean and safe, so we pass to a holding variable
-			rSetpoint := Pitch.Axis.rReqAbsPos;
-			//New position request, no longer done.
-			q_xDone := FALSE;
-			q_xBusy	:= TRUE;
-			PC_State := PCM_MoveRequested;
-		END_IF
+		;
 		
 	PCM_MoveRequested: 
 		//A move has been requested, is it within range of the piezo?
@@ -189,8 +192,9 @@ CASE PC_State OF
                                 Center:=(Pitch.Piezo.LowerVoltage + Pitch.Piezo.UpperVoltage)/2.0,
                                 Range:=cOperatingRegion*(Pitch.Piezo.UpperVoltage - Pitch.Piezo.LowerVoltage)/2.0,
                                 Offset:=0)
-                THEN
-            		//Move is within the nominal range of the piezo
+			AND bCoarseMoveComplete
+		THEN
+			//Move is within the nominal range of the piezo
 			fbFormatString.sFormat := 'Within range, fine move %f';
 			fbFormatString.arg1 := F_REAL(rSetpoint);
 			fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
@@ -200,6 +204,7 @@ CASE PC_State OF
 			fbFormatString.sFormat := 'OoR, using stepper %f';
 			fbFormatString.arg1 := F_REAL(rSetpoint);
 			fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+			bCoarseMoveComplete := FALSE;
 			PC_State := PCM_Coarse50Piezo;
 		END_IF
 		
@@ -223,12 +228,18 @@ CASE PC_State OF
 	PCM_CoarseMove: 
 		//With the piezo at a nom 50% extension, move the stepper to requested position
 		IF Drive.bEnabled THEN
-			Drive.fPosition := rSetpoint;
-			Drive.bExecute := TRUE;
+			//Drive.fPosition := rSetpoint;
+			//Drive.bExecute := TRUE;
+			
+			mcSmoothMover.ReqAbsPos := rSetpoint;
+			mcSmoothMover.Enable := TRUE;
 		END_IF
 
 		IF ftLimitSwitch.Q THEN
 			Drive.fPosition := lrActPos;
+			
+			mcSmoothMover.ReqAbsPos := lrActPos;
+			
 			xLimitHit	:= TRUE; //set this flag here.
 		END_IF
 		tonStepperHold.IN := WithinRange(ValA:=LREAL_TO_REAL(lrActPos), Center:=rSetpoint, Range:=Pitch.Stepper.rStepperDmovRange, Offset:=0);
@@ -236,8 +247,9 @@ CASE PC_State OF
 		//If the coarse move is complete, finish position correction with the piezo
 		IF tonStepperHold.Q  OR ftLimitSwitch.Q THEN
 			PC_State := PCM_CoarseMoveCleanup;
-		ELSIF Pitch.Stepper.stStatus.bError OR Drive.bError THEN
+		ELSIF Pitch.Stepper.stStatus.bError OR Drive.bError OR mcSmoothMover.Error THEN
 			Drive.bExecute := FALSE;
+			mcSmoothMover.Enable := FALSE;
 			Pitch.Stepper.xEnable := FALSE;
 			PC_State := PCM_StepperError;
 			//Stepper fb has encountered an error, pass a message to the logger
@@ -250,7 +262,8 @@ CASE PC_State OF
 		Drive.bExecute := FALSE;
 		Pitch.Stepper.xEnable := FALSE;
 		IF Pitch.Stepper.stAxis.Status.Disabled THEN
-			rPrevStepperPos := Drive.fPosition;
+			rPrevStepperPos := mcSmoothMover.ReqAbsPos;
+			bCoarseMoveComplete	:= TRUE;
 			PC_State := PCM_FineMove;
 		END_IF
 
@@ -368,7 +381,13 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
 ////////////////////////////////////////////////
 //bExecute R= Drive.Status.NotMoving AND NOT bRequesting;
 
-
+//MC Smooth Mover
+////////////////////////////////////////////////
+(* You can control an axis with MC blocks other than those in PTP or drive.
+We just use the drive/PTP block to initialize the axis and manage the limit
+switch logic *)
+mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
+	Velocity:=Pitch.Stepper.fVelocity);
 
 ]]></ST>
       </Implementation>
@@ -384,28 +403,39 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
       <LineId Id="397" Count="0" />
       <LineId Id="392" Count="2" />
       <LineId Id="389" Count="0" />
+      <LineId Id="602" Count="1" />
+      <LineId Id="576" Count="0" />
+      <LineId Id="578" Count="23" />
+      <LineId Id="577" Count="0" />
       <LineId Id="57" Count="6" />
       <LineId Id="378" Count="0" />
-      <LineId Id="64" Count="5" />
-      <LineId Id="278" Count="0" />
-      <LineId Id="70" Count="17" />
-      <LineId Id="472" Count="0" />
-      <LineId Id="88" Count="1" />
-      <LineId Id="377" Count="0" />
-      <LineId Id="90" Count="14" />
+      <LineId Id="64" Count="1" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="90" Count="8" />
+      <LineId Id="686" Count="0" />
+      <LineId Id="99" Count="5" />
       <LineId Id="376" Count="0" />
-      <LineId Id="105" Count="15" />
+      <LineId Id="105" Count="3" />
+      <LineId Id="689" Count="0" />
+      <LineId Id="109" Count="11" />
       <LineId Id="375" Count="0" />
-      <LineId Id="121" Count="15" />
+      <LineId Id="121" Count="11" />
+      <LineId Id="679" Count="2" />
+      <LineId Id="133" Count="3" />
+      <LineId Id="684" Count="0" />
+      <LineId Id="682" Count="1" />
       <LineId Id="138" Count="7" />
       <LineId Id="147" Count="0" />
+      <LineId Id="685" Count="0" />
       <LineId Id="357" Count="0" />
       <LineId Id="148" Count="2" />
       <LineId Id="363" Count="1" />
       <LineId Id="366" Count="0" />
       <LineId Id="365" Count="0" />
       <LineId Id="151" Count="0" />
-      <LineId Id="158" Count="12" />
+      <LineId Id="158" Count="3" />
+      <LineId Id="688" Count="0" />
+      <LineId Id="162" Count="8" />
       <LineId Id="374" Count="0" />
       <LineId Id="353" Count="2" />
       <LineId Id="386" Count="0" />
@@ -428,13 +458,18 @@ Drive(bEnable  := Pitch.Stepper.xEnable,
       <LineId Id="477" Count="0" />
       <LineId Id="186" Count="20" />
       <LineId Id="2" Count="0" />
+      <LineId Id="245" Count="5" />
+      <LineId Id="478" Count="0" />
     </LineIds>
     <LineIds Name="FB_PitchControl.A_ModeSwitch">
       <LineId Id="2" Count="11" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_PitchControl.ACT_PTP">
-      <LineId Id="2" Count="24" />
+      <LineId Id="2" Count="22" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="30" Count="3" />
+      <LineId Id="25" Count="1" />
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>

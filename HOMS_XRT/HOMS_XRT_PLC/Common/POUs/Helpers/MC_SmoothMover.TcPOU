@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+  <POU Name="MC_SmoothMover" Id="{49439872-0161-4fd4-9e7f-62bcb9508941}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK MC_SmoothMover
+VAR_IN_OUT
+	Axis	:	AXIS_REF;
+END_VAR
+VAR_INPUT
+	Velocity : LREAL;
+	ReqAbsPos : LREAL; //New requested position
+	Enable	:	BOOL; //While true the block will accept new positions and attempt to move to them if they are different
+	Execute	:	BOOL; //Will retry a move if the target position is the same
+END_VAR
+VAR_OUTPUT
+	Done	:	BOOL;
+	Busy	:	BOOL;
+	Error	:	BOOL;
+END_VAR
+VAR
+	mcMoveAbsolute : ARRAY[1..2] OF MC_MoveAbsolute;
+	iI: INT;
+	imcBlockIndex: INT;
+	ReqAbsPosPrevious	: LREAL;
+	rtExecute: R_TRIG;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Smooth Mover
+2017-8-30
+A. Wallace
+
+Enable means the block will always aquire new positions as they are updated. Execute
+can be used to retry a move. Axis must be enabled by a power block.
+*)
+
+
+rtExecute(CLK:=Execute);
+
+IF ( (ReqAbsPos <> ReqAbsPosPrevious AND Enable) OR rtExecute.Q) THEN
+			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+			imcBlockIndex := imcBlockIndex + 1;
+			IF imcBlockIndex >2 THEN imcBlockIndex := 1; END_IF
+			mcMoveAbsolute[imcBlockIndex].Position := ReqAbsPos;
+			mcMoveAbsolute[imcBlockIndex].Execute := TRUE;
+			ReqAbsPosPrevious := ReqAbsPos;
+		ELSIF mcMoveAbsolute[imcBlockIndex].Done OR 
+				mcMoveAbsolute[imcBlockIndex].CommandAborted OR 
+				mcMoveAbsolute[imcBlockIndex].Busy OR 
+				mcMoveAbsolute[imcBlockIndex].Error THEN
+			mcMoveAbsolute[imcBlockIndex].Execute := FALSE;
+		END_IF
+		
+FOR iI := 1 TO 2 DO
+	mcMoveAbsolute[iI](Axis := Axis, Velocity:=Velocity, BufferMode:=MC_Aborting);
+END_FOR
+
+Error := mcMoveAbsolute[1].Error OR mcMoveAbsolute[2].Error;
+Done S= mcMoveAbsolute[1].Done OR mcMoveAbsolute[2].Done;
+Busy := mcMoveAbsolute[1].Busy OR mcMoveAbsolute[2].Busy;
+Done R= Busy OR Error;]]></ST>
+    </Implementation>
+    <LineIds Name="MC_SmoothMover">
+      <LineId Id="45" Count="3" />
+      <LineId Id="51" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="42" Count="2" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="10" Count="10" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="27" Count="3" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="60" Count="1" />
+      <LineId Id="63" Count="1" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
