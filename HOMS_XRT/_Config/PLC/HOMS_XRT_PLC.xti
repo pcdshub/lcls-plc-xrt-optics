@@ -5027,9 +5027,270 @@ External Setpoint Generation:
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x01010011"/>
-				<TaskPouOid Prio="3" OTCID="#x01010013"/>
 				<TaskPouOid Prio="20" OTCID="#x01010012"/>
+				<TaskPouOid Prio="3" OTCID="#x01010013"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
+	<Mappings>
+		<OwnerA Name="HOMS_XRT_PLC Instance">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 13 (EL2008)">
+				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_IN" VarB="Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_OUT" VarB="Channel 1^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Interface Box (EK1100)^M1-P1-Piezo (EL6001)">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[1]" VarB="COM Inputs^Data In 1"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[2]" VarB="COM Inputs^Data In 2"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[3]" VarB="COM Inputs^Data In 3"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[5]" VarB="COM Inputs^Data In 5"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[7]" VarB="COM Inputs^Data In 7"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[12]" VarB="COM Outputs^Data Out 12"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[13]" VarB="COM Outputs^Data Out 13"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[14]" VarB="COM Outputs^Data Out 14"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[15]" VarB="COM Outputs^Data Out 15"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[16]" VarB="COM Outputs^Data Out 16"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[17]" VarB="COM Outputs^Data Out 17"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[18]" VarB="COM Outputs^Data Out 18"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[19]" VarB="COM Outputs^Data Out 19"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[1]" VarB="COM Outputs^Data Out 1"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[20]" VarB="COM Outputs^Data Out 20"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[21]" VarB="COM Outputs^Data Out 21"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[2]" VarB="COM Outputs^Data Out 2"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[3]" VarB="COM Outputs^Data Out 3"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[4]" VarB="COM Outputs^Data Out 4"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[5]" VarB="COM Outputs^Data Out 5"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[6]" VarB="COM Outputs^Data Out 6"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[7]" VarB="COM Outputs^Data Out 7"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[8]" VarB="COM Outputs^Data Out 8"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[9]" VarB="COM Outputs^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-P1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Interface Box (EK1100)^M2-P1-Piezo (EL6001)">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[1]" VarB="COM Inputs^Data In 1"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[2]" VarB="COM Inputs^Data In 2"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[3]" VarB="COM Inputs^Data In 3"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[5]" VarB="COM Inputs^Data In 5"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[7]" VarB="COM Inputs^Data In 7"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[12]" VarB="COM Outputs^Data Out 12"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[13]" VarB="COM Outputs^Data Out 13"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[14]" VarB="COM Outputs^Data Out 14"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[15]" VarB="COM Outputs^Data Out 15"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[16]" VarB="COM Outputs^Data Out 16"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[17]" VarB="COM Outputs^Data Out 17"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[18]" VarB="COM Outputs^Data Out 18"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[19]" VarB="COM Outputs^Data Out 19"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[1]" VarB="COM Outputs^Data Out 1"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[20]" VarB="COM Outputs^Data Out 20"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[21]" VarB="COM Outputs^Data Out 21"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[2]" VarB="COM Outputs^Data Out 2"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[3]" VarB="COM Outputs^Data Out 3"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[4]" VarB="COM Outputs^Data Out 4"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[5]" VarB="COM Outputs^Data Out 5"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[6]" VarB="COM Outputs^Data Out 6"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[7]" VarB="COM Outputs^Data Out 7"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[8]" VarB="COM Outputs^Data Out 8"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[9]" VarB="COM Outputs^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-P1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-B1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Interface Box (EK1100)^M3-P1-Piezo (EL6001)">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[1]" VarB="COM Inputs^Data In 1"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[2]" VarB="COM Inputs^Data In 2"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[3]" VarB="COM Inputs^Data In 3"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[5]" VarB="COM Inputs^Data In 5"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[7]" VarB="COM Inputs^Data In 7"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[12]" VarB="COM Outputs^Data Out 12"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[13]" VarB="COM Outputs^Data Out 13"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[14]" VarB="COM Outputs^Data Out 14"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[15]" VarB="COM Outputs^Data Out 15"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[16]" VarB="COM Outputs^Data Out 16"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[17]" VarB="COM Outputs^Data Out 17"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[18]" VarB="COM Outputs^Data Out 18"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[19]" VarB="COM Outputs^Data Out 19"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[1]" VarB="COM Outputs^Data Out 1"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[20]" VarB="COM Outputs^Data Out 20"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[21]" VarB="COM Outputs^Data Out 21"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[2]" VarB="COM Outputs^Data Out 2"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[3]" VarB="COM Outputs^Data Out 3"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[4]" VarB="COM Outputs^Data Out 4"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[5]" VarB="COM Outputs^Data Out 5"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[6]" VarB="COM Outputs^Data Out 6"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[7]" VarB="COM Outputs^Data Out 7"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[8]" VarB="COM Outputs^Data Out 8"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P3_stComOut^D[9]" VarB="COM Outputs^Data Out 9"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-P1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-X2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 P">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 X1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_XGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 X2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 Y1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_YGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 Y2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_YGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 P">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS2_Pitch.Stepper.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 X1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS2_XGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 X2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS2_XGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 Y1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS2_YGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 Y2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS2_YGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M3 P">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.Stepper.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS3_Pitch.Stepper.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M3 X1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS3_XGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M3 X2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS3_XGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M3 Y1">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS3_YGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M3 Y2">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS3_YGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>
