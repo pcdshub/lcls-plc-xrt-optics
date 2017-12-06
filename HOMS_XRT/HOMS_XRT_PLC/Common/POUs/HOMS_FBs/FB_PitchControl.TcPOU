@@ -166,6 +166,8 @@ Now it will be validated against the soft-limits
 		END_IF
 		// At this point Pitch.Axis.rReqAbsPos is considered clean and safe, so we pass to a holding variable
 		rSetpoint := Pitch.Axis.rReqAbsPos;
+		//Set the previously requested position here
+		rLastSetpoint := rSetpoint;
 		//New position request, no longer done.
 		q_xDone := FALSE;
 		q_xBusy	:= TRUE;
@@ -299,8 +301,7 @@ CASE PC_State OF
 		END_IF
 		
 	PCM_Done:
-		//Set the previously requested position here
-		rLastSetpoint := rSetpoint;
+		
 		Pitch.Axis.rReqAbsPos := rLastSetpoint; //this might be kind of funky
 		xLimitHit := FALSE;
 		//Indicate we're done
@@ -405,7 +406,9 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
       <LineId Id="389" Count="0" />
       <LineId Id="602" Count="1" />
       <LineId Id="576" Count="0" />
-      <LineId Id="578" Count="23" />
+      <LineId Id="578" Count="18" />
+      <LineId Id="764" Count="1" />
+      <LineId Id="597" Count="4" />
       <LineId Id="577" Count="0" />
       <LineId Id="57" Count="6" />
       <LineId Id="378" Count="0" />
@@ -450,7 +453,8 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
       <LineId Id="358" Count="0" />
       <LineId Id="171" Count="6" />
       <LineId Id="474" Count="0" />
-      <LineId Id="178" Count="3" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="180" Count="1" />
       <LineId Id="475" Count="0" />
       <LineId Id="182" Count="1" />
       <LineId Id="476" Count="0" />
