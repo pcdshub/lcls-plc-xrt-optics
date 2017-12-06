@@ -129,7 +129,7 @@ END_VAR
       <ST><![CDATA[EnO:=En;
 
 bHomed:=Axis.Status.Homed; //Add in DUT_AxisStatus later
-bDone:=FALSE;
+bDone R= bBusy or bError;
 rtReset(CLK:=bReset);
 
 //Update Axis status
@@ -192,7 +192,7 @@ fbMoveRelative(
 	ErrorID=> );
 	
 IF nCommand=2 THEN
-	bDone:=fbMoveRelative.Done;
+	bDone S= fbMoveRelative.Done;
 END_IF
 	
 (*MoveAbsolute (Command = 3)*)
@@ -214,7 +214,7 @@ fbMoveAbsolute(
 	ErrorID=> );
 
 IF nCommand=3 THEN
-	bDone:=fbMoveAbsolute.Done;
+	bDone S= fbMoveAbsolute.Done;
 END_IF
 
 

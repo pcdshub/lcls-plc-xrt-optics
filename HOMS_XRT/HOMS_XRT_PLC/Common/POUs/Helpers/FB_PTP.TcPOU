@@ -105,7 +105,8 @@ Drive(bEnable  := Stepper.xEnable,
 	  fDeceleration := Stepper.fDeceleration,
 	  fVelocity     := Stepper.fVelocity,
 	  bLimitFwd     := Stepper.xHiLS,
-	  bLimitBwd     := Stepper.xLoLS,  
+	  bLimitBwd     := Stepper.xLoLS,
+	  bDone => Stepper.bDone,  
 	  );
 
 //Reset Execute to wait for next motion command
@@ -117,7 +118,7 @@ Stepper.stStatus := Drive.stStepperStatus;
 //Explicit output of busy
 Stepper.bBusy := Drive.bBusy;
 //Gather done flag because it is not storted in status
-Stepper.bDone := bExecute;
+//Stepper.bDone := bExecute;
 
 	  
 	  
@@ -130,7 +131,9 @@ Stepper.bDone := bExecute;
       <LineId Id="116" Count="1" />
       <LineId Id="68" Count="5" />
       <LineId Id="122" Count="0" />
-      <LineId Id="74" Count="21" />
+      <LineId Id="74" Count="5" />
+      <LineId Id="144" Count="0" />
+      <LineId Id="80" Count="15" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
