@@ -2,68 +2,6 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4020.32">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{A39361D3-D4AC-4F67-8FEE-F366F3137B89}" Namespace="AX5000" PersistentType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
-			<BitSize>8</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_MEMORY_NONE]]>
-				</Text>
-				<Enum>0</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_ENCODER]]>
-				</Text>
-				<Enum>1</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK1_MEMORY_DRIVE]]>
-				</Text>
-				<Enum>2</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_ENCODER]]>
-				</Text>
-				<Enum>16</Enum>
-			</EnumInfo>
-			<EnumInfo>
-				<Text>
-					<![CDATA[EAX5000_P_0275_FEEDBACK2_MEMORY_DRIVE]]>
-				</Text>
-				<Enum>32</Enum>
-			</EnumInfo>
-			<Hides>
-				<Hide GUID="{F1A82E04-2D76-4E5D-BB15-437337214D25}"/>
-				<Hide GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}"/>
-			</Hides>
-		</DataType>
-		<DataType>
-			<Name GUID="{A0791761-1F5D-414F-8699-E5B3472004F1}" Namespace="AX5000" PersistentType="true">ST_AX5000_P_0275</Name>
-			<BitSize>16</BitSize>
-			<SubItem>
-				<Name>ActiveFeedbackAndMemory</Name>
-				<Type GUID="{A39361D3-D4AC-4F67-8FEE-F366F3137B89}" Namespace="AX5000">E_AX5000_P_0275_ActiveFeedbackAndMemory</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>InitializationErrorBehavior</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
-				<BitSize>1</BitSize>
-				<BitOffs>8</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{0D1A14D3-018F-4F48-88A7-90B490A317B5}"/>
-				<Hide GUID="{43B3CFF1-FA94-4CC1-8B03-C73EF940373B}"/>
-				<Hide GUID="{81B09CD0-943C-4070-AA5B-0A6818251CEB}"/>
-				<Hide GUID="{B6598B95-DC2C-454C-9B12-DE628B32D897}"/>
-				<Hide GUID="{D7D16A25-71D5-48E0-882D-56AB4D826BC2}"/>
-			</Hides>
-		</DataType>
-		<DataType>
 			<Name GUID="{85DC3E7A-8ADA-435B-9479-25573909A7DB}" Namespace="AX5000" TcBaseType="true">E_AX5000_P_0275_ActiveFeedbackAndMemory</Name>
 			<BitSize>8</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -124,10 +62,10 @@
 			</Hides>
 		</DataType>
 	</DataTypes>
-	<Project SccProjectName="Svn" SccAuxPath="Svn" SccLocalPath="Svn" SccProvider="SubversionScc" ProjectGUID="{17310758-E824-447D-B902-39DDB334FE16}" TargetNetId="5.41.150.248.1.1" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{E0A85DAB-F54D-4547-A4D7-2FABE419473F}" TargetNetId="5.41.150.248.1.1" ShowHideConfigurations="#x106">
 		<System>
 			<Licenses>
-				<Target BkhfOrder="VE2375357">
+				<Target BkhfOrder="VE2378134">
 					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
 				</Target>
 			</Licenses>
@@ -158,9 +96,10 @@
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{01010012-0020-0304-1000-010120000403}" Id="#x02030050" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{01010012-0030-0304-1000-010130000403}" Id="#x02030030" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{05000010-0012-0101-1000-040310000101}" Id="#x02030010" Watchdog="14000000040000000400000004000000"/>
+		<MappingInfo Identifier="{00000000-0050-0304-1000-040350000403}" Id="#x02030060"/>
 		<MappingInfo Identifier="{00000000-0020-0304-1000-040320000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{00000000-0011-0101-1000-010130000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-0012-0101-1000-010140000403}" Id="#x02030030"/>
 	</Mappings>
 </TcSmProject>

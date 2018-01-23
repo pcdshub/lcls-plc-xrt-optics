@@ -13,10 +13,6 @@
     <Implicit_KindOfTask>{b7fcfe33-57a5-4431-9044-fff88d5a1a73}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{a7be9a3a-c180-4c55-9ac6-625deb645db5}</Implicit_Jitter_Distribution>
     <LibraryReferences>{6a9b97b5-70a7-4994-bdd9-b8b413673c84}</LibraryReferences>
-    <SccProjectName>Svn</SccProjectName>
-    <SccProvider>SubversionScc</SccProvider>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccLocalPath>Svn</SccLocalPath>
     <DeploymentEvents>
       <Events>
         <Event>
@@ -243,10 +239,6 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderReference Include="LCLS General">
-      <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
-      <Namespace>LCLS_General</Namespace>
-    </PlaceholderReference>
     <PlaceholderReference Include="System_VisuElemMeter">
       <DefaultResolution>VisuElemMeter, 3.5.8.0 (System)</DefaultResolution>
       <Namespace>VisuElemMeter</Namespace>
@@ -313,6 +305,10 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
@@ -328,9 +324,6 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <PlaceholderResolution Include="LCLS General">
-      <Resolution>LCLS General, 0.1.0 (SLAC)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
@@ -349,13 +342,16 @@
     <PlaceholderResolution Include="Tc2_System">
       <Resolution>Tc2_System, 3.4.15.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_Utilities">
+      <Resolution>Tc2_Utilities, 3.3.22.0 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc3_Module">
       <Resolution>Tc3_Module, 3.3.12.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="Tc2_Utilities,3.3.17.0,Beckhoff Automation GmbH">
-      <Namespace>Tc2_Utilities</Namespace>
+    <LibraryReference Include="LCLS General,0.1.2,SLAC">
+      <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ItemGroup>
