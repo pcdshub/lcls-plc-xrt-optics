@@ -114,11 +114,9 @@ XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManu
 
 //Y motion
 /////////////////////////////////////
-//XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
-//XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
-//XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
-
-mcBenderPower(Axis:=HOMS1_YGantry.SAxis.stAxis);
+XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
+XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
+XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
 
 HOMS1_YGantry.PAxis.stAxis.ReadStatus();
 HOMS1_YGantry.SAxis.stAxis.ReadStatus();
@@ -395,7 +393,6 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
       <LineId Id="477" Count="0" />
       <LineId Id="134" Count="2" />
       <LineId Id="876" Count="0" />
-      <LineId Id="1231" Count="1" />
       <LineId Id="1153" Count="3" />
       <LineId Id="1160" Count="0" />
       <LineId Id="1159" Count="0" />
