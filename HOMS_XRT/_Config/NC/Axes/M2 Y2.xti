@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.32" ClassName="CNcAxisDef" SubType="1">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.39" ClassName="CNcAxisDef" SubType="1">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000035}" TcBaseType="true" HideType="true">UINTARR2</Name>
@@ -27,7 +27,7 @@
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{3B4978B1-9ADE-48F4-B2A7-1323BC4A0651}" Namespace="MC" TcBaseType="true">NCENCODERSTRUCT_IN2</Name>
+			<Name GUID="{901C2423-655B-45CE-B7E3-21F174F0F99F}" Namespace="MC" TcBaseType="true">NCENCODERSTRUCT_IN2B</Name>
 			<BitSize>320</BitSize>
 			<SubItem>
 				<Name>nDataIn1</Name>
@@ -124,6 +124,12 @@
 				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
 				<BitSize>32</BitSize>
 				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDataIn7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000035}">UINTARR2</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>288</BitOffs>
 			</SubItem>
 			<Relations>
 				<Relation>
@@ -1315,7 +1321,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="7" CreateSymbols="true" AxisType="1">
+	<Axis Id="7" CreateSymbols="true" AxisType="1" AxisFolder="M2">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="0.025" DecelerationMaximum="0.025"/>
@@ -1328,7 +1334,7 @@ External Setpoint Generation:
 				<Name>Inputs</Name>
 				<Var>
 					<Name>In</Name>
-					<Type GUID="{3B4978B1-9ADE-48F4-B2A7-1323BC4A0651}" Namespace="MC">NCENCODERSTRUCT_IN2</Type>
+					<Type GUID="{901C2423-655B-45CE-B7E3-21F174F0F99F}" Namespace="MC">NCENCODERSTRUCT_IN2B</Type>
 					<BitOffs>11008</BitOffs>
 					<SubVar TypeFormatIndex="2">
 						<Name>nDataIn1</Name>
