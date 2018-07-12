@@ -262,7 +262,12 @@ CASE PC_State OF
 		
 	PCM_CoarseMoveCleanup:
 		Drive.bExecute := FALSE;
-		Pitch.Stepper.xEnable := FALSE;
+		//Calling Drive with execute false will halt the axis
+		//Once halted, the axis will be in standstill
+		// then we can disble it without error.
+		IF Pitch.Stepper.stAxis.Status.StandStill THEN
+			Pitch.Stepper.xEnable := FALSE;
+		END_IF
 		IF Pitch.Stepper.stAxis.Status.Disabled THEN
 			rPrevStepperPos := mcSmoothMover.ReqAbsPos;
 			bCoarseMoveComplete	:= TRUE;
@@ -436,7 +441,11 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
       <LineId Id="366" Count="0" />
       <LineId Id="365" Count="0" />
       <LineId Id="151" Count="0" />
-      <LineId Id="158" Count="3" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="843" Count="2" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="841" Count="1" />
+      <LineId Id="160" Count="1" />
       <LineId Id="688" Count="0" />
       <LineId Id="162" Count="8" />
       <LineId Id="374" Count="0" />
