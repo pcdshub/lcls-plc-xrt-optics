@@ -1,5 +1,7 @@
 _Libraries
-
+_Boot
+_CompileInfo
+*.sln
 *.suo
 *~
 *.tpy
