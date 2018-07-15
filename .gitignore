@@ -1,0 +1,12 @@
+_Libraries
+
+*.suo
+*~
+*.tpy
+*.bak
+
+*.~u
+
+__pycache__/
+*.log
+.ipynb_checkpoints/
