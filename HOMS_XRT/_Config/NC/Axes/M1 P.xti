@@ -1327,6 +1327,8 @@ External Setpoint Generation:
 			<General UnitName="urad"/>
 			<Dynamic AccelerationMaximum="100" DecelerationMaximum="100" Acceleration="100" Deceleration="100" Jerk="200"/>
 			<Velo Maximum="100"/>
+			<PositionAreaControl Range="10" RefSync="10"/>
+			<TargetPosControl Range="10"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="19">
