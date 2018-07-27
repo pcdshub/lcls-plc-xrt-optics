@@ -255,8 +255,15 @@ CASE PC_State OF
 			Pitch.Stepper.xEnable := FALSE;
 			PC_State := PCM_StepperError;
 			//Stepper fb has encountered an error, pass a message to the logger
-			fbFormatString.sFormat := 'Coarse stepper move error, error id %d';
-			fbFormatString.arg1 := F_UDINT(Drive.nErrorId);
+			IF Pitch.Stepper.stStatus.bError THEN
+				fbFormatString.sFormat := 'Coarse move error, stepper err id %d';
+				fbFormatString.arg1 := F_UDINT(Pitch.Stepper.stStatus.nErrorId);
+			ELSIF Drive.bError THEN
+				fbFormatString.sFormat := 'Coarse move error, drive err id %d';
+				fbFormatString.arg1 := F_UDINT(Drive.nErrorId);
+			ELSIF mcSmoothMover.Error THEN
+				fbFormatString.sFormat := 'Coarse move error, smoothmover error';
+			END_IF
 			fbFormatString(sOut=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
 		END_IF
 		
@@ -436,7 +443,12 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
       <LineId Id="147" Count="0" />
       <LineId Id="685" Count="0" />
       <LineId Id="357" Count="0" />
-      <LineId Id="148" Count="2" />
+      <LineId Id="148" Count="1" />
+      <LineId Id="920" Count="0" />
+      <LineId Id="150" Count="0" />
+      <LineId Id="923" Count="0" />
+      <LineId Id="921" Count="1" />
+      <LineId Id="924" Count="2" />
       <LineId Id="363" Count="1" />
       <LineId Id="366" Count="0" />
       <LineId Id="365" Count="0" />
