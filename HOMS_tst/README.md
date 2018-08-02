@@ -1,9 +1,7 @@
 ## Test steps
 
-1.```ssh to psbuild-rhel<x>```
-
-2. source the conda environment: ```source /reg/g/pcds/engineering_tools/latest/scripts/pcds_conda```
-
+1. ```ssh to psbuild-rhel<x>```                   
+2. source the conda environment: ```source /reg/g/pcds/engineering_tools/latest/scripts/pcds_conda```                   
 3. open HOMS_tst.ipynb through jupyter notebook and run cells from top
 
 
