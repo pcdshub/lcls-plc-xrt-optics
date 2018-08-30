@@ -129,7 +129,7 @@ END_VAR
       <ST><![CDATA[EnO:=En;
 
 bHomed:=Axis.Status.Homed; //Add in DUT_AxisStatus later
-bDone R= bBusy or bError;
+
 rtReset(CLK:=bReset);
 
 //Update Axis status
@@ -191,10 +191,6 @@ fbMoveRelative(
 	Error=> , 
 	ErrorID=> );
 	
-IF nCommand=2 THEN
-	bDone S= fbMoveRelative.Done;
-END_IF
-	
 (*MoveAbsolute (Command = 3)*)
 fbMoveAbsolute(
 	Execute:=bExecute AND (nCommand=3),
@@ -213,17 +209,12 @@ fbMoveAbsolute(
 	Error=> ,
 	ErrorID=> );
 
-IF nCommand=3 THEN
-	bDone S= fbMoveAbsolute.Done;
-END_IF
-
-
-
 fOldVelocity:=fVelocity;
 
 (*Busy*)
 bMovingRelOrAbs := (nCommand = 2 OR nCommand = 3) AND NOT axis.Status.InTargetPosition;
 bBusy:=Axis.Status.HasJob OR Axis.Status.HomingBusy OR bChangingDirection OR  bMovingRelOrAbs;
+bDone := NOT bBusy;
 
 (*Enabled*)
 bEnabled:=fbPower.Status;
@@ -393,7 +384,11 @@ END_IF]]></ST>
     <LineIds Name="FB_Drive">
       <LineId Id="3" Count="2" />
       <LineId Id="386" Count="0" />
-      <LineId Id="6" Count="257" />
+      <LineId Id="6" Count="58" />
+      <LineId Id="69" Count="17" />
+      <LineId Id="93" Count="6" />
+      <LineId Id="510" Count="0" />
+      <LineId Id="100" Count="163" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>
