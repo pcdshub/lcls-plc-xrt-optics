@@ -16,7 +16,7 @@ VAR
 	CaseVar: INT := 1;
 	udiIP	:	UDINT;
 	uiChecksum	:	UDINT;
-	
+
 	pTempPointer : POINTER TO REAL;
 	fTempFloat : REAL;
 END_VAR
@@ -56,6 +56,7 @@ fbCoERead.nIndex := cParamChksm.nIndex;
 fbCoERead.nSubIndex := cParamChksm.nSubIndex;
 fbCoERead.pDstBuf := ADR(uiChecksum);
 fbCoERead.cbBufLen := SIZEOF(uiChecksum);
+stCoE.testChecksum := UDINT_TO_DINT(uiChecksum);
 4:
 //IP
 fbCoERead.nIndex := cIP.nIndex;
