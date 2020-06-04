@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusRx_PLCMemory" Id="{0f58525f-8f65-498a-aa7e-c3ab518424d1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusRx_PLCMemory
 VAR
@@ -14,7 +14,7 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[8]), destAddr:=ADR(HOMS1_YGantry.PAxis.rReqAbs
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[10]), destAddr:=ADR(HOMS1_YGantry.PAxis.rTweak), n:=SIZEOF(HOMS1_YGantry.PAxis.rTweak));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[12]), destAddr:=ADR(HOMS1_YGantry.SAxis.rReqAbsolute), n:=SIZEOF(HOMS1_YGantry.SAxis.rReqAbsolute));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[14]), destAddr:=ADR(HOMS1_YGantry.SAxis.rTweak), n:=SIZEOF(HOMS1_YGantry.SAxis.rTweak));
-MEMCPY(srcAddr:=ADR(mb_PLC_Memory[16]), destAddr:=ADR(HOMS1_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS1_Pitch.Axis.rReqAbsPos));
+//MEMCPY(srcAddr:=ADR(mb_PLC_Memory[16]), destAddr:=ADR(HOMS1_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS1_Pitch.Axis.rReqAbsPos));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[18]), destAddr:=ADR(HOMS1_Pitch.Axis.rTweak), n:=SIZEOF(HOMS1_Pitch.Stepper.rTweak));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[20]), destAddr:=ADR(HOMS2_XGantry.PAxis.rReqAbsolute), n:=SIZEOF(HOMS2_XGantry.PAxis.rReqAbsolute));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[22]), destAddr:=ADR(HOMS2_XGantry.PAxis.rTweak), n:=SIZEOF(HOMS2_XGantry.PAxis.rTweak));
@@ -48,15 +48,5 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[70]), destAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[142]), destAddr:=ADR(HOMS2_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS2_Pitch.Piezo.rReqVoltage));
 ]]></ST>
     </Implementation>
-    <LineIds Name="p_ModbusRx_PLCMemory">
-      <LineId Id="30" Count="18" />
-      <LineId Id="55" Count="10" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="71" Count="1" />
-      <LineId Id="76" Count="2" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="49" Count="2" />
-      <LineId Id="26" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
