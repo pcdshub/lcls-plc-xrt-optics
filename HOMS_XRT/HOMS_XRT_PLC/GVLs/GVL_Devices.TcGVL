@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Devices" Id="{cb7cf638-cc80-4f58-a532-470704faedf8}">
     <Declaration><![CDATA[VAR_GLOBAL
 	//XRT M1
 	HOMS1_Pitch	    :	HOMS_PitchMechanism := (
-		ReqPosLimHi := 310,
-		ReqPosLimLo := -410,
-		diEncPosLimHi := 11269000,
-		diEncPosLimLo := 10859000
+		ReqPosLimHi := 890,
+		ReqPosLimLo := -990,
+		diEncPosLimHi := 11550251,
+		diEncPosLimLo := 10585811
 	);
 	HOMS1_YGantry	:	HOMS_Gantry;
 	HOMS1_XGantry	:	HOMS_Gantry;

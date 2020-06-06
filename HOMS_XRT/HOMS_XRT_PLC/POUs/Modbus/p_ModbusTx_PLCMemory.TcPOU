@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusTx_PLCMemory" Id="{d85d0cac-5378-471f-b9d9-8f92ec2f478e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx_PLCMemory
 VAR
@@ -82,8 +82,8 @@ MEMCPY(srcAddr:=ADR(HOMS3_XGantry.Diff), destAddr:=ADR(mb_PLC_Memory[226]), n:=S
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[228]), n:=SIZEOF(HOMS3_YGantry.DiffTol));
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.Diff), destAddr:=ADR(mb_PLC_Memory[230]), n:=SIZEOF(HOMS3_YGantry.Diff));
 
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[232]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimLo));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[234]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimHi));
+//MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[232]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimLo));
+//MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[234]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimHi));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[236]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimLo));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[238]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimHi));
 MEMCPY(srcAddr:=ADR(HOMS3_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[240]), n:=SIZEOF(HOMS3_Pitch.ReqPosLimLo));
@@ -100,21 +100,5 @@ MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 //MEMCPY(destAddr:=ADR(mb_PLC_Memory[256]), srcAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Stepper.rReqAbsolute));
 ]]></ST>
     </Implementation>
-    <LineIds Name="p_ModbusTx_PLCMemory">
-      <LineId Id="53" Count="44" />
-      <LineId Id="105" Count="0" />
-      <LineId Id="98" Count="2" />
-      <LineId Id="177" Count="0" />
-      <LineId Id="113" Count="15" />
-      <LineId Id="144" Count="2" />
-      <LineId Id="150" Count="4" />
-      <LineId Id="158" Count="0" />
-      <LineId Id="170" Count="2" />
-      <LineId Id="159" Count="1" />
-      <LineId Id="182" Count="6" />
-      <LineId Id="161" Count="0" />
-      <LineId Id="163" Count="2" />
-      <LineId Id="48" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

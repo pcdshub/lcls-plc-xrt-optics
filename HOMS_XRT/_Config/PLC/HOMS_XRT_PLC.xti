@@ -5377,6 +5377,7 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-P1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.iDriveCurrent" VarB="Inputs_1^Current actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>

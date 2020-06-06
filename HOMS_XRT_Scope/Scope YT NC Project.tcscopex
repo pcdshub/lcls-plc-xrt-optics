@@ -2,7 +2,7 @@
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
   <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132356970922531631" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132358714116648003" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" Collapsed="0" SelectedControl="16428644-e56a-4f51-8c88-3409a50e5f03"&gt;
@@ -1647,7 +1647,7 @@
               <Orientation>Y</Orientation>
               <ManualMin>-0.5</ManualMin>
               <ManualMax>0.5</ManualMax>
-              <ScalingMode>AutoGrowOnly</ScalingMode>
+              <ScalingMode>AutoGrowNShrink</ScalingMode>
               <Inverted>false</Inverted>
               <Logarithmic>false</Logarithmic>
               <SubMember>
@@ -1659,7 +1659,7 @@
                   <GridLineWidth>1</GridLineWidth>
                   <GridColor>DarkSlateGray</GridColor>
                   <Precision>6</Precision>
-                  <ShowName>false</ShowName>
+                  <ShowName>true</ShowName>
                   <LineWidth>1</LineWidth>
                   <Visible>true</Visible>
                   <Guid>85a84a92-497d-41fa-b731-c43aa06e569e</Guid>
@@ -1673,7 +1673,7 @@
                 </AxisStyle>
               </SubMember>
               <Guid>0e9083f7-3b39-4944-8329-4545aa2753e5</Guid>
-              <Title>Value Axis</Title>
+              <Title>Pitch Drive Current</Title>
               <Name>Value Axis (5)</Name>
               <Comment />
               <DisplayColor>Black</DisplayColor>
@@ -1707,16 +1707,16 @@
                       <Offset>0</Offset>
                       <Symbol></Symbol>
                       <ReturnText> (None) </ReturnText>
-                      <BaseUnitString />
-                      <NameExtension />
+                      <BaseUnitString></BaseUnitString>
+                      <NameExtension></NameExtension>
                     </Unit>
                     <Transformation>
                       <BaseUnitValue>0</BaseUnitValue>
                       <TargetUnitValue>0</TargetUnitValue>
                       <ScaleFactor>1</ScaleFactor>
                       <Name>None</Name>
-                      <SourceUnitString />
-                      <TargetUnitString />
+                      <SourceUnitString></SourceUnitString>
+                      <TargetUnitString></TargetUnitString>
                       <SourceUnitPrefix>none</SourceUnitPrefix>
                       <Symbol>1</Symbol>
                     </Transformation>
@@ -1727,20 +1727,20 @@
                       <Offset>0</Offset>
                       <Name>None</Name>
                       <BaseName>UnitOfOne</BaseName>
-                      <NameExtension />
+                      <NameExtension></NameExtension>
                       <Symbol></Symbol>
-                      <BaseUnitString />
+                      <BaseUnitString></BaseUnitString>
                       <UserPrefix>none</UserPrefix>
                     </UserUnit>
                     <UnitScaleResult>1</UnitScaleResult>
                     <UnitOffsetResult>0</UnitOffsetResult>
                   </ResultingUnit>
                   <Usage>Y</Usage>
-                  <AcquisitionGUID>72345006-900a-4340-96be-388039a95bbf</AcquisitionGUID>
+                  <AcquisitionGUID>f96b2dab-86b2-4fdf-9a83-737bdec2e20a</AcquisitionGUID>
                   <SubMember />
-                  <Guid>7b1f6cda-08fd-43b2-b8dd-a3b92e62f7cb</Guid>
+                  <Guid>e8582174-8b16-4c10-b7eb-4033cc27ebe0</Guid>
                   <Title>AcquisitionInterpreter_18</Title>
-                  <Name>Y: PC_State</Name>
+                  <Name>Y: iDriveCurrent (1)</Name>
                   <Comment />
                   <DisplayColor>Black</DisplayColor>
                   <SortPriority>2</SortPriority>
@@ -1759,7 +1759,7 @@
                       <SeriesType>Line</SeriesType>
                       <LineWidth>1</LineWidth>
                       <Antialias>true</Antialias>
-                      <Guid>dba1b95a-e8c9-400c-9d78-a26e7cf55d36</Guid>
+                      <Guid>2303bd60-c266-4bbd-b906-2c58aa73c5c9</Guid>
                       <Title>SeriesStyle_22</Title>
                       <Name>Series Style (10)</Name>
                       <Comment />
@@ -1771,8 +1771,8 @@
                     <MinMaxStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <ShowMin>false</ShowMin>
                       <ShowMax>false</ShowMax>
-                      <Guid>71774b20-fbe3-4d4c-876d-9b7cd4a459f9</Guid>
-                      <Title>MinMaxStyle_244</Title>
+                      <Guid>d73fad61-0857-450a-aa91-94fc64379423</Guid>
+                      <Title>MinMaxStyle_405</Title>
                       <Name>Min/Max Style (10)</Name>
                       <Comment />
                       <DisplayColor>Black</DisplayColor>
@@ -1782,9 +1782,9 @@
                     </MinMaxStyle>
                     <TimeShiftStyle AssemblyName="TwinCAT.Measurement.Scope.API.Model">
                       <TimeShift>0</TimeShift>
-                      <Guid>bd125d9e-5cb0-452b-abd2-02216acfb98c</Guid>
-                      <Title>TimeShiftStyle_245</Title>
-                      <Name>TimeShiftStyle_245</Name>
+                      <Guid>dfb5b1b9-843b-4286-8a88-c1135d919cab</Guid>
+                      <Title>TimeShiftStyle_406</Title>
+                      <Name>TimeShiftStyle_406</Name>
                       <Comment />
                       <DisplayColor>Black</DisplayColor>
                       <SortPriority>100</SortPriority>
@@ -1792,7 +1792,7 @@
                       <Suffix>.svtss</Suffix>
                     </TimeShiftStyle>
                   </SubMember>
-                  <Guid>c42cef2a-5696-4520-9343-e4b2576d37b9</Guid>
+                  <Guid>3ec83698-b2e1-4456-8287-43447ba20285</Guid>
                   <Title>ChannelStyle_20</Title>
                   <Name>Channel Style (10)</Name>
                   <Comment />
@@ -1802,9 +1802,9 @@
                   <Suffix>.svstyle</Suffix>
                 </ChannelStyle>
               </SubMember>
-              <Guid>2029bb1b-1d36-48ae-a7da-db9148bb7324</Guid>
+              <Guid>78a534b3-5d7a-4db5-ad6a-132c437d4179</Guid>
               <Title>Channel_16</Title>
-              <Name>PC_State</Name>
+              <Name>iDriveCurrent (1)</Name>
               <Comment />
               <DisplayColor>-16777088</DisplayColor>
               <SortPriority>10</SortPriority>
@@ -1814,7 +1814,7 @@
           </SubMember>
           <Guid>4a12f110-bc48-45df-a19b-87f4143852c8</Guid>
           <Title>AxisGroup_7</Title>
-          <Name>Pitch State</Name>
+          <Name>Pitch Drive Current</Name>
           <Comment />
           <DisplayColor>-1118482</DisplayColor>
           <SortPriority>15</SortPriority>
@@ -1841,7 +1841,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>299</FileHandle>
+          <FileHandle>119</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -1921,7 +1921,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>300</FileHandle>
+          <FileHandle>120</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2001,7 +2001,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>301</FileHandle>
+          <FileHandle>121</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2081,7 +2081,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>302</FileHandle>
+          <FileHandle>122</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2161,7 +2161,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>303</FileHandle>
+          <FileHandle>123</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2241,7 +2241,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>304</FileHandle>
+          <FileHandle>124</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2321,7 +2321,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>305</FileHandle>
+          <FileHandle>125</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2401,7 +2401,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>306</FileHandle>
+          <FileHandle>126</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2481,7 +2481,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>307</FileHandle>
+          <FileHandle>127</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2561,7 +2561,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>308</FileHandle>
+          <FileHandle>128</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2641,7 +2641,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>309</FileHandle>
+          <FileHandle>129</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2674,16 +2674,16 @@
               <Offset>0</Offset>
               <Symbol></Symbol>
               <ReturnText> (None) </ReturnText>
-              <BaseUnitString />
-              <NameExtension />
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
             </Unit>
             <Transformation>
               <BaseUnitValue>0</BaseUnitValue>
               <TargetUnitValue>0</TargetUnitValue>
               <ScaleFactor>1</ScaleFactor>
               <Name>None</Name>
-              <SourceUnitString />
-              <TargetUnitString />
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
               <SourceUnitPrefix>none</SourceUnitPrefix>
               <Symbol>1</Symbol>
             </Transformation>
@@ -2694,9 +2694,9 @@
               <Offset>0</Offset>
               <Name>None</Name>
               <BaseName>UnitOfOne</BaseName>
-              <NameExtension />
+              <NameExtension></NameExtension>
               <Symbol></Symbol>
-              <BaseUnitString />
+              <BaseUnitString></BaseUnitString>
               <UserPrefix>none</UserPrefix>
             </UserUnit>
             <UnitScaleResult>1</UnitScaleResult>
@@ -2707,6 +2707,166 @@
           <Title>AdsAcquisition_105</Title>
           <Name>PC_State</Name>
           <Comment>//////////////////////</Comment>
+          <DisplayColor>Black</DisplayColor>
+          <SortPriority>10</SortPriority>
+          <IsFileBased>false</IsFileBased>
+          <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
+        </AdsAcquisition>
+        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+          <IndexGroup>61462</IndexGroup>
+          <IndexOffset>0</IndexOffset>
+          <SymbolName>MAIN.XRTM1PitchControl.Pitch.Stepper.iDriveCurrent</SymbolName>
+          <SymbolBased>true</SymbolBased>
+          <TargetPort>851</TargetPort>
+          <ContextMask>2</ContextMask>
+          <IsHistorical>false</IsHistorical>
+          <FileHandle>130</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <Enabled>true</Enabled>
+          <AmsNetId>172.21.88.136.1.1</AmsNetId>
+          <UseLocalServer>true</UseLocalServer>
+          <DataType>INT16</DataType>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <UseTaskSampleTime>true</UseTaskSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
+          <VariableSize>2</VariableSize>
+          <DataAccess>
+            <DataAccessMode>
+              <Source>TwinCAT</Source>
+              <Protocoll>ADS</Protocoll>
+              <Format>TcBinary</Format>
+              <TimeContext>Present</TimeContext>
+              <TimeTangeInfo>
+                <StartTimeStamp>0</StartTimeStamp>
+                <EndTimeStamp>0</EndTimeStamp>
+              </TimeTangeInfo>
+            </DataAccessMode>
+          </DataAccess>
+          <RawUnit>
+            <Unit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Symbol></Symbol>
+              <ReturnText> (None) </ReturnText>
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
+            </Unit>
+            <Transformation>
+              <BaseUnitValue>0</BaseUnitValue>
+              <TargetUnitValue>0</TargetUnitValue>
+              <ScaleFactor>1</ScaleFactor>
+              <Name>None</Name>
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
+              <SourceUnitPrefix>none</SourceUnitPrefix>
+              <Symbol>1</Symbol>
+            </Transformation>
+            <UserUnit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Name>None</Name>
+              <BaseName>UnitOfOne</BaseName>
+              <NameExtension></NameExtension>
+              <Symbol></Symbol>
+              <BaseUnitString></BaseUnitString>
+              <UserPrefix>none</UserPrefix>
+            </UserUnit>
+            <UnitScaleResult>1</UnitScaleResult>
+            <UnitOffsetResult>0</UnitOffsetResult>
+          </RawUnit>
+          <Area>Local</Area>
+          <Guid>9a224a12-2311-407e-91e8-b28016c574b2</Guid>
+          <Title>AdsAcquisition_115</Title>
+          <Name>iDriveCurrent</Name>
+          <Comment>Drive current</Comment>
+          <DisplayColor>Black</DisplayColor>
+          <SortPriority>10</SortPriority>
+          <IsFileBased>false</IsFileBased>
+          <Suffix>.svacq</Suffix>
+          <ChannelStyleInformation />
+        </AdsAcquisition>
+        <AdsAcquisition AssemblyName="TwinCAT.Measurement.Scope.API.Model">
+          <IndexGroup>61472</IndexGroup>
+          <IndexOffset>1008248</IndexOffset>
+          <SymbolName>GVL_Devices.HOMS1_Pitch.Stepper.iDriveCurrent</SymbolName>
+          <SymbolBased>true</SymbolBased>
+          <TargetPort>851</TargetPort>
+          <ContextMask>2</ContextMask>
+          <IsHistorical>false</IsHistorical>
+          <FileHandle>131</FileHandle>
+          <ServerHandle>0</ServerHandle>
+          <Enabled>true</Enabled>
+          <AmsNetId>172.21.88.136.1.1</AmsNetId>
+          <UseLocalServer>true</UseLocalServer>
+          <DataType>INT16</DataType>
+          <BaseSampleTime>100000</BaseSampleTime>
+          <UseTaskSampleTime>true</UseTaskSampleTime>
+          <Oversample>0</Oversample>
+          <ForceOversampling>false</ForceOversampling>
+          <ArrayLength>0</ArrayLength>
+          <TimeOffset>0</TimeOffset>
+          <VariableSize>2</VariableSize>
+          <DataAccess>
+            <DataAccessMode>
+              <Source>TwinCAT</Source>
+              <Protocoll>ADS</Protocoll>
+              <Format>TcBinary</Format>
+              <TimeContext>Present</TimeContext>
+              <TimeTangeInfo>
+                <StartTimeStamp>0</StartTimeStamp>
+                <EndTimeStamp>0</EndTimeStamp>
+              </TimeTangeInfo>
+            </DataAccessMode>
+          </DataAccess>
+          <RawUnit>
+            <Unit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Symbol></Symbol>
+              <ReturnText> (None) </ReturnText>
+              <BaseUnitString></BaseUnitString>
+              <NameExtension></NameExtension>
+            </Unit>
+            <Transformation>
+              <BaseUnitValue>0</BaseUnitValue>
+              <TargetUnitValue>0</TargetUnitValue>
+              <ScaleFactor>1</ScaleFactor>
+              <Name>None</Name>
+              <SourceUnitString></SourceUnitString>
+              <TargetUnitString></TargetUnitString>
+              <SourceUnitPrefix>none</SourceUnitPrefix>
+              <Symbol>1</Symbol>
+            </Transformation>
+            <UserUnit>
+              <BaseUnitValue>0</BaseUnitValue>
+              <Prefix>none</Prefix>
+              <ScaleFactor>1</ScaleFactor>
+              <Offset>0</Offset>
+              <Name>None</Name>
+              <BaseName>UnitOfOne</BaseName>
+              <NameExtension></NameExtension>
+              <Symbol></Symbol>
+              <BaseUnitString></BaseUnitString>
+              <UserPrefix>none</UserPrefix>
+            </UserUnit>
+            <UnitScaleResult>1</UnitScaleResult>
+            <UnitOffsetResult>0</UnitOffsetResult>
+          </RawUnit>
+          <Area>Local</Area>
+          <Guid>f96b2dab-86b2-4fdf-9a83-737bdec2e20a</Guid>
+          <Title>AdsAcquisition_115</Title>
+          <Name>iDriveCurrent (1)</Name>
+          <Comment>Drive current</Comment>
           <DisplayColor>Black</DisplayColor>
           <SortPriority>10</SortPriority>
           <IsFileBased>false</IsFileBased>
