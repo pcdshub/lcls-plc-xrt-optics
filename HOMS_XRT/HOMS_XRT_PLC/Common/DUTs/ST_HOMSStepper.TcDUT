@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_HOMSStepper" Id="{59acacf2-49b3-454e-979e-299117a50a5f}">
     <Declaration><![CDATA[TYPE ST_HOMSStepper :
 STRUCT
@@ -21,7 +21,7 @@ STRUCT
 	//Absolute Value Request
 	rReqAbsolute : REAL:= 0.0;
 	//Pitch stepper dmov range (urad)
-	rStepperDmovRange	:	REAL := 2;
+	rStepperDmovRange	:	REAL := 20;
 	(* Status *)
 	//Axis Status
 	stStatus : ST_StepperStatus;

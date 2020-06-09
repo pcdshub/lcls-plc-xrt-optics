@@ -2,7 +2,7 @@
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
   <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132358714116648003" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132361325194111587" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" Collapsed="0" SelectedControl="16428644-e56a-4f51-8c88-3409a50e5f03"&gt;
@@ -1841,7 +1841,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>119</FileHandle>
+          <FileHandle>79</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -1921,7 +1921,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>120</FileHandle>
+          <FileHandle>80</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2001,7 +2001,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>121</FileHandle>
+          <FileHandle>81</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2081,7 +2081,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>122</FileHandle>
+          <FileHandle>82</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2161,7 +2161,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>123</FileHandle>
+          <FileHandle>83</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2241,7 +2241,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>124</FileHandle>
+          <FileHandle>84</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2321,7 +2321,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>125</FileHandle>
+          <FileHandle>85</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2401,7 +2401,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>126</FileHandle>
+          <FileHandle>86</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2481,7 +2481,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>127</FileHandle>
+          <FileHandle>87</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2561,7 +2561,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>128</FileHandle>
+          <FileHandle>88</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2641,7 +2641,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>129</FileHandle>
+          <FileHandle>89</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2721,7 +2721,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>130</FileHandle>
+          <FileHandle>90</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>
@@ -2801,7 +2801,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>131</FileHandle>
+          <FileHandle>91</FileHandle>
           <ServerHandle>0</ServerHandle>
           <Enabled>true</Enabled>
           <AmsNetId>172.21.88.136.1.1</AmsNetId>

@@ -37,8 +37,8 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[54]), destAddr:=ADR(HOMS3_YGantry.SAxis.rTweak
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[56]), destAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Axis.rReqAbsPos));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[58]), destAddr:=ADR(HOMS3_Pitch.Axis.rTweak), n:=SIZEOF(HOMS3_Pitch.Stepper.rTweak));
 
-MEMCPY(srcAddr:=ADR(mb_PLC_Memory[60]), destAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
-MEMCPY(srcAddr:=ADR(mb_PLC_Memory[62]), destAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
+//MEMCPY(srcAddr:=ADR(mb_PLC_Memory[60]), destAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
+//MEMCPY(srcAddr:=ADR(mb_PLC_Memory[62]), destAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[64]), destAddr:=ADR(HOMS2_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS2_Pitch.Stepper.rStepperDmovRange));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[66]), destAddr:=ADR(HOMS2_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS2_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[68]), destAddr:=ADR(HOMS3_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS3_Pitch.Stepper.rStepperDmovRange));
