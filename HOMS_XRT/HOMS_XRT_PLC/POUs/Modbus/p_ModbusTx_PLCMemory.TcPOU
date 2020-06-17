@@ -82,15 +82,15 @@ MEMCPY(srcAddr:=ADR(HOMS3_XGantry.Diff), destAddr:=ADR(mb_PLC_Memory[226]), n:=S
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[228]), n:=SIZEOF(HOMS3_YGantry.DiffTol));
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.Diff), destAddr:=ADR(mb_PLC_Memory[230]), n:=SIZEOF(HOMS3_YGantry.Diff));
 
-//MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[232]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimLo));
-//MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[234]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimHi));
+MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[232]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimLo));
+MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[234]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimHi));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[236]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimLo));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[238]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimHi));
 MEMCPY(srcAddr:=ADR(HOMS3_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[240]), n:=SIZEOF(HOMS3_Pitch.ReqPosLimLo));
 MEMCPY(srcAddr:=ADR(HOMS3_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[242]), n:=SIZEOF(HOMS3_Pitch.ReqPosLimHi));
 
-//MEMCPY(destAddr:=ADR(mb_PLC_Memory[60]), srcAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
-//MEMCPY(destAddr:=ADR(mb_PLC_Memory[62]), srcAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
+MEMCPY(destAddr:=ADR(mb_PLC_Memory[60]), srcAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
+MEMCPY(destAddr:=ADR(mb_PLC_Memory[62]), srcAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[64]), srcAddr:=ADR(HOMS2_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS2_Pitch.Stepper.rStepperDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[66]), srcAddr:=ADR(HOMS2_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS2_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[68]), srcAddr:=ADR(HOMS3_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS3_Pitch.Stepper.rStepperDmovRange));
