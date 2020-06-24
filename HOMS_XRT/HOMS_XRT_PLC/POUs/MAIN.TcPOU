@@ -351,8 +351,12 @@ xLoLS=>HOMS3_YGantry.SAxis.xLoLS);
 fbM3X1LS(diInputs:=HOMS3_XGantry.PAxis.diInputs, 
 xHiLS=>HOMS3_XGantry.PAxis.xHiLS,
 xLoLS=>HOMS3_XGantry.PAxis.xLoLS);
-
+(*
 fbM3X2LS(diInputs:=HOMS3_XGantry.PAxis.diInputs,  //Paxis is here on purpose <HACK>
+xHiLS=>HOMS3_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.SAxis.xLoLS);
+*)
+fbM3X2LS(diInputs:=HOMS3_XGantry.SAxis.diInputs,  // Switching to SAxis works as expected, reason for <HACK> unclear
 xHiLS=>HOMS3_XGantry.SAxis.xHiLS,
 xLoLS=>HOMS3_XGantry.SAxis.xLoLS);
 

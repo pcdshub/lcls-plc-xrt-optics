@@ -6,7 +6,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[MEMCPY(srcAddr:=ADR(mb_PLC_Memory[0]), destAddr:=ADR(HOMS1_XGantry.PAxis.rReqAbsolute), n:=SIZEOF(HOMS1_XGantry.PAxis.rReqAbsolute));
+      <ST><![CDATA[(*
+MEMCPY(srcAddr:=ADR(mb_PLC_Memory[0]), destAddr:=ADR(HOMS1_XGantry.PAxis.rReqAbsolute), n:=SIZEOF(HOMS1_XGantry.PAxis.rReqAbsolute));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[2]), destAddr:=ADR(HOMS1_XGantry.PAxis.rTweak), n:=SIZEOF(HOMS1_XGantry.PAxis.rTweak));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[4]), destAddr:=ADR(HOMS1_XGantry.SAxis.rReqAbsolute), n:=SIZEOF(HOMS1_XGantry.SAxis.rReqAbsolute));
 MEMCPY(srcAddr:=ADR(mb_PLC_Memory[6]), destAddr:=ADR(HOMS1_XGantry.SAxis.rTweak), n:=SIZEOF(HOMS1_XGantry.SAxis.rTweak));
@@ -46,7 +47,7 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[70]), destAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[140]), destAddr:=ADR(HOMS1_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS1_Pitch.Piezo.rReqVoltage));
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[142]), destAddr:=ADR(HOMS2_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS2_Pitch.Piezo.rReqVoltage));
-]]></ST>
+*)]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
