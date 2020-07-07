@@ -7,8 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[100]), n:=SIZEOF(HOMS1_XGantry.PAxis.stStatus.rActPosition));
+      <ST><![CDATA[MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[100]), n:=SIZEOF(HOMS1_XGantry.PAxis.stStatus.rActPosition));
 MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[102]), n:=SIZEOF(HOMS1_XGantry.PAxis.stStatus.rActVelocity));
 MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[104]), n:=SIZEOF(HOMS1_XGantry.PAxis.stAxis.NcToPlc.SetAcc));
 MEMCPY(srcAddr:=ADR(HOMS1_XGantry.SAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[106]), n:=SIZEOF(HOMS1_XGantry.SAxis.stStatus.rActPosition));
@@ -97,8 +96,7 @@ MEMCPY(destAddr:=ADR(mb_PLC_Memory[68]), srcAddr:=ADR(HOMS3_Pitch.Stepper.rStepp
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS3_Pitch.Piezo.rPiezoDmovRange));
 
 
-//MEMCPY(destAddr:=ADR(mb_PLC_Memory[256]), srcAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Stepper.rReqAbsolute));
-*)]]></ST>
+//MEMCPY(destAddr:=ADR(mb_PLC_Memory[256]), srcAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Stepper.rReqAbsolute));]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

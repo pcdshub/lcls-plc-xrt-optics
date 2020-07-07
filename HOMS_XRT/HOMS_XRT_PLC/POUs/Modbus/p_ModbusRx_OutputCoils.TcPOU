@@ -7,8 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(*
-HOMS1_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[50];
+      <ST><![CDATA[HOMS1_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[50];
 HOMS1_XGantry.PAxis.bTwkBwd:=mb_Output_Coils[51];
 HOMS1_XGantry.SAxis.bTwkFwd:=mb_Output_Coils[52];
 HOMS1_XGantry.SAxis.bTwkBwd:=mb_Output_Coils[53];
@@ -58,8 +57,7 @@ HOMS2_YGantry.PAxis.xReset := mb_Output_Coils[96];
 HOMS2_Pitch.Axis.xReset := mb_Output_Coils[97];
 HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
 HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
-HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];
-*)]]></ST>
+HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
