@@ -165,15 +165,15 @@ fbInitDriveRef(stCoE:=HOMS1_Pitch.Stepper.stCoE);
 
 //Initialze Drive Speeds and Accelerations
 //////////////////////////////////////////
-HOMS1_XGantry.PAxis.fAcceleration := 0.02;
-HOMS1_XGantry.SAxis.fAcceleration := 0.02;
-HOMS1_YGantry.PAxis.fAcceleration := 0.02;
-HOMS1_YGantry.SAxis.fAcceleration := 0.02;
+HOMS1_XGantry.PAxis.fAcceleration := 1.0;
+HOMS1_XGantry.SAxis.fAcceleration := 1.0;
+HOMS1_YGantry.PAxis.fAcceleration := 1.0;
+HOMS1_YGantry.SAxis.fAcceleration := 1.0;
 
-HOMS1_XGantry.PAxis.fDeceleration := 0.02;
-HOMS1_XGantry.SAxis.fDeceleration := 0.02;
-HOMS1_YGantry.PAxis.fDeceleration := 0.02;
-HOMS1_YGantry.SAxis.fDeceleration := 0.02;
+HOMS1_XGantry.PAxis.fDeceleration := 1.0;
+HOMS1_XGantry.SAxis.fDeceleration := 1.0;
+HOMS1_YGantry.PAxis.fDeceleration := 1.0;
+HOMS1_YGantry.SAxis.fDeceleration := 1.0;
 
 HOMS1_XGantry.PAxis.fVelocity := 0.1;
 HOMS1_XGantry.SAxis.fVelocity := 0.1;
@@ -211,15 +211,15 @@ fbInitDriveRef(stCoE:=HOMS2_Pitch.Stepper.stCoE);
 
 //Initialze Drive Speeds and Accelerations
 //////////////////////////////////////////
-HOMS2_XGantry.PAxis.fAcceleration := 0.02;
-HOMS2_XGantry.SAxis.fAcceleration := 0.02;
-HOMS2_YGantry.PAxis.fAcceleration := 0.02;
-HOMS2_YGantry.SAxis.fAcceleration := 0.02;
+HOMS2_XGantry.PAxis.fAcceleration := 1.0;
+HOMS2_XGantry.SAxis.fAcceleration := 1.0;
+HOMS2_YGantry.PAxis.fAcceleration := 1.0;
+HOMS2_YGantry.SAxis.fAcceleration := 1.0;
 
-HOMS2_XGantry.PAxis.fDeceleration := 0.02;
-HOMS2_XGantry.SAxis.fDeceleration := 0.02;
-HOMS2_YGantry.PAxis.fDeceleration := 0.02;
-HOMS2_YGantry.SAxis.fDeceleration := 0.02;
+HOMS2_XGantry.PAxis.fDeceleration := 1.0;
+HOMS2_XGantry.SAxis.fDeceleration := 1.0;
+HOMS2_YGantry.PAxis.fDeceleration := 1.0;
+HOMS2_YGantry.SAxis.fDeceleration := 1.0;
 
 HOMS2_XGantry.PAxis.fVelocity := 0.1;
 HOMS2_XGantry.SAxis.fVelocity := 0.1;
@@ -260,15 +260,15 @@ fbInitDriveRef(stCoE:=HOMS3_Pitch.Stepper.stCoE);
 
 //Initialze Drive Speeds and Accelerations
 //////////////////////////////////////////
-HOMS3_XGantry.PAxis.fAcceleration := 0.02;
-HOMS3_XGantry.SAxis.fAcceleration := 0.02;
-HOMS3_YGantry.PAxis.fAcceleration := 0.02;
-HOMS3_YGantry.SAxis.fAcceleration := 0.02;
+HOMS3_XGantry.PAxis.fAcceleration := 1.0;
+HOMS3_XGantry.SAxis.fAcceleration := 1.0;
+HOMS3_YGantry.PAxis.fAcceleration := 1.0;
+HOMS3_YGantry.SAxis.fAcceleration := 1.0;
 
-HOMS3_XGantry.PAxis.fDeceleration := 0.02;
-HOMS3_XGantry.SAxis.fDeceleration := 0.02;
-HOMS3_YGantry.PAxis.fDeceleration := 0.02;
-HOMS3_YGantry.SAxis.fDeceleration := 0.02;
+HOMS3_XGantry.PAxis.fDeceleration := 1.0;
+HOMS3_XGantry.SAxis.fDeceleration := 1.0;
+HOMS3_YGantry.PAxis.fDeceleration := 1.0;
+HOMS3_YGantry.SAxis.fDeceleration := 1.0;
 
 HOMS3_XGantry.PAxis.fVelocity := 0.1;
 HOMS3_XGantry.SAxis.fVelocity := 0.1;
