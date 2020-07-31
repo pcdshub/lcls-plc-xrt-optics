@@ -2,7 +2,7 @@
 <ScopeProject AssemblyName="TwinCAT.Measurement.Scope.API.Model">
   <Layout>&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;Layout&gt;
-  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132393379794576722" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="16428644-e56a-4f51-8c88-3409a50e5f03" LastFocused="132407042364043608" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
   &lt;DocumentContainer Dock="5"&gt;
     &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
       &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="1e00b720-335b-4fe4-b9d0-6c401e7972bc" Collapsed="0" SelectedControl="16428644-e56a-4f51-8c88-3409a50e5f03"&gt;
@@ -25,7 +25,7 @@
   <AutoDeleteOlderThan>0</AutoDeleteOlderThan>
   <AutoDeleteCapacity>0</AutoDeleteCapacity>
   <UseFileStore>true</UseFileStore>
-  <RecordTime>6000000000</RecordTime>
+  <RecordTime>36000000000</RecordTime>
   <IsTemplate>false</IsTemplate>
   <UseUserSettings>true</UseUserSettings>
   <Version>1.0.0.0</Version>
@@ -3327,7 +3327,7 @@
           <Suffix>.svagroup</Suffix>
         </AxisGroup>
         <AxisGroup AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <Enabled>false</Enabled>
+          <Enabled>true</Enabled>
           <SubMember>
             <RefGuid-TimeAxis>ba8a2f16-cb98-4ad6-ad48-e73f28140bf3</RefGuid-TimeAxis>
             <ValueAxis AssemblyName="TwinCAT.Measurement.Scope.API.Model">
@@ -5133,7 +5133,7 @@
           <Suffix>.svagroup</Suffix>
         </AxisGroup>
         <AxisGroup AssemblyName="TwinCAT.Measurement.Scope.API.Model">
-          <Enabled>true</Enabled>
+          <Enabled>false</Enabled>
           <SubMember>
             <RefGuid-TimeAxis>ba8a2f16-cb98-4ad6-ad48-e73f28140bf3</RefGuid-TimeAxis>
             <ValueAxis AssemblyName="TwinCAT.Measurement.Scope.API.Model">
@@ -5754,7 +5754,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>469</FileHandle>
+          <FileHandle>157</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -5834,7 +5834,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>470</FileHandle>
+          <FileHandle>158</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -5914,7 +5914,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>471</FileHandle>
+          <FileHandle>159</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -5994,7 +5994,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>472</FileHandle>
+          <FileHandle>160</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6074,7 +6074,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>473</FileHandle>
+          <FileHandle>161</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6154,7 +6154,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>474</FileHandle>
+          <FileHandle>162</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6234,7 +6234,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>475</FileHandle>
+          <FileHandle>163</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6314,7 +6314,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>476</FileHandle>
+          <FileHandle>164</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6394,7 +6394,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>477</FileHandle>
+          <FileHandle>165</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6474,7 +6474,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>478</FileHandle>
+          <FileHandle>166</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6554,7 +6554,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>479</FileHandle>
+          <FileHandle>167</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6634,7 +6634,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>480</FileHandle>
+          <FileHandle>168</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6714,7 +6714,7 @@
           <TargetPort>851</TargetPort>
           <ContextMask>2</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>481</FileHandle>
+          <FileHandle>169</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6794,7 +6794,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>482</FileHandle>
+          <FileHandle>170</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6874,7 +6874,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>483</FileHandle>
+          <FileHandle>171</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -6954,7 +6954,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>484</FileHandle>
+          <FileHandle>172</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7034,7 +7034,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>485</FileHandle>
+          <FileHandle>173</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7114,7 +7114,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>486</FileHandle>
+          <FileHandle>174</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7194,7 +7194,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>487</FileHandle>
+          <FileHandle>175</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7274,7 +7274,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>488</FileHandle>
+          <FileHandle>176</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7354,7 +7354,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>489</FileHandle>
+          <FileHandle>177</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7434,7 +7434,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>490</FileHandle>
+          <FileHandle>178</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7514,7 +7514,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>491</FileHandle>
+          <FileHandle>179</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7594,7 +7594,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>492</FileHandle>
+          <FileHandle>180</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7674,7 +7674,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>493</FileHandle>
+          <FileHandle>181</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7754,7 +7754,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>494</FileHandle>
+          <FileHandle>182</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7834,7 +7834,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>495</FileHandle>
+          <FileHandle>183</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7914,7 +7914,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>496</FileHandle>
+          <FileHandle>184</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -7994,7 +7994,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>497</FileHandle>
+          <FileHandle>185</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8074,7 +8074,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>498</FileHandle>
+          <FileHandle>186</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8154,7 +8154,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>499</FileHandle>
+          <FileHandle>187</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8234,7 +8234,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>500</FileHandle>
+          <FileHandle>188</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8314,7 +8314,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>501</FileHandle>
+          <FileHandle>189</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8394,7 +8394,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>502</FileHandle>
+          <FileHandle>190</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8474,7 +8474,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>503</FileHandle>
+          <FileHandle>191</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8554,7 +8554,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>504</FileHandle>
+          <FileHandle>192</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8634,7 +8634,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>505</FileHandle>
+          <FileHandle>193</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8714,7 +8714,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>506</FileHandle>
+          <FileHandle>194</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>
@@ -8794,7 +8794,7 @@
           <TargetPort>501</TargetPort>
           <ContextMask>0</ContextMask>
           <IsHistorical>false</IsHistorical>
-          <FileHandle>507</FileHandle>
+          <FileHandle>195</FileHandle>
           <ServerHandle>0</ServerHandle>
           <ChannelStyleInformation />
           <Enabled>true</Enabled>

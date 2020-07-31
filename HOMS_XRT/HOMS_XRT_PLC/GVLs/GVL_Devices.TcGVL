@@ -4,10 +4,10 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	//XRT M1
 	HOMS1_Pitch	    :	HOMS_PitchMechanism := (
-		ReqPosLimHi := 890,
-		ReqPosLimLo := -990,
-		diEncPosLimHi := 11550251,
-		diEncPosLimLo := 10585811
+		ReqPosLimHi := 240,
+		ReqPosLimLo := -240,
+		diEncPosLimHi := 11226646,
+		diEncPosLimLo := 10980406
 	);
 	HOMS1_YGantry	:	HOMS_Gantry;
 	HOMS1_XGantry	:	HOMS_Gantry;
@@ -15,10 +15,10 @@
 
 	//XRT M2
 	HOMS2_Pitch	    : HOMS_PitchMechanism := (
-		ReqPosLimHi := 1000,
-		ReqPosLimLo := -860,
-		diEncPosLimHi := 10374650,
-		diEncPosLimLo := 9349000
+		ReqPosLimHi := 927.5,
+		ReqPosLimLo := -927.5,
+		diEncPosLimHi := 10301040,
+		diEncPosLimLo := 9349425
 	);
 	HOMS2_YGantry	: HOMS_Gantry;
 	HOMS2_XGantry	: HOMS_Gantry;
@@ -26,10 +26,10 @@
 	
 	//XRT M3
 	HOMS3_Pitch	    : HOMS_PitchMechanism := (
-		ReqPosLimHi := 440,
-		ReqPosLimLo := -350,
-		diEncPosLimHi := 9391800,
-		diEncPosLimLo := 8945700
+		ReqPosLimHi := 240,
+		ReqPosLimLo := -240,
+		diEncPosLimHi := 9120750,
+		diEncPosLimLo := 8874510
 	);
 	HOMS3_YGantry	: HOMS_Gantry;
 	HOMS3_XGantry	: HOMS_Gantry;
