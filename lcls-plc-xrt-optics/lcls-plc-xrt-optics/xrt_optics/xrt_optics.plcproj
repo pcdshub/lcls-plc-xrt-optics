@@ -15,7 +15,122 @@
     <LibraryReferences>{9754335f-c451-40a7-ad59-5b8413f9fa47}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\E_GantryMode.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\E_PiezoControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\E_PitchControl.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\HOMS_Gantry.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\HOMS_GantryAxis.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\HOMS_PitchMechanismOld.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_AbstractAxis.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_CoEIndSub.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_DecoupledMotionPermits.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_ElmoGDCBellCoEParams.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_HOMSStepper.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ST_StepperStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_Drive.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_ElmoGDCBellCoE.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_ElmoMCUploadDriveParams.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_ElmoStoMonitor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_GantryDiffVirtualLimitSwitch.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_InitDriveRefs.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_LimitSwitchState.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_PitchSoftLimits.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialDriver.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialTransaction.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_PTP.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_ReadFloatParameter.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_ReadParameterInNC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\FB_WriteParameterInNC.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\F_PiezoPosition.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\MC_SmoothMover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\Helpers\WithinRange.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\HOMS_FBs\FB_Gantry.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\HOMS_FBs\FB_GantryDifferenceMonitor.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\HOMS_FBs\FB_PiezoControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\HOMS_FBs\FB_PitchControlOld.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\POUs\HOMS_FBs\FB_ReduceGantryDiff.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\GVL.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL_COM_Buffers.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\GVL_Constants.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_Devices.TcGVL">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\GVL_XRTM1.TcGVL">
@@ -39,7 +154,28 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_MPS_STATES.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Main.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusRx_OutputCoils.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusRx_PLCMemory.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusTx_InputCoils.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusTx_InputReg.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusTx_OutputCoils.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus\p_ModbusTx_PLCMemory.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_CoatingProtections.TcPOU">
@@ -56,9 +192,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Common" />
+    <Folder Include="Common\DUTs" />
+    <Folder Include="Common\POUs" />
+    <Folder Include="Common\POUs\Helpers" />
+    <Folder Include="Common\POUs\HOMS_FBs" />
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\Modbus" />
     <Folder Include="POUs\Serial Comm" />
+    <Folder Include="TerminalStartupCommands" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -79,6 +222,14 @@
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
       <Namespace>PMPS</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_ControllerToolbox">
+      <DefaultResolution>Tc2_ControllerToolbox, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_ControllerToolbox</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_EtherCAT">
+      <DefaultResolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_EtherCAT</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
@@ -95,6 +246,10 @@
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Module</Namespace>
@@ -107,12 +262,29 @@
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, * (SLAC)</Resolution>
     </PlaceholderResolution>
-    <PlaceholderResolution Include="lcls-twincat-optics">
-      <Resolution>lcls-twincat-optics, * (SLAC)</Resolution>
-    </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, * (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <SubObject Include="FB_ElmoGDCBellCoE.ACT_CoEReadFB" />
+    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_ExeFb" />
+    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_LoadDriveParams" />
+    <SubObject Include="FB_PiezoControl.ACT_CheckLimits" />
+    <SubObject Include="FB_PiezoControl.ACT_Controller" />
+    <SubObject Include="FB_PitchControlOld.ACT_PTP" />
+    <SubObject Include="FB_PitchControlOld.A_ModeSwitch" />
+    <SubObject Include="FB_PI_E621_SerialDriver.a_ClearTrans" />
+    <SubObject Include="FB_PI_E621_SerialDriver.a_ErrorMesg" />
+    <SubObject Include="FB_PI_E621_SerialDriver.a_UnknownError" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TerminalStartupCommands\EL6001-StartupCommands.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <None Include="xrt_optics.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

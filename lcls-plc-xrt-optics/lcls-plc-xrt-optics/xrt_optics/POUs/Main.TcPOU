@@ -165,8 +165,69 @@ VAR
 	nEncRefPitchXRTM1 : UDINT;
 	mcReadParameterPitchXRTM1 : MC_ReadParameter;
 	fEncRefPitchXRTM1_urad : LREAL; // Current Pitch encoder offset in urad
-
-
+	
+    //****** HOMS M2 and M3 **************************
+	tpImAPLC : TP := (PT:=T#10S);
+	ExpertMode	:	BOOL := FALSE;
+	PitchManualMode: BOOL := FALSE;
+	
+	//Drive CoE Fb
+	fbY1CoE	:	FB_ElmoGDCBellCoE;
+	fbY2CoE	:	FB_ElmoGDCBellCoE;
+	
+	fbX1CoE	:	FB_ElmoGDCBellCoE;
+	fbX2CoE	:	FB_ElmoGDCBellCoE;
+	
+	fbP1CoE	:	FB_ElmoGDCBellCoE;
+	fbB1CoE	:	FB_ElmoGDCBellCoE;
+	
+	//Init params trigger
+	rtInitParams	:	R_TRIG;
+	
+	//Test Parameters
+	rStepSize: REAL;
+	SettleTime: TON := (
+	PT:=T#2s);
+	TestUpperVoltage: REAL := 100;
+	TestLowerVoltage: REAL := 10;
+	xRunPiezoRepeatTest: BOOL;
+	
+	//Drive reference initializations
+	fbInitDriveRef	:	FB_InitDriveRefs;
+	//MPS Information
+	fbMPS_States :  FB_MPS_STATES;
+	M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
+	M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
+	//noConsequence	:	BOOL;
+	
+	mcBenderPower	:	MC_POWER;
+	
+	// HOMS M2
+	XRTM2PitchControl	    :	FB_PitchControlOld;
+	XRTM2Y_GantryControl	:	FB_Gantry;
+	XRTM2X_GantryControl	:	FB_Gantry;
+	
+	fbM2Y1LS	:	FB_LimitSwitchState;
+	fbM2Y2LS	:	FB_LimitSwitchState;
+	fbM2X1LS	:	FB_LimitSwitchState;
+	fbM2X2LS	:	FB_LimitSwitchState;
+	fbM2P1LS	:	FB_PitchSoftLimits;	
+	
+    // HOMS M3
+	XRTM3PitchControl	    :	FB_PitchControlOld;
+	XRTM3Y_GantryControl	:	FB_Gantry;
+	XRTM3X_GantryControl	:	FB_Gantry;
+	
+	fbM3Y1LS	:	FB_LimitSwitchState;
+	fbM3Y2LS	:	FB_LimitSwitchState;
+	fbM3X1LS	:	FB_LimitSwitchState;
+	fbM3X2LS	:	FB_LimitSwitchState;
+	fbM3P1LS	:	FB_PitchSoftLimits;	
+	
+	//************** **** *** ** *
+	
+	
+	
 	// PMPS arbiter interface
 	fbArbiterIO : FB_SubSysToArbiter_IO;
 	
@@ -260,6 +321,70 @@ mcReadParameterPitchXRTM1(Axis:=M5.Axis,
 
 nEncRefPitchXRTM1 := LREAL_TO_UDINT(ABS(fEncRefPitchXRTM1_urad) * fEncLeverArm_mm);
 
+// HOMS ************************ ***** **** *** ** *
+p_ModbusRx_OutputCoils();
+p_ModbusRx_PLCMemory();
+
+//InitParams
+////////////////////
+rtInitParams(CLK:=gFirstPass);
+IF rtInitParams.Q THEN
+	Init_XRTM2();
+	Init_XRTM3();
+	gFirstPass := FALSE;
+END_IF
+
+//System Error Handling
+/////////////////////////////////////
+//SystemErrorSummary(); //Check this action for a summary of all system faults
+					  
+//SystemError();
+
+//Driver Parameter Verification
+/////////////////////////////////////
+
+//Gantry Interlock Logic
+/////////////////////////////////////
+	//SimGantry.VAxis.i_xMotorInterlock := TRUE;
+	//SimGantry.PAxis.i_xMotorInterlock := TRUE;
+	//SimGantry.SAxis.i_xMotorInterlock := TRUE;
+	
+LimitSwitchIO();
+
+// Pitch control
+/////////////////////////////////////
+XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
+XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS3_Pitch.Axis.bDone, q_xBusy => HOMS3_Pitch.Axis.bBusy);
+//Y motion
+/////////////////////////////////////
+HOMS3_YGantry.PAxis.stAxis.ReadStatus();
+HOMS3_YGantry.SAxis.stAxis.ReadStatus();
+HOMS3_YGantry.PAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.PAxis.stAxis.NcToPlc.ActPos);
+HOMS3_YGantry.SAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.SAxis.stAxis.NcToPlc.ActPos);
+
+//X Motion
+/////////////////////////////////////
+XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
+XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
+
+//Communicate state to MPS
+////////////////////////////////
+fbMPS_States(GANTRY:=HOMS2_XGantry,
+			 OUT_LS:=NOT HOMS2_XGantry.PAxis.xHiLS OR NOT HOMS2_XGantry.SAxis.xLoLS,
+			 IN_RANGE:=M2_INRANGE,
+			 OUT_RANGE:=M2_OUTRANGE);
+			 
+bXRT_M2_IN  := fbMPS_States.IN;
+bXRT_M2_OUT := fbMPS_States.OUT;
+//EPICS Tx Update
+////////////////////
+p_ModbusTx_InputCoils();
+//p_ModbusTx_OutputCoils();
+p_ModbusTx_InputReg();
+p_ModbusTx_PLCMemory();
+
+// **************************** ***** **** *** ** * HOMS
+
 
 P_CoatingProtections();
 
@@ -272,10 +397,192 @@ fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOut
 GVL_PMPS.g_FastFaultOutput1.Execute(i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(i_xVeto:=);]]></ST>
     </Implementation>
+    <Action Name="Init_XRTM2" Id="{5f4f0886-bfe6-466e-ab0f-beab0308d09d}">
+      <Implementation>
+        <ST><![CDATA[//FEE-M2
+///////////////////////////
+
+
+//Initialize ELMO Drive references
+fbInitDriveRef(stCoE:=HOMS2_XGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_XGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_YGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_YGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS2_Pitch.Stepper.stCoE);
+
+//Initialze Drive Speeds and Accelerations
+//////////////////////////////////////////
+HOMS2_XGantry.PAxis.fAcceleration := 1.0;
+HOMS2_XGantry.SAxis.fAcceleration := 1.0;
+HOMS2_YGantry.PAxis.fAcceleration := 1.0;
+HOMS2_YGantry.SAxis.fAcceleration := 1.0;
+
+HOMS2_XGantry.PAxis.fDeceleration := 1.0;
+HOMS2_XGantry.SAxis.fDeceleration := 1.0;
+HOMS2_YGantry.PAxis.fDeceleration := 1.0;
+HOMS2_YGantry.SAxis.fDeceleration := 1.0;
+
+HOMS2_XGantry.PAxis.fVelocity := 0.1;
+HOMS2_XGantry.SAxis.fVelocity := 0.1;
+HOMS2_YGantry.PAxis.fVelocity := 0.1;
+HOMS2_YGantry.SAxis.fVelocity := 0.1;
+
+HOMS2_Pitch.Stepper.fAcceleration := 39;
+HOMS2_Pitch.Stepper.fDeceleration := 39;
+HOMS2_Pitch.Stepper.fVelocity     := 100;
+
+//Initialize Piezo Driver
+/////////////////////////////////////
+HOMS2_Pitch.Piezo.stPIParams.fKp := 0.001;
+HOMS2_Pitch.Piezo.stPIParams.tTn := T#500MS;
+HOMS2_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
+HOMS2_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+
+
+	
+
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Init_XRTM3" Id="{4cd8bf74-eac1-478e-83ee-065628004dc5}">
+      <Implementation>
+        <ST><![CDATA[//FEE-M3
+///////////////////////////
+
+
+//Initialize ELMO Drive references
+fbInitDriveRef(stCoE:=HOMS3_XGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_XGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_YGantry.PAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_YGantry.SAxis.stCoE);
+fbInitDriveRef(stCoE:=HOMS3_Pitch.Stepper.stCoE);
+
+//Initialze Drive Speeds and Accelerations
+//////////////////////////////////////////
+HOMS3_XGantry.PAxis.fAcceleration := 1.0;
+HOMS3_XGantry.SAxis.fAcceleration := 1.0;
+HOMS3_YGantry.PAxis.fAcceleration := 1.0;
+HOMS3_YGantry.SAxis.fAcceleration := 1.0;
+
+HOMS3_XGantry.PAxis.fDeceleration := 1.0;
+HOMS3_XGantry.SAxis.fDeceleration := 1.0;
+HOMS3_YGantry.PAxis.fDeceleration := 1.0;
+HOMS3_YGantry.SAxis.fDeceleration := 1.0;
+
+HOMS3_XGantry.PAxis.fVelocity := 0.1;
+HOMS3_XGantry.SAxis.fVelocity := 0.1;
+HOMS3_YGantry.PAxis.fVelocity := 0.1;
+HOMS3_YGantry.SAxis.fVelocity := 0.1;
+
+HOMS3_Pitch.Stepper.fAcceleration := 39;
+HOMS3_Pitch.Stepper.fDeceleration := 39;
+HOMS3_Pitch.Stepper.fVelocity     := 100;
+
+//Initialize Piezo Driver
+/////////////////////////////////////
+HOMS3_Pitch.Piezo.stPIParams.fKp := 0.001;
+HOMS3_Pitch.Piezo.stPIParams.tTn := T#500MS;
+HOMS3_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
+HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">
+      <Implementation>
+        <ST><![CDATA[//XRT M2
+//////////////////////////
+fbM2Y1LS(diInputs:=HOMS2_YGantry.PAxis.diInputs, 
+xHiLS=>HOMS2_YGantry.PAxis.xHiLS,
+xLoLS=>HOMS2_YGantry.PAxis.xLoLS,
+STO => gM2STO);
+
+fbM2Y2LS(diInputs:=HOMS2_YGantry.SAxis.diInputs, 
+xHiLS=>HOMS2_YGantry.SAxis.xHiLS,
+xLoLS=>HOMS2_YGantry.SAxis.xLoLS);
+
+fbM2X1LS(diInputs:=HOMS2_XGantry.PAxis.diInputs, 
+xHiLS=>HOMS2_XGantry.PAxis.xHiLS,
+xLoLS=>HOMS2_XGantry.PAxis.xLoLS);
+
+fbM2X2LS(diInputs:=HOMS2_XGantry.SAxis.diInputs, 
+xHiLS=>HOMS2_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS2_XGantry.SAxis.xLoLS);
+
+fbM2P1LS(Pitch:=HOMS2_Pitch,
+xHiLS=>HOMS2_Pitch.Stepper.xHiLS,
+xLoLS=>HOMS2_Pitch.Stepper.xLoLS);
+
+//XRT M3
+//////////////////////////
+fbM3Y1LS(diInputs:=HOMS3_YGantry.PAxis.diInputs, 
+xHiLS=>HOMS3_YGantry.PAxis.xHiLS,
+xLoLS=>HOMS3_YGantry.PAxis.xLoLS,
+STO => gM3STO);
+
+fbM3Y2LS(diInputs:=HOMS3_YGantry.SAxis.diInputs, 
+xHiLS=>HOMS3_YGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_YGantry.SAxis.xLoLS);
+
+fbM3X1LS(diInputs:=HOMS3_XGantry.PAxis.diInputs, 
+xHiLS=>HOMS3_XGantry.PAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.PAxis.xLoLS);
+(*
+fbM3X2LS(diInputs:=HOMS3_XGantry.PAxis.diInputs,  //Paxis is here on purpose <HACK>
+xHiLS=>HOMS3_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.SAxis.xLoLS);
+*)
+fbM3X2LS(diInputs:=HOMS3_XGantry.SAxis.diInputs,  // Switching to SAxis works as expected, reason for <HACK> unclear
+xHiLS=>HOMS3_XGantry.SAxis.xHiLS,
+xLoLS=>HOMS3_XGantry.SAxis.xLoLS);
+
+fbM3P1LS(Pitch:=HOMS3_Pitch,
+xHiLS=>HOMS3_Pitch.Stepper.xHiLS,
+xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
+
+]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="Main">
       <LineId Id="3" Count="82" />
-      <LineId Id="169" Count="9" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="416" Count="0" />
+      <LineId Id="415" Count="0" />
+      <LineId Id="418" Count="4" />
+      <LineId Id="424" Count="2" />
+      <LineId Id="417" Count="0" />
+      <LineId Id="428" Count="13" />
+      <LineId Id="427" Count="0" />
+      <LineId Id="445" Count="1" />
+      <LineId Id="448" Count="2" />
+      <LineId Id="452" Count="2" />
+      <LineId Id="447" Count="0" />
+      <LineId Id="456" Count="2" />
+      <LineId Id="455" Count="0" />
+      <LineId Id="459" Count="2" />
+      <LineId Id="463" Count="1" />
+      <LineId Id="466" Count="8" />
+      <LineId Id="465" Count="0" />
+      <LineId Id="475" Count="4" />
+      <LineId Id="444" Count="0" />
+      <LineId Id="481" Count="0" />
+      <LineId Id="480" Count="0" />
+      <LineId Id="443" Count="0" />
+      <LineId Id="414" Count="0" />
+      <LineId Id="170" Count="8" />
       <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.Init_XRTM2">
+      <LineId Id="2" Count="43" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.Init_XRTM3">
+      <LineId Id="2" Count="36" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.LimitSwitchIO">
+      <LineId Id="27" Count="49" />
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

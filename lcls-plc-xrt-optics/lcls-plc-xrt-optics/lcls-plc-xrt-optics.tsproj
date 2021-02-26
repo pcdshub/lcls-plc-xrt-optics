@@ -799,15 +799,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{40F3F570-B7D6-45A6-8412-DB6823CF8900}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{4E1CAC9F-2165-4346-A7BF-EBA415803C4D}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{FC4384D7-B3DB-4ED8-BA5C-704896FDECA2}"/>
+				<Hide GUID="{CA2AC072-0358-42D9-B532-674A6CA4BB51}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{92FD6DA3-3E8B-4CF8-BEFC-7F82507D954F}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{3A4848AA-B342-4B3C-9645-777799F42EE8}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -829,7 +829,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{40F3F570-B7D6-45A6-8412-DB6823CF8900}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{4E1CAC9F-2165-4346-A7BF-EBA415803C4D}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -846,8 +846,56 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{EB939798-C165-4AAA-8791-B6439A6B9961}"/>
+				<Hide GUID="{04A28577-FFD3-49E4-9D0C-2A51895DBCF4}"/>
 			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{DACD7381-89ED-4BD1-B12C-7FE27284252E}" Namespace="Tc2_System" AutoDeleteType="true">T_AmsNetIdArr</Name>
+			<Comment>
+				<![CDATA[ TwinCAT AMS netID address bytes. ]]>
+			</Comment>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</BaseType>
+		</DataType>
+		<DataType>
+			<Name GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT" AutoDeleteType="true">ST_PlcDriveRef</Name>
+			<BitSize>80</BitSize>
+			<SubItem>
+				<Name>aNetId</Name>
+				<Type GUID="{DACD7381-89ED-4BD1-B12C-7FE27284252E}" Namespace="Tc2_System">T_AmsNetIdArr</Type>
+				<Comment>
+					<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+				</Comment>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSlaveAddr</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment>
+					<![CDATA[ Address of the slave device.]]>
+				</Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDriveNo</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<Comment>
+					<![CDATA[ Drive number]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDriveType</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<Comment>
+					<![CDATA[ Drive type]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
 		</DataType>
 		<DataType>
 			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
@@ -1315,6 +1363,20 @@ External Setpoint Generation:
 							</Comment>
 							<Type GUID="{A54F505E-07B6-49EE-83BC-DE5BFB66EB3E}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 						</Var>
+						<Var>
+							<Name>GVL_SerialIO.Serial_P2_stComIn</Name>
+							<Comment>
+								<![CDATA[ M2]]>
+							</Comment>
+							<Type GUID="{A54F505E-07B6-49EE-83BC-DE5BFB66EB3E}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_SerialIO.Serial_P3_stComIn</Name>
+							<Comment>
+								<![CDATA[ M3]]>
+							</Comment>
+							<Type GUID="{A54F505E-07B6-49EE-83BC-DE5BFB66EB3E}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>SerialIO Outputs</Name>
@@ -1323,6 +1385,14 @@ External Setpoint Generation:
 							<Comment>
 								<![CDATA[ XRTM1 Out Serual Comm Array]]>
 							</Comment>
+							<Type GUID="{126FC48E-16B0-4D67-90B8-DAF1C0845A82}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_SerialIO.Serial_P2_stComOut</Name>
+							<Type GUID="{126FC48E-16B0-4D67-90B8-DAF1C0845A82}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>GVL_SerialIO.Serial_P3_stComOut</Name>
 							<Type GUID="{126FC48E-16B0-4D67-90B8-DAF1C0845A82}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 						</Var>
 					</Vars>
@@ -2191,7 +2261,7 @@ External Setpoint Generation:
 							<Comment>
 								<![CDATA[ Encoders]]>
 							</Comment>
-							<Type GUID="{92FD6DA3-3E8B-4CF8-BEFC-7F82507D954F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+							<Type GUID="{3A4848AA-B342-4B3C-9645-777799F42EE8}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 							<SubVar>
 								<Name>Count</Name>
 								<Comment>
@@ -2213,7 +2283,7 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-							<Type GUID="{92FD6DA3-3E8B-4CF8-BEFC-7F82507D954F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+							<Type GUID="{3A4848AA-B342-4B3C-9645-777799F42EE8}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 							<SubVar>
 								<Name>Count</Name>
 								<Comment>
@@ -2235,7 +2305,7 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
-							<Type GUID="{92FD6DA3-3E8B-4CF8-BEFC-7F82507D954F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+							<Type GUID="{3A4848AA-B342-4B3C-9645-777799F42EE8}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 							<SubVar>
 								<Name>Count</Name>
 								<Comment>
@@ -2257,7 +2327,7 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-							<Type GUID="{92FD6DA3-3E8B-4CF8-BEFC-7F82507D954F}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+							<Type GUID="{3A4848AA-B342-4B3C-9645-777799F42EE8}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 							<SubVar>
 								<Name>Count</Name>
 								<Comment>
@@ -2353,6 +2423,1197 @@ External Setpoint Generation:
 ]]>
 								</Comment>
 							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2PitchControl.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.Stepper.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.Stepper.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3PitchControl.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.Stepper.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.Stepper.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
 						</Var>
 						<Var>
 							<Name>Main.fbArbiterIO.i_stCurrentBP</Name>
@@ -2493,6 +3754,1612 @@ External Setpoint Generation:
 							<Type>BIT</Type>
 						</Var>
 						<Var>
+							<Name>GVL.gAmsNetIDEcatMaster1</Name>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.Stepper.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.Stepper.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.Stepper.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Bender.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Bender.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Bender.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Bender.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.Stepper.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.Stepper.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.Stepper.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.diEncCnt</Name>
+							<Comment>
+								<![CDATA[Raw encoder count]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Bender.stCoE.stPlcDriveRef</Name>
+							<Comment>
+								<![CDATA[Ams id comes from a linked global variable]]>
+							</Comment>
+							<Type GUID="{D9E29D42-8721-4232-B1AC-8DF1303C68A1}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+							<SubVar>
+								<Name>aNetId</Name>
+								<Comment>
+									<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nSlaveAddr</Name>
+								<Comment>
+									<![CDATA[ Address of the slave device.]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveNo</Name>
+								<Comment>
+									<![CDATA[ Drive number]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>nDriveType</Name>
+								<Comment>
+									<![CDATA[ Drive type]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Bender.diInputs</Name>
+							<Comment>
+								<![CDATA[//////////////////////////]]>
+							</Comment>
+							<Type>DINT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Bender.iDriveCurrent</Name>
+							<Comment>
+								<![CDATA[Drive current]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Bender.stAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+							<SubVar>
+								<Name>AxisState</Name>
+								<Comment>
+									<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>HomingState</Name>
+								<Comment>
+									<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+								</Comment>
+							</SubVar>
+							<SubVar>
+								<Name>CoupleState</Name>
+								<Comment>
+									<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+								</Comment>
+							</SubVar>
+						</Var>
+						<Var>
 							<Name>GVL_XRTM1.XRTM1_Pitch.diEncCnt</Name>
 							<Comment>
 								<![CDATA[Raw encoder count]]>
@@ -2590,6 +5457,93 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>Main.fbXRTM1PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2PitchControl.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL.bXRT_M2_OUT</Name>
+							<Comment>
+								<![CDATA[MPS Outputs]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.bXRT_M2_IN</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3PitchControl.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
@@ -2721,6 +5675,70 @@ External Setpoint Generation:
 									<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
 								</Comment>
 							</SubVar>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Pitch.Stepper.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.PAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.SAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_YGantry.VAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.PAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.SAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_XGantry.VAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS2_Bender.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Pitch.Stepper.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.PAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.SAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_YGantry.VAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.PAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.SAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_XGantry.VAxis.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Devices.HOMS3_Bender.stAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
 							<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="p_ModbusRx_OutputCoils" Id="{943c36cb-adb4-42b1-982e-b281da4eed9b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM p_ModbusRx_OutputCoils
+VAR
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[HOMS2_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[60];
+HOMS2_XGantry.PAxis.bTwkBwd:=mb_Output_Coils[61];
+HOMS2_XGantry.SAxis.bTwkFwd:=mb_Output_Coils[62];
+HOMS2_XGantry.SAxis.bTwkBwd:=mb_Output_Coils[63];
+HOMS2_YGantry.PAxis.bTwkFwd:=mb_Output_Coils[64];
+HOMS2_YGantry.PAxis.bTwkBwd:=mb_Output_Coils[65];
+HOMS2_YGantry.SAxis.bTwkFwd:=mb_Output_Coils[66];
+HOMS2_YGantry.SAxis.bTwkBwd:=mb_Output_Coils[67];
+HOMS2_Pitch.Axis.bTwkFwd:=mb_Output_Coils[68];
+HOMS2_Pitch.Axis.bTwkBwd:=mb_Output_Coils[69];
+HOMS2_Pitch.Axis.xStop:=mb_Output_Coils[73];
+HOMS2_XGantry.xUncouple:=mb_Output_Coils[76];
+HOMS2_YGantry.xUncouple:=mb_Output_Coils[77];
+HOMS3_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[78];
+HOMS3_XGantry.PAxis.bTwkBwd:=mb_Output_Coils[79];
+HOMS3_XGantry.SAxis.bTwkFwd:=mb_Output_Coils[80];
+HOMS3_XGantry.SAxis.bTwkBwd:=mb_Output_Coils[81];
+HOMS3_YGantry.PAxis.bTwkFwd:=mb_Output_Coils[82];
+HOMS3_YGantry.PAxis.bTwkBwd:=mb_Output_Coils[83];
+HOMS3_YGantry.SAxis.bTwkFwd:=mb_Output_Coils[84];
+HOMS3_YGantry.SAxis.bTwkBwd:=mb_Output_Coils[85];
+HOMS3_Pitch.Axis.bTwkFwd:=mb_Output_Coils[86];
+HOMS3_Pitch.Axis.bTwkBwd:=mb_Output_Coils[87];
+HOMS3_Pitch.Piezo.xEnable:=mb_Output_Coils[88];
+HOMS3_Pitch.Axis.xStop:=mb_Output_Coils[89];
+HOMS3_XGantry.xUncouple:=mb_Output_Coils[90];
+HOMS3_YGantry.xUncouple:=mb_Output_Coils[91];
+HOMS2_XGantry.PAxis.xReset := mb_Output_Coils[95];
+HOMS2_YGantry.PAxis.xReset := mb_Output_Coils[96];
+HOMS2_Pitch.Axis.xReset := mb_Output_Coils[97];
+HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
+HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
+HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];]]></ST>
+    </Implementation>
+    <LineIds Name="p_ModbusRx_OutputCoils">
+      <LineId Id="13" Count="9" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="15" />
+      <LineId Id="48" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

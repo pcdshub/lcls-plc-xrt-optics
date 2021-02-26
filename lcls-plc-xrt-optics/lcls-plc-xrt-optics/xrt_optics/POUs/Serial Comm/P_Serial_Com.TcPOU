@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="P_Serial_Com" Id="{fa981f30-4d2c-4d48-ab6c-00ec78d696a1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
 	fbSerialLineControl_EL6001_XRTM1: SerialLineControl; // XRTM1 Serial Comm Function Block
+	
+	// M2
+	fbSerialLineControl_EL6001_P2: SerialLineControl;
+	// M3
+	fbSerialLineControl_EL6001_P3: SerialLineControl;
+
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// These are the global IOs...don't forget to copy your data into them
@@ -17,10 +23,34 @@ fbSerialLineControl_EL6001_XRTM1(Mode:= SERIALLINEMODE_EL6_22B,
 						        RxBuffer:= Serial_RXBuffer_XRTM1,
 						        Error=>,
 						        ErrorID=>);
+								
+fbSerialLineControl_EL6001_P2(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(Serial_P2_stComIn),
+	pComOut:=ADR(Serial_P2_stComOut) ,
+	SizeComIn:= SIZEOF(Serial_P2_stComIn),
+	TxBuffer:= Serial_P2_SerialTXBuffer,
+	RxBuffer:= Serial_P2_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+fbSerialLineControl_EL6001_P3(
+	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
+	pComIn:= ADR(Serial_P3_stComIn),
+	pComOut:=ADR(Serial_P3_stComOut) ,
+	SizeComIn:= SIZEOF(Serial_P3_stComIn),
+	TxBuffer:= Serial_P3_SerialTXBuffer,
+	RxBuffer:= Serial_P3_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	
 ]]></ST>
     </Implementation>
     <LineIds Name="P_Serial_Com">
       <LineId Id="3" Count="10" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="16" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="44" Count="0" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

@@ -1,11 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <GVL Name="GVL_SerialIO" Id="{e2338c89-1965-407c-b604-590f80e0dc24}">
     <Declaration><![CDATA[VAR_GLOBAL
 	//Better have your inputs and outputs!
 	// XRTM1
 	Serial_stComIn_XRTM1 AT %I* : EL6inData22B; // XRTM1 In Serial Comm Array
 	Serial_stComOut_XRTM1 AT %Q* : EL6outData22B; // XRTM1 Out Serual Comm Array
+	
+	// M2
+	Serial_P2_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
+	Serial_P2_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
+	
+	// M3
+	Serial_P3_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
+	Serial_P3_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
