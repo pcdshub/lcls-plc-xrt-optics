@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Devices" Id="{cb7cf638-cc80-4f58-a532-470704faedf8}">
     <Declaration><![CDATA[VAR_GLOBAL
 	//XRT M1
 	HOMS1_Pitch	    :	HOMS_PitchMechanism := (
-		ReqPosLimHi := 310,
-		ReqPosLimLo := -410,
-		diEncPosLimHi := 11269000,
-		diEncPosLimLo := 10859000
+		ReqPosLimHi := 220,
+		ReqPosLimLo := -193,
+		diEncPosLimHi := 11216281,
+		diEncPosLimLo := 11004512
 	);
 	HOMS1_YGantry	:	HOMS_Gantry;
 	HOMS1_XGantry	:	HOMS_Gantry;
@@ -15,10 +15,10 @@
 
 	//XRT M2
 	HOMS2_Pitch	    : HOMS_PitchMechanism := (
-		ReqPosLimHi := 1000,
-		ReqPosLimLo := -860,
-		diEncPosLimHi := 10349000,
-		diEncPosLimLo := 9349000
+		ReqPosLimHi := 960,
+		ReqPosLimLo := -967,
+		diEncPosLimHi := 10317713,
+		diEncPosLimLo := 9329162
 	);
 	HOMS2_YGantry	: HOMS_Gantry;
 	HOMS2_XGantry	: HOMS_Gantry;
@@ -26,10 +26,10 @@
 	
 	//XRT M3
 	HOMS3_Pitch	    : HOMS_PitchMechanism := (
-		ReqPosLimHi := 440,
-		ReqPosLimLo := -350,
-		diEncPosLimHi := 9391800,
-		diEncPosLimLo := 8945700
+		ReqPosLimHi := 246,
+		ReqPosLimLo := -212,
+		diEncPosLimHi := 9123828,
+		diEncPosLimLo := 8888874
 	);
 	HOMS3_YGantry	: HOMS_Gantry;
 	HOMS3_XGantry	: HOMS_Gantry;

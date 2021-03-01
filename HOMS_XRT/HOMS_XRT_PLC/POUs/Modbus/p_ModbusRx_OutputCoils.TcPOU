@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusRx_OutputCoils" Id="{943c36cb-adb4-42b1-982e-b281da4eed9b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusRx_OutputCoils
 VAR
@@ -57,23 +57,7 @@ HOMS2_YGantry.PAxis.xReset := mb_Output_Coils[96];
 HOMS2_Pitch.Axis.xReset := mb_Output_Coils[97];
 HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
 HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
-HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];
-]]></ST>
+HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];]]></ST>
     </Implementation>
-    <LineIds Name="p_ModbusRx_OutputCoils">
-      <LineId Id="37" Count="26" />
-      <LineId Id="97" Count="9" />
-      <LineId Id="117" Count="1" />
-      <LineId Id="121" Count="1" />
-      <LineId Id="128" Count="1" />
-      <LineId Id="133" Count="0" />
-      <LineId Id="130" Count="1" />
-      <LineId Id="134" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="132" Count="0" />
-      <LineId Id="135" Count="0" />
-      <LineId Id="64" Count="0" />
-      <LineId Id="32" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

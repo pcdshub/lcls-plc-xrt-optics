@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_ElmoGDCBellCoE" Id="{91acbbac-f6fe-4d79-9df9-4139d2e826f8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ElmoGDCBellCoE
 VAR_IN_OUT
@@ -16,6 +16,9 @@ VAR
 	CaseVar: INT := 1;
 	udiIP	:	UDINT;
 	uiChecksum	:	UDINT;
+
+	pTempPointer : POINTER TO REAL;
+	fTempFloat : REAL;
 END_VAR
 VAR CONSTANT
 	c5VSupply : ST_CoEIndSub := (nIndex:=16#2206, nSubIndex:=0);
@@ -39,6 +42,8 @@ fbCoERead.nIndex := cDriveTemp.nIndex;
 fbCoERead.nSubIndex := cDriveTemp.nSubIndex;
 fbCoERead.pDstBuf := ADR(stCoE.uiDriveTemp);
 fbCoERead.cbBufLen := SIZEOF(stCoE.uiDriveTemp);
+pTempPointer := fbCoERead.pDstBuf;
+fTempFloat := pTempPointer^;
 2:
 //5v supply
 fbCoERead.nIndex := c5vSupply.nIndex;
@@ -51,6 +56,7 @@ fbCoERead.nIndex := cParamChksm.nIndex;
 fbCoERead.nSubIndex := cParamChksm.nSubIndex;
 fbCoERead.pDstBuf := ADR(uiChecksum);
 fbCoERead.cbBufLen := SIZEOF(uiChecksum);
+stCoE.testChecksum := UDINT_TO_DINT(uiChecksum);
 4:
 //IP
 fbCoERead.nIndex := cIP.nIndex;
@@ -96,19 +102,17 @@ ACT_CoEReadFB();]]></ST>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
-                        <v n="ContainsExtensibleInputs">false</v>
-                        <v n="ProvidesSTSnippet">false</v>
                         <v n="BoxType">"FB_CoERead_ByDriveRef"</v>
                         <o n="Instance" t="Operand">
                           <v n="Operand">"fbCoERead"</v>
-                          <v n="Type">""</v>
+                          <v n="Type">"FB_CoERead_ByDriveRef"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
                           <o n="Flags" t="Flags">
-                            <v n="Extensible">false</v>
                             <v n="Flags">0</v>
                             <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
                           </o>
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
@@ -119,64 +123,64 @@ ACT_CoEReadFB();]]></ST>
                           <l2 n="OutputItems" cet="Operand">
                             <o>
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
-                              <v n="LValue">false</v>
+                              <v n="LValue">true</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
                               <v n="Id">4L</v>
                             </o>
                             <o>
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
-                              <v n="LValue">false</v>
+                              <v n="LValue">true</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
                               <v n="Id">5L</v>
                             </o>
                             <o>
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
-                              <v n="LValue">false</v>
+                              <v n="LValue">true</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
                               <v n="Id">6L</v>
                             </o>
                             <o>
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
-                              <v n="LValue">false</v>
+                              <v n="LValue">true</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
                               <v n="Id">7L</v>
@@ -184,23 +188,23 @@ ACT_CoEReadFB();]]></ST>
                           </l2>
                         </o>
                         <o n="Flags" t="Flags">
-                          <v n="Extensible">false</v>
                           <v n="Flags">0</v>
                           <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">"stCoE.stDriveRef"</v>
-                              <v n="Type">""</v>
+                              <v n="Type">"ST_DriveRef"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -212,14 +216,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -231,14 +235,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -250,14 +254,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -269,14 +273,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -288,14 +292,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -307,14 +311,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -326,14 +330,14 @@ ACT_CoEReadFB();]]></ST>
                           <o>
                             <o n="Operand" t="Operand">
                               <v n="Operand">""</v>
-                              <v n="Type">""</v>
+                              <n n="Type" />
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
                               <o n="Flags" t="Flags">
-                                <v n="Extensible">false</v>
                                 <v n="Flags">0</v>
                                 <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
@@ -383,6 +387,8 @@ ACT_CoEReadFB();]]></ST>
                         <n n="EN" />
                         <n n="ENO" />
                         <n n="STSnippet" />
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
                         <v n="Id">3L</v>
                       </o>
                     </l2>
@@ -413,9 +419,5 @@ ACT_CoEReadFB();]]></ST>
         </NWL>
       </Implementation>
     </Action>
-    <LineIds Name="FB_ElmoGDCBellCoE">
-      <LineId Id="3" Count="48" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

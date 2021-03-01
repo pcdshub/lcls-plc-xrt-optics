@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4020.39" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNestedPlcProjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{3749F519-7E88-4D20-B8BB-B17B89339572}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
@@ -56,6 +56,24 @@
 				<BitSize>176</BitSize>
 				<BitOffs>16</BitOffs>
 			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
 		</DataType>
 		<DataType>
 			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
@@ -757,24 +775,6 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-			<Format>
-				<Printf>%d.%d.%d.%d.%d.%d</Printf>
-				<Parameter>[0]</Parameter>
-				<Parameter>[1]</Parameter>
-				<Parameter>[2]</Parameter>
-				<Parameter>[3]</Parameter>
-				<Parameter>[4]</Parameter>
-				<Parameter>[5]</Parameter>
-			</Format>
-		</DataType>
-		<DataType>
 			<Name GUID="{FDD27144-A22E-4E13-BBC6-81BD2EEB605A}" Namespace="Tc2_System" AutoDeleteType="true">T_AmsNetIdArr</Name>
 			<Comment>
 				<![CDATA[ TwinCAT AMS netID address bytes. ]]>
@@ -821,24 +821,6 @@ External Setpoint Generation:
 				<BitSize>8</BitSize>
 				<BitOffs>72</BitOffs>
 			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
-			<BitSize>48</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
-			<ArrayInfo>
-				<LBound>0</LBound>
-				<Elements>6</Elements>
-			</ArrayInfo>
-			<Format>
-				<Printf>%d.%d.%d.%d.%d.%d</Printf>
-				<Parameter>[0]</Parameter>
-				<Parameter>[1]</Parameter>
-				<Parameter>[2]</Parameter>
-				<Parameter>[3]</Parameter>
-				<Parameter>[4]</Parameter>
-				<Parameter>[5]</Parameter>
-			</Format>
 		</DataType>
 		<DataType>
 			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
@@ -1020,7 +1002,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D389F784-3772-48EA-848E-1D7F6EFE4E9B}" Name="HOMS_XRT_PLC" PrjFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.plcproj" TmcFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-		<Instance Id="#x01010010" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HOMS_XRT_PLC\HOMS_XRT_PLC.tmc">
 			<Name>HOMS_XRT_PLC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1058,6 +1040,13 @@ External Setpoint Generation:
 			</Vars>
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
+				<Var>
+					<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+					<Comment>
+						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+					</Comment>
+					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				</Var>
 				<Var>
 					<Name>MAIN.XRTM1PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
@@ -3405,6 +3394,100 @@ External Setpoint Generation:
 					<Type>DINT</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.HOMS1_Bender.stCoE.stPlcDriveRef</Name>
+					<Comment>
+						<![CDATA[Ams id comes from a linked global variable]]>
+					</Comment>
+					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+					<SubVar>
+						<Name>aNetId</Name>
+						<Comment>
+							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nSlaveAddr</Name>
+						<Comment>
+							<![CDATA[ Address of the slave device.]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nDriveNo</Name>
+						<Comment>
+							<![CDATA[ Drive number]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nDriveType</Name>
+						<Comment>
+							<![CDATA[ Drive type]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS1_Bender.diInputs</Name>
+					<Comment>
+						<![CDATA[//////////////////////////]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS1_Bender.iDriveCurrent</Name>
+					<Comment>
+						<![CDATA[Drive current]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS1_Bender.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.HOMS2_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
@@ -4110,6 +4193,100 @@ External Setpoint Generation:
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS2_Bender.stCoE.stPlcDriveRef</Name>
+					<Comment>
+						<![CDATA[Ams id comes from a linked global variable]]>
+					</Comment>
+					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
+					<SubVar>
+						<Name>aNetId</Name>
+						<Comment>
+							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nSlaveAddr</Name>
+						<Comment>
+							<![CDATA[ Address of the slave device.]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nDriveNo</Name>
+						<Comment>
+							<![CDATA[ Drive number]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nDriveType</Name>
+						<Comment>
+							<![CDATA[ Drive type]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS2_Bender.diInputs</Name>
+					<Comment>
+						<![CDATA[//////////////////////////]]>
+					</Comment>
+					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS2_Bender.iDriveCurrent</Name>
+					<Comment>
+						<![CDATA[Drive current]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS2_Bender.stAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.HOMS3_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
@@ -4819,194 +4996,6 @@ External Setpoint Generation:
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS2_Bender.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS2_Bender.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS2_Bender.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS2_Bender.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.HOMS3_Bender.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
@@ -5251,6 +5240,10 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>GVL_Devices.HOMS1_Bender.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
 					<Name>GVL_Devices.HOMS2_Pitch.Stepper.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -5276,6 +5269,10 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>GVL_Devices.HOMS2_XGantry.VAxis.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL_Devices.HOMS2_Bender.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
@@ -5307,30 +5304,28 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS2_Bender.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
 					<Name>GVL_Devices.HOMS3_Bender.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 			</Vars>
 			<TaskPouOids>
-				<TaskPouOid Prio="1" OTCID="#x01010011"/>
-				<TaskPouOid Prio="3" OTCID="#x01010013"/>
-				<TaskPouOid Prio="20" OTCID="#x01010012"/>
+				<TaskPouOid Prio="1" OTCID="#x08502001"/>
+				<TaskPouOid Prio="20" OTCID="#x08502003"/>
+				<TaskPouOid Prio="3" OTCID="#x08502002"/>
 			</TaskPouOids>
 		</Instance>
 	</Project>
 	<Mappings>
 		<OwnerA Name="HOMS_XRT_PLC Instance">
+			<OwnerB Name="TIID^HOMS">
+				<Link VarA="PlcTask Inputs^GVL.gAmsNetIDEcatMaster1" VarB="InfoData^AmsNetId"/>
+			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 13 (EL2008)">
 				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_IN" VarB="Channel 2^Output"/>
 				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_OUT" VarB="Channel 1^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-B1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Interface Box (EK1100)^M1-P1-Piezo (EL6001)">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
@@ -5382,19 +5377,28 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-P1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.iDriveCurrent" VarB="Inputs_1^Current actual value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-B1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Interface Box (EK1100)^M2-P1-Piezo (EL6001)">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
@@ -5446,23 +5450,28 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-P1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-B1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Interface Box (EK1100)^M3-P1-Piezo (EL6001)">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P3_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
@@ -5514,16 +5523,24 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-P1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-X2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
