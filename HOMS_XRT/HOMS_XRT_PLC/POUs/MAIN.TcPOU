@@ -149,7 +149,10 @@ bXRT_M2_OUT := fbMPS_States.OUT;
 p_ModbusTx_InputCoils();
 //p_ModbusTx_OutputCoils();
 p_ModbusTx_InputReg();
-p_ModbusTx_PLCMemory();]]></ST>
+p_ModbusTx_PLCMemory();
+
+//PMPS
+PRG_CoatingProtection();]]></ST>
     </Implementation>
     <Action Name="Init_XRTM1" Id="{a11eaaff-25fb-4e40-9807-fb1f683338da}">
       <Implementation>

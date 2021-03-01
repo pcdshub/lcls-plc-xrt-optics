@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_CoatingProtection" Id="{29923cda-b5d2-46e9-ade9-a120ec45a996}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CoatingProtection
+VAR
+	//M1 
+   fbM1 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M1', 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
+		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
+		nSecondCoatingBitmask:=  2#1111_1110_0000_0000 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);
+		
+
+//M2
+   fbM2 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M2', 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);
+
+		
+//M3 
+   fbM3 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M3', 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
+		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
+		nSecondCoatingBitmask:=  2#1111_1110_0000_0000 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);		
+	
+           
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+
+//M1
+fbM1(
+    rCurrentEncoderPosition := HOMS1_YGantry.PAxis.stStatus.rActPosition,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+
+	
+//M2
+//With M2 the same coating has different bit masks depending on the pitch
+IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < 1.5 ) THEN // According to confluence Pitch 1.375 is MEC-SiC
+	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111; 
+	fbM2.nSecondCoatingBitmask:= 2#1111_1110_0000_0000; 
+ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition > 2) THEN // According to confluence Pitch 2.75 is MEC-SiC
+	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
+	fbM2.nSecondCoatingBitmask:= 2#1111_1110_0000_0000;  		
+END_IF
+fbM2(
+    rCurrentEncoderPosition := HOMS2_YGantry.PAxis.stStatus.rActPosition,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+
+	
+//M3
+fbM3(
+    rCurrentEncoderPosition := HOMS3_YGantry.PAxis.stStatus.rActPosition,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
