@@ -12,7 +12,7 @@ VAR
 		sFirstCoatingType:= 'SiC', 
 		rSecondCoatingPosition:= 5 , 
 		rSecondCoatingPositionTolerance:= 1 , 
-		nSecondCoatingBitmask:=  2#1111_1110_0000_0000 , 
+		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
 		
@@ -38,7 +38,7 @@ VAR
 		sFirstCoatingType:= 'SiC', 
 		rSecondCoatingPosition:= 5 , 
 		rSecondCoatingPositionTolerance:= 1 , 
-		nSecondCoatingBitmask:=  2#1111_1110_0000_0000 , 
+		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
 	
@@ -47,25 +47,28 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-
-
 //M1
 fbM1(
+	bMirrorIn := (HOMS2_XGantry.PAxis.stStatus.rActPosition > -5) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := HOMS1_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
-
 	
 //M2
 //With M2 the same coating has different bit masks depending on the pitch
-IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < 1.5 ) THEN // According to confluence Pitch 1.375 is MEC-SiC
-	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111; 
-	fbM2.nSecondCoatingBitmask:= 2#1111_1110_0000_0000; 
-ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition > 2) THEN // According to confluence Pitch 2.75 is MEC-SiC
+IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
 	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
-	fbM2.nSecondCoatingBitmask:= 2#1111_1110_0000_0000;  		
+	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
+ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition < 600) THEN //MEC
+		fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
+	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
+ELSE // Anything else in the middle of the range
+	fbM2.nFirstCoatingBitmask:= 2#0000_0000_0000_0000; 
+	fbM2.nSecondCoatingBitmask:= 2#0000_0000_0000_0000;  		
 END_IF
+
 fbM2(
+	bMirrorIn := bXRT_M2_IN, // as implemented in Main prg
     rCurrentEncoderPosition := HOMS2_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
@@ -73,6 +76,7 @@ fbM2(
 	
 //M3
 fbM3(
+	bMirrorIn:= NOT bXRT_M2_OUT, // When M1 is out, M3 is considered to be OUT
     rCurrentEncoderPosition := HOMS3_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
