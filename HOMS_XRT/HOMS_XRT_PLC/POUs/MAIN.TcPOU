@@ -200,6 +200,10 @@ HOMS1_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS1_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS1_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
 HOMS1_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+// Initialize deadband settings
+HOMS1_Pitch.Stepper.rStepperDmovRange := 15;
+HOMS1_Pitch.Piezo.rPiezoDmovRange := 0.5;
                                                                                                                                           
 
 ]]></ST>
@@ -245,6 +249,10 @@ HOMS2_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS2_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS2_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
 HOMS2_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+// Initialize deadband settings
+HOMS2_Pitch.Stepper.rStepperDmovRange := 3;
+HOMS2_Pitch.Piezo.rPiezoDmovRange := 0.5;
 
 
 
@@ -293,7 +301,12 @@ HOMS3_Pitch.Stepper.fVelocity     := 100;
 HOMS3_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS3_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS3_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
-HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;]]></ST>
+HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+
+// Initialize deadband settings
+HOMS3_Pitch.Stepper.rStepperDmovRange := 20;
+HOMS3_Pitch.Piezo.rPiezoDmovRange := 0.5;]]></ST>
       </Implementation>
     </Action>
     <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">
