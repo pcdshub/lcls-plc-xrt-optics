@@ -42,6 +42,8 @@ VAR
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
 	
+		//PMPS arbiter Interface
+		fbArbiterIO : FB_SubSysToArbiter_IO;
            
 END_VAR
 ]]></Declaration>
@@ -59,7 +61,7 @@ fbM1(
 IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
 	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
-ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition < 600) THEN //MEC
+ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
 		fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
 ELSE // Anything else in the middle of the range
@@ -80,6 +82,13 @@ fbM3(
     rCurrentEncoderPosition := HOMS3_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
+	
+	
+// PMPS ARbiter and FFO instantiation.
+GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
+fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
+GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 ]]></ST>
     </Implementation>
   </POU>

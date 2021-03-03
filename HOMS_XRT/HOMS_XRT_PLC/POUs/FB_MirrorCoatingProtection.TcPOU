@@ -41,7 +41,7 @@ IF (bMirrorIn) THEN
 		ffFirstCoating.i_xOK := (neVRange AND nFirstCoatingBitmask) = neVRange; 
 		ffSecondCoating.i_xOK := TRUE;
 	ELSIF (rCurrentEncoderPosition >= rSecondCoatingPosition - rSecondCoatingPositionTolerance) AND (rCurrentEncoderPosition <= rSecondCoatingPosition + rSecondCoatingPositionTolerance)  THEN
-		ffSecondCoating.i_xOK := (neVRange AND nFirstCoatingBitmask) = neVRange; 
+		ffSecondCoating.i_xOK := (neVRange AND nSecondCoatingBitmask) = neVRange; 
 		ffFirstCoating.i_xOK := TRUE;
 	ELSE
 		ffFirstCoating.i_xOK := FALSE;

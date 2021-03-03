@@ -70,6 +70,9 @@ VAR
 	//noConsequence	:	BOOL;
 	
 	mcBenderPower	:	MC_POWER;
+	
+	// Logging
+	fbLogHandler : FB_LogHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -152,7 +155,10 @@ p_ModbusTx_InputReg();
 p_ModbusTx_PLCMemory();
 
 //PMPS
-PRG_CoatingProtection();]]></ST>
+PRG_CoatingProtection();
+
+// Logging
+fbLogHandler();]]></ST>
     </Implementation>
     <Action Name="Init_XRTM1" Id="{a11eaaff-25fb-4e40-9807-fb1f683338da}">
       <Implementation>
