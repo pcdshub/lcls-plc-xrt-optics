@@ -51,7 +51,7 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (HOMS1_XGantry.PAxis.diEncCnt > -5) , // according to confluence -6 is nominal out position
+	bMirrorIn := (HOMS1_XGantry.PAxis.diEncCnt > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := HOMS1_YGantry.PAxis.diEncCnt,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
