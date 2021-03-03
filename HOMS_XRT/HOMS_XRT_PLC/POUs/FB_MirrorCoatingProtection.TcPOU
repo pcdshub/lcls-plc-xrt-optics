@@ -32,7 +32,7 @@ END_VAR]]></Declaration>
 	ffFirstCoating.i_Desc := CONCAT(sFirstCoatingType, ' mirror coating incompatible with beam photon energy');
 	ffFirstCoating.i_DevName := sDevName;
 	
-	ffSecondCoating.i_Desc := CONCAT(sFirstCoatingType, ' mirror coating incompatible with beam photon energy');
+	ffSecondCoating.i_Desc := CONCAT(sSecondCoatingType, ' mirror coating incompatible with beam photon energy');
 	ffSecondCoating.i_DevName := sDevName;
 	bInit := FALSE;
 END_IF
