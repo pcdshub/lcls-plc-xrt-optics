@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_MirrorCoatingProtection" Id="{a22d704d-ac8a-48d4-9603-819fc87fd037}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_MirrorCoatingProtection
+  <POU Name="FB_MirrorCoatingProtectionScaledPositions" Id="{d10577b5-3cca-4b2d-9575-3f7b707b5b15}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MirrorCoatingProtectionScaledPositions
 VAR_INPUT
 	bMirrorIn :BOOL; //Mirror is in the In position
-	rCurrentEncoderPosition : DINT; // Current encoder position
+	rCurrentEncoderPosition : REAL; // Current encoder position
 	neVRange : WORD; // Current ev range from stCurrentBeamParams	
 	sDevName : STRING := ''; // Device name	
-	rFirstCoatingPosition : DINT; // Encoder count/position for the coating 
-	rFirstCoatingPositionTolerance : DINT; // position +/- tolerance 
+	rFirstCoatingPosition : REAL; // Encoder count/position for the coating 
+	rFirstCoatingPositionTolerance : REAL; // position +/- tolerance 
 	nFirstCoatingBitmask : WORD; // Bitmask for upper coating
 	sFirstCoatingType : STRING := ''; // Type of coating
-	rSecondCoatingPosition : DINT; // Encoder count/position for the coating 
-	rSecondCoatingPositionTolerance : DINT; // position +/- tolerance 
+	rSecondCoatingPosition : REAL; // Encoder count/position for the coating 
+	rSecondCoatingPositionTolerance : REAL; // position +/- tolerance 
 	nSecondCoatingBitmask : WORD; // Bitmask for upper coating
 	sSecondCoatingType : STRING := ''; // Type of coating
 	bAutoClear : BOOL;

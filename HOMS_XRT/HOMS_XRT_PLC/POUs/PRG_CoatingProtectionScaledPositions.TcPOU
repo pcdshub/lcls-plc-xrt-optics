@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="PRG_CoatingProtection" Id="{e94ac5b8-c8a3-4662-9871-79dbc91dcc6e}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM PRG_CoatingProtection
+  <POU Name="PRG_CoatingProtectionScaledPositions" Id="{29923cda-b5d2-46e9-ade9-a120ec45a996}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CoatingProtectionScaledPositions
 VAR
 	//M1 
    fbM1 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M1', 
-		rFirstCoatingPosition:= 8611000, 
-		rFirstCoatingPositionTolerance:= 1000000, 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
 		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
 		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 18611000 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
 		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
@@ -20,11 +20,11 @@ VAR
 //M2
    fbM2 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M2', 
-		rFirstCoatingPosition:= 8496030, 
-		rFirstCoatingPositionTolerance:= 1000000, 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
 		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 18496030 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
 
@@ -32,12 +32,12 @@ VAR
 //M3 
    fbM3 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M3', 
-		rFirstCoatingPosition:= 9279350, 
-		rFirstCoatingPositionTolerance:= 1000000, 
+		rFirstCoatingPosition:= -5, 
+		rFirstCoatingPositionTolerance:= 1, 
 		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
 		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 19279350 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
+		rSecondCoatingPosition:= 5 , 
+		rSecondCoatingPositionTolerance:= 1 , 
 		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
@@ -51,8 +51,8 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (HOMS1_XGantry.PAxis.diEncCnt > -5) , // according to confluence -6 is nominal out position
-    rCurrentEncoderPosition := HOMS1_YGantry.PAxis.diEncCnt,
+	bMirrorIn := (HOMS1_XGantry.PAxis.stStatus.rActPosition > -5) , // according to confluence -6 is nominal out position
+    rCurrentEncoderPosition := HOMS1_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 	
@@ -71,7 +71,7 @@ END_IF
 
 fbM2(
 	bMirrorIn := bXRT_M2_IN, // as implemented in Main prg
-    rCurrentEncoderPosition := HOMS2_YGantry.PAxis.diEncCnt,
+    rCurrentEncoderPosition := HOMS2_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 
@@ -79,7 +79,7 @@ fbM2(
 //M3
 fbM3(
 	bMirrorIn:= NOT bXRT_M2_OUT, // When M1 is out, M3 is considered to be OUT
-    rCurrentEncoderPosition := HOMS3_YGantry.PAxis.diEncCnt,
+    rCurrentEncoderPosition := HOMS3_YGantry.PAxis.stStatus.rActPosition,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 	

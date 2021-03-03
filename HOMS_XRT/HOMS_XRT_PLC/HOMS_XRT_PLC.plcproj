@@ -177,6 +177,9 @@
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_MirrorCoatingProtectionScaledPositions.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_MPS_STATES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -199,6 +202,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Modbus\p_ModbusTx_PLCMemory.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_CoatingProtectionScaledPositions.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_CoatingProtection.TcPOU">
