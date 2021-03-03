@@ -44,6 +44,11 @@ VAR
 	
 		//PMPS arbiter Interface
 		fbArbiterIO : FB_SubSysToArbiter_IO;
+		rtRemove: R_TRIG;
+		bRemove :BOOL;
+		bExist :BOOL;
+		nReq : UDINT;
+		
            
 END_VAR
 ]]></Declaration>
@@ -78,7 +83,7 @@ fbM2(
 	
 //M3
 fbM3(
-	bMirrorIn:= NOT bXRT_M2_OUT, // When M1 is out, M3 is considered to be OUT
+	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
     rCurrentEncoderPosition := HOMS3_YGantry.PAxis.diEncCnt,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
@@ -89,6 +94,12 @@ GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
 fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
+
+bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
+rtRemove(CLK:= bRemove);
+if (rtRemove.Q) THEN
+ 	GVL_PMPS.g_fbArbiter1.RemoveRequest(nReq); 
+END_IF
 ]]></ST>
     </Implementation>
   </POU>

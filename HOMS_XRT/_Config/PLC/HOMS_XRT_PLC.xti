@@ -6100,6 +6100,17 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_FFO">
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE">
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="IO Outputs^FFO1"/>
+				<Link VarA="PlcTask Outputs^PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Bender.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
