@@ -62,7 +62,7 @@ IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
 	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
 ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
-		fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
+	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
 ELSE // Anything else in the middle of the range
 	fbM2.nFirstCoatingBitmask:= 2#0000_0000_0000_0000; 
