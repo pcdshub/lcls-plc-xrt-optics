@@ -16,12 +16,12 @@ VAR_GLOBAL
     g_FastFaultOutput2  :   FB_HardwareFFOutput;
 	
 	{attribute 'pytmc' := '
-		pv:PLC:XRT:HOMS:ARB:01
+	pv: PLC:XRT:HOMS:ARB:01
 	'}
 	g_fbArbiter1 : FB_Arbiter(1);
 
 	{attribute 'pytmc' := '
-		pv: PLC:XRT:HOMS:ARB:02
+	pv: PLC:XRT:HOMS:ARB:02
 	'}
 	g_fbArbiter2 : FB_Arbiter(2);
 	
