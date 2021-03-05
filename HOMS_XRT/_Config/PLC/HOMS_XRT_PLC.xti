@@ -1304,13 +1304,6 @@ External Setpoint Generation:
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>PMPS.LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
-					<Comment>
-						<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
-					</Comment>
-					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
 					<Name>MAIN.XRTM1PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -5940,6 +5933,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -5948,6 +5942,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -6021,6 +6016,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -6093,6 +6089,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>

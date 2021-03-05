@@ -63,10 +63,10 @@ fbM1(
 	
 //M2
 //With M2 the same coating has different bit masks depending on the pitch
-IF (HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
+IF (HOMS2_Pitch.diEncCnt < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
 	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
-ELSIF (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
+ELSIF (HOMS2_Pitch.diEncCnt > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
 	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
 	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
 ELSE // Anything else in the middle of the range

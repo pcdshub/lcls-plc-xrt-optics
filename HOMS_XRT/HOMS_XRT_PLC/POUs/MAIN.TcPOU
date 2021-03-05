@@ -6,12 +6,15 @@ VAR
 	tpImAPLC : TP := (PT:=T#10S);
 	
 	XRTM1PitchControl	:	FB_PitchControl;
+	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M1-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM1Y_GantryControl	:	FB_Gantry;
 	XRTM1X_GantryControl	:	FB_Gantry;
 	XRTM2PitchControl	    :	FB_PitchControl;
+	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M2-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM2Y_GantryControl	:	FB_Gantry;
 	XRTM2X_GantryControl	:	FB_Gantry;
 	XRTM3PitchControl	    :	FB_PitchControl;
+//	{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M3-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM3Y_GantryControl	:	FB_Gantry;
 	XRTM3X_GantryControl	:	FB_Gantry;
 	

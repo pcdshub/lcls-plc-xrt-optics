@@ -69,10 +69,10 @@
 		<Image Id="3" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Image Id="2" AddrType="10" ImageType="3">
+		<Image Id="4" AddrType="10" ImageType="3">
 			<Name>Image-2</Name>
 		</Image>
-		<Image Id="4" AddrType="10" ImageType="3">
+		<Image Id="5" AddrType="10" ImageType="3">
 			<Name>Image-3</Name>
 		</Image>
 		<Box BoxType="9099" Id="1">

@@ -345,7 +345,7 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, * (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 0.17.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
