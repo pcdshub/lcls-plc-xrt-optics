@@ -75,7 +75,7 @@ ELSE // Anything else in the middle of the range
 END_IF
 
 fbM2(
-	bMirrorIn := bXRT_M2_IN, // as implemented in Main prg
+	bMirrorIn := (HOMS2_XGantry.PAxis.diEncCnt < 25490840), 
     rCurrentEncoderPosition := HOMS2_YGantry.PAxis.diEncCnt,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
