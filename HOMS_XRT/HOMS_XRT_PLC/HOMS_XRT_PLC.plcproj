@@ -161,6 +161,10 @@
     <Compile Include="GVLs\GVL_IO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_PMPS.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -168,6 +172,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_MirrorCoatingProtectionScaledPositions.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FB_MPS_STATES.TcPOU">
@@ -192,6 +202,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Modbus\p_ModbusTx_PLCMemory.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_CoatingProtectionScaledPositions.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_CoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_GantryDiffSup.TcPOU">
@@ -239,6 +255,10 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="PMPS">
+      <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>PMPS</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="System_VisuElemMeter">
       <DefaultResolution>VisuElemMeter, 3.5.10.0 (System)</DefaultResolution>
       <Namespace>VisuElemMeter</Namespace>
@@ -324,6 +344,9 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="PMPS">
+      <Resolution>PMPS, 0.17.0 (SLAC - LCLS)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
@@ -367,15 +390,15 @@
     <SubObject Include="FB_PI_E621_SerialDriver.a_UnknownError" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.3.4,SLAC">
+    <LibraryReference Include="LCLS General,2.4.2,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
@@ -496,22 +519,22 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="ArrayList">System.Collections.ArrayList</Type>
-    <Type n="Boolean">System.Boolean</Type>
-    <Type n="Group">{daecd4be-1e2b-4335-a125-4a1ac83ea49f}</Type>
-    <Type n="GroupList">{bf4dffda-f055-446d-9d7a-5f126720896b}</Type>
-    <Type n="Guid">System.Guid</Type>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="Int32">System.Int32</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-    <Type n="User">{cd83029e-13b0-491e-9e4b-921adda0d86b}</Type>
-    <Type n="UserAuthentication">{3635a671-97f5-41bb-9e29-0ebb9795975c}</Type>
-    <Type n="UserList">{9fe6b547-6bc8-4f11-b589-b517860c5891}</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="ArrayList">System.Collections.ArrayList</Type>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Group">{daecd4be-1e2b-4335-a125-4a1ac83ea49f}</Type>
+          <Type n="GroupList">{bf4dffda-f055-446d-9d7a-5f126720896b}</Type>
+          <Type n="Guid">System.Guid</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="Int32">System.Int32</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+          <Type n="User">{cd83029e-13b0-491e-9e4b-921adda0d86b}</Type>
+          <Type n="UserAuthentication">{3635a671-97f5-41bb-9e29-0ebb9795975c}</Type>
+          <Type n="UserList">{9fe6b547-6bc8-4f11-b589-b517860c5891}</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

@@ -69,10 +69,10 @@
 		<Image Id="3" AddrType="9" ImageType="3">
 			<Name>Image</Name>
 		</Image>
-		<Image Id="2" AddrType="10" ImageType="3">
+		<Image Id="4" AddrType="10" ImageType="3">
 			<Name>Image-2</Name>
 		</Image>
-		<Image Id="4" AddrType="10" ImageType="3">
+		<Image Id="5" AddrType="10" ImageType="3">
 			<Name>Image-3</Name>
 		</Image>
 		<Box BoxType="9099" Id="1">
@@ -11842,20 +11842,8 @@
 					</Box>
 				</Box>
 			</Box>
-			<Box BoxType="9100" Id="23">
-				<Name>Term 23 (EL6601)</Name>
-				<ImageId>124</ImageId>
-				<EtherCAT SlaveType="6" PdiType="#x0c08" ExecIo="true" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" EoeType="1" FoeType="1" VendorId="#x00000002" ProductCode="#x19c93052" RevisionNo="#x00150000" InfoDataAddr="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6601 1 Port Switch (Ethernet, CoE)" Desc="EL6601" PortABoxInfo="#x02000002">
-					<SyncMan>0010000426000100010000002a0000040004001026010000</SyncMan>
-					<SyncMan>0014000422000100020000002a0000040004001422010000</SyncMan>
-					<SyncMan>001800002400000003000000000000000000001824010000</SyncMan>
-					<SyncMan>002400002000000004000000000000000000002420010000</SyncMan>
-					<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
-					<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
-					<Fmmu>0000000000000000000000010000000002000000000000000000000000000000</Fmmu>
-					<SwitchPortData>00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</SwitchPortData>
-					<BootStrapData>00181402141a1402</BootStrapData>
-				</EtherCAT>
+			<Box File="Term 34 (EK1521-0010).xti" Id="34">
+				<EtherCAT PortABoxInfo="#x02000002"/>
 			</Box>
 		</Box>
 		<EtherCAT DcSyncMode="3" EnableVirtualSwitch="true" MaxSwitchPorts="26" MaxSwitchFrames="600">

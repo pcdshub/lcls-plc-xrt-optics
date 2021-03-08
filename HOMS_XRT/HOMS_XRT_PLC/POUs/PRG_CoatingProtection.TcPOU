@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_CoatingProtection" Id="{e94ac5b8-c8a3-4662-9871-79dbc91dcc6e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_CoatingProtection
+VAR
+	//M1 
+   fbM1 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M1', 
+		rFirstCoatingPosition:= 8611000, 
+		rFirstCoatingPositionTolerance:= 1000000, 
+		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 18611000 , 
+		rSecondCoatingPositionTolerance:= 1000000 , 
+		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);
+		
+
+//M2
+   fbM2 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M2', 
+		rFirstCoatingPosition:= 8496030, 
+		rFirstCoatingPositionTolerance:= 1000000, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 18496030 , 
+		rSecondCoatingPositionTolerance:= 1000000 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);
+
+		
+//M3 
+   fbM3 : FB_MirrorCoatingProtection := (
+	   	sDevName:= 'XRT-M3', 
+		rFirstCoatingPosition:= 9279350, 
+		rFirstCoatingPositionTolerance:= 1000000, 
+		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
+		sFirstCoatingType:= 'SiC', 
+		rSecondCoatingPosition:= 19279350 , 
+		rSecondCoatingPositionTolerance:= 1000000 , 
+		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
+		sSecondCoatingType:= 'W', 
+		bAutoClear:= TRUE);		
+	
+		//PMPS arbiter Interface
+		fbArbiterIO : FB_SubSysToArbiter_IO;
+		rtRemove: R_TRIG;
+		bRemove :BOOL;
+		bExist :BOOL;
+		nReq : UDINT;
+		
+           
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//M1
+fbM1(
+	bMirrorIn := (HOMS1_XGantry.PAxis.diEncCnt > 20210500) , // according to confluence -6 is nominal out position
+    rCurrentEncoderPosition := HOMS1_YGantry.PAxis.diEncCnt,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+	
+//M2
+//With M2 the same coating has different bit masks depending on the pitch
+IF (HOMS2_Pitch.diEncCnt < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
+	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
+	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
+ELSIF (HOMS2_Pitch.diEncCnt > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
+	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
+	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
+ELSE // Anything else in the middle of the range
+	fbM2.nFirstCoatingBitmask:= 2#0000_0000_0000_0000; 
+	fbM2.nSecondCoatingBitmask:= 2#0000_0000_0000_0000;  		
+END_IF
+
+fbM2(
+	bMirrorIn := (HOMS2_XGantry.PAxis.diEncCnt < 25490840), 
+    rCurrentEncoderPosition := HOMS2_YGantry.PAxis.diEncCnt,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+
+	
+//M3
+fbM3(
+	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
+    rCurrentEncoderPosition := HOMS3_YGantry.PAxis.diEncCnt,
+    neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    FFO := GVL_PMPS.g_FastFaultOutput1);
+	
+	
+// PMPS ARbiter and FFO instantiation.
+GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
+fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
+GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
+
+bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
+rtRemove(CLK:= bRemove);
+if (rtRemove.Q) THEN
+ 	GVL_PMPS.g_fbArbiter1.RemoveRequest(nReq); 
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

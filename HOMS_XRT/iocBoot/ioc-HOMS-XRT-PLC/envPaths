@@ -1,0 +1,2 @@
+epicsEnvSet("IOC_TOP", "/c/Github/HOMS_XRT/HOMS_XRT/iocBoot/ioc-HOMS-XRT-PLC")
+epicsEnvSet("IOC_DATA", "C:\Users\mghaly/iocData")

@@ -823,6 +823,262 @@ External Setpoint Generation:
 			</SubItem>
 		</DataType>
 		<DataType>
+			<Name GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xAttOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76269EAC-36F0-4513-B811-3725FD02409A}"/>
+				<Hide GUID="{E96BEA56-6301-4A6A-BF6A-F08340C87594}"/>
+				<Hide GUID="{FE32F9A9-7E7A-413D-8D77-0C99C34D8CD9}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Name>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>Width</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment>
+					<![CDATA[ distance between horizontal slits (x)]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Width
+            io: i
+            field: EGU mm</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>Height</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment>
+					<![CDATA[ distance between vertical slits (y)]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Height
+            io: i
+            field: EGU mm</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xOK</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ status of aperture, false if error or in motion]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: OK
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Name>
+			<BitSize>1216</BitSize>
+			<SubItem>
+				<Name>nTran</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment>
+					<![CDATA[  Requested pre-optic attenuation %  ]]>
+				</Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+				<Default>
+					<Value>100</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nRate</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[ Pulse-rate ]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+				<Default>
+					<Value>10</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Rate
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>fPP_mJ</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment>
+					<![CDATA[ Per pulse max energy (mJ) ]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+				<Default>
+					<Value>20</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PulseEnergy
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>neVRange</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<Comment>
+					<![CDATA[ Photon energy ranges ]]>
+				</Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>96</BitOffs>
+				<Default>
+					<Value>65535</Value>
+				</Default>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: PhotonEnergy
+        io: i</Value>
+					</Property>
+					<Property>
+						<Name>plcAttribute_displaymode</Name>
+						<Value>binary</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>astAttenuators</Name>
+				<Type GUID="{D01709AA-9B4A-464A-B4D1-4BF476CFE7DE}">ST_PMPS_Attenuator_IO</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Beamline attenuators ]]>
+				</Comment>
+				<BitSize>512</BitSize>
+				<BitOffs>112</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>astApertures</Name>
+				<Type GUID="{67AC048F-B785-4A4D-B941-B11E2213F502}">ST_PMPS_Aperture_IO</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>4</Elements>
+				</ArrayInfo>
+				<BitSize>384</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>aStoppers</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>1</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<Comment>
+					<![CDATA[ Stopper statuses ]]>
+				</Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>1024</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: AuxAttenuator
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>xValidToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Toggle for watchdog]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>xValid</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment>
+					<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+				</Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>1160</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Valid
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>nCohortInt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<Comment>
+					<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+				</Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>1184</BitOffs>
+				<Properties>
+					<Property>
+						<Name>plcAttribute_pytmc</Name>
+						<Value>pv: Attenuation
+        io: i</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{ADE62DDD-CAE3-4FE3-BE11-F358D7D0CDD8}"/>
+				<Hide GUID="{729DFDAA-EB68-494E-B247-D86DA3C0AE5E}"/>
+				<Hide GUID="{41059C79-1015-4C2C-AFF4-697A824775D7}"/>
+				<Hide GUID="{80E871EC-0C36-49B0-AD5D-F1F0FB351299}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{875D2B22-B7EB-497E-B933-0C004593CCF3}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">PLCTONC_AXIS_REF_CTRL</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
@@ -2681,6 +2937,144 @@ External Setpoint Generation:
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
 				</Var>
 				<Var>
 					<Name>GVL.gAmsNetIDEcatMaster1</Name>
@@ -5201,6 +5595,136 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
+					<Name>PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
 					<Name>GVL.bXRT_M2_OUT</Name>
 					<Comment>
 						<![CDATA[MPS Outputs]]>
@@ -5307,6 +5831,33 @@ External Setpoint Generation:
 					<Name>GVL_Devices.HOMS3_Bender.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
+					<Type>BOOL</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="8">
+				<Name>PlcTask Retains</Name>
+				<Var>
+					<Name>PMPS_GVL.SuccessfulPreemption</Name>
+					<Comment>
+						<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
+					</Comment>
+					<Type>UDINT</Type>
+					<InOut>7</InOut>
+				</Var>
+				<Var>
+					<Name>PMPS_GVL.AccumulatedFF</Name>
+					<Comment>
+						<![CDATA[ Any time a FF occurs]]>
+					</Comment>
+					<Type>UDINT</Type>
+					<InOut>7</InOut>
+				</Var>
 			</Vars>
 			<TaskPouOids>
 				<TaskPouOid Prio="1" OTCID="#x08502001"/>
@@ -5382,6 +5933,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -5390,6 +5942,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -5463,6 +6016,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
@@ -5535,12 +6089,24 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-Y2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_FFO">
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE">
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="IO Outputs^FFO1"/>
+				<Link VarA="PlcTask Outputs^PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>

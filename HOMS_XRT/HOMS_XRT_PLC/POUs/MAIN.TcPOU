@@ -6,12 +6,15 @@ VAR
 	tpImAPLC : TP := (PT:=T#10S);
 	
 	XRTM1PitchControl	:	FB_PitchControl;
+	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M1-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM1Y_GantryControl	:	FB_Gantry;
 	XRTM1X_GantryControl	:	FB_Gantry;
 	XRTM2PitchControl	    :	FB_PitchControl;
+	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M2-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM2Y_GantryControl	:	FB_Gantry;
 	XRTM2X_GantryControl	:	FB_Gantry;
 	XRTM3PitchControl	    :	FB_PitchControl;
+//	{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M3-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM3Y_GantryControl	:	FB_Gantry;
 	XRTM3X_GantryControl	:	FB_Gantry;
 	
@@ -70,6 +73,9 @@ VAR
 	//noConsequence	:	BOOL;
 	
 	mcBenderPower	:	MC_POWER;
+	
+	// Logging
+	fbLogHandler : FB_LogHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -149,7 +155,13 @@ bXRT_M2_OUT := fbMPS_States.OUT;
 p_ModbusTx_InputCoils();
 //p_ModbusTx_OutputCoils();
 p_ModbusTx_InputReg();
-p_ModbusTx_PLCMemory();]]></ST>
+p_ModbusTx_PLCMemory();
+
+//PMPS
+PRG_CoatingProtection();
+
+// Logging
+fbLogHandler();]]></ST>
     </Implementation>
     <Action Name="Init_XRTM1" Id="{a11eaaff-25fb-4e40-9807-fb1f683338da}">
       <Implementation>
@@ -191,6 +203,10 @@ HOMS1_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS1_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS1_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
 HOMS1_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+// Initialize deadband settings
+HOMS1_Pitch.Stepper.rStepperDmovRange := 15;
+HOMS1_Pitch.Piezo.rPiezoDmovRange := 0.5;
                                                                                                                                           
 
 ]]></ST>
@@ -236,6 +252,10 @@ HOMS2_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS2_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS2_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
 HOMS2_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+// Initialize deadband settings
+HOMS2_Pitch.Stepper.rStepperDmovRange := 3;
+HOMS2_Pitch.Piezo.rPiezoDmovRange := 0.5;
 
 
 
@@ -284,7 +304,12 @@ HOMS3_Pitch.Stepper.fVelocity     := 100;
 HOMS3_Pitch.Piezo.stPIParams.fKp := 0.001;
 HOMS3_Pitch.Piezo.stPIParams.tTn := T#500MS;
 HOMS3_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
-HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;]]></ST>
+HOMS3_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
+
+
+// Initialize deadband settings
+HOMS3_Pitch.Stepper.rStepperDmovRange := 20;
+HOMS3_Pitch.Piezo.rPiezoDmovRange := 0.5;]]></ST>
       </Implementation>
     </Action>
     <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">

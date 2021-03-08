@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_MirrorCoatingProtection" Id="{a22d704d-ac8a-48d4-9603-819fc87fd037}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MirrorCoatingProtection
+VAR_INPUT
+	bMirrorIn :BOOL; //Mirror is in the In position
+	rCurrentEncoderPosition : DINT; // Current encoder position
+	neVRange : WORD; // Current ev range from stCurrentBeamParams	
+	sDevName : STRING := ''; // Device name	
+	rFirstCoatingPosition : DINT; // Encoder count/position for the coating 
+	rFirstCoatingPositionTolerance : DINT; // position +/- tolerance 
+	nFirstCoatingBitmask : WORD; // Bitmask for upper coating
+	sFirstCoatingType : STRING := ''; // Type of coating
+	rSecondCoatingPosition : DINT; // Encoder count/position for the coating 
+	rSecondCoatingPositionTolerance : DINT; // position +/- tolerance 
+	nSecondCoatingBitmask : WORD; // Bitmask for upper coating
+	sSecondCoatingType : STRING := ''; // Type of coating
+	bAutoClear : BOOL;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_IN_OUT
+	FFO : FB_HardwareFFOutput;
+END_VAR
+VAR
+	ffFirstCoating: FB_FastFault;
+	ffSecondCoating: FB_FastFault;	
+	bInit : BOOL :=TRUE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF  bInit THEN
+	ffFirstCoating.i_Desc := CONCAT(sFirstCoatingType, ' mirror coating incompatible with beam photon energy');
+	ffFirstCoating.i_DevName := sDevName;
+	
+	ffSecondCoating.i_Desc := CONCAT(sSecondCoatingType, ' mirror coating incompatible with beam photon energy');
+	ffSecondCoating.i_DevName := sDevName;
+	bInit := FALSE;
+END_IF
+IF (bMirrorIn) THEN
+	IF (rCurrentEncoderPosition >= rFirstCoatingPosition - rFirstCoatingPositionTolerance) AND (rCurrentEncoderPosition <= rFirstCoatingPosition + rFirstCoatingPositionTolerance)  THEN
+		ffFirstCoating.i_xOK := (neVRange AND nFirstCoatingBitmask) = neVRange; 
+		ffSecondCoating.i_xOK := TRUE;
+	ELSIF (rCurrentEncoderPosition >= rSecondCoatingPosition - rSecondCoatingPositionTolerance) AND (rCurrentEncoderPosition <= rSecondCoatingPosition + rSecondCoatingPositionTolerance)  THEN
+		ffSecondCoating.i_xOK := (neVRange AND nSecondCoatingBitmask) = neVRange; 
+		ffFirstCoating.i_xOK := TRUE;
+	ELSE
+		ffFirstCoating.i_xOK := FALSE;
+		ffSecondCoating.i_xOK := FALSE;
+	END_IF
+ELSE 
+	ffFirstCoating.i_xOK := TRUE;
+	ffSecondCoating.i_xOK := TRUE;
+END_IF
+ffFirstCoating(
+		i_xAutoReset := bAutoClear,
+		i_TypeCode := 16#601,
+	    io_fbFFHWO:=FFO);
+		
+ffSecondCoating(
+		i_xAutoReset := bAutoClear,
+		i_TypeCode := 16#601,
+	    io_fbFFHWO:=FFO);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

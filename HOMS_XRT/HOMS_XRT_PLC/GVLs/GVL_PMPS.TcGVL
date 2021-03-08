@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_PMPS" Id="{98501d6f-2836-43d7-bbca-66c865550dec}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	{attribute 'pytmc' := '
+    pv: PLC:XRT:HOMS:FFO:01
+    '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
+    g_FastFaultOutput1  :   FB_HardwareFFOutput;
+	
+	{attribute 'pytmc' := '
+    pv: PLC:XRT:HOMS:FFO:02
+    '}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
+    g_FastFaultOutput2  :   FB_HardwareFFOutput;
+	
+	{attribute 'pytmc' := '
+	pv: PLC:XRT:HOMS:ARB:01
+	'}
+	g_fbArbiter1 : FB_Arbiter(1);
+
+	{attribute 'pytmc' := '
+	pv: PLC:XRT:HOMS:ARB:02
+	'}
+	g_fbArbiter2 : FB_Arbiter(2);
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
