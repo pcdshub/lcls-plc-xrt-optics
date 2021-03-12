@@ -49,7 +49,11 @@ VAR
 		bExist :BOOL;
 		nReq : UDINT;
 		
-           
+		// Fast Fault used when M1 and M2 are both in
+         ffM1M2IN: FB_FastFault :=(  
+					i_DevName := 'XRT-HOMS M1 M2 IN',
+        			i_Desc := 'Fault occurs when both M1 and M2 are IN',
+        			i_TypeCode := 16#602);  
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -87,12 +91,18 @@ fbM3(
     rCurrentEncoderPosition := HOMS3_YGantry.PAxis.diEncCnt,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
+
 	
+// Evaluate M1 and M2 status
+ffM1M2IN(
+		i_xOK := NOT (fbM1.bMirrorIn AND fbM2.bMirrorIn),
+		i_xAutoReset := TRUE,
+	    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);
 	
-// PMPS ARbiter and FFO instantiation.
+// PMPS Arbiter and FFO instantiation.
 GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
 fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
-GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
+GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0]);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 
 bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
