@@ -1,19 +1,194 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="MAIN" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	tpImAPLC : TP := (PT:=T#10S);
 	
-	XRTM1PitchControl	:	FB_PitchControl;
+	// XRTM1
+	// Motors
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Yup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:YUP
+	'}
+	M1_YUP : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m1 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Ydwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_Ydwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:YDWN
+	'}
+	M1_YDWN : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m2 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Xup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_Xup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:XUP
+	'}
+	M1_XUP : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m3 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Xdwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_Xdwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:XDWN
+	'}
+	M1_XDWN : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m4 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:PITCH
+	'}
+	M1_Pitch_Coarse : DUT_MotionStage := (fVelocity:=150.0); // XRTM1 Pitch Stepper
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Bender]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1_Bender]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:MMS:BENDER
+	'}
+	M1_Bender : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // XRTM1 Bender
+	fbMotionStage_m6 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1_STO]^Channel 1^Input;
+                              .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M1_STO]^Channel 2^Input;
+	                          .fbRunHOMS.stYupEnc.Count:=TIIB[EL5042_M1_Yupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[EL5042_M1_Yupdwn]^FB Inputs Channel 2^Position;
+	                          .fbRunHOMS.stXupEnc.Count:=TIIB[EL5042_M1_Xupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[EL5042_M1_Xupdwn]^FB Inputs Channel 2^Position'}
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS
+	'}
+	XRTM1 : DUT_HOMS;
+	
+	
+	// Encoder Arrays/RMS Watch:
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:Y
+	'}
+	fbYRMSErrorM1L0 : FB_RMSWatch;
+	fMaxYRMSErrorM1L0 : LREAL;
+	fMinYRMSErrorM1L0 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:X
+	'}
+	fbXRMSErrorM1L0 : FB_RMSWatch;
+	fMaxXRMSErrorM1L0 : LREAL;
+	fMinXRMSErrorM1L0 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:PITCH
+	'}
+	fbPitchRMSErrorM1L0 : FB_RMSWatch;
+	fMaxPitchRMSErrorM1L0 : LREAL;
+	fMinPitchRMSErrorM1L0 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:BENDER
+	'}
+	fbBenderRMSErrorM1L0 : FB_RMSWatch;
+	fMaxBenderRMSErrorM1L0 : LREAL;
+	fMinBenderRMSErrorM1L0 : LREAL;
+
+	// Pitch Control
+	fbM1L0PitchControl : FB_PitchControl;
+	bM1L0PitchDone : BOOL;
+	bM1L0PitchBusy : BOOL;
+
+	// Bender Control
+	fbBenderM1L0 : FB_Bender;
+
+	// Raw Encoder Counts
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:YUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:YDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:XUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:XDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:PITCH:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntPitchM1L0 : UDINT;
+
+	// Encoder Reference Values
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:YUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:YDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:XUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXupM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:XDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXdwnM1L0 : UDINT;
+	{attribute 'pytmc' := '
+		pv: XRTM1:HOMS:ENC:PITCH:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefPitchM1L0 : UDINT;
+	mcReadParameterPitchM1L0 : MC_ReadParameter;
+	fEncRefPitchM1L0_urad : LREAL; // Current Pitch encoder offset in urad
+
+
+
+
+
+
+	//XRTM1PitchControl	:	FB_PitchControlOld;
 	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M1-Y1 (Elmo Drive)]^Inputs^Position actual value'}
-	XRTM1Y_GantryControl	:	FB_Gantry;
-	XRTM1X_GantryControl	:	FB_Gantry;
-	XRTM2PitchControl	    :	FB_PitchControl;
+	//XRTM1Y_GantryControl	:	FB_Gantry;
+	//XRTM1X_GantryControl	:	FB_Gantry;
+	XRTM2PitchControl	    :	FB_PitchControlOld;
 	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M2-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM2Y_GantryControl	:	FB_Gantry;
 	XRTM2X_GantryControl	:	FB_Gantry;
-	XRTM3PitchControl	    :	FB_PitchControl;
+	XRTM3PitchControl	    :	FB_PitchControlOld;
 //	{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M3-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM3Y_GantryControl	:	FB_Gantry;
 	XRTM3X_GantryControl	:	FB_Gantry;
@@ -24,11 +199,11 @@ VAR
 	PitchManualMode: BOOL := FALSE;
 	
 	//Limit switch evaluation blocks
-	fbM1Y1LS	:	FB_LimitSwitchState;
-	fbM1Y2LS	:	FB_LimitSwitchState;
-	fbM1X1LS	:	FB_LimitSwitchState;
-	fbM1X2LS	:	FB_LimitSwitchState;
-	fbM1P1LS	:	FB_PitchSoftLimits;
+	//fbM1Y1LS	:	FB_LimitSwitchState;
+	//fbM1Y2LS	:	FB_LimitSwitchState;
+	//fbM1X1LS	:	FB_LimitSwitchState;
+	//fbM1X2LS	:	FB_LimitSwitchState;
+	//fbM1P1LS	:	FB_PitchSoftLimits;
 	
 	fbM2Y1LS	:	FB_LimitSwitchState;
 	fbM2Y2LS	:	FB_LimitSwitchState;
@@ -74,12 +249,105 @@ VAR
 	
 	mcBenderPower	:	MC_POWER;
 	
+	// PMPS arbiter interface
+	fbArbiterIO : FB_SubSysToArbiter_IO;
+	
+	// Common
+	fEncLeverArm_mm : LREAL := 513.0;
+	
+	
 	// Logging
 	fbLogHandler : FB_LogHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//System IO
+      <ST><![CDATA[// M1 BECKHOFF
+XRTM1.fbRunHOMS(stYup:=M1_YUP,
+               stYdwn:=M1_YDWN,
+               stXup:=M1_XUP,
+               stXdwn:=M1_XDWN,
+               stPitch:=M1_Pitch_Coarse,
+	           nYupEncRef:=GVL_M1_Constants.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_M1_Constants.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_M1_Constants.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_M1_Constants.nXDWN_ENC_REF,
+			   bExecuteCoupleY:=XRTM1.bExecuteCoupleY,
+               bExecuteCoupleX:=XRTM1.bExecuteCoupleX,
+			   bExecuteDecoupleY:=XRTM1.bExecuteDecoupleY,
+               bExecuteDecoupleX:=XRTM1.bExecuteDecoupleX,
+               bGantryAlreadyCoupledY=>XRTM1.bGantryAlreadyCoupledY,
+               bGantryAlreadyCoupledX=>XRTM1.bGantryAlreadyCoupledX,
+               nCurrGantryY=>XRTM1.nCurrGantryY,
+               nCurrGantryX=>XRTM1.nCurrGantryX);
+fbBenderM1L0(stBender:=M1_Bender,
+	         bSTOEnable1:=XRTM1.fbRunHOMS.bSTOEnable1,
+		     bSTOEnable2:=XRTM1.fbRunHOMS.bSTOEnable2);
+// No slave motion through Epics
+M1_YDWN.bExecute := FALSE; // M1L0-Ydwn
+M1_XDWN.bExecute := FALSE; // M1L0-Xdwn
+
+// Convert nCurrGantry to um (smaller number) to read out in epics
+XRTM1.fCurrGantryY_um := LINT_TO_REAL(XRTM1.nCurrGantryY) / 1000.0;
+XRTM1.fCurrGantryX_um := LINT_TO_REAL(XRTM1.nCurrGantryX) / 1000.0;
+
+// FB_MotionStage's for non-piezo axes
+fbMotionStage_m1(stMotionStage:=M1_YUP);
+fbMotionStage_m2(stMotionStage:=M1_YDWN);
+fbMotionStage_m3(stMotionStage:=M1_XUP);
+fbMotionStage_m4(stMotionStage:=M1_XDWN);
+fbMotionStage_m6(stMotionStage:=M1_Bender);
+
+// Calculate Pitch RMS Error:
+fbYRMSErrorM1L0(stMotionStage:=M1_YUP,
+	            fMaxRMSError=>fMaxYRMSErrorM1L0,
+				fMinRMSError=>fMinYRMSErrorM1L0);
+
+fbXRMSErrorM1L0(stMotionStage:=M1_XUP,
+	            fMaxRMSError=>fMaxXRMSErrorM1L0,
+				fMinRMSError=>fMinXRMSErrorM1L0);
+
+fbPitchRMSErrorM1L0(stMotionStage:=M1_Pitch_Coarse,
+	                fMaxRMSError=>fMaxPitchRMSErrorM1L0,
+					fMinRMSError=>fMinPitchRMSErrorM1L0);
+
+fbBenderRMSErrorM1L0(stMotionStage:=M1_Bender,
+	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
+					 fMinRMSError=>fMinBenderRMSErrorM1L0);
+// Pitch Control
+fbM1L0PitchControl(Pitch:=GVL_M1.M1_Pitch,
+				   Stepper:=M1_Pitch_Coarse,
+				   lrCurrentSetpoint:=M1_Pitch_Coarse.fPosition,
+                   q_bDone=>bM1L0PitchDone,
+                   q_bBusy=>bM1L0PitchBusy);
+// When STO hit, need to reset SP
+IF NOT M1_Pitch_Coarse.bHardwareEnable THEN
+	M1_Pitch_Coarse.fPosition := M1_Pitch_Coarse.stAxisStatus.fActPosition;
+END_IF
+
+// Raw Encoder Counts For Epics
+nEncCntYupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYupEnc.Count);
+nEncCntYdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYdwnEnc.Count);
+nEncCntXupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXupEnc.Count);
+nEncCntXdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXdwnEnc.Count);
+nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1.M1_Pitch.diEncCnt);
+
+// Encoder Reference Values For Epics
+nEncRefYupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYUP_ENC_REF);
+nEncRefYdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYDWN_ENC_REF);
+nEncRefXupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXUP_ENC_REF);
+nEncRefXdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXDWN_ENC_REF);
+mcReadParameterPitchM1L0(Axis:=M1_Pitch_Coarse.Axis,
+	                     Enable:=TRUE,
+				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
+				         ReadMode:=READMODE_CYCLIC,
+				         Value=>fEncRefPitchM1L0_urad);
+
+nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm);
+
+
+
+// ELMO
+//System IO
 /////////////////////////////
 p_ModbusRx_OutputCoils();
 p_ModbusRx_PLCMemory();
@@ -114,13 +382,13 @@ LimitSwitchIO();
 	
 // Pitch control
 /////////////////////////////////////
-XRTM1PitchControl(Pitch:=HOMS1_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS1_Pitch.Axis.bDone, q_xBusy => HOMS1_Pitch.Axis.bBusy);
+//XRTM1PitchControl(Pitch:=HOMS1_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS1_Pitch.Axis.bDone, q_xBusy => HOMS1_Pitch.Axis.bBusy);
 XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
 XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS3_Pitch.Axis.bDone, q_xBusy => HOMS3_Pitch.Axis.bBusy);
 
 //Y motion
 /////////////////////////////////////
-XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
+//XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
 XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
 XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
 
@@ -136,7 +404,7 @@ HOMS3_YGantry.SAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.SAxis.s
 	
 //X Motion
 /////////////////////////////////////
-XRTM1X_GantryControl(Gantry:=HOMS1_XGantry);
+//XRTM1X_GantryControl(Gantry:=HOMS1_XGantry);
 XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
 XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
 
@@ -159,6 +427,7 @@ p_ModbusTx_PLCMemory();
 
 //PMPS
 PRG_CoatingProtection();
+//fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 
 // Logging
 fbLogHandler();]]></ST>
@@ -314,32 +583,7 @@ HOMS3_Pitch.Piezo.rPiezoDmovRange := 0.5;]]></ST>
     </Action>
     <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">
       <Implementation>
-        <ST><![CDATA[//XRT M1
-///////////////////
-fbM1Y1LS(diInputs:=HOMS1_YGantry.PAxis.diInputs, 
-xHiLS=>HOMS1_YGantry.PAxis.xHiLS,
-xLoLS=>HOMS1_YGantry.PAxis.xLoLS,
-STO => gM1STO);
-
-fbM1Y2LS(diInputs:=HOMS1_YGantry.SAxis.diInputs, 
-xHiLS=>HOMS1_YGantry.SAxis.xHiLS,
-xLoLS=>HOMS1_YGantry.SAxis.xLoLS);
-
-fbM1X1LS(diInputs:=HOMS1_XGantry.PAxis.diInputs, 
-xHiLS=>HOMS1_XGantry.PAxis.xHiLS,
-xLoLS=>HOMS1_XGantry.PAxis.xLoLS);
-
-fbM1X2LS(diInputs:=HOMS1_XGantry.SAxis.diInputs, 
-xHiLS=>HOMS1_XGantry.SAxis.xHiLS,
-xLoLS=>HOMS1_XGantry.SAxis.xLoLS);
-
-(* Pitch "soft" limit *)
-
-fbM1P1LS(Pitch:=HOMS1_Pitch,
-xHiLS=>HOMS1_Pitch.Stepper.xHiLS,
-xLoLS=>HOMS1_Pitch.Stepper.xLoLS);
-
-//XRT M2
+        <ST><![CDATA[//XRT M2
 //////////////////////////
 fbM2Y1LS(diInputs:=HOMS2_YGantry.PAxis.diInputs, 
 xHiLS=>HOMS2_YGantry.PAxis.xHiLS,
@@ -392,5 +636,29 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="MAIN">
+      <LineId Id="345" Count="81" />
+      <LineId Id="341" Count="3" />
+      <LineId Id="3" Count="79" />
+      <LineId Id="336" Count="0" />
+      <LineId Id="83" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM1">
+      <LineId Id="2" Count="43" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM2">
+      <LineId Id="2" Count="47" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.Init_XRTM3">
+      <LineId Id="2" Count="41" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="MAIN.LimitSwitchIO">
+      <LineId Id="27" Count="49" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

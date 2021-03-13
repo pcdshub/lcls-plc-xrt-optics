@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
-  <POU Name="FB_PitchControl" Id="{157a40f4-fb3c-4f04-8b9b-6aa8032367b0}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_PitchControlOld" Id="{157a40f4-fb3c-4f04-8b9b-6aa8032367b0}" SpecialFunc="None">
     <Declaration><![CDATA[{attribute 'reflection'}
-FUNCTION_BLOCK FB_PitchControl
+FUNCTION_BLOCK FB_PitchControlOld
 VAR_IN_OUT
-	Pitch : HOMS_PitchMechanism;
+	Pitch : HOMS_PitchMechanismOld;
 END_VAR
 VAR_INPUT
 	DirectPiezoMode	:	BOOL := FALSE; //Set this true to tell the piezo what position to seek in closed loop
@@ -405,7 +405,7 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PitchControl">
+    <LineIds Name="FB_PitchControlOld">
       <LineId Id="3" Count="35" />
       <LineId Id="351" Count="0" />
       <LineId Id="39" Count="17" />
@@ -486,11 +486,11 @@ mcSmoothMover(Axis:=Pitch.Stepper.stAxis,
       <LineId Id="245" Count="5" />
       <LineId Id="478" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PitchControl.A_ModeSwitch">
+    <LineIds Name="FB_PitchControlOld.A_ModeSwitch">
       <LineId Id="2" Count="11" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PitchControl.ACT_PTP">
+    <LineIds Name="FB_PitchControlOld.ACT_PTP">
       <LineId Id="2" Count="22" />
       <LineId Id="27" Count="1" />
       <LineId Id="30" Count="3" />

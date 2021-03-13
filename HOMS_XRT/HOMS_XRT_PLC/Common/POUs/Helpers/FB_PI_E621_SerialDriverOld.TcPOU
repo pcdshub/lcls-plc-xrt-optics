@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
-  <POU Name="FB_PI_E621_SerialDriver" Id="{70cebafc-4342-47f0-b840-ef59112aefde}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_PI_E621_SerialDriver
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_PI_E621_SerialDriverOld" Id="{70cebafc-4342-47f0-b840-ef59112aefde}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PI_E621_SerialDriverOld
 VAR_INPUT
 	/// rising edge execute 
 	i_xExecute: BOOL;
@@ -19,7 +19,7 @@ VAR_OUTPUT
 	q_asLastReceivedStrings: ARRAY[1..50] OF STRING;
 END_VAR
 VAR_IN_OUT
-	iq_stPiezoAxis	:	ST_PiezoAxis;
+	iq_stPiezoAxis	:	ST_PiezoAxisOld;
 	iq_stSerialRXBuffer: ComBuffer;
 	iq_stSerialTXBuffer: ComBuffer;
 END_VAR
@@ -248,19 +248,19 @@ fbFormatString( sformat:=sErrMesg,
 	sOut => q_sResult);]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PI_E621_SerialDriver">
+    <LineIds Name="FB_PI_E621_SerialDriverOld">
       <LineId Id="3" Count="173" />
       <LineId Id="2" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PI_E621_SerialDriver.a_ClearTrans">
+    <LineIds Name="FB_PI_E621_SerialDriverOld.a_ClearTrans">
       <LineId Id="2" Count="13" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PI_E621_SerialDriver.a_ErrorMesg">
+    <LineIds Name="FB_PI_E621_SerialDriverOld.a_ErrorMesg">
       <LineId Id="2" Count="3" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="FB_PI_E621_SerialDriver.a_UnknownError">
+    <LineIds Name="FB_PI_E621_SerialDriverOld.a_UnknownError">
       <LineId Id="2" Count="4" />
       <LineId Id="1" Count="0" />
     </LineIds>

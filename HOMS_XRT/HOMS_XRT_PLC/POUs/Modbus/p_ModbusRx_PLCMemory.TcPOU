@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="p_ModbusRx_PLCMemory" Id="{0f58525f-8f65-498a-aa7e-c3ab518424d1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusRx_PLCMemory
 VAR
@@ -47,5 +47,9 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[70]), destAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[140]), destAddr:=ADR(HOMS1_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS1_Pitch.Piezo.rReqVoltage));
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[142]), destAddr:=ADR(HOMS2_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS2_Pitch.Piezo.rReqVoltage));]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusRx_PLCMemory">
+      <LineId Id="3" Count="38" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

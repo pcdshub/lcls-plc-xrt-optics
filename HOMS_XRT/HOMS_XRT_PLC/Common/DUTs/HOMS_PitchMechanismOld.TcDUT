@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
-  <DUT Name="HOMS_PitchMechanism" Id="{47ab44fa-385a-4709-a811-d01bc2afbb1a}">
-    <Declaration><![CDATA[TYPE HOMS_PitchMechanism :
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="HOMS_PitchMechanismOld" Id="{47ab44fa-385a-4709-a811-d01bc2afbb1a}">
+    <Declaration><![CDATA[TYPE HOMS_PitchMechanismOld :
 STRUCT
-	Piezo	:	ST_PiezoAxis;	//Piezo
+	Piezo	:	ST_PiezoAxisOld;	//Piezo
 	Axis	:	ST_AbstractAxis; //Abstract pitch axis
 	Stepper	:	ST_HOMSStepper; //Pitch stepper axis
 	

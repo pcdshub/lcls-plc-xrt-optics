@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="PRG_CoatingProtectionScaledPositions" Id="{29923cda-b5d2-46e9-ade9-a120ec45a996}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_CoatingProtectionScaledPositions
 VAR
@@ -91,5 +91,9 @@ GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_CoatingProtectionScaledPositions">
+      <LineId Id="3" Count="40" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

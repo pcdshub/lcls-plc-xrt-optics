@@ -3,7 +3,7 @@
   <GVL Name="GVL_Devices" Id="{cb7cf638-cc80-4f58-a532-470704faedf8}">
     <Declaration><![CDATA[VAR_GLOBAL
 	//XRT M1
-	HOMS1_Pitch	    :	HOMS_PitchMechanism := (
+	HOMS1_Pitch	    :	HOMS_PitchMechanismOld := (
 		ReqPosLimHi := 220,
 		ReqPosLimLo := -193,
 		diEncPosLimHi := 11216281,
@@ -14,7 +14,7 @@
 	HOMS1_Bender	:	ST_HOMSStepper;
 
 	//XRT M2
-	HOMS2_Pitch	    : HOMS_PitchMechanism := (
+	HOMS2_Pitch	    : HOMS_PitchMechanismOld := (
 		ReqPosLimHi := 960,
 		ReqPosLimLo := -967,
 		diEncPosLimHi := 10317713,
@@ -25,7 +25,7 @@
 	HOMS2_Bender	:	ST_HOMSStepper;
 	
 	//XRT M3
-	HOMS3_Pitch	    : HOMS_PitchMechanism := (
+	HOMS3_Pitch	    : HOMS_PitchMechanismOld := (
 		ReqPosLimHi := 246,
 		ReqPosLimLo := -212,
 		diEncPosLimHi := 9123828,

@@ -1,25 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="P_Serial_Com" Id="{fa981f30-4d2c-4d48-ab6c-00ec78d696a1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
-	fbSerialLineControl_EL6001_P1: SerialLineControl;
+	//fbSerialLineControl_EL6001_P1: SerialLineControl;
+	fbSerialLineControl_EL6001_M1: SerialLineControl; // M1 Serial Comm Function Block
 	fbSerialLineControl_EL6001_P2: SerialLineControl;
 	fbSerialLineControl_EL6001_P3: SerialLineControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//These are the global IOs...don't forget to copy your data into them
 
+
+
+
 (* EL6001 Serial port 0 com function *)
-fbSerialLineControl_EL6001_P1(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(Serial_P1_stComIn),
-	pComOut:=ADR(Serial_P1_stComOut) ,
-	SizeComIn:= SIZEOF(Serial_P1_stComIn),
-	TxBuffer:= Serial_P1_SerialTXBuffer,
-	RxBuffer:= Serial_P1_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );
+fbSerialLineControl_EL6001_M1(Mode:= SERIALLINEMODE_EL6_22B,
+						        pComIn:= ADR(Serial_stComIn_M1),
+						   	    pComOut:=ADR(Serial_stComOut_M1),
+						        SizeComIn:= SIZEOF(Serial_stComIn_M1),
+						        TxBuffer:= Serial_TXBuffer_M1,
+						        RxBuffer:= Serial_RXBuffer_M1,
+						        Error=>,
+						        ErrorID=>);
+
 fbSerialLineControl_EL6001_P2(
 	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
 	pComIn:= ADR(Serial_P2_stComIn),
@@ -41,8 +45,11 @@ fbSerialLineControl_EL6001_P3(
     </Implementation>
     <LineIds Name="P_Serial_Com">
       <LineId Id="52" Count="0" />
-      <LineId Id="3" Count="9" />
-      <LineId Id="57" Count="0" />
+      <LineId Id="3" Count="0" />
+      <LineId Id="87" Count="2" />
+      <LineId Id="4" Count="0" />
+      <LineId Id="91" Count="7" />
+      <LineId Id="90" Count="0" />
       <LineId Id="59" Count="7" />
       <LineId Id="72" Count="8" />
       <LineId Id="2" Count="0" />

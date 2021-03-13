@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="FB_ElmoGDCBellCoE" Id="{91acbbac-f6fe-4d79-9df9-4139d2e826f8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ElmoGDCBellCoE
 VAR_IN_OUT
@@ -419,5 +419,9 @@ ACT_CoEReadFB();]]></ST>
         </NWL>
       </Implementation>
     </Action>
+    <LineIds Name="FB_ElmoGDCBellCoE">
+      <LineId Id="3" Count="51" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

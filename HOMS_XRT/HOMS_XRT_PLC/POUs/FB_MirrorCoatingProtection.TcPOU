@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="FB_MirrorCoatingProtection" Id="{a22d704d-ac8a-48d4-9603-819fc87fd037}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_MirrorCoatingProtection
 VAR_INPUT
@@ -61,5 +61,9 @@ ffSecondCoating(
 		i_TypeCode := 16#601,
 	    io_fbFFHWO:=FFO);]]></ST>
     </Implementation>
+    <LineIds Name="FB_MirrorCoatingProtection">
+      <LineId Id="3" Count="30" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
-  <DUT Name="ST_PiezoAxis" Id="{94081b12-5a5d-4193-a69e-fd329da2319a}">
-    <Declaration><![CDATA[TYPE ST_PiezoAxis :
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ST_PiezoAxisOld" Id="{94081b12-5a5d-4193-a69e-fd329da2319a}">
+    <Declaration><![CDATA[TYPE ST_PiezoAxisOld :
 STRUCT
 	(* IO *)
 		//Readback

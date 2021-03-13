@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PiezoSerial" Id="{04ed9258-9624-4f29-9f34-d3e5ff9995d6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PiezoSerial
 VAR
 	//PI Serial
-	fbE621SerialDriverM1 : FB_PI_E621_SerialDriver;
-	fbE621SerialDriverM2 : FB_PI_E621_SerialDriver;
-	fbE621SerialDriverM3 : FB_PI_E621_SerialDriver;
+	fbE621SerialDriver_M1 : FB_PI_E621_SerialDriver;
+	rtInitParams_M1	:	R_TRIG;
+	tonTimeoutRst_M1	: TON := (PT:=T#2S); //For timeout reset
+
+	fbE621SerialDriverM2 : FB_PI_E621_SerialDriverOld;
+	fbE621SerialDriverM3 : FB_PI_E621_SerialDriverOld;
 	rtInitParams	:	R_TRIG;
 	tonTimeoutRstM1	: TON := (PT:=T#2S); //For timeout reset
 	tonTimeoutRstM2	: TON := (PT:=T#2S); //For timeout reset
@@ -15,12 +18,12 @@ END_VAR
     <Implementation>
       <ST><![CDATA[//M1 Piezo E-621
 ///////////////////////
-	fbE621SerialDriverM1.i_xExecute := TRUE;
-	fbE621SerialDriverM1.i_xExecute R= fbE621SerialDriverM1.q_xDone;
-	fbE621SerialDriverM1(
-		iq_stPiezoAxis:= HOMS1_Pitch.Piezo, 
-		iq_stSerialRXBuffer:= Serial_P1_SerialRXBuffer, 
-		iq_stSerialTXBuffer:= Serial_P1_SerialTXBuffer);
+fbE621SerialDriver_M1.i_xExecute := TRUE;
+fbE621SerialDriver_M1.i_xExecute R= fbE621SerialDriver_M1.q_xDone;
+fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.M1_Pitch.Piezo,
+		                iq_stSerialRXBuffer:= Serial_RXBuffer_M1,
+		                iq_stSerialTXBuffer:= Serial_TXBuffer_M1);
+
 	
 //M2 Piezo E-621
 ///////////////////////
@@ -42,7 +45,8 @@ END_VAR
 ]]></ST>
     </Implementation>
     <LineIds Name="PiezoSerial">
-      <LineId Id="67" Count="6" />
+      <LineId Id="67" Count="1" />
+      <LineId Id="117" Count="4" />
       <LineId Id="79" Count="8" />
       <LineId Id="98" Count="8" />
       <LineId Id="88" Count="0" />
