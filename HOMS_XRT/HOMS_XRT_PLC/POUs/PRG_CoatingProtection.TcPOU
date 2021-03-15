@@ -51,7 +51,7 @@ VAR
 		
 		// Fast Fault used when M1 and M2 are both in
          ffM1M2IN: FB_FastFault :=(  
-					i_DevName := 'XRT-HOMS M1 M2 IN',
+					i_DevName := 'XRT-M1 and XRT-M2',
         			i_Desc := 'Fault occurs when both M1 and M2 are IN',
         			i_TypeCode := 16#602);  
 END_VAR
