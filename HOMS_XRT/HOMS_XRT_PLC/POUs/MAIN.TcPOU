@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="Main" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -76,38 +76,38 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:Y
 	'}
-	fbYRMSErrorM1L0 : FB_RMSWatch;
-	fMaxYRMSErrorM1L0 : LREAL;
-	fMinYRMSErrorM1L0 : LREAL;
+	fbYRMSErrorXRTM1 : FB_RMSWatch;
+	fMaxYRMSErrorXRTM1 : LREAL;
+	fMinYRMSErrorXRTM1 : LREAL;
 
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:X
 	'}
-	fbXRMSErrorM1L0 : FB_RMSWatch;
-	fMaxXRMSErrorM1L0 : LREAL;
-	fMinXRMSErrorM1L0 : LREAL;
+	fbXRMSErrorXRTM1 : FB_RMSWatch;
+	fMaxXRMSErrorXRTM1 : LREAL;
+	fMinXRMSErrorXRTM1 : LREAL;
 
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:PITCH
 	'}
-	fbPitchRMSErrorM1L0 : FB_RMSWatch;
-	fMaxPitchRMSErrorM1L0 : LREAL;
-	fMinPitchRMSErrorM1L0 : LREAL;
+	fbPitchRMSErrorXRTM1 : FB_RMSWatch;
+	fMaxPitchRMSErrorXRTM1 : LREAL;
+	fMinPitchRMSErrorXRTM1 : LREAL;
 
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:BENDER
 	'}
-	fbBenderRMSErrorM1L0 : FB_RMSWatch;
-	fMaxBenderRMSErrorM1L0 : LREAL;
-	fMinBenderRMSErrorM1L0 : LREAL;
+	fbBenderRMSErrorXRTM1 : FB_RMSWatch;
+	fMaxBenderRMSErrorXRTM1 : LREAL;
+	fMinBenderRMSErrorXRTM1 : LREAL;
 
 	// Pitch Control
-	fbM1L0PitchControl : FB_PitchControl;
-	bM1L0PitchDone : BOOL;
-	bM1L0PitchBusy : BOOL;
+	fbXRTM1PitchControl : FB_PitchControl;
+	bXRTM1PitchDone : BOOL;
+	bXRTM1PitchBusy : BOOL;
 
 	// Bender Control
-	fbBenderM1L0 : FB_Bender;
+	fbBenderXRTM1 : FB_Bender;
 
 	// Raw Encoder Counts
 	{attribute 'pytmc' := '
@@ -115,31 +115,31 @@ VAR
 		field: EGU cnt
 		io: i
 	'}
-	nEncCntYupM1L0 : UDINT;
+	nEncCntYupXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:YDWN:CNT
 		field: EGU cnt
 		io: i
 	'}
-	nEncCntYdwnM1L0 : UDINT;
+	nEncCntYdwnXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:XUP:CNT
 		field: EGU cnt
 		io: i
 	'}
-	nEncCntXupM1L0 : UDINT;
+	nEncCntXupXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:XDWN:CNT
 		field: EGU cnt
 		io: i
 	'}
-	nEncCntXdwnM1L0 : UDINT;
+	nEncCntXdwnXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:PITCH:CNT
 		field: EGU cnt
 		io: i
 	'}
-	nEncCntPitchM1L0 : UDINT;
+	nEncCntPitchXRTM1 : UDINT;
 
 	// Encoder Reference Values
 	{attribute 'pytmc' := '
@@ -147,33 +147,33 @@ VAR
 		field: EGU cnt
 		io: i
 	'}
-	nEncRefYupM1L0 : UDINT;
+	nEncRefYupXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:YDWN:REF
 		field: EGU cnt
 		io: i
 	'}
-	nEncRefYdwnM1L0 : UDINT;
+	nEncRefYdwnXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:XUP:REF
 		field: EGU cnt
 		io: i
 	'}
-	nEncRefXupM1L0 : UDINT;
+	nEncRefXupXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:XDWN:REF
 		field: EGU cnt
 		io: i
 	'}
-	nEncRefXdwnM1L0 : UDINT;
+	nEncRefXdwnXRTM1 : UDINT;
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:ENC:PITCH:REF
 		field: EGU cnt
 		io: i
 	'}
-	nEncRefPitchM1L0 : UDINT;
-	mcReadParameterPitchM1L0 : MC_ReadParameter;
-	fEncRefPitchM1L0_urad : LREAL; // Current Pitch encoder offset in urad
+	nEncRefPitchXRTM1 : UDINT;
+	mcReadParameterPitchXRTM1 : MC_ReadParameter;
+	fEncRefPitchXRTM1_urad : LREAL; // Current Pitch encoder offset in urad
 
 
 
@@ -278,12 +278,12 @@ XRTM1.fbRunHOMS(stYup:=M1,
                bGantryAlreadyCoupledX=>XRTM1.bGantryAlreadyCoupledX,
                nCurrGantryY=>XRTM1.nCurrGantryY,
                nCurrGantryX=>XRTM1.nCurrGantryX);
-fbBenderM1L0(stBender:=M6,
+fbBenderXRTM1(stBender:=M6,
 	         bSTOEnable1:=XRTM1.fbRunHOMS.bSTOEnable1,
 		     bSTOEnable2:=XRTM1.fbRunHOMS.bSTOEnable2);
 // No slave motion through Epics
-M2.bExecute := FALSE; // M1L0-Ydwn
-M4.bExecute := FALSE; // M1L0-Xdwn
+M2.bExecute := FALSE; // XRTM1-Ydwn
+M4.bExecute := FALSE; // XRTM1-Xdwn
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
 XRTM1.fCurrGantryY_um := LINT_TO_REAL(XRTM1.nCurrGantryY) / 1000.0;
@@ -297,51 +297,51 @@ fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
-fbYRMSErrorM1L0(stMotionStage:=M1,
-	            fMaxRMSError=>fMaxYRMSErrorM1L0,
-				fMinRMSError=>fMinYRMSErrorM1L0);
+fbYRMSErrorXRTM1(stMotionStage:=M1,
+	            fMaxRMSError=>fMaxYRMSErrorXRTM1,
+				fMinRMSError=>fMinYRMSErrorXRTM1);
 
-fbXRMSErrorM1L0(stMotionStage:=M3,
-	            fMaxRMSError=>fMaxXRMSErrorM1L0,
-				fMinRMSError=>fMinXRMSErrorM1L0);
+fbXRMSErrorXRTM1(stMotionStage:=M3,
+	            fMaxRMSError=>fMaxXRMSErrorXRTM1,
+				fMinRMSError=>fMinXRMSErrorXRTM1);
 
-fbPitchRMSErrorM1L0(stMotionStage:=M5,
-	                fMaxRMSError=>fMaxPitchRMSErrorM1L0,
-					fMinRMSError=>fMinPitchRMSErrorM1L0);
+fbPitchRMSErrorXRTM1(stMotionStage:=M5,
+	                fMaxRMSError=>fMaxPitchRMSErrorXRTM1,
+					fMinRMSError=>fMinPitchRMSErrorXRTM1);
 
-fbBenderRMSErrorM1L0(stMotionStage:=M6,
-	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
-					 fMinRMSError=>fMinBenderRMSErrorM1L0);
+fbBenderRMSErrorXRTM1(stMotionStage:=M6,
+	                 fMaxRMSError=>fMaxBenderRMSErrorXRTM1,
+					 fMinRMSError=>fMinBenderRMSErrorXRTM1);
 // Pitch Control
-fbM1L0PitchControl(Pitch:=GVL_M1.XRTM1_Pitch,
+fbXRTM1PitchControl(Pitch:=GVL_M1.XRTM1_Pitch,
 				   Stepper:=M5,
 				   lrCurrentSetpoint:=M5.fPosition,
-                   q_bDone=>bM1L0PitchDone,
-                   q_bBusy=>bM1L0PitchBusy);
+                   q_bDone=>bXRTM1PitchDone,
+                   q_bBusy=>bXRTM1PitchBusy);
 // When STO hit, need to reset SP
 IF NOT M5.bHardwareEnable THEN
 	M5.fPosition := M5.stAxisStatus.fActPosition;
 END_IF
 
 // Raw Encoder Counts For Epics
-nEncCntYupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYupEnc.Count);
-nEncCntYdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYdwnEnc.Count);
-nEncCntXupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXupEnc.Count);
-nEncCntXdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXdwnEnc.Count);
-nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1.XRTM1_Pitch.diEncCnt);
+nEncCntYupXRTM1 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYupEnc.Count);
+nEncCntYdwnXRTM1 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYdwnEnc.Count);
+nEncCntXupXRTM1 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXupEnc.Count);
+nEncCntXdwnXRTM1 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXdwnEnc.Count);
+nEncCntPitchXRTM1 := LINT_TO_UDINT(GVL_M1.XRTM1_Pitch.diEncCnt);
 
 // Encoder Reference Values For Epics
-nEncRefYupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYUP_ENC_REF);
-nEncRefYdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYDWN_ENC_REF);
-nEncRefXupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXUP_ENC_REF);
-nEncRefXdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXDWN_ENC_REF);
-mcReadParameterPitchM1L0(Axis:=M5.Axis,
+nEncRefYupXRTM1 := ULINT_TO_UDINT(GVL_M1_Constants.nYUP_ENC_REF);
+nEncRefYdwnXRTM1 := ULINT_TO_UDINT(GVL_M1_Constants.nYDWN_ENC_REF);
+nEncRefXupXRTM1 := ULINT_TO_UDINT(GVL_M1_Constants.nXUP_ENC_REF);
+nEncRefXdwnXRTM1 := ULINT_TO_UDINT(GVL_M1_Constants.nXDWN_ENC_REF);
+mcReadParameterPitchXRTM1(Axis:=M5.Axis,
 	                     Enable:=TRUE,
 				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
 				         ReadMode:=READMODE_CYCLIC,
-				         Value=>fEncRefPitchM1L0_urad);
+				         Value=>fEncRefPitchXRTM1_urad);
 
-nEncRefPitchM1L0 := LREAL_TO_UDINT(ABS(fEncRefPitchM1L0_urad) * fEncLeverArm_mm);
+nEncRefPitchXRTM1 := LREAL_TO_UDINT(ABS(fEncRefPitchXRTM1_urad) * fEncLeverArm_mm);
 
 
 
@@ -635,5 +635,25 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
+    <LineIds Name="Main">
+      <LineId Id="3" Count="168" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.Init_XRTM1">
+      <LineId Id="2" Count="43" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.Init_XRTM2">
+      <LineId Id="2" Count="47" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.Init_XRTM3">
+      <LineId Id="2" Count="41" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="Main.LimitSwitchIO">
+      <LineId Id="2" Count="49" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
