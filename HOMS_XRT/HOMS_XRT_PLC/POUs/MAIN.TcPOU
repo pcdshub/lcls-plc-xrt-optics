@@ -313,7 +313,7 @@ fbBenderRMSErrorM1L0(stMotionStage:=M6,
 	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
 					 fMinRMSError=>fMinBenderRMSErrorM1L0);
 // Pitch Control
-fbM1L0PitchControl(Pitch:=GVL_M1.M1_Pitch,
+fbM1L0PitchControl(Pitch:=GVL_M1.XRTM1_Pitch,
 				   Stepper:=M5,
 				   lrCurrentSetpoint:=M5.fPosition,
                    q_bDone=>bM1L0PitchDone,
@@ -328,7 +328,7 @@ nEncCntYupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYupEnc.Count);
 nEncCntYdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYdwnEnc.Count);
 nEncCntXupM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXupEnc.Count);
 nEncCntXdwnM1L0 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stXdwnEnc.Count);
-nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1.M1_Pitch.diEncCnt);
+nEncCntPitchM1L0 := LINT_TO_UDINT(GVL_M1.XRTM1_Pitch.diEncCnt);
 
 // Encoder Reference Values For Epics
 nEncRefYupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYUP_ENC_REF);
@@ -635,29 +635,5 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="Main">
-      <LineId Id="345" Count="81" />
-      <LineId Id="341" Count="3" />
-      <LineId Id="3" Count="79" />
-      <LineId Id="336" Count="0" />
-      <LineId Id="83" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM1">
-      <LineId Id="2" Count="43" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM2">
-      <LineId Id="2" Count="47" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM3">
-      <LineId Id="2" Count="41" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.LimitSwitchIO">
-      <LineId Id="27" Count="49" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

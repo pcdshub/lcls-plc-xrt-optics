@@ -6001,13 +6001,6 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>GVL_M1.M1_Pitch.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>LINT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_PMPS.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
@@ -6144,6 +6137,13 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_state</Name>
 					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_M1.XRTM1_Pitch.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
 				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
@@ -6600,7 +6600,7 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_PitchBender">
-				<Link VarA="PlcTask Inputs^GVL_M1.M1_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_M1.XRTM1_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Xupdwn">
 				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
@@ -6728,8 +6728,23 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[8]" VarB="COM Outputs^Data Out 8"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[9]" VarB="COM Outputs^Data Out 9"/>
 			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-P1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y2 (Elmo Drive)">
+				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-B1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>

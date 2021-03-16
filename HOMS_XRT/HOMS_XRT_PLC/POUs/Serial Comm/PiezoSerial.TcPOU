@@ -20,7 +20,7 @@ END_VAR
 ///////////////////////
 fbE621SerialDriver_M1.i_xExecute := TRUE;
 fbE621SerialDriver_M1.i_xExecute R= fbE621SerialDriver_M1.q_xDone;
-fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.M1_Pitch.Piezo,
+fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.XRTM1_Pitch.Piezo,
 		                iq_stSerialRXBuffer:= Serial_RXBuffer_M1,
 		                iq_stSerialTXBuffer:= Serial_TXBuffer_M1);
 
@@ -44,13 +44,5 @@ fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.M1_Pitch.Piezo,
 		iq_stSerialTXBuffer:= Serial_P3_SerialTXBuffer);
 ]]></ST>
     </Implementation>
-    <LineIds Name="PiezoSerial">
-      <LineId Id="67" Count="1" />
-      <LineId Id="117" Count="4" />
-      <LineId Id="79" Count="8" />
-      <LineId Id="98" Count="8" />
-      <LineId Id="88" Count="0" />
-      <LineId Id="5" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
