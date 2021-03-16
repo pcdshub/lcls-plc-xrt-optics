@@ -801,15 +801,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{33F6E3E2-53CE-4202-87CA-2AD0E68663C8}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{417EF0CA-A7C8-4787-A2B2-9FE5BFECA7BA}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{4B0DBBA4-11EF-DC4A-BF0D-C44F27183D05}"/>
+				<Hide GUID="{33F6E3E2-53CE-4202-87CA-2AD0E68663C8}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -831,7 +831,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{33F6E3E2-53CE-4202-87CA-2AD0E68663C8}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{417EF0CA-A7C8-4787-A2B2-9FE5BFECA7BA}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -848,7 +848,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{E7D8BF8B-2549-C401-85F6-34B274CA315B}"/>
+				<Hide GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -1335,7 +1335,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D389F784-3772-48EA-848E-1D7F6EFE4E9B}" Name="HOMS_XRT_PLC" PrjFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.plcproj" TmcFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HOMS_XRT_PLC\HOMS_XRT_PLC.tmc">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="HOMS_XRT_PLC\HOMS_XRT_PLC.tmc">
 			<Name>HOMS_XRT_PLC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1391,7 +1391,7 @@ External Setpoint Generation:
 					<Type>LINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.Axis.NcToPlc</Name>
+					<Name>MAIN.M1.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1440,49 +1440,49 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.bLimitForwardEnable</Name>
+					<Name>MAIN.M1.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.bLimitBackwardEnable</Name>
+					<Name>MAIN.M1.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.bHome</Name>
+					<Name>MAIN.M1.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.bHardwareEnable</Name>
+					<Name>MAIN.M1.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.nRawEncoderULINT</Name>
+					<Name>MAIN.M1.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.nRawEncoderUINT</Name>
+					<Name>MAIN.M1.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.nRawEncoderINT</Name>
+					<Name>MAIN.M1.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
@@ -1538,7 +1538,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.Axis.NcToPlc</Name>
+					<Name>MAIN.M2.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1587,49 +1587,49 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.bLimitForwardEnable</Name>
+					<Name>MAIN.M2.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.bLimitBackwardEnable</Name>
+					<Name>MAIN.M2.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.bHome</Name>
+					<Name>MAIN.M2.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.bHardwareEnable</Name>
+					<Name>MAIN.M2.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.nRawEncoderULINT</Name>
+					<Name>MAIN.M2.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.nRawEncoderUINT</Name>
+					<Name>MAIN.M2.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.nRawEncoderINT</Name>
+					<Name>MAIN.M2.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
@@ -1685,7 +1685,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.Axis.NcToPlc</Name>
+					<Name>MAIN.M3.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1734,49 +1734,49 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.bLimitForwardEnable</Name>
+					<Name>MAIN.M3.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.bLimitBackwardEnable</Name>
+					<Name>MAIN.M3.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.bHome</Name>
+					<Name>MAIN.M3.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.bHardwareEnable</Name>
+					<Name>MAIN.M3.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.nRawEncoderULINT</Name>
+					<Name>MAIN.M3.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.nRawEncoderUINT</Name>
+					<Name>MAIN.M3.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.nRawEncoderINT</Name>
+					<Name>MAIN.M3.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
@@ -1832,7 +1832,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.Axis.NcToPlc</Name>
+					<Name>MAIN.M4.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1881,49 +1881,49 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.bLimitForwardEnable</Name>
+					<Name>MAIN.M4.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.bLimitBackwardEnable</Name>
+					<Name>MAIN.M4.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.bHome</Name>
+					<Name>MAIN.M4.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.bHardwareEnable</Name>
+					<Name>MAIN.M4.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.nRawEncoderULINT</Name>
+					<Name>MAIN.M4.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.nRawEncoderUINT</Name>
+					<Name>MAIN.M4.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.nRawEncoderINT</Name>
+					<Name>MAIN.M4.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
@@ -1979,7 +1979,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.Axis.NcToPlc</Name>
+					<Name>MAIN.M5.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2028,56 +2028,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.bLimitForwardEnable</Name>
+					<Name>MAIN.M5.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.bLimitBackwardEnable</Name>
+					<Name>MAIN.M5.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.bHome</Name>
+					<Name>MAIN.M5.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.bHardwareEnable</Name>
+					<Name>MAIN.M5.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.nRawEncoderULINT</Name>
+					<Name>MAIN.M5.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.nRawEncoderUINT</Name>
+					<Name>MAIN.M5.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.nRawEncoderINT</Name>
+					<Name>MAIN.M5.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.Axis.NcToPlc</Name>
+					<Name>MAIN.M6.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2126,49 +2126,49 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.bLimitForwardEnable</Name>
+					<Name>MAIN.M6.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.bLimitBackwardEnable</Name>
+					<Name>MAIN.M6.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.bHome</Name>
+					<Name>MAIN.M6.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.bHardwareEnable</Name>
+					<Name>MAIN.M6.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.nRawEncoderULINT</Name>
+					<Name>MAIN.M6.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.nRawEncoderUINT</Name>
+					<Name>MAIN.M6.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.nRawEncoderINT</Name>
+					<Name>MAIN.M6.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
@@ -2239,7 +2239,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2261,7 +2261,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>MAIN.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2283,7 +2283,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>MAIN.XRTM1.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2305,7 +2305,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>MAIN.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -3592,289 +3592,6 @@ External Setpoint Generation:
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbArbiterIO.i_stCurrentBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>MAIN.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_M1.M1_Pitch.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>LINT</Type>
 				</Var>
 				<Var>
 					<Name>GVL.gAmsNetIDEcatMaster1</Name>
@@ -6283,15 +6000,160 @@ External Setpoint Generation:
 						</Comment>
 					</SubVar>
 				</Var>
+				<Var>
+					<Name>GVL_M1.M1_Pitch.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.i_stCurrentBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>MAIN.M1_YUP.Axis.PlcToNc</Name>
+					<Name>MAIN.M1.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YUP.bBrakeRelease</Name>
+					<Name>MAIN.M1.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
@@ -6302,11 +6164,11 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.Axis.PlcToNc</Name>
+					<Name>MAIN.M2.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_YDWN.bBrakeRelease</Name>
+					<Name>MAIN.M2.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
@@ -6317,11 +6179,11 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.Axis.PlcToNc</Name>
+					<Name>MAIN.M3.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XUP.bBrakeRelease</Name>
+					<Name>MAIN.M3.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
@@ -6332,11 +6194,11 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.Axis.PlcToNc</Name>
+					<Name>MAIN.M4.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_XDWN.bBrakeRelease</Name>
+					<Name>MAIN.M4.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
@@ -6347,22 +6209,22 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.Axis.PlcToNc</Name>
+					<Name>MAIN.M5.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Pitch_Coarse.bBrakeRelease</Name>
+					<Name>MAIN.M5.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.Axis.PlcToNc</Name>
+					<Name>MAIN.M6.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1_Bender.bBrakeRelease</Name>
+					<Name>MAIN.M6.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
@@ -6451,266 +6313,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbArbiterIO.q_stRequestedBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
 				</Var>
 				<Var>
 					<Name>GVL.bXRT_M2_OUT</Name>
@@ -6827,6 +6429,136 @@ External Setpoint Generation:
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.q_stRequestedBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -6872,52 +6604,36 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Xupdwn">
 				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Yupdwn">
+				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL6001_M1_PitchFine">
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^D[0]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[10]" VarB="COM Inputs^D[10]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[11]" VarB="COM Inputs^D[11]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[12]" VarB="COM Inputs^D[12]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[13]" VarB="COM Inputs^D[13]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[14]" VarB="COM Inputs^D[14]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[15]" VarB="COM Inputs^D[15]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[16]" VarB="COM Inputs^D[16]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[17]" VarB="COM Inputs^D[17]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[18]" VarB="COM Inputs^D[18]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[19]" VarB="COM Inputs^D[19]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[1]" VarB="COM Inputs^D[1]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[20]" VarB="COM Inputs^D[20]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[21]" VarB="COM Inputs^D[21]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[2]" VarB="COM Inputs^D[2]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[3]" VarB="COM Inputs^D[3]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[4]" VarB="COM Inputs^D[4]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[5]" VarB="COM Inputs^D[5]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[6]" VarB="COM Inputs^D[6]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[7]" VarB="COM Inputs^D[7]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^D[8]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^D[9]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[0]" VarB="COM Inputs^D[0]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[10]" VarB="COM Inputs^D[10]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[11]" VarB="COM Inputs^D[11]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[12]" VarB="COM Inputs^D[12]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[13]" VarB="COM Inputs^D[13]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[14]" VarB="COM Inputs^D[14]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[15]" VarB="COM Inputs^D[15]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[16]" VarB="COM Inputs^D[16]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[17]" VarB="COM Inputs^D[17]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[18]" VarB="COM Inputs^D[18]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[19]" VarB="COM Inputs^D[19]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[1]" VarB="COM Inputs^D[1]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[20]" VarB="COM Inputs^D[20]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[21]" VarB="COM Inputs^D[21]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[2]" VarB="COM Inputs^D[2]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[3]" VarB="COM Inputs^D[3]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[4]" VarB="COM Inputs^D[4]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[5]" VarB="COM Inputs^D[5]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[6]" VarB="COM Inputs^D[6]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[7]" VarB="COM Inputs^D[7]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[8]" VarB="COM Inputs^D[8]"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[9]" VarB="COM Inputs^D[9]"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[0]" VarB="COM Inputs^Data In 0" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[1]" VarB="COM Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[2]" VarB="COM Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[3]" VarB="COM Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[5]" VarB="COM Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[7]" VarB="COM Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^Status" VarB="COM Inputs^Status" AutoLink="true"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[0]" VarB="COM Outputs^Data Out 0"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[10]" VarB="COM Outputs^Data Out 10"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[11]" VarB="COM Outputs^Data Out 11"/>
@@ -6942,30 +6658,54 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[9]" VarB="COM Outputs^Data Out 9"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Bender">
-				<Link VarA="PlcTask Inputs^MAIN.M1_Bender.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1_Bender.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_PitchCoarse">
-				<Link VarA="PlcTask Inputs^MAIN.M1_Pitch_Coarse.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1_Pitch_Coarse.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xdwn">
-				<Link VarA="PlcTask Inputs^MAIN.M1_XDWN.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1_XDWN.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xup">
-				<Link VarA="PlcTask Inputs^MAIN.M1_XUP.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1_XUP.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Ydwn">
-				<Link VarA="PlcTask Inputs^MAIN.M1_YDWN.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Yup">
-				<Link VarA="PlcTask Inputs^MAIN.M1_YUP.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1_YUP.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1"/>
+				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Interface Box (EK1100)^M2-P1-Piezo (EL6001)">
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[0]" VarB="COM Outputs^D[0]"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[10]" VarB="COM Inputs^Data In 10" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[11]" VarB="COM Inputs^Data In 11" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[12]" VarB="COM Inputs^Data In 12" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[13]" VarB="COM Inputs^Data In 13" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[14]" VarB="COM Inputs^Data In 14" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[15]" VarB="COM Inputs^Data In 15" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[16]" VarB="COM Inputs^Data In 16" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[17]" VarB="COM Inputs^Data In 17" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[18]" VarB="COM Inputs^Data In 18" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[19]" VarB="COM Inputs^Data In 19" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[1]" VarB="COM Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[20]" VarB="COM Inputs^Data In 20" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[21]" VarB="COM Inputs^Data In 21" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[2]" VarB="COM Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[3]" VarB="COM Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[4]" VarB="COM Inputs^Data In 4" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[5]" VarB="COM Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[6]" VarB="COM Inputs^Data In 6" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[7]" VarB="COM Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^Data In 8" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^Data In 9" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^Status" VarB="COM Inputs^Status" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[12]" VarB="COM Outputs^Data Out 12"/>
@@ -7069,39 +6809,35 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE">
-				<Link VarA="PlcTask Inputs^MAIN.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="IO Outputs^FFO1"/>
-				<Link VarA="PlcTask Outputs^MAIN.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 B">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Bender.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Bender">
+				<Link VarA="PlcTask Inputs^MAIN.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M6.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 P">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Pitch">
+				<Link VarA="PlcTask Inputs^MAIN.M5.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M5.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 X2">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xdwn">
+				<Link VarA="PlcTask Inputs^MAIN.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M4.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xup">
-				<Link VarA="PlcTask Inputs^MAIN.M1_XUP.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M1_XUP.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^MAIN.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Ydwn">
-				<Link VarA="PlcTask Inputs^MAIN.M1_YDWN.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M1_YDWN.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^MAIN.M2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Yup">
-				<Link VarA="PlcTask Inputs^MAIN.M1_YUP.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M1_YUP.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
+				<Link VarA="PlcTask Inputs^MAIN.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^MAIN.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>

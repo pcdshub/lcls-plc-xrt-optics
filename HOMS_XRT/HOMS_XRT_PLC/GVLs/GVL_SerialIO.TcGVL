@@ -6,7 +6,7 @@
 	//Serial_P1_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
 	//Serial_P1_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
 	 {attribute    'TcLinkTo'    :=    '.Status:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Status;                         
-								 .D[0]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 0;
+								 .D[0]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 0; 
                                  .D[1]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 1;
 								 .D[2]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 2;
 								 .D[3]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 3;
@@ -27,10 +27,36 @@
 								 .D[18]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 18;
 								 .D[19]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 19;
 								 .D[20]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 20;
-								 .D[21]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 21;}
+								 .D[21]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 21;'}
 	
 	Serial_stComIn_M1 AT %I* : EL6inData22B; // M1 In Serial Comm Array
 	Serial_stComOut_M1 AT %Q* : EL6outData22B; // M1 Out Serual Comm Array
+	 {attribute    'TcLinkTo'    :=    '.Status:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Status;                      
+								 .D[0]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 0; 
+                                 .D[1]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 1;
+								 .D[2]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 2;
+								 .D[3]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 3;
+								 .D[4]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 4;
+								 .D[5]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 5;
+								 .D[6]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 6;
+								 .D[7]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 7;
+								 .D[8]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 8;
+								 .D[9]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 9;
+                                 .D[10]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 10;
+								 .D[11]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 11;
+								 .D[12]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 12;
+								 .D[13]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 13;
+								 .D[14]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 14;
+								 .D[15]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 15;
+								 .D[16]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 16;
+								 .D[17]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 17;
+								 .D[18]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 18;
+								 .D[19]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 19;
+								 .D[20]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 20;
+								 .D[21]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 21;'}	
+
+
+
 
 	Serial_P2_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
 	Serial_P2_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);

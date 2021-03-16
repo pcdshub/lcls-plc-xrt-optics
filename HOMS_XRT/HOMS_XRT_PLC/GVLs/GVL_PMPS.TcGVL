@@ -25,6 +25,9 @@ VAR_GLOBAL
 	'}
 	g_fbArbiter2 : FB_Arbiter(2);
 	
+	// PMPS arbiter interface
+	fbArbiterIO : FB_SubSysToArbiter_IO;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

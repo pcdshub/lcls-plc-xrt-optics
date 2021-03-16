@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="MAIN" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -12,7 +12,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:YUP
 	'}
-	M1_YUP : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
 	
 	
@@ -21,7 +21,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:YDWN
 	'}
-	M1_YDWN : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M2 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m2 : FB_MotionStage;
 	
 	
@@ -30,7 +30,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:XUP
 	'}
-	M1_XUP : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m3 : FB_MotionStage;
 	
 	
@@ -39,7 +39,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:XDWN
 	'}
-	M1_XDWN : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M4 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m4 : FB_MotionStage;
 	
 	
@@ -48,7 +48,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:PITCH
 	'}
-	M1_Pitch_Coarse : DUT_MotionStage := (fVelocity:=150.0); // XRTM1 Pitch Stepper
+	M5 : DUT_MotionStage := (fVelocity:=150.0); // XRTM1 Pitch Stepper
 	
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Bender]^STM Status^Status^Digital input 1;
@@ -56,7 +56,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:BENDER
 	'}
-	M1_Bender : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // XRTM1 Bender
+	M6 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // XRTM1 Bender
 	fbMotionStage_m6 : FB_MotionStage;
 	
 	
@@ -249,8 +249,7 @@ VAR
 	
 	mcBenderPower	:	MC_POWER;
 	
-	// PMPS arbiter interface
-	fbArbiterIO : FB_SubSysToArbiter_IO;
+	
 	
 	// Common
 	fEncLeverArm_mm : LREAL := 513.0;
@@ -262,11 +261,11 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// M1 BECKHOFF
-XRTM1.fbRunHOMS(stYup:=M1_YUP,
-               stYdwn:=M1_YDWN,
-               stXup:=M1_XUP,
-               stXdwn:=M1_XDWN,
-               stPitch:=M1_Pitch_Coarse,
+XRTM1.fbRunHOMS(stYup:=M1,
+               stYdwn:=M2,
+               stXup:=M3,
+               stXdwn:=M4,
+               stPitch:=M5,
 	           nYupEncRef:=GVL_M1_Constants.nYUP_ENC_REF,
                nYdwnEncRef:=GVL_M1_Constants.nYDWN_ENC_REF,
                nXupEncRef:=GVL_M1_Constants.nXUP_ENC_REF,
@@ -279,49 +278,49 @@ XRTM1.fbRunHOMS(stYup:=M1_YUP,
                bGantryAlreadyCoupledX=>XRTM1.bGantryAlreadyCoupledX,
                nCurrGantryY=>XRTM1.nCurrGantryY,
                nCurrGantryX=>XRTM1.nCurrGantryX);
-fbBenderM1L0(stBender:=M1_Bender,
+fbBenderM1L0(stBender:=M6,
 	         bSTOEnable1:=XRTM1.fbRunHOMS.bSTOEnable1,
 		     bSTOEnable2:=XRTM1.fbRunHOMS.bSTOEnable2);
 // No slave motion through Epics
-M1_YDWN.bExecute := FALSE; // M1L0-Ydwn
-M1_XDWN.bExecute := FALSE; // M1L0-Xdwn
+M2.bExecute := FALSE; // M1L0-Ydwn
+M4.bExecute := FALSE; // M1L0-Xdwn
 
 // Convert nCurrGantry to um (smaller number) to read out in epics
 XRTM1.fCurrGantryY_um := LINT_TO_REAL(XRTM1.nCurrGantryY) / 1000.0;
 XRTM1.fCurrGantryX_um := LINT_TO_REAL(XRTM1.nCurrGantryX) / 1000.0;
 
 // FB_MotionStage's for non-piezo axes
-fbMotionStage_m1(stMotionStage:=M1_YUP);
-fbMotionStage_m2(stMotionStage:=M1_YDWN);
-fbMotionStage_m3(stMotionStage:=M1_XUP);
-fbMotionStage_m4(stMotionStage:=M1_XDWN);
-fbMotionStage_m6(stMotionStage:=M1_Bender);
+fbMotionStage_m1(stMotionStage:=M1);
+fbMotionStage_m2(stMotionStage:=M2);
+fbMotionStage_m3(stMotionStage:=M3);
+fbMotionStage_m4(stMotionStage:=M4);
+fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
-fbYRMSErrorM1L0(stMotionStage:=M1_YUP,
+fbYRMSErrorM1L0(stMotionStage:=M1,
 	            fMaxRMSError=>fMaxYRMSErrorM1L0,
 				fMinRMSError=>fMinYRMSErrorM1L0);
 
-fbXRMSErrorM1L0(stMotionStage:=M1_XUP,
+fbXRMSErrorM1L0(stMotionStage:=M3,
 	            fMaxRMSError=>fMaxXRMSErrorM1L0,
 				fMinRMSError=>fMinXRMSErrorM1L0);
 
-fbPitchRMSErrorM1L0(stMotionStage:=M1_Pitch_Coarse,
+fbPitchRMSErrorM1L0(stMotionStage:=M5,
 	                fMaxRMSError=>fMaxPitchRMSErrorM1L0,
 					fMinRMSError=>fMinPitchRMSErrorM1L0);
 
-fbBenderRMSErrorM1L0(stMotionStage:=M1_Bender,
+fbBenderRMSErrorM1L0(stMotionStage:=M6,
 	                 fMaxRMSError=>fMaxBenderRMSErrorM1L0,
 					 fMinRMSError=>fMinBenderRMSErrorM1L0);
 // Pitch Control
 fbM1L0PitchControl(Pitch:=GVL_M1.M1_Pitch,
-				   Stepper:=M1_Pitch_Coarse,
-				   lrCurrentSetpoint:=M1_Pitch_Coarse.fPosition,
+				   Stepper:=M5,
+				   lrCurrentSetpoint:=M5.fPosition,
                    q_bDone=>bM1L0PitchDone,
                    q_bBusy=>bM1L0PitchBusy);
 // When STO hit, need to reset SP
-IF NOT M1_Pitch_Coarse.bHardwareEnable THEN
-	M1_Pitch_Coarse.fPosition := M1_Pitch_Coarse.stAxisStatus.fActPosition;
+IF NOT M5.bHardwareEnable THEN
+	M5.fPosition := M5.stAxisStatus.fActPosition;
 END_IF
 
 // Raw Encoder Counts For Epics
@@ -336,7 +335,7 @@ nEncRefYupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYUP_ENC_REF);
 nEncRefYdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nYDWN_ENC_REF);
 nEncRefXupM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXUP_ENC_REF);
 nEncRefXdwnM1L0 := ULINT_TO_UDINT(GVL_M1_Constants.nXDWN_ENC_REF);
-mcReadParameterPitchM1L0(Axis:=M1_Pitch_Coarse.Axis,
+mcReadParameterPitchM1L0(Axis:=M5.Axis,
 	                     Enable:=TRUE,
 				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
 				         ReadMode:=READMODE_CYCLIC,
