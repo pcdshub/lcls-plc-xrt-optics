@@ -1335,7 +1335,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{D389F784-3772-48EA-848E-1D7F6EFE4E9B}" Name="HOMS_XRT_PLC" PrjFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.plcproj" TmcFilePath="..\..\HOMS_XRT_PLC\HOMS_XRT_PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcPath="HOMS_XRT_PLC\HOMS_XRT_PLC.tmc">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="HOMS_XRT_PLC\HOMS_XRT_PLC.tmc">
 			<Name>HOMS_XRT_PLC Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">
@@ -1391,7 +1391,7 @@ External Setpoint Generation:
 					<Type>LINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.Axis.NcToPlc</Name>
+					<Name>Main.M1.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1440,56 +1440,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.bLimitForwardEnable</Name>
+					<Name>Main.M1.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.bLimitBackwardEnable</Name>
+					<Name>Main.M1.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.bHome</Name>
+					<Name>Main.M1.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.bHardwareEnable</Name>
+					<Name>Main.M1.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.nRawEncoderULINT</Name>
+					<Name>Main.M1.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.nRawEncoderUINT</Name>
+					<Name>Main.M1.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.nRawEncoderINT</Name>
+					<Name>Main.M1.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotionStage_m1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1538,7 +1538,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.Axis.NcToPlc</Name>
+					<Name>Main.M2.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1587,56 +1587,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.bLimitForwardEnable</Name>
+					<Name>Main.M2.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.bLimitBackwardEnable</Name>
+					<Name>Main.M2.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.bHome</Name>
+					<Name>Main.M2.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.bHardwareEnable</Name>
+					<Name>Main.M2.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.nRawEncoderULINT</Name>
+					<Name>Main.M2.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.nRawEncoderUINT</Name>
+					<Name>Main.M2.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.nRawEncoderINT</Name>
+					<Name>Main.M2.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotionStage_m2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1685,7 +1685,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.Axis.NcToPlc</Name>
+					<Name>Main.M3.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1734,56 +1734,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.bLimitForwardEnable</Name>
+					<Name>Main.M3.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.bLimitBackwardEnable</Name>
+					<Name>Main.M3.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.bHome</Name>
+					<Name>Main.M3.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.bHardwareEnable</Name>
+					<Name>Main.M3.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.nRawEncoderULINT</Name>
+					<Name>Main.M3.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.nRawEncoderUINT</Name>
+					<Name>Main.M3.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.nRawEncoderINT</Name>
+					<Name>Main.M3.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotionStage_m3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1832,7 +1832,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.Axis.NcToPlc</Name>
+					<Name>Main.M4.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1881,56 +1881,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.bLimitForwardEnable</Name>
+					<Name>Main.M4.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.bLimitBackwardEnable</Name>
+					<Name>Main.M4.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.bHome</Name>
+					<Name>Main.M4.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.bHardwareEnable</Name>
+					<Name>Main.M4.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.nRawEncoderULINT</Name>
+					<Name>Main.M4.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.nRawEncoderUINT</Name>
+					<Name>Main.M4.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.nRawEncoderINT</Name>
+					<Name>Main.M4.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotionStage_m4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1979,7 +1979,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.Axis.NcToPlc</Name>
+					<Name>Main.M5.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2028,56 +2028,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.bLimitForwardEnable</Name>
+					<Name>Main.M5.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.bLimitBackwardEnable</Name>
+					<Name>Main.M5.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.bHome</Name>
+					<Name>Main.M5.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.bHardwareEnable</Name>
+					<Name>Main.M5.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.nRawEncoderULINT</Name>
+					<Name>Main.M5.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.nRawEncoderUINT</Name>
+					<Name>Main.M5.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.nRawEncoderINT</Name>
+					<Name>Main.M5.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.Axis.NcToPlc</Name>
+					<Name>Main.M6.Axis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2126,56 +2126,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.bLimitForwardEnable</Name>
+					<Name>Main.M6.bLimitForwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.bLimitBackwardEnable</Name>
+					<Name>Main.M6.bLimitBackwardEnable</Name>
 					<Comment>
 						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.bHome</Name>
+					<Name>Main.M6.bHome</Name>
 					<Comment>
 						<![CDATA[ NO Home Switch: TRUE if at home]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.bHardwareEnable</Name>
+					<Name>Main.M6.bHardwareEnable</Name>
 					<Comment>
 						<![CDATA[ NC STO Input: TRUE if ok to move]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.nRawEncoderULINT</Name>
+					<Name>Main.M6.nRawEncoderULINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.nRawEncoderUINT</Name>
+					<Name>Main.M6.nRawEncoderUINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
 					</Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.nRawEncoderINT</Name>
+					<Name>Main.M6.nRawEncoderINT</Name>
 					<Comment>
 						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbMotionStage_m6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2224,18 +2224,18 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.bSTOEnable1</Name>
+					<Name>Main.XRTM1.fbRunHOMS.bSTOEnable1</Name>
 					<Comment>
 						<![CDATA[ STO Button]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.bSTOEnable2</Name>
+					<Name>Main.XRTM1.fbRunHOMS.bSTOEnable2</Name>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.stYupEnc</Name>
+					<Name>Main.XRTM1.fbRunHOMS.stYupEnc</Name>
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
@@ -2260,7 +2260,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.stYdwnEnc</Name>
+					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
 					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
@@ -2282,7 +2282,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.stXupEnc</Name>
+					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
 					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
@@ -2304,7 +2304,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.stXdwnEnc</Name>
+					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
 					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
@@ -2326,35 +2326,35 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
 					<Comment>
 						<![CDATA[ Connect to encoder "Position" input]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
 					<Comment>
 						<![CDATA[ Connect to encoder "Position" input]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
 					<Comment>
 						<![CDATA[ Connect to encoder "Position" input]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
 					<Comment>
 						<![CDATA[ Connect to encoder "Position" input]]>
 					</Comment>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2403,7 +2403,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2PitchControl.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2452,7 +2452,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2501,7 +2501,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2550,7 +2550,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2599,7 +2599,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2648,7 +2648,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2697,7 +2697,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2746,7 +2746,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3PitchControl.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2795,7 +2795,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2844,7 +2844,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2893,7 +2893,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2942,7 +2942,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2991,7 +2991,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3040,7 +3040,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3089,7 +3089,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -3120,21 +3120,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.diInputs</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.iDriveCurrent</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3183,14 +3183,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.diEncCnt</Name>
+					<Name>Main.fbM2P1LS.Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -3221,21 +3221,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.diInputs</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.iDriveCurrent</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3284,14 +3284,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.diEncCnt</Name>
+					<Name>Main.fbM3P1LS.Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -3322,21 +3322,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3385,14 +3385,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -3423,21 +3423,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3486,14 +3486,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -3524,21 +3524,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3587,7 +3587,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
@@ -6149,169 +6149,169 @@ External Setpoint Generation:
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>MAIN.M1.Axis.PlcToNc</Name>
+					<Name>Main.M1.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M1.bBrakeRelease</Name>
+					<Name>Main.M1.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotionStage_m1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.Axis.PlcToNc</Name>
+					<Name>Main.M2.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M2.bBrakeRelease</Name>
+					<Name>Main.M2.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotionStage_m2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.Axis.PlcToNc</Name>
+					<Name>Main.M3.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M3.bBrakeRelease</Name>
+					<Name>Main.M3.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotionStage_m3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.Axis.PlcToNc</Name>
+					<Name>Main.M4.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M4.bBrakeRelease</Name>
+					<Name>Main.M4.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotionStage_m4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.Axis.PlcToNc</Name>
+					<Name>Main.M5.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M5.bBrakeRelease</Name>
+					<Name>Main.M5.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.Axis.PlcToNc</Name>
+					<Name>Main.M6.Axis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.M6.bBrakeRelease</Name>
+					<Name>Main.M6.bBrakeRelease</Name>
 					<Comment>
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage_m6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbMotionStage_m6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2PitchControl.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2PitchControl.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3PitchControl.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3PitchControl.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stAxis.PlcToNc</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stAxis.PlcToNc</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
@@ -6596,19 +6596,19 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_OUT" VarB="Channel 1^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL1004_M1_STO">
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_M1.M1_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Xupdwn">
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Yupdwn">
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.XRTM1.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL6001_M1_PitchFine">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[0]" VarB="COM Inputs^Data In 0" AutoLink="true"/>
@@ -6658,28 +6658,28 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[9]" VarB="COM Outputs^Data Out 9"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Bender">
-				<Link VarA="PlcTask Inputs^MAIN.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_PitchCoarse">
-				<Link VarA="PlcTask Inputs^MAIN.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xdwn">
-				<Link VarA="PlcTask Inputs^MAIN.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xup">
-				<Link VarA="PlcTask Inputs^MAIN.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Ydwn">
-				<Link VarA="PlcTask Inputs^MAIN.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Yup">
-				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Interface Box (EK1100)^M2-P1-Piezo (EL6001)">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
@@ -6814,30 +6814,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="IO Outputs^FFO1"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Bender">
-				<Link VarA="PlcTask Inputs^MAIN.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M6.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Pitch">
-				<Link VarA="PlcTask Inputs^MAIN.M5.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M5.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xdwn">
-				<Link VarA="PlcTask Inputs^MAIN.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M4.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xup">
-				<Link VarA="PlcTask Inputs^MAIN.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Ydwn">
-				<Link VarA="PlcTask Inputs^MAIN.M2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Yup">
-				<Link VarA="PlcTask Inputs^MAIN.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^MAIN.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>

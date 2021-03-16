@@ -191,7 +191,7 @@
     <Compile Include="POUs\FB_MPS_STATES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Modbus\p_ModbusRx_OutputCoils.TcPOU">

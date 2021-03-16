@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="MAIN" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM MAIN
+  <POU Name="Main" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main
 VAR
 	tpImAPLC : TP := (PT:=T#10S);
 	
@@ -635,7 +635,7 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="MAIN">
+    <LineIds Name="Main">
       <LineId Id="345" Count="81" />
       <LineId Id="341" Count="3" />
       <LineId Id="3" Count="79" />
@@ -643,19 +643,19 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
       <LineId Id="83" Count="1" />
       <LineId Id="2" Count="0" />
     </LineIds>
-    <LineIds Name="MAIN.Init_XRTM1">
+    <LineIds Name="Main.Init_XRTM1">
       <LineId Id="2" Count="43" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="MAIN.Init_XRTM2">
+    <LineIds Name="Main.Init_XRTM2">
       <LineId Id="2" Count="47" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="MAIN.Init_XRTM3">
+    <LineIds Name="Main.Init_XRTM3">
       <LineId Id="2" Count="41" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="MAIN.LimitSwitchIO">
+    <LineIds Name="Main.LimitSwitchIO">
       <LineId Id="27" Count="49" />
       <LineId Id="1" Count="0" />
     </LineIds>
