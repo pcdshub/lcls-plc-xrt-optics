@@ -801,15 +801,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{417EF0CA-A7C8-4787-A2B2-9FE5BFECA7BA}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{B90C2862-3EE5-448F-8061-8F0C0BBC934D}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{33F6E3E2-53CE-4202-87CA-2AD0E68663C8}"/>
+				<Hide GUID="{417EF0CA-A7C8-4787-A2B2-9FE5BFECA7BA}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{410AC9EC-D9F2-4CF8-9F78-681826496CCB}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -831,7 +831,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{417EF0CA-A7C8-4787-A2B2-9FE5BFECA7BA}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{B90C2862-3EE5-448F-8061-8F0C0BBC934D}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -848,7 +848,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{80620BB1-79CF-449A-A27B-AEEF7216D7F6}"/>
+				<Hide GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -2239,7 +2239,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{410AC9EC-D9F2-4CF8-9F78-681826496CCB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2261,7 +2261,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{410AC9EC-D9F2-4CF8-9F78-681826496CCB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2283,7 +2283,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{410AC9EC-D9F2-4CF8-9F78-681826496CCB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2305,7 +2305,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{8D0E6570-655A-4276-95F0-9D0F101790D1}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{410AC9EC-D9F2-4CF8-9F78-681826496CCB}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2354,7 +2354,7 @@ External Setpoint Generation:
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Name>Main.fbXRTM1PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -6001,6 +6001,13 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>GVL_M1.XRTM1_Pitch.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
+				</Var>
+				<Var>
 					<Name>GVL_PMPS.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
@@ -6138,13 +6145,6 @@ External Setpoint Generation:
 					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_state</Name>
 					<Type>BIT</Type>
 				</Var>
-				<Var>
-					<Name>GVL_M1.XRTM1_Pitch.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>LINT</Type>
-				</Var>
 			</Vars>
 			<Vars VarGrpType="2">
 				<Name>PlcTask Outputs</Name>
@@ -6235,7 +6235,7 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>Main.fbM1L0PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Name>Main.fbXRTM1PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
