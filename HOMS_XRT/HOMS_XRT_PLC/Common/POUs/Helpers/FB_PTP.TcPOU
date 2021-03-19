@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_PTP" Id="{6cbfaf46-a20b-4169-b47c-2f4b0f6df043}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PTP
 VAR_IN_OUT
@@ -25,6 +25,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(* Point to Point
 T. Rendahl 17-5-05
+
+
 
 Provides a conveinent wrapper for EPICS to instruct Point to Point motion of 
 an axis. The function block supplies support for three basic kinds of motion,
@@ -124,17 +126,5 @@ Stepper.bBusy := Drive.bBusy;
 	  
 	  ]]></ST>
     </Implementation>
-    <LineIds Name="FB_PTP">
-      <LineId Id="3" Count="64" />
-      <LineId Id="115" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="116" Count="1" />
-      <LineId Id="68" Count="5" />
-      <LineId Id="122" Count="0" />
-      <LineId Id="74" Count="5" />
-      <LineId Id="144" Count="0" />
-      <LineId Id="80" Count="15" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -28,6 +28,8 @@
 								 .D[19]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 19;
 								 .D[20]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 20;
 								 .D[21]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 21;'}
+								 
+								 
 	
 	Serial_stComIn_M1 AT %I* : EL6inData22B; // M1 In Serial Comm Array
 		 {attribute    'TcLinkTo'    :=  '.D[0]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 0; 
