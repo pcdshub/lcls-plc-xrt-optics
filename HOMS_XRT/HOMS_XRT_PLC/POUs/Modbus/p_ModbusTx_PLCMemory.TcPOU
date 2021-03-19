@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusTx_PLCMemory" Id="{d85d0cac-5378-471f-b9d9-8f92ec2f478e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx_PLCMemory
 VAR
@@ -7,21 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[100]), n:=SIZEOF(HOMS1_XGantry.PAxis.stStatus.rActPosition));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[102]), n:=SIZEOF(HOMS1_XGantry.PAxis.stStatus.rActVelocity));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.PAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[104]), n:=SIZEOF(HOMS1_XGantry.PAxis.stAxis.NcToPlc.SetAcc));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.SAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[106]), n:=SIZEOF(HOMS1_XGantry.SAxis.stStatus.rActPosition));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.SAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[108]), n:=SIZEOF(HOMS1_XGantry.SAxis.stStatus.rActVelocity));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.SAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[110]), n:=SIZEOF(HOMS1_XGantry.SAxis.stAxis.NcToPlc.SetAcc));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.PAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[112]), n:=SIZEOF(HOMS1_YGantry.PAxis.stStatus.rActPosition));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.PAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[114]), n:=SIZEOF(HOMS1_YGantry.PAxis.stStatus.rActVelocity));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.PAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[116]), n:=SIZEOF(HOMS1_YGantry.PAxis.stAxis.NcToPlc.SetAcc));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.SAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[118]), n:=SIZEOF(HOMS1_YGantry.SAxis.stStatus.rActPosition));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.SAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[120]), n:=SIZEOF(HOMS1_YGantry.SAxis.stStatus.rActVelocity));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.SAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[122]), n:=SIZEOF(HOMS1_YGantry.SAxis.stAxis.NcToPlc.SetAcc));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Stepper.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[124]), n:=SIZEOF(HOMS1_Pitch.Stepper.stStatus.rActPosition));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Stepper.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[126]), n:=SIZEOF(HOMS1_Pitch.Stepper.stStatus.rActVelocity));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Stepper.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[128]), n:=SIZEOF(HOMS1_Pitch.Stepper.stAxis.NcToPlc.SetAcc));
+      <ST><![CDATA[
 MEMCPY(srcAddr:=ADR(HOMS2_XGantry.PAxis.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[130]), n:=SIZEOF(HOMS2_XGantry.PAxis.stStatus.rActPosition));
 MEMCPY(srcAddr:=ADR(HOMS2_XGantry.PAxis.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[132]), n:=SIZEOF(HOMS2_XGantry.PAxis.stStatus.rActVelocity));
 MEMCPY(srcAddr:=ADR(HOMS2_XGantry.PAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[134]), n:=SIZEOF(HOMS2_XGantry.PAxis.stAxis.NcToPlc.SetAcc));
@@ -37,16 +23,11 @@ MEMCPY(srcAddr:=ADR(HOMS2_YGantry.SAxis.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Stepper.stStatus.rActPosition), destAddr:=ADR(mb_PLC_Memory[154]), n:=SIZEOF(HOMS2_Pitch.Stepper.stStatus.rActPosition));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Stepper.stStatus.rActVelocity), destAddr:=ADR(mb_PLC_Memory[156]), n:=SIZEOF(HOMS2_Pitch.Stepper.stStatus.rActVelocity));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Stepper.stAxis.NcToPlc.SetAcc), destAddr:=ADR(mb_PLC_Memory[158]), n:=SIZEOF(HOMS2_Pitch.Stepper.stAxis.NcToPlc.SetAcc));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Piezo.rActVoltage), destAddr:=ADR(mb_PLC_Memory[160]), n:=SIZEOF(HOMS1_Pitch.Piezo.rActVoltage));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Piezo.UpperVoltage), destAddr:=ADR(mb_PLC_Memory[162]), n:=SIZEOF(HOMS1_Pitch.Piezo.UpperVoltage));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.Piezo.LowerVoltage), destAddr:=ADR(mb_PLC_Memory[164]), n:=SIZEOF(HOMS1_Pitch.Piezo.LowerVoltage));
+
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Piezo.rActVoltage), destAddr:=ADR(mb_PLC_Memory[166]), n:=SIZEOF(HOMS2_Pitch.Piezo.rActVoltage));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Piezo.UpperVoltage), destAddr:=ADR(mb_PLC_Memory[168]), n:=SIZEOF(HOMS2_Pitch.Piezo.UpperVoltage));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.Piezo.LowerVoltage), destAddr:=ADR(mb_PLC_Memory[170]), n:=SIZEOF(HOMS2_Pitch.Piezo.LowerVoltage));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[172]), n:=SIZEOF(HOMS1_XGantry.DiffTol));
-MEMCPY(srcAddr:=ADR(HOMS1_XGantry.Diff), destAddr:=ADR(mb_PLC_Memory[174]), n:=SIZEOF(HOMS1_XGantry.Diff));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[176]), n:=SIZEOF(HOMS1_YGantry.DiffTol));
-MEMCPY(srcAddr:=ADR(HOMS1_YGantry.Diff), destAddr:=ADR(mb_PLC_Memory[178]), n:=SIZEOF(HOMS1_YGantry.Diff));
+
 MEMCPY(srcAddr:=ADR(HOMS2_XGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[180]), n:=SIZEOF(HOMS2_XGantry.DiffTol));
 MEMCPY(srcAddr:=ADR(HOMS2_XGantry.Diff), destAddr:=ADR(mb_PLC_Memory[182]), n:=SIZEOF(HOMS2_XGantry.Diff));
 MEMCPY(srcAddr:=ADR(HOMS2_YGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[184]), n:=SIZEOF(HOMS2_YGantry.DiffTol));
@@ -54,7 +35,7 @@ MEMCPY(srcAddr:=ADR(HOMS2_YGantry.Diff), destAddr:=ADR(mb_PLC_Memory[186]), n:=S
 
 
 
-MEMCPY(destAddr:=ADR(mb_PLC_Memory[16]), srcAddr:=ADR(HOMS1_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS1_Pitch.Axis.rReqAbsPos));
+
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[36]), srcAddr:=ADR(HOMS2_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS2_Pitch.Axis.rReqAbsPos));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[56]), srcAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Axis.rReqAbsPos));
 
@@ -81,15 +62,12 @@ MEMCPY(srcAddr:=ADR(HOMS3_XGantry.Diff), destAddr:=ADR(mb_PLC_Memory[226]), n:=S
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.DiffTol), destAddr:=ADR(mb_PLC_Memory[228]), n:=SIZEOF(HOMS3_YGantry.DiffTol));
 MEMCPY(srcAddr:=ADR(HOMS3_YGantry.Diff), destAddr:=ADR(mb_PLC_Memory[230]), n:=SIZEOF(HOMS3_YGantry.Diff));
 
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[232]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimLo));
-MEMCPY(srcAddr:=ADR(HOMS1_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[234]), n:=SIZEOF(HOMS1_Pitch.ReqPosLimHi));
+
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[236]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimLo));
 MEMCPY(srcAddr:=ADR(HOMS2_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[238]), n:=SIZEOF(HOMS2_Pitch.ReqPosLimHi));
 MEMCPY(srcAddr:=ADR(HOMS3_Pitch.ReqPosLimLo), destAddr:=ADR(mb_PLC_Memory[240]), n:=SIZEOF(HOMS3_Pitch.ReqPosLimLo));
 MEMCPY(srcAddr:=ADR(HOMS3_Pitch.ReqPosLimHi), destAddr:=ADR(mb_PLC_Memory[242]), n:=SIZEOF(HOMS3_Pitch.ReqPosLimHi));
 
-MEMCPY(destAddr:=ADR(mb_PLC_Memory[60]), srcAddr:=ADR(HOMS1_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS1_Pitch.Stepper.rStepperDmovRange));
-MEMCPY(destAddr:=ADR(mb_PLC_Memory[62]), srcAddr:=ADR(HOMS1_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS1_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[64]), srcAddr:=ADR(HOMS2_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS2_Pitch.Stepper.rStepperDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[66]), srcAddr:=ADR(HOMS2_Pitch.Piezo.rPiezoDmovRange), n:=SIZEOF(HOMS2_Pitch.Piezo.rPiezoDmovRange));
 MEMCPY(destAddr:=ADR(mb_PLC_Memory[68]), srcAddr:=ADR(HOMS3_Pitch.Stepper.rStepperDmovRange), n:=SIZEOF(HOMS3_Pitch.Stepper.rStepperDmovRange));
@@ -98,9 +76,5 @@ MEMCPY(destAddr:=ADR(mb_PLC_Memory[70]), srcAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 
 //MEMCPY(destAddr:=ADR(mb_PLC_Memory[256]), srcAddr:=ADR(HOMS3_Pitch.Axis.rReqAbsPos), n:=SIZEOF(HOMS3_Pitch.Stepper.rReqAbsolute));]]></ST>
     </Implementation>
-    <LineIds Name="p_ModbusTx_PLCMemory">
-      <LineId Id="3" Count="88" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

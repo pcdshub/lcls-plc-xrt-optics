@@ -622,7 +622,7 @@ Drive Status 4 (manually linked):
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE_OLD</Name>
+			<Name GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Operational</Name>
@@ -733,6 +733,12 @@ Drive Status 4 (manually linked):
 				<BitOffs>17</BitOffs>
 			</SubItem>
 			<SubItem>
+				<Name>IsDriveLimitActive</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
 				<Name>ContinuousMotion</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
 				<BitSize>1</BitSize>
@@ -819,6 +825,11 @@ Drive Status 4 (manually linked):
 			<Format Name="IEC">
 				<Printf>16#%08X</Printf>
 			</Format>
+			<Relations>
+				<Relation Priority="100">
+					<Type>{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}</Type>
+				</Relation>
+			</Relations>
 		</DataType>
 		<DataType>
 			<Name GUID="{6EF49753-C72C-4F50-AA44-3C7498E76CFE}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_OPMODE</Name>
@@ -1014,11 +1025,11 @@ Drive Status 4 (manually linked):
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF_OLD4</Name>
+			<Name GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF</Name>
 			<BitSize>2048</BitSize>
 			<SubItem>
 				<Name>StateDWord</Name>
-				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE_OLD</Type>
+				<Type GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC">NCTOPLC_AXIS_REF_STATE</Type>
 				<BitSize>32</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -1273,6 +1284,18 @@ External Setpoint Generation:
 				<BitOffs>1600</BitOffs>
 			</SubItem>
 			<SubItem>
+				<Name>AbsPhasingPos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1664</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TorqueOffset</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>1728</BitOffs>
+			</SubItem>
+			<SubItem>
 				<Name>ActPosWithoutPosCorrection</Name>
 				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
 				<BitSize>64</BitSize>
@@ -1318,20 +1341,24 @@ External Setpoint Generation:
 				<Relation Priority="100">
 					<Type GUID="{8CDE0C45-AB9D-42DB-BC94-1CF7521AB268}"/>
 				</Relation>
+				<Relation Priority="100">
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}"/>
+				</Relation>
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="6" CreateSymbols="true" AxisType="1" AxisFolder="M1">
+	<Axis Id="19" CreateSymbols="true" AxisType="1" AxisFolder="M1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
-			<Dynamic AccelerationMaximum="0.025" DecelerationMaximum="0.025"/>
-			<Velo Maximum="0.15"/>
+			<General UnitName="um"/>
+			<Dynamic Acceleration="200" Deceleration="200" DelayTime="0.008"/>
+			<Velo Maximum="200"/>
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="1e-06" Offset="-13.611" MaxCount="#xffffffff">
-				<SoftEndMinControl Enable="true" Range="-12.1358"/>
-				<SoftEndMaxControl Enable="true" Range="12.932"/>
+			<EncPara ScaleFactorNumerator="0.001" Offset="-13611" MaxCount="#xffffffff">
+				<SoftEndMinControl Enable="true" Range="-121356"/>
+				<SoftEndMaxControl Enable="true" Range="12932"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
 			<Vars VarGrpType="1">
@@ -1374,8 +1401,8 @@ External Setpoint Generation:
 			</Vars>
 		</Encoder>
 		<Drive Name="Drive" DrvType="24">
-			<DrvPara>
-				<Analog VeloReferenz="0.15"/>
+			<DrvPara Inverse="true">
+				<Analog VeloReferenz="488.28125" ScaleFactorActTorque="0.1"/>
 				<TimeComp TaskDelayCycles="1"/>
 			</DrvPara>
 			<Vars VarGrpType="1">
@@ -1463,9 +1490,10 @@ Drive Status 4 (manually linked):
 				</Var>
 			</Vars>
 		</Drive>
-		<Controller Name="Ctrl" CtrType="1">
+		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="1"/>
+				<PosDiffControl Range="100"/>
+				<PID PosKp="50" PosExtKp="10" DeadBandPosition="0.3"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
 		</Controller>
@@ -1480,7 +1508,7 @@ Drive Status 4 (manually linked):
 			<Name>Outputs</Name>
 			<Var>
 				<Name>ToPlc</Name>
-				<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+				<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 				<SubVar>
 					<Name>AxisState</Name>
 					<Comment>
@@ -1550,8 +1578,6 @@ External Setpoint Generation:
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Ready to enable"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Torque reduced" Size="1" OffsA="6"/>
 				<Link VarA="Drive^Inputs^In^nState1" VarB="STM Status^Status^Warning" Size="1" OffsA="2"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 1" Size="1" OffsA="3"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Digital input 2" Size="1" OffsA="4"/>
 				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^Sync error" Size="1" OffsA="5"/>
 				<Link VarA="Drive^Inputs^In^nState2" VarB="STM Status^Status^TxPDO Toggle" Size="1" OffsA="7"/>
 				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>

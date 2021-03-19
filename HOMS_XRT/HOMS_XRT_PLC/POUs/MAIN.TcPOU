@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="Main" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -177,13 +177,6 @@ VAR
 
 
 
-
-
-
-	//XRTM1PitchControl	:	FB_PitchControlOld;
-	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M1-Y1 (Elmo Drive)]^Inputs^Position actual value'}
-	//XRTM1Y_GantryControl	:	FB_Gantry;
-	//XRTM1X_GantryControl	:	FB_Gantry;
 	XRTM2PitchControl	    :	FB_PitchControlOld;
 	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M2-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM2Y_GantryControl	:	FB_Gantry;
@@ -199,11 +192,6 @@ VAR
 	PitchManualMode: BOOL := FALSE;
 	
 	//Limit switch evaluation blocks
-	//fbM1Y1LS	:	FB_LimitSwitchState;
-	//fbM1Y2LS	:	FB_LimitSwitchState;
-	//fbM1X1LS	:	FB_LimitSwitchState;
-	//fbM1X2LS	:	FB_LimitSwitchState;
-	//fbM1P1LS	:	FB_PitchSoftLimits;
 	
 	fbM2Y1LS	:	FB_LimitSwitchState;
 	fbM2Y2LS	:	FB_LimitSwitchState;
@@ -356,7 +344,7 @@ p_ModbusRx_PLCMemory();
 ////////////////////
 rtInitParams(CLK:=gFirstPass);
 IF rtInitParams.Q THEN
-	Init_XRTM1();
+	//Init_XRTM1();
 	Init_XRTM2();
 	Init_XRTM3();
 	gFirstPass := FALSE;
@@ -381,20 +369,13 @@ LimitSwitchIO();
 	
 // Pitch control
 /////////////////////////////////////
-//XRTM1PitchControl(Pitch:=HOMS1_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS1_Pitch.Axis.bDone, q_xBusy => HOMS1_Pitch.Axis.bBusy);
 XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
 XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS3_Pitch.Axis.bDone, q_xBusy => HOMS3_Pitch.Axis.bBusy);
 
 //Y motion
 /////////////////////////////////////
-//XRTM1Y_GantryControl(Gantry:=HOMS1_YGantry);
 XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
 XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
-
-HOMS1_YGantry.PAxis.stAxis.ReadStatus();
-HOMS1_YGantry.SAxis.stAxis.ReadStatus();
-HOMS1_YGantry.PAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS1_YGantry.PAxis.stAxis.NcToPlc.ActPos);
-HOMS1_YGantry.SAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS1_YGantry.SAxis.stAxis.NcToPlc.ActPos);
 
 HOMS3_YGantry.PAxis.stAxis.ReadStatus();
 HOMS3_YGantry.SAxis.stAxis.ReadStatus();
@@ -403,7 +384,6 @@ HOMS3_YGantry.SAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.SAxis.s
 	
 //X Motion
 /////////////////////////////////////
-//XRTM1X_GantryControl(Gantry:=HOMS1_XGantry);
 XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
 XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
 
@@ -431,55 +411,6 @@ PRG_CoatingProtection();
 // Logging
 fbLogHandler();]]></ST>
     </Implementation>
-    <Action Name="Init_XRTM1" Id="{a11eaaff-25fb-4e40-9807-fb1f683338da}">
-      <Implementation>
-        <ST><![CDATA[//FEE-M1
-///////////////////////////
-
-//Initialize ELMO Drive references
-fbInitDriveRef(stCoE:=HOMS1_XGantry.PAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS1_XGantry.SAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS1_YGantry.PAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS1_YGantry.SAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS1_Pitch.Stepper.stCoE);
-
-//Initialze Drive Speeds and Accelerations
-//////////////////////////////////////////
-HOMS1_XGantry.PAxis.fAcceleration := 1.0;
-HOMS1_XGantry.SAxis.fAcceleration := 1.0;
-HOMS1_YGantry.PAxis.fAcceleration := 1.0;
-HOMS1_YGantry.SAxis.fAcceleration := 1.0;
-
-HOMS1_XGantry.PAxis.fDeceleration := 1.0;
-HOMS1_XGantry.SAxis.fDeceleration := 1.0;
-HOMS1_YGantry.PAxis.fDeceleration := 1.0;
-HOMS1_YGantry.SAxis.fDeceleration := 1.0;
-
-HOMS1_XGantry.PAxis.fVelocity := 0.1;
-HOMS1_XGantry.SAxis.fVelocity := 0.1;
-HOMS1_YGantry.PAxis.fVelocity := 0.1;
-HOMS1_YGantry.SAxis.fVelocity := 0.1;
-
-HOMS1_Pitch.Stepper.fAcceleration := 39;
-HOMS1_Pitch.Stepper.fDeceleration := 39;
-HOMS1_Pitch.Stepper.fVelocity     := 39;
-
-
-//Initialize Piezo Driver
-/////////////////////////////////////
-HOMS1_Pitch.Piezo.stPIParams.fKp := 0.001;
-HOMS1_Pitch.Piezo.stPIParams.tTn := T#500MS;
-HOMS1_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
-HOMS1_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
-
-// Initialize deadband settings
-HOMS1_Pitch.Stepper.rStepperDmovRange := 15;
-HOMS1_Pitch.Piezo.rPiezoDmovRange := 0.5;
-                                                                                                                                          
-
-]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="Init_XRTM2" Id="{5f4f0886-bfe6-466e-ab0f-beab0308d09d}">
       <Implementation>
         <ST><![CDATA[//FEE-M2
@@ -635,25 +566,5 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="Main">
-      <LineId Id="3" Count="168" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM1">
-      <LineId Id="2" Count="43" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM2">
-      <LineId Id="2" Count="47" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM3">
-      <LineId Id="2" Count="41" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.LimitSwitchIO">
-      <LineId Id="2" Count="49" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

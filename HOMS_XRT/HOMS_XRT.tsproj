@@ -2159,16 +2159,16 @@
 										<Entry Name="Data Out 17" Index="#x7000" Sub="#x22">
 											<Type>USINT</Type>
 										</Entry>
-										<Entry Name="D[18]" Index="#x7000" Sub="#x23">
+										<Entry Name="Data Out 18" Index="#x7000" Sub="#x23">
 											<Type>USINT</Type>
 										</Entry>
-										<Entry Name="D[19]" Index="#x7000" Sub="#x24">
+										<Entry Name="Data Out 19" Index="#x7000" Sub="#x24">
 											<Type>USINT</Type>
 										</Entry>
-										<Entry Name="D[20]" Index="#x7000" Sub="#x25">
+										<Entry Name="Data Out 20" Index="#x7000" Sub="#x25">
 											<Type>USINT</Type>
 										</Entry>
-										<Entry Name="D[21]" Index="#x7000" Sub="#x26">
+										<Entry Name="Data Out 21" Index="#x7000" Sub="#x26">
 											<Type>USINT</Type>
 										</Entry>
 									</Pdo>

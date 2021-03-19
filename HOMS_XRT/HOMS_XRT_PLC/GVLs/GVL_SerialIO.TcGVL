@@ -30,6 +30,29 @@
 								 .D[21]:=TIIB[EL6001_M1_PitchFine]^COM Inputs^Data In 21;'}
 	
 	Serial_stComIn_M1 AT %I* : EL6inData22B; // M1 In Serial Comm Array
+		 {attribute    'TcLinkTo'    :=  '.D[0]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 0; 
+                                 .D[1]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 1;
+								 .D[2]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 2;
+								 .D[3]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 3;
+								 .D[4]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 4;
+								 .D[5]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 5;
+								 .D[6]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 6;
+								 .D[7]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 7;
+								 .D[8]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 8;
+								 .D[9]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 9;
+                                 .D[10]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 10;
+								 .D[11]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 11;
+								 .D[12]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 12;
+								 .D[13]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 13;
+								 .D[14]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 14;
+								 .D[15]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 15;
+								 .D[16]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 16;
+								 .D[17]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 17;
+								 .D[18]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 18;
+								 .D[19]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 19;
+								 .D[20]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 20;
+								 .D[21]:=TIIB[EL6001_M1_PitchFine]^COM Outputs^Data Out 21;'}
+	
 	Serial_stComOut_M1 AT %Q* : EL6outData22B; // M1 Out Serual Comm Array
 	 {attribute    'TcLinkTo'    :=    '.Status:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Status;                      
 								 .D[0]:=TIIB[M2-P1-Piezo (EL6001)]^COM Inputs^Data In 0; 
