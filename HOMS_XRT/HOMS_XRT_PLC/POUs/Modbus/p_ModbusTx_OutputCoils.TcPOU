@@ -264,5 +264,9 @@ mb_Output_Coils[253]:=FALSE;  //
 mb_Output_Coils[254]:=FALSE;  //
 mb_Output_Coils[255]:=FALSE;  //]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusTx_OutputCoils">
+      <LineId Id="3" Count="254" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

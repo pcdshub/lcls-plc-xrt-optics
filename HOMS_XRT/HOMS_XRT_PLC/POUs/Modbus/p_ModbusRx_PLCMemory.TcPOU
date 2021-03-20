@@ -35,5 +35,9 @@ MEMCPY(srcAddr:=ADR(mb_PLC_Memory[70]), destAddr:=ADR(HOMS3_Pitch.Piezo.rPiezoDm
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[140]), destAddr:=ADR(HOMS1_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS1_Pitch.Piezo.rReqVoltage));
 //MEMCPY(srcAddr:=ADR(mb_PLC_Memory[142]), destAddr:=ADR(HOMS2_Pitch.Piezo.rReqVoltage), n:=SIZEOF(HOMS2_Pitch.Piezo.rReqVoltage));]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusRx_PLCMemory">
+      <LineId Id="3" Count="26" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

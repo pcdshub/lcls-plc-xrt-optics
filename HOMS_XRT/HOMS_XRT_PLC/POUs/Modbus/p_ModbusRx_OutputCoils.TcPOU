@@ -42,5 +42,9 @@ HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
 HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
 HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusRx_OutputCoils">
+      <LineId Id="3" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

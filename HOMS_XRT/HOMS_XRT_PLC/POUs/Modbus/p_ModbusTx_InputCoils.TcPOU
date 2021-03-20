@@ -93,5 +93,9 @@ mb_Input_Coils[120]:=HOMS2_YGantry.xCoupled;
 mb_Input_Coils[121]:=HOMS3_XGantry.xCoupled;
 mb_Input_Coils[122]:=HOMS3_YGantry.xCoupled;]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusTx_InputCoils">
+      <LineId Id="3" Count="80" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

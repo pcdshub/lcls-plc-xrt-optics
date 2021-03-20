@@ -26,8 +26,6 @@ END_VAR
       <ST><![CDATA[(* Point to Point
 T. Rendahl 17-5-05
 
-
-
 Provides a conveinent wrapper for EPICS to instruct Point to Point motion of 
 an axis. The function block supplies support for three basic kinds of motion,
 absolute, tweak forward and tweak backwards. The ladder has a single reference
@@ -126,5 +124,10 @@ Stepper.bBusy := Drive.bBusy;
 	  
 	  ]]></ST>
     </Implementation>
+    <LineIds Name="FB_PTP">
+      <LineId Id="3" Count="2" />
+      <LineId Id="8" Count="95" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

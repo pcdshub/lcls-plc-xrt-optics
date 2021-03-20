@@ -100,5 +100,9 @@ if (rtRemove.Q) THEN
 END_IF
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_CoatingProtection">
+      <LineId Id="3" Count="46" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
