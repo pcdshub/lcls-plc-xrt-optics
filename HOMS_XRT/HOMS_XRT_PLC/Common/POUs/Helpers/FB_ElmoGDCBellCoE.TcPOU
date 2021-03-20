@@ -31,7 +31,6 @@ END_VAR
       <ST><![CDATA[(* A. Wallace 17-3-22
 ElmoMC Gold DC Bell CoE Read
 
-
 This FB cyclically reads CoE Parameters from the ElmoMC drives.
 *)
 
@@ -420,9 +419,5 @@ ACT_CoEReadFB();]]></ST>
         </NWL>
       </Implementation>
     </Action>
-    <LineIds Name="FB_ElmoGDCBellCoE">
-      <LineId Id="3" Count="52" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

@@ -124,10 +124,5 @@ Stepper.bBusy := Drive.bBusy;
 	  
 	  ]]></ST>
     </Implementation>
-    <LineIds Name="FB_PTP">
-      <LineId Id="3" Count="2" />
-      <LineId Id="8" Count="95" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

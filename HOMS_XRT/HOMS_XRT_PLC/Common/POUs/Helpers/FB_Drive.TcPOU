@@ -132,7 +132,6 @@ bHomed:=Axis.Status.Homed; //Add in DUT_AxisStatus later
 
 rtReset(CLK:=bReset);
 
-
 //Update Axis status
 Axis();
 (*Reset*)
@@ -382,9 +381,5 @@ IF bFirstScan THEN
 	bFirstScan:=FALSE;
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="FB_Drive">
-      <LineId Id="3" Count="253" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
