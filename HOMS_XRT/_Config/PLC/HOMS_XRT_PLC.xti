@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{BC55F6C0-2675-45DD-848C-4E34831FF4BE}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{326287A2-B59F-4CD9-BE35-7F0E02C0351A}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{161110AC-26AC-4357-99B0-9A79D4CA84EB}"/>
+				<Hide GUID="{BC55F6C0-2675-45DD-848C-4E34831FF4BE}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -805,7 +805,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{BC55F6C0-2675-45DD-848C-4E34831FF4BE}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{326287A2-B59F-4CD9-BE35-7F0E02C0351A}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -822,7 +822,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{BEF2BF65-2FDF-4677-9F69-FA8E9267508C}"/>
+				<Hide GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -2213,7 +2213,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2235,7 +2235,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2257,7 +2257,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2279,7 +2279,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -5775,6 +5775,7 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[8]" VarB="COM Inputs^Data In 8"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[9]" VarB="COM Inputs^Data In 9"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^Status" VarB="COM Inputs^Status" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^Ctrl" VarB="COM Outputs^Ctrl"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[0]" VarB="COM Outputs^Data Out 0" AutoLink="true"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[10]" VarB="COM Outputs^Data Out 10" AutoLink="true"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[11]" VarB="COM Outputs^Data Out 11" AutoLink="true"/>
@@ -5846,6 +5847,7 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^Data In 8" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^Data In 9" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^Status" VarB="COM Inputs^Status" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
