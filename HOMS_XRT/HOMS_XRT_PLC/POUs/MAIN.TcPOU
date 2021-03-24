@@ -566,21 +566,5 @@ xLoLS=>HOMS3_Pitch.Stepper.xLoLS);
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="Main">
-      <LineId Id="3" Count="160" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM2">
-      <LineId Id="2" Count="47" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.Init_XRTM3">
-      <LineId Id="2" Count="41" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="Main.LimitSwitchIO">
-      <LineId Id="2" Count="49" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
