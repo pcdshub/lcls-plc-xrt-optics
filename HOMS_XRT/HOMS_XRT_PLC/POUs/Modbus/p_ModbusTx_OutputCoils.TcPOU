@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusTx_OutputCoils" Id="{1a6865a2-a335-47b5-a016-a57799560c5b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx_OutputCoils
 VAR
@@ -17,6 +17,7 @@ mb_Output_Coils[6]:=FALSE;  //System Controls
 mb_Output_Coils[7]:=FALSE;  //System Controls
 mb_Output_Coils[8]:=FALSE;  //System Controls
 mb_Output_Coils[9]:=FALSE;  //System Controls
+
 mb_Output_Coils[10]:=vgcMXT_VGC_04.xOPN_SW;  //Valve switch controls
 mb_Output_Coils[11]:=vgcDVD_VGC_01.xOPN_SW;  //Valve switch controls
 mb_Output_Coils[12]:=vgcDIA_VGC_01.xOPN_SW;  //Valve switch controls
@@ -264,7 +265,7 @@ mb_Output_Coils[254]:=FALSE;  //
 mb_Output_Coils[255]:=FALSE;  //]]></ST>
     </Implementation>
     <LineIds Name="p_ModbusTx_OutputCoils">
-      <LineId Id="261" Count="253" />
+      <LineId Id="3" Count="254" />
       <LineId Id="2" Count="0" />
     </LineIds>
   </POU>

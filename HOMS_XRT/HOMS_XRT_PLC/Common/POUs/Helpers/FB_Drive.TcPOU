@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_Drive" Id="{92806206-526e-481f-bd35-830ac647b979}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Drive
 VAR
@@ -381,15 +381,5 @@ IF bFirstScan THEN
 	bFirstScan:=FALSE;
 END_IF]]></ST>
     </Implementation>
-    <LineIds Name="FB_Drive">
-      <LineId Id="3" Count="2" />
-      <LineId Id="386" Count="0" />
-      <LineId Id="6" Count="58" />
-      <LineId Id="69" Count="17" />
-      <LineId Id="93" Count="6" />
-      <LineId Id="510" Count="0" />
-      <LineId Id="100" Count="163" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

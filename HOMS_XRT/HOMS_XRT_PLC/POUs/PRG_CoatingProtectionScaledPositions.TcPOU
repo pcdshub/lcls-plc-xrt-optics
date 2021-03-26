@@ -43,7 +43,7 @@ VAR
 		bAutoClear:= TRUE);		
 	
 		//PMPS arbiter Interface
-		fbArbiterIO : FB_SubSysToArbiter_IO;
+		//fbArbiterIO : FB_SubSysToArbiter_IO;
            
 END_VAR
 ]]></Declaration>
@@ -91,5 +91,9 @@ GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:=);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 ]]></ST>
     </Implementation>
+    <LineIds Name="PRG_CoatingProtectionScaledPositions">
+      <LineId Id="3" Count="40" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

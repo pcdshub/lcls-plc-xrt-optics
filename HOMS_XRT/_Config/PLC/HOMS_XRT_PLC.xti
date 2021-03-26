@@ -775,6 +775,57 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
+			<Name GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<BitSize>0</BitSize>
+			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
+			<Hides>
+				<Hide GUID="{1AF01168-07D4-4D94-8872-0959A82FF8BA}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Comment>
+				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
+			</Comment>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>Count</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+				<Comment>
+					<![CDATA[ Connect to encoder "Position" input]]>
+				</Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+				<Properties>
+					<Property>
+						<Name>TcAddressType</Name>
+						<Value>Input</Value>
+					</Property>
+				</Properties>
+			</SubItem>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Comment>
+					<![CDATA[ Status struct placeholder]]>
+				</Comment>
+				<BitSize>0</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Ref</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+				<Comment>
+					<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+				</Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{9AC6C9D8-5D24-47BD-B06A-55D26F292DD5}"/>
+			</Hides>
+		</DataType>
+		<DataType>
 			<Name GUID="{FDD27144-A22E-4E13-BBC6-81BD2EEB605A}" Namespace="Tc2_System" AutoDeleteType="true">T_AmsNetIdArr</Name>
 			<Comment>
 				<![CDATA[ TwinCAT AMS netID address bytes. ]]>
@@ -1264,9 +1315,9 @@ External Setpoint Generation:
 			<Vars VarGrpType="1">
 				<Name>SerialIO Inputs</Name>
 				<Var>
-					<Name>GVL_SerialIO.Serial_P1_stComIn</Name>
+					<Name>GVL_SerialIO.Serial_stComIn_M1</Name>
 					<Comment>
-						<![CDATA[Better have your inputs and outputs!]]>
+						<![CDATA[ M1 In Serial Comm Array]]>
 					</Comment>
 					<Type GUID="{3749F519-7E88-4D20-B8BB-B17B89339572}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
 				</Var>
@@ -1282,7 +1333,10 @@ External Setpoint Generation:
 			<Vars VarGrpType="2">
 				<Name>SerialIO Outputs</Name>
 				<Var>
-					<Name>GVL_SerialIO.Serial_P1_stComOut</Name>
+					<Name>GVL_SerialIO.Serial_stComOut_M1</Name>
+					<Comment>
+						<![CDATA[ M1 Out Serual Comm Array]]>
+					</Comment>
 					<Type GUID="{0AA5827D-90D1-4FE0-B7CD-129DA7259C0C}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
 				</Var>
 				<Var>
@@ -1304,7 +1358,14 @@ External Setpoint Generation:
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1PitchControl.Drive.MasterAxis.NcToPlc</Name>
+					<Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1353,7 +1414,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M1.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m1.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1402,7 +1512,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M2.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1451,7 +1561,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M2.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m2.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1500,7 +1659,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M3.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1549,7 +1708,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M3.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m3.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1598,7 +1806,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M4.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1647,7 +1855,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2PitchControl.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M4.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m4.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1696,7 +1953,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M5.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1745,7 +2002,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M5.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1794,7 +2100,56 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.M6.bLimitForwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.bLimitBackwardEnable</Name>
+					<Comment>
+						<![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.bHome</Name>
+					<Comment>
+						<![CDATA[ NO Home Switch: TRUE if at home]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.bHardwareEnable</Name>
+					<Comment>
+						<![CDATA[ NC STO Input: TRUE if ok to move]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.nRawEncoderULINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for ULINT (Biss-C)]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.nRawEncoderUINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]>
+					</Comment>
+					<Type>UINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.nRawEncoderINT</Name>
+					<Comment>
+						<![CDATA[ Raw encoder IO for INT (LVDT)]]>
+					</Comment>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m6.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1843,7 +2198,137 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM1.fbRunHOMS.bSTOEnable1</Name>
+					<Comment>
+						<![CDATA[ STO Button]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.bSTOEnable2</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.stYupEnc</Name>
+					<Comment>
+						<![CDATA[ Encoders]]>
+					</Comment>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<SubVar>
+						<Name>Count</Name>
+						<Comment>
+							<![CDATA[ Connect to encoder "Position" input]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Status</Name>
+						<Comment>
+							<![CDATA[ Status struct placeholder]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>Ref</Name>
+						<Comment>
+							<![CDATA[ Encoder zero position (useful for aligned position with gantries)]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleY.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.PEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM1.fbRunHOMS.fbAutoCoupleX.gantry_diff_limit.SEnc.Count</Name>
+					<Comment>
+						<![CDATA[ Connect to encoder "Position" input]]>
+					</Comment>
+					<Type>ULINT</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbXRTM1PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1892,7 +2377,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1941,7 +2426,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -1990,7 +2475,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3PitchControl.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2039,7 +2524,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2088,7 +2573,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2137,7 +2622,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2186,7 +2671,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2235,7 +2720,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3PitchControl.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2284,7 +2769,7 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2333,7 +2818,252 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+					<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -2364,21 +3094,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.Stepper.diInputs</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.Stepper.iDriveCurrent</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2427,14 +3157,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.diEncCnt</Name>
+					<Name>Main.fbM2P1LS.Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -2465,21 +3195,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.diInputs</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.iDriveCurrent</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2528,14 +3258,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.diEncCnt</Name>
+					<Name>Main.fbM3P1LS.Pitch.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -2566,21 +3296,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2629,14 +3359,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -2667,21 +3397,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2730,14 +3460,14 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stCoE.stPlcDriveRef</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stCoE.stPlcDriveRef</Name>
 					<Comment>
 						<![CDATA[Ams id comes from a linked global variable]]>
 					</Comment>
@@ -2768,21 +3498,21 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.diInputs</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.diInputs</Name>
 					<Comment>
 						<![CDATA[//////////////////////////]]>
 					</Comment>
 					<Type>DINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.iDriveCurrent</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.iDriveCurrent</Name>
 					<Comment>
 						<![CDATA[Drive current]]>
 					</Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stAxis.NcToPlc</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -2831,1055 +3561,15 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.diEncCnt</Name>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.diEncCnt</Name>
 					<Comment>
 						<![CDATA[Raw encoder count]]>
 					</Comment>
 					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP</Name>
-					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
-					<SubVar>
-						<Name>nTran</Name>
-						<Comment>
-							<![CDATA[  Requested pre-optic attenuation %  ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nRate</Name>
-						<Comment>
-							<![CDATA[ Pulse-rate ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>fPP_mJ</Name>
-						<Comment>
-							<![CDATA[ Per pulse max energy (mJ) ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>neVRange</Name>
-						<Comment>
-							<![CDATA[ Photon energy ranges ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astAttenuators</Name>
-						<Comment>
-							<![CDATA[ Beamline attenuators ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[1]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[2]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[3]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Width</Name>
-						<Comment>
-							<![CDATA[ distance between horizontal slits (x)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^Height</Name>
-						<Comment>
-							<![CDATA[ distance between vertical slits (y)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>astApertures^astApertures[4]^xOK</Name>
-						<Comment>
-							<![CDATA[ status of aperture, false if error or in motion]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>aStoppers</Name>
-						<Comment>
-							<![CDATA[ Stopper statuses ]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValidToggle</Name>
-						<Comment>
-							<![CDATA[ Toggle for watchdog]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>xValid</Name>
-						<Comment>
-							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nCohortInt</Name>
-						<Comment>
-							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle</Name>
-					<Type>BIT</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.xTxPDO_state</Name>
-					<Type>BIT</Type>
 				</Var>
 				<Var>
 					<Name>GVL.gAmsNetIDEcatMaster1</Name>
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.Stepper.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.Stepper.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.Stepper.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.diEncCnt</Name>
-					<Comment>
-						<![CDATA[Raw encoder count]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stCoE.stPlcDriveRef</Name>
-					<Comment>
-						<![CDATA[Ams id comes from a linked global variable]]>
-					</Comment>
-					<Type GUID="{848D2F41-1B96-4D23-AF95-F4A645F51CBA}" Namespace="Tc2_EtherCAT">ST_PlcDriveRef</Type>
-					<SubVar>
-						<Name>aNetId</Name>
-						<Comment>
-							<![CDATA[ AmsNetId of the EtherCAT master device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nSlaveAddr</Name>
-						<Comment>
-							<![CDATA[ Address of the slave device.]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveNo</Name>
-						<Comment>
-							<![CDATA[ Drive number]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>nDriveType</Name>
-						<Comment>
-							<![CDATA[ Drive type]]>
-						</Comment>
-					</SubVar>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.diInputs</Name>
-					<Comment>
-						<![CDATA[//////////////////////////]]>
-					</Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.iDriveCurrent</Name>
-					<Comment>
-						<![CDATA[Drive current]]>
-					</Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stAxis.NcToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-					<SubVar>
-						<Name>AxisState</Name>
-						<Comment>
-							<![CDATA[Present State Of The Axis Movement (continuous axis):
-0  = INACTIVE:		axis has no job
-1  = RUNNING:		axis is executing a motion job
-2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
-3  = PHASE_VELOCONST:	axis is moving at constant velocity
-4  = PHASE_ACCPOS:	axis is accelerating
-5  = PHASE_ACCNEG:	axis is decelerating
-Slaves only:
-11 = PREPHASE:		slave axis is in a motion pre-phase
-12 = SYNCHRONIZING:	slave axis is synchronizing
-13 = SYNCHRONOUS:	slave axis is moving synchronously
-External Setpoint Generation:
-41 = EXTSETGEN_MODE1:	external setpoint generation active
-42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>HomingState</Name>
-						<Comment>
-							<![CDATA[Axis Homing Status:
-0: idle
-1: start homing
-2: searching home switch
-3: stopping on home switch
-4: moving off home switch
-5: searching sync pulse
-6: stopping after homing
-]]>
-						</Comment>
-					</SubVar>
-					<SubVar>
-						<Name>CoupleState</Name>
-						<Comment>
-							<![CDATA[Axis Coupling Status:
-0: axis is a single axis (not coupled)
-1: axis is a master axis
-2: axis is master and slave
-3: axis is a slave axis
-]]>
-						</Comment>
-					</SubVar>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.HOMS2_Pitch.Stepper.stCoE.stPlcDriveRef</Name>
@@ -5483,119 +5173,15 @@ External Setpoint Generation:
 						</Comment>
 					</SubVar>
 				</Var>
-			</Vars>
-			<Vars VarGrpType="2">
-				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>MAIN.XRTM1PitchControl.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+					<Name>GVL_M1.XRTM1_Pitch.diEncCnt</Name>
+					<Comment>
+						<![CDATA[Raw encoder count]]>
+					</Comment>
+					<Type>LINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM1Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM1X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2PitchControl.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3PitchControl.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbM1P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbM2P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.PAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.SAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP</Name>
+					<Name>GVL_PMPS.fbArbiterIO.i_stCurrentBP</Name>
 					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
 					<SubVar>
 						<Name>nTran</Name>
@@ -5725,6 +5311,183 @@ External Setpoint Generation:
 					</SubVar>
 				</Var>
 				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_toggle</Name>
+					<Type>BIT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.xTxPDO_state</Name>
+					<Type>BIT</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>PlcTask Outputs</Name>
+				<Var>
+					<Name>Main.M1.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M1.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m1.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M2.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m2.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M3.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m3.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M4.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m4.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M5.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.Axis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.M6.bBrakeRelease</Name>
+					<Comment>
+						<![CDATA[ NC Brake Output: TRUE to release brake]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m6.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbXRTM1PitchControl.fbMotionStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2PitchControl.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM2X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3PitchControl.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3Y_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3Y_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3Y_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.PAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.SAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.XRTM3X_GantryControl.VAxis_Drive.Drive.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbM2P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMPS_States.GANTRY.PAxis.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMPS_States.GANTRY.SAxis.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
 					<Name>GVL.bXRT_M2_OUT</Name>
 					<Comment>
 						<![CDATA[MPS Outputs]]>
@@ -5734,38 +5497,6 @@ External Setpoint Generation:
 				<Var>
 					<Name>GVL.bXRT_M2_IN</Name>
 					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Pitch.Stepper.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.PAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.SAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_YGantry.VAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.PAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.SAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_XGantry.VAxis.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Devices.HOMS1_Bender.stAxis.PlcToNc</Name>
-					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.HOMS2_Pitch.Stepper.stAxis.PlcToNc</Name>
@@ -5839,6 +5570,136 @@ External Setpoint Generation:
 					<Name>GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut</Name>
 					<Type>BOOL</Type>
 				</Var>
+				<Var>
+					<Name>GVL_PMPS.fbArbiterIO.q_stRequestedBP</Name>
+					<Type GUID="{5FC92061-002A-45B0-B954-CD8F28B5CE49}">ST_BeamParams_IO</Type>
+					<SubVar>
+						<Name>nTran</Name>
+						<Comment>
+							<![CDATA[  Requested pre-optic attenuation %  ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nRate</Name>
+						<Comment>
+							<![CDATA[ Pulse-rate ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>fPP_mJ</Name>
+						<Comment>
+							<![CDATA[ Per pulse max energy (mJ) ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>neVRange</Name>
+						<Comment>
+							<![CDATA[ Photon energy ranges ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astAttenuators</Name>
+						<Comment>
+							<![CDATA[ Beamline attenuators ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[1]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[2]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[3]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Width</Name>
+						<Comment>
+							<![CDATA[ distance between horizontal slits (x)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^Height</Name>
+						<Comment>
+							<![CDATA[ distance between vertical slits (y)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>astApertures^astApertures[4]^xOK</Name>
+						<Comment>
+							<![CDATA[ status of aperture, false if error or in motion]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>aStoppers</Name>
+						<Comment>
+							<![CDATA[ Stopper statuses ]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValidToggle</Name>
+						<Comment>
+							<![CDATA[ Toggle for watchdog]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>xValid</Name>
+						<Comment>
+							<![CDATA[ Beam parameter set is valid (if readback), or acknowledged (if request)]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>nCohortInt</Name>
+						<Comment>
+							<![CDATA[ Cohort index. Identifies which cohort this BP set was included in arbitration]]>
+						</Comment>
+					</SubVar>
+				</Var>
 			</Vars>
 			<Vars VarGrpType="8">
 				<Name>PlcTask Retains</Name>
@@ -5875,108 +5736,117 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_IN" VarB="Channel 2^Output"/>
 				<Link VarA="PlcTask Outputs^GVL.bXRT_M2_OUT" VarB="Channel 1^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-B1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL1004_M1_STO">
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Interface Box (EK1100)^M1-P1-Piezo (EL6001)">
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[10]" VarB="COM Inputs^Data In 10"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[11]" VarB="COM Inputs^Data In 11"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[12]" VarB="COM Inputs^Data In 12"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[13]" VarB="COM Inputs^Data In 13"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[14]" VarB="COM Inputs^Data In 14"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[15]" VarB="COM Inputs^Data In 15"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[16]" VarB="COM Inputs^Data In 16"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[17]" VarB="COM Inputs^Data In 17"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[18]" VarB="COM Inputs^Data In 18"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[19]" VarB="COM Inputs^Data In 19"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[1]" VarB="COM Inputs^Data In 1"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[20]" VarB="COM Inputs^Data In 20"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[21]" VarB="COM Inputs^Data In 21"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[2]" VarB="COM Inputs^Data In 2"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[3]" VarB="COM Inputs^Data In 3"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[4]" VarB="COM Inputs^Data In 4"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[5]" VarB="COM Inputs^Data In 5"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[6]" VarB="COM Inputs^Data In 6"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[7]" VarB="COM Inputs^Data In 7"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[8]" VarB="COM Inputs^Data In 8"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^D[9]" VarB="COM Inputs^Data In 9"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P1_stComIn^Status" VarB="COM Inputs^Status"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[11]" VarB="COM Outputs^Data Out 11"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[12]" VarB="COM Outputs^Data Out 12"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[13]" VarB="COM Outputs^Data Out 13"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[14]" VarB="COM Outputs^Data Out 14"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[15]" VarB="COM Outputs^Data Out 15"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[16]" VarB="COM Outputs^Data Out 16"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[17]" VarB="COM Outputs^Data Out 17"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[18]" VarB="COM Outputs^Data Out 18"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[19]" VarB="COM Outputs^Data Out 19"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[1]" VarB="COM Outputs^Data Out 1"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[20]" VarB="COM Outputs^Data Out 20"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[21]" VarB="COM Outputs^Data Out 21"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[2]" VarB="COM Outputs^Data Out 2"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[3]" VarB="COM Outputs^Data Out 3"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[4]" VarB="COM Outputs^Data Out 4"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[5]" VarB="COM Outputs^Data Out 5"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[6]" VarB="COM Outputs^Data Out 6"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[7]" VarB="COM Outputs^Data Out 7"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[8]" VarB="COM Outputs^Data Out 8"/>
-				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P1_stComOut^D[9]" VarB="COM Outputs^Data Out 9"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_PitchBender">
+				<Link VarA="PlcTask Inputs^GVL_M1.XRTM1_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-P1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.iDriveCurrent" VarB="Inputs_1^Current actual value"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Xupdwn">
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1_Yupdwn">
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.XRTM1.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-X2 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL6001_M1_PitchFine">
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[0]" VarB="COM Inputs^Data In 0" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[10]" VarB="COM Inputs^Data In 10"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[11]" VarB="COM Inputs^Data In 11"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[12]" VarB="COM Inputs^Data In 12"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[13]" VarB="COM Inputs^Data In 13"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[14]" VarB="COM Inputs^Data In 14"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[15]" VarB="COM Inputs^Data In 15"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[16]" VarB="COM Inputs^Data In 16"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[17]" VarB="COM Inputs^Data In 17"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[18]" VarB="COM Inputs^Data In 18"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[19]" VarB="COM Inputs^Data In 19"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[1]" VarB="COM Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[20]" VarB="COM Inputs^Data In 20"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[21]" VarB="COM Inputs^Data In 21"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[2]" VarB="COM Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[3]" VarB="COM Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[4]" VarB="COM Inputs^Data In 4"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[5]" VarB="COM Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[6]" VarB="COM Inputs^Data In 6"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[7]" VarB="COM Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[8]" VarB="COM Inputs^Data In 8"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^D[9]" VarB="COM Inputs^Data In 9"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_M1^Status" VarB="COM Inputs^Status" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^Ctrl" VarB="COM Outputs^Ctrl"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[0]" VarB="COM Outputs^Data Out 0" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[10]" VarB="COM Outputs^Data Out 10" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[11]" VarB="COM Outputs^Data Out 11" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[12]" VarB="COM Outputs^Data Out 12" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[13]" VarB="COM Outputs^Data Out 13" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[14]" VarB="COM Outputs^Data Out 14" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[15]" VarB="COM Outputs^Data Out 15" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[16]" VarB="COM Outputs^Data Out 16" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[17]" VarB="COM Outputs^Data Out 17" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[18]" VarB="COM Outputs^Data Out 18" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[19]" VarB="COM Outputs^Data Out 19" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[1]" VarB="COM Outputs^Data Out 1" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[20]" VarB="COM Outputs^Data Out 20" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[21]" VarB="COM Outputs^Data Out 21" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[2]" VarB="COM Outputs^Data Out 2" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[3]" VarB="COM Outputs^Data Out 3" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[4]" VarB="COM Outputs^Data Out 4" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[5]" VarB="COM Outputs^Data Out 5" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[6]" VarB="COM Outputs^Data Out 6" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[7]" VarB="COM Outputs^Data Out 7" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[8]" VarB="COM Outputs^Data Out 8" AutoLink="true"/>
+				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_M1^D[9]" VarB="COM Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Bender">
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M1-Y2 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_PitchCoarse">
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-B1 (Elmo Drive)">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xdwn">
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Xup">
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Ydwn">
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1_Yup">
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Interface Box (EK1100)^M2-P1-Piezo (EL6001)">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[0]" VarB="COM Inputs^Data In 0"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[10]" VarB="COM Inputs^Data In 10"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[11]" VarB="COM Inputs^Data In 11"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[12]" VarB="COM Inputs^Data In 12"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[13]" VarB="COM Inputs^Data In 13"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[14]" VarB="COM Inputs^Data In 14"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[15]" VarB="COM Inputs^Data In 15"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[16]" VarB="COM Inputs^Data In 16"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[17]" VarB="COM Inputs^Data In 17"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[18]" VarB="COM Inputs^Data In 18"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[19]" VarB="COM Inputs^Data In 19"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[1]" VarB="COM Inputs^Data In 1"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[20]" VarB="COM Inputs^Data In 20"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[21]" VarB="COM Inputs^Data In 21"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[2]" VarB="COM Inputs^Data In 2"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[3]" VarB="COM Inputs^Data In 3"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[4]" VarB="COM Inputs^Data In 4"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[5]" VarB="COM Inputs^Data In 5"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[6]" VarB="COM Inputs^Data In 6"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[7]" VarB="COM Inputs^Data In 7"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^Data In 8"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^Data In 9"/>
-				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^Status" VarB="COM Inputs^Status"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[10]" VarB="COM Inputs^Data In 10" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[11]" VarB="COM Inputs^Data In 11" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[12]" VarB="COM Inputs^Data In 12" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[13]" VarB="COM Inputs^Data In 13" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[14]" VarB="COM Inputs^Data In 14" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[15]" VarB="COM Inputs^Data In 15" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[16]" VarB="COM Inputs^Data In 16" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[17]" VarB="COM Inputs^Data In 17" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[18]" VarB="COM Inputs^Data In 18" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[19]" VarB="COM Inputs^Data In 19" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[1]" VarB="COM Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[20]" VarB="COM Inputs^Data In 20" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[21]" VarB="COM Inputs^Data In 21" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[2]" VarB="COM Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[3]" VarB="COM Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[4]" VarB="COM Inputs^Data In 4" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[5]" VarB="COM Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[6]" VarB="COM Inputs^Data In 6" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[7]" VarB="COM Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[8]" VarB="COM Inputs^Data In 8" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^D[9]" VarB="COM Inputs^Data In 9" AutoLink="true"/>
+				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_P2_stComIn^Status" VarB="COM Inputs^Status" AutoLink="true"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^Ctrl" VarB="COM Outputs^Ctrl"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[0]" VarB="COM Outputs^Data Out 0"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_P2_stComOut^D[10]" VarB="COM Outputs^Data Out 10"/>
@@ -6003,26 +5873,21 @@ External Setpoint Generation:
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-P1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.Stepper.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Pitch.diEncCnt" VarB="Inputs^Position actual value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_XGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diEncCnt" VarB="Inputs^Position actual value"/>
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.PAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-Y2 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.diInputs" VarB="Inputs^Digital Inputs"/>
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_YGantry.SAxis.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^M3-B1 (Elmo Drive)">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS3_Bender.stCoE.stPlcDriveRef^nSlaveAddr" VarB="InfoData^AdsAddr^port"/>
@@ -6102,35 +5967,35 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput2.q_xFastFaultOut" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE">
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^PRG_CoatingProtection.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.i_stCurrentBP" VarB="IO Inputs^CurrentBP" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_state" VarB="SYNC Inputs^TxPDO state" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_toggle" VarB="SYNC Inputs^TxPDO toggle" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_PMPS.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="IO Outputs^FFO1"/>
-				<Link VarA="PlcTask Outputs^PRG_CoatingProtection.fbArbiterIO.q_stRequestedBP" VarB="IO Outputs^RequestedBP" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 B">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Bender.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Bender">
+				<Link VarA="PlcTask Inputs^Main.M6.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M6.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 P">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_Pitch.Stepper.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Pitch">
+				<Link VarA="PlcTask Inputs^Main.M5.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M5.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 X1">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_XGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xdwn">
+				<Link VarA="PlcTask Inputs^Main.M4.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M4.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 X2">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_XGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Xup">
+				<Link VarA="PlcTask Inputs^Main.M3.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M3.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 Y1">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.PAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_YGantry.PAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Ydwn">
+				<Link VarA="PlcTask Inputs^Main.M2.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M2.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1 Y2">
-				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS1_YGantry.SAxis.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Devices.HOMS1_YGantry.SAxis.stAxis.PlcToNc" VarB="Inputs^FromPlc"/>
+			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M1-Yup">
+				<Link VarA="PlcTask Inputs^Main.M1.Axis.NcToPlc" VarB="Outputs^ToPlc"/>
+				<Link VarA="PlcTask Outputs^Main.M1.Axis.PlcToNc" VarB="Inputs^FromPlc"/>
 			</OwnerB>
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^M2 B">
 				<Link VarA="PlcTask Inputs^GVL_Devices.HOMS2_Bender.stAxis.NcToPlc" VarB="Outputs^ToPlc"/>

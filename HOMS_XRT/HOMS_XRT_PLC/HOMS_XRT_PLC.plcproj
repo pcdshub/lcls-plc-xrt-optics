@@ -30,7 +30,7 @@
       </Events>
     </DeploymentEvents>
     <CombineIds>false</CombineIds>
-    <Released>true</Released>
+    <Released>false</Released>
     <ProjectVersion>1.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -52,7 +52,7 @@
     <Compile Include="Common\DUTs\HOMS_GantryAxis.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\DUTs\HOMS_PitchMechanism.TcDUT">
+    <Compile Include="Common\DUTs\HOMS_PitchMechanismOld.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\DUTs\ST_AbstractAxis.TcDUT">
@@ -70,7 +70,7 @@
     <Compile Include="Common\DUTs\ST_HOMSStepper.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\DUTs\ST_PiezoAxis.TcDUT">
+    <Compile Include="Common\DUTs\ST_PiezoAxisOld.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\DUTs\ST_StepperStatus.TcDUT">
@@ -100,7 +100,7 @@
     <Compile Include="Common\POUs\Helpers\FB_PitchSoftLimits.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialDriver.TcPOU">
+    <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialDriverOld.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\POUs\Helpers\FB_PI_E621_SerialTransaction.TcPOU">
@@ -136,7 +136,7 @@
     <Compile Include="Common\POUs\HOMS_FBs\FB_PiezoControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\POUs\HOMS_FBs\FB_PitchControl.TcPOU">
+    <Compile Include="Common\POUs\HOMS_FBs\FB_PitchControlOld.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\POUs\HOMS_FBs\FB_ReduceGantryDiff.TcPOU">
@@ -161,6 +161,14 @@
     <Compile Include="GVLs\GVL_IO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_M1_Constants.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_M1.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_PMPS.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -183,7 +191,7 @@
     <Compile Include="POUs\FB_MPS_STATES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Modbus\p_ModbusRx_OutputCoils.TcPOU">
@@ -255,6 +263,14 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="lcls-twincat-motion">
+      <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_motion</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="lcls-twincat-optics">
+      <DefaultResolution>lcls-twincat-optics, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_optics</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="PMPS">
       <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
       <Namespace>PMPS</Namespace>
@@ -344,6 +360,12 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="lcls-twincat-motion">
+      <Resolution>lcls-twincat-motion, * (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="lcls-twincat-optics">
+      <Resolution>lcls-twincat-optics, * (SLAC)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 0.17.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
@@ -354,7 +376,7 @@
       <Resolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_SerialCom">
-      <Resolution>Tc2_SerialCom, 3.3.6.0 (Beckhoff Automation GmbH)</Resolution>
+      <Resolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, * (Beckhoff Automation GmbH)</Resolution>
@@ -383,11 +405,11 @@
     <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_LoadDriveParams" />
     <SubObject Include="FB_PiezoControl.ACT_CheckLimits" />
     <SubObject Include="FB_PiezoControl.ACT_Controller" />
-    <SubObject Include="FB_PitchControl.ACT_PTP" />
-    <SubObject Include="FB_PitchControl.A_ModeSwitch" />
-    <SubObject Include="FB_PI_E621_SerialDriver.a_ClearTrans" />
-    <SubObject Include="FB_PI_E621_SerialDriver.a_ErrorMesg" />
-    <SubObject Include="FB_PI_E621_SerialDriver.a_UnknownError" />
+    <SubObject Include="FB_PitchControlOld.ACT_PTP" />
+    <SubObject Include="FB_PitchControlOld.A_ModeSwitch" />
+    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ClearTrans" />
+    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ErrorMesg" />
+    <SubObject Include="FB_PI_E621_SerialDriverOld.a_UnknownError" />
   </ItemGroup>
   <ItemGroup>
     <LibraryReference Include="LCLS General,2.4.2,SLAC">

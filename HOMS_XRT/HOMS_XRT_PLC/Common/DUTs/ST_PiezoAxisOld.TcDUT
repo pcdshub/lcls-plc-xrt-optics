@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ST_PiezoAxisOld" Id="{94081b12-5a5d-4193-a69e-fd329da2319a}">
+    <Declaration><![CDATA[TYPE ST_PiezoAxisOld :
+STRUCT
+	(* IO *)
+		//Readback
+		sIdn				:	STRING; //Identity
+		iCurError			:	INT; //Current error code, should be 0 most of the time
+		iLastError			:	INT; //Last error code, for history
+		rActVoltage			:	REAL; //Actual voltage
+		rLastReqVoltage		:	REAL; //Last requested piezo voltage
+		//Control
+		rSetVoltage			:	REAL; //this parameter is set by the control loop/ voltage mode
+		sAxis				:   STRING :='A'; //Axis, e.g. A, B, C...A if single unit	
+		//Summaries
+		xTimeout	:	BOOL;
+		xDriverError		:	BOOL; //Summary of any driver errors
+	
+	(* Operation *)
+		xEnable	:	BOOL; //Enable control.
+		(* Note: Voltage mode and Idle mode overrides "DirectPiezoMode" of FB_PitchControl *)
+		xVoltageMode	:	BOOL; //Voltage mode gives direct access to piezo voltage, false means closed loop position acquisition (see FB_PitchControl for piezo and stepper separation)
+		xIdleMode	:	BOOL; //Use to put the piezo at half-stroke
+		rReqVoltage : REAL; //Requested piezo voltage in voltage mode
+		rReqAbsPos	:	LREAL; //Requested Position, latched at rising StartAbsMov
+		xStop	:	BOOL;	//Stops piezo and holds position
+	
+	
+	(* Control Parameters *)
+		rActPos	:	LREAL; //Encoder Readback
+		//Pitch piezo dmove range (urad)
+		rPiezoDmovRange		:	REAL := 1;
+		stPIParams	:	ST_CTRL_PI_PARAMS := (
+			tCtrlCycleTime := T#0MS, 
+			tTaskCycleTime := T#0MS, 
+			tTn       := T#1S, 
+			fKp      := 0.25, 
+			fOutMaxLimit := 1, 
+			fOutMinLimit := -1, 
+			bARWOnIPartOnly := FALSE);
+	
+	(* Voltage ranges, come from specifications of the driver *)
+		UpperVoltage	:	REAL := cPiezoMaxVoltage; // E-816 has no software limits
+		LowerVoltage	:	REAL := cPiezoMinVoltage; // E-816 has no software limits
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

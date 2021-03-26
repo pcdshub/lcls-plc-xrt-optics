@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_M1_Constants" Id="{e75b3be9-127e-46b4-b219-470b94c00321}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	// Encoder reference values in counts = nm
+	// Enc Ref Vals from alignment 2020-6-12
+	nYUP_ENC_REF : ULINT := 13611000;
+	nYDWN_ENC_REF : ULINT := 13433600;
+	nXUP_ENC_REF : ULINT := 25210500;
+	nXDWN_ENC_REF : ULINT := 24971800;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
