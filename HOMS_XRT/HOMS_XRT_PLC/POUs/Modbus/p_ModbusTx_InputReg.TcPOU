@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="p_ModbusTx_InputReg" Id="{1531d535-cff0-4bc5-94f7-4996acc25643}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM p_ModbusTx_InputReg
 VAR
@@ -264,9 +264,5 @@ mb_Input_Registers[253]:=0;  //default
 mb_Input_Registers[254]:=0;  //default
 mb_Input_Registers[255]:=0;  //default]]></ST>
     </Implementation>
-    <LineIds Name="p_ModbusTx_InputReg">
-      <LineId Id="3" Count="254" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

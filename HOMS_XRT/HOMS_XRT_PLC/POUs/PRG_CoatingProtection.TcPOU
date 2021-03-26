@@ -42,8 +42,6 @@ VAR
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
 	
-		//PMPS arbiter Interface
-		fbArbiterIO : FB_SubSysToArbiter_IO;
 		rtRemove: R_TRIG;
 		bRemove :BOOL;
 		bExist :BOOL;
@@ -60,8 +58,8 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (HOMS1_XGantry.PAxis.diEncCnt > 20210500) , // according to confluence -6 is nominal out position
-    rCurrentEncoderPosition := HOMS1_YGantry.PAxis.diEncCnt,
+	bMirrorIn := (Main.XRTM1.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
+    rCurrentEncoderPosition := Main.nEncCntYupXRTM1,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 	
@@ -101,6 +99,7 @@ ffM1M2IN(
 	
 // PMPS Arbiter and FFO instantiation.
 GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
+
 fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0];
 fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 

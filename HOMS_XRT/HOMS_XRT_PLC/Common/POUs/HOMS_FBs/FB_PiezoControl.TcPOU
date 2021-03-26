@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_PiezoControl" Id="{0c3d171e-6759-449c-9e69-236d43fd29fc}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PiezoControl
 VAR_IN_OUT
-	iq_Piezo	:	ST_PiezoAxis;
+	iq_Piezo	:	ST_PiezoAxisOld;
 END_VAR
 VAR_INPUT
 	xExecute	:	BOOL; //Rising edge being piezo motion

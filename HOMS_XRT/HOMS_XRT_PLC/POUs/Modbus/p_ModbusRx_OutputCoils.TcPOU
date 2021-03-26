@@ -7,17 +7,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[HOMS1_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[50];
-HOMS1_XGantry.PAxis.bTwkBwd:=mb_Output_Coils[51];
-HOMS1_XGantry.SAxis.bTwkFwd:=mb_Output_Coils[52];
-HOMS1_XGantry.SAxis.bTwkBwd:=mb_Output_Coils[53];
-HOMS1_YGantry.PAxis.bTwkFwd:=mb_Output_Coils[54];
-HOMS1_YGantry.PAxis.bTwkBwd:=mb_Output_Coils[55];
-HOMS1_YGantry.SAxis.bTwkFwd:=mb_Output_Coils[56];
-HOMS1_YGantry.SAxis.bTwkBwd:=mb_Output_Coils[57];
-HOMS1_Pitch.Axis.bTwkFwd:=mb_Output_Coils[58];
-HOMS1_Pitch.Axis.bTwkBwd:=mb_Output_Coils[59];
-HOMS2_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[60];
+      <ST><![CDATA[HOMS2_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[60];
 HOMS2_XGantry.PAxis.bTwkBwd:=mb_Output_Coils[61];
 HOMS2_XGantry.SAxis.bTwkFwd:=mb_Output_Coils[62];
 HOMS2_XGantry.SAxis.bTwkBwd:=mb_Output_Coils[63];
@@ -27,12 +17,8 @@ HOMS2_YGantry.SAxis.bTwkFwd:=mb_Output_Coils[66];
 HOMS2_YGantry.SAxis.bTwkBwd:=mb_Output_Coils[67];
 HOMS2_Pitch.Axis.bTwkFwd:=mb_Output_Coils[68];
 HOMS2_Pitch.Axis.bTwkBwd:=mb_Output_Coils[69];
-HOMS1_Pitch.Piezo.xEnable:=mb_Output_Coils[70];
-HOMS1_Pitch.Axis.xStop:=mb_Output_Coils[71];
 HOMS2_Pitch.Piezo.xEnable:=mb_Output_Coils[72];
 HOMS2_Pitch.Axis.xStop:=mb_Output_Coils[73];
-HOMS1_XGantry.xUncouple:=mb_Output_Coils[74];
-HOMS1_YGantry.xUncouple:=mb_Output_Coils[75];
 HOMS2_XGantry.xUncouple:=mb_Output_Coils[76];
 HOMS2_YGantry.xUncouple:=mb_Output_Coils[77];
 HOMS3_XGantry.PAxis.bTwkFwd:=mb_Output_Coils[78];
@@ -49,9 +35,6 @@ HOMS3_Pitch.Piezo.xEnable:=mb_Output_Coils[88];
 HOMS3_Pitch.Axis.xStop:=mb_Output_Coils[89];
 HOMS3_XGantry.xUncouple:=mb_Output_Coils[90];
 HOMS3_YGantry.xUncouple:=mb_Output_Coils[91];
-HOMS1_XGantry.PAxis.xReset := mb_Output_Coils[92];
-HOMS1_YGantry.PAxis.xReset := mb_Output_Coils[93];
-HOMS1_Pitch.Axis.xReset := mb_Output_Coils[94];
 HOMS2_XGantry.PAxis.xReset := mb_Output_Coils[95];
 HOMS2_YGantry.PAxis.xReset := mb_Output_Coils[96];
 HOMS2_Pitch.Axis.xReset := mb_Output_Coils[97];
@@ -59,5 +42,9 @@ HOMS3_XGantry.PAxis.xReset := mb_Output_Coils[98];
 HOMS3_YGantry.PAxis.xReset := mb_Output_Coils[99];
 HOMS3_Pitch.Axis.xReset := mb_Output_Coils[100];]]></ST>
     </Implementation>
+    <LineIds Name="p_ModbusRx_OutputCoils">
+      <LineId Id="3" Count="32" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
