@@ -48,8 +48,8 @@ VAR
 	{attribute 'pytmc' := '
 		pv: XRTM1:HOMS:MMS:PITCH
 	'}
-	M5 : DUT_MotionStage := (fVelocity:=150.0); // XRTM1 Pitch Stepper
-    //fbMotionStage_m5 : FB_MotionStage;
+	M5 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // XRTM1 Pitch Stepper
+    fbMotionStage_m5 : FB_MotionStage;
     
     
 	
@@ -285,7 +285,7 @@ fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
 fbMotionStage_m3(stMotionStage:=M3);
 fbMotionStage_m4(stMotionStage:=M4);
-//fbMotionStage_m5(stMotionStage:=M5);
+fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
@@ -305,15 +305,15 @@ fbBenderRMSErrorXRTM1(stMotionStage:=M6,
 	                 fMaxRMSError=>fMaxBenderRMSErrorXRTM1,
 					 fMinRMSError=>fMinBenderRMSErrorXRTM1);
 // Pitch Control
-fbXRTM1PitchControl(Pitch:=GVL_M1.XRTM1_Pitch,
-				   Stepper:=M5,
-				   lrCurrentSetpoint:=M5.fPosition,
-                   q_bDone=>bXRTM1PitchDone,
-                   q_bBusy=>bXRTM1PitchBusy);
+//fbXRTM1PitchControl(Pitch:=GVL_M1.XRTM1_Pitch,
+				   //Stepper:=M5,
+				   //lrCurrentSetpoint:=M5.fPosition,
+                   //q_bDone=>bXRTM1PitchDone,
+                   //q_bBusy=>bXRTM1PitchBusy);
 // When STO hit, need to reset SP
-IF NOT M5.bHardwareEnable THEN
-	M5.fPosition := M5.stAxisStatus.fActPosition;
-END_IF
+//IF NOT M5.bHardwareEnable THEN
+	//M5.fPosition := M5.stAxisStatus.fActPosition;
+//END_IF
 
 // Raw Encoder Counts For Epics
 nEncCntYupXRTM1 := ULINT_TO_UDINT(XRTM1.fbRunHOMS.stYupEnc.Count);
