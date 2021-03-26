@@ -1347,7 +1347,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Axis Id="1" CreateSymbols="true" AxisType="1" AxisFolder="M1">
+	<Axis Id="5" CreateSymbols="true" AxisType="1" AxisFolder="M1">
 		<Name>__FILENAME__</Name>
 		<AxisPara>
 			<General UnitName="urad"/>
