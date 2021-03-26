@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{326287A2-B59F-4CD9-BE35-7F0E02C0351A}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{BC55F6C0-2675-45DD-848C-4E34831FF4BE}"/>
+				<Hide GUID="{1AF01168-07D4-4D94-8872-0959A82FF8BA}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -805,7 +805,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{326287A2-B59F-4CD9-BE35-7F0E02C0351A}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -822,7 +822,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{BBD4F100-FCC6-47C4-96A2-414814108516}"/>
+				<Hide GUID="{9AC6C9D8-5D24-47BD-B06A-55D26F292DD5}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -2213,7 +2213,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2235,7 +2235,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2257,7 +2257,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2279,7 +2279,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{0E6EAF20-618E-4232-9BA2-54558D799EB7}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -5472,17 +5472,6 @@ External Setpoint Generation:
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
-					<Name>GVL.bXRT_M2_OUT</Name>
-					<Comment>
-						<![CDATA[MPS Outputs]]>
-					</Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL.bXRT_M2_IN</Name>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
 					<Name>Main.fbM3P1LS.Pitch.Stepper.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
@@ -5497,6 +5486,17 @@ External Setpoint Generation:
 				<Var>
 					<Name>Main.fbMPS_States.GANTRY.VAxis.stAxis.PlcToNc</Name>
 					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+				</Var>
+				<Var>
+					<Name>GVL.bXRT_M2_OUT</Name>
+					<Comment>
+						<![CDATA[MPS Outputs]]>
+					</Comment>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL.bXRT_M2_IN</Name>
+					<Type>BOOL</Type>
 				</Var>
 				<Var>
 					<Name>GVL_Devices.HOMS2_Pitch.Stepper.stAxis.PlcToNc</Name>

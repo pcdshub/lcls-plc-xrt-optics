@@ -49,6 +49,9 @@ VAR
 		pv: XRTM1:HOMS:MMS:PITCH
 	'}
 	M5 : DUT_MotionStage := (fVelocity:=150.0); // XRTM1 Pitch Stepper
+    //fbMotionStage_m5 : FB_MotionStage;
+    
+    
 	
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1_Bender]^STM Status^Status^Digital input 1;
@@ -282,6 +285,7 @@ fbMotionStage_m1(stMotionStage:=M1);
 fbMotionStage_m2(stMotionStage:=M2);
 fbMotionStage_m3(stMotionStage:=M3);
 fbMotionStage_m4(stMotionStage:=M4);
+//fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 // Calculate Pitch RMS Error:
@@ -400,7 +404,7 @@ bXRT_M2_OUT := fbMPS_States.OUT;
 //EPICS Tx Update
 ////////////////////
 p_ModbusTx_InputCoils();
-//p_ModbusTx_OutputCoils();
+//p_ModbusTx_OutputCoils();//
 p_ModbusTx_InputReg();
 p_ModbusTx_PLCMemory();
 
