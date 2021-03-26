@@ -99,7 +99,10 @@ ffM1M2IN(
 	
 // PMPS Arbiter and FFO instantiation.
 GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
-GVL_PMPS.fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+
+fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0];
+fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+
 GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0]);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 
