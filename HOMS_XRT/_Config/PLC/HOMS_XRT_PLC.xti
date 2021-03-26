@@ -775,15 +775,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{D557B866-8533-41E3-8646-C5FC316EC461}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{1AF01168-07D4-4D94-8872-0959A82FF8BA}"/>
+				<Hide GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{81EC6793-9553-4566-B212-253094AF20AD}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -805,7 +805,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{2D70BFF4-604F-42F1-A39B-5F3D071CD272}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{D557B866-8533-41E3-8646-C5FC316EC461}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -822,7 +822,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{9AC6C9D8-5D24-47BD-B06A-55D26F292DD5}"/>
+				<Hide GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -2051,6 +2051,55 @@ External Setpoint Generation:
 					<Type>INT</Type>
 				</Var>
 				<Var>
+					<Name>Main.fbMotionStage_m5.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+					<SubVar>
+						<Name>AxisState</Name>
+						<Comment>
+							<![CDATA[Present State Of The Axis Movement (continuous axis):
+0  = INACTIVE:		axis has no job
+1  = RUNNING:		axis is executing a motion job
+2  = OVERRIDE_ZERO:	axis is executing a job but override is zero
+3  = PHASE_VELOCONST:	axis is moving at constant velocity
+4  = PHASE_ACCPOS:	axis is accelerating
+5  = PHASE_ACCNEG:	axis is decelerating
+Slaves only:
+11 = PREPHASE:		slave axis is in a motion pre-phase
+12 = SYNCHRONIZING:	slave axis is synchronizing
+13 = SYNCHRONOUS:	slave axis is moving synchronously
+External Setpoint Generation:
+41 = EXTSETGEN_MODE1:	external setpoint generation active
+42 = EXTSETGEN_MODE2:	internal and external setpoint gen. active
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>HomingState</Name>
+						<Comment>
+							<![CDATA[Axis Homing Status:
+0: idle
+1: start homing
+2: searching home switch
+3: stopping on home switch
+4: moving off home switch
+5: searching sync pulse
+6: stopping after homing
+]]>
+						</Comment>
+					</SubVar>
+					<SubVar>
+						<Name>CoupleState</Name>
+						<Comment>
+							<![CDATA[Axis Coupling Status:
+0: axis is a single axis (not coupled)
+1: axis is a master axis
+2: axis is master and slave
+3: axis is a slave axis
+]]>
+						</Comment>
+					</SubVar>
+				</Var>
+				<Var>
 					<Name>Main.M6.Axis.NcToPlc</Name>
 					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<SubVar>
@@ -2213,7 +2262,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{81EC6793-9553-4566-B212-253094AF20AD}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2235,7 +2284,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{81EC6793-9553-4566-B212-253094AF20AD}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2257,7 +2306,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{81EC6793-9553-4566-B212-253094AF20AD}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2279,7 +2328,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.XRTM1.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{CE0CD587-EA74-4ABB-8B4F-E1EFF0C2BB3E}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{81EC6793-9553-4566-B212-253094AF20AD}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -5391,6 +5440,10 @@ External Setpoint Generation:
 						<![CDATA[ NC Brake Output: TRUE to release brake]]>
 					</Comment>
 					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>Main.fbMotionStage_m5.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+					<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 				</Var>
 				<Var>
 					<Name>Main.M6.Axis.PlcToNc</Name>
