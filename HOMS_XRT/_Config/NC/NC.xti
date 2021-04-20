@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNcSafTaskDef" SubType="0">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.32" ClassName="CNcSafTaskDef" SubType="0">
 	<NC>
 		<SafTask Priority="4" CycleTime="20000" AmsPort="501" IoAtBegin="true">
 			<Name>NC-Task 1 SAF</Name>
@@ -16,26 +16,26 @@
 		<SvbTask Priority="8" CycleTime="100000" AmsPort="511">
 			<Name>NC-Task 1 SVB</Name>
 		</SvbTask>
-		<AxisFolder Name="M1"/>
+		<AxisFolder Name="M1L3"/>
 		<AxisFolder Name="M2"/>
-		<AxisFolder Name="M3"/>
-		<Axis File="M1-Yup.xti" Id="1"/>
-		<Axis File="M1-Ydwn.xti" Id="2"/>
-		<Axis File="M1-Xup.xti" Id="3"/>
-		<Axis File="M1-Xdwn.xti" Id="4"/>
-		<Axis File="M1-Pitch.xti" Id="5"/>
-		<Axis File="M1-Bender.xti" Id="6"/>
+		<AxisFolder Name="M2L3"/>
+		<Axis File="M1L3-Yup.xti" Id="1"/>
+		<Axis File="M1L3-Ydwn.xti" Id="2"/>
+		<Axis File="M1L3-Xup.xti" Id="3"/>
+		<Axis File="M1L3-Xdwn.xti" Id="4"/>
+		<Axis File="M1L3-Pitch.xti" Id="5"/>
+		<Axis File="M1L3-Bender.xti" Id="6"/>
 		<Axis File="M2 Y1.xti" Id="7"/>
 		<Axis File="M2 Y2.xti" Id="8"/>
 		<Axis File="M2 X1.xti" Id="9"/>
 		<Axis File="M2 X2.xti" Id="10"/>
 		<Axis File="M2 P.xti" Id="11"/>
 		<Axis File="M2 B.xti" Id="12"/>
-		<Axis File="M3 Y1.xti" Id="13"/>
-		<Axis File="M3 Y2.xti" Id="14"/>
-		<Axis File="M3 X1.xti" Id="15"/>
-		<Axis File="M3 X2.xti" Id="16"/>
-		<Axis File="M3 P.xti" Id="17"/>
-		<Axis File="M3 B.xti" Id="18"/>
+		<Axis File="M2L3-Yup.xti" Id="13"/>
+		<Axis File="M2L3-Ydwn.xti" Id="14"/>
+		<Axis File="M2L3-Xup.xti" Id="15"/>
+		<Axis File="M2L3-Xdwn.xti" Id="16"/>
+		<Axis File="M2L3-Pitch.xti" Id="17"/>
+		<Axis File="M2L3-Bender.xti" Id="18"/>
 	</NC>
 </TcSmItem>

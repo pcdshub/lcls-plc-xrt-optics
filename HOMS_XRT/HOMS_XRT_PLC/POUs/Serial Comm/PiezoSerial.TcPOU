@@ -1,28 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="PiezoSerial" Id="{04ed9258-9624-4f29-9f34-d3e5ff9995d6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PiezoSerial
 VAR
 	//PI Serial
-	fbE621SerialDriver_M1 : FB_PI_E621_SerialDriver;
-	rtInitParams_M1	:	R_TRIG;
-	tonTimeoutRst_M1	: TON := (PT:=T#2S); //For timeout reset
+	//Beckhoff
+	fbE621SerialDriver_MR1L3 : FB_PI_E621_SerialDriver;
+	rtInitParams_MR1L3	:	R_TRIG;
+	tonTimeoutRst_MR1L3	: TON := (PT:=T#2S); //For timeout reset
+	
+	fbE621SerialDriver_MR2L3 : FB_PI_E621_SerialDriver;
+	rtInitParams_MR2L3	:	R_TRIG;
+	tonTimeoutRst_MR2L3	: TON := (PT:=T#2S); //For timeout reset
 
+	//Elmo
 	fbE621SerialDriverM2 : FB_PI_E621_SerialDriverOld;
-	fbE621SerialDriverM3 : FB_PI_E621_SerialDriverOld;
+	
 	rtInitParams	:	R_TRIG;
 	tonTimeoutRstM1	: TON := (PT:=T#2S); //For timeout reset
 	tonTimeoutRstM2	: TON := (PT:=T#2S); //For timeout reset
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//M1 Piezo E-621
+      <ST><![CDATA[//MR1L3 Piezo E-621
 ///////////////////////
-fbE621SerialDriver_M1.i_xExecute := TRUE;
-fbE621SerialDriver_M1.i_xExecute R= fbE621SerialDriver_M1.q_xDone;
-fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.XRTM1_Pitch.Piezo,
-		                iq_stSerialRXBuffer:= Serial_RXBuffer_M1,
-		                iq_stSerialTXBuffer:= Serial_TXBuffer_M1);
+fbE621SerialDriver_MR1L3.i_xExecute := TRUE;
+fbE621SerialDriver_MR1L3.i_xExecute R= fbE621SerialDriver_MR1L3.q_xDone;
+fbE621SerialDriver_MR1L3(iq_stPiezoAxis:= GVL_MR1L3.MR1L3_Pitch.Piezo,
+		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L3,
+		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L3);
 
 	
 //M2 Piezo E-621
@@ -34,19 +40,15 @@ fbE621SerialDriver_M1(iq_stPiezoAxis:= GVL_M1.XRTM1_Pitch.Piezo,
 		iq_stSerialRXBuffer:= Serial_P2_SerialRXBuffer, 
 		iq_stSerialTXBuffer:= Serial_P2_SerialTXBuffer);
 		
-//M3 Piezo E-621
+//MR2L3 Piezo E-621
 ///////////////////////
-	fbE621SerialDriverM3.i_xExecute := TRUE;
-	fbE621SerialDriverM3.i_xExecute R= fbE621SerialDriverM3.q_xDone;
-	fbE621SerialDriverM3(
-		iq_stPiezoAxis:= HOMS3_Pitch.Piezo, 
-		iq_stSerialRXBuffer:= Serial_P3_SerialRXBuffer, 
-		iq_stSerialTXBuffer:= Serial_P3_SerialTXBuffer);
+fbE621SerialDriver_MR2L3.i_xExecute := TRUE;
+fbE621SerialDriver_MR2L3.i_xExecute R= fbE621SerialDriver_MR2L3.q_xDone;
+fbE621SerialDriver_MR2L3(iq_stPiezoAxis:= GVL_MR2L3.MR2L3_Pitch.Piezo,
+		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR2L3,
+		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR2L3);
+
 ]]></ST>
     </Implementation>
-    <LineIds Name="PiezoSerial">
-      <LineId Id="3" Count="25" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

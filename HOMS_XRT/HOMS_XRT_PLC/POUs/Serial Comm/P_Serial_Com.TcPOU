@@ -4,9 +4,9 @@
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
 	//fbSerialLineControl_EL6001_P1: SerialLineControl;
-	fbSerialLineControl_EL6001_M1: SerialLineControl; // M1 Serial Comm Function Block
+	fbSerialLineControl_EL6001_M1L3: SerialLineControl; // M1 Serial Comm Function Block
 	fbSerialLineControl_EL6001_P2: SerialLineControl;
-	fbSerialLineControl_EL6001_P3: SerialLineControl;
+	fbSerialLineControl_EL6001_M2L3: SerialLineControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//These are the global IOs...don't forget to copy your data into them
@@ -15,12 +15,12 @@ END_VAR]]></Declaration>
 
 
 (* EL6001 Serial port 0 com function *)
-fbSerialLineControl_EL6001_M1(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_M1),
-						   	    pComOut:=ADR(Serial_stComOut_M1),
-						        SizeComIn:= SIZEOF(Serial_stComIn_M1),
-						        TxBuffer:= Serial_TXBuffer_M1,
-						        RxBuffer:= Serial_RXBuffer_M1,
+fbSerialLineControl_EL6001_M1L3(Mode:= SERIALLINEMODE_EL6_22B,
+						        pComIn:= ADR(Serial_stComIn_MR1L3),
+						   	    pComOut:=ADR(Serial_stComOut_MR1L3),
+						        SizeComIn:= SIZEOF(Serial_stComIn_MR1L3),
+						        TxBuffer:= Serial_TXBuffer_MR1L3,
+						        RxBuffer:= Serial_RXBuffer_MR1L3,
 						        Error=>,
 						        ErrorID=>);
 
@@ -33,26 +33,19 @@ fbSerialLineControl_EL6001_P2(
 	RxBuffer:= Serial_P2_SerialRXBuffer,
 	Error=> ,
 	ErrorID=> );
-fbSerialLineControl_EL6001_P3(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(Serial_P3_stComIn),
-	pComOut:=ADR(Serial_P3_stComOut) ,
-	SizeComIn:= SIZEOF(Serial_P3_stComIn),
-	TxBuffer:= Serial_P3_SerialTXBuffer,
-	RxBuffer:= Serial_P3_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );]]></ST>
+
+fbSerialLineControl_EL6001_M2L3(Mode:= SERIALLINEMODE_EL6_22B,
+						        pComIn:= ADR(Serial_stComIn_MR2L3),
+						   	    pComOut:=ADR(Serial_stComOut_MR2L3),
+						        SizeComIn:= SIZEOF(Serial_stComIn_MR2L3),
+						        TxBuffer:= Serial_TXBuffer_MR2L3,
+						        RxBuffer:= Serial_RXBuffer_MR2L3,
+						        Error=>,
+						        ErrorID=>);
+	
+
+	
+]]></ST>
     </Implementation>
-    <LineIds Name="P_Serial_Com">
-      <LineId Id="52" Count="0" />
-      <LineId Id="3" Count="0" />
-      <LineId Id="87" Count="2" />
-      <LineId Id="4" Count="0" />
-      <LineId Id="91" Count="7" />
-      <LineId Id="90" Count="0" />
-      <LineId Id="59" Count="7" />
-      <LineId Id="72" Count="8" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

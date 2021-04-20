@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_MR1L3" Id="{c3e91af1-5ac0-497f-aea6-a43e8c284355}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Pitch Mechanism:
+	{attribute 'TcLinkTo' := '.diEncCnt:=TIIB[EL5042_M1_PitchBender]^FB Inputs Channel 1^Position'}
+	MR1L3_Pitch : HOMS_PitchMechanism := (ReqPosLimHi := 220,
+		                                 ReqPosLimLo := -193.0,
+		                                 diEncPosLimHi := 11216281,
+		                                 diEncPosLimLo := 11004512);
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

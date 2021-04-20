@@ -13,16 +13,7 @@
 	HOMS2_XGantry	: HOMS_Gantry;
 	HOMS2_Bender	:	ST_HOMSStepper;
 	
-	//XRT M3
-	HOMS3_Pitch	    : HOMS_PitchMechanismOld := (
-		ReqPosLimHi := 246,
-		ReqPosLimLo := -212,
-		diEncPosLimHi := 9123828,
-		diEncPosLimLo := 8888874
-	);
-	HOMS3_YGantry	: HOMS_Gantry;
-	HOMS3_XGantry	: HOMS_Gantry;
-	HOMS3_Bender	:	ST_HOMSStepper;
+
 	
 END_VAR]]></Declaration>
   </GVL>
