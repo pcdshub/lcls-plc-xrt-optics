@@ -132,8 +132,6 @@ Serial_stComIn_MR1L3 AT %I* : EL6inData22B; // M1L3 In Serial Comm Array
 								 .D[21]:=TIIB[EL6001_M2L3_PitchFine]^COM Outputs^Data Out 21;'}
 	
 	Serial_stComOut_MR2L3 AT %Q* : EL6outData22B; // M3 Out Serual Comm Array
-	//Serial_P3_stComIn   AT %I*	:	EL6inData22B (*KL6inData22B*);
-	//Serial_P3_stComOut  AT %Q*	:	EL6outData22B (*KL6outData22B*);
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

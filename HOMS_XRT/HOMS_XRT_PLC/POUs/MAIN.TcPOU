@@ -179,8 +179,7 @@ VAR
 	fEncRefPitchMR1L3_urad : LREAL; // Current Pitch encoder offset in urad
 	
 // MR2L3 BECKHOFF
-	// MR2L3
-	// Motors
+// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L3_Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L3_Yup]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -341,17 +340,12 @@ VAR
 	nEncRefPitchMR2L3 : UDINT;
 	mcReadParameterPitchMR2L3 : MC_ReadParameter;
 	fEncRefPitchMR2L3_urad : LREAL; // Current Pitch encoder offset in urad
-
-
-
-
+	
+	//ELMO M2
 	XRTM2PitchControl	    :	FB_PitchControlOld;
-	//{attribute 'TcLinkTo' := 	'.Gantry.diEncCnt	:=	TIIB[M2-Y1 (Elmo Drive)]^Inputs^Position actual value'}
 	XRTM2Y_GantryControl	:	FB_Gantry;
 	XRTM2X_GantryControl	:	FB_Gantry;
 
-	
-	
 	// Expert mode permits direct access to individual acutators.
 	ExpertMode	:	BOOL := FALSE;
 	PitchManualMode: BOOL := FALSE;
@@ -364,7 +358,6 @@ VAR
 	fbM2X2LS	:	FB_LimitSwitchState;
 	fbM2P1LS	:	FB_PitchSoftLimits;	
 	
-	
 	//Drive CoE Fb
 	fbY1CoE	:	FB_ElmoGDCBellCoE;
 	fbY2CoE	:	FB_ElmoGDCBellCoE;
@@ -375,12 +368,11 @@ VAR
 	fbP1CoE	:	FB_ElmoGDCBellCoE;
 	fbB1CoE	:	FB_ElmoGDCBellCoE;
 	
-	
 	//Init params trigger
 	rtInitParams	:	R_TRIG;
 	
 	//Test Parameters
-		rStepSize: REAL;
+	rStepSize: REAL;
 	SettleTime: TON := (
 	PT:=T#2s);
 	TestUpperVoltage: REAL := 100;
@@ -393,15 +385,11 @@ VAR
 	fbMPS_States :  FB_MPS_STATES;
 	M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
 	M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
-	//noConsequence	:	BOOL;
 	
 	mcBenderPower	:	MC_POWER;
 	
-	
-	
 	// Common
 	fEncLeverArm_mm : LREAL := 513.0;
-	
 	
 	// Logging
 	fbLogHandler : FB_LogHandler;
@@ -615,17 +603,10 @@ LimitSwitchIO();
 // Pitch control
 /////////////////////////////////////
 XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
-//XRTM3PitchControl(Pitch:=HOMS3_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS3_Pitch.Axis.bDone, q_xBusy => HOMS3_Pitch.Axis.bBusy);
 
 //Y motion
 /////////////////////////////////////
 XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
-//XRTM3Y_GantryControl(Gantry:=HOMS3_YGantry);
-
-//HOMS3_YGantry.PAxis.stAxis.ReadStatus();
-//HOMS3_YGantry.SAxis.stAxis.ReadStatus();
-//HOMS3_YGantry.PAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.PAxis.stAxis.NcToPlc.ActPos);
-//HOMS3_YGantry.SAxis.stStatus.rActPosition := LREAL_TO_REAL(HOMS3_YGantry.SAxis.stAxis.NcToPlc.ActPos);
 	
 //X Motion
 /////////////////////////////////////

@@ -727,15 +727,15 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{901EBB6D-F107-422D-A16C-B8168108FEFF}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
+			<Name GUID="{3D985A31-2E7F-466B-9D0D-E31E9A903A95}" Namespace="lcls_twincat_motion" AutoDeleteType="true">EL5042_Status</Name>
 			<BitSize>0</BitSize>
 			<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
 			<Hides>
-				<Hide GUID="{4CE82171-FE03-4FD9-9503-7F7B49C056D1}"/>
+				<Hide GUID="{901EBB6D-F107-422D-A16C-B8168108FEFF}"/>
 			</Hides>
 		</DataType>
 		<DataType>
-			<Name GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
+			<Name GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion" AutoDeleteType="true">ST_RenishawAbsEnc</Name>
 			<Comment>
 				<![CDATA[ Renishaw BiSS-C absolute encoder used with an EL5042]]>
 			</Comment>
@@ -757,7 +757,7 @@ External Setpoint Generation:
 			</SubItem>
 			<SubItem>
 				<Name>Status</Name>
-				<Type GUID="{901EBB6D-F107-422D-A16C-B8168108FEFF}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
+				<Type GUID="{3D985A31-2E7F-466B-9D0D-E31E9A903A95}" Namespace="lcls_twincat_motion">EL5042_Status</Type>
 				<Comment>
 					<![CDATA[ Status struct placeholder]]>
 				</Comment>
@@ -774,7 +774,7 @@ External Setpoint Generation:
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<Hides>
-				<Hide GUID="{D77BF191-8BE8-4D26-981A-15DDAEDA925D}"/>
+				<Hide GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}"/>
 			</Hides>
 		</DataType>
 		<DataType>
@@ -2256,7 +2256,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2278,7 +2278,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR1L3.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2300,7 +2300,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR1L3.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -2322,7 +2322,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR1L3.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -3219,7 +3219,7 @@ External Setpoint Generation:
 					<Comment>
 						<![CDATA[ Encoders]]>
 					</Comment>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -3241,7 +3241,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR2L3.fbRunHOMS.stYdwnEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -3263,7 +3263,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR2L3.fbRunHOMS.stXupEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -3285,7 +3285,7 @@ External Setpoint Generation:
 				</Var>
 				<Var>
 					<Name>Main.MR2L3.fbRunHOMS.stXdwnEnc</Name>
-					<Type GUID="{77ECC2B4-F8B2-4F12-9311-9C826DCA1046}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
+					<Type GUID="{7C5868E2-BBD6-4D26-82C1-66E7D1107389}" Namespace="lcls_twincat_motion">ST_RenishawAbsEnc</Type>
 					<SubVar>
 						<Name>Count</Name>
 						<Comment>
@@ -5873,19 +5873,19 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Outputs^GVL.bXRT_M2_IN" VarB="Channel 2^Output"/>
 				<Link VarA="SerialIO Outputs^GVL.bXRT_M2_OUT" VarB="Channel 1^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL1004_M1L3_STO">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL1004_M1L3_STO">
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1L3_Xupdwn">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Xupdwn">
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.stXdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.stXupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL5042_M1L3_Yupdwn">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn">
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.stYdwnEnc^Count" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.MR1L3.fbRunHOMS.stYupEnc^Count" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL6001_M1L3_PitchFine">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL6001_M1L3_PitchFine">
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_MR1L3^D[0]" VarB="COM Inputs^Data In 0" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_MR1L3^D[10]" VarB="COM Inputs^Data In 10" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^GVL_SerialIO.Serial_stComIn_MR1L3^D[11]" VarB="COM Inputs^Data In 11" AutoLink="true"/>
@@ -5932,27 +5932,27 @@ External Setpoint Generation:
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_MR1L3^D[8]" VarB="COM Outputs^Data Out 8" AutoLink="true"/>
 				<Link VarA="SerialIO Outputs^GVL_SerialIO.Serial_stComOut_MR1L3^D[9]" VarB="COM Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_Bender">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender">
 				<Link VarA="SerialIO Inputs^Main.M6.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M6.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_PitchCoarse">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_PitchCoarse">
 				<Link VarA="SerialIO Inputs^Main.M5.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M5.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_Xdwn">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Xdwn">
 				<Link VarA="SerialIO Inputs^Main.M4.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M4.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_Xup">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Xup">
 				<Link VarA="SerialIO Inputs^Main.M3.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M3.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_Ydwn">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Ydwn">
 				<Link VarA="SerialIO Inputs^Main.M2.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M2.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1^EL7041-1000_M1L3_Yup">
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup">
 				<Link VarA="SerialIO Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="SerialIO Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
 			</OwnerB>
