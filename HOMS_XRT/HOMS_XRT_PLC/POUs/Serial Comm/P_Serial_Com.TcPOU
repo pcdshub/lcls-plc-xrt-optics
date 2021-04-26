@@ -4,9 +4,9 @@
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
 	//fbSerialLineControl_EL6001_P1: SerialLineControl;
-	fbSerialLineControl_EL6001_M1L3: SerialLineControl; // M1 Serial Comm Function Block
+	fbSerialLineControl_EL6001_MR1L3: SerialLineControl; // M1 Serial Comm Function Block
 	fbSerialLineControl_EL6001_P2: SerialLineControl;
-	fbSerialLineControl_EL6001_M2L3: SerialLineControl;
+	fbSerialLineControl_EL6001_MR2L3: SerialLineControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//These are the global IOs...don't forget to copy your data into them
@@ -15,7 +15,7 @@ END_VAR]]></Declaration>
 
 
 (* EL6001 Serial port 0 com function *)
-fbSerialLineControl_EL6001_M1L3(Mode:= SERIALLINEMODE_EL6_22B,
+fbSerialLineControl_EL6001_MR1L3(Mode:= SERIALLINEMODE_EL6_22B,
 						        pComIn:= ADR(Serial_stComIn_MR1L3),
 						   	    pComOut:=ADR(Serial_stComOut_MR1L3),
 						        SizeComIn:= SIZEOF(Serial_stComIn_MR1L3),
@@ -34,7 +34,7 @@ fbSerialLineControl_EL6001_P2(
 	Error=> ,
 	ErrorID=> );
 
-fbSerialLineControl_EL6001_M2L3(Mode:= SERIALLINEMODE_EL6_22B,
+fbSerialLineControl_EL6001_MR2L3(Mode:= SERIALLINEMODE_EL6_22B,
 						        pComIn:= ADR(Serial_stComIn_MR2L3),
 						   	    pComOut:=ADR(Serial_stComOut_MR2L3),
 						        SizeComIn:= SIZEOF(Serial_stComIn_MR2L3),
