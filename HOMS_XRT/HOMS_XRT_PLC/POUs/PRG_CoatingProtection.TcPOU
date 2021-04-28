@@ -58,8 +58,8 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (Main.XRTM1.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
-    rCurrentEncoderPosition := Main.nEncCntYupXRTM1,
+	bMirrorIn := (Main.MR1L3.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
+    rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 	
@@ -86,7 +86,7 @@ fbM2(
 //M3
 fbM3(
 	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
-    rCurrentEncoderPosition := HOMS3_YGantry.PAxis.diEncCnt,
+    rCurrentEncoderPosition := Main.nEncCntYupMR2L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 

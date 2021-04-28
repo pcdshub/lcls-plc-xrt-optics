@@ -4,14 +4,15 @@
     <Declaration><![CDATA[VAR_GLOBAL
 	
 	// M1
-	Serial_RXBuffer_M1 : ComBuffer;
-	Serial_TXBuffer_M1 : ComBuffer;
+	Serial_RXBuffer_MR1L3 : ComBuffer;
+	Serial_TXBuffer_MR1L3 : ComBuffer;
 	
 	Serial_P2_SerialRXBuffer : ComBuffer;
 	Serial_P2_SerialTXBuffer : ComBuffer;
 	
-	Serial_P3_SerialRXBuffer : ComBuffer;
-	Serial_P3_SerialTXBuffer : ComBuffer;
+	Serial_RXBuffer_MR2L3 : ComBuffer;
+	Serial_TXBuffer_MR2L3 : ComBuffer;
+
 	
 END_VAR]]></Declaration>
   </GVL>
