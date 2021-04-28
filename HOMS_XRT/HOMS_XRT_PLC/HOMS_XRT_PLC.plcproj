@@ -32,6 +32,7 @@
     <CombineIds>false</CombineIds>
     <Released>false</Released>
     <ProjectVersion>1.0.0</ProjectVersion>
+    <CompilerDefines>L</CompilerDefines>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
@@ -193,9 +194,6 @@
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_MirrorCoatingProtectionScaledPositions.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\FB_MPS_STATES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -218,9 +216,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Modbus\p_ModbusTx_PLCMemory.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\PRG_CoatingProtectionScaledPositions.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_CoatingProtection.TcPOU">
@@ -375,7 +370,7 @@
       <Resolution>lcls-twincat-optics, * (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 0.17.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 1.0.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
