@@ -8,11 +8,9 @@ VAR
 	   	sDevName:= 'XRT-M1', 
 		rFirstCoatingPosition:= 8611000, 
 		rFirstCoatingPositionTolerance:= 1000000, 
-		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
 		sFirstCoatingType:= 'SiC', 
 		rSecondCoatingPosition:= 18611000 , 
 		rSecondCoatingPositionTolerance:= 1000000 , 
-		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
 		
@@ -34,11 +32,9 @@ VAR
 	   	sDevName:= 'XRT-M3', 
 		rFirstCoatingPosition:= 9279350, 
 		rFirstCoatingPositionTolerance:= 1000000, 
-		nFirstCoatingBitmask:= 2#0000_0001_1111_1111, 
 		sFirstCoatingType:= 'SiC', 
 		rSecondCoatingPosition:= 19279350 , 
 		rSecondCoatingPositionTolerance:= 1000000 , 
-		nSecondCoatingBitmask:=  2#1111_1100_0000_0000 , 
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
 	
@@ -61,19 +57,21 @@ fbM1(
 	bMirrorIn := (Main.MR1L3.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
+    nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000) , 
     FFO := GVL_PMPS.g_FastFaultOutput1);
 	
 //M2
 //With M2 the same coating has different bit masks depending on the pitch
 IF (HOMS2_Pitch.diEncCnt < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
-	fbM2.nFirstCoatingBitmask:= 2#0000_0001_1111_1111; 
-	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000; 
+	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
+	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSIF (HOMS2_Pitch.diEncCnt > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
-	fbM2.nFirstCoatingBitmask:= 2#1111_1111_1111_1111;  
-	fbM2.nSecondCoatingBitmask:= 2#1111_1100_0000_0000;  
+	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(25000, 90000);  
+	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(13500, 90000);
 ELSE // Anything else in the middle of the range
-	fbM2.nFirstCoatingBitmask:= 2#0000_0000_0000_0000; 
-	fbM2.nSecondCoatingBitmask:= 2#0000_0000_0000_0000;  		
+	fbM2.nFirstCoatingBitmask:= 0;
+	fbM2.nSecondCoatingBitmask:= 0;
 END_IF
 
 fbM2(
@@ -88,6 +86,8 @@ fbM3(
 	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
     rCurrentEncoderPosition := Main.nEncCntYupMR2L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
+    nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
+    nSecondCoatingBitmask:=  F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000),
     FFO := GVL_PMPS.g_FastFaultOutput1);
 
 	
@@ -100,10 +100,10 @@ ffM1M2IN(
 // PMPS Arbiter and FFO instantiation.
 GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam);
 
-GVL_PMPS.fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0];
+GVL_PMPS.fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0];
 GVL_PMPS.fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 
-GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aStoppers[PMPS.L_Stopper.ST1L0]);
+GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0]);
 GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
 
 bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
