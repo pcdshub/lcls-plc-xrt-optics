@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.32" ClassName="CNcAxisDef" SubType="1">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNcAxisDef" SubType="1">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{76EB036C-07A7-446B-91CB-CECCF6977DF3}" TcBaseType="true" HideType="true">UINTARR2_2</Name>
@@ -1356,8 +1356,8 @@ External Setpoint Generation:
 			<OtherSettings AllowMotionCmdToSlave="true"/>
 		</AxisPara>
 		<Encoder Name="Enc" EncType="29">
-			<EncPara ScaleFactorNumerator="0.001" Offset="-24971.8" MaxCount="#xffffffff">
-				<SoftEndMinControl Enable="true" Range="-909.8"/>
+			<EncPara ScaleFactorNumerator="0.001" Offset="-24091" MaxCount="#xffffffff">
+				<SoftEndMinControl Enable="true" Range="-865"/>
 				<SoftEndMaxControl Enable="true" Range="862.6"/>
 				<Inc RefSoftSyncMask="#x0000ffff"/>
 			</EncPara>
@@ -1492,7 +1492,7 @@ Drive Status 4 (manually linked):
 		</Drive>
 		<Controller Name="Ctrl" CtrType="2">
 			<CtrPara PriorControlFactor="1">
-				<PosDiffControl Range="100"/>
+				<PosDiffControl Range="500"/>
 				<PID PosKp="50" PosExtKp="50" DeadBandPosition="0.4"/>
 				<Observer BandWidth="20"/>
 			</CtrPara>
