@@ -68,7 +68,7 @@ IF (HOMS2_Pitch.diEncCnt < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPos
 	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSIF (HOMS2_Pitch.diEncCnt > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
 	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(25000, 90000);  
-	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(13500, 90000);
+	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSE // Anything else in the middle of the range
 	fbM2.nFirstCoatingBitmask:= 0;
 	fbM2.nSecondCoatingBitmask:= 0;
