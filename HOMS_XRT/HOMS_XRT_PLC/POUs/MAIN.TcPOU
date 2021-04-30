@@ -217,8 +217,8 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR2L3:HOMS:MMS:PITCH
 	'}
-	M17 : DUT_MotionStage := (fVelocity:=150.0); // MR2L3 Pitch Stepper
-
+	M17 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR2L3 Pitch Stepper
+    fbMotionStage_m17 : FB_MotionStage;
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L3_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L3_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -516,6 +516,7 @@ fbMotionStage_m13(stMotionStage:=M13);
 fbMotionStage_m14(stMotionStage:=M14);
 fbMotionStage_m15(stMotionStage:=M15);
 fbMotionStage_m16(stMotionStage:=M16);
+fbMotionStage_m17(stMotionStage:=M17);
 fbMotionStage_m18(stMotionStage:=M18);
 
 // Calculate RMS Error:
@@ -536,15 +537,15 @@ fbBenderRMSErrorMR2L3(stMotionStage:=M18,
 				     fMinRMSError=>fMinBenderRMSErrorMR2L3);
 
 // Pitch Control
-fbMR2L3PitchControl(Pitch:=GVL_MR2L3.MR2L3_Pitch,
-				   Stepper:=M17,
-				   lrCurrentSetpoint:=M17.fPosition,
-                   q_bDone=>bMR2L3PitchDone,
-                   q_bBusy=>bMR2L3PitchBusy);
+//fbMR2L3PitchControl(Pitch:=GVL_MR2L3.MR2L3_Pitch,
+				   //Stepper:=M17,
+				   //lrCurrentSetpoint:=M17.fPosition,
+                   //q_bDone=>bMR2L3PitchDone,
+                   //q_bBusy=>bMR2L3PitchBusy);
 // When STO hit, need to reset SP
-IF NOT M17.bHardwareEnable THEN
-	M17.fPosition := M17.stAxisStatus.fActPosition;
-END_IF
+//IF NOT M17.bHardwareEnable THEN
+	//M17.fPosition := M17.stAxisStatus.fActPosition;
+//END_IF
 
 // Raw Encoder Counts For Epics
 nEncCntYupMR2L3 := ULINT_TO_UDINT(MR2L3.fbRunHOMS.stYupEnc.Count);
