@@ -126,7 +126,7 @@
 				</Target>
 			</Licenses>
 			<Tasks>
-				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
+				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350" DisableFpExceptions="true">
 					<Name>PlcTask</Name>
 				</Task>
 				<Task Id="6" Priority="1" CycleTime="20000" AmsPort="351">
