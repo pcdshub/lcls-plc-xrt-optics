@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_GantryDiffVirtualLimitSwitch" Id="{ae668e37-4b4c-400f-bda9-27f8d308d0b6}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_GantryDiffVirtualLimitSwitch
 VAR_IN_OUT
@@ -33,38 +33,32 @@ X1 negative direction disabled
 *)
 IF GantryDiffFlt THEN
 	IF GantryDiff < 0  THEN
-		PAxis.DecoupledNegativeEnable := FALSE;
-		SAxis.DecoupledPositiveEnable := FALSE;
+		PAxis.NegativeEnable := FALSE;
+		SAxis.PositiveEnable := FALSE;
 	ELSE	
-		PAxis.DecoupledNegativeEnable := TRUE;
-		SAxis.DecoupledPositiveEnable := TRUE;
+		PAxis.NegativeEnable := TRUE;
+		SAxis.PositiveEnable := TRUE;
 	END_IF
 	IF GantryDiff > 0 THEN
-		PAxis.DecoupledPositiveEnable := FALSE;
-		SAxis.DecoupledNegativeEnable := FALSE;
+		PAxis.PositiveEnable := FALSE;
+		SAxis.NegativeEnable := FALSE;
 	ELSE
-		PAxis.DecoupledPositiveEnable := TRUE;
-		SAxis.DecoupledNegativeEnable := TRUE;
+		PAxis.PositiveEnable := TRUE;
+		SAxis.NegativeEnable := TRUE;
 	END_IF
 ELSE
 	//If there is no fault, all directions are enabled,
 	// remember there is some hystersis built into the 
 	// gantry difference function (should be)
-	PAxis.DecoupledNegativeEnable := TRUE;
-	PAxis.DecoupledPositiveEnable := TRUE;
-	SAxis.DecoupledPositiveEnable := TRUE;
-	SAxis.DecoupledNegativeEnable := TRUE;
+	PAxis.NegativeEnable := TRUE;
+	PAxis.PositiveEnable := TRUE;
+	SAxis.PositiveEnable := TRUE;
+	SAxis.NegativeEnable := TRUE;
 END_IF
 
 
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_GantryDiffVirtualLimitSwitch">
-      <LineId Id="3" Count="14" />
-      <LineId Id="52" Count="22" />
-      <LineId Id="35" Count="3" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
