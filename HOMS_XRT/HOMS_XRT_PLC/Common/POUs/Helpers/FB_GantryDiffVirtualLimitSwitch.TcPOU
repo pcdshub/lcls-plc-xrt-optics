@@ -17,7 +17,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Gantry Difference Virtual Limit Switch
-A. Wallace 17-2-15
+A. Wallace 17-2-15, N. Waters 13-7-21
 
 Determines which direction is disabled due to it increasing the gantry difference.
 Refer to the ESD for actual conventions.
@@ -32,20 +32,19 @@ X2 positive direction disabled
 X1 negative direction disabled
 *)
 IF GantryDiffFlt THEN
-	IF GantryDiff < 0  THEN
-		PAxis.NegativeEnable := FALSE;
+	IF GantryDiff > 0 THEN        
+        PAxis.NegativeEnable := FALSE;
 		SAxis.PositiveEnable := FALSE;
-	ELSE	
-		PAxis.NegativeEnable := TRUE;
-		SAxis.PositiveEnable := TRUE;
-	END_IF
-	IF GantryDiff > 0 THEN
-		PAxis.PositiveEnable := FALSE;
-		SAxis.NegativeEnable := FALSE;
-	ELSE
-		PAxis.PositiveEnable := TRUE;
-		SAxis.NegativeEnable := TRUE;
-	END_IF
+		
+        PAxis.PositiveEnable := TRUE;
+        SAxis.NegativeEnable := TRUE;
+    ELSE        		
+        PAxis.NegativeEnable := TRUE;
+        SAxis.PositiveEnable := TRUE;
+        
+        PAxis.PositiveEnable := FALSE;
+        SAxis.NegativeEnable := FALSE; 
+    END_IF
 ELSE
 	//If there is no fault, all directions are enabled,
 	// remember there is some hystersis built into the 
