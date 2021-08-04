@@ -1322,7 +1322,7 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Axis Id="10" CreateSymbols="true" AxisType="1" AxisFolder="M2">
-		<Name>__FILENAME__</Name>
+		<Name>M2 X2</Name>
 		<AxisPara>
 			<Dynamic AccelerationMaximum="0.05" DecelerationMaximum="0.05"/>
 			<Velo Maximum="0.15"/>
@@ -1530,22 +1530,4 @@ External Setpoint Generation:
 			</Var>
 		</Vars>
 	</Axis>
-	<Mappings>
-		<OwnerA>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^M2-X2 (Elmo Drive)">
-				<Link VarA="Drive^Inputs^In^nDcOutputTime" VarB="InfoData^DcOutputShift"/>
-				<Link VarA="Drive^Inputs^In^nState1" VarB="Inputs^Status word"/>
-				<Link VarA="Drive^Inputs^In^nState2" VarB="Inputs^Status word" Size="8" OffsB="8"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Drive^Inputs^In^nState4" VarB="WcState^WcState"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl1" VarB="Outputs^Control word"/>
-				<Link VarA="Drive^Outputs^Out^nCtrl2" VarB="Outputs^Control word" Size="8" OffsB="8"/>
-				<Link VarA="Drive^Outputs^Out^nDataOut1" VarB="Outputs^Target Position"/>
-				<Link VarA="Enc^Inputs^In^nDataIn1" VarB="Inputs^Position actual value"/>
-				<Link VarA="Enc^Inputs^In^nDcInputTime" VarB="InfoData^DcInputShift"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^InputToggle" Size="1" OffsA="1"/>
-				<Link VarA="Enc^Inputs^In^nState4" VarB="WcState^WcState"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmItem>
