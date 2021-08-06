@@ -220,7 +220,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L4:HOMS:MMS:PITCH
 	'}
-	M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L3 Pitch Stepper
+	M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L4 Pitch Stepper
     fbMotionStage_m11 : FB_MotionStage;
     
     
@@ -229,7 +229,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L4:HOMS:MMS:BENDER
 	'}
-	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L3 Bender
+	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L4 Bender
 	fbMotionStage_m12 : FB_MotionStage;
 	
 	
@@ -513,8 +513,6 @@ VAR
 	
 	//ELMO M2
 	//XRTM2PitchControl	    :	FB_PitchControlOld;
-	//XRTM2Y_GantryControl	:	FB_Gantry;
-	//XRTM2X_GantryControl	:	FB_Gantry;
 
 	// Expert mode permits direct access to individual acutators.
 	//ExpertMode	:	BOOL := FALSE;
@@ -522,21 +520,9 @@ VAR
 	
 	//Limit switch evaluation blocks
 	
-	///fbM2Y1LS	:	FB_LimitSwitchState;
-	//fbM2Y2LS	:	FB_LimitSwitchState;
-	//fbM2X1LS	:	FB_LimitSwitchState;
-	//fbM2X2LS	:	FB_LimitSwitchState;
-	//fbM2P1LS	:	FB_PitchSoftLimits;	
+
 	
-	//Drive CoE Fb
-	//fbY1CoE	:	FB_ElmoGDCBellCoE;
-	//fbY2CoE	:	FB_ElmoGDCBellCoE;
 	
-	//fbX1CoE	:	FB_ElmoGDCBellCoE;
-	//fbX2CoE	:	FB_ElmoGDCBellCoE;
-	
-	//fbP1CoE	:	FB_ElmoGDCBellCoE;
-	//fbB1CoE	:	FB_ElmoGDCBellCoE;
 	
 	//Init params trigger
 	//rtInitParams	:	R_TRIG;
@@ -548,13 +534,7 @@ VAR
 	//TestUpperVoltage: REAL := 100;
 	//TestLowerVoltage: REAL := 10;
 	//xRunPiezoRepeatTest: BOOL;
-	
-	//Drive reference initializations
-	//fbInitDriveRef	:	FB_InitDriveRefs;
-	//MPS Information
-	//fbMPS_States :  FB_MPS_STATES;
-	//M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
-	//M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
+
 	
 	//mcBenderPower	:	MC_POWER;
 	
