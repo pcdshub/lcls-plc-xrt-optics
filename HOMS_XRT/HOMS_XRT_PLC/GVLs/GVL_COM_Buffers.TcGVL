@@ -7,8 +7,8 @@
 	Serial_RXBuffer_MR1L3 : ComBuffer;
 	Serial_TXBuffer_MR1L3 : ComBuffer;
 	
-	Serial_P2_SerialRXBuffer : ComBuffer;
-	Serial_P2_SerialTXBuffer : ComBuffer;
+	Serial_RXBuffer_MR1L4 : ComBuffer;
+	Serial_TXBuffer_MR1L4 : ComBuffer;
 	
 	Serial_RXBuffer_MR2L3 : ComBuffer;
 	Serial_TXBuffer_MR2L3 : ComBuffer;
