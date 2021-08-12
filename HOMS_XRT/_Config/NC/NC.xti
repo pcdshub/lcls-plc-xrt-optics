@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.32" ClassName="CNcSafTaskDef" SubType="0">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmItem" TcSmVersion="1.0" TcVersion="3.1.4022.30" ClassName="CNcSafTaskDef" SubType="0">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{76EB036C-07A7-446B-91CB-CECCF6977DF3}" TcBaseType="true" HideType="true">UINTARR2_2</Name>
@@ -1347,7 +1347,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE_OLD</Name>
+			<Name GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>Operational</Name>
@@ -1546,11 +1546,11 @@ External Setpoint Generation:
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF_OLD4</Name>
+			<Name GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC" TcBaseType="true">NCTOPLC_AXIS_REF</Name>
 			<BitSize>2048</BitSize>
 			<SubItem>
 				<Name>StateDWord</Name>
-				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE_OLD</Type>
+				<Type GUID="{4C3FC5AC-D5AA-44C6-AC5A-159774BA0F6D}" Namespace="MC">NCTOPLC_AXIS_REF_STATE</Type>
 				<BitSize>32</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -3159,10 +3159,11 @@ External Setpoint Generation:
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001" Offset="-14279" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001" Offset="-13496.029" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-11750"/>
 					<SoftEndMaxControl Enable="true" Range="12530"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -3312,7 +3313,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>36096</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3371,10 +3372,11 @@ External Setpoint Generation:
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001" Offset="-15196.6" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001" Offset="-14872.55" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-11750"/>
 					<SoftEndMaxControl Enable="true" Range="12531.5"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -3524,7 +3526,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>39104</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3583,10 +3585,11 @@ External Setpoint Generation:
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001" Offset="-25135.5" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001" Offset="-25490.849" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-850"/>
 					<SoftEndMaxControl Enable="true" Range="867.4"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -3736,7 +3739,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>42112</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -3795,10 +3798,11 @@ External Setpoint Generation:
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001" Offset="-24091" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001" Offset="-26628.83" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-865"/>
 					<SoftEndMaxControl Enable="true" Range="862.6"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -3948,7 +3952,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>45120</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -4007,11 +4011,12 @@ External Setpoint Generation:
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001949317739" Offset="-17539" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001949317739" Offset="-19152.5" MaxCount="#xffffffff">
 					<FilterTime TPos="0.2"/>
 					<SoftEndMinControl Enable="true" Range="-212"/>
 					<SoftEndMaxControl Enable="true" Range="246"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -4161,7 +4166,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>48128</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
@@ -4372,7 +4377,7 @@ Drive Status 4 (manually linked):
 				<Name>Outputs</Name>
 				<Var>
 					<Name>ToPlc</Name>
-					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF_OLD4</Type>
+					<Type GUID="{6A65C767-34E5-42BF-AD87-E1A503EAC7BE}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 					<BitOffs>51136</BitOffs>
 					<SubVar>
 						<Name>AxisState</Name>
