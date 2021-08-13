@@ -5,10 +5,10 @@
 VAR_GLOBAL CONSTANT
 	// Encoder reference values in counts = nm
 	// Enc Ref Vals from alignment 2020-6-12
-	nYUP_ENC_REF : ULINT := 13611000;
-	nYDWN_ENC_REF : ULINT := 13433600;
-	nXUP_ENC_REF : ULINT := 25210500;
-	nXDWN_ENC_REF : ULINT := 24971800;
+	nYUP_ENC_REF : ULINT := 13663400;
+	nYDWN_ENC_REF : ULINT := 15043000;
+	nXUP_ENC_REF : ULINT := 25569700;
+	nXDWN_ENC_REF : ULINT := 26702800;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
