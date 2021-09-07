@@ -29,18 +29,6 @@
 		full knowledge and understanding of what they do. *)
 		gBypassVirtualLimits	:	BOOL;
 	
-	//ModBus
-	/////////////////////////////////////
-	/// test mb_Input_Coils[0] with "modpoll -r 32769 -t 1 127.0.0.1" 
-	///mb_Input_Coils: ARRAY[0..255] OF BOOL;
-	/// test mb_Output_Coils[0] with "modpoll -r 32769 -t 0 127.0.0.1" 
-	//mb_Output_Coils: ARRAY[0..255] OF BOOL;
-	/// test mb_Input_Registers[0] with "modpoll -r 32769 -t 3 127.0.0.1" 
-	//mb_Input_Registers: ARRAY[0..255] OF WORD;
-	/// test mb_Output_Registers[0] with "modpoll -r 32769 -t 4 127.0.0.1" 
-	//mb_Output_Registers: ARRAY[0..255] OF WORD;
-	/// test mb_PLC_Memory[0] with "modpoll -r 12289 -t 4 127.0.0.1" 
-	//mb_PLC_Memory AT %MW0: ARRAY[0..1000] OF WORD;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

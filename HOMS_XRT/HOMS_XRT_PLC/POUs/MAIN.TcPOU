@@ -857,12 +857,6 @@ nEncRefPitchMR2L3 := LREAL_TO_UDINT(ABS(fEncRefPitchMR2L3_urad) * fEncLeverArm_m
 bXRT_M2_IN  := Main.MR1L4.fbRunHOMS.stXupEnc.Count < 25490840;
 bXRT_M2_OUT := not bXRT_M2_IN;
 
-//EPICS Tx Update
-////////////////////
-//p_ModbusTx_InputCoils();
-//p_ModbusTx_OutputCoils();//
-//p_ModbusTx_InputReg();
-//p_ModbusTx_PLCMemory();
 
 //PMPS
 PRG_CoatingProtection();
