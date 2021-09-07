@@ -4215,14 +4215,15 @@ External Setpoint Generation:
 			<Name>M1L4-Bender</Name>
 			<AxisPara>
 				<General UnitName="um"/>
-				<Dynamic Acceleration="150" Deceleration="150" DelayTime="0.008"/>
+				<Dynamic AccelerationMaximum="50" DecelerationMaximum="50" Acceleration="50" Deceleration="50" DelayTime="0.008"/>
 				<Velo Maximum="150"/>
 				<OtherSettings AllowMotionCmdToSlave="true"/>
 			</AxisPara>
 			<Encoder Name="Enc" EncType="29">
-				<EncPara ScaleFactorNumerator="0.001" Offset="-1.84467440737096e+16" Inverse="true" MaxCount="#xffffffff">
+				<EncPara ScaleFactorNumerator="0.001" Offset="-4295012.99" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-26500"/>
 					<SoftEndMaxControl Enable="true" Range="-16500"/>
+					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
