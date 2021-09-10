@@ -511,32 +511,6 @@ VAR
 	mcReadParameterPitchMR2L3 : MC_ReadParameter;
 	fEncRefPitchMR2L3_urad : LREAL; // Current Pitch encoder offset in urad
 	
-	//ELMO M2
-	//XRTM2PitchControl	    :	FB_PitchControlOld;
-
-	// Expert mode permits direct access to individual acutators.
-	//ExpertMode	:	BOOL := FALSE;
-	//PitchManualMode: BOOL := FALSE;
-	
-	//Limit switch evaluation blocks
-	
-
-	
-	
-	
-	//Init params trigger
-	//rtInitParams	:	R_TRIG;
-	
-	//Test Parameters
-	//rStepSize: REAL;
-	//SettleTime: TON := (
-	//PT:=T#2s);
-	//TestUpperVoltage: REAL := 100;
-	//TestLowerVoltage: REAL := 10;
-	//xRunPiezoRepeatTest: BOOL;
-
-	
-	//mcBenderPower	:	MC_POWER;
 	
 	// Common
 	fEncLeverArm_mm : LREAL := 513.0;
@@ -800,59 +774,6 @@ mcReadParameterPitchMR2L3(Axis:=M17.Axis,
 
 nEncRefPitchMR2L3 := LREAL_TO_UDINT(ABS(fEncRefPitchMR2L3_urad) * fEncLeverArm_mm);
 
-
-
-// ELMO
-//System IO
-/////////////////////////////
-//p_ModbusRx_OutputCoils();
-//p_ModbusRx_PLCMemory();
-
-
-//InitParams
-////////////////////
-//rtInitParams(CLK:=gFirstPass);
-//IF rtInitParams.Q THEN
-	//Init_XRTM2();
-	//gFirstPass := FALSE;
-//END_IF
-
-//System Error Handling
-/////////////////////////////////////
-//SystemErrorSummary(); //Check this action for a summary of all system faults
-					  
-//SystemError();
-
-//Driver Parameter Verification
-/////////////////////////////////////
-
-//Gantry Interlock Logic
-/////////////////////////////////////
-	//SimGantry.VAxis.i_xMotorInterlock := TRUE;
-	//SimGantry.PAxis.i_xMotorInterlock := TRUE;
-	//SimGantry.SAxis.i_xMotorInterlock := TRUE;
-
-//LimitSwitchIO();
-	
-// Pitch control
-/////////////////////////////////////
-//XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
-
-//Y motion
-/////////////////////////////////////
-//XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
-	
-//X Motion
-/////////////////////////////////////
-//XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
-//XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
-
-//Communicate state to MPS
-////////////////////////////////
-//fbMPS_States(GANTRY:=HOMS2_XGantry,
-//			 OUT_LS:=NOT HOMS2_XGantry.PAxis.xHiLS OR NOT HOMS2_XGantry.SAxis.xLoLS,
-//			 IN_RANGE:=M2_INRANGE,
-//			 OUT_RANGE:=M2_OUTRANGE);
 			 
 bXRT_M2_IN  := Main.MR1L4.fbRunHOMS.stXupEnc.Count < 25490840;
 bXRT_M2_OUT := not bXRT_M2_IN;

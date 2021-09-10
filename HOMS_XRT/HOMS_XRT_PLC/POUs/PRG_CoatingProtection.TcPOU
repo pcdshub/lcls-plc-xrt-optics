@@ -54,7 +54,7 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (Main.MR1L3.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
+	bMirrorIn := (Main.nEncCntXupMR1L3 > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
@@ -75,7 +75,7 @@ ELSE // Anything else in the middle of the range
 END_IF
 
 fbM2(
-	bMirrorIn := (Main.MR1L4.fbRunHOMS.stXupEnc.Count < 25490840), 
+	bMirrorIn := (Main.nEncCntXupMR1L4 < 25490840), 
     rCurrentEncoderPosition := Main.nEncCntYupMR1L4,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
