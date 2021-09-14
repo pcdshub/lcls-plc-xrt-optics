@@ -12,9 +12,12 @@ VAR
 	fbE621SerialDriver_MR2L3 : FB_PI_E621_SerialDriver;
 	rtInitParams_MR2L3	:	R_TRIG;
 	tonTimeoutRst_MR2L3	: TON := (PT:=T#2S); //For timeout reset
+	
+	fbE621SerialDriver_MR1L4 : FB_PI_E621_SerialDriver;
+	rtInitParams_MR2L4	:	R_TRIG;
+	tonTimeoutRst_MR2L4	: TON := (PT:=T#2S); //For timeout reset
 
-	//Elmo
-	fbE621SerialDriverM2 : FB_PI_E621_SerialDriverOld;
+
 	
 	rtInitParams	:	R_TRIG;
 	tonTimeoutRstM1	: TON := (PT:=T#2S); //For timeout reset
@@ -33,12 +36,11 @@ fbE621SerialDriver_MR1L3(iq_stPiezoAxis:= GVL_MR1L3.MR1L3_Pitch.Piezo,
 	
 //M2 Piezo E-621
 ///////////////////////
-	fbE621SerialDriverM2.i_xExecute := TRUE;
-	fbE621SerialDriverM2.i_xExecute R= fbE621SerialDriverM2.q_xDone;
-	fbE621SerialDriverM2(
-		iq_stPiezoAxis:= HOMS2_Pitch.Piezo, 
-		iq_stSerialRXBuffer:= Serial_P2_SerialRXBuffer, 
-		iq_stSerialTXBuffer:= Serial_P2_SerialTXBuffer);
+fbE621SerialDriver_MR1L4.i_xExecute := TRUE;
+fbE621SerialDriver_MR1L4.i_xExecute R= fbE621SerialDriver_MR1L4.q_xDone;
+fbE621SerialDriver_MR1L4(iq_stPiezoAxis:= GVL_MR1L4.MR1L4_Pitch.Piezo,
+		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L4,
+		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L4);
 		
 //MR2L3 Piezo E-621
 ///////////////////////

@@ -5,7 +5,8 @@
 VAR
 	//fbSerialLineControl_EL6001_P1: SerialLineControl;
 	fbSerialLineControl_EL6001_MR1L3: SerialLineControl; // M1 Serial Comm Function Block
-	fbSerialLineControl_EL6001_P2: SerialLineControl;
+	fbSerialLineControl_EL6001_MR1L4: SerialLineControl; // M1 Serial Comm Function Block
+
 	fbSerialLineControl_EL6001_MR2L3: SerialLineControl;
 END_VAR]]></Declaration>
     <Implementation>
@@ -24,15 +25,16 @@ fbSerialLineControl_EL6001_MR1L3(Mode:= SERIALLINEMODE_EL6_22B,
 						        Error=>,
 						        ErrorID=>);
 
-fbSerialLineControl_EL6001_P2(
-	Mode:= SERIALLINEMODE_EL6_22B (*SERIALLINEMODE_KL6_22B_STANDARD*),
-	pComIn:= ADR(Serial_P2_stComIn),
-	pComOut:=ADR(Serial_P2_stComOut) ,
-	SizeComIn:= SIZEOF(Serial_P2_stComIn),
-	TxBuffer:= Serial_P2_SerialTXBuffer,
-	RxBuffer:= Serial_P2_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );
+fbSerialLineControl_EL6001_MR1L4(Mode:= SERIALLINEMODE_EL6_22B,
+						        pComIn:= ADR(Serial_stComIn_MR1L4),
+						   	    pComOut:=ADR(Serial_stComOut_MR1L4),
+						        SizeComIn:= SIZEOF(Serial_stComIn_MR1L4),
+						        TxBuffer:= Serial_TXBuffer_MR1L4,
+						        RxBuffer:= Serial_RXBuffer_MR1L4,
+						        Error=>,
+						        ErrorID=>);
+
+
 
 fbSerialLineControl_EL6001_MR2L3(Mode:= SERIALLINEMODE_EL6_22B,
 						        pComIn:= ADR(Serial_stComIn_MR2L3),

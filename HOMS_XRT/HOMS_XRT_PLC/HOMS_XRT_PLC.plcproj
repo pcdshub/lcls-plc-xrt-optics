@@ -6,7 +6,7 @@
     <ProjectGuid>{d389f784-3772-48ea-848e-1d7f6efe4e9b}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <Name>HOMS_XRT_PLC</Name>
-    <ProgramVersion>3.1.4020.4</ProgramVersion>
+    <ProgramVersion>3.1.4022.7</ProgramVersion>
     <Application>{6782d19e-49e6-4e53-a280-fb39675852df}</Application>
     <TypeSystem>{bcee03c3-6843-469b-b208-f02b1b0e970f}</TypeSystem>
     <Implicit_Task_Info>{33acdab4-7164-4a43-b80e-435504d1638e}</Implicit_Task_Info>
@@ -156,13 +156,15 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_Devices.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GVLs\GVL_IO.TcGVL">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_MR1L3.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_MR1L4_Constants.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_MR1L4.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -194,37 +196,10 @@
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_MPS_STATES.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Main.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusRx_OutputCoils.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusRx_PLCMemory.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusTx_InputCoils.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusTx_InputReg.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusTx_OutputCoils.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Modbus\p_ModbusTx_PLCMemory.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\PRG_CoatingProtection.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\P_GantryDiffSup.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\P_MotionSup.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Serial Comm\PiezoSerial.TcPOU">
@@ -259,7 +234,6 @@
     <Folder Include="Common\POUs\Helpers" />
     <Folder Include="Common\POUs\HOMS_FBs" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\Modbus" />
     <Folder Include="TerminalStartupCommands" />
     <Folder Include="POUs\Serial Comm" />
     <Folder Include="VISUs" />

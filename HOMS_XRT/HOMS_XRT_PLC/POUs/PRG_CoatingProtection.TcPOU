@@ -54,7 +54,7 @@ END_VAR
       <ST><![CDATA[
 //M1
 fbM1(
-	bMirrorIn := (Main.MR1L3.fbRunHOMS.stXupEnc.Count > 20210500) , // according to confluence -6 is nominal out position
+	bMirrorIn := (Main.nEncCntXupMR1L3 > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
@@ -63,10 +63,10 @@ fbM1(
 	
 //M2
 //With M2 the same coating has different bit masks depending on the pitch
-IF (HOMS2_Pitch.diEncCnt < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
+IF (Main.nEncCntPitchMR1L4 < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
 	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
 	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
-ELSIF (HOMS2_Pitch.diEncCnt > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
+ELSIF (Main.nEncCntPitchMR1L4 > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
 	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(25000, 90000);  
 	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSE // Anything else in the middle of the range
@@ -75,8 +75,8 @@ ELSE // Anything else in the middle of the range
 END_IF
 
 fbM2(
-	bMirrorIn := (HOMS2_XGantry.PAxis.diEncCnt < 25490840), 
-    rCurrentEncoderPosition := HOMS2_YGantry.PAxis.diEncCnt,
+	bMirrorIn := (Main.nEncCntXupMR1L4 < 25490840), 
+    rCurrentEncoderPosition := Main.nEncCntYupMR1L4,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 

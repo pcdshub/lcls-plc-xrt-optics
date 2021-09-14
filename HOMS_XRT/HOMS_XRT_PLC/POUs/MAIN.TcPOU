@@ -177,6 +177,176 @@ VAR
 	nEncRefPitchMR1L3 : UDINT;
 	mcReadParameterPitchMR1L3 : MC_ReadParameter;
 	fEncRefPitchMR1L3_urad : LREAL; // Current Pitch encoder offset in urad
+	// MR1L4
+	// Motors
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Yup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Yup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:YUP
+	'}
+	M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m7 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:YDWN
+	'}
+	M8 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m8 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Xup]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Xup]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:XUP
+	'}
+	M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m9 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Xdwn]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Xdwn]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:XDWN
+	'}
+	M10 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	fbMotionStage_m10 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_PitchCoarse]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_PitchCoarse]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:PITCH
+	'}
+	M11 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L4 Pitch Stepper
+    fbMotionStage_m11 : FB_MotionStage;
+    
+    
+	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Bender]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Bender]^STM Status^Status^Digital input 2'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:MMS:BENDER
+	'}
+	M12 : DUT_MotionStage := (fVelocity:=150.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR1L4 Bender
+	fbMotionStage_m12 : FB_MotionStage;
+	
+	
+	{attribute 'TcLinkTo' := '.fbRunHOMS.bSTOEnable1:=TIIB[EL1004_M1L4_STO]^Channel 1^Input;
+                              .fbRunHOMS.bSTOEnable2:=TIIB[EL1004_M1L4_STO]^Channel 2^Input;
+	                          .fbRunHOMS.stYupEnc.Count:=TIIB[EL5042_M1L4_Yupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stYdwnEnc.Count:=TIIB[EL5042_M1L4_Yupdwn]^FB Inputs Channel 2^Position;
+	                          .fbRunHOMS.stXupEnc.Count:=TIIB[EL5042_M1L4_Xupdwn]^FB Inputs Channel 1^Position;
+	                          .fbRunHOMS.stXdwnEnc.Count:=TIIB[EL5042_M1L4_Xupdwn]^FB Inputs Channel 2^Position'}
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS
+	'}
+	MR1L4 : DUT_HOMS;
+	
+	
+	// Encoder Arrays/RMS Watch:
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:Y
+	'}
+	fbYRMSErrorMR1L4 : FB_RMSWatch;
+	fMaxYRMSErrorMR1L4 : LREAL;
+	fMinYRMSErrorMR1L4 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:X
+	'}
+	fbXRMSErrorMR1L4 : FB_RMSWatch;
+	fMaxXRMSErrorMR1L4 : LREAL;
+	fMinXRMSErrorMR1L4 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:PITCH
+	'}
+	fbPitchRMSErrorMR1L4 : FB_RMSWatch;
+	fMaxPitchRMSErrorMR1L4 : LREAL;
+	fMinPitchRMSErrorMR1L4 : LREAL;
+
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:BENDER
+	'}
+	fbBenderRMSErrorMR1L4 : FB_RMSWatch;
+	fMaxBenderRMSErrorMR1L4 : LREAL;
+	fMinBenderRMSErrorMR1L4 : LREAL;
+
+	// Pitch Control
+	fbMR1L4PitchControl : FB_PitchControl;
+	bMR1L4PitchDone : BOOL;
+	bMR1L4PitchBusy : BOOL;
+
+	// Bender Control
+	fbBenderMR1L4 : FB_Bender;
+
+	// Raw Encoder Counts
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:YUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYupMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:YDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntYdwnMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:XUP:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXupMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:XDWN:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntXdwnMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:PITCH:CNT
+		field: EGU cnt
+		io: i
+	'}
+	nEncCntPitchMR1L4 : UDINT;
+
+	// Encoder Reference Values
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:YUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYupMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:YDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefYdwnMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:XUP:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXupMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:XDWN:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefXdwnMR1L4 : UDINT;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:ENC:PITCH:REF
+		field: EGU cnt
+		io: i
+	'}
+	nEncRefPitchMR1L4 : UDINT;
+	mcReadParameterPitchMR1L4 : MC_ReadParameter;
+	fEncRefPitchMR1L4_urad : LREAL; // Current Pitch encoder offset in urad
 	
 // MR2L3 BECKHOFF
 // Motors
@@ -341,52 +511,6 @@ VAR
 	mcReadParameterPitchMR2L3 : MC_ReadParameter;
 	fEncRefPitchMR2L3_urad : LREAL; // Current Pitch encoder offset in urad
 	
-	//ELMO M2
-	XRTM2PitchControl	    :	FB_PitchControlOld;
-	XRTM2Y_GantryControl	:	FB_Gantry;
-	XRTM2X_GantryControl	:	FB_Gantry;
-
-	// Expert mode permits direct access to individual acutators.
-	ExpertMode	:	BOOL := FALSE;
-	PitchManualMode: BOOL := FALSE;
-	
-	//Limit switch evaluation blocks
-	
-	fbM2Y1LS	:	FB_LimitSwitchState;
-	fbM2Y2LS	:	FB_LimitSwitchState;
-	fbM2X1LS	:	FB_LimitSwitchState;
-	fbM2X2LS	:	FB_LimitSwitchState;
-	fbM2P1LS	:	FB_PitchSoftLimits;	
-	
-	//Drive CoE Fb
-	fbY1CoE	:	FB_ElmoGDCBellCoE;
-	fbY2CoE	:	FB_ElmoGDCBellCoE;
-	
-	fbX1CoE	:	FB_ElmoGDCBellCoE;
-	fbX2CoE	:	FB_ElmoGDCBellCoE;
-	
-	fbP1CoE	:	FB_ElmoGDCBellCoE;
-	fbB1CoE	:	FB_ElmoGDCBellCoE;
-	
-	//Init params trigger
-	rtInitParams	:	R_TRIG;
-	
-	//Test Parameters
-	rStepSize: REAL;
-	SettleTime: TON := (
-	PT:=T#2s);
-	TestUpperVoltage: REAL := 100;
-	TestLowerVoltage: REAL := 10;
-	xRunPiezoRepeatTest: BOOL;
-	
-	//Drive reference initializations
-	fbInitDriveRef	:	FB_InitDriveRefs;
-	//MPS Information
-	fbMPS_States :  FB_MPS_STATES;
-	M2_INRANGE  :   ARRAY[0..1] OF DINT := [24568920, 26568920];
-	M2_OUTRANGE  :  ARRAY[0..1] OF DINT := [43568250, 50570250];
-	
-	mcBenderPower	:	MC_POWER;
 	
 	// Common
 	fEncLeverArm_mm : LREAL := 513.0;
@@ -480,6 +604,89 @@ mcReadParameterPitchMR1L3(Axis:=M5.Axis,
 
 nEncRefPitchMR1L3 := LREAL_TO_UDINT(ABS(fEncRefPitchMR1L3_urad) * fEncLeverArm_mm);
 
+//Beckhoff MR1L4
+MR1L4.fbRunHOMS(stYup:=M7,
+               stYdwn:=M8,
+               stXup:=M9,
+               stXdwn:=M10,
+               stPitch:=M11,
+	           nYupEncRef:=GVL_MR1L4_Constants.nYUP_ENC_REF,
+               nYdwnEncRef:=GVL_MR1L4_Constants.nYDWN_ENC_REF,
+               nXupEncRef:=GVL_MR1L4_Constants.nXUP_ENC_REF,
+               nXdwnEncRef:=GVL_MR1L4_Constants.nXDWN_ENC_REF,
+			   bExecuteCoupleY:=MR1L4.bExecuteCoupleY,
+               bExecuteCoupleX:=MR1L4.bExecuteCoupleX,
+			   bExecuteDecoupleY:=MR1L4.bExecuteDecoupleY,
+               bExecuteDecoupleX:=MR1L4.bExecuteDecoupleX,
+               bGantryAlreadyCoupledY=>MR1L4.bGantryAlreadyCoupledY,
+               bGantryAlreadyCoupledX=>MR1L4.bGantryAlreadyCoupledX,
+               nCurrGantryY=>MR1L4.nCurrGantryY,
+               nCurrGantryX=>MR1L4.nCurrGantryX);
+fbBenderMR1L4(stBender:=M12,
+	         bSTOEnable1:=MR1L4.fbRunHOMS.bSTOEnable1,
+		     bSTOEnable2:=MR1L4.fbRunHOMS.bSTOEnable2);
+// No slave motion through Epics
+M8.bExecute := FALSE; // MR1L3-Ydwn
+M10.bExecute := FALSE; // MR1L3-Xdwn
+
+// Convert nCurrGantry to um (smaller number) to read out in epics
+MR1L4.fCurrGantryY_um := LINT_TO_REAL(MR1L4.nCurrGantryY) / 1000.0;
+MR1L4.fCurrGantryX_um := LINT_TO_REAL(MR1L4.nCurrGantryX) / 1000.0;
+
+// FB_MotionStage's for non-piezo axes
+fbMotionStage_m7(stMotionStage:=M7);
+fbMotionStage_m8(stMotionStage:=M8);
+fbMotionStage_m9(stMotionStage:=M9);
+fbMotionStage_m10(stMotionStage:=M10);
+fbMotionStage_m11(stMotionStage:=M11);
+fbMotionStage_m12(stMotionStage:=M12);
+
+// Calculate Pitch RMS Error:
+fbYRMSErrorMR1L4(stMotionStage:=M7,
+	            fMaxRMSError=>fMaxYRMSErrorMR1L4,
+				fMinRMSError=>fMinYRMSErrorMR1L4);
+
+fbXRMSErrorMR1L4(stMotionStage:=M9,
+	            fMaxRMSError=>fMaxXRMSErrorMR1L4,
+				fMinRMSError=>fMinXRMSErrorMR1L4);
+
+fbPitchRMSErrorMR1L4(stMotionStage:=M11,
+	                fMaxRMSError=>fMaxPitchRMSErrorMR1L4,
+					fMinRMSError=>fMinPitchRMSErrorMR1L4);
+
+fbBenderRMSErrorMR1L4(stMotionStage:=M12,
+	                 fMaxRMSError=>fMaxBenderRMSErrorMR1L4,
+					 fMinRMSError=>fMinBenderRMSErrorMR1L4);
+// Pitch Control
+//fbMR1L4PitchControl(Pitch:=GVL_M1L4.MR1L4_Pitch,
+				   //Stepper:=M11,
+				   //lrCurrentSetpoint:=M11.fPosition,
+                   //q_bDone=>bMR1L4PitchDone,
+                   //q_bBusy=>bMR1L4PitchBusy);
+// When STO hit, need to reset SP
+//IF NOT M11.bHardwareEnable THEN
+	//M11.fPosition := M11.stAxisStatus.fActPosition;
+//END_IF
+
+// Raw Encoder Counts For Epics
+nEncCntYupMR1L4 := ULINT_TO_UDINT(MR1L4.fbRunHOMS.stYupEnc.Count);
+nEncCntYdwnMR1L4 := ULINT_TO_UDINT(MR1L4.fbRunHOMS.stYdwnEnc.Count);
+nEncCntXupMR1L4 := ULINT_TO_UDINT(MR1L4.fbRunHOMS.stXupEnc.Count);
+nEncCntXdwnMR1L4 := ULINT_TO_UDINT(MR1L4.fbRunHOMS.stXdwnEnc.Count);
+nEncCntPitchMR1L4 := LINT_TO_UDINT(GVL_MR1L4.MR1L4_Pitch.diEncCnt);
+
+// Encoder Reference Values For Epics
+nEncRefYupMR1L4 := ULINT_TO_UDINT(GVL_MR1L4_Constants.nYUP_ENC_REF);
+nEncRefYdwnMR1L4 := ULINT_TO_UDINT(GVL_MR1L4_Constants.nYDWN_ENC_REF);
+nEncRefXupMR1L4 := ULINT_TO_UDINT(GVL_MR1L4_Constants.nXUP_ENC_REF);
+nEncRefXdwnMR1L4 := ULINT_TO_UDINT(GVL_MR1L4_Constants.nXDWN_ENC_REF);
+mcReadParameterPitchMR1L4(Axis:=M11.Axis,
+	                     Enable:=TRUE,
+				         ParameterNumber:=MC_AxisParameter.AxisEncoderOffset,
+				         ReadMode:=READMODE_CYCLIC,
+				         Value=>fEncRefPitchMR1L4_urad);
+
+nEncRefPitchMR1L4 := LREAL_TO_UDINT(ABS(fEncRefPitchMR1L4_urad) * fEncLeverArm_mm);
 
 //Beckhoff MR2L3
 // MR2L3
@@ -567,69 +774,10 @@ mcReadParameterPitchMR2L3(Axis:=M17.Axis,
 
 nEncRefPitchMR2L3 := LREAL_TO_UDINT(ABS(fEncRefPitchMR2L3_urad) * fEncLeverArm_mm);
 
-
-
-// ELMO
-//System IO
-/////////////////////////////
-p_ModbusRx_OutputCoils();
-p_ModbusRx_PLCMemory();
-
-
-//InitParams
-////////////////////
-rtInitParams(CLK:=gFirstPass);
-IF rtInitParams.Q THEN
-	Init_XRTM2();
-	gFirstPass := FALSE;
-END_IF
-
-//System Error Handling
-/////////////////////////////////////
-//SystemErrorSummary(); //Check this action for a summary of all system faults
-					  
-//SystemError();
-
-//Driver Parameter Verification
-/////////////////////////////////////
-
-//Gantry Interlock Logic
-/////////////////////////////////////
-	//SimGantry.VAxis.i_xMotorInterlock := TRUE;
-	//SimGantry.PAxis.i_xMotorInterlock := TRUE;
-	//SimGantry.SAxis.i_xMotorInterlock := TRUE;
-
-LimitSwitchIO();
-	
-// Pitch control
-/////////////////////////////////////
-XRTM2PitchControl(Pitch:=HOMS2_Pitch, DirectPiezoMode:=(ExpertMode AND PitchManualMode), q_xDone=>HOMS2_Pitch.Axis.bDone, q_xBusy => HOMS2_Pitch.Axis.bBusy);
-
-//Y motion
-/////////////////////////////////////
-XRTM2Y_GantryControl(Gantry:=HOMS2_YGantry);
-	
-//X Motion
-/////////////////////////////////////
-XRTM2X_GantryControl(Gantry:=HOMS2_XGantry);
-//XRTM3X_GantryControl(Gantry:=HOMS3_XGantry);
-
-//Communicate state to MPS
-////////////////////////////////
-fbMPS_States(GANTRY:=HOMS2_XGantry,
-			 OUT_LS:=NOT HOMS2_XGantry.PAxis.xHiLS OR NOT HOMS2_XGantry.SAxis.xLoLS,
-			 IN_RANGE:=M2_INRANGE,
-			 OUT_RANGE:=M2_OUTRANGE);
 			 
-bXRT_M2_IN  := fbMPS_States.IN;
-bXRT_M2_OUT := fbMPS_States.OUT;
+bXRT_M2_IN  := Main.MR1L4.fbRunHOMS.stXupEnc.Count < 25490840;
+bXRT_M2_OUT := not bXRT_M2_IN;
 
-//EPICS Tx Update
-////////////////////
-p_ModbusTx_InputCoils();
-//p_ModbusTx_OutputCoils();//
-p_ModbusTx_InputReg();
-p_ModbusTx_PLCMemory();
 
 //PMPS
 PRG_CoatingProtection();
@@ -638,88 +786,5 @@ PRG_CoatingProtection();
 // Logging
 fbLogHandler();]]></ST>
     </Implementation>
-    <Action Name="Init_XRTM2" Id="{5f4f0886-bfe6-466e-ab0f-beab0308d09d}">
-      <Implementation>
-        <ST><![CDATA[//FEE-M2
-///////////////////////////
-
-
-//Initialize ELMO Drive references
-fbInitDriveRef(stCoE:=HOMS2_XGantry.PAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS2_XGantry.SAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS2_YGantry.PAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS2_YGantry.SAxis.stCoE);
-fbInitDriveRef(stCoE:=HOMS2_Pitch.Stepper.stCoE);
-
-//Initialze Drive Speeds and Accelerations
-//////////////////////////////////////////
-HOMS2_XGantry.PAxis.fAcceleration := 1.0;
-HOMS2_XGantry.SAxis.fAcceleration := 1.0;
-HOMS2_YGantry.PAxis.fAcceleration := 1.0;
-HOMS2_YGantry.SAxis.fAcceleration := 1.0;
-
-HOMS2_XGantry.PAxis.fDeceleration := 1.0;
-HOMS2_XGantry.SAxis.fDeceleration := 1.0;
-HOMS2_YGantry.PAxis.fDeceleration := 1.0;
-HOMS2_YGantry.SAxis.fDeceleration := 1.0;
-
-HOMS2_XGantry.PAxis.fVelocity := 0.1;
-HOMS2_XGantry.SAxis.fVelocity := 0.1;
-HOMS2_YGantry.PAxis.fVelocity := 0.1;
-HOMS2_YGantry.SAxis.fVelocity := 0.1;
-
-HOMS2_Pitch.Stepper.fAcceleration := 39;
-HOMS2_Pitch.Stepper.fDeceleration := 39;
-HOMS2_Pitch.Stepper.fVelocity     := 100;
-
-//Initialize Piezo Driver
-/////////////////////////////////////
-HOMS2_Pitch.Piezo.stPIParams.fKp := 0.001;
-HOMS2_Pitch.Piezo.stPIParams.tTn := T#500MS;
-HOMS2_Pitch.Piezo.stPIParams.fOutMaxLimit := 1;
-HOMS2_Pitch.Piezo.stPIParams.fOutMinLimit := -1;
-
-// Initialize deadband settings
-HOMS2_Pitch.Stepper.rStepperDmovRange := 3;
-HOMS2_Pitch.Piezo.rPiezoDmovRange := 0.5;
-
-
-
-	
-
-
-]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="LimitSwitchIO" Id="{f9e468fa-ee02-4f8a-956e-139b70621257}">
-      <Implementation>
-        <ST><![CDATA[//XRT M2
-//////////////////////////
-fbM2Y1LS(diInputs:=HOMS2_YGantry.PAxis.diInputs, 
-xHiLS=>HOMS2_YGantry.PAxis.xHiLS,
-xLoLS=>HOMS2_YGantry.PAxis.xLoLS,
-STO => gM2STO);
-
-fbM2Y2LS(diInputs:=HOMS2_YGantry.SAxis.diInputs, 
-xHiLS=>HOMS2_YGantry.SAxis.xHiLS,
-xLoLS=>HOMS2_YGantry.SAxis.xLoLS);
-
-fbM2X1LS(diInputs:=HOMS2_XGantry.PAxis.diInputs, 
-xHiLS=>HOMS2_XGantry.PAxis.xHiLS,
-xLoLS=>HOMS2_XGantry.PAxis.xLoLS);
-
-fbM2X2LS(diInputs:=HOMS2_XGantry.SAxis.diInputs, 
-xHiLS=>HOMS2_XGantry.SAxis.xHiLS,
-xLoLS=>HOMS2_XGantry.SAxis.xLoLS);
-
-fbM2P1LS(Pitch:=HOMS2_Pitch,
-xHiLS=>HOMS2_Pitch.Stepper.xHiLS,
-xLoLS=>HOMS2_Pitch.Stepper.xLoLS);
-
-
-
-]]></ST>
-      </Implementation>
-    </Action>
   </POU>
 </TcPlcObject>
