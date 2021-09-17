@@ -1,0 +1,198 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 286
+y 161
+w 750
+h 445
+font "helvetica-medium-r-10.0"
+ctlFont "helvetica-medium-r-10.0"
+btnFont "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 18
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "LCLS Flat Mirrors"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 4
+y 268
+w 348
+h 84
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "LOC\\\\Window:Pv"
+pressValue "3"
+releaseValue "3"
+3d
+invisible
+font "helvetica-medium-r-10.0"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 268
+w 348
+h 84
+lineColor index 14
+fill
+fillColor index 5
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 4
+y 268
+w 348
+h 84
+lineColor index 14
+fillColor index 5
+lineWidth 2
+endObjectProperties
+
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 4
+y 270
+w 348
+h 84
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "MR1L4-HOMS (XRT M2)"
+numCmds 1
+command {
+  0 "./launch_mr1l4_ui.sh"
+}
+endObjectProperties
+
+
+
+
+
+
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 4
+y 4
+w 348
+h 84
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "MR1L0-HOMS"
+numCmds 1
+command {
+  0 "./launch_mr1l0_ui.sh"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 4
+y 92
+w 348
+h 84
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "MR2L0-HOMS"
+numCmds 1
+command {
+  0 "./launch_mr2l0_ui.sh"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 4
+y 180
+w 348
+h 84
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "MR1L3-HOMS"
+numCmds 1
+command {
+  0 "./launch_mr1l3_ui.sh"
+}
+endObjectProperties
+
+# (Shell Command)
+object shellCmdClass
+beginObjectProperties
+major 4
+minor 3
+release 0
+x 4
+y 356
+w 348
+h 84
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-bold-r-18.0"
+buttonLabel "MR2L3-HOMS"
+numCmds 1
+command {
+  0 "./launch_mr2l3_ui.sh"
+}
+endObjectProperties
+
