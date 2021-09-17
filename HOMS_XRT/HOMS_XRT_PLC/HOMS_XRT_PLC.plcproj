@@ -31,8 +31,10 @@
     </DeploymentEvents>
     <CombineIds>false</CombineIds>
     <Released>false</Released>
-    <ProjectVersion>1.0.0</ProjectVersion>
     <CompilerDefines>L</CompilerDefines>
+    <Company>SLAC</Company>
+    <Title>lcls-plc-xrt-optics</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
