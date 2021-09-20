@@ -98,7 +98,7 @@ font "helvetica-bold-r-18.0"
 buttonLabel "MR1L4-HOMS (XRT M2)"
 numCmds 1
 command {
-  0 "./launch_mr1l4_ui.sh"
+  0 "./homsScreens/launch_mr1l4_ui.sh"
 }
 endObjectProperties
 
@@ -126,7 +126,7 @@ font "helvetica-bold-r-18.0"
 buttonLabel "MR1L0-HOMS"
 numCmds 1
 command {
-  0 "./launch_mr1l0_ui.sh"
+  0 "./homsScreens/launch_mr1l0_ui.sh"
 }
 endObjectProperties
 
@@ -148,7 +148,7 @@ font "helvetica-bold-r-18.0"
 buttonLabel "MR2L0-HOMS"
 numCmds 1
 command {
-  0 "./launch_mr2l0_ui.sh"
+  0 "./homsScreens/launch_mr2l0_ui.sh"
 }
 endObjectProperties
 
@@ -170,7 +170,7 @@ font "helvetica-bold-r-18.0"
 buttonLabel "MR1L3-HOMS"
 numCmds 1
 command {
-  0 "./launch_mr1l3_ui.sh"
+  0 "./homsScreens/launch_mr1l3_ui.sh"
 }
 endObjectProperties
 
@@ -192,7 +192,7 @@ font "helvetica-bold-r-18.0"
 buttonLabel "MR2L3-HOMS"
 numCmds 1
 command {
-  0 "./launch_mr2l3_ui.sh"
+  0 "./homsScreens/launch_mr2l3_ui.sh"
 }
 endObjectProperties
 
