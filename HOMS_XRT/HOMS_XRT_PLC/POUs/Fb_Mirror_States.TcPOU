@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="Fb_Mirror_States" Id="{1bf259ba-2808-4470-b17d-c93edcb9e627}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Fb_Mirror_States EXTENDS FB_PositionStateBase_WithPMPS
+VAR_INPUT
+    enumSet : INT;
+    stM1L3in : DUT_PositionState;
+    stM1L3out : DUT_PositionState;
+    
+    stM1L3SiC : DUT_PositionState;
+    stM1L3W : DUT_PositionState;
+    
+    
+    
+    
+    
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
