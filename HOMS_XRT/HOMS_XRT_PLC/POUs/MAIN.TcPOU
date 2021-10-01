@@ -21,6 +21,7 @@ VAR
       field: ONST SiC ;
       field: TWST W ;
     '}
+    
     MR1L3_Coating_enumSet : ENUM_Coating_States;
     {attribute 'pytmc' := '
      pv: MR1L3:HOMS:MMS:YUP:STATE;
@@ -54,7 +55,35 @@ VAR
 		pv: MR1L3:HOMS:MMS:XUP
 	'}
 	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
-	fbMotionStage_m3 : FB_MotionStage;	
+	fbMotionStage_m3 : FB_MotionStage;
+    
+    MR1L3_In : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'IN',  
+        nEncoderCount := 25210740,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L3_Out : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'OUT',
+        nEncoderCount := 19210590,
+        fDelta := 1000,
+        fVelocity := 150);
+    
+   
+    
+    
+    {attribute 'pytmc' := '
+      pv : MR1L3:HOMS:MMS:XUP:STATE;
+      io : io;
+    '}
+    fbMR1L3_InOut_States : FB_PositionStateInOut;
+    
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 2'}
@@ -588,6 +617,13 @@ fbMR1L3_Coating_States(
 	stMotionStage:=M1
 	);
 MR1L3_Coating_enumSet := fbMR1L3_Coating_States.setState;
+
+
+fbMR1L3_InOut_States(
+    bEnable := TRUE,
+    stIn := MR1L3_In, 
+    stOut := MR1L3_out,
+    stMotionStage := M3);
 
 
 //M1L3 Mirror InOut States with PMPS

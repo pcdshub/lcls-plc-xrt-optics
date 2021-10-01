@@ -40,7 +40,7 @@ END_VAR
 	stM1L3SiC.bMoveOk := TRUE;
 	stM1L3SiC.bValid := TRUE;
 	stM1L3SiC.sName := sM1L3SiCType;
-	stM1L3SiC.fPosition := nM1L3SiCPosition;
+	stM1L3SiC.nEncoderCount := nM1L3SiCPosition;
 	stM1L3SiC.fDelta := fM1L3SiCDelta;
 	stM1L3SiC.fVelocity := fM1L3SiCVelocity;
 	
@@ -48,7 +48,7 @@ END_VAR
 	stM1L3W.bMoveOk := TRUE;
 	stM1L3W.bValid := TRUE;
 	stM1L3W.sName := sM1L3WType;
-	stM1L3W.fPosition := nM1L3WPosition;
+	stM1L3W.nEncoderCount := nM1L3WPosition;
 	stM1L3W.fDelta := fM1L3WDelta;
 	stM1L3W.fVelocity := fM1L3WVelocity;
 	
