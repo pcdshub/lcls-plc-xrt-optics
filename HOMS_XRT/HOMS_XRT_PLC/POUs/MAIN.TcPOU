@@ -74,11 +74,9 @@ VAR
         nEncoderCount := 19210590,
         fDelta := 1000,
         fVelocity := 150);
-    
-   
     {attribute 'pytmc' := '
-      pv: MR1L3:HOMS:MMS:XUP:STATE;
-      io: io;
+      pv: MR1L3:HOMS:MMS:XUP:STATE
+      io: io
     '}
     fbMR1L3_InOut_States : FB_PositionStateInOut;
     
