@@ -37,7 +37,10 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\DUTs\ENUM_Mirror_State.TcDUT">
+    <Compile Include="Common\DUTs\ENUM_Coating_States.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\DUTs\ENUM_MirrorInOut_States.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">

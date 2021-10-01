@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ENUM_MirrorInOut_States" Id="{a0f2074b-5cdf-4540-b535-3ccd590f1f9e}">
+    <Declaration><![CDATA[TYPE ENUM_MirrorInOut_States :
+(
+    Unknown := 0,
+    In := 1,
+    Out := 2
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

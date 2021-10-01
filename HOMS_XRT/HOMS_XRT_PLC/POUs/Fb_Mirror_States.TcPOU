@@ -4,24 +4,91 @@
     <Declaration><![CDATA[FUNCTION_BLOCK Fb_Mirror_States EXTENDS FB_PositionStateBase_WithPMPS
 VAR_INPUT
     enumSet : INT;
-    stM1L3in : DUT_PositionState;
-    stM1L3out : DUT_PositionState;
+    stM1L3IN : DUT_PositionState;
+    stM1L3OUT : DUT_PositionState;
     
     stM1L3SiC : DUT_PositionState;
     stM1L3W : DUT_PositionState;
-    
-    
-    
-    
+	
+	sM1L3INType : STRING := '';
+	nM1L3INPosition : UDINT;
+	fM1L3INDelta : LREAL;
+	fM1L3INVelocity : LREAL;
+	
+	sM1L3OUTType : STRING := '';
+	nM1L3OUTPosition : UDINT;
+	fM1L3OUTDelta : LREAL;
+	fM1L3OUTVelocity : LREAL;
+	
+	sM1L3SiCType : STRING := '';
+	nM1L3SiCPosition : UDINT;
+	fM1L3SiCDelta : LREAL;
+	fM1L3SiCVelocity : LREAL;
+	
+	sM1L3WType : STRING := '';
+	nM1L3WPosition : UDINT;
+	fM1L3WDelta : LREAL;
+	fM1L3WVelocity : LREAL;    
     
 END_VAR
 VAR_OUTPUT
-END_VAR
+	{attribute 'pytmc' := '
+      pv: GET;
+      io: i;
+    '}
+    enumGet : ENUM_MirrorInOut_States;
+  END_VAR
 VAR
+	bInitState : BOOL := TRUE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[if bInitState THEN
+	bInitState := FALSE;
+	
+	stM1L3IN.bUseRawCounts := True;
+	stM1L3IN.bMoveOk := TRUE;
+	stM1L3IN.bValid := TRUE;
+	stM1L3IN.sName := sM1L3INType;
+	stM1L3IN.fPosition := nM1L3INPosition;
+	stM1L3IN.fDelta := fM1L3INDelta;
+	stM1L3IN.fVelocity := fM1L3INVelocity;
+	
+	stM1L3OUT.bUseRawCounts := True;
+	stM1L3OUT.bMoveOk := TRUE;
+	stM1L3OUT.bValid := TRUE;
+	stM1L3OUT.sName := sM1L3OUTType;
+	stM1L3OUT.fPosition := nM1L3OUTPosition;
+	stM1L3OUT.fDelta := fM1L3OUTDelta;
+	stM1L3OUT.fVelocity := fM1L3OUTVelocity;
+	
+    stM1L3SiC.bUseRawCounts := True;
+	stM1L3SiC.bMoveOk := TRUE;
+	stM1L3SiC.bValid := TRUE;
+	stM1L3SiC.sName := sM1L3SiCType;
+	stM1L3SiC.fPosition := nM1L3SiCPosition;
+	stM1L3SiC.fDelta := fM1L3SiCDelta;
+	stM1L3SiC.fVelocity := fM1L3SiCVelocity;
+	
+	stM1L3W.bUseRawCounts := True;
+	stM1L3W.bMoveOk := TRUE;
+	stM1L3W.bValid := TRUE;
+	stM1L3W.sName := sM1L3WType;
+	stM1L3W.fPosition := nM1L3WPosition;
+	stM1L3W.fDelta := fM1L3WDelta;
+	stM1L3W.fVelocity := fM1L3WVelocity;
+	
+	arrStates[1] := stM1L3IN;
+	arrStates[2] := stM1L3OUT;
+	arrStates[3] := stM1L3SiC;
+	arrStates[4] := stM1L3W;
+END_IF
+
+setState := enumSet;
+Exec();
+enumGet := getState;
+enumSet := setState;
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
