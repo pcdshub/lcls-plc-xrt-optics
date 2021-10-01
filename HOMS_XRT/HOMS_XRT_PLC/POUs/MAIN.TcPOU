@@ -39,11 +39,6 @@ VAR
         fM1L3WVelocity := 150
         );	
 
-
-
-
-
-	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
