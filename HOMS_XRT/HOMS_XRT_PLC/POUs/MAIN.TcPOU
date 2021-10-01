@@ -56,28 +56,7 @@ VAR
 		pv: MR1L3:HOMS:MMS:XUP
 	'}
 	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
-	fbMotionStage_m3 : FB_MotionStage;
-	{attribute 'pytmc' := '
-      pv: MR1L3:HOMS:MMS:XUP:STATE:SET;
-      io: io;
-    '}
-    MR1L3_InOut_enumSet : ENUM_MirrorInOut_States;
-    {attribute 'pytmc' := '
-     pv: MR1L3:HOMS:MMS:XUP:STATE;
-     io: io;
-     '}
-	 fbMR1L3_InOut_States: FB_Mirror_States := (
-     bEnable := TRUE,
-     sM1L3INtype := 'IN',
-     nM1L3INPosition := 25210740,
-     fM1L3INDelta := 1000,
-     fM1L3INVelocity := 150,
-        
-     sM1L3OUTtype := 'OUT',
-     nM1L3OUTPosition := 19210590,
-     fM1L3OUTDelta := 1000,
-     fM1L3OUTVelocity := 150
-      );	
+	fbMotionStage_m3 : FB_MotionStage;	
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 2'}
@@ -614,14 +593,7 @@ MR1L3_Coating_enumSet := fbMR1L3_Coating_States.setState;
 
 
 //M1L3 Mirror InOut States with PMPS
-M3.bPowerSelf := FALSE;
-fbMR1L3_InOut_States(
-	enumSet := MR1L3_InOut_enumSet,
-	fbArbiter :=GVL_PMPS.g_fbArbiter1,
-	fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
-	stMotionStage:=M3
-	);
-MR1L3_InOut_enumSet := fbMR1L3_InOut_States.setState;
+
 // Calculate Pitch RMS Error:
 fbYRMSErrorMR1L3(stMotionStage:=M1,
 	            fMaxRMSError=>fMaxYRMSErrorMR1L3,

@@ -45,23 +45,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[if bInitState THEN
 	bInitState := FALSE;
-	
-	stM1L3IN.bUseRawCounts := True;
-	stM1L3IN.bMoveOk := TRUE;
-	stM1L3IN.bValid := TRUE;
-	stM1L3IN.sName := sM1L3INType;
-	stM1L3IN.fPosition := nM1L3INPosition;
-	stM1L3IN.fDelta := fM1L3INDelta;
-	stM1L3IN.fVelocity := fM1L3INVelocity;
-	
-	stM1L3OUT.bUseRawCounts := True;
-	stM1L3OUT.bMoveOk := TRUE;
-	stM1L3OUT.bValid := TRUE;
-	stM1L3OUT.sName := sM1L3OUTType;
-	stM1L3OUT.fPosition := nM1L3OUTPosition;
-	stM1L3OUT.fDelta := fM1L3OUTDelta;
-	stM1L3OUT.fVelocity := fM1L3OUTVelocity;
-	
+
     stM1L3SiC.bUseRawCounts := True;
 	stM1L3SiC.bMoveOk := TRUE;
 	stM1L3SiC.bValid := TRUE;
@@ -78,10 +62,9 @@ END_VAR
 	stM1L3W.fDelta := fM1L3WDelta;
 	stM1L3W.fVelocity := fM1L3WVelocity;
 	
-	arrStates[1] := stM1L3IN;
-	arrStates[2] := stM1L3OUT;
-	arrStates[3] := stM1L3SiC;
-	arrStates[4] := stM1L3W;
+
+	arrStates[1] := stM1L3SiC;
+	arrStates[2] := stM1L3W;
 END_IF
 
 setState := enumSet;
