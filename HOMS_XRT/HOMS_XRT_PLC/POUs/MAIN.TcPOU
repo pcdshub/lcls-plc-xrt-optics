@@ -76,11 +76,9 @@ VAR
         fVelocity := 150);
     
    
-    
-    
     {attribute 'pytmc' := '
-      pv : MR1L3:HOMS:MMS:XUP:STATE;
-      io : io;
+      pv: MR1L3:HOMS:MMS:XUP:STATE;
+      io: io;
     '}
     fbMR1L3_InOut_States : FB_PositionStateInOut;
     
@@ -622,7 +620,7 @@ MR1L3_Coating_enumSet := fbMR1L3_Coating_States.setState;
 fbMR1L3_InOut_States(
     bEnable := TRUE,
     stIn := MR1L3_In, 
-    stOut := MR1L3_out,
+    stOut := MR1L3_Out,
     stMotionStage := M3);
 
 
