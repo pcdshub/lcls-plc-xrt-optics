@@ -4,21 +4,11 @@
     <Declaration><![CDATA[FUNCTION_BLOCK Fb_Mirror_States EXTENDS FB_PositionStateBase_WithPMPS
 VAR_INPUT
     enumSet : INT;
-    stM1L3IN : DUT_PositionState;
-    stM1L3OUT : DUT_PositionState;
+
     
     stM1L3SiC : DUT_PositionState;
     stM1L3W : DUT_PositionState;
-	
-	sM1L3INType : STRING := '';
-	nM1L3INPosition : UDINT;
-	fM1L3INDelta : LREAL;
-	fM1L3INVelocity : LREAL;
-	
-	sM1L3OUTType : STRING := '';
-	nM1L3OUTPosition : UDINT;
-	fM1L3OUTDelta : LREAL;
-	fM1L3OUTVelocity : LREAL;
+
 	
 	sM1L3SiCType : STRING := '';
 	nM1L3SiCPosition : UDINT;
@@ -36,7 +26,7 @@ VAR_OUTPUT
       pv: GET;
       io: i;
     '}
-    enumGet : ENUM_MirrorInOut_States;
+    enumGet : ENUM_Coating_States;
   END_VAR
 VAR
 	bInitState : BOOL := TRUE;
@@ -46,7 +36,7 @@ END_VAR
       <ST><![CDATA[if bInitState THEN
 	bInitState := FALSE;
 
-    stM1L3SiC.bUseRawCounts := True;
+    stM1L3SiC.bUseRawCounts := TRUE;
 	stM1L3SiC.bMoveOk := TRUE;
 	stM1L3SiC.bValid := TRUE;
 	stM1L3SiC.sName := sM1L3SiCType;
@@ -54,7 +44,7 @@ END_VAR
 	stM1L3SiC.fDelta := fM1L3SiCDelta;
 	stM1L3SiC.fVelocity := fM1L3SiCVelocity;
 	
-	stM1L3W.bUseRawCounts := True;
+	stM1L3W.bUseRawCounts := TRUE;
 	stM1L3W.bMoveOk := TRUE;
 	stM1L3W.bValid := TRUE;
 	stM1L3W.sName := sM1L3WType;

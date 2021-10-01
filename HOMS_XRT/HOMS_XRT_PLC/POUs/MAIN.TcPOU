@@ -17,6 +17,9 @@ VAR
 	{attribute 'pytmc' := '
       pv: MR1L3:HOMS:MMS:YUP:STATE:SET;
       io: io;
+      field: ZRST Unknown ;
+      field: ONST SiC ;
+      field: TWST W ;
     '}
     MR1L3_Coating_enumSet : ENUM_Coating_States;
     {attribute 'pytmc' := '
