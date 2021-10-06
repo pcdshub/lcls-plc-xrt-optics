@@ -7,7 +7,7 @@ VAR_INPUT
         pv: SET
         io: io
     '}
-    enumSet : INT;
+    enumSet : ENUM_Coating_States;
 
     
     stM1L3SiC : DUT_PositionState;
