@@ -22,7 +22,6 @@ VAR
     //MR1L3_Coating_enumSet : ENUM_Coating_States;
     {attribute 'pytmc' := '
      pv: MR1L3:HOMS:MMS:YUP:STATE;
-     io: io;
      '}
     fbMR1L3_Coating_States: FB_Mirror_States := (
         bEnable := TRUE,
