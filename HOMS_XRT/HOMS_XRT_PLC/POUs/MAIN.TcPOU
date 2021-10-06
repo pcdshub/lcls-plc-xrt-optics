@@ -6,11 +6,6 @@ VAR
 	tpImAPLC : TP := (PT:=T#10S);
 	
 	// MR1L3
-    {attribute 'pytmc' := '
-        pv: MR1L3:HOMS:DESC
-        field: NMDS MR1L3-XRTM1;
-     '}
-    // MR1L3Desc : STRING := ('XRTM1 MR1L3');
 	// Motors
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Yup]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Yup]^STM Status^Status^Digital input 2'}
