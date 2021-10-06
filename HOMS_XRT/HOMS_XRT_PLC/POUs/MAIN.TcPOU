@@ -608,11 +608,11 @@ fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
 //M1L3 Coating States with PMPS
-M1.bPowerSelf := FALSE;
+//M1.bPowerSelf := FALSE;
 fbMR1L3_Coating_States(
 	enumSet := MR1L3_Coating_enumSet,
-	fbArbiter :=GVL_PMPS.g_fbArbiter1,
-	fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
+	//fbArbiter :=GVL_PMPS.g_fbArbiter1,
+	//fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
 	stMotionStage:=M1
 	);
 MR1L3_Coating_enumSet := fbMR1L3_Coating_States.setState;
