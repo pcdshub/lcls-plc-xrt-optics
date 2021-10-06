@@ -1,0 +1,1162 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 894
+y 551
+w 364
+h 268
+font "helvetica-medium-r-10.0"
+ctlFont "helvetica-medium-r-10.0"
+btnFont "helvetica-medium-r-10.0"
+fgColor index 14
+bgColor index 7
+textColor index 14
+ctlFgColor1 index 25
+ctlFgColor2 index 18
+ctlBgColor1 index 3
+ctlBgColor2 index 5
+topShadowColor index 1
+botShadowColor index 11
+title "HOMS Gantry - $(GANTRY)"
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x -36
+y 0
+w 472
+h 272
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 208
+y 144
+w 16
+h 16
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M2):LLS"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 316
+y 144
+w 16
+h 16
+lineColor index 39
+lineAlarm
+fill
+fillColor index 39
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 192
+y 132
+w 156
+h 100
+lineColor index 6
+fillColor index 3
+lineWidth 2
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 208
+y 144
+w 16
+h 16
+lineColor index 39
+lineAlarm
+fill
+fillColor index 39
+visInvert
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 316
+y 144
+w 16
+h 16
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M2):HLS"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 132
+w 156
+h 100
+lineColor index 6
+fillColor index 3
+lineWidth 2
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 8
+y 272
+w 472
+h 64
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 16
+y 288
+w 296
+h 40
+lineColor index 8
+fillColor index 3
+endObjectProperties
+
+# (Exit Button)
+object activeExitButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 416
+y 16
+w 48
+h 24
+fgColor index 14
+bgColor index 4
+topShadowColor index 1
+botShadowColor index 11
+label "Exit"
+font "helvetica-medium-r-12.0"
+3d
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 416
+y 144
+w 24
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(AXIS):TWF"
+pressValue "1"
+onLabel "+"
+offLabel "+"
+3d
+useEnumNumeric
+font "courier-medium-r-14.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 336
+y 284
+w 64
+h 32
+fgColor index 35
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "STEP:$(dev):MOTR.STOP"
+pressValue "1"
+onLabel "STOP"
+offLabel "STOP"
+3d
+useEnumNumeric
+font "helvetica-bold-r-18.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 424
+y 112
+w 16
+h 24
+controlPv "$(AXIS):VAL.EGU"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 3
+useDisplayBg
+nullColor index 18
+nullCondition "nullEq0"
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 448
+y 128
+w 16
+h 16
+controlPv "STEP:$(dev):MOTR.LLM"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 3
+useDisplayBg
+limitsFromDb
+nullColor index 18
+nullCondition "nullEq0"
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 448
+y 104
+w 16
+h 16
+controlPv "STEP:$(dev):MOTR.HLM"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 3
+useDisplayBg
+limitsFromDb
+nullColor index 18
+nullCondition "nullEq0"
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 344
+y 336
+w 128
+h 24
+controlPv "IOC:$(I):TOD"
+precision 1
+fgColor index 14
+fgAlarm
+bgColor index 12
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 244
+y 336
+w 104
+h 24
+font "helvetica-medium-r-12.0"
+fontAlign "right"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "IOC:$(I)"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 364
+y 296
+w 66
+h 24
+fgColor index 14
+bgColor index 3
+topShadowColor index 1
+botShadowColor index 11
+font "helvetica-medium-r-10.0"
+buttonLabel "Expert"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "x_lvdt"
+}
+setPosition {
+  0 "button"
+}
+symbols {
+  0 "I=$(I),DEV=LVDT:$(dev),MOT=STEP:$(dev)"
+}
+replaceSymbols {
+  0 1
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 144
+w 16
+h 16
+lineColor index 39
+lineAlarm
+fill
+fillColor index 39
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 32
+y 144
+w 16
+h 16
+lineColor index 39
+lineAlarm
+fill
+fillColor index 39
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 32
+y 144
+w 16
+h 16
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M1):LLS"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 144
+w 16
+h 16
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M1):HLS"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 56
+y 296
+w 80
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Gantry Fault"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 172
+y 296
+w 100
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Safe Torque Off"
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 140
+y 300
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 15
+alarmPv "$(GANTRY):FAULT"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 284
+y 300
+w 16
+h 16
+lineColor index 14
+lineAlarm
+fill
+fillColor index 15
+fillAlarm
+alarmPv "$(AXIS):INTERLOCK"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 1
+x 216
+y 224
+w 2
+h 2
+lineColor index 28
+fillColor index 3
+lineWidth 2
+numPoints 0
+xPoints {
+}
+yPoints {
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 448
+y 144
+w 16
+h 24
+controlPv "$(AXIS):VAL.EGU"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 3
+useDisplayBg
+nullColor index 18
+nullCondition "nullEq0"
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 424
+y 176
+w 16
+h 24
+controlPv "$(AXIS):VELO.EGU"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor index 14
+fgAlarm
+bgColor index 3
+useDisplayBg
+nullColor index 18
+nullCondition "nullEq0"
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 52
+y 140
+w 84
+h 24
+controlPv "$(M1):RBV"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 404
+y 164
+w 16
+h 16
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "+"
+}
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 388
+y 164
+w 16
+h 16
+lineColor index 35
+lineAlarm
+fill
+fillColor index 35
+visPv "$(M1):HLS"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 52
+y 28
+w 260
+h 16
+lineColor index 14
+fill
+fillColor index 7
+lineWidth 2
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 52
+y 52
+w 260
+h 80
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 224
+y 52
+w 88
+h 80
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 224
+y 108
+w 88
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(M2)"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 260
+y 52
+w 16
+h 52
+lineColor index 14
+fill
+fillColor index 12
+lineWidth 2
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 52
+w 104
+h 48
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 130
+y 52
+w 104
+h 24
+font "helvetica-medium-r-12.0"
+fgColor index 14
+fgAlarm
+bgColor index 0
+useDisplayBg
+alarmPv "$(GANTRY):FAULT"
+value {
+  "Gantry Difference"
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 138
+y 76
+w 84
+h 24
+controlPv "$(GANTRY):GDIF"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 52
+y 52
+w 88
+h 80
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 52
+y 108
+w 88
+h 24
+font "helvetica-bold-r-12.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(M1)"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 88
+y 52
+w 16
+h 52
+lineColor index 14
+fill
+fillColor index 12
+lineWidth 2
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 52
+y 168
+w 84
+h 24
+controlPv "$(M1):VAL"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+nullColor index 18
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 28
+y 196
+w 24
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(M1):TWB"
+pressValue "1"
+releaseValue "0"
+onLabel "-"
+offLabel "-"
+3d
+useEnumNumeric
+font "courier-medium-r-14.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 136
+y 196
+w 24
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(M1):TWF"
+pressValue "1"
+releaseValue "0"
+onLabel "+"
+offLabel "+"
+3d
+useEnumNumeric
+font "courier-medium-r-14.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 52
+y 196
+w 84
+h 24
+controlPv "$(M1):TWK"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 228
+y 140
+w 84
+h 24
+controlPv "$(M2):RBV"
+font "courier-medium-r-12.0"
+fontAlign "center"
+fgColor index 15
+fgAlarm
+bgColor index 12
+limitsFromDb
+nullColor index 18
+showUnits
+newPos
+objType "monitors"
+noExecuteClipMask
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 204
+y 168
+w 132
+h 52
+
+beginGroup
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 312
+y 196
+w 24
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(M2):TWF"
+pressValue "1"
+releaseValue "0"
+onLabel "+"
+offLabel "+"
+3d
+useEnumNumeric
+font "courier-medium-r-14.0"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 204
+y 196
+w 24
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(M2):TWB"
+pressValue "1"
+releaseValue "0"
+onLabel "-"
+offLabel "-"
+3d
+useEnumNumeric
+font "courier-medium-r-14.0"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 228
+y 196
+w 84
+h 24
+controlPv "$(M2):TWK"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+nullColor index 18
+fastUpdate
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 228
+y 168
+w 84
+h 24
+controlPv "$(M2):VAL"
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor index 25
+bgColor index 7
+editable
+motifWidget
+limitsFromDb
+nullColor index 18
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+endGroup
+
+visPv "$(GANTRY):DECOUPLE"
+visMin "0.99"
+visMax "100"
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 120
+y 240
+w 124
+h 24
+fgColor index 14
+onColor index 3
+offColor index 3
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(GANTRY):DECOUPLE"
+pressValue "0"
+onLabel "Couple"
+offLabel "Couple"
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+visPv "$(GANTRY):DECOUPLE"
+visMin "0.99"
+visMax "100"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 52
+y 4
+w 260
+h 20
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "$(GANTRY)"
+}
+endObjectProperties
+
