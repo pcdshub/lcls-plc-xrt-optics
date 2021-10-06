@@ -18,14 +18,7 @@ VAR
 	'}
 	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
-	{attribute 'pytmc' := '
-      pv: MR1L3:HOMS:MMS:YUP:STATE:SET;
-      io: io;
-      field: ZRST Unknown ;
-      field: ONST SiC ;
-      field: TWST W ;
-    '}
-    
+
     MR1L3_Coating_enumSet : ENUM_Coating_States;
     {attribute 'pytmc' := '
      pv: MR1L3:HOMS:MMS:YUP:STATE;
@@ -609,6 +602,7 @@ fbMotionStage_m6(stMotionStage:=M6);
 
 //M1L3 Coating States with PMPS
 M1.bPowerSelf := FALSE;
+
 fbMR1L3_Coating_States(
 	enumSet := MR1L3_Coating_enumSet,
 	fbArbiter :=GVL_PMPS.g_fbArbiter1,

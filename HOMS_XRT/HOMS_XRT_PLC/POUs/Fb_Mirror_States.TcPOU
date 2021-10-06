@@ -3,6 +3,10 @@
   <POU Name="Fb_Mirror_States" Id="{1bf259ba-2808-4470-b17d-c93edcb9e627}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK Fb_Mirror_States EXTENDS FB_PositionStateBase_WithPMPS
 VAR_INPUT
+	{attribute 'pytmc' := '
+        pv: SET
+        io: io
+    '}
     enumSet : INT;
 
     
