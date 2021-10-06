@@ -8,7 +8,7 @@ VAR
 	// MR1L3
     {attribute 'pytmc' := '
         pv: MR1L3:HOMS:DESC
-        field: NAME MR1L3-XRTM1;
+        field: NMDS MR1L3-XRTM1;
      '}
     // MR1L3Desc : STRING := ('XRTM1 MR1L3');
 	// Motors
