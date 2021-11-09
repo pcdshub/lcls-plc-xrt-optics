@@ -27,18 +27,36 @@ VAR
      pv: MR1L3:HOMS:MMS:YUP:STATE;
      io: io;
      '}
-    fbMR1L3_Coating_States: FB_Mirror_States := (
-        bEnable := TRUE,
-        sM1L3SiCtype := 'SiC',
-        nM1L3SiCPosition := 8611100,
-        fM1L3SiCDelta := 1000,
-        fM1L3SiCVelocity := 150,
+    fbMR1L3_Coating_States: FB_Coating_States; 
+        //(
+        //bEnable := TRUE,
+        //sM1L3SiCtype := 'SiC',
+        //nM1L3SiCPosition := 8611100,
+        //fM1L3SiCDelta := 1000,
+        //fM1L3SiCVelocity := 150,
         
-        sM1L3Wtype := 'W',
-        nM1L3WPosition := 18611220,
-        fM1L3WDelta := 1000,
-        fM1L3WVelocity := 150
-        );	
+        //sM1L3Wtype := 'W',
+        //nM1L3WPosition := 18611220,
+        //fM1L3WDelta := 1000,
+        //fM1L3WVelocity := 150
+        //);	
+    MR1L3_SiC : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'SiC',  
+        nEncoderCount := 8611100,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L3_W : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'W',  
+        nEncoderCount := 18611220,
+        fDelta := 1000,
+        fVelocity := 150);
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 2'}
@@ -607,6 +625,8 @@ fbMotionStage_m6(stMotionStage:=M6);
 //M1.bPowerSelf := FALSE;
 fbMR1L3_Coating_States(
 	enumSet := MR1L3_Coating_enumSet,
+    stCoating1 := MR1L3_SiC,
+    stCoating2 := MR1L3_W, 
 	//fbArbiter :=GVL_PMPS.g_fbArbiter1,
 	//fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
 	stMotionStage:=M1
