@@ -15,24 +15,12 @@ VAR
 	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
 
-    //MR1L3_Coating_enumSet : ENUM_Coating_States;
     {attribute 'pytmc' := '
      pv: MR1L3:HOMS:MMS:YUP:STATE;
      io: io;
      '}
     fbMR1L3_Coating_States: FB_Coating_States; 
-        //(
-        //bEnable := TRUE,
-        //sM1L3SiCtype := 'SiC',
-        //nM1L3SiCPosition := 8611100,
-        //fM1L3SiCDelta := 1000,
-        //fM1L3SiCVelocity := 150,
-        
-        //sM1L3Wtype := 'W',
-        //nM1L3WPosition := 18611220,
-        //fM1L3WDelta := 1000,
-        //fM1L3WVelocity := 150
-        //);	
+
     MR1L3_SiC : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
@@ -618,15 +606,10 @@ fbMotionStage_m6(stMotionStage:=M6);
 //M1.bPowerSelf := FALSE;
 fbMR1L3_Coating_States(
     bEnable := TRUE,
-	//enumSet := MR1L3_Coating_enumSet,
     stCoating1 := MR1L3_SiC,
     stCoating2 := MR1L3_W, 
-	//fbArbiter :=GVL_PMPS.g_fbArbiter1,
-	//fbFFHWO:=GVL_PMPS.g_FastFaultOutput1,
 	stMotionStage:=M1
 	);
-//MR1L3_Coating_enumSet := fbMR1L3_Coating_States.setState;
-
 
 fbMR1L3_InOut_States(
     bEnable := TRUE,
