@@ -4010,10 +4010,10 @@ External Setpoint Generation:
 				<EncPara ScaleFactorNumerator="0.001949317739" Offset="-19152.5" MaxCount="#xffffffff">
 					<FilterTime TPos="0.2"/>
 					<SoftEndMinControl Enable="true" Range="-900"/>
-					<SoftEndMaxControl Enable="true" Range="950"/>
+					<SoftEndMaxControl Enable="true" Range="1000"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
 					<ParameterChanged>14</ParameterChanged>
-					<ParameterChanged>13</ParameterChanged>
+					<ParameterChanged>12</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
