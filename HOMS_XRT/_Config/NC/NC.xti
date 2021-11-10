@@ -3375,7 +3375,6 @@ External Setpoint Generation:
 					<SoftEndMinControl Enable="true" Range="-11000"/>
 					<SoftEndMaxControl Enable="true" Range="12075"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
-					<ParameterChanged>14</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -3800,7 +3799,6 @@ External Setpoint Generation:
 					<SoftEndMinControl Enable="true" Range="-2050"/>
 					<SoftEndMaxControl Enable="true" Range="18500"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
-					<ParameterChanged>13</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -4011,9 +4009,11 @@ External Setpoint Generation:
 			<Encoder Name="Enc" EncType="29">
 				<EncPara ScaleFactorNumerator="0.001949317739" Offset="-19152.5" MaxCount="#xffffffff">
 					<FilterTime TPos="0.2"/>
-					<SoftEndMinControl Enable="true" Range="-212"/>
-					<SoftEndMaxControl Enable="true" Range="246"/>
+					<SoftEndMinControl Enable="true" Range="-900"/>
+					<SoftEndMaxControl Enable="true" Range="1000"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
+					<ParameterChanged>14</ParameterChanged>
+					<ParameterChanged>12</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>
@@ -4225,7 +4225,6 @@ External Setpoint Generation:
 				<EncPara ScaleFactorNumerator="0.001" Offset="-4295012.99" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-26500"/>
 					<SoftEndMaxControl Enable="true" Range="-16500"/>
-					<ParameterChanged>7</ParameterChanged>
 				</EncPara>
 				<Vars VarGrpType="1">
 					<Name>Inputs</Name>

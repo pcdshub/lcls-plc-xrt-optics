@@ -14,8 +14,31 @@ VAR
 	'}
 	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
-	
-	
+
+    {attribute 'pytmc' := '
+     pv: MR1L3:HOMS:MMS:YUP:STATE;
+     io: io;
+     '}
+    fbMR1L3_Coating_States: FB_Coating_States; 
+
+    MR1L3_SiC : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'SiC',  
+        nEncoderCount := 8611100,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L3_W : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'W',  
+        nEncoderCount := 18611220,
+        fDelta := 1000,
+        fVelocity := 150);
+
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -32,7 +55,29 @@ VAR
 	'}
 	M3 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m3 : FB_MotionStage;
-	
+    
+    MR1L3_In : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'IN',  
+        nEncoderCount := 25210740,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L3_Out : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'OUT',
+        nEncoderCount := 19210590,
+        fDelta := 1000,
+        fVelocity := 150);
+    {attribute 'pytmc' := '
+     pv: MR1L3:HOMS:MMS:XUP:STATE;
+     '}
+    fbMR1L3_InOut_States : FB_PositionStateInOut;
+    
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 2'}
@@ -556,6 +601,24 @@ fbMotionStage_m3(stMotionStage:=M3);
 fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
+
+//M1L3 Coating States with PMPS
+//M1.bPowerSelf := FALSE;
+fbMR1L3_Coating_States(
+    bEnable := TRUE,
+    stCoating1 := MR1L3_SiC,
+    stCoating2 := MR1L3_W, 
+	stMotionStage:=M1
+	);
+
+fbMR1L3_InOut_States(
+    bEnable := TRUE,
+    stIn := MR1L3_In, 
+    stOut := MR1L3_Out,
+    stMotionStage := M3);
+
+
+//M1L3 Mirror InOut States with PMPS
 
 // Calculate Pitch RMS Error:
 fbYRMSErrorMR1L3(stMotionStage:=M1,

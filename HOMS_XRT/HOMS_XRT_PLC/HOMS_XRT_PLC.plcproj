@@ -37,6 +37,9 @@
     <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\DUTs\ENUM_Coating_States.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -196,6 +199,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_Coating_States.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Main.TcPOU">

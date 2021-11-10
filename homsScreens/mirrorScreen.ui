@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mirrorScreen</class>
+ <widget class="QWidget" name="mirrorScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>550</width>
+    <height>425</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>425</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1600</width>
+    <height>2400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>mirror display</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <widget class="QFrame" name="frame_9">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QFrame" name="frame_8">
+        <property name="minimumSize">
+         <size>
+          <width>451</width>
+          <height>333</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QFrame" name="frame_4">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <pointsize>20</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>${MIRROR}</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_10">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QFrame" name="frame">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>cur:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMLabel" name="PyDMLabel">
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${YAXIS}:STATE:GET_RBV</string>
+                    </property>
+                    <property name="displayFormat" stdset="0">
+                     <enum>PyDMLabel::String</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="minimumSize">
+                     <size>
+                      <width>80</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>80</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>set coating:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMPushButton" name="PyDMPushButton">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>16500</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string>SiC</string>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${YAXIS}:STATE:SET</string>
+                    </property>
+                    <property name="pressValue" stdset="0">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMPushButton" name="PyDMPushButton_2">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>16500</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string>W</string>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>10</width>
+                      <height>10</height>
+                     </size>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${YAXIS}:STATE:SET</string>
+                    </property>
+                    <property name="pressValue" stdset="0">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_2">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>cur:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMLabel" name="PyDMLabel_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${XAXIS}:STATE:GET_RBV</string>
+                    </property>
+                    <property name="displayFormat" stdset="0">
+                     <enum>PyDMLabel::String</enum>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_3">
+                    <property name="minimumSize">
+                     <size>
+                      <width>79</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>70</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>set mirror:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMPushButton" name="PyDMPushButton_4">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>16500</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string>IN</string>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${XAXIS}:STATE:SET</string>
+                    </property>
+                    <property name="pressValue" stdset="0">
+                     <string>2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="PyDMPushButton" name="PyDMPushButton_3">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>50</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>50</width>
+                      <height>16500</height>
+                     </size>
+                    </property>
+                    <property name="toolTip">
+                     <string/>
+                    </property>
+                    <property name="text">
+                     <string>OUT</string>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>10</width>
+                      <height>10</height>
+                     </size>
+                    </property>
+                    <property name="channel" stdset="0">
+                     <string>ca://${XAXIS}:STATE:SET</string>
+                    </property>
+                    <property name="pressValue" stdset="0">
+                     <string>1</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>75</width>
+                <height>75</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>75</width>
+                <height>75</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="rules" stdset="0">
+               <string>[{&quot;name&quot;: &quot;IsMoving&quot;, &quot;property&quot;: &quot;Visible&quot;, &quot;initial_value&quot;: &quot;&quot;, &quot;expression&quot;: &quot;ch[0] or ch[1]&quot;, &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://${YAXIS}.MOVN&quot;, &quot;trigger&quot;: true}, {&quot;channel&quot;: &quot;ca://${XAXIS}.MOVN&quot;, &quot;trigger&quot;: true}]}]</string>
+              </property>
+              <property name="channel" stdset="0">
+               <string>ca://${YAXIS}.MOVN</string>
+              </property>
+              <property name="offColor" stdset="0">
+               <color>
+                <red>0</red>
+                <green>255</green>
+                <blue>0</blue>
+               </color>
+              </property>
+              <property name="circles" stdset="0">
+               <bool>true</bool>
+              </property>
+              <property name="labels" stdset="0">
+               <stringlist>
+                <string>Moving</string>
+               </stringlist>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_5">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QFrame" name="frame_6">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="PyDMLabel" name="PyDMLabel_6">
+                 <property name="maximumSize">
+                  <size>
+                   <width>75</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="showUnits" stdset="0">
+                  <bool>false</bool>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.LLM</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>cur:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMLabel" name="PyDMLabel_4">
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="showUnits" stdset="0">
+                  <bool>false</bool>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.RBV</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMLabel" name="PyDMLabel_5">
+                 <property name="maximumSize">
+                  <size>
+                   <width>75</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="showUnits" stdset="0">
+                  <bool>false</bool>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.HLM</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>set pitch:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMLineEdit" name="PyDMLineEdit">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="showUnits" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_7">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>110</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>80</width>
+                   <height>25</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>jog pitch by:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMPushButton" name="PyDMPushButton_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>16500</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>13</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="text">
+                  <string>-</string>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.TWR</string>
+                 </property>
+                 <property name="pressValue" stdset="0">
+                  <string>1</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="showUnits" stdset="0">
+                  <bool>true</bool>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.TWV</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="PyDMPushButton" name="PyDMPushButton_5">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>50</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>16500</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>13</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string/>
+                 </property>
+                 <property name="text">
+                  <string>+</string>
+                 </property>
+                 <property name="channel" stdset="0">
+                  <string>ca://${PITCH}.TWF</string>
+                 </property>
+                 <property name="pressValue" stdset="0">
+                  <string>1</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_14">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="TyphosRelatedSuiteButton" name="TyphosRelatedSuiteButton">
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="text">
+               <string>Advanced Motor</string>
+              </property>
+              <property name="happi_names" stdset="0">
+               <stringlist>
+                <string>mr1l3_homs</string>
+               </stringlist>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>100</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>175</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string/>
+              </property>
+              <property name="rules" stdset="0">
+               <string>[{&quot;name&quot;: &quot;in Error&quot;, &quot;property&quot;: &quot;Visible&quot;, &quot;initial_value&quot;: &quot;&quot;, &quot;expression&quot;: &quot;(ch[0] or ch[1]) or ch[2]&quot;, &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://${XAXIS}:PLC:bError_RBV.VAL&quot;, &quot;trigger&quot;: true}, {&quot;channel&quot;: &quot;ca://${YAXIS}:PLC:bError_RBV.VAL&quot;, &quot;trigger&quot;: true}, {&quot;channel&quot;: &quot;ca://${PITCH}:PLC:bError_RBV.VAL&quot;, &quot;trigger&quot;: true}]}]</string>
+              </property>
+              <property name="alarmSensitiveBorder" stdset="0">
+               <bool>true</bool>
+              </property>
+              <property name="channel" stdset="0">
+               <string>ca://${PITCH}:PLC:bError_RBV.VAL</string>
+              </property>
+              <property name="onColor" stdset="0">
+               <color>
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </property>
+              <property name="offColor" stdset="0">
+               <color>
+                <red>255</red>
+                <green>0</green>
+                <blue>0</blue>
+               </color>
+              </property>
+              <property name="circles" stdset="0">
+               <bool>true</bool>
+              </property>
+              <property name="labels" stdset="0">
+               <stringlist>
+                <string>Error Clear in Advanced</string>
+               </stringlist>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TyphosRelatedSuiteButton</class>
+   <extends>QPushButton</extends>
+   <header>typhos.related_display</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
