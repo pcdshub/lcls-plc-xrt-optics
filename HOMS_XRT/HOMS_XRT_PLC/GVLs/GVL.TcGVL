@@ -9,7 +9,13 @@
 	gFirstPass	:	 BOOL := TRUE;
 	
 	//MPS Outputs
+    {attribute 'pytmc' := '
+        pv: PLC:XRT:HOMS:M2:OUT
+    '}
 	bXRT_M2_OUT AT %Q* : BOOL:= FALSE;
+    {attribute 'pytmc' := '
+        pv: PLC:XRT:HOMS:M2:IN
+    '}
 	bXRT_M2_IN AT %Q* : BOOL:= FALSE;
 	
 	//Safe-torque-off status
