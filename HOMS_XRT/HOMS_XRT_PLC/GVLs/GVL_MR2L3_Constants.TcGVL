@@ -6,7 +6,7 @@ VAR_GLOBAL CONSTANT
 	// Encoder reference values in counts = nm
 	// Enc Ref Vals from alignment 2020-6-12
 	nYUP_ENC_REF : ULINT := 14279350;
-	nYDWN_ENC_REF : ULINT := 15196760;
+	nYDWN_ENC_REF : ULINT := 16316457;
 	nXUP_ENC_REF : ULINT := 25135760;
 	nXDWN_ENC_REF : ULINT := 24091270;
 END_VAR]]></Declaration>
