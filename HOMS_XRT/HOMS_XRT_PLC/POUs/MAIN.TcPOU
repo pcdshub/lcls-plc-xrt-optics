@@ -604,12 +604,11 @@ fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
-//M1L3 Coating States with PMPS
-//M1.bPowerSelf := FALSE;
 
 MR1L3_SiC.stBeamParams.neVRange := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
 MR1L3_W.stBeamParams.neVRange := F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 
+//M1L3 Coating States with PMPS
 //Coatings States With PMPS
 M1.bPowerSelf := False;
 fbMR1L3_Coating_States(
