@@ -12,7 +12,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:MMS:YUP
 	'}
-	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M1 : DUT_MotionStage := (sName:='MR1L3-Coatings', fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
 
     {attribute 'pytmc' := '
@@ -612,6 +612,7 @@ MR1L3_W.stBeamParams.neVRange := F_eVExcludeRange(0, 13000) AND F_eVExcludeRange
 //Coatings States With PMPS
 M1.bPowerSelf := False;
 fbMR1L3_Coating_States(
+    bBPOkAutoReset := TRUE,
     bEnable := TRUE,
     stCoating1 := MR1L3_SiC,
     stCoating2 := MR1L3_W, 
