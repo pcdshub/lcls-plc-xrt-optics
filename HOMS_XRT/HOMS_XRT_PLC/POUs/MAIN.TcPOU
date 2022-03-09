@@ -564,6 +564,70 @@ VAR
 	
 	// Logging
 	fbLogHandler : FB_LogHandler;
+    
+    fM1L3_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L3_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L3_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -858,7 +922,22 @@ PRG_CoatingProtection();
 
 
 // Logging
-fbLogHandler();]]></ST>
+fbLogHandler();
+
+fM1L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_1);
+fM1L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_2);
+fM1L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_3);
+
+fM2L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_1);
+fM2L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_2);
+fM2L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_3);
+
+fM1L4_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_1);
+fM1L4_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_2);
+fM1L4_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_3);
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

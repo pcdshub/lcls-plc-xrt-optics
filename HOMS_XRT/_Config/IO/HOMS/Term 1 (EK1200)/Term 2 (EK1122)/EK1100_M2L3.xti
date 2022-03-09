@@ -43,10 +43,10 @@
 		<Box File="EL9505_M2L3_BenderLims.xti" Id="55">
 			<EtherCAT PortABoxInfo="#x01000036"/>
 		</Box>
-		<Box File="Term 100 (EL3202-0010).xti" Id="100">
+		<Box File="EL3202-0010_MR2L3_1.xti" Id="100">
 			<EtherCAT PortABoxInfo="#x01000037"/>
 		</Box>
-		<Box File="Term 101 (EL3202-0010).xti" Id="101">
+		<Box File="EL3202-0010_MR2L3_2_3.xti" Id="101">
 			<EtherCAT PortABoxInfo="#x01000064"/>
 		</Box>
 		<Box File="Term 56 (EL9011).xti" Id="56">

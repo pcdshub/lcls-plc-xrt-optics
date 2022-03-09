@@ -2372,10 +2372,10 @@
 							<Box File="EL9505_M1L3_BenderLims.xti" Id="41">
 								<EtherCAT PortABoxInfo="#x01000028"/>
 							</Box>
-							<Box File="Term 69 (EL3202-0010).xti" Id="69">
+							<Box File="EL3202-0010_MR1L3_1.xti" Id="69">
 								<EtherCAT PortABoxInfo="#x01000029"/>
 							</Box>
-							<Box File="Term 70 (EL3202-0010).xti" Id="70">
+							<Box File="EL3202-0010_MR1L3_2_3.xti" Id="70">
 								<EtherCAT PortABoxInfo="#x01000045"/>
 							</Box>
 							<Box File="Term 42 (EL9011).xti" Id="42">
@@ -4503,10 +4503,10 @@
 							<Box File="EL9505_M1L4_BenderLims.xti" Id="28">
 								<EtherCAT PortABoxInfo="#x0100001b"/>
 							</Box>
-							<Box File="Term 86 (EL3202-0010).xti" Id="86">
+							<Box File="EL3202-0010_MR1L4_1.xti" Id="86">
 								<EtherCAT PortABoxInfo="#x0100001c"/>
 							</Box>
-							<Box File="Term 87 (EL3202-0010).xti" Id="87">
+							<Box File="EL3202-0010_MR1L4_2_3.xti" Id="87">
 								<EtherCAT PortABoxInfo="#x01000056"/>
 							</Box>
 							<Box File="Term 29 (EL9011).xti" Id="29">
