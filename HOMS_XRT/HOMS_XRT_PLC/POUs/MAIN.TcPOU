@@ -12,7 +12,7 @@ VAR
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:MMS:YUP
 	'}
-	M1 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
+	M1 : DUT_MotionStage := (sName:='MR1L3-Coatings', fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m1 : FB_MotionStage;
 
     {attribute 'pytmc' := '
@@ -20,7 +20,7 @@ VAR
      io: io;
      '}
     fbMR1L3_Coating_States: FB_Coating_States; 
-
+    
     MR1L3_SiC : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
@@ -28,7 +28,9 @@ VAR
         sName := 'SiC',  
         nEncoderCount := 8611100,
         fDelta := 1000,
-        fVelocity := 150);
+        fVelocity := 150,
+        stBeamParams := PMPS_GVL.cstFullBeam,
+        nRequestAssertionID := 16#FA72);
         
     MR1L3_W : DUT_PositionState := (
         bUseRawCounts := TRUE,
@@ -37,7 +39,9 @@ VAR
         sName := 'W',  
         nEncoderCount := 18611220,
         fDelta := 1000,
-        fVelocity := 150);
+        fVelocity := 150,
+        stBeamParams := PMPS_GVL.cstFullBeam,
+        nRequestAssertionID := 16#FA73);
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 2'}
@@ -79,7 +83,7 @@ VAR
     fbMR1L3_InOut_States : FB_PositionStateInOut;
     
 	
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 1;
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Xdwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:MMS:XDWN
@@ -97,8 +101,6 @@ VAR
     fbMotionStage_m5 : FB_MotionStage;
     
     
-	
-	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Bender]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Bender]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -562,6 +564,70 @@ VAR
 	
 	// Logging
 	fbLogHandler : FB_LogHandler;
+    
+    fM1L3_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L3_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L3_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L3:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM2L3_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR2L3:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_1 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:1
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_2 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:2
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
+    fM1L4_RTD_3 : REAL;
+	{attribute 'pytmc' := '
+		pv: MR1L4:HOMS:RTD:3
+		field: ASLO 0.1
+		field: EGU C
+		io: i
+	'}
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -602,14 +668,23 @@ fbMotionStage_m4(stMotionStage:=M4);
 fbMotionStage_m5(stMotionStage:=M5);
 fbMotionStage_m6(stMotionStage:=M6);
 
+
+MR1L3_SiC.stBeamParams.neVRange := F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
+MR1L3_W.stBeamParams.neVRange := F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
+
 //M1L3 Coating States with PMPS
-//M1.bPowerSelf := FALSE;
+//Coatings States With PMPS
+M1.bPowerSelf := False;
 fbMR1L3_Coating_States(
+    bBPOkAutoReset := TRUE,
     bEnable := TRUE,
     stCoating1 := MR1L3_SiC,
     stCoating2 := MR1L3_W, 
-	stMotionStage:=M1
-	);
+	fbArbiter:=GVL_PMPS.g_fbArbiter1,
+    fbFFHWO:=GVL_PMPS.g_FastFaultOutput1 ,
+    nTransitionAssertionID:= 16#FA71 , 
+	nUnknownAssertionID:= 16#FA70 , 
+	stMotionStage:=M1);
 
 fbMR1L3_InOut_States(
     bEnable := TRUE,
@@ -844,10 +919,25 @@ bXRT_M2_OUT := not bXRT_M2_IN;
 
 //PMPS
 PRG_CoatingProtection();
-//fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+
 
 // Logging
-fbLogHandler();]]></ST>
+fbLogHandler();
+
+fM1L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_1);
+fM1L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_2);
+fM1L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_3);
+
+fM2L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_1);
+fM2L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_2);
+fM2L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_3);
+
+fM1L4_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_1);
+fM1L4_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_2);
+fM1L4_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_3);
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -189,6 +189,10 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
+    <Compile Include="GVLs\GVL_RTDS.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
@@ -346,10 +350,10 @@
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="lcls-twincat-motion">
-      <Resolution>lcls-twincat-motion, 1.5.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-motion, 1.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-optics">
-      <Resolution>lcls-twincat-optics, 0.2.1 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-optics, 0.0.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 2.0.0 (SLAC - LCLS)</Resolution>

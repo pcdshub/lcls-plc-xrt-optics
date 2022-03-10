@@ -3,54 +3,54 @@
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
 	</ImageDatas>
-	<Box Id="43" BoxType="9099">
+	<Box Id="33" BoxType="9099">
 		<Name>__FILENAME__</Name>
 		<ImageId>1000</ImageId>
 		<EtherCAT SlaveType="1" PdiType="#x0d00" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x044c2c52" RevisionNo="#x00120000" PortPhys="305" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EK1100 EtherCAT Coupler (2A E-Bus)" Desc="EK1100"/>
-		<Box File="EL7041-1000_M2L3_Xup.xti" Id="44">
-			<EtherCAT PortABoxInfo="#x0100002b"/>
+		<Box File="Term 57 (EL7041-1000).xti" Id="57">
+			<EtherCAT PortABoxInfo="#x01000021"/>
 		</Box>
-		<Box File="EL7041-1000_M2L3_Xdwn.xti" Id="45">
-			<EtherCAT PortABoxInfo="#x0100002c"/>
+		<Box File="Term 58 (EL7041-1000).xti" Id="58">
+			<EtherCAT PortABoxInfo="#x01000039"/>
 		</Box>
-		<Box File="EL7041-1000_M2L3_Yup.xti" Id="46">
-			<EtherCAT PortABoxInfo="#x0100002d"/>
+		<Box File="Term 59 (EL7041-1000).xti" Id="59">
+			<EtherCAT PortABoxInfo="#x0100003a"/>
 		</Box>
-		<Box File="EL7041-1000_M2L3_Ydwn.xti" Id="47">
-			<EtherCAT PortABoxInfo="#x0100002e"/>
+		<Box File="Term 60 (EL7041-1000).xti" Id="60">
+			<EtherCAT PortABoxInfo="#x0100003b"/>
 		</Box>
-		<Box File="EL7041-1000_M2L3_PitchCoarse.xti" Id="48">
-			<EtherCAT PortABoxInfo="#x0100002f"/>
+		<Box File="Term 61 (EL7041-1000).xti" Id="61">
+			<EtherCAT PortABoxInfo="#x0100003c"/>
 		</Box>
-		<Box File="EL7041-1000_M2L3_Bender.xti" Id="49">
-			<EtherCAT PortABoxInfo="#x01000030"/>
+		<Box File="Term 62 (EL7041-1000).xti" Id="62">
+			<EtherCAT PortABoxInfo="#x0100003d"/>
 		</Box>
-		<Box File="EL6001_M2L3_PitchFine.xti" Id="50">
-			<EtherCAT PortABoxInfo="#x01000031"/>
+		<Box File="Term 63 (EL6001).xti" Id="63">
+			<EtherCAT PortABoxInfo="#x0100003e"/>
 		</Box>
-		<Box File="EL5042_M2L3_Xupdwn.xti" Id="51">
-			<EtherCAT PortABoxInfo="#x01000032"/>
+		<Box File="Term 64 (EL5042).xti" Id="64">
+			<EtherCAT PortABoxInfo="#x0100003f"/>
 		</Box>
-		<Box File="EL5042_M2L3_Yupdwn.xti" Id="52">
-			<EtherCAT PortABoxInfo="#x01000033"/>
+		<Box File="Term 65 (EL5042).xti" Id="65">
+			<EtherCAT PortABoxInfo="#x01000040"/>
 		</Box>
-		<Box File="EL5042_M2L3_PitchBender.xti" Id="53">
-			<EtherCAT PortABoxInfo="#x01000034"/>
+		<Box File="Term 66 (EL5042).xti" Id="66">
+			<EtherCAT PortABoxInfo="#x01000041"/>
 		</Box>
-		<Box File="EL1004_M2L3_STO.xti" Id="54">
-			<EtherCAT PortABoxInfo="#x01000035"/>
+		<Box File="Term 67 (EL1004).xti" Id="67">
+			<EtherCAT PortABoxInfo="#x01000042"/>
 		</Box>
-		<Box File="EL9505_M2L3_BenderLims.xti" Id="55">
-			<EtherCAT PortABoxInfo="#x01000036"/>
+		<Box File="Term 68 (EL9505).xti" Id="68">
+			<EtherCAT PortABoxInfo="#x01000043"/>
 		</Box>
-		<Box File="EL3202-0010_MR2L3_1.xti" Id="100">
-			<EtherCAT PortABoxInfo="#x01000037"/>
+		<Box File="Term 69 (EL3202-0010).xti" Id="69">
+			<EtherCAT PortABoxInfo="#x01000044"/>
 		</Box>
-		<Box File="EL3202-0010_MR2L3_2_3.xti" Id="101">
-			<EtherCAT PortABoxInfo="#x01000064"/>
+		<Box File="Term 70 (EL3202-0010).xti" Id="70">
+			<EtherCAT PortABoxInfo="#x01000045"/>
 		</Box>
-		<Box File="Term 56 (EL9011).xti" Id="56">
-			<EtherCAT PortABoxInfo="#x01000065"/>
+		<Box File="Term 102 (EL9011).xti" Id="102">
+			<EtherCAT PortABoxInfo="#x01000046"/>
 		</Box>
 	</Box>
 </TcSmItem>

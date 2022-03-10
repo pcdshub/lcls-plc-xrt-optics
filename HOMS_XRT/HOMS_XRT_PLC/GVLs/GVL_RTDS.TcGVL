@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_RTDS" Id="{0b62862d-8567-4022-be19-38483cd606a9}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// M2K4 BENDER RTDs
+
+	// M1L3 RTDs
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L3_1]^RTD Inputs Channel 1^Value'}
+	nM1L3_RTD_1 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 1^Value'}
+	nM1L3_RTD_2 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 2^Value'}
+	nM1L3_RTD_3 AT %I* : INT;
+
+    // M2L3 RTDs
+    {attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR2L3_1]^RTD Inputs Channel 1^Value'}
+	nM2L3_RTD_1 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 1^Value'}
+	nM2L3_RTD_2 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 2^Value'}
+	nM2L3_RTD_3 AT %I* : INT;
+    
+    // M1L4 RTDs
+    {attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L4_1]^RTD Inputs Channel 1^Value'}
+	nM1L4_RTD_1 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 1^Value'}
+	nM1L4_RTD_2 AT %I* : INT;
+	{attribute 'TcLinkTo' := 'TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 2^Value'}
+	nM1L4_RTD_3 AT %I* : INT;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
