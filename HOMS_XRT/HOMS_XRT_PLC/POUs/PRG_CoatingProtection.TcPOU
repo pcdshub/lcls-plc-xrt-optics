@@ -38,10 +38,7 @@ VAR
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);		
 	
-		rtRemove: R_TRIG;
-		bRemove :BOOL;
-		bExist :BOOL;
-		nReq : UDINT;
+		
 		
 		// Fast Fault used when M1 and M2 are both in
          ffM1M2IN: FB_FastFault :=(  
@@ -97,20 +94,6 @@ ffM1M2IN(
 		i_xAutoReset := TRUE,
 	    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);
 	
-// PMPS Arbiter and FFO instantiation.
-GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'XRT HOMS');
-
-GVL_PMPS.fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0];
-GVL_PMPS.fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
-
-GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0]);
-GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
-
-bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
-rtRemove(CLK:= bRemove);
-if (rtRemove.Q) THEN
- 	GVL_PMPS.g_fbArbiter1.RemoveRequest(nReq); 
-END_IF
 ]]></ST>
     </Implementation>
   </POU>
