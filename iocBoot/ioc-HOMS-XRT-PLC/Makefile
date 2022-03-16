@@ -1,4 +1,4 @@
-IOC_TOP = /reg/g/pcds/epics/ioc/common/ads-ioc/R0.4.1
+IOC_TOP = /reg/g/pcds/epics/ioc/common/ads-ioc/R0.5.0
 
 IOC_INSTANCE_PATH := $(shell pwd)
 
