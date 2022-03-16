@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_PMPS" Id="{6348b781-a8fd-4677-a2ee-052bc68113cf}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PMPS
+VAR
+    bMR1L3_OUT_Veto: BOOL; 
+	fb_vetoArbiter: FB_VetoArbiter; 
+	
+	rtRemove: R_TRIG;
+	bRemove :BOOL;
+	bExist :BOOL;
+	nReq : UDINT;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// PMPS Arbiter and FFO instantiation.
+GVL_PMPS.g_fbArbiter1.AddRequest(16#5, PMPS_GVL.cstFullBeam, 'XRT HOMS');
+
+
+GVL_PMPS.fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0];
+GVL_PMPS.fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
+
+GVL_PMPS.g_FastFaultOutput1.Execute(bAutoReset:=TRUE, i_xVeto:= PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1L0]);
+GVL_PMPS.g_FastFaultOutput2.Execute(bAutoReset:=TRUE, i_xVeto:=);	
+
+bMR1L3_OUT_Veto := (( Main.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.OUT) AND NOT ( Main.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.IN));
+fb_vetoArbiter(bVeto:=bMR1L3_OUT_Veto, // should Veto when MR1L3 is out of the beam
+                HigherAuthority := GVL_PMPS.g_fbArbiter2,
+				LowerAuthority := GVL_PMPS.g_fbArbiter1,
+                FFO := GVL_PMPS.g_FastFaultOutput1);
+
+
+// for testing and checking 
+bExist:= GVL_PMPS.g_fbArbiter1.CheckRequestInPool(nReq);
+rtRemove(CLK:= bRemove);
+if (rtRemove.Q) THEN
+ 	GVL_PMPS.g_fbArbiter1.RemoveRequest(nReq); 
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

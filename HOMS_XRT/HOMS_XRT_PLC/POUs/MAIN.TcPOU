@@ -919,6 +919,7 @@ bXRT_M2_OUT := not bXRT_M2_IN;
 
 //PMPS
 PRG_CoatingProtection();
+PRG_PMPS();
 
 
 // Logging
