@@ -680,7 +680,7 @@ fbMR1L3_Coating_States(
     bEnable := TRUE,
     stCoating1 := MR1L3_SiC,
     stCoating2 := MR1L3_W, 
-	fbArbiter:=GVL_PMPS.g_fbArbiter1,
+	fbArbiter:=GVL_PMPS.g_fbArbiter2,
     fbFFHWO:=GVL_PMPS.g_FastFaultOutput1 ,
     nTransitionAssertionID:= 16#FA71 , 
 	nUnknownAssertionID:= 16#FA70 , 
