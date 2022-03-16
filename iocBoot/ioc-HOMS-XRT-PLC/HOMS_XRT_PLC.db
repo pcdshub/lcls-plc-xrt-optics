@@ -1,3 +1,47 @@
+record(bi, "PLC:XRT:HOMS:M2:OUT_RBV") {
+  field(DESC, "GVL.bXRT_M2_OUT")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.bXRT_M2_OUT?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "PLC:XRT:HOMS:M2:OUT") {
+  field(DESC, "GVL.bXRT_M2_OUT")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL.bXRT_M2_OUT=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "PLC:XRT:HOMS:M2:IN_RBV") {
+  field(DESC, "GVL.bXRT_M2_IN")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL.bXRT_M2_IN?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "PLC:XRT:HOMS:M2:IN") {
+  field(DESC, "GVL.bXRT_M2_IN")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL.bXRT_M2_IN=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "$(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV") {
   field(DESC, "Tripped by overall log count")
   field(SCAN, "I/O Intr")
@@ -487,62 +531,6 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
-record(mbbi, "MR1L3:HOMS:MMS:YUP:STATE:SET_RBV") {
-  field(DESC, "Main.MR1L3_Coating_enumSet")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L3_Coating_enumSet?")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "SiC")
-  field(TWST, "W")
-  info(archive, "VAL")
-}
-
-record(mbbo, "MR1L3:HOMS:MMS:YUP:STATE:SET") {
-  field(DESC, "Main.MR1L3_Coating_enumSet")
-  field(DTYP, "asynInt32")
-  field(ZRVL, "0")
-  field(ONVL, "1")
-  field(TWVL, "2")
-  field(ZRST, "Unknown")
-  field(ONST, "SiC")
-  field(TWST, "W")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L3_Coating_enumSet=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(waveform, "MR1L3:HOMS:DESC_RBV") {
-  field(DESC, "Main.MR1L3Desc")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L3Desc?")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(archive, "VAL")
-}
-
-record(waveform, "MR1L3:HOMS:DESC") {
-  field(DESC, "Main.MR1L3Desc")
-  field(DTYP, "asynInt8ArrayOut")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/Main.MR1L3Desc=")
-  field(FTVL, "CHAR")
-  field(NELM, "80")
-  field(MPST, "On Change")
-  field(APST, "On Change")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
 record(longin, "MR1L3:HOMS:ENC:YUP:CNT_RBV") {
   field(DESC, "Main.nEncCntYupMR1L3")
   field(SCAN, "I/O Intr")
@@ -550,6 +538,17 @@ record(longin, "MR1L3:HOMS:ENC:YUP:CNT_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupMR1L3?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR1L3:HOMS:ENC:YDWN:CNT_RBV") {
+  field(DESC, "Main.nEncCntYdwnMR1L3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYdwnMR1L3?")
   field(EGU, "cnt")
   info(archive, "VAL")
 }
@@ -1143,12 +1142,12 @@ record(bi, "MR1L3:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:YUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -1160,7 +1159,7 @@ record(longin, "MR1L3:HOMS:MMS:YUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -1170,7 +1169,7 @@ record(waveform, "MR1L3:HOMS:MMS:YUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M1.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M1.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -2821,6 +2820,84 @@ record(bi, "MR1L3:HOMS:MMS:YUP:STATE:09:VALID_RBV") {
   info(archive, "VAL")
 }
 
+record(bi, "MR1L3:HOMS:MMS:YUP:STATE:PMPS:ARB:ENABLE_RBV") {
+  # Main.fbMR1L3_Coating_States.bArbiterEnabled
+  field(DESC, "Main.fbMR1L3_Coating...s.bArbiterEnabled")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR1L3_Coating_States.bArbiterEnabled?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L3:HOMS:MMS:YUP:STATE:PMPS:ARB:ENABLE") {
+  # Main.fbMR1L3_Coating_States.bArbiterEnabled
+  field(DESC, "Main.fbMR1L3_Coating...s.bArbiterEnabled")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbMR1L3_Coating_States.bArbiterEnabled=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "MR1L3:HOMS:MMS:YUP:STATE:PMPS:MAINT_RBV") {
+  # Main.fbMR1L3_Coating_States.fbStatePMPS.bMaintMode
+  field(DESC, "Main.fbMR1L3_Coating...tePMPS.bMaintMode")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR1L3_Coating_States.fbStatePMPS.bMaintMode?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "MR1L3:HOMS:MMS:YUP:STATE:PMPS:MAINT") {
+  # Main.fbMR1L3_Coating_States.fbStatePMPS.bMaintMode
+  field(DESC, "Main.fbMR1L3_Coating...tePMPS.bMaintMode")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbMR1L3_Coating_States.fbStatePMPS.bMaintMode=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(mbbi, "MR1L3:HOMS:MMS:YUP:STATE:SET_RBV") {
+  field(DESC, "Main.fbMR1L3_Coating_States.enumSet")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fbMR1L3_Coating_States.enumSet?")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "SiC")
+  field(TWST, "W")
+  info(archive, "VAL")
+}
+
+record(mbbo, "MR1L3:HOMS:MMS:YUP:STATE:SET") {
+  field(DESC, "Main.fbMR1L3_Coating_States.enumSet")
+  field(DTYP, "asynInt32")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(ZRST, "Unknown")
+  field(ONST, "SiC")
+  field(TWST, "W")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/Main.fbMR1L3_Coating_States.enumSet=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(mbbi, "MR1L3:HOMS:MMS:YUP:STATE:GET_RBV") {
   field(DESC, "Main.fbMR1L3_Coating_States.enumGet")
   field(SCAN, "I/O Intr")
@@ -3426,12 +3503,12 @@ record(bi, "MR1L3:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:YDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -3443,7 +3520,7 @@ record(longin, "MR1L3:HOMS:MMS:YDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -3453,7 +3530,7 @@ record(waveform, "MR1L3:HOMS:MMS:YDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M2.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M2.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -4062,12 +4139,12 @@ record(bi, "MR1L3:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:XUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -4079,7 +4156,7 @@ record(longin, "MR1L3:HOMS:MMS:XUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -4089,7 +4166,7 @@ record(waveform, "MR1L3:HOMS:MMS:XUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M3.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M3.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -6374,12 +6451,12 @@ record(bi, "MR1L3:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:XDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -6391,7 +6468,7 @@ record(longin, "MR1L3:HOMS:MMS:XDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -6401,7 +6478,7 @@ record(waveform, "MR1L3:HOMS:MMS:XDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M4.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M4.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -7010,12 +7087,12 @@ record(bi, "MR1L3:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:PITCH:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -7027,7 +7104,7 @@ record(longin, "MR1L3:HOMS:MMS:PITCH:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -7037,7 +7114,7 @@ record(waveform, "MR1L3:HOMS:MMS:PITCH:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M5.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M5.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -7646,12 +7723,12 @@ record(bi, "MR1L3:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L3:HOMS:MMS:BENDER:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -7663,7 +7740,7 @@ record(longin, "MR1L3:HOMS:MMS:BENDER:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -7673,7 +7750,7 @@ record(waveform, "MR1L3:HOMS:MMS:BENDER:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M6.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M6.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -7788,6 +7865,7 @@ record(bi, "MR1L3:HOMS:ALREADY_COUPLED_Y_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L3.bGantryAlreadyCoupledY?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -7800,6 +7878,7 @@ record(bi, "MR1L3:HOMS:ALREADY_COUPLED_X_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L3.bGantryAlreadyCoupledX?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -8079,17 +8158,6 @@ record(waveform, "MR1L3:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
-record(longin, "MR1L3:HOMS:ENC:YDWN:CNT_RBV") {
-  field(DESC, "Main.nEncCntYdwnMR1L3")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYdwnMR1L3?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
 record(longin, "MR1L3:HOMS:ENC:XUP:CNT_RBV") {
   field(DESC, "Main.nEncCntXupMR1L3")
   field(SCAN, "I/O Intr")
@@ -8174,17 +8242,6 @@ record(longin, "MR1L3:HOMS:ENC:PITCH:REF_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchMR1L3?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
-record(longin, "MR1L4:HOMS:ENC:YUP:CNT_RBV") {
-  field(DESC, "Main.nEncCntYupMR1L4")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupMR1L4?")
   field(EGU, "cnt")
   info(archive, "VAL")
 }
@@ -8778,12 +8835,12 @@ record(bi, "MR1L4:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:YUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -8795,7 +8852,7 @@ record(longin, "MR1L4:HOMS:MMS:YUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -8805,7 +8862,7 @@ record(waveform, "MR1L4:HOMS:MMS:YUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M7.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M7.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -9414,12 +9471,12 @@ record(bi, "MR1L4:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:YDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -9431,7 +9488,7 @@ record(longin, "MR1L4:HOMS:MMS:YDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -9441,7 +9498,7 @@ record(waveform, "MR1L4:HOMS:MMS:YDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M8.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M8.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -10050,12 +10107,12 @@ record(bi, "MR1L4:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:XUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -10067,7 +10124,7 @@ record(longin, "MR1L4:HOMS:MMS:XUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -10077,7 +10134,7 @@ record(waveform, "MR1L4:HOMS:MMS:XUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M9.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M9.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -10686,12 +10743,12 @@ record(bi, "MR1L4:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:XDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -10703,7 +10760,7 @@ record(longin, "MR1L4:HOMS:MMS:XDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -10713,7 +10770,7 @@ record(waveform, "MR1L4:HOMS:MMS:XDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M10.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M10.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -11322,12 +11379,12 @@ record(bi, "MR1L4:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:PITCH:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -11339,7 +11396,7 @@ record(longin, "MR1L4:HOMS:MMS:PITCH:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -11349,7 +11406,7 @@ record(waveform, "MR1L4:HOMS:MMS:PITCH:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M11.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M11.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -11958,12 +12015,12 @@ record(bi, "MR1L4:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR1L4:HOMS:MMS:BENDER:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -11975,7 +12032,7 @@ record(longin, "MR1L4:HOMS:MMS:BENDER:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -11985,7 +12042,7 @@ record(waveform, "MR1L4:HOMS:MMS:BENDER:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M12.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M12.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -12100,6 +12157,7 @@ record(bi, "MR1L4:HOMS:ALREADY_COUPLED_Y_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L4.bGantryAlreadyCoupledY?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -12112,6 +12170,7 @@ record(bi, "MR1L4:HOMS:ALREADY_COUPLED_X_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR1L4.bGantryAlreadyCoupledX?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -12391,6 +12450,17 @@ record(waveform, "MR1L4:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
+record(longin, "MR1L4:HOMS:ENC:YUP:CNT_RBV") {
+  field(DESC, "Main.nEncCntYupMR1L4")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupMR1L4?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
 record(longin, "MR1L4:HOMS:ENC:YDWN:CNT_RBV") {
   field(DESC, "Main.nEncCntYdwnMR1L4")
   field(SCAN, "I/O Intr")
@@ -12486,6 +12556,17 @@ record(longin, "MR1L4:HOMS:ENC:PITCH:REF_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchMR1L4?")
+  field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(longin, "MR2L3:HOMS:ENC:YUP:CNT_RBV") {
+  field(DESC, "Main.nEncCntYupMR2L3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupMR2L3?")
   field(EGU, "cnt")
   info(archive, "VAL")
 }
@@ -13079,12 +13160,12 @@ record(bi, "MR2L3:HOMS:MMS:YUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:YUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M13.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M13.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -13096,7 +13177,7 @@ record(longin, "MR2L3:HOMS:MMS:YUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M13.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M13.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -13106,7 +13187,7 @@ record(waveform, "MR2L3:HOMS:MMS:YUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M13.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M13.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -13715,12 +13796,12 @@ record(bi, "MR2L3:HOMS:MMS:YDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:YDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M14.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M14.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -13732,7 +13813,7 @@ record(longin, "MR2L3:HOMS:MMS:YDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M14.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M14.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -13742,7 +13823,7 @@ record(waveform, "MR2L3:HOMS:MMS:YDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M14.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M14.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -14351,12 +14432,12 @@ record(bi, "MR2L3:HOMS:MMS:XUP:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:XUP:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M15.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M15.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -14368,7 +14449,7 @@ record(longin, "MR2L3:HOMS:MMS:XUP:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M15.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M15.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -14378,7 +14459,7 @@ record(waveform, "MR2L3:HOMS:MMS:XUP:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M15.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M15.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -14987,12 +15068,12 @@ record(bi, "MR2L3:HOMS:MMS:XDWN:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:XDWN:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M16.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M16.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -15004,7 +15085,7 @@ record(longin, "MR2L3:HOMS:MMS:XDWN:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M16.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M16.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -15014,7 +15095,7 @@ record(waveform, "MR2L3:HOMS:MMS:XDWN:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M16.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M16.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -15623,12 +15704,12 @@ record(bi, "MR2L3:HOMS:MMS:PITCH:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:PITCH:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M17.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M17.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -15640,7 +15721,7 @@ record(longin, "MR2L3:HOMS:MMS:PITCH:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M17.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M17.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -15650,7 +15731,7 @@ record(waveform, "MR2L3:HOMS:MMS:PITCH:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M17.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M17.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -16259,12 +16340,12 @@ record(bi, "MR2L3:HOMS:MMS:BENDER:PLC:bSafetyReady_RBV") {
 }
 
 record(bi, "MR2L3:HOMS:MMS:BENDER:PLC:bError_RBV") {
-  field(DESC, "TRUE if we")
+  field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M18.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -16276,7 +16357,7 @@ record(longin, "MR2L3:HOMS:MMS:BENDER:PLC:nErrorId_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M18.nErrorId?")
   info(archive, "VAL")
 }
 
@@ -16286,7 +16367,7 @@ record(waveform, "MR2L3:HOMS:MMS:BENDER:PLC:sErrorMessage_RBV") {
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.M18.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/Main.M18.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -16401,6 +16482,7 @@ record(bi, "MR2L3:HOMS:ALREADY_COUPLED_Y_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L3.bGantryAlreadyCoupledY?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -16413,6 +16495,7 @@ record(bi, "MR2L3:HOMS:ALREADY_COUPLED_X_RBV") {
   field(TSE, "-2")
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.MR2L3.bGantryAlreadyCoupledX?")
+  field(ZSV, "MAJOR")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(archive, "VAL")
@@ -16692,17 +16775,6 @@ record(waveform, "MR2L3:HOMS:ENC:BENDER:SETPOSARRAY_RBV") {
   field(APST, "On Change")
 }
 
-record(longin, "MR2L3:HOMS:ENC:YUP:CNT_RBV") {
-  field(DESC, "Main.nEncCntYupMR2L3")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncCntYupMR2L3?")
-  field(EGU, "cnt")
-  info(archive, "VAL")
-}
-
 record(longin, "MR2L3:HOMS:ENC:YDWN:CNT_RBV") {
   field(DESC, "Main.nEncCntYdwnMR2L3")
   field(SCAN, "I/O Intr")
@@ -16799,6 +16871,118 @@ record(longin, "MR2L3:HOMS:ENC:PITCH:REF_RBV") {
   field(DTYP, "asynInt32")
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.nEncRefPitchMR2L3?")
   field(EGU, "cnt")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L3:HOMS:RTD:1_RBV") {
+  field(DESC, "Main.fM1L3_RTD_2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM1L3_RTD_2?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L3:HOMS:RTD:2_RBV") {
+  field(DESC, "Main.fM1L3_RTD_3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM1L3_RTD_3?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L3:HOMS:RTD:3_RBV") {
+  field(DESC, "Main.fM2L3_RTD_1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM2L3_RTD_1?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR2L3:HOMS:RTD:1_RBV") {
+  field(DESC, "Main.fM2L3_RTD_2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM2L3_RTD_2?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR2L3:HOMS:RTD:2_RBV") {
+  field(DESC, "Main.fM2L3_RTD_3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM2L3_RTD_3?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR2L3:HOMS:RTD:3_RBV") {
+  field(DESC, "Main.fM1L4_RTD_1")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM1L4_RTD_1?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L4:HOMS:RTD:1_RBV") {
+  field(DESC, "Main.fM1L4_RTD_2")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM1L4_RTD_2?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "MR1L4:HOMS:RTD:2_RBV") {
+  field(DESC, "Main.fM1L4_RTD_3")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/Main.fM1L4_RTD_3?")
+  field(PREC, "3")
+  field(EGU, "C")
+  field(ASLO, "0.1")
+  info(autosaveFields_pass0, "PREC")
   info(archive, "VAL")
 }
 
