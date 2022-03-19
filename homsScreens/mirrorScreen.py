@@ -121,7 +121,7 @@ class MirrorScreen(Display):
         self.ui.horizontalLayout_14.addWidget(self.stop_button)
         self.ui.horizontalLayout_14.addSpacing(160)
 
-        self.ui.setGeometry(QtCore.QRect(0,0, 480, 350))
+        self.ui.setGeometry(QtCore.QRect(0,0, 500, 370))
 
     def stop_motors(self):
         self.x_stop.put(1)
