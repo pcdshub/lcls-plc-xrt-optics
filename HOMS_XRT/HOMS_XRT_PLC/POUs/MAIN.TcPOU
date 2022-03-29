@@ -257,13 +257,6 @@ VAR
         nEncoderCount := 18496280,
         fDelta := 1000,
         fVelocity := 150);
-
-	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 1;
-                              .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L3_Ydwn]^STM Status^Status^Digital input 2'}
-	{attribute 'pytmc' := '
-		pv: MR1L3:HOMS:MMS:YDWN
-	'}
-	
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 2'}
