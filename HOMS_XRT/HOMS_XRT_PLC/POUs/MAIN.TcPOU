@@ -449,6 +449,30 @@ VAR
 	'}
 	M13 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR2L3 Yup
 	fbMotionStage_m13 : FB_MotionStage;
+    
+    {attribute 'pytmc' := '
+     pv: MR2L3:HOMS:MMS:YUP:STATE;
+     io: io;
+    '}
+    fbMR2L3_Coating_States: FB_Coating_States_noPMPS; 
+    
+    MR2L3_SiC : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'SiC',  
+        nEncoderCount := 9278970,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR2L3_W : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'W',  
+        nEncoderCount := 19279260,
+        fDelta := 1000,
+        fVelocity := 150);
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L3_Ydwn]^STM Status^Status^Digital input 2'}
@@ -921,6 +945,13 @@ fbMotionStage_m15(stMotionStage:=M15);
 fbMotionStage_m16(stMotionStage:=M16);
 fbMotionStage_m17(stMotionStage:=M17);
 fbMotionStage_m18(stMotionStage:=M18);
+
+//MR2L3 States
+fbMR2L3_Coating_States(
+    bEnable := TRUE,
+    stCoating1 := MR2L3_SiC,
+    stCoating2 := MR2L3_W,  
+	stMotionStage:=M13);
 
 // Calculate RMS Error:
 fbYRMSErrorMR2L3(stMotionStage:=M13,
