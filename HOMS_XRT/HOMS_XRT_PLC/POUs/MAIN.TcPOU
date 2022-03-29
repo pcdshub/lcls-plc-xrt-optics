@@ -294,7 +294,7 @@ VAR
         bMoveOk := TRUE,
         bValid := TRUE,
         sName := 'OUT',
-        nEncoderCount := 43991070,
+        nEncoderCount := 43989180,
         fDelta := 1000,
         fVelocity := 150);
 
