@@ -202,6 +202,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_Coating_States_noPMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
