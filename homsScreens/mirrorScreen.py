@@ -101,7 +101,8 @@ class MirrorScreen(Display):
         self.stop_button.setStyleSheet("background: rgb(255,0,0)")
 
         self.advanced_button = TyphosRelatedSuiteButton()
-        self.advanced_button.happi_names = ["mr1l3_homs"]
+        
+        self.advanced_button.happi_names = [macros['MIRROR'].lower() + "_homs"]
         self.advanced_button.setText("Advanced")
 
         
@@ -121,7 +122,7 @@ class MirrorScreen(Display):
         self.ui.horizontalLayout_14.addWidget(self.stop_button)
         self.ui.horizontalLayout_14.addSpacing(160)
 
-        self.ui.setGeometry(QtCore.QRect(0,0, 500, 370))
+        self.ui.setGeometry(QtCore.QRect(0,0, 360, 385))
 
     def stop_motors(self):
         self.x_stop.put(1)

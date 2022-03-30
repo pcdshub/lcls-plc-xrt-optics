@@ -233,7 +233,30 @@ VAR
 	'}
 	M7 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m7 : FB_MotionStage;
-	
+    
+    {attribute 'pytmc' := '
+     pv: MR1L4:HOMS:MMS:YUP:STATE;
+     io: io;
+    '}
+    fbMR1L4_Coating_States: FB_Coating_States_noPMPS; 
+    
+    MR1L4_SiC : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'SiC',  
+        nEncoderCount := 8495750,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L4_W : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'W',  
+        nEncoderCount := 18496280,
+        fDelta := 1000,
+        fVelocity := 150);
 	
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Ydwn]^STM Status^Status^Digital input 2'}
@@ -251,8 +274,30 @@ VAR
 	'}
 	M9 : DUT_MotionStage := (fVelocity:=1000.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE);
 	fbMotionStage_m9 : FB_MotionStage;
-	
-	
+
+    {attribute 'pytmc' := '
+     pv: MR1L4:HOMS:MMS:XUP:STATE;
+     '}
+    fbMR1L4_InOut_States : FB_PositionStateInOut;
+
+    MR1L4_In : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'IN',  
+        nEncoderCount := 23590530,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR1L4_Out : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'OUT',
+        nEncoderCount := 43989180,
+        fDelta := 1000,
+        fVelocity := 150);
+
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M1L4_Xdwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M1L4_Xdwn]^STM Status^Status^Digital input 2'}
 	{attribute 'pytmc' := '
@@ -404,6 +449,30 @@ VAR
 	'}
 	M13 : DUT_MotionStage := (fVelocity:=200.0, nEnableMode:=ENUM_StageEnableMode.ALWAYS, bPowerSelf:=TRUE); // MR2L3 Yup
 	fbMotionStage_m13 : FB_MotionStage;
+    
+    {attribute 'pytmc' := '
+     pv: MR2L3:HOMS:MMS:YUP:STATE;
+     io: io;
+    '}
+    fbMR2L3_Coating_States: FB_Coating_States_noPMPS; 
+    
+    MR2L3_SiC : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'SiC',  
+        nEncoderCount := 9278970,
+        fDelta := 1000,
+        fVelocity := 150);
+        
+    MR2L3_W : DUT_PositionState := (
+        bUseRawCounts := TRUE,
+        bMoveOk := TRUE,
+        bValid := TRUE,
+        sName := 'W',  
+        nEncoderCount := 19279260,
+        fDelta := 1000,
+        fVelocity := 150);
 
 	{attribute 'TcLinkTo' := '.bLimitForwardEnable:=TIIB[EL7041-1000_M2L3_Ydwn]^STM Status^Status^Digital input 1;
                               .bLimitBackwardEnable:=TIIB[EL7041-1000_M2L3_Ydwn]^STM Status^Status^Digital input 2'}
@@ -564,70 +633,70 @@ VAR
 	
 	// Logging
 	fbLogHandler : FB_LogHandler;
-    
-    fM1L3_RTD_1 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:RTD:1
 		field: ASLO 0.1
 		field: EGU C
 		io: i
-	'}
-    fM1L3_RTD_2 : REAL;
+	'}    
+    fM1L3_RTD_1 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:RTD:2
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM1L3_RTD_3 : REAL;
+    fM1L3_RTD_2 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L3:HOMS:RTD:3
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM2L3_RTD_1 : REAL;
+    fM1L3_RTD_3 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR2L3:HOMS:RTD:1
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM2L3_RTD_2 : REAL;
+    fM2L3_RTD_1 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR2L3:HOMS:RTD:2
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM2L3_RTD_3 : REAL;
+    fM2L3_RTD_2 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR2L3:HOMS:RTD:3
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM1L4_RTD_1 : REAL;
+    fM2L3_RTD_3 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L4:HOMS:RTD:1
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM1L4_RTD_2 : REAL;
+    fM1L4_RTD_1 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L4:HOMS:RTD:2
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
-    fM1L4_RTD_3 : REAL;
+    fM1L4_RTD_2 : REAL;
 	{attribute 'pytmc' := '
 		pv: MR1L4:HOMS:RTD:3
 		field: ASLO 0.1
 		field: EGU C
 		io: i
 	'}
+    fM1L4_RTD_3 : REAL;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -779,6 +848,19 @@ fbMotionStage_m10(stMotionStage:=M10);
 fbMotionStage_m11(stMotionStage:=M11);
 fbMotionStage_m12(stMotionStage:=M12);
 
+//MR1L4 States
+fbMR1L4_Coating_States(
+    bEnable := TRUE,
+    stCoating1 := MR1L4_SiC,
+    stCoating2 := MR1L4_W,  
+	stMotionStage:=M7);
+    
+fbMR1L4_InOut_States(
+    bEnable := TRUE,
+    stIn := MR1L4_In, 
+    stOut := MR1L4_Out,
+    stMotionStage := M9);
+
 // Calculate Pitch RMS Error:
 fbYRMSErrorMR1L4(stMotionStage:=M7,
 	            fMaxRMSError=>fMaxYRMSErrorMR1L4,
@@ -863,6 +945,13 @@ fbMotionStage_m15(stMotionStage:=M15);
 fbMotionStage_m16(stMotionStage:=M16);
 fbMotionStage_m17(stMotionStage:=M17);
 fbMotionStage_m18(stMotionStage:=M18);
+
+//MR2L3 States
+fbMR2L3_Coating_States(
+    bEnable := TRUE,
+    stCoating1 := MR2L3_SiC,
+    stCoating2 := MR2L3_W,  
+	stMotionStage:=M13);
 
 // Calculate RMS Error:
 fbYRMSErrorMR2L3(stMotionStage:=M13,

@@ -202,6 +202,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_Coating_States_noPMPS.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_MirrorCoatingProtection.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -356,7 +359,7 @@
       <Resolution>lcls-twincat-motion, 1.7.0 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-optics">
-      <Resolution>lcls-twincat-optics, 0.0.0 (SLAC)</Resolution>
+      <Resolution>lcls-twincat-optics, 0.3.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
       <Resolution>PMPS, 2.0.0 (SLAC - LCLS)</Resolution>
