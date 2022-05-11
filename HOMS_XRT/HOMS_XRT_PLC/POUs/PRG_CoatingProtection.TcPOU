@@ -3,7 +3,7 @@
   <POU Name="PRG_CoatingProtection" Id="{e94ac5b8-c8a3-4662-9871-79dbc91dcc6e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_CoatingProtection
 VAR
-	//M1 
+//M1 
    fbM1 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M1', 
 		rFirstCoatingPosition:= 8611000, 
@@ -14,7 +14,6 @@ VAR
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
 		
-
 //M2
    fbM2 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M2', 
@@ -26,7 +25,6 @@ VAR
 		sSecondCoatingType:= 'W', 
 		bAutoClear:= TRUE);
 
-		
 //M3 
    fbM3 : FB_MirrorCoatingProtection := (
 	   	sDevName:= 'XRT-M3', 
@@ -45,11 +43,9 @@ VAR
 					i_DevName := 'XRT-M1 and XRT-M2',
         			i_Desc := 'Fault occurs when both M1 and M2 are IN',
         			i_TypeCode := 16#602);  
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-//M1
+      <ST><![CDATA[//M1
 fbM1(
 	bMirrorIn := (Main.nEncCntXupMR1L3 > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
@@ -77,7 +73,6 @@ fbM2(
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 
-	
 //M3
 fbM3(
 	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
@@ -92,9 +87,7 @@ fbM3(
 ffM1M2IN(
 		i_xOK := NOT (fbM1.bMirrorIn AND fbM2.bMirrorIn),
 		i_xAutoReset := TRUE,
-	    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);
-	
-]]></ST>
+	    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

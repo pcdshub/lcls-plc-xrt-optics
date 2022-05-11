@@ -24,7 +24,7 @@ GVL_PMPS.fbArbiterIO.i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PM
 GVL_PMPS.fbArbiterIO(Arbiter := GVL_PMPS.g_fbArbiter1, fbFFHWO := GVL_PMPS.g_FastFaultOutput1);
 
 
-bMR1L3_OUT_Veto := (( Main.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.OUT) AND NOT ( Main.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.IN));
+bMR1L3_OUT_Veto := (( PRG_States.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.OUT) AND NOT ( PRG_States.fbMR1L3_InOut_States.enumGet = ENUM_EpicsInOut.IN));
 fb_vetoArbiter(bVeto:=bMR1L3_OUT_Veto, // should Veto when MR1L3 is out of the beam
                 HigherAuthority := GVL_PMPS.g_fbArbiter1,
 				LowerAuthority := GVL_PMPS.g_fbArbiter2,

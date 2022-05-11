@@ -196,6 +196,10 @@
     <Compile Include="GVLs\GVL_SerialIO.TcGVL">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GVLs\GVL_States.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PiezoDriver.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -218,6 +222,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_CoatingProtection.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_States.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Serial Comm\PiezoSerial.TcPOU">
