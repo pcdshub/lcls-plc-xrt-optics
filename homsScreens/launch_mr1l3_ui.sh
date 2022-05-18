@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PCDS_CONDA_VER=5.3.0
 source /cds/group/pcds/pyps/conda/pcds_conda
 
-`pydm --hide-nav-bar -m '{"YAXIS":"MR1L3:HOMS:MMS:YUP","XAXIS":"MR1L3:HOMS:MMS:XUP", "PITCH":"MR1L3:HOMS:MMS:PITCH", "MIRROR":"MR1L3"}' /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/mirrorScreen.py &`
+`pydm --hide-menu-bar --hide-nav-bar -m '{"DISP_NAME":"MR1L3", "BASE_PV":"MR1L3:HOMS"}' /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/mirrorScreen.py &`
