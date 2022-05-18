@@ -90,7 +90,7 @@
             <bool>true</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${YAXIS}.RBV</string>
+            <string>ca://${BASE_PV}:MMS:YUP.RBV</string>
            </property>
           </widget>
          </item>
@@ -125,7 +125,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${YAXIS}:STATE:GET_RBV</string>
+            <string>ca://${BASE_PV}:COATING:STATE:GET_RBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::String</enum>
@@ -206,10 +206,10 @@
             <string/>
            </property>
            <property name="text">
-            <string>SiC</string>
+            <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${YAXIS}:STATE:SET</string>
+            <string>ca://${BASE_PV}:COATING:STATE:SET</string>
            </property>
            <property name="pressValue" stdset="0">
             <string>1</string>
@@ -243,7 +243,7 @@
             <string/>
            </property>
            <property name="text">
-            <string>W</string>
+            <string/>
            </property>
            <property name="iconSize">
             <size>
@@ -252,7 +252,7 @@
             </size>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${YAXIS}:STATE:SET</string>
+            <string>ca://${BASE_PV}:COATING:STATE:SET</string>
            </property>
            <property name="pressValue" stdset="0">
             <string>2</string>
@@ -272,7 +272,7 @@
          </font>
         </property>
         <property name="text">
-         <string>${MIRROR}</string>
+         <string>${DISP_NAME}</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -432,7 +432,7 @@
                <bool>true</bool>
               </property>
               <property name="channel" stdset="0">
-               <string>ca://${PITCH}.RBV</string>
+               <string>ca://${BASE_PV}:MMS:PITCH.RBV</string>
               </property>
              </widget>
             </item>
@@ -468,7 +468,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="channel" stdset="0">
-                 <string>ca://${PITCH}</string>
+                 <string>ca://${BASE_PV}:MMS:PITCH</string>
                 </property>
                </widget>
               </item>
@@ -497,7 +497,7 @@
                  <string>-</string>
                 </property>
                 <property name="channel" stdset="0">
-                 <string>ca://${PITCH}.TWR</string>
+                 <string>ca://${BASE_PV}:MMS:PITCH.TWR</string>
                 </property>
                 <property name="pressValue" stdset="0">
                  <string>1</string>
@@ -513,7 +513,7 @@
                  <bool>true</bool>
                 </property>
                 <property name="channel" stdset="0">
-                 <string>ca://${PITCH}.TWV</string>
+                 <string>ca://${BASE_PV}:MMS:PITCH.TWV</string>
                 </property>
                </widget>
               </item>
@@ -538,7 +538,7 @@
                  <string>+</string>
                 </property>
                 <property name="channel" stdset="0">
-                 <string>ca://${PITCH}.TWF</string>
+                 <string>ca://${BASE_PV}:MMS:PITCH.TWF</string>
                 </property>
                 <property name="pressValue" stdset="0">
                  <string>1</string>
@@ -621,7 +621,7 @@
               <bool>false</bool>
              </property>
              <property name="channel" stdset="0">
-              <string>ca://${PITCH}.HLM</string>
+              <string>ca://${BASE_PV}:MMS:PITCH.HLM</string>
              </property>
             </widget>
            </item>
@@ -645,7 +645,7 @@
               <bool>false</bool>
              </property>
              <property name="channel" stdset="0">
-              <string>ca://${PITCH}.LLM</string>
+              <string>ca://${BASE_PV}:MMS:PITCH.LLM</string>
              </property>
             </widget>
            </item>
@@ -739,7 +739,7 @@
             <bool>true</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${XAXIS}.RBV</string>
+            <string>ca://${BASE_PV}:MMS:XUP.RBV</string>
            </property>
           </widget>
          </item>
@@ -771,7 +771,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${XAXIS}:STATE:GET_RBV</string>
+            <string>ca://${BASE_PV}:MMS:XUP:STATE:GET_RBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::String</enum>
@@ -843,7 +843,7 @@
             <string>IN</string>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${XAXIS}:STATE:SET</string>
+            <string>ca://${BASE_PV}:MMS:XUP:STATE:SET</string>
            </property>
            <property name="pressValue" stdset="0">
             <string>2</string>
@@ -886,7 +886,7 @@
             </size>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://${XAXIS}:STATE:SET</string>
+            <string>ca://${BASE_PV}:MMS:XUP:STATE:SET</string>
            </property>
            <property name="pressValue" stdset="0">
             <string>1</string>
