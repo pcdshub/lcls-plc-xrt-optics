@@ -410,7 +410,7 @@
     <SubObject Include="FB_PI_E621_SerialDriverOld.a_UnknownError" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.4.2,SLAC">
+    <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>
