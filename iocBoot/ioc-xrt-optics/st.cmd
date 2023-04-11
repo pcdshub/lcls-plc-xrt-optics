@@ -4,8 +4,8 @@
 #         Project: HOMS_XRT.tsproj
 #        PLC name: HOMS_XRT_PLC (HOMS_XRT_PLC Instance)
 # Generated using: pytmc 2.14.1
-# Project version: v1.2.0-122-gda46653
-#    Project hash: da466536e76b22197849d5d4202a9fb7cd2176d7
+# Project version: v1.2.0-123-g35c601e
+#    Project hash: 35c601ef345165b34a5f8742c5bbb3022736443d
 #     PLC IP/host: 172.21.88.136
 #      PLC Net ID: 172.21.88.136.1.1
 #  ** Production mode IOC **
@@ -406,7 +406,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS,ID
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS,IDX=3")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:XRT:OPTICS")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:XRT:OPTICS,PROJECT=HOMS_XRT.tsproj,HASH=da46653,VERSION=v1.2.0-122-gda46653,PYTMC=2.14.1,PLC_HOST=172.21.88.136")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:XRT:OPTICS,PROJECT=HOMS_XRT.tsproj,HASH=35c601e,VERSION=v1.2.0-123-g35c601e,PYTMC=2.14.1,PLC_HOST=172.21.88.136")
 
 #   lcls-twincat-motion: * -> 1.8.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=lcls-twincat-motion,VERSION=1.8.0,VENDOR=SLAC")
