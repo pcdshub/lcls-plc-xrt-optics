@@ -3,14 +3,14 @@
   <DUT Name="E_PiezoControl" Id="{6f128950-a190-46f1-a0ed-00eddd22f261}">
     <Declaration><![CDATA[TYPE E_PiezoControl :
 (
-	//Piezo Control Machine
-	EPC_Idle := 0,
-	EPC_Init := 10,
-	EPC_MoveRequested  := 50,
-	EPC_MovingPositive := 100,
-	EPC_MovingNegative := 200,
-	EPC_MoveCompleted  := 350,
-	EPC_Error := 500
+    //Piezo Control Machine
+    EPC_Idle := 0,
+    EPC_Init := 10,
+    EPC_MoveRequested  := 50,
+    EPC_MovingPositive := 100,
+    EPC_MovingNegative := 200,
+    EPC_MoveCompleted  := 350,
+    EPC_Error := 500
 );
 END_TYPE
 ]]></Declaration>

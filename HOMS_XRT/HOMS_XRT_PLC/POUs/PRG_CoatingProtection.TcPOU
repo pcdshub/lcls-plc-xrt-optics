@@ -3,91 +3,91 @@
   <POU Name="PRG_CoatingProtection" Id="{e94ac5b8-c8a3-4662-9871-79dbc91dcc6e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_CoatingProtection
 VAR
-//M1 
+//M1
    fbM1 : FB_MirrorCoatingProtection := (
-	   	sDevName:= 'XRT-M1', 
-		rFirstCoatingPosition:= 8611000, 
-		rFirstCoatingPositionTolerance:= 1000000, 
-		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 18611000 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
-		sSecondCoatingType:= 'W', 
-		bAutoClear:= TRUE);
-		
+           sDevName:= 'XRT-M1',
+        rFirstCoatingPosition:= 8611000,
+        rFirstCoatingPositionTolerance:= 1000000,
+        sFirstCoatingType:= 'SiC',
+        rSecondCoatingPosition:= 18611000 ,
+        rSecondCoatingPositionTolerance:= 1000000 ,
+        sSecondCoatingType:= 'W',
+        bAutoClear:= TRUE);
+
 //M2
    fbM2 : FB_MirrorCoatingProtection := (
-	   	sDevName:= 'XRT-M2', 
-		rFirstCoatingPosition:= 8496030, 
-		rFirstCoatingPositionTolerance:= 1000000, 
-		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 18496030 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
-		sSecondCoatingType:= 'W', 
-		bAutoClear:= TRUE);
+           sDevName:= 'XRT-M2',
+        rFirstCoatingPosition:= 8496030,
+        rFirstCoatingPositionTolerance:= 1000000,
+        sFirstCoatingType:= 'SiC',
+        rSecondCoatingPosition:= 18496030 ,
+        rSecondCoatingPositionTolerance:= 1000000 ,
+        sSecondCoatingType:= 'W',
+        bAutoClear:= TRUE);
 
-//M3 
+//M3
    fbM3 : FB_MirrorCoatingProtection := (
-	   	sDevName:= 'XRT-M3', 
-		rFirstCoatingPosition:= 9279350, 
-		rFirstCoatingPositionTolerance:= 1000000, 
-		sFirstCoatingType:= 'SiC', 
-		rSecondCoatingPosition:= 19279350 , 
-		rSecondCoatingPositionTolerance:= 1000000 , 
-		sSecondCoatingType:= 'W', 
-		bAutoClear:= TRUE);		
-	
-		
-		
-		// Fast Fault used when M1 and M2 are both in
-         ffM1M2IN: FB_FastFault :=(  
-					i_DevName := 'XRT-M1 and XRT-M2',
-        			i_Desc := 'Fault occurs when both M1 and M2 are IN',
-        			i_TypeCode := 16#602);  
+           sDevName:= 'XRT-M3',
+        rFirstCoatingPosition:= 9279350,
+        rFirstCoatingPositionTolerance:= 1000000,
+        sFirstCoatingType:= 'SiC',
+        rSecondCoatingPosition:= 19279350 ,
+        rSecondCoatingPositionTolerance:= 1000000 ,
+        sSecondCoatingType:= 'W',
+        bAutoClear:= TRUE);
+
+
+
+        // Fast Fault used when M1 and M2 are both in
+         ffM1M2IN: FB_FastFault :=(
+                    i_DevName := 'XRT-M1 and XRT-M2',
+                    i_Desc := 'Fault occurs when both M1 and M2 are IN',
+                    i_TypeCode := 16#602);
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//M1
 fbM1(
-	bMirrorIn := (Main.nEncCntXupMR1L3 > 20210500) , // according to confluence -6 is nominal out position
+    bMirrorIn := (Main.nEncCntXupMR1L3 > 20210500) , // according to confluence -6 is nominal out position
     rCurrentEncoderPosition := Main.nEncCntYupMR1L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
-    nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000) , 
+    nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000) ,
     FFO := GVL_PMPS.g_FastFaultOutput1);
-	
+
 //M2
 //With M2 the same coating has different bit masks depending on the pitch
 IF (Main.nEncCntPitchMR1L4 < 9616668 ) THEN//(HOMS2_Pitch.Stepper.stStatus.rActPosition < -400 ) THEN //MFX
-	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
-	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
+    fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000);
+    fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSIF (Main.nEncCntPitchMR1L4 > 10129409 ) THEN// (HOMS2_Pitch.Stepper.stStatus.rActPosition > 600) THEN //MEC
-	fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(25000, 90000);  
-	fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
+    fbM2.nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(25000, 90000);
+    fbM2.nSecondCoatingBitmask:= F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000);
 ELSE // Anything else in the middle of the range
-	fbM2.nFirstCoatingBitmask:= 0;
-	fbM2.nSecondCoatingBitmask:= 0;
+    fbM2.nFirstCoatingBitmask:= 0;
+    fbM2.nSecondCoatingBitmask:= 0;
 END_IF
 
 fbM2(
-	bMirrorIn := (Main.nEncCntXupMR1L4 < 25490840), 
+    bMirrorIn := (Main.nEncCntXupMR1L4 < 25490840),
     rCurrentEncoderPosition := Main.nEncCntYupMR1L4,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     FFO := GVL_PMPS.g_FastFaultOutput1);
 
 //M3
 fbM3(
-	bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
+    bMirrorIn:=  fbM1.bMirrorIn, // When M1 is out, M3 is considered to be OUT
     rCurrentEncoderPosition := Main.nEncCntYupMR2L3,
     neVRange := PMPS.PMPS_GVL.stCurrentBeamParameters.neVRange,
     nFirstCoatingBitmask:= F_eVExcludeRange(0, 1000) AND F_eVExcludeRange(13500, 90000),
     nSecondCoatingBitmask:=  F_eVExcludeRange(0, 13000) AND F_eVExcludeRange(30000, 90000),
     FFO := GVL_PMPS.g_FastFaultOutput1);
 
-	
+
 // Evaluate M1 and M2 status
 ffM1M2IN(
-		i_xOK := NOT (fbM1.bMirrorIn AND fbM2.bMirrorIn),
-		i_xAutoReset := TRUE,
-	    io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);]]></ST>
+        i_xOK := NOT (fbM1.bMirrorIn AND fbM2.bMirrorIn),
+        i_xAutoReset := TRUE,
+        io_fbFFHWO:=GVL_PMPS.g_FastFaultOutput1);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

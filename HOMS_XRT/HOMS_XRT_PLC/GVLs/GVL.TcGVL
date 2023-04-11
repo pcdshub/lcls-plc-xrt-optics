@@ -2,39 +2,39 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL" Id="{80e92cfe-8789-4b17-a5ef-c2305278c53a}">
     <Declaration><![CDATA[VAR_GLOBAL
-	g_psLogHost	: T_IPv4Addr := '172.21.32.9';
-	gDefaultSubsystem : E_Subsystem := MOTION;
-	gSystemFault	:	BOOL;
-	gAmsNetIDEcatMaster1	AT %I* 	: AMSNETID;
-	gFirstPass	:	 BOOL := TRUE;
-	
-	//MPS Outputs
+    g_psLogHost	: T_IPv4Addr := '172.21.32.9';
+    gDefaultSubsystem : E_Subsystem := MOTION;
+    gSystemFault	:	BOOL;
+    gAmsNetIDEcatMaster1	AT %I* 	: AMSNETID;
+    gFirstPass	:	 BOOL := TRUE;
+
+    //MPS Outputs
     {attribute 'pytmc' := '
         pv: PLC:XRT:HOMS:M2:OUT
     '}
-	bXRT_M2_OUT AT %Q* : BOOL:= FALSE;
+    bXRT_M2_OUT AT %Q* : BOOL:= FALSE;
     {attribute 'pytmc' := '
         pv: PLC:XRT:HOMS:M2:IN
     '}
-	bXRT_M2_IN AT %Q* : BOOL:= FALSE;
-	
-	//Safe-torque-off status
-	gM1STO	:	BOOL;
-	gM2STO	:	BOOL;
-	gM3STO	:	BOOL;
-	
-	//Global encoder scale
-	// For the HOMS, the encoders are all 1nm/cnt which makes things very easy
-	gEncScale	:	LREAL := 1;
-	
-	//Overrides
-	////////////////////////////////////
-		(* Use at your own risk. These variables may induce unexpected state machine cases,
-			and other undesirable effects. They are primarily for testing purposes. Do
-		not use them for operations except in the most dire of situations, and with
-		full knowledge and understanding of what they do. *)
-		gBypassVirtualLimits	:	BOOL;
-	
+    bXRT_M2_IN AT %Q* : BOOL:= FALSE;
+
+    //Safe-torque-off status
+    gM1STO	:	BOOL;
+    gM2STO	:	BOOL;
+    gM3STO	:	BOOL;
+
+    //Global encoder scale
+    // For the HOMS, the encoders are all 1nm/cnt which makes things very easy
+    gEncScale	:	LREAL := 1;
+
+    //Overrides
+    ////////////////////////////////////
+        (* Use at your own risk. These variables may induce unexpected state machine cases,
+            and other undesirable effects. They are primarily for testing purposes. Do
+        not use them for operations except in the most dire of situations, and with
+        full knowledge and understanding of what they do. *)
+        gBypassVirtualLimits	:	BOOL;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

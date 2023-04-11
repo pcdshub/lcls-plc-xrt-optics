@@ -3,23 +3,23 @@
   <POU Name="FB_LimitSwitchState" Id="{b186eb7c-ca72-42e0-b2ec-6cc7d83a7a1f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_LimitSwitchState
 VAR_INPUT
-	diInputs	:	DINT;
+    diInputs	:	DINT;
 END_VAR
 VAR_OUTPUT
-	xHiLS	:	BOOL;
-	xLoLS	:	BOOL;
-	STO: BOOL;
+    xHiLS	:	BOOL;
+    xLoLS	:	BOOL;
+    STO: BOOL;
 END_VAR
 VAR
-	di_1: BOOL;
-	di_2: BOOL;
-	FLS: BOOL; //TRUE is active (ie. limit switch is hit, drive is configured normally-closed). This is bad.
-	RLS: BOOL; 
-	
+    di_1: BOOL;
+    di_2: BOOL;
+    FLS: BOOL; //TRUE is active (ie. limit switch is hit, drive is configured normally-closed). This is bad.
+    RLS: BOOL;
+
 END_VAR
 VAR CONSTANT
-	cHighVal	:	UDINT := 16#00010002;
-	cLowVal		:	UDINT := 16#00020001;
+    cHighVal	:	UDINT := 16#00010002;
+    cLowVal		:	UDINT := 16#00020001;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -46,24 +46,5 @@ xLoLS := NOT RLS AND STO;
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_LimitSwitchState">
-      <LineId Id="3" Count="2" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="40" Count="0" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="91" Count="1" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="94" Count="1" />
-      <LineId Id="71" Count="0" />
-      <LineId Id="51" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="48" Count="1" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

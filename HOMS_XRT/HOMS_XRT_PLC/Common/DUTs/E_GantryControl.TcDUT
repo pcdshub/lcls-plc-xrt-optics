@@ -3,17 +3,17 @@
   <DUT Name="E_GantryControl" Id="{daddda2d-ca5d-4a83-9817-9095b92ef749}">
     <Declaration><![CDATA[TYPE E_GantryControl :
 (
-	//Gantry Control Machine
-	GCM_Idle := 0,
-	GCM_Init := 5,
-	GCM_ChangeCoupling := 10,
-	GCM_Couple := 50,
-	GCM_CoupledEnable := 51,
-	GCM_CoupledStandby := 100,
-	GCM_Decouple := 500,
-	GCM_DecoupledStandby := 1000,
-	GCM_CoupledMoveDone	:= 8000,
-	GCM_Error	:= 9000
+    //Gantry Control Machine
+    GCM_Idle := 0,
+    GCM_Init := 5,
+    GCM_ChangeCoupling := 10,
+    GCM_Couple := 50,
+    GCM_CoupledEnable := 51,
+    GCM_CoupledStandby := 100,
+    GCM_Decouple := 500,
+    GCM_DecoupledStandby := 1000,
+    GCM_CoupledMoveDone	:= 8000,
+    GCM_Error	:= 9000
 );
 END_TYPE
 ]]></Declaration>

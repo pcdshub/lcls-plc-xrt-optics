@@ -3,79 +3,75 @@
   <POU Name="FB_ReadFloatParameter" Id="{b032be87-1bda-4140-8ee6-a63c535bb345}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ReadFloatParameter
 VAR_INPUT
-	bExecute: BOOL;
-	///16#4000=Axisdata, 16#5000=Encoderdata, 16#6000=Controldata, 16#7000=Drivedata
-	nDeviceGroup: UDINT;
-	nIndexOffset: UDINT;
+    bExecute: BOOL;
+    ///16#4000=Axisdata, 16#5000=Encoderdata, 16#6000=Controldata, 16#7000=Drivedata
+    nDeviceGroup: UDINT;
+    nIndexOffset: UDINT;
 END_VAR
 VAR_OUTPUT
-	nData: LREAL;
-	bBusy: BOOL;
-	bDone: BOOL;
-	bError: BOOL;
-	nErrorId: UDINT;
+    nData: LREAL;
+    bBusy: BOOL;
+    bDone: BOOL;
+    bError: BOOL;
+    nErrorId: UDINT;
 END_VAR
 VAR_IN_OUT
-	Axis: AXIS_REF;
+    Axis: AXIS_REF;
 END_VAR
 VAR
-	nState: UINT;
-	fbADSREAD: ADSREAD;
+    nState: UINT;
+    fbADSREAD: ADSREAD;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*Sequence to read parameter in Nc*)
 CASE nState OF
 0:  (*Start sequence. Wait until bExecute is TRUE*)
-	IF bExecute THEN
-		bBusy:=TRUE;
-		bError:=FALSE;
-		nErrorId:=0;
-		nState:=10;
-	END_IF
+    IF bExecute THEN
+        bBusy:=TRUE;
+        bError:=FALSE;
+        nErrorId:=0;
+        nState:=10;
+    END_IF
 
 10: (*Read parameter in Nc*)
-	fbADSREAD(
-		PORT:=500,
-		IDXGRP:=nDeviceGroup+Axis.NcToPlc.AxisId,
-		IDXOFFS:=nIndexOffset,
-		LEN:=SIZEOF(nData),
-		DESTADDR:=ADR(nData),
-		READ:=TRUE);
+    fbADSREAD(
+        PORT:=500,
+        IDXGRP:=nDeviceGroup+Axis.NcToPlc.AxisId,
+        IDXOFFS:=nIndexOffset,
+        LEN:=SIZEOF(nData),
+        DESTADDR:=ADR(nData),
+        READ:=TRUE);
 
-	(*Wait until it's done or if an error occurs*)
-	IF NOT fbADSREAD.ERR THEN
-		IF NOT fbADSREAD.BUSY THEN
-			fbADSREAD(READ:=FALSE);
-			nState:=20;
-		END_IF
-	ELSE
-		nErrorId:=fbADSREAD.ERRID;
-		nState:=999;
-	END_IF
+    (*Wait until it's done or if an error occurs*)
+    IF NOT fbADSREAD.ERR THEN
+        IF NOT fbADSREAD.BUSY THEN
+            fbADSREAD(READ:=FALSE);
+            nState:=20;
+        END_IF
+    ELSE
+        nErrorId:=fbADSREAD.ERRID;
+        nState:=999;
+    END_IF
 
 20: (*Sequense is done. Waits until bExecute is FALSE*)
-	bBusy:=FALSE;
-	bDone:=TRUE;
-	IF NOT bExecute THEN
-		bDone:=FALSE;
-		nState:=0;
-	END_IF
+    bBusy:=FALSE;
+    bDone:=TRUE;
+    IF NOT bExecute THEN
+        bDone:=FALSE;
+        nState:=0;
+    END_IF
 
 999: (*Error in sequence*)
-	bError:=TRUE;
-	bBusy:=FALSE;
-	bDone:=FALSE;
-	fbADSREAD(READ:=FALSE);
-	IF NOT bExecute THEN
-		nState:=0;
-	END_IF
+    bError:=TRUE;
+    bBusy:=FALSE;
+    bDone:=FALSE;
+    fbADSREAD(READ:=FALSE);
+    IF NOT bExecute THEN
+        nState:=0;
+    END_IF
 
 END_CASE
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_ReadFloatParameter">
-      <LineId Id="3" Count="47" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

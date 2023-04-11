@@ -3,28 +3,28 @@
   <POU Name="FB_ElmoGDCBellCoE" Id="{91acbbac-f6fe-4d79-9df9-4139d2e826f8}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ElmoGDCBellCoE
 VAR_IN_OUT
-	stCoE	:	ST_ElmoGDCBellCoEParams;
+    stCoE	:	ST_ElmoGDCBellCoEParams;
 END_VAR
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	fbCoERead	:	FB_CoERead_ByDriveRef;
-	// To make up for not having a .bDone output
-	ftCoeReadBusy: F_TRIG;
-	CaseVar: INT := 1;
-	udiIP	:	UDINT;
-	uiChecksum	:	UDINT;
+    fbCoERead	:	FB_CoERead_ByDriveRef;
+    // To make up for not having a .bDone output
+    ftCoeReadBusy: F_TRIG;
+    CaseVar: INT := 1;
+    udiIP	:	UDINT;
+    uiChecksum	:	UDINT;
 
-	pTempPointer : POINTER TO REAL;
-	fTempFloat : REAL;
+    pTempPointer : POINTER TO REAL;
+    fTempFloat : REAL;
 END_VAR
 VAR CONSTANT
-	c5VSupply : ST_CoEIndSub := (nIndex:=16#2206, nSubIndex:=0);
-	cDriveTemp : ST_CoEIndSub := (nIndex:=16#22A3, nSubIndex:=1);
-	cIP : ST_CoEIndSub := (nIndex:=16#1111, nSubIndex:=1);
-	cParamChksm	:	ST_CoEIndSub := (nIndex:=16#2060, nSubIndex:=0);
+    c5VSupply : ST_CoEIndSub := (nIndex:=16#2206, nSubIndex:=0);
+    cDriveTemp : ST_CoEIndSub := (nIndex:=16#22A3, nSubIndex:=1);
+    cIP : ST_CoEIndSub := (nIndex:=16#1111, nSubIndex:=1);
+    cParamChksm	:	ST_CoEIndSub := (nIndex:=16#2060, nSubIndex:=0);
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -35,7 +35,7 @@ This FB cyclically reads CoE Parameters from the ElmoMC drives.
 *)
 
 CASE CaseVar OF
-	
+
 1:
 //Drive temperature
 fbCoERead.nIndex := cDriveTemp.nIndex;
@@ -69,15 +69,15 @@ END_CASE
 fbCoERead.bExecute := TRUE;
 ftCoeReadBusy(CLK:=fbCoERead.bBusy);
 IF ftCoeReadBusy.Q THEN
-	fbCoERead.bExecute := FALSE;
-	//<TODO> check for errors
-	IF NOT fbCoERead.bError THEN
-		//Switch to the other case
-		CaseVar := CaseVar + 1;
-		IF CaseVar > 3 THEN CaseVar := 1; END_IF
-	ELSE
-		;
-	END_IF
+    fbCoERead.bExecute := FALSE;
+    //<TODO> check for errors
+    IF NOT fbCoERead.bError THEN
+        //Switch to the other case
+        CaseVar := CaseVar + 1;
+        IF CaseVar > 3 THEN CaseVar := 1; END_IF
+    ELSE
+        ;
+    END_IF
 END_IF
 
 ACT_CoEReadFB();]]></ST>

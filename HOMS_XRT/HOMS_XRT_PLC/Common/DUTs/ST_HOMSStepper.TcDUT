@@ -4,46 +4,46 @@
     <Declaration><![CDATA[TYPE ST_HOMSStepper :
 STRUCT
 
-	(* Controls *)
-	/////////////////////////////////
-	xEnable	:	BOOL;
-	xReset	:	BOOL;
-	//External motor interlock, overrides axis enable
-	i_xMotorInterlock	:	BOOL;
-	//Motion Profile
-	fVelocity     : REAL;
-	fAcceleration : REAL;
-	fDeceleration : REAL ;
-	//Tweak Requests
-	bTwkFwd : BOOL;
-	bTwkBwd : BOOL;
-	rTweak  : REAL;
-	//Absolute Value Request
-	rReqAbsolute : REAL:= 0.0;
-	//Pitch stepper dmov range (urad)
-	rStepperDmovRange	:	REAL := 20;
-	(* Status *)
-	//Axis Status
-	stStatus : ST_StepperStatus;
-	bDone : BOOL;
-	bBusy : BOOL;
-	
-	
-	(* IO *)
-	//CoE Stuff
-	///////////////////////////////
-	stCoE	:	ST_ElmoGDCBellCoEParams;
-	
-	//Drive inputs
-	/////////////////////////////
-	diInputs	AT %I*	:	DINT;
-	//Drive current
-	iDriveCurrent	AT %I*	:	INT;	
-	(* Axis motor *)
-	stAxis	:	AXIS_REF;
-	//Limit switches
-	xHiLS	:	BOOL;
-	xLoLS	:	BOOL;
+    (* Controls *)
+    /////////////////////////////////
+    xEnable	:	BOOL;
+    xReset	:	BOOL;
+    //External motor interlock, overrides axis enable
+    i_xMotorInterlock	:	BOOL;
+    //Motion Profile
+    fVelocity     : REAL;
+    fAcceleration : REAL;
+    fDeceleration : REAL ;
+    //Tweak Requests
+    bTwkFwd : BOOL;
+    bTwkBwd : BOOL;
+    rTweak  : REAL;
+    //Absolute Value Request
+    rReqAbsolute : REAL:= 0.0;
+    //Pitch stepper dmov range (urad)
+    rStepperDmovRange	:	REAL := 20;
+    (* Status *)
+    //Axis Status
+    stStatus : ST_StepperStatus;
+    bDone : BOOL;
+    bBusy : BOOL;
+
+
+    (* IO *)
+    //CoE Stuff
+    ///////////////////////////////
+    stCoE	:	ST_ElmoGDCBellCoEParams;
+
+    //Drive inputs
+    /////////////////////////////
+    diInputs	AT %I*	:	DINT;
+    //Drive current
+    iDriveCurrent	AT %I*	:	INT;
+    (* Axis motor *)
+    stAxis	:	AXIS_REF;
+    //Limit switches
+    xHiLS	:	BOOL;
+    xLoLS	:	BOOL;
 
 
 

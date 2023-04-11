@@ -8,27 +8,27 @@ VAR_INPUT
       io: io
     '}
     enumSet : ENUM_Coating_States;
-    
+
     stCoating1 : DUT_PositionState;
     stCoating2 : DUT_PositionState;
 END_VAR
 VAR_OUTPUT
-	{attribute 'pytmc' := '
+    {attribute 'pytmc' := '
       pv: GET;
       io: i;
     '}
     enumGet : ENUM_Coating_States;
   END_VAR
 VAR
-	bCoatingInit : BOOL;
+    bCoatingInit : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[if NOT bCoatingInit THEN
     bCoatingInit := TRUE;
-	
+
     arrStates[1] := stCoating1;
-	arrStates[2] := stCoating2;
+    arrStates[2] := stCoating2;
 END_IF
 
 setState := enumSet;

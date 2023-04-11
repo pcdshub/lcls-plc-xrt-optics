@@ -2,31 +2,31 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4020.12">
   <GVL Name="GVL_Constants" Id="{bcf36a96-1cd3-49d6-aac3-94eec47ad218}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
-	
-	cPiezoMaxVoltage	:	LREAL := 120;
-	cPiezoMinVoltage	:	LREAL := -10;
-(*
-	//FEE-M1
-	///////////////////////////
-	//X
-	HOMS1_XGantry_PAxisCenter : DINT:=24432540;
-	HOMS1_XGantry_SAxisCenter : DINT:=25259170;
-	
-	//Y
-	HOMS1_YGantry_PAxisCenter : DINT:=14890432;
-	HOMS1_YGantry_SAxisCenter : DINT:=14845283;
 
-	//FEE-M2
-	///////////////////////////
-	//X
-	HOMS2_XGantry_PAxisCenter : DINT:=24432540;
-	HOMS2_XGantry_SAxisCenter : DINT:=25259170;
-	
-	//Y
-	HOMS2_YGantry_PAxisCenter : DINT:=14890432;
-	HOMS2_YGantry_SAxisCenter : DINT:=14845283;
-	
-	*)
+    cPiezoMaxVoltage	:	LREAL := 120;
+    cPiezoMinVoltage	:	LREAL := -10;
+(*
+    //FEE-M1
+    ///////////////////////////
+    //X
+    HOMS1_XGantry_PAxisCenter : DINT:=24432540;
+    HOMS1_XGantry_SAxisCenter : DINT:=25259170;
+
+    //Y
+    HOMS1_YGantry_PAxisCenter : DINT:=14890432;
+    HOMS1_YGantry_SAxisCenter : DINT:=14845283;
+
+    //FEE-M2
+    ///////////////////////////
+    //X
+    HOMS2_XGantry_PAxisCenter : DINT:=24432540;
+    HOMS2_XGantry_SAxisCenter : DINT:=25259170;
+
+    //Y
+    HOMS2_YGantry_PAxisCenter : DINT:=14890432;
+    HOMS2_YGantry_SAxisCenter : DINT:=14845283;
+
+    *)
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

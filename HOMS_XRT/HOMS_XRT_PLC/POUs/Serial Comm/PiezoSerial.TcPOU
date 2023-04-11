@@ -3,25 +3,25 @@
   <POU Name="PiezoSerial" Id="{04ed9258-9624-4f29-9f34-d3e5ff9995d6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PiezoSerial
 VAR
-	//PI Serial
-	//Beckhoff
-	fbE621SerialDriver_MR1L3 : FB_PI_E621_SerialDriver;
-	rtInitParams_MR1L3	:	R_TRIG;
-	tonTimeoutRst_MR1L3	: TON := (PT:=T#2S); //For timeout reset
-	
-	fbE621SerialDriver_MR2L3 : FB_PI_E621_SerialDriver;
-	rtInitParams_MR2L3	:	R_TRIG;
-	tonTimeoutRst_MR2L3	: TON := (PT:=T#2S); //For timeout reset
-	
-	fbE621SerialDriver_MR1L4 : FB_PI_E621_SerialDriver;
-	rtInitParams_MR2L4	:	R_TRIG;
-	tonTimeoutRst_MR2L4	: TON := (PT:=T#2S); //For timeout reset
+    //PI Serial
+    //Beckhoff
+    fbE621SerialDriver_MR1L3 : FB_PI_E621_SerialDriver;
+    rtInitParams_MR1L3	:	R_TRIG;
+    tonTimeoutRst_MR1L3	: TON := (PT:=T#2S); //For timeout reset
+
+    fbE621SerialDriver_MR2L3 : FB_PI_E621_SerialDriver;
+    rtInitParams_MR2L3	:	R_TRIG;
+    tonTimeoutRst_MR2L3	: TON := (PT:=T#2S); //For timeout reset
+
+    fbE621SerialDriver_MR1L4 : FB_PI_E621_SerialDriver;
+    rtInitParams_MR2L4	:	R_TRIG;
+    tonTimeoutRst_MR2L4	: TON := (PT:=T#2S); //For timeout reset
 
 
-	
-	rtInitParams	:	R_TRIG;
-	tonTimeoutRstM1	: TON := (PT:=T#2S); //For timeout reset
-	tonTimeoutRstM2	: TON := (PT:=T#2S); //For timeout reset
+
+    rtInitParams	:	R_TRIG;
+    tonTimeoutRstM1	: TON := (PT:=T#2S); //For timeout reset
+    tonTimeoutRstM2	: TON := (PT:=T#2S); //For timeout reset
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -30,25 +30,25 @@ END_VAR
 fbE621SerialDriver_MR1L3.i_xExecute := TRUE;
 fbE621SerialDriver_MR1L3.i_xExecute R= fbE621SerialDriver_MR1L3.q_xDone;
 fbE621SerialDriver_MR1L3(iq_stPiezoAxis:= GVL_MR1L3.MR1L3_Pitch.Piezo,
-		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L3,
-		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L3);
+                        iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L3,
+                        iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L3);
 
-	
+
 //M2 Piezo E-621
 ///////////////////////
 fbE621SerialDriver_MR1L4.i_xExecute := TRUE;
 fbE621SerialDriver_MR1L4.i_xExecute R= fbE621SerialDriver_MR1L4.q_xDone;
 fbE621SerialDriver_MR1L4(iq_stPiezoAxis:= GVL_MR1L4.MR1L4_Pitch.Piezo,
-		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L4,
-		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L4);
-		
+                        iq_stSerialRXBuffer:= Serial_RXBuffer_MR1L4,
+                        iq_stSerialTXBuffer:= Serial_TXBuffer_MR1L4);
+
 //MR2L3 Piezo E-621
 ///////////////////////
 fbE621SerialDriver_MR2L3.i_xExecute := TRUE;
 fbE621SerialDriver_MR2L3.i_xExecute R= fbE621SerialDriver_MR2L3.q_xDone;
 fbE621SerialDriver_MR2L3(iq_stPiezoAxis:= GVL_MR2L3.MR2L3_Pitch.Piezo,
-		                iq_stSerialRXBuffer:= Serial_RXBuffer_MR2L3,
-		                iq_stSerialTXBuffer:= Serial_TXBuffer_MR2L3);
+                        iq_stSerialRXBuffer:= Serial_RXBuffer_MR2L3,
+                        iq_stSerialTXBuffer:= Serial_TXBuffer_MR2L3);
 
 ]]></ST>
     </Implementation>
