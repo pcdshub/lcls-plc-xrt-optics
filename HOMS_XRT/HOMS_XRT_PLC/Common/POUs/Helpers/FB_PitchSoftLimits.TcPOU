@@ -3,15 +3,15 @@
   <POU Name="FB_PitchSoftLimits" Id="{3b9899a1-d7a0-44d6-9210-b3d8d5950ecd}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PitchSoftLimits
 VAR_INPUT
-	Pitch	:	HOMS_PitchMechanismOld;
+    Pitch	:	HOMS_PitchMechanismOld;
 END_VAR
 VAR_OUTPUT
-	xHiLS	:	BOOL;
-	xLoLS	:	BOOL;
+    xHiLS	:	BOOL;
+    xLoLS	:	BOOL;
 END_VAR
 VAR
-	diHys	:	DINT := 500; //500 nm (1 inc/nm)
-	STO: BOOL;
+    diHys	:	DINT := 500; //500 nm (1 inc/nm)
+    STO: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,11 +26,5 @@ xLoLS R= Pitch.diEncCnt < Pitch.diEncPosLimLo;
 xHiLS := xHiLS AND STO;
 xLoLS := xLoLS AND STO;]]></ST>
     </Implementation>
-    <LineIds Name="FB_PitchSoftLimits">
-      <LineId Id="21" Count="1" />
-      <LineId Id="16" Count="3" />
-      <LineId Id="23" Count="2" />
-      <LineId Id="9" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

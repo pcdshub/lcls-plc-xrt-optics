@@ -398,19 +398,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <SubObject Include="FB_ElmoGDCBellCoE.ACT_CoEReadFB" />
-    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_ExeFb" />
-    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_LoadDriveParams" />
-    <SubObject Include="FB_PiezoControl.ACT_CheckLimits" />
-    <SubObject Include="FB_PiezoControl.ACT_Controller" />
-    <SubObject Include="FB_PitchControlOld.ACT_PTP" />
-    <SubObject Include="FB_PitchControlOld.A_ModeSwitch" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ClearTrans" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ErrorMesg" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_UnknownError" />
-  </ItemGroup>
-  <ItemGroup>
-    <LibraryReference Include="LCLS General,newest,SLAC">
+    <LibraryReference Include="LCLS General,2.8.1,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>

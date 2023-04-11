@@ -3,12 +3,12 @@
   <GVL Name="GVL_MR1L4_Constants" Id="{bab5a8a7-7e61-4255-b9b1-a7508819eb64}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
-	// Encoder reference values in counts = nm
-	// Enc Ref Vals from alignment 2020-6-12
-	nYUP_ENC_REF : ULINT := 13663400;
-	nYDWN_ENC_REF : ULINT := 15043000;
-	nXUP_ENC_REF : ULINT := 25569700;
-	nXDWN_ENC_REF : ULINT := 26702800;
+    // Encoder reference values in counts = nm
+    // Enc Ref Vals from alignment 2020-6-12
+    nYUP_ENC_REF : ULINT := 13663400;
+    nYDWN_ENC_REF : ULINT := 15043000;
+    nXUP_ENC_REF : ULINT := 25569700;
+    nXDWN_ENC_REF : ULINT := 26702800;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

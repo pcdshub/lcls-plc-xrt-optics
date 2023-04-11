@@ -8,45 +8,45 @@ VAR
         pv: MR1L3:HOMS:COATING:STATE;
         io: io;
      '}
-    fbMR1L3_Coating_States: FB_Coating_States; 
-    
+    fbMR1L3_Coating_States: FB_Coating_States;
+
     MR1L3_SiC : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'SiC',  
+        sName := 'SiC',
         nEncoderCount := 8611100,
         fDelta := 1000,
         fVelocity := 150,
         stBeamParams := PMPS_GVL.cstFullBeam,
         nRequestAssertionID := 16#FA72);
-        
+
     MR1L3_W : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'W',  
+        sName := 'W',
         nEncoderCount := 18611220,
         fDelta := 1000,
         fVelocity := 150,
         stBeamParams := PMPS_GVL.cstFullBeam,
         nRequestAssertionID := 16#FA73);
-        
+
 //MR1L3 In Out States
     {attribute 'pytmc' := '
         pv: MR1L3:HOMS:MMS:XUP:STATE;
     '}
-    fbMR1L3_InOut_States : FB_PositionStateInOut;        
-    
+    fbMR1L3_InOut_States : FB_PositionStateInOut;
+
     MR1L3_In : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'IN',  
+        sName := 'IN',
         nEncoderCount := 25210740,
         fDelta := 1000,
         fVelocity := 150);
-   
+
     MR1L3_Out : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
@@ -55,58 +55,58 @@ VAR
         nEncoderCount := 19210590,
         fDelta := 1000,
         fVelocity := 150);
-        
-//MR2L3 Coating States 
+
+//MR2L3 Coating States
     {attribute 'pytmc' := '
         pv: MR2L3:HOMS:COATING:STATE;
         io: io;
     '}
-    fbMR2L3_Coating_States: FB_Coating_States_noPMPS; 
-    
+    fbMR2L3_Coating_States: FB_Coating_States_noPMPS;
+
     MR2L3_SiC : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'SiC',  
+        sName := 'SiC',
         nEncoderCount := 9278970,
         fDelta := 1000,
         fVelocity := 150);
-        
+
     MR2L3_W : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'W',  
+        sName := 'W',
         nEncoderCount := 19279260,
         fDelta := 1000,
         fVelocity := 150);
-    
+
 //MR1L4 Coating States
     {attribute 'pytmc' := '
         pv: MR1L4:HOMS:COATING:STATE;
         io: io;
     '}
-    fbMR1L4_Coating_States: FB_Coating_States_noPMPS; 
-    
+    fbMR1L4_Coating_States: FB_Coating_States_noPMPS;
+
     MR1L4_SiC : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'SiC',  
+        sName := 'SiC',
         nEncoderCount := 8495750,
         fDelta := 1000,
         fVelocity := 150);
-        
+
     MR1L4_W : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'W',  
+        sName := 'W',
         nEncoderCount := 18496280,
         fDelta := 1000,
         fVelocity := 150);
-    
-//MR1L4 In Out States 
+
+//MR1L4 In Out States
     {attribute 'pytmc' := '
         pv: MR1L4:HOMS:MMS:XUP:STATE;
     '}
@@ -116,11 +116,11 @@ VAR
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
         bValid := TRUE,
-        sName := 'IN',  
+        sName := 'IN',
         nEncoderCount := 23590530,
         fDelta := 1000,
         fVelocity := 150);
-        
+
     MR1L4_Out : DUT_PositionState := (
         bUseRawCounts := TRUE,
         bMoveOk := TRUE,
@@ -142,37 +142,37 @@ END_VAR
         bBPOkAutoReset := TRUE,
         bEnable := TRUE,
         stCoating1 := MR1L3_SiC,
-        stCoating2 := MR1L3_W, 
-	    fbArbiter:=GVL_PMPS.g_fbArbiter2,
+        stCoating2 := MR1L3_W,
+        fbArbiter:=GVL_PMPS.g_fbArbiter2,
         fbFFHWO:=GVL_PMPS.g_FastFaultOutput2 ,
-        nTransitionAssertionID:= 16#FA71 , 
-	    nUnknownAssertionID:= 16#FA70 , 
-	    stMotionStage:=Main.M1);
+        nTransitionAssertionID:= 16#FA71 ,
+        nUnknownAssertionID:= 16#FA70 ,
+        stMotionStage:=Main.M1);
 
 //M1L3 States No State PMPS
     fbMR1L3_InOut_States(
         bEnable := TRUE,
-        stIn := MR1L3_In, 
+        stIn := MR1L3_In,
         stOut := MR1L3_Out,
         stMotionStage := Main.M3);
-        
+
 //MR2L3 States No State PMPS
     fbMR2L3_Coating_States(
         bEnable := TRUE,
         stCoating1 := MR2L3_SiC,
-        stCoating2 := MR2L3_W,  
-	    stMotionStage:= Main.M13);
+        stCoating2 := MR2L3_W,
+        stMotionStage:= Main.M13);
 
 //MR1L4 States No State PMPS
     fbMR1L4_Coating_States(
         bEnable := TRUE,
         stCoating1 := MR1L4_SiC,
-        stCoating2 := MR1L4_W,  
-	    stMotionStage:= Main.M7);
-    
+        stCoating2 := MR1L4_W,
+        stMotionStage:= Main.M7);
+
     fbMR1L4_InOut_States(
         bEnable := TRUE,
-        stIn := MR1L4_In, 
+        stIn := MR1L4_In,
         stOut := MR1L4_Out,
         stMotionStage := Main.M9);
 ]]></ST>

@@ -5,7 +5,7 @@
 STRUCT
 (* ST_BasicAxis was created for basic motion controls. AbstractAxis
 is similar, but removes some unused elements that don't apply to axes
-that are not directly linked to hardware, eg. axes that are combinations 
+that are not directly linked to hardware, eg. axes that are combinations
 of more than one physical actuator. *)
 
 (* Controls *)

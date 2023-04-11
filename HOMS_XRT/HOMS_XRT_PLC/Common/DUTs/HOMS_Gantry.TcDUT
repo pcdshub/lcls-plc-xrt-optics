@@ -3,22 +3,22 @@
   <DUT Name="HOMS_Gantry" Id="{076dd89d-3b2d-4b76-8d9d-03e7f9903f91}">
     <Declaration><![CDATA[TYPE HOMS_Gantry :
 STRUCT
-	PAxis	:	HOMS_GantryAxis; //Primary Axis, upstream
-	SAxis	:	HOMS_GantryAxis; //Secondary Axis, downstream
-	VAxis	:	HOMS_GantryAxis; //Virtual Axis
-	Mode	:	E_GantryMode; //Current gantry mode
-	ModeReq:	E_GantryMode := GantryModeCoupled; //Requested gantry mode
-	Diff	:	REAL;	//Gantry difference
-	DiffFlt	:	BOOL := TRUE; //Gantry difference fault, true means fault
-	xCoupled : BOOL := FALSE;
-	xUncouple   : BOOL := FALSE;//Switch to uncouple axis
-	PAxisActPos	:	LREAL; //Encoder Readback
-	SAxisActPos	:	LREAL; //Encoder Readback
+    PAxis	:	HOMS_GantryAxis; //Primary Axis, upstream
+    SAxis	:	HOMS_GantryAxis; //Secondary Axis, downstream
+    VAxis	:	HOMS_GantryAxis; //Virtual Axis
+    Mode	:	E_GantryMode; //Current gantry mode
+    ModeReq:	E_GantryMode := GantryModeCoupled; //Requested gantry mode
+    Diff	:	REAL;	//Gantry difference
+    DiffFlt	:	BOOL := TRUE; //Gantry difference fault, true means fault
+    xCoupled : BOOL := FALSE;
+    xUncouple   : BOOL := FALSE;//Switch to uncouple axis
+    PAxisActPos	:	LREAL; //Encoder Readback
+    SAxisActPos	:	LREAL; //Encoder Readback
 
-	(* Parameters
-	These should come primarily from the ESD *)
-	DiffTol	:	LREAL := 0.200;	//Gantry difference tolerance (mm)
-	DiffHys	:	LREAL := 0.050;	//Gantry difference hysteresis (mm)
+    (* Parameters
+    These should come primarily from the ESD *)
+    DiffTol	:	LREAL := 0.200;	//Gantry difference tolerance (mm)
+    DiffHys	:	LREAL := 0.050;	//Gantry difference hysteresis (mm)
 END_STRUCT
 END_TYPE
 ]]></Declaration>

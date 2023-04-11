@@ -3,8 +3,8 @@
   <POU Name="F_PiezoPosition" Id="{8747c015-2551-44e3-ba56-f7fc68122f76}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_PiezoPosition : REAL
 VAR_INPUT
-	rPiezoVoltage	:	LREAL; //The readback piezo voltage
-	arCalibrationTable	:	LREAL; //Piezo Calibration Table for interpolation
+    rPiezoVoltage	:	LREAL; //The readback piezo voltage
+    arCalibrationTable	:	LREAL; //Piezo Calibration Table for interpolation
 END_VAR
 VAR
 END_VAR
@@ -25,9 +25,5 @@ just implement a realtime feedback and let the center-point finder do the work..
 
 *)]]></ST>
     </Implementation>
-    <LineIds Name="F_PiezoPosition">
-      <LineId Id="3" Count="12" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

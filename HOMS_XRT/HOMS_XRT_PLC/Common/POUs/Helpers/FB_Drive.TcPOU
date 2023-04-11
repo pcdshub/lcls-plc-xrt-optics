@@ -3,126 +3,126 @@
   <POU Name="FB_Drive" Id="{92806206-526e-481f-bd35-830ac647b979}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_Drive
 VAR
-	sVersion: STRING:='1.0.2';
-	bMovingRelOrAbs: BOOL;
-	rtReset: R_TRIG;
+    sVersion: STRING:='1.0.2';
+    bMovingRelOrAbs: BOOL;
+    rtReset: R_TRIG;
 END_VAR
 VAR_INPUT
-	En: BOOL;
-	bEnable: BOOL;
-	bReset: BOOL;
-	bExecute: BOOL;
-	/////	nCommand...
-	/////	0 = Jog
-	/////	1 = MoveVelocity
-	/////	2 = MoveRelative
-	/////	3 = MoveAbsolut
-	/////	4 = MoveModulo
-	/////	10 = Homing
-	/////	20 = SuperInp >>>ToBe
-	/////	30 = Gear
-	nCommand: UINT;
-	nCmdData: UINT;
-	fVelocity: LREAL;
-	fPosition: LREAL;
-	fAcceleration: LREAL;
-	fDeceleration: LREAL;
-	bJogFwd: BOOL;
-	bJogBwd: BOOL;
-	bLimitFwd: BOOL;
-	bLimitBwd: BOOL;	
-	fOverride: LREAL := 100;
-	bHomeSensor: BOOL;
-	fHomePosition:LREAL;
-	nHomeRevOffset: UINT;
-	MasterAxis: AXIS_REF;
-	nMotionAxisID:UDINT:=0;  //Axis id in Motion (NC)
-	bChanChangingDirection: INT;
+    En: BOOL;
+    bEnable: BOOL;
+    bReset: BOOL;
+    bExecute: BOOL;
+    /////	nCommand...
+    /////	0 = Jog
+    /////	1 = MoveVelocity
+    /////	2 = MoveRelative
+    /////	3 = MoveAbsolut
+    /////	4 = MoveModulo
+    /////	10 = Homing
+    /////	20 = SuperInp >>>ToBe
+    /////	30 = Gear
+    nCommand: UINT;
+    nCmdData: UINT;
+    fVelocity: LREAL;
+    fPosition: LREAL;
+    fAcceleration: LREAL;
+    fDeceleration: LREAL;
+    bJogFwd: BOOL;
+    bJogBwd: BOOL;
+    bLimitFwd: BOOL;
+    bLimitBwd: BOOL;
+    fOverride: LREAL := 100;
+    bHomeSensor: BOOL;
+    fHomePosition:LREAL;
+    nHomeRevOffset: UINT;
+    MasterAxis: AXIS_REF;
+    nMotionAxisID:UDINT:=0;  //Axis id in Motion (NC)
+    bChanChangingDirection: INT;
 END_VAR
 VAR_OUTPUT
-	EnO: BOOL;
-	bEnabled: BOOL;
-	bBusy: BOOL;
-	bDone: BOOL;
-	bError: BOOL;
-	bHomed: BOOL;
-	nErrorId: UDINT;
-	Status: ST_AxisStatus;
-	fActVelocity: LREAL;
-	fActPosition: LREAL;
-	fActDiff: LREAL;
+    EnO: BOOL;
+    bEnabled: BOOL;
+    bBusy: BOOL;
+    bDone: BOOL;
+    bError: BOOL;
+    bHomed: BOOL;
+    nErrorId: UDINT;
+    Status: ST_AxisStatus;
+    fActVelocity: LREAL;
+    fActPosition: LREAL;
+    fActDiff: LREAL;
     sErrorMessage:STRING;
-	stStepperStatus: ST_StepperStatus;
+    stStepperStatus: ST_StepperStatus;
 END_VAR
 VAR_IN_OUT
-	Axis: AXIS_REF;
+    Axis: AXIS_REF;
 END_VAR
-VAR	
-	bFirstScan: BOOL := TRUE;
-	iCounter: INT := 0;
-	fOldVelocity: LREAL;
-	fbReset: MC_Reset;
-	fbPower: MC_Power;
-	fbHalt: MC_Halt;
-	fbJog: MC_Jog;
-	fbMoveVelocity: MC_MoveVelocity;
-	fbMoveRelative: MC_MoveRelative;
-	fbMoveAbsolute: MC_MoveAbsolute;
-	fbMoveModulo: MC_MoveModulo;
-	fbHome: MC_Home;
-	fbGearInDyn: MC_GearInDyn;
-	fbGearOut: MC_GearOut;
-	
-	////////////////////////////////////
+VAR
+    bFirstScan: BOOL := TRUE;
+    iCounter: INT := 0;
+    fOldVelocity: LREAL;
+    fbReset: MC_Reset;
+    fbPower: MC_Power;
+    fbHalt: MC_Halt;
+    fbJog: MC_Jog;
+    fbMoveVelocity: MC_MoveVelocity;
+    fbMoveRelative: MC_MoveRelative;
+    fbMoveAbsolute: MC_MoveAbsolute;
+    fbMoveModulo: MC_MoveModulo;
+    fbHome: MC_Home;
+    fbGearInDyn: MC_GearInDyn;
+    fbGearOut: MC_GearOut;
+
+    ////////////////////////////////////
 //	fbReadParameter2:FB_ReadParameterInNc_v1_00;
-	fbReadFloatParameter:FB_ReadFloatParameter;
-	fbReadFloatParameter2:FB_ReadFloatParameter;
-	fbReadFloatParameter3:FB_ReadFloatParameter;
-	fbWriteParameter:FB_WriteParameterInNc;
-	fbWriteParameter2:FB_WriteParameterInNc;
-	fbWriteParameter3:FB_WriteParameterInNc;
-	fbWriteParameter4:FB_WriteParameterInNc;
-	fbRiseTrigger:R_trig;
-	fDistance:LREAL;
-	fCenterPosition:LREAL;
-	fHomeVelocity:LREAL;
-	fHomeReverseVelocity:LREAL;
-	fPositionAfterSensor:LREAL;
-	fSkipPosition:LREAL;
-	fScalingFactor:LREAL;
-	nCounter:UINT;
-	nCounter2:UINT;
-	nDelayCounter:UINT;
-	nCalculatedCounter:UINT;
-	nRealDirection:UINT;
-	nExecutionCounter:UINT;
-	nLimitCounter:UINT;
-	nInternalHomeRevOffset:UINT;
-	bHomeflag:BOOL;
-	bHomeTrigg: BOOL;
-	bLimitTrigg: BOOL;
-	bCenterCalculated: BOOL;
-	bDirection: BOOL;
-	bChangeDir:BOOL;
-	bReadyToGo:BOOL;
-	bFlag1:BOOL;
-	bFlagWrite4Done:BOOL;
-	bMode6Flag:BOOL;
-	bDirectionFlag:BOOL;
-	bStartAtLimitSwitch:BOOL;
-	bHomingToggled:BOOL;
-	bHomingState1:BOOL;
-	bHomingState2:BOOL;
-	bHomingState3:BOOL;
-	bHomingState4:BOOL;
-	bHomingState5:BOOL;
-	bHomingState6:BOOL;
-	bHomingExecute:BOOL;
-	bSyncError: BOOL;
-	bLimitTimeOut:BOOL;
-	bChangingDirection:BOOL;
-	fConvertPos : LREAL;
-	////////////////////////////////
+    fbReadFloatParameter:FB_ReadFloatParameter;
+    fbReadFloatParameter2:FB_ReadFloatParameter;
+    fbReadFloatParameter3:FB_ReadFloatParameter;
+    fbWriteParameter:FB_WriteParameterInNc;
+    fbWriteParameter2:FB_WriteParameterInNc;
+    fbWriteParameter3:FB_WriteParameterInNc;
+    fbWriteParameter4:FB_WriteParameterInNc;
+    fbRiseTrigger:R_trig;
+    fDistance:LREAL;
+    fCenterPosition:LREAL;
+    fHomeVelocity:LREAL;
+    fHomeReverseVelocity:LREAL;
+    fPositionAfterSensor:LREAL;
+    fSkipPosition:LREAL;
+    fScalingFactor:LREAL;
+    nCounter:UINT;
+    nCounter2:UINT;
+    nDelayCounter:UINT;
+    nCalculatedCounter:UINT;
+    nRealDirection:UINT;
+    nExecutionCounter:UINT;
+    nLimitCounter:UINT;
+    nInternalHomeRevOffset:UINT;
+    bHomeflag:BOOL;
+    bHomeTrigg: BOOL;
+    bLimitTrigg: BOOL;
+    bCenterCalculated: BOOL;
+    bDirection: BOOL;
+    bChangeDir:BOOL;
+    bReadyToGo:BOOL;
+    bFlag1:BOOL;
+    bFlagWrite4Done:BOOL;
+    bMode6Flag:BOOL;
+    bDirectionFlag:BOOL;
+    bStartAtLimitSwitch:BOOL;
+    bHomingToggled:BOOL;
+    bHomingState1:BOOL;
+    bHomingState2:BOOL;
+    bHomingState3:BOOL;
+    bHomingState4:BOOL;
+    bHomingState5:BOOL;
+    bHomingState6:BOOL;
+    bHomingExecute:BOOL;
+    bSyncError: BOOL;
+    bLimitTimeOut:BOOL;
+    bChangingDirection:BOOL;
+    fConvertPos : LREAL;
+    ////////////////////////////////
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -136,78 +136,78 @@ rtReset(CLK:=bReset);
 Axis();
 (*Reset*)
 fbReset(
-	Execute:=rtReset.Q AND Axis.Status.Error,
-	Axis:=Axis,
-	Done=> ,
-	Busy=> ,
-	Error=> ,
-	ErrorID=> );
+    Execute:=rtReset.Q AND Axis.Status.Error,
+    Axis:=Axis,
+    Done=> ,
+    Busy=> ,
+    Error=> ,
+    ErrorID=> );
 
 (*Power*)
 fbPower(
-	Axis:=Axis,
-	Enable:=bEnable,
-	Enable_Positive:=NOT bChangeDir AND bEnable AND NOT bSyncError AND (bLimitFwd OR (NOT bLimitTimeOut AND (nCommand=10 AND (nCmdData=2 OR nCmdData=10  OR nCmdData=1 OR nCmdData=9)))),
-	Enable_Negative:=NOT bChangeDir AND bEnable AND NOT bSyncError AND (bLimitBwd OR (NOT bLimitTimeOut AND (nCommand=10 AND (nCmdData=2 OR nCmdData=10  OR nCmdData=1 OR nCmdData=9)))),
-	Override:=fOverride,
-	BufferMode:= ,
-	Status=> ,
-	Busy=> ,
-	Active=> ,
-	Error=> ,
-	ErrorID=> );
+    Axis:=Axis,
+    Enable:=bEnable,
+    Enable_Positive:=NOT bChangeDir AND bEnable AND NOT bSyncError AND (bLimitFwd OR (NOT bLimitTimeOut AND (nCommand=10 AND (nCmdData=2 OR nCmdData=10  OR nCmdData=1 OR nCmdData=9)))),
+    Enable_Negative:=NOT bChangeDir AND bEnable AND NOT bSyncError AND (bLimitBwd OR (NOT bLimitTimeOut AND (nCommand=10 AND (nCmdData=2 OR nCmdData=10  OR nCmdData=1 OR nCmdData=9)))),
+    Override:=fOverride,
+    BufferMode:= ,
+    Status=> ,
+    Busy=> ,
+    Active=> ,
+    Error=> ,
+    ErrorID=> );
 
 (*Halt*)
 fbHalt(
-	Execute:=NOT bExecute  AND (((fbMoveVelocity.Busy OR fbPower.Busy) AND (nCommand=1)) OR (fbMoveRelative.Busy AND (nCommand=2)) OR (fbMoveAbsolute.Busy AND (nCommand=3)) OR (fbMoveModulo.Busy AND (nCommand=4)) OR (fbhome.Busy AND (nCommand=10))),
-	Deceleration:=fDeceleration,
-	Jerk:=0,
-	BufferMode:= ,
-	Options:= ,
-	Axis:=Axis ,
-	Done=> ,
-	Busy=> ,
-	Active=> ,
-	CommandAborted=> ,
-	Error=> ,
-	ErrorID=> );
+    Execute:=NOT bExecute  AND (((fbMoveVelocity.Busy OR fbPower.Busy) AND (nCommand=1)) OR (fbMoveRelative.Busy AND (nCommand=2)) OR (fbMoveAbsolute.Busy AND (nCommand=3)) OR (fbMoveModulo.Busy AND (nCommand=4)) OR (fbhome.Busy AND (nCommand=10))),
+    Deceleration:=fDeceleration,
+    Jerk:=0,
+    BufferMode:= ,
+    Options:= ,
+    Axis:=Axis ,
+    Done=> ,
+    Busy=> ,
+    Active=> ,
+    CommandAborted=> ,
+    Error=> ,
+    ErrorID=> );
 
 
 (*MoveRelative (Command = 2)*)
 fbMoveRelative(
-	Execute:=bExecute AND (nCommand=2), 
-	Distance:=fPosition, 
-	Velocity:=ABS(fVelocity), 
-	Acceleration:=fAcceleration,
-	Deceleration:=fDeceleration,
-	Jerk:=0,
-	BufferMode:= , 
-	Options:= , 
-	Axis:=Axis, 
-	Done=> , 
-	Busy=> , 
-	Active=> , 
-	CommandAborted=> , 
-	Error=> , 
-	ErrorID=> );
-	
+    Execute:=bExecute AND (nCommand=2),
+    Distance:=fPosition,
+    Velocity:=ABS(fVelocity),
+    Acceleration:=fAcceleration,
+    Deceleration:=fDeceleration,
+    Jerk:=0,
+    BufferMode:= ,
+    Options:= ,
+    Axis:=Axis,
+    Done=> ,
+    Busy=> ,
+    Active=> ,
+    CommandAborted=> ,
+    Error=> ,
+    ErrorID=> );
+
 (*MoveAbsolute (Command = 3)*)
 fbMoveAbsolute(
-	Execute:=bExecute AND (nCommand=3),
-	Position:=fPosition,
-	Velocity:=ABS(fVelocity),
-	Acceleration:=fAcceleration,
-	Deceleration:=fDeceleration,
-	Jerk:=0,
-	BufferMode:= ,
-	Options:= ,
-	Axis:=Axis,
-	Done=> ,
-	Busy=> ,
-	Active=> ,
-	CommandAborted=> ,
-	Error=> ,
-	ErrorID=> );
+    Execute:=bExecute AND (nCommand=3),
+    Position:=fPosition,
+    Velocity:=ABS(fVelocity),
+    Acceleration:=fAcceleration,
+    Deceleration:=fDeceleration,
+    Jerk:=0,
+    BufferMode:= ,
+    Options:= ,
+    Axis:=Axis,
+    Done=> ,
+    Busy=> ,
+    Active=> ,
+    CommandAborted=> ,
+    Error=> ,
+    ErrorID=> );
 
 fOldVelocity:=fVelocity;
 
@@ -221,111 +221,111 @@ bEnabled:=fbPower.Status;
 
 (*Error from functions and Nc*)
 IF fbPower.Error AND fbPower.Active THEN
-	bError:=fbPower.Enable;
-	nErrorId:=fbPower.ErrorID;
+    bError:=fbPower.Enable;
+    nErrorId:=fbPower.ErrorID;
 ELSIF fbHalt.Error AND fbHalt.Active THEN
-	bError:=fbHalt.Execute;
-	nErrorId:=fbHalt.ErrorID;
+    bError:=fbHalt.Execute;
+    nErrorId:=fbHalt.ErrorID;
 ELSIF fbJog.Error AND nCommand=0 (*fbJog.Active*) THEN
-	bError:=fbJog.JogForward OR fbJog.JogBackwards;
-	nErrorId:=fbJog.ErrorID;
+    bError:=fbJog.JogForward OR fbJog.JogBackwards;
+    nErrorId:=fbJog.ErrorID;
 ELSIF fbMoveVelocity.Error AND nCommand=1(*fbMoveVelocity.Active*) THEN
-	bError:=fbMoveVelocity.Execute;
-	nErrorId:=fbMoveVelocity.ErrorID;
+    bError:=fbMoveVelocity.Execute;
+    nErrorId:=fbMoveVelocity.ErrorID;
 ELSIF fbMoveRelative.Error AND nCommand=2 (*fbMoveRelative.Active*) THEN
-	bError:=fbMoveRelative.Execute;
-	nErrorId:=fbMoveRelative.ErrorID;
+    bError:=fbMoveRelative.Execute;
+    nErrorId:=fbMoveRelative.ErrorID;
 ELSIF fbMoveAbsolute.Error AND nCommand=3 (*fbMoveAbsolute.Active*) THEN
-	bError:=fbMoveAbsolute.Execute;
-	nErrorId:=fbMoveAbsolute.ErrorID;
+    bError:=fbMoveAbsolute.Execute;
+    nErrorId:=fbMoveAbsolute.ErrorID;
 ELSIF fbMoveModulo.Error AND nCOmmand=4 (*fbMoveModulo.Active*) THEN
-	bError:=fbMoveModulo.Execute;
-	nErrorId:=fbMoveModulo.ErrorID;
+    bError:=fbMoveModulo.Execute;
+    nErrorId:=fbMoveModulo.ErrorID;
 ELSIF fbHome.Error AND nCommand=10 (*fbHome.Active*) THEN
-	bError:=fbHome.Execute;
-	nErrorId:=fbHome.ErrorID;
+    bError:=fbHome.Execute;
+    nErrorId:=fbHome.ErrorID;
 ELSIF fbGearInDyn.Error AND nCommand=30 (*fbGearInDyn.Active*) THEN
-	bError:=fbGearInDyn.Enable;
-	nErrorId:=fbGearInDyn.ErrorID;
+    bError:=fbGearInDyn.Enable;
+    nErrorId:=fbGearInDyn.ErrorID;
 ELSIF fbGearOut.Error AND nCommand=30 AND Axis.Status.Coupled THEN
-	bError:=fbGearOut.Execute;
-	nErrorId:=fbGearOut.ErrorID;
+    bError:=fbGearOut.Execute;
+    nErrorId:=fbGearOut.ErrorID;
 ELSIF Axis.Status.Error  THEN
-	bError:=TRUE;
-	nErrorId:=Axis.Status.ErrorID;
+    bError:=TRUE;
+    nErrorId:=Axis.Status.ErrorID;
 (*ELSIF fbWriteToNC.bError THEN
-	bError:=TRUE;
-	nErrorId:=fbWriteToNC.nErrorId;*)
+    bError:=TRUE;
+    nErrorId:=fbWriteToNC.nErrorId;*)
 ///////////////////////////////////
 ELSIF fbWriteParameter.bError AND fbWriteParameter.bBusy THEN
-	bError:=fbWriteParameter.bExecute;
-	nErrorId:=fbWriteParameter.nErrorId;
+    bError:=fbWriteParameter.bExecute;
+    nErrorId:=fbWriteParameter.nErrorId;
 ELSIF fbWriteParameter2.bError AND fbWriteParameter2.bBusy THEN
-	bError:=fbWriteParameter2.bExecute;
-	nErrorId:=fbWriteParameter2.nErrorId;
+    bError:=fbWriteParameter2.bExecute;
+    nErrorId:=fbWriteParameter2.nErrorId;
 ELSIF fbWriteParameter3.bError AND fbWriteParameter3.bBusy THEN
-	bError:=fbWriteParameter3.bExecute;
-	nErrorId:=fbWriteParameter3.nErrorId;
+    bError:=fbWriteParameter3.bExecute;
+    nErrorId:=fbWriteParameter3.nErrorId;
 ELSIF fbWriteParameter4.bError AND fbWriteParameter4.bBusy THEN
-	bError:=fbWriteParameter4.bExecute;
-	nErrorId:=fbWriteParameter4.nErrorId;
+    bError:=fbWriteParameter4.bExecute;
+    nErrorId:=fbWriteParameter4.nErrorId;
 ELSIF fbReadFloatParameter.bError AND fbReadFloatParameter.bBusy THEN
-	bError:=fbReadFloatParameter.bExecute;
-	nErrorId:=fbReadFloatParameter.nErrorId;
+    bError:=fbReadFloatParameter.bExecute;
+    nErrorId:=fbReadFloatParameter.nErrorId;
 ELSIF fbReadFloatParameter2.bError AND fbReadFloatParameter2.bBusy THEN
-	bError:=fbReadFloatParameter2.bExecute;
-	nErrorId:=fbReadFloatParameter2.nErrorId;
+    bError:=fbReadFloatParameter2.bExecute;
+    nErrorId:=fbReadFloatParameter2.nErrorId;
 ELSIF fbReadFloatParameter3.bError AND fbReadFloatParameter3.bBusy THEN
-	bError:=fbReadFloatParameter3.bExecute;
-	nErrorId:=fbReadFloatParameter3.nErrorId;
+    bError:=fbReadFloatParameter3.bExecute;
+    nErrorId:=fbReadFloatParameter3.nErrorId;
 ///////////////////////////////////Homing Errors Treatment 0x4Dnn///////////////////
 ELSIF bHomingState1 AND NOT bExecute AND NOT bHomingState6 AND NOT bHomingToggled THEN
-	bError:=TRUE;
-	nErrorId:=16#4D01;	//bExecute gets down before bHomed
+    bError:=TRUE;
+    nErrorId:=16#4D01;	//bExecute gets down before bHomed
 ELSIF bHomeflag AND bLimitTrigg  AND (NOT bLimitBwd OR NOT bLimitFwd) AND (nCmdData>=2 AND nCmdData<=5) THEN
-	bError:=TRUE;
-	nErrorId:=16#4D02; //HomeSensor not detected 	(*Mode 2 and Mode 3*)
+    bError:=TRUE;
+    nErrorId:=16#4D02; //HomeSensor not detected 	(*Mode 2 and Mode 3*)
 ELSIF bHomingState4 AND (NOT bLimitBwd OR NOT bLimitFwd) AND (NOT nCmdData=9 OR NOT nCmdData=10) AND NOT bHomingToggled THEN
-	bHomingExecute:=FALSE;
-	bSyncError:=TRUE;
-	bError:=TRUE;
-	nErrorId:=16#4D03; //Unsual error. (The sensor is detected but don't stopped after that)
+    bHomingExecute:=FALSE;
+    bSyncError:=TRUE;
+    bError:=TRUE;
+    nErrorId:=16#4D03; //Unsual error. (The sensor is detected but don't stopped after that)
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND fActPosition<=fPositionAfterSensor-fScalingFactor*UINT_TO_LREAL(nInternalHomeRevOffset)  AND  bHomingState4 AND NOT bHomed  THEN
-	bHomingExecute:=FALSE;
-	bSyncError:=TRUE;	//Could be done like that or wait till blimitswitch
-	bError:=TRUE;
-	nErrorId:=16#4D04; //Not Sync Pulse detected
+    bHomingExecute:=FALSE;
+    bSyncError:=TRUE;	//Could be done like that or wait till blimitswitch
+    bError:=TRUE;
+    nErrorId:=16#4D04; //Not Sync Pulse detected
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND fActPosition>=fPositionAfterSensor+fScalingFactor*UINT_TO_LREAL(nInternalHomeRevOffset) AND bHomingState4 AND NOT bHomed THEN
-	bHomingExecute:=FALSE;
-	bError:=TRUE;
-	bSyncError:=TRUE;
-	nErrorId:=16#4D04; //Not Sync Pulse detected
+    bHomingExecute:=FALSE;
+    bError:=TRUE;
+    bSyncError:=TRUE;
+    nErrorId:=16#4D04; //Not Sync Pulse detected
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND nHomeRevOffset=0 THEN
-	bError:=TRUE;
-	bSyncError:=TRUE;
-	nErrorId:=16#4D05; //Index Can't be 0
+    bError:=TRUE;
+    bSyncError:=TRUE;
+    nErrorId:=16#4D05; //Index Can't be 0
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND bHomingState4 AND ((NOT bLimitBwd AND nRealDirection=0) OR (NOT bLimitFwd AND nRealDirection=1)) THEN
-	bError:=TRUE;
-	bSyncError:=TRUE;
-	nErrorId:=16#4D06; //More Index pulses selected than possible
+    bError:=TRUE;
+    bSyncError:=TRUE;
+    nErrorId:=16#4D06; //More Index pulses selected than possible
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND bHomingState4 AND fActPosition>=(fPositionAfterSensor+fScalingFactor*UINT_TO_LREAL(nInternalHomeRevOffset-1)+5) AND NOT bHomingState5 THEN //if we don't detect the Searching Sync State
-	bError:=TRUE;
-	bSyncError:=TRUE;
-	nErrorId:=16#4D07; //Not Encoder, therefore not able to use  Mode 5
+    bError:=TRUE;
+    bSyncError:=TRUE;
+    nErrorId:=16#4D07; //Not Encoder, therefore not able to use  Mode 5
 ELSIF nCommand=10 AND (nCmdData=9 OR nCmdData=10) AND bHomingState4 AND fActPosition<=(fPositionAfterSensor-fScalingFactor*UINT_TO_LREAL(nInternalHomeRevOffset-1)-5) AND NOT bHomingState5 THEN
-	bError:=TRUE;
-	bSyncError:=TRUE;
-	nErrorId:=16#4D07; //Not Encoder, therefore not able to use  Mode 5
+    bError:=TRUE;
+    bSyncError:=TRUE;
+    nErrorId:=16#4D07; //Not Encoder, therefore not able to use  Mode 5
 
 ///////////////////////////////////
 ELSIF nLimitCounter>=300 THEN
-	bError:=TRUE;
-	bLimitTimeOut:=TRUE;
-	nErrorId:=16#4D08; //Error in the Limit Switch.
+    bError:=TRUE;
+    bLimitTimeOut:=TRUE;
+    nErrorId:=16#4D08; //Error in the Limit Switch.
 ///////////////////////////////////
 ELSE
-	bError:=FALSE;
-	nErrorId:=0;
+    bError:=FALSE;
+    nErrorId:=0;
 END_IF;
 
 (*Converese nErrorID to string*)
@@ -342,9 +342,9 @@ fActVelocity:=Axis.NcToPlc.ActVelo;
 
 (*Actual Position*)
 IF Axis.Status.OpMode.Modulo THEN
-	fActPosition:=Axis.NcToPlc.ModuloActPos;
+    fActPosition:=Axis.NcToPlc.ModuloActPos;
 ELSE
-	fActPosition:=Axis.NcToPlc.ActPos;
+    fActPosition:=Axis.NcToPlc.ActPos;
 END_IF
 
 (*Actual Position*)
@@ -378,7 +378,7 @@ stStepperStatus.bBusy:=bBusy;
 stStepperStatus.bHomed:=bHomed;
 
 IF bFirstScan THEN
-	bFirstScan:=FALSE;
+    bFirstScan:=FALSE;
 END_IF]]></ST>
     </Implementation>
   </POU>
