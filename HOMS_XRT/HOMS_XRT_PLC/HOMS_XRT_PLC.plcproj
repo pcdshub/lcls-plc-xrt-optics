@@ -365,7 +365,7 @@
       <Resolution>lcls-twincat-optics, 0.4.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
