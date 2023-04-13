@@ -6,24 +6,24 @@
 {attribute 'qualified_only'}
 VAR_GLOBAL
     {attribute 'pytmc' := '
-    pv: PLC:XRT:HOMS:FFO:01
+    pv: PLC:XRT:OPTICS:FFO:01
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     g_FastFaultOutput1  :   FB_HardwareFFOutput := (i_sNetID:='172.21.88.66.1.1');
 
     {attribute 'pytmc' := '
-    pv: PLC:XRT:HOMS:FFO:02
+    pv: PLC:XRT:OPTICS:FFO:02
     '}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 2^Output'}
     g_FastFaultOutput2  :   FB_HardwareFFOutput := (i_sNetID:='172.21.88.66.1.1');
 
     {attribute 'pytmc' := '
-    pv: PLC:XRT:HOMS:ARB:01
+    pv: PLC:XRT:OPTICS:ARB:01
     '}
     g_fbArbiter1 : FB_Arbiter(1);
 
     {attribute 'pytmc' := '
-    pv: PLC:XRT:HOMS:ARB:02
+    pv: PLC:XRT:OPTICS:ARB:02
     '}
     g_fbArbiter2 : FB_Arbiter(2);
 
