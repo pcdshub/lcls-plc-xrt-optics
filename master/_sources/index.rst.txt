@@ -7,6 +7,7 @@ HOMS_XRT
 
     HOMS_XRT_pragmas
     HOMS_XRT_nc
+    HOMS_XRT_ethercat
     HOMS_XRT_boxes
     HOMS_XRT_links
 

@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`HOMS_XRT_PLC <HOMS_XRT_PLC_overview_pragmas>`, 146, 0
+    :ref:`HOMS_XRT_PLC <HOMS_XRT_PLC_overview_pragmas>`, 143, 0
 
 
 .. _HOMS_XRT_PLC_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 HOMS_XRT_PLC
 ^^^^^^^^^^^^
 
-Total pragmas found: 146
+Total pragmas found: 143
 Total linter errors: 0
 
 
