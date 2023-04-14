@@ -3,8 +3,8 @@
   <DUT Name="E_GantryMode" Id="{d4415ee5-967f-4ffb-be4f-02092fdb80c5}">
     <Declaration><![CDATA[TYPE E_GantryMode :
 (
-	GantryModeCoupled := 0,
-	GantryModeDecoupled	:= 1
+    GantryModeCoupled := 0,
+    GantryModeDecoupled	:= 1
 );
 END_TYPE
 ]]></Declaration>

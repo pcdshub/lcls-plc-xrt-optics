@@ -3,11 +3,11 @@
   <POU Name="P_Serial_Com" Id="{fa981f30-4d2c-4d48-ab6c-00ec78d696a1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Serial_Com
 VAR
-	//fbSerialLineControl_EL6001_P1: SerialLineControl;
-	fbSerialLineControl_EL6001_MR1L3: SerialLineControl; // M1 Serial Comm Function Block
-	fbSerialLineControl_EL6001_MR1L4: SerialLineControl; // M1 Serial Comm Function Block
+    //fbSerialLineControl_EL6001_P1: SerialLineControl;
+    fbSerialLineControl_EL6001_MR1L3: SerialLineControl; // M1 Serial Comm Function Block
+    fbSerialLineControl_EL6001_MR1L4: SerialLineControl; // M1 Serial Comm Function Block
 
-	fbSerialLineControl_EL6001_MR2L3: SerialLineControl;
+    fbSerialLineControl_EL6001_MR2L3: SerialLineControl;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[//These are the global IOs...don't forget to copy your data into them
@@ -17,36 +17,36 @@ END_VAR]]></Declaration>
 
 (* EL6001 Serial port 0 com function *)
 fbSerialLineControl_EL6001_MR1L3(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_MR1L3),
-						   	    pComOut:=ADR(Serial_stComOut_MR1L3),
-						        SizeComIn:= SIZEOF(Serial_stComIn_MR1L3),
-						        TxBuffer:= Serial_TXBuffer_MR1L3,
-						        RxBuffer:= Serial_RXBuffer_MR1L3,
-						        Error=>,
-						        ErrorID=>);
+                                pComIn:= ADR(Serial_stComIn_MR1L3),
+                                   pComOut:=ADR(Serial_stComOut_MR1L3),
+                                SizeComIn:= SIZEOF(Serial_stComIn_MR1L3),
+                                TxBuffer:= Serial_TXBuffer_MR1L3,
+                                RxBuffer:= Serial_RXBuffer_MR1L3,
+                                Error=>,
+                                ErrorID=>);
 
 fbSerialLineControl_EL6001_MR1L4(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_MR1L4),
-						   	    pComOut:=ADR(Serial_stComOut_MR1L4),
-						        SizeComIn:= SIZEOF(Serial_stComIn_MR1L4),
-						        TxBuffer:= Serial_TXBuffer_MR1L4,
-						        RxBuffer:= Serial_RXBuffer_MR1L4,
-						        Error=>,
-						        ErrorID=>);
+                                pComIn:= ADR(Serial_stComIn_MR1L4),
+                                   pComOut:=ADR(Serial_stComOut_MR1L4),
+                                SizeComIn:= SIZEOF(Serial_stComIn_MR1L4),
+                                TxBuffer:= Serial_TXBuffer_MR1L4,
+                                RxBuffer:= Serial_RXBuffer_MR1L4,
+                                Error=>,
+                                ErrorID=>);
 
 
 
 fbSerialLineControl_EL6001_MR2L3(Mode:= SERIALLINEMODE_EL6_22B,
-						        pComIn:= ADR(Serial_stComIn_MR2L3),
-						   	    pComOut:=ADR(Serial_stComOut_MR2L3),
-						        SizeComIn:= SIZEOF(Serial_stComIn_MR2L3),
-						        TxBuffer:= Serial_TXBuffer_MR2L3,
-						        RxBuffer:= Serial_RXBuffer_MR2L3,
-						        Error=>,
-						        ErrorID=>);
-	
+                                pComIn:= ADR(Serial_stComIn_MR2L3),
+                                   pComOut:=ADR(Serial_stComOut_MR2L3),
+                                SizeComIn:= SIZEOF(Serial_stComIn_MR2L3),
+                                TxBuffer:= Serial_TXBuffer_MR2L3,
+                                RxBuffer:= Serial_RXBuffer_MR2L3,
+                                Error=>,
+                                ErrorID=>);
 
-	
+
+
 ]]></ST>
     </Implementation>
   </POU>

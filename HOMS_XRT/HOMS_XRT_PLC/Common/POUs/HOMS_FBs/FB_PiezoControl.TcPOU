@@ -3,51 +3,51 @@
   <POU Name="FB_PiezoControl" Id="{0c3d171e-6759-449c-9e69-236d43fd29fc}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_PiezoControl
 VAR_IN_OUT
-	iq_Piezo	:	ST_PiezoAxisOld;
+    iq_Piezo	:	ST_PiezoAxisOld;
 END_VAR
 VAR_INPUT
-	xExecute	:	BOOL; //Rising edge being piezo motion
-	xReset      :   BOOL;
-	Enable_Positive : BOOL; //Reverse of Positive Limit Switch
-	Enable_Negative : BOOL; //Reverse of Negative Limit Switch
+    xExecute	:	BOOL; //Rising edge being piezo motion
+    xReset      :   BOOL;
+    Enable_Positive : BOOL; //Reverse of Positive Limit Switch
+    Enable_Negative : BOOL; //Reverse of Negative Limit Switch
 END_VAR
 VAR_OUTPUT
-	xBusy	:	BOOL; //Busy remains true while piezo position is being adjusted
-	xDone	:	BOOL; //Reached target position
-	xError	:	BOOL; //General error
-	xLimited:	BOOL; //Piezo move was limited
+    xBusy	:	BOOL; //Busy remains true while piezo position is being adjusted
+    xDone	:	BOOL; //Reached target position
+    xError	:	BOOL; //General error
+    xLimited:	BOOL; //Piezo move was limited
 END_VAR
 VAR
-	E_State     : E_PiezoControl; //ENUM for Piezo Control State
-	rtStartMove : R_TRIG; //Rising Trigger for Execution
-	rtReset     : R_TRIG; //Rising Trigger for Error reset
-	rSetpoint   : REAL;   //Internal Storage of Setpoint
-	rReqVoltage	:	REAL; //requested voltage
-	rLLSV: REAL := 0;
-	rHLSV: REAL := 120;
-	fbPI: FB_CTRL_PI;
-	fbRamp: FB_CTRL_RAMP_GENERATOR_EXT;
-	// FB initialized flag
-	bInitialized: BOOL;
-	//Get cycle time for control FBs
-	fbGetCycleTime	:	FB_CTRL_GET_TASK_CYCLETIME;
-	tTaskCycleTime: TIME;
-	bCycleTimeValid: BOOL;
-	rtVoltMode: R_TRIG;
-	fOut: LREAL;
-	fPiezoBias: LREAL := 60;
-	fScale: REAL := -60;
-	tonPiezoDone: TON := (PT:=T#2S);
-	tonPiezoLimited: TON := (PT:=T#500MS);
-	xVoltageLimited: BOOL;
-	ftEnPos	:	F_TRIG;
-	ftEnNeg	:	F_TRIG;
-	rtEnPos	:	R_TRIG;
-	rtEnNeg	:	R_TRIG;
-	fOutLimitHolder	:	LREAL; //holds the limit value until restored
-	fOutHiLimHolder	:	LREAL; //holds the limit value until restored
-	fOutLoLimHolder	:	LREAL; //holds the limit value until restored
-	xFirstPass 	: 	BOOL := TRUE;
+    E_State     : E_PiezoControl; //ENUM for Piezo Control State
+    rtStartMove : R_TRIG; //Rising Trigger for Execution
+    rtReset     : R_TRIG; //Rising Trigger for Error reset
+    rSetpoint   : REAL;   //Internal Storage of Setpoint
+    rReqVoltage	:	REAL; //requested voltage
+    rLLSV: REAL := 0;
+    rHLSV: REAL := 120;
+    fbPI: FB_CTRL_PI;
+    fbRamp: FB_CTRL_RAMP_GENERATOR_EXT;
+    // FB initialized flag
+    bInitialized: BOOL;
+    //Get cycle time for control FBs
+    fbGetCycleTime	:	FB_CTRL_GET_TASK_CYCLETIME;
+    tTaskCycleTime: TIME;
+    bCycleTimeValid: BOOL;
+    rtVoltMode: R_TRIG;
+    fOut: LREAL;
+    fPiezoBias: LREAL := 60;
+    fScale: REAL := -60;
+    tonPiezoDone: TON := (PT:=T#2S);
+    tonPiezoLimited: TON := (PT:=T#500MS);
+    xVoltageLimited: BOOL;
+    ftEnPos	:	F_TRIG;
+    ftEnNeg	:	F_TRIG;
+    rtEnPos	:	R_TRIG;
+    rtEnNeg	:	R_TRIG;
+    fOutLimitHolder	:	LREAL; //holds the limit value until restored
+    fOutHiLimHolder	:	LREAL; //holds the limit value until restored
+    fOutLoLimHolder	:	LREAL; //holds the limit value until restored
+    xFirstPass 	: 	BOOL := TRUE;
 END_VAR
 
 ]]></Declaration>
@@ -60,15 +60,15 @@ END_VAR
 
 //Triggers
 ///////////////////////////////
-	rtStartMove(CLK:=xExecute);
-	rtReset(CLK:=iq_Piezo.xEnable);
-	rtVoltMode(CLK:=iq_Piezo.xVoltageMode);
+    rtStartMove(CLK:=xExecute);
+    rtReset(CLK:=iq_Piezo.xEnable);
+    rtVoltMode(CLK:=iq_Piezo.xVoltageMode);
 
 //Status bits
 ///////////////////////////
 xBusy S= rtStartMove.Q;
 xDone R= rtStartMove.Q;
-	
+
 //Keep requested voltage to within limits
 iq_Piezo.rReqVoltage := LIMIT(iq_Piezo.LowerVoltage, iq_Piezo.rReqVoltage, iq_Piezo.UpperVoltage);
 
@@ -79,95 +79,95 @@ ftEnNeg(CLK:=Enable_Negative);
 rtEnPos(CLK:=Enable_Positive);
 rtEnNeg(CLK:=Enable_Negative);
 IF xFirstPass THEN
-	//Want to hold the limits on first pass if a switch is hit.
-	(* When we move off the limit, we'll restore the init value (usually 1). This will be reset
-	to something less than 1 when the limit gets tripped again, because presumably the actual limit
-	would have been set at a value < 1 if the system had been runing.
-	We just need to hold the init value to make it past this edge case that is present at startup. *)
-	IF NOT Enable_Positive THEN fOutHiLimHolder := iq_Piezo.stPIParams.fOutMaxLimit; END_IF
-	IF NOT Enable_Negative THEN fOutLoLimHolder := iq_Piezo.stPIParams.fOutMinLimit; END_IF
+    //Want to hold the limits on first pass if a switch is hit.
+    (* When we move off the limit, we'll restore the init value (usually 1). This will be reset
+    to something less than 1 when the limit gets tripped again, because presumably the actual limit
+    would have been set at a value < 1 if the system had been runing.
+    We just need to hold the init value to make it past this edge case that is present at startup. *)
+    IF NOT Enable_Positive THEN fOutHiLimHolder := iq_Piezo.stPIParams.fOutMaxLimit; END_IF
+    IF NOT Enable_Negative THEN fOutLoLimHolder := iq_Piezo.stPIParams.fOutMinLimit; END_IF
 ELSE
-	IF ftEnPos.Q THEN
-		rLLSV := iq_Piezo.rSetVoltage;
-		
-		fOutHiLimHolder := iq_Piezo.stPIParams.fOutMaxLimit;
-		iq_Piezo.stPIParams.fOutMaxLimit := fbPI.fOut;
-	ELSIF rtEnPos.Q THEN
-		rLLSV := iq_Piezo.LowerVoltage;
-		iq_Piezo.stPIParams.fOutMaxLimit := fOutHiLimHolder;
-	END_IF
-	
-	IF ftEnNeg.Q THEN
-		rHLSV := iq_Piezo.rSetVoltage;
-		
-		fOutLoLimHolder := iq_Piezo.stPIParams.fOutMinLimit;
-		iq_Piezo.stPIParams.fOutMinLimit := fbPI.fOut;
-	ELSIF rtEnNeg.Q THEN
-		rHLSV := iq_Piezo.UpperVoltage;
-		iq_Piezo.stPIParams.fOutMinLimit := fOutLoLimHolder;
-	END_IF
+    IF ftEnPos.Q THEN
+        rLLSV := iq_Piezo.rSetVoltage;
+
+        fOutHiLimHolder := iq_Piezo.stPIParams.fOutMaxLimit;
+        iq_Piezo.stPIParams.fOutMaxLimit := fbPI.fOut;
+    ELSIF rtEnPos.Q THEN
+        rLLSV := iq_Piezo.LowerVoltage;
+        iq_Piezo.stPIParams.fOutMaxLimit := fOutHiLimHolder;
+    END_IF
+
+    IF ftEnNeg.Q THEN
+        rHLSV := iq_Piezo.rSetVoltage;
+
+        fOutLoLimHolder := iq_Piezo.stPIParams.fOutMinLimit;
+        iq_Piezo.stPIParams.fOutMinLimit := fbPI.fOut;
+    ELSIF rtEnNeg.Q THEN
+        rHLSV := iq_Piezo.UpperVoltage;
+        iq_Piezo.stPIParams.fOutMinLimit := fOutLoLimHolder;
+    END_IF
 END_IF
 
 
 //Don't do anything until we're ready
 IF bInitialized THEN
-	
-	//While the block is working, a new position may be requested, this is OK
-	IF xBusy THEN
-		fbPI.fSetpointValue := iq_Piezo.rReqAbsPos;
-	END_IF
-	
-	(* The next chunk of code prevents the PI block from winding up.
-		First, when the PI block begins to request a voltage that is 
-		beyond the permitted range (this range is affected by the state
-		of limit switches/ or enable fwd/bwd), we latch the requested position.
-		Presumeably this position request  *)
-	
-	//Select the PI block control mode
-	////////////////////////////////////////
-	IF iq_Piezo.xVoltageMode THEN
-		//Set PI block to idle
-		fbPI.eMode := eCTRL_MODE_PASSIVE;
-		rReqVoltage := iq_Piezo.rReqVoltage; //TODO add a ramp
-	ELSE
-		IF iq_Piezo.xIdleMode THEN
-			rReqVoltage := fScale * 0 + fPiezoBias;
-			
-			fbPI.eMode := eCTRL_MODE_MANUAL;
-			ACT_Controller();
-			fbPI.bHold := TRUE;
-		ELSE
-			//Fout is connected to the piezo voltage control
-			rReqVoltage := fScale * fbPI.fOut + fPiezoBias;
-			fbPI.bHold := FALSE;
-			//Control mode is always active, so compensation takes over more smoothly
-			fbPI.eMode := eCTRL_MODE_ACTIVE;
-		END_IF		
-		
-	END_IF
-	
-	ACT_Controller();
-	
-	xVoltageLimited := rLLSV > rReqVoltage OR rHLSV < rReqVoltage;
-	
-	//This is where the voltage request gets sent to the piezo driver
-	iq_Piezo.rSetVoltage := LIMIT(rLLSV, rReqVoltage, rHLSV);
+
+    //While the block is working, a new position may be requested, this is OK
+    IF xBusy THEN
+        fbPI.fSetpointValue := iq_Piezo.rReqAbsPos;
+    END_IF
+
+    (* The next chunk of code prevents the PI block from winding up.
+        First, when the PI block begins to request a voltage that is
+        beyond the permitted range (this range is affected by the state
+        of limit switches/ or enable fwd/bwd), we latch the requested position.
+        Presumeably this position request  *)
+
+    //Select the PI block control mode
+    ////////////////////////////////////////
+    IF iq_Piezo.xVoltageMode THEN
+        //Set PI block to idle
+        fbPI.eMode := eCTRL_MODE_PASSIVE;
+        rReqVoltage := iq_Piezo.rReqVoltage; //TODO add a ramp
+    ELSE
+        IF iq_Piezo.xIdleMode THEN
+            rReqVoltage := fScale * 0 + fPiezoBias;
+
+            fbPI.eMode := eCTRL_MODE_MANUAL;
+            ACT_Controller();
+            fbPI.bHold := TRUE;
+        ELSE
+            //Fout is connected to the piezo voltage control
+            rReqVoltage := fScale * fbPI.fOut + fPiezoBias;
+            fbPI.bHold := FALSE;
+            //Control mode is always active, so compensation takes over more smoothly
+            fbPI.eMode := eCTRL_MODE_ACTIVE;
+        END_IF
+
+    END_IF
+
+    ACT_Controller();
+
+    xVoltageLimited := rLLSV > rReqVoltage OR rHLSV < rReqVoltage;
+
+    //This is where the voltage request gets sent to the piezo driver
+    iq_Piezo.rSetVoltage := LIMIT(rLLSV, rReqVoltage, rHLSV);
 
 //Initialization
 ELSE
-	fbGetCycleTime( eMode   := eCTRL_MODE_ACTIVE,
+    fbGetCycleTime( eMode   := eCTRL_MODE_ACTIVE,
                 tTaskCycleTime => tTaskCycleTime,
                 bCycleTimeValid => bCycleTimeValid);
-	IF bCycleTimeValid THEN
-		iq_Piezo.stPIParams.tTaskCycleTime := tTaskCycleTime;
-		iq_Piezo.stPIParams.tCtrlCycleTime := tTaskCycleTime;
-		bInitialized	:= TRUE;
-	END_IF
-	
+    IF bCycleTimeValid THEN
+        iq_Piezo.stPIParams.tTaskCycleTime := tTaskCycleTime;
+        iq_Piezo.stPIParams.tCtrlCycleTime := tTaskCycleTime;
+        bInitialized	:= TRUE;
+    END_IF
+
 END_IF
 
-tonPiezoDone.IN := WithinRange(ValA:=iq_Piezo.rActPos, Center:=iq_Piezo.rReqAbsPos, Range:=iq_Piezo.rPiezoDmovRange, Offset:=0) 
-					AND NOT rtStartMove.Q; //rtStartMove interrupts the timer, resetting it
+tonPiezoDone.IN := WithinRange(ValA:=iq_Piezo.rActPos, Center:=iq_Piezo.rReqAbsPos, Range:=iq_Piezo.rPiezoDmovRange, Offset:=0)
+                    AND NOT rtStartMove.Q; //rtStartMove interrupts the timer, resetting it
 tonPiezoDone();
 
 tonPiezoLimited.IN := (fbPI.bARWactive OR xVoltageLimited) AND NOT rtStartMove.Q;
@@ -614,25 +614,5 @@ xFirstPass := FALSE;]]></ST>
         </NWL>
       </Implementation>
     </Action>
-    <LineIds Name="FB_PiezoControl">
-      <LineId Id="3" Count="18" />
-      <LineId Id="314" Count="0" />
-      <LineId Id="317" Count="5" />
-      <LineId Id="402" Count="2" />
-      <LineId Id="407" Count="0" />
-      <LineId Id="406" Count="0" />
-      <LineId Id="323" Count="0" />
-      <LineId Id="401" Count="0" />
-      <LineId Id="324" Count="2" />
-      <LineId Id="329" Count="9" />
-      <LineId Id="341" Count="7" />
-      <LineId Id="315" Count="1" />
-      <LineId Id="22" Count="7" />
-      <LineId Id="61" Count="61" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_PiezoControl.ACT_CheckLimits">
-      <LineId Id="1" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

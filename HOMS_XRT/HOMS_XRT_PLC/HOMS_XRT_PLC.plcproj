@@ -365,7 +365,7 @@
       <Resolution>lcls-twincat-optics, 0.4.1 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.0.0 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.0.14 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_ControllerToolbox">
       <Resolution>Tc2_ControllerToolbox, 3.4.1.4 (Beckhoff Automation GmbH)</Resolution>
@@ -398,19 +398,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <SubObject Include="FB_ElmoGDCBellCoE.ACT_CoEReadFB" />
-    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_ExeFb" />
-    <SubObject Include="FB_ElmoMCUploadDriveParams.ACT_LoadDriveParams" />
-    <SubObject Include="FB_PiezoControl.ACT_CheckLimits" />
-    <SubObject Include="FB_PiezoControl.ACT_Controller" />
-    <SubObject Include="FB_PitchControlOld.ACT_PTP" />
-    <SubObject Include="FB_PitchControlOld.A_ModeSwitch" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ClearTrans" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_ErrorMesg" />
-    <SubObject Include="FB_PI_E621_SerialDriverOld.a_UnknownError" />
-  </ItemGroup>
-  <ItemGroup>
-    <LibraryReference Include="LCLS General,newest,SLAC">
+    <LibraryReference Include="LCLS General,2.8.1,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>

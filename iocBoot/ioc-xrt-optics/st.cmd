@@ -1,12 +1,46 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.5.0/bin/rhel7-x86_64/adsIoc
-###### AUTO-GENERATED DO NOT EDIT ##############
-
+#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0/bin/rhel7-x86_64/adsIoc
+################### AUTO-GENERATED DO NOT EDIT ###################
+#
+#         Project: HOMS_XRT.tsproj
+#        PLC name: HOMS_XRT_PLC (HOMS_XRT_PLC Instance)
+# Generated using: pytmc 2.14.1
+# Project version: v1.2.0-123-g35c601e
+#    Project hash: 35c601ef345165b34a5f8742c5bbb3022736443d
+#     PLC IP/host: 172.21.88.136
+#      PLC Net ID: 172.21.88.136.1.1
+#  ** Production mode IOC **
+#  Using /cds/data/iocData for autosave and archiver settings.
+#
+# Libraries:
+#
+#   lcls-twincat-motion: * -> 1.8.0 (SLAC)
+#   lcls-twincat-optics: * -> 0.4.1 (SLAC)
+#   PMPS: * -> 3.0.0 (SLAC - LCLS)
+#   Tc2_ControllerToolbox: * -> 3.4.1.4 (Beckhoff Automation GmbH)
+#   Tc2_EtherCAT: * -> * (Beckhoff Automation GmbH)
+#   Tc2_MC2: * (Beckhoff Automation GmbH)
+#   Tc2_SerialCom: * -> * (Beckhoff Automation GmbH)
+#   Tc2_Standard: * -> * (Beckhoff Automation GmbH)
+#   Tc2_System: * -> * (Beckhoff Automation GmbH)
+#   Tc2_Utilities: * -> * (Beckhoff Automation GmbH)
+#   Tc3_Module: * -> * (Beckhoff Automation GmbH)
+#   VisuDialogs: * (System)
+#   VisuElemMeter: 3.5.10.0 (System)
+#   VisuElems: 3.5.10.40 (System)
+#   VisuElemsSpecialControls: 3.5.10.0 (System)
+#   VisuElemsWinControls: 3.5.10.40 (System)
+#   VisuElemTextEditor: 3.5.10.10 (System)
+#   visuinputs: 3.5.10.0 (system)
+#   VisuNativeControl: 3.5.10.40 (System)
+#   VisuUserMgmt: * (System)
+#
+################### AUTO-GENERATED DO NOT EDIT ###################
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("ENGINEER", "nrw" )
-epicsEnvSet("LOCATION", "PLC:XRT:HOMS" )
+epicsEnvSet("LOCATION", "PLC:XRT:OPTICS" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
@@ -21,11 +55,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.88.136")
 epicsEnvSet("AMSID",            "172.21.88.136.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "10000")
+epicsEnvSet("ADS_MAX_PARAMS",   "6157")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
+
+# Add a route to the PLC automatically:
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.88.136 ^172.*")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -56,7 +93,7 @@ cd "$(ADS_IOC_TOP)/db"
 
 
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PLC:XRT:HOMS:")
+epicsEnvSet("PREFIX",         "PLC:XRT:OPTICS:")
 epicsEnvSet("NUMAXES",        "18")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
@@ -359,36 +396,89 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:XRT:HOMS")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:XRT:HOMS:")
-dbLoadRecords("caPutLog.db", "IOC=${IOC}")
+dbLoadRecords("iocSoft.db", "IOC=PLC:XRT:OPTICS")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:XRT:OPTICS:")
+dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
-## TwinCat System Databse files ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:XRT:HOMS")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=ASYN_PLC, PREFIX=PLC:XRT:HOMS")
+## TwinCAT task, application, and project information databases ##
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS,IDX=1")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS,IDX=4")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS,IDX=3")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:XRT:OPTICS")
+
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:XRT:OPTICS,PROJECT=HOMS_XRT.tsproj,HASH=35c601e,VERSION=v1.2.0-123-g35c601e,PYTMC=2.14.1,PLC_HOST=172.21.88.136")
+
+#   lcls-twincat-motion: * -> 1.8.0 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=lcls-twincat-motion,VERSION=1.8.0,VENDOR=SLAC")
+#   lcls-twincat-optics: * -> 0.4.1 (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=lcls-twincat-optics,VERSION=0.4.1,VENDOR=SLAC")
+#   PMPS: * -> 3.0.0 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=PMPS,VERSION=3.0.0,VENDOR=SLAC - LCLS")
+#   Tc2_ControllerToolbox: * -> 3.4.1.4 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_ControllerToolbox,VERSION=3.4.1.4,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_EtherCAT: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_EtherCAT,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_MC2: * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_SerialCom: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_SerialCom,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_Standard: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_Standard,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_System: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_Utilities: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc2_Utilities,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc3_Module: * -> * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   VisuDialogs: * (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuDialogs,VERSION=*,VENDOR=System")
+#   VisuElemMeter: 3.5.10.0 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuElemMeter,VERSION=3.5.10.0,VENDOR=System")
+#   VisuElems: 3.5.10.40 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuElems,VERSION=3.5.10.40,VENDOR=System")
+#   VisuElemsSpecialControls: 3.5.10.0 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuElemsSpecialControls,VERSION=3.5.10.0,VENDOR=System")
+#   VisuElemsWinControls: 3.5.10.40 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuElemsWinControls,VERSION=3.5.10.40,VENDOR=System")
+#   VisuElemTextEditor: 3.5.10.10 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuElemTextEditor,VERSION=3.5.10.10,VENDOR=System")
+#   visuinputs: 3.5.10.0 (system)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=visuinputs,VERSION=3.5.10.0,VENDOR=system")
+#   VisuNativeControl: 3.5.10.40 (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuNativeControl,VERSION=3.5.10.40,VENDOR=System")
+#   VisuUserMgmt: * (System)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:XRT:OPTICS,DEPENDENCY=VisuUserMgmt,VERSION=*,VENDOR=System")
 
 cd "$(IOC_TOP)"
 
-## Database files ##
-< "$(IOC_TOP)/load_plc_databases.cmd"
+## PLC Project Database files ##
+dbLoadRecords("HOMS_XRT_PLC.db", "PORT=$(ASYN_PORT),PREFIX=PLC:XRT:OPTICS:,IOCNAME=$(IOC),IOC=$(IOC)")
 
+# Total records: 5157
+callbackSetQueueSize(12314)
 
-# Setup autosave
-set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
-set_requestfile_path( "$(IOC_TOP)/autosave" )
+# Autosave and archive settings:
+save_restoreSet_status_prefix("PLC:XRT:OPTICS:")
+save_restoreSet_IncompleteSetsOk(1)
+save_restoreSet_DatedBackupFiles(1)
+set_pass0_restoreFile("info_positions.sav")
+set_pass1_restoreFile("info_settings.sav")
 
-save_restoreSet_status_prefix( "PLC:XRT:HOMS:" )
-save_restoreSet_IncompleteSetsOk( 1 )
-save_restoreSet_DatedBackupFiles( 1 )
-set_pass0_restoreFile( "info_positions.sav" )
-set_pass1_restoreFile( "info_settings.sav" )
+# ** Production IOC Settings **
+set_savefile_path("$(IOC_DATA)/$(IOC)/autosave")
+set_requestfile_path("$(IOC_DATA)/$(IOC)/autosave")
 
-cd "$(IOC_TOP)/autosave"
+# Production IOC autosave files go in iocData:
+cd "$(IOC_DATA)/$(IOC)/autosave"
+
+# Create info_positions.req and info_settings.req
 makeAutosaveFiles()
-cd "$(IOC_TOP)"
 
-# Create the archiver file
-makeArchiveFromDbInfo("$(IOC_DATA)/$(IOC)/archive/$(IOC).archive", "archive")
+cd "$(IOC_DATA)/$(IOC)/archive"
+
+# Create $(IOC).archive
+makeArchiveFromDbInfo("$(IOC).archive", "archive")
+cd "$(IOC_TOP)"
 
 # Configure access security: this is required for caPutLog.
 asSetFilename("$(ACF_FILE)")
@@ -400,7 +490,7 @@ iocInit()
 iocLogInit()
 
 # Configure and start the caPutLogger after iocInit
-epicsEnvSet(EPICS_AS_PUT_LOG_PV, "${IOC}:caPutLog:Last")
+epicsEnvSet(EPICS_AS_PUT_LOG_PV, "$(IOC):caPutLog:Last")
 
 # caPutLogInit("HOST:PORT", config)
 # config options:
@@ -408,7 +498,7 @@ epicsEnvSet(EPICS_AS_PUT_LOG_PV, "${IOC}:caPutLog:Last")
 #       caPutLogOnChange    0: log only on value change
 #       caPutLogAll         1: log all puts
 #       caPutLogAllNoFilter 2: log all puts no filtering on same PV
-caPutLogInit("${EPICS_CAPUTLOG_HOST}:${EPICS_CAPUTLOG_PORT}", 0)
+caPutLogInit("$(EPICS_CAPUTLOG_HOST):$(EPICS_CAPUTLOG_PORT)", 0)
 
 # Start autosave backups
 create_monitor_set( "info_positions.req", 10, "" )
@@ -416,3 +506,4 @@ create_monitor_set( "info_settings.req", 60, "" )
 
 # All IOCs should dump some common info after initial startup.
 < /reg/d/iocCommon/All/post_linux.cmd
+

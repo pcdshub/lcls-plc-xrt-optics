@@ -3,40 +3,40 @@
   <POU Name="FB_ElmoMCUploadDriveParams" Id="{528728ac-5614-484b-8c38-3b5c98bc4de4}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ElmoMCUploadDriveParams
 VAR_INPUT
-	Axis	:	ST_HOMSStepper;
-	bExecute	:	BOOL;
+    Axis	:	ST_HOMSStepper;
+    bExecute	:	BOOL;
 END_VAR
 VAR_OUTPUT
-	bError	:	BOOL;
-	bDone	:	BOOL;
+    bError	:	BOOL;
+    bDone	:	BOOL;
 END_VAR
 VAR
-	fbUploadDriveParams : FB_EcFoeLoad;
-	fbFoeOpen	:	FB_EcFoeOpen;
-	fbFoeAccess	:	FB_EcFoeAccess;
-	fbFoeClose	:	FB_EcFoeClose;
-	fbFileOpen	:	FB_FileOpen;
-	fbFileRead	:	FB_FileRead;
-	fbFileClose	:	FB_FileClose;
-	ftBusy	:	F_TRIG;
-	rtExecute : R_TRIG;
-	ftFoeOpen	:	F_TRIG;
-	ftFoeAccess	:	F_TRIG;
-	ftFoeClose	:	F_TRIG;
-	fbReqSlaveState	:	FB_EcSetSlaveState;
-	fbGetSlaveState	:	FB_EcGetSlaveState;
-	iStep: INT;
-	FoeHandle	:	T_HFoe;
-	FileHandle	:	UINT;
-	stDiag	:	ST_fbDiagnostics;
-	FileBuffer	:	ARRAY[1..500000] OF BYTE;
-	prevSlaveState : ST_EcSlaveState;
-	sPath	:	T_MaxString := '\Hard Disk\WWW\FoePrmFlashImage_XML.xml';
-	Password: DWORD := 16#F0EACCEC;
+    fbUploadDriveParams : FB_EcFoeLoad;
+    fbFoeOpen	:	FB_EcFoeOpen;
+    fbFoeAccess	:	FB_EcFoeAccess;
+    fbFoeClose	:	FB_EcFoeClose;
+    fbFileOpen	:	FB_FileOpen;
+    fbFileRead	:	FB_FileRead;
+    fbFileClose	:	FB_FileClose;
+    ftBusy	:	F_TRIG;
+    rtExecute : R_TRIG;
+    ftFoeOpen	:	F_TRIG;
+    ftFoeAccess	:	F_TRIG;
+    ftFoeClose	:	F_TRIG;
+    fbReqSlaveState	:	FB_EcSetSlaveState;
+    fbGetSlaveState	:	FB_EcGetSlaveState;
+    iStep: INT;
+    FoeHandle	:	T_HFoe;
+    FileHandle	:	UINT;
+    stDiag	:	ST_fbDiagnostics;
+    FileBuffer	:	ARRAY[1..500000] OF BYTE;
+    prevSlaveState : ST_EcSlaveState;
+    sPath	:	T_MaxString := '\Hard Disk\WWW\FoePrmFlashImage_XML.xml';
+    Password: DWORD := 16#F0EACCEC;
 END_VAR
 VAR CONSTANT
-	stepError	:	INT := 9000;
-	stepClose	:	INT := 500;
+    stepError	:	INT := 9000;
+    stepClose	:	INT := 500;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[
@@ -47,170 +47,170 @@ ftFoeClose(CLK:=fbFoeClose.bBusy);
 rtExecute(CLK:=bExecute);
 
 IF rtExecute.Q THEN
-	iStep := 4;
-	bDone := FALSE;
-	bError := FALSE;
+    iStep := 4;
+    bDone := FALSE;
+    bError := FALSE;
 END_IF
 
 CASE iStep OF
-	0:
-	;
-	4:
-	fbGetSlaveState.bExecute := TRUE;
-	iStep := iStep +1;
-	5:
-	fbGetSlaveState.bExecute := FALSE;
-	IF NOT fbGetSlaveState.bBusy THEN
-		IF fbGetSlaveState.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbGetSlaveState.nErrId);
-			stDiag.fString.sFormat := 'Get slave state Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			prevSlaveState := fbGetSlaveState.state;
-			iStep := iStep +1;
-		END_IF
-	END_IF
-	6:
-	//Move to bootstrap
-	fbReqSlaveState.bExecute := TRUE;
-	fbReqSlaveState.reqState := 16#03; //bootstrap
-	iStep := iStep + 1;
-	7:
-	fbReqSlaveState.bExecute := FALSE;
-	IF NOT fbReqSlaveState.bBusy THEN
-		IF fbReqSlaveState.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbReqSlaveState.nErrId);
-			stDiag.fString.sFormat := 'Set slave state Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := 10;
-		END_IF
-	END_IF
-	10:
-	//Open connection
-	fbFoeOpen.bExecute := TRUE;
-	IF ftFoeOpen.Q THEN
-		fbFoeOpen.bExecute := FALSE;
-		IF fbFoeOpen.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFoeOpen.nErrId);
-			stDiag.fString.sFormat := 'FoeOpen Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := 20;
-		END_IF
-	END_IF
-	20:
-	//Open File
-	fbFileOpen.bExecute := TRUE;
-	iStep := iStep + 1;
-	21:
-	fbFileOpen.bExecute := FALSE;
-	IF NOT fbFileOpen.bBusy THEN
-		IF fbFileOpen.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFileOpen.nErrId);
-			stDiag.fString.sFormat := 'FileOpen Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := iStep + 1;
-		END_IF
-	END_IF
-	22:
-	//Read in the file
-	fbFileRead.bExecute := TRUE;
-	iStep := iStep+1;
-	23:
-	fbFileRead.bExecute := FALSE;
-	IF NOT fbFileRead.bBusy THEN
-		IF fbFileRead.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFileRead.nErrId);
-			stDiag.fString.sFormat := 'FileRead Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := 30;
-		END_IF
-	END_IF
-	30:
-	//Send file
-	fbFoeAccess.bExecute := TRUE;
-	iStep := iStep +1;
-	31:
-	fbFoeAccess.bExecute := FALSE;
-	IF NOT fbFoeAccess.bBusy THEN
-		IF fbFoeAccess.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFoeAccess.nErrId);
-			stDiag.fString.sFormat := 'FileRead Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			stDiag.fString.arg1 := F_UDINT(fbFoeAccess.cbDone);
-			stDiag.fString.sFormat := 'Foe Access Sent bytes: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 500;
-		END_IF
-	END_IF
-	
-	
-	500:
-	//Close the file and connection
-	fbFileClose.bExecute := TRUE;
-	iStep := iStep + 1;
-	501:
-	fbFileClose.bExecute := FALSE;
-	IF NOT fbFileClose.bBusy THEN
-		IF fbFileClose.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFileClose.nErrId);
-			stDiag.fString.sFormat := 'FileClose Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := iStep + 1;
-		END_IF
-	END_IF
-	502:
-	fbFoeClose.bExecute := TRUE;
-	iStep := iStep + 1;
-	503:
-	fbFoeClose.bExecute := FALSE;
-	IF NOT fbFoeClose.bBusy THEN
-		IF fbFoeClose.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbFoeClose.nErrId);
-			stDiag.fString.sFormat := 'FoeClose Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := 600;
-		END_IF
-	END_IF
-	600:
-	//Return to previous device state
-	fbReqSlaveState.bExecute := TRUE;
-	fbReqSlaveState.reqState := prevSlaveState.deviceState;
-	iStep := iStep + 1;
-	601:
-	fbReqSlaveState.bExecute := FALSE;
-	IF NOT fbReqSlaveState.bBusy THEN
-		IF fbReqSlaveState.bError THEN
-			stDiag.fString.arg1 := F_UDINT(fbReqSlaveState.nErrId);
-			stDiag.fString.sFormat := 'Return to prev state Error: %d';
-			stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
-			iStep := 9000;
-		ELSE
-			iStep := 8000;
-		END_IF
-	END_IF
-	8000:
-	//Success
-	bDone := TRUE;
-	iStep := 0;
-	9000:
-	//Error
-	bError := TRUE;
-	iStep := 0;
+    0:
+    ;
+    4:
+    fbGetSlaveState.bExecute := TRUE;
+    iStep := iStep +1;
+    5:
+    fbGetSlaveState.bExecute := FALSE;
+    IF NOT fbGetSlaveState.bBusy THEN
+        IF fbGetSlaveState.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbGetSlaveState.nErrId);
+            stDiag.fString.sFormat := 'Get slave state Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            prevSlaveState := fbGetSlaveState.state;
+            iStep := iStep +1;
+        END_IF
+    END_IF
+    6:
+    //Move to bootstrap
+    fbReqSlaveState.bExecute := TRUE;
+    fbReqSlaveState.reqState := 16#03; //bootstrap
+    iStep := iStep + 1;
+    7:
+    fbReqSlaveState.bExecute := FALSE;
+    IF NOT fbReqSlaveState.bBusy THEN
+        IF fbReqSlaveState.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbReqSlaveState.nErrId);
+            stDiag.fString.sFormat := 'Set slave state Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := 10;
+        END_IF
+    END_IF
+    10:
+    //Open connection
+    fbFoeOpen.bExecute := TRUE;
+    IF ftFoeOpen.Q THEN
+        fbFoeOpen.bExecute := FALSE;
+        IF fbFoeOpen.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFoeOpen.nErrId);
+            stDiag.fString.sFormat := 'FoeOpen Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := 20;
+        END_IF
+    END_IF
+    20:
+    //Open File
+    fbFileOpen.bExecute := TRUE;
+    iStep := iStep + 1;
+    21:
+    fbFileOpen.bExecute := FALSE;
+    IF NOT fbFileOpen.bBusy THEN
+        IF fbFileOpen.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFileOpen.nErrId);
+            stDiag.fString.sFormat := 'FileOpen Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := iStep + 1;
+        END_IF
+    END_IF
+    22:
+    //Read in the file
+    fbFileRead.bExecute := TRUE;
+    iStep := iStep+1;
+    23:
+    fbFileRead.bExecute := FALSE;
+    IF NOT fbFileRead.bBusy THEN
+        IF fbFileRead.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFileRead.nErrId);
+            stDiag.fString.sFormat := 'FileRead Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := 30;
+        END_IF
+    END_IF
+    30:
+    //Send file
+    fbFoeAccess.bExecute := TRUE;
+    iStep := iStep +1;
+    31:
+    fbFoeAccess.bExecute := FALSE;
+    IF NOT fbFoeAccess.bBusy THEN
+        IF fbFoeAccess.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFoeAccess.nErrId);
+            stDiag.fString.sFormat := 'FileRead Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            stDiag.fString.arg1 := F_UDINT(fbFoeAccess.cbDone);
+            stDiag.fString.sFormat := 'Foe Access Sent bytes: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 500;
+        END_IF
+    END_IF
+
+
+    500:
+    //Close the file and connection
+    fbFileClose.bExecute := TRUE;
+    iStep := iStep + 1;
+    501:
+    fbFileClose.bExecute := FALSE;
+    IF NOT fbFileClose.bBusy THEN
+        IF fbFileClose.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFileClose.nErrId);
+            stDiag.fString.sFormat := 'FileClose Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := iStep + 1;
+        END_IF
+    END_IF
+    502:
+    fbFoeClose.bExecute := TRUE;
+    iStep := iStep + 1;
+    503:
+    fbFoeClose.bExecute := FALSE;
+    IF NOT fbFoeClose.bBusy THEN
+        IF fbFoeClose.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbFoeClose.nErrId);
+            stDiag.fString.sFormat := 'FoeClose Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := 600;
+        END_IF
+    END_IF
+    600:
+    //Return to previous device state
+    fbReqSlaveState.bExecute := TRUE;
+    fbReqSlaveState.reqState := prevSlaveState.deviceState;
+    iStep := iStep + 1;
+    601:
+    fbReqSlaveState.bExecute := FALSE;
+    IF NOT fbReqSlaveState.bBusy THEN
+        IF fbReqSlaveState.bError THEN
+            stDiag.fString.arg1 := F_UDINT(fbReqSlaveState.nErrId);
+            stDiag.fString.sFormat := 'Return to prev state Error: %d';
+            stDiag.fString(sout=>stDiag.asResults[stDiag.resultIdx.IncVal()]);
+            iStep := 9000;
+        ELSE
+            iStep := 8000;
+        END_IF
+    END_IF
+    8000:
+    //Success
+    bDone := TRUE;
+    iStep := 0;
+    9000:
+    //Error
+    bError := TRUE;
+    iStep := 0;
 END_CASE
 
 ACT_ExeFb();
@@ -2738,9 +2738,5 @@ ACT_LoadDriveParams();
         </NWL>
       </Implementation>
     </Action>
-    <LineIds Name="FB_ElmoMCUploadDriveParams">
-      <LineId Id="3" Count="179" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

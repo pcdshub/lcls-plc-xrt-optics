@@ -2,18 +2,18 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_COM_Buffers" Id="{a8441f26-f9f8-4fbc-842d-41b6657e3ba7}">
     <Declaration><![CDATA[VAR_GLOBAL
-	
-	// M1
-	Serial_RXBuffer_MR1L3 : ComBuffer;
-	Serial_TXBuffer_MR1L3 : ComBuffer;
-	
-	Serial_RXBuffer_MR1L4 : ComBuffer;
-	Serial_TXBuffer_MR1L4 : ComBuffer;
-	
-	Serial_RXBuffer_MR2L3 : ComBuffer;
-	Serial_TXBuffer_MR2L3 : ComBuffer;
 
-	
+    // M1
+    Serial_RXBuffer_MR1L3 : ComBuffer;
+    Serial_TXBuffer_MR1L3 : ComBuffer;
+
+    Serial_RXBuffer_MR1L4 : ComBuffer;
+    Serial_TXBuffer_MR1L4 : ComBuffer;
+
+    Serial_RXBuffer_MR2L3 : ComBuffer;
+    Serial_TXBuffer_MR2L3 : ComBuffer;
+
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

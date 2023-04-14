@@ -3,52 +3,43 @@
   <POU Name="FB_ReduceGantryDiff" Id="{5230bf37-99f3-4955-9b1e-aab6b10a65b6}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ReduceGantryDiff
 VAR_INPUT
-	xStart	:	BOOL;
+    xStart	:	BOOL;
 END_VAR
 VAR_OUTPUT
-	xError	:	BOOL;
-	xBusy	:	BOOL;
-	xDone	:	BOOL;
+    xError	:	BOOL;
+    xBusy	:	BOOL;
+    xDone	:	BOOL;
 END_VAR
 VAR_IN_OUT
-	iq_Gantry	:	HOMS_Gantry;
+    iq_Gantry	:	HOMS_Gantry;
 END_VAR
 VAR
-	iStep: INT;
+    iStep: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Reduce Gantry Difference
 A. Wallace, 17-3-26
 
-On execute rising-edge, this FB decouples the gantry axes, and attempts to 
+On execute rising-edge, this FB decouples the gantry axes, and attempts to
 reduce the gantry difference.
 
 Presumably the gantry error has occured due to a jammed axis.
 *)
 
 CASE iStep OF
-	0: //Idle
-	;
-	100:
-		//Decide to move P or S axis
-		//Always try to move S to P if you can
-		//First if the limit switches don't make sense, throw an error
-		;
-	//Move S
-	
-	//Recouple/ reset to idle
-	
+    0: //Idle
+    ;
+    100:
+        //Decide to move P or S axis
+        //Always try to move S to P if you can
+        //First if the limit switches don't make sense, throw an error
+        ;
+    //Move S
+
+    //Recouple/ reset to idle
+
 END_CASE]]></ST>
     </Implementation>
-    <LineIds Name="FB_ReduceGantryDiff">
-      <LineId Id="3" Count="12" />
-      <LineId Id="36" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="37" Count="2" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

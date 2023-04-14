@@ -3,8 +3,8 @@
   <DUT Name="ST_CoEIndSub" Id="{58984a60-3fad-4398-bab4-017dd0476dab}">
     <Declaration><![CDATA[TYPE ST_CoEIndSub :
 STRUCT
-	nIndex	:	WORD;
-	nSubIndex	:	BYTE;
+    nIndex	:	WORD;
+    nSubIndex	:	BYTE;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
