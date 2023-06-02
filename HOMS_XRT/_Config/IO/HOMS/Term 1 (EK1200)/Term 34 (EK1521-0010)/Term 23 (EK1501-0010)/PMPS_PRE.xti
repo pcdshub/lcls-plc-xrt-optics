@@ -119,7 +119,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}">ST_BeamParams_IO</Name>
+			<Name GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Name>
 			<BitSize>1760</BitSize>
 			<SubItem>
 				<Name>nTran</Name>
@@ -213,6 +213,12 @@
 					<Min>0</Min>
 					<Value>0</Value>
 				</Default>
+			</SubItem>
+			<SubItem>
+				<Name>nMachineMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
 			</SubItem>
 			<SubItem>
 				<Name>astAttenuators</Name>
@@ -328,6 +334,8 @@
 				<Hide GUID="{0E623A01-D6F4-41DD-A8F2-FBC77EE11035}"/>
 				<Hide GUID="{B8136069-15B2-4545-8E40-00504F2F580D}"/>
 				<Hide GUID="{4A38F9D3-765E-4C94-9AAB-7EB5DFA13820}"/>
+				<Hide GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}"/>
+				<Hide GUID="{43851ABC-CF8A-4AF9-A768-E27D209879D8}"/>
 			</Hides>
 		</DataType>
 	</DataTypes>
@@ -988,12 +996,12 @@
 			</Pdo>
 			<Pdo Name="IO Inputs" Index="#x1a08" Flags="#x0020" SyncMan="3">
 				<Entry Name="CurrentBP" BitLen="240" Index="#x6000" Sub="#x01">
-					<Type GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}">ST_BeamParams_IO</Type>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
 				</Entry>
 			</Pdo>
 			<Pdo Name="IO Outputs" Index="#x1608" InOut="1" Flags="#x0020" SyncMan="2">
 				<Entry Name="RequestedBP" BitLen="240" Index="#x7000" Sub="#x01">
-					<Type GUID="{C9AB5DB1-1B57-42EF-8E17-FBE97768475C}">ST_BeamParams_IO</Type>
+					<Type GUID="{292CD354-C7C0-4A61-AAD0-1C85DD69646B}">ST_BeamParams_IO</Type>
 				</Entry>
 			</Pdo>
 			<CoeProfile ProfileNo="5001"/>
