@@ -459,22 +459,6 @@ GVLs
 ----
 
 
-Global_Version
-^^^^^^^^^^^^^^
-
-::
-
-    {attribute 'TcGenerated'}
-    // This function has been automatically generated from the project information.
-    VAR_GLOBAL CONSTANT
-        {attribute 'const_non_replaced'}
-        {attribute 'linkalways'}
-        stLibVersion_lcls_plc_xrt_optics : ST_LibVersion := (iMajor := 5, iMinor := 1, iBuild := 0, iRevision := 0, sVersion := '5.1.0');
-    END_VAR
-
-
-
-
 GVL
 ^^^
 
