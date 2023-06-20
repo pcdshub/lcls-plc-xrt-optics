@@ -398,7 +398,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.8.1,SLAC">
+    <LibraryReference Include="LCLS General,2.8.2,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
   </ItemGroup>
