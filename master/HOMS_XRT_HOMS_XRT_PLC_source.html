@@ -11,12 +11,12 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/docs-versions-menu.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -152,9 +152,9 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
 <section id="e-gantrycontrol">
-<h2>E_GantryControl<a class="headerlink" href="#e-gantrycontrol" title="Permalink to this heading"></a></h2>
+<h2>E_GantryControl<a class="headerlink" href="#e-gantrycontrol" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">E_GantryControl</span> <span class="p">:</span>
 <span class="p">(</span>
     <span class="o">//</span><span class="n">Gantry</span> <span class="n">Control</span> <span class="n">Machine</span>
@@ -180,7 +180,7 @@
 </dl>
 </section>
 <section id="e-gantrymode">
-<h2>E_GantryMode<a class="headerlink" href="#e-gantrymode" title="Permalink to this heading"></a></h2>
+<h2>E_GantryMode<a class="headerlink" href="#e-gantrymode" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">E_GantryMode</span> <span class="p">:</span>
 <span class="p">(</span>
     <span class="n">GantryModeCoupled</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span>
@@ -191,7 +191,7 @@
 </div>
 </section>
 <section id="e-piezocontrol">
-<h2>E_PiezoControl<a class="headerlink" href="#e-piezocontrol" title="Permalink to this heading"></a></h2>
+<h2>E_PiezoControl<a class="headerlink" href="#e-piezocontrol" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">E_PiezoControl</span> <span class="p">:</span>
 <span class="p">(</span>
     <span class="o">//</span><span class="n">Piezo</span> <span class="n">Control</span> <span class="n">Machine</span>
@@ -208,7 +208,7 @@
 </div>
 </section>
 <section id="e-pitchcontrol">
-<h2>E_PitchControl<a class="headerlink" href="#e-pitchcontrol" title="Permalink to this heading"></a></h2>
+<h2>E_PitchControl<a class="headerlink" href="#e-pitchcontrol" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>TYPE E_PitchControl :
 (
     //Pitch Control Machine
@@ -231,7 +231,7 @@ END_TYPE
 </div>
 </section>
 <section id="enum-coating-states">
-<h2>ENUM_Coating_States<a class="headerlink" href="#enum-coating-states" title="Permalink to this heading"></a></h2>
+<h2>ENUM_Coating_States<a class="headerlink" href="#enum-coating-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified only&#39;</span><span class="p">}</span>
 <span class="n">TYPE</span> <span class="n">ENUM_Coating_States</span> <span class="p">:</span>
 <span class="p">(</span>
@@ -244,7 +244,7 @@ END_TYPE
 </div>
 </section>
 <section id="homs-gantry">
-<h2>HOMS_Gantry<a class="headerlink" href="#homs-gantry" title="Permalink to this heading"></a></h2>
+<h2>HOMS_Gantry<a class="headerlink" href="#homs-gantry" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">HOMS_Gantry</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="n">PAxis</span>   <span class="p">:</span>       <span class="n">HOMS_GantryAxis</span><span class="p">;</span> <span class="o">//</span><span class="n">Primary</span> <span class="n">Axis</span><span class="p">,</span> <span class="n">upstream</span>
@@ -276,7 +276,7 @@ END_TYPE
 </dl>
 </section>
 <section id="homs-gantryaxis">
-<h2>HOMS_GantryAxis<a class="headerlink" href="#homs-gantryaxis" title="Permalink to this heading"></a></h2>
+<h2>HOMS_GantryAxis<a class="headerlink" href="#homs-gantryaxis" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">HOMS_GantryAxis</span> <span class="n">EXTENDS</span> <span class="n">ST_HOMSStepper</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="o">//</span><span class="n">Virtual</span> <span class="n">limit</span> <span class="n">switch</span> <span class="n">derived</span> <span class="kn">from</span> <span class="nn">gantry</span> <span class="n">difference</span>
@@ -301,7 +301,7 @@ END_TYPE
 </dl>
 </section>
 <section id="homs-pitchmechanismold">
-<h2>HOMS_PitchMechanismOld<a class="headerlink" href="#homs-pitchmechanismold" title="Permalink to this heading"></a></h2>
+<h2>HOMS_PitchMechanismOld<a class="headerlink" href="#homs-pitchmechanismold" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">HOMS_PitchMechanismOld</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="n">Piezo</span>   <span class="p">:</span>       <span class="n">ST_PiezoAxisOld</span><span class="p">;</span>        <span class="o">//</span><span class="n">Piezo</span>
@@ -338,7 +338,7 @@ END_TYPE
 </dl>
 </section>
 <section id="st-abstractaxis">
-<h2>ST_AbstractAxis<a class="headerlink" href="#st-abstractaxis" title="Permalink to this heading"></a></h2>
+<h2>ST_AbstractAxis<a class="headerlink" href="#st-abstractaxis" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_AbstractAxis</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 <span class="p">(</span><span class="o">*</span> <span class="n">ST_BasicAxis</span> <span class="n">was</span> <span class="n">created</span> <span class="k">for</span> <span class="n">basic</span> <span class="n">motion</span> <span class="n">controls</span><span class="o">.</span> <span class="n">AbstractAxis</span>
@@ -373,7 +373,7 @@ END_TYPE
 </div>
 </section>
 <section id="st-coeindsub">
-<h2>ST_CoEIndSub<a class="headerlink" href="#st-coeindsub" title="Permalink to this heading"></a></h2>
+<h2>ST_CoEIndSub<a class="headerlink" href="#st-coeindsub" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_CoEIndSub</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="n">nIndex</span>  <span class="p">:</span>       <span class="n">WORD</span><span class="p">;</span>
@@ -384,7 +384,7 @@ END_TYPE
 </div>
 </section>
 <section id="st-decoupledmotionpermits">
-<h2>ST_DecoupledMotionPermits<a class="headerlink" href="#st-decoupledmotionpermits" title="Permalink to this heading"></a></h2>
+<h2>ST_DecoupledMotionPermits<a class="headerlink" href="#st-decoupledmotionpermits" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_DecoupledMotionPermits</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="o">//</span> <span class="n">Positive</span> <span class="n">direction</span> <span class="n">permit</span> <span class="ow">in</span> <span class="n">decoupled</span> <span class="n">mode</span>
@@ -397,7 +397,7 @@ END_TYPE
 </div>
 </section>
 <section id="st-elmogdcbellcoeparams">
-<h2>ST_ElmoGDCBellCoEParams<a class="headerlink" href="#st-elmogdcbellcoeparams" title="Permalink to this heading"></a></h2>
+<h2>ST_ElmoGDCBellCoEParams<a class="headerlink" href="#st-elmogdcbellcoeparams" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_ElmoGDCBellCoEParams</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
         <span class="o">//</span><span class="n">Drive</span> <span class="n">Reference</span> <span class="p">(</span><span class="k">for</span> <span class="n">CoE</span><span class="p">)</span>
@@ -422,7 +422,7 @@ END_TYPE
 </div>
 </section>
 <section id="st-homsstepper">
-<h2>ST_HOMSStepper<a class="headerlink" href="#st-homsstepper" title="Permalink to this heading"></a></h2>
+<h2>ST_HOMSStepper<a class="headerlink" href="#st-homsstepper" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_HOMSStepper</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
@@ -482,7 +482,7 @@ END_TYPE
 </dl>
 </section>
 <section id="st-piezoaxisold">
-<h2>ST_PiezoAxisOld<a class="headerlink" href="#st-piezoaxisold" title="Permalink to this heading"></a></h2>
+<h2>ST_PiezoAxisOld<a class="headerlink" href="#st-piezoaxisold" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_PiezoAxisOld</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">IO</span> <span class="o">*</span><span class="p">)</span>
@@ -531,7 +531,7 @@ END_TYPE
 </div>
 </section>
 <section id="st-stepperstatus">
-<h2>ST_StepperStatus<a class="headerlink" href="#st-stepperstatus" title="Permalink to this heading"></a></h2>
+<h2>ST_StepperStatus<a class="headerlink" href="#st-stepperstatus" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_StepperStatus</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="n">bEnable</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
@@ -566,9 +566,9 @@ END_TYPE
 </section>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
 <section id="gvl">
-<h2>GVL<a class="headerlink" href="#gvl" title="Permalink to this heading"></a></h2>
+<h2>GVL<a class="headerlink" href="#gvl" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
     <span class="n">g_psLogHost</span>     <span class="p">:</span> <span class="n">T_IPv4Addr</span> <span class="o">:=</span> <span class="s1">&#39;172.21.32.9&#39;</span><span class="p">;</span>
     <span class="n">gDefaultSubsystem</span> <span class="p">:</span> <span class="n">E_Subsystem</span> <span class="o">:=</span> <span class="n">MOTION</span><span class="p">;</span>
@@ -608,7 +608,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-com-buffers">
-<h2>GVL_COM_Buffers<a class="headerlink" href="#gvl-com-buffers" title="Permalink to this heading"></a></h2>
+<h2>GVL_COM_Buffers<a class="headerlink" href="#gvl-com-buffers" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span>
 
     <span class="o">//</span> <span class="n">M1</span>
@@ -627,7 +627,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-constants">
-<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
 
     <span class="n">cPiezoMaxVoltage</span>        <span class="p">:</span>       <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">120</span><span class="p">;</span>
@@ -659,7 +659,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr1l3">
-<h2>GVL_MR1L3<a class="headerlink" href="#gvl-mr1l3" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR1L3<a class="headerlink" href="#gvl-mr1l3" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span><span class="p">:</span>
@@ -673,7 +673,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr1l3-constants">
-<h2>GVL_MR1L3_Constants<a class="headerlink" href="#gvl-mr1l3-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR1L3_Constants<a class="headerlink" href="#gvl-mr1l3-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
@@ -687,7 +687,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr1l4">
-<h2>GVL_MR1L4<a class="headerlink" href="#gvl-mr1l4" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR1L4<a class="headerlink" href="#gvl-mr1l4" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span><span class="p">:</span>
@@ -701,7 +701,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr1l4-constants">
-<h2>GVL_MR1L4_Constants<a class="headerlink" href="#gvl-mr1l4-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR1L4_Constants<a class="headerlink" href="#gvl-mr1l4-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
@@ -715,7 +715,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr2l3">
-<h2>GVL_MR2L3<a class="headerlink" href="#gvl-mr2l3" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR2L3<a class="headerlink" href="#gvl-mr2l3" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Pitch</span> <span class="n">Mechanism</span><span class="p">:</span>
@@ -729,7 +729,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-mr2l3-constants">
-<h2>GVL_MR2L3_Constants<a class="headerlink" href="#gvl-mr2l3-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_MR2L3_Constants<a class="headerlink" href="#gvl-mr2l3-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
@@ -743,7 +743,7 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-pmps">
-<h2>GVL_PMPS<a class="headerlink" href="#gvl-pmps" title="Permalink to this heading"></a></h2>
+<h2>GVL_PMPS<a class="headerlink" href="#gvl-pmps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -776,41 +776,109 @@ END_TYPE
 </div>
 </section>
 <section id="gvl-rtds">
-<h2>GVL_RTDS<a class="headerlink" href="#gvl-rtds" title="Permalink to this heading"></a></h2>
+<h2>GVL_RTDS<a class="headerlink" href="#gvl-rtds" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
-    <span class="o">//</span> <span class="n">M2K4</span> <span class="n">BENDER</span> <span class="n">RTDs</span>
-
-    <span class="o">//</span> <span class="n">M1L3</span> <span class="n">RTDs</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L3_1]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L3_RTD_1</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L3_RTD_2</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 2^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L3_RTD_3</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">M2L3</span> <span class="n">RTDs</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR2L3_1]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM2L3_RTD_1</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM2L3_RTD_2</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 2^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM2L3_RTD_3</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-
-    <span class="o">//</span> <span class="n">M1L4</span> <span class="n">RTDs</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L4_1]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L4_RTD_1</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 1^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L4_RTD_2</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 2^Value&#39;</span><span class="p">}</span>
-    <span class="n">nM1L4_RTD_3</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">MR1L3</span> <span class="n">RTDs</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L3_Env_RTD_1</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L3_Env_RTD_2</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L3_Env_RTD_3</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">MR2L3</span> <span class="n">RTDs</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L3_Env_RTD_1</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L3_Env_RTD_2</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR2L3</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR2L3_Env_RTD_3</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">MR1L4</span> <span class="n">RTDs</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E13</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L4_Env_RTD_1</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L4_Env_RTD_2</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Value;</span>
+                              <span class="o">.</span><span class="n">bUnderrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Underrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bOverrange</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Overrange</span><span class="p">;</span>
+                              <span class="o">.</span><span class="n">bError</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">MR1L4</span><span class="o">-</span><span class="n">EL3202</span><span class="o">-</span><span class="mi">0010</span><span class="o">-</span><span class="n">E14</span><span class="p">]</span><span class="o">^</span><span class="n">RTD</span> <span class="n">Inputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Status</span><span class="o">^</span><span class="n">Error</span><span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">ENV</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbMR1L4_Env_RTD_3</span> <span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
 </section>
 <section id="gvl-serialio">
-<h2>GVL_SerialIO<a class="headerlink" href="#gvl-serialio" title="Permalink to this heading"></a></h2>
+<h2>GVL_SerialIO<a class="headerlink" href="#gvl-serialio" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VAR_GLOBAL
     //Better have your inputs and outputs!
     //Serial_P1_stComIn   AT %I*    :       EL6inData22B (*KL6inData22B*);
@@ -968,9 +1036,9 @@ END_VAR
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
 <section id="f-piezoposition">
-<h2>F_PiezoPosition<a class="headerlink" href="#f-piezoposition" title="Permalink to this heading"></a></h2>
+<h2>F_PiezoPosition<a class="headerlink" href="#f-piezoposition" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION</span> <span class="n">F_PiezoPosition</span> <span class="p">:</span> <span class="n">REAL</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">rPiezoVoltage</span>   <span class="p">:</span>       <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span><span class="n">The</span> <span class="n">readback</span> <span class="n">piezo</span> <span class="n">voltage</span>
@@ -998,7 +1066,7 @@ END_VAR
 </div>
 </section>
 <section id="fb-coating-states">
-<h2>FB_Coating_States<a class="headerlink" href="#fb-coating-states" title="Permalink to this heading"></a></h2>
+<h2>FB_Coating_States<a class="headerlink" href="#fb-coating-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Coating_States</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase_WithPMPS</span>
 <span class="n">VAR_INPUT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -1043,7 +1111,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-coating-states-nopmps">
-<h2>FB_Coating_States_noPMPS<a class="headerlink" href="#fb-coating-states-nopmps" title="Permalink to this heading"></a></h2>
+<h2>FB_Coating_States_noPMPS<a class="headerlink" href="#fb-coating-states-nopmps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Coating_States_noPMPS</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase</span>
 <span class="n">VAR_INPUT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -1088,7 +1156,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-drive">
-<h2>FB_Drive<a class="headerlink" href="#fb-drive" title="Permalink to this heading"></a></h2>
+<h2>FB_Drive<a class="headerlink" href="#fb-drive" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Drive</span>
 <span class="n">VAR</span>
     <span class="n">sVersion</span><span class="p">:</span> <span class="n">STRING</span><span class="o">:=</span><span class="s1">&#39;1.0.2&#39;</span><span class="p">;</span>
@@ -1479,7 +1547,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-elmogdcbellcoe">
-<h2>FB_ElmoGDCBellCoE<a class="headerlink" href="#fb-elmogdcbellcoe" title="Permalink to this heading"></a></h2>
+<h2>FB_ElmoGDCBellCoE<a class="headerlink" href="#fb-elmogdcbellcoe" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ElmoGDCBellCoE</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">stCoE</span>   <span class="p">:</span>       <span class="n">ST_ElmoGDCBellCoEParams</span><span class="p">;</span>
@@ -1575,7 +1643,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-elmomcuploaddriveparams">
-<h2>FB_ElmoMCUploadDriveParams<a class="headerlink" href="#fb-elmomcuploaddriveparams" title="Permalink to this heading"></a></h2>
+<h2>FB_ElmoMCUploadDriveParams<a class="headerlink" href="#fb-elmomcuploaddriveparams" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ElmoMCUploadDriveParams</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">Axis</span>    <span class="p">:</span>       <span class="n">ST_HOMSStepper</span><span class="p">;</span>
@@ -1813,7 +1881,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-elmostomonitor">
-<h2>FB_ElmoStoMonitor<a class="headerlink" href="#fb-elmostomonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_ElmoStoMonitor<a class="headerlink" href="#fb-elmostomonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ElmoStoMonitor</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">YGantry</span> <span class="p">:</span> <span class="n">HOMS_Gantry</span><span class="p">;</span>
@@ -1872,7 +1940,7 @@ END_VAR
 </dl>
 </section>
 <section id="fb-gantry">
-<h2>FB_Gantry<a class="headerlink" href="#fb-gantry" title="Permalink to this heading"></a></h2>
+<h2>FB_Gantry<a class="headerlink" href="#fb-gantry" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_Gantry
 VAR_INPUT
     xReset    : BOOL := FALSE; //Rising edge clears errors
@@ -2136,7 +2204,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-gantrydifferencemonitor">
-<h2>FB_GantryDifferenceMonitor<a class="headerlink" href="#fb-gantrydifferencemonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_GantryDifferenceMonitor<a class="headerlink" href="#fb-gantrydifferencemonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_GantryDifferenceMonitor</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">Gantry</span>  <span class="p">:</span>       <span class="n">HOMS_Gantry</span><span class="p">;</span>
@@ -2187,7 +2255,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-gantrydiffvirtuallimitswitch">
-<h2>FB_GantryDiffVirtualLimitSwitch<a class="headerlink" href="#fb-gantrydiffvirtuallimitswitch" title="Permalink to this heading"></a></h2>
+<h2>FB_GantryDiffVirtualLimitSwitch<a class="headerlink" href="#fb-gantrydiffvirtuallimitswitch" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_GantryDiffVirtualLimitSwitch</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">PAxis</span>   <span class="p">:</span>       <span class="n">HOMS_GantryAxis</span><span class="p">;</span> <span class="o">//</span><span class="n">Upstream</span> <span class="n">axis</span>
@@ -2252,7 +2320,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-initdriverefs">
-<h2>FB_InitDriveRefs<a class="headerlink" href="#fb-initdriverefs" title="Permalink to this heading"></a></h2>
+<h2>FB_InitDriveRefs<a class="headerlink" href="#fb-initdriverefs" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_InitDriveRefs</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">stCoE</span>   <span class="p">:</span>       <span class="n">ST_ElmoGDCBellCoEParams</span><span class="p">;</span>
@@ -2283,7 +2351,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-limitswitchstate">
-<h2>FB_LimitSwitchState<a class="headerlink" href="#fb-limitswitchstate" title="Permalink to this heading"></a></h2>
+<h2>FB_LimitSwitchState<a class="headerlink" href="#fb-limitswitchstate" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_LimitSwitchState</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">diInputs</span>        <span class="p">:</span>       <span class="n">DINT</span><span class="p">;</span>
@@ -2328,7 +2396,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-mirrorcoatingprotection">
-<h2>FB_MirrorCoatingProtection<a class="headerlink" href="#fb-mirrorcoatingprotection" title="Permalink to this heading"></a></h2>
+<h2>FB_MirrorCoatingProtection<a class="headerlink" href="#fb-mirrorcoatingprotection" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_MirrorCoatingProtection</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">bMirrorIn</span> <span class="p">:</span><span class="n">BOOL</span><span class="p">;</span> <span class="o">//</span><span class="n">Mirror</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">In</span> <span class="n">position</span>
@@ -2393,7 +2461,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-pi-e621-serialdriverold">
-<h2>FB_PI_E621_SerialDriverOld<a class="headerlink" href="#fb-pi-e621-serialdriverold" title="Permalink to this heading"></a></h2>
+<h2>FB_PI_E621_SerialDriverOld<a class="headerlink" href="#fb-pi-e621-serialdriverold" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_PI_E621_SerialDriverOld
 VAR_INPUT
     /// rising edge execute
@@ -2648,7 +2716,7 @@ END_ACTION
 </dl>
 </section>
 <section id="fb-pi-e621-serialtransaction">
-<h2>FB_PI_E621_SerialTransaction<a class="headerlink" href="#fb-pi-e621-serialtransaction" title="Permalink to this heading"></a></h2>
+<h2>FB_PI_E621_SerialTransaction<a class="headerlink" href="#fb-pi-e621-serialtransaction" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_PI_E621_SerialTransaction
 VAR_INPUT
     /// rising edge execute
@@ -2808,7 +2876,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-piezocontrol">
-<h2>FB_PiezoControl<a class="headerlink" href="#fb-piezocontrol" title="Permalink to this heading"></a></h2>
+<h2>FB_PiezoControl<a class="headerlink" href="#fb-piezocontrol" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_PiezoControl</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">iq_Piezo</span>        <span class="p">:</span>       <span class="n">ST_PiezoAxisOld</span><span class="p">;</span>
@@ -3006,7 +3074,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-pitchcontrolold">
-<h2>FB_PitchControlOld<a class="headerlink" href="#fb-pitchcontrolold" title="Permalink to this heading"></a></h2>
+<h2>FB_PitchControlOld<a class="headerlink" href="#fb-pitchcontrolold" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;reflection&#39;}
 FUNCTION_BLOCK FB_PitchControlOld
 VAR_IN_OUT
@@ -3421,7 +3489,7 @@ END_ACTION
 </dl>
 </section>
 <section id="fb-pitchsoftlimits">
-<h2>FB_PitchSoftLimits<a class="headerlink" href="#fb-pitchsoftlimits" title="Permalink to this heading"></a></h2>
+<h2>FB_PitchSoftLimits<a class="headerlink" href="#fb-pitchsoftlimits" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_PitchSoftLimits</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">Pitch</span>   <span class="p">:</span>       <span class="n">HOMS_PitchMechanismOld</span><span class="p">;</span>
@@ -3456,7 +3524,7 @@ END_ACTION
 </dl>
 </section>
 <section id="fb-ptp">
-<h2>FB_PTP<a class="headerlink" href="#fb-ptp" title="Permalink to this heading"></a></h2>
+<h2>FB_PTP<a class="headerlink" href="#fb-ptp" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_PTP</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">Stepper</span>   <span class="p">:</span> <span class="n">ST_HOMSStepper</span><span class="p">;</span>
@@ -3587,7 +3655,7 @@ END_ACTION
 </dl>
 </section>
 <section id="fb-readfloatparameter">
-<h2>FB_ReadFloatParameter<a class="headerlink" href="#fb-readfloatparameter" title="Permalink to this heading"></a></h2>
+<h2>FB_ReadFloatParameter<a class="headerlink" href="#fb-readfloatparameter" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ReadFloatParameter</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">bExecute</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
@@ -3663,7 +3731,7 @@ END_ACTION
 </div>
 </section>
 <section id="fb-readparameterinnc">
-<h2>FB_ReadParameterInNC<a class="headerlink" href="#fb-readparameterinnc" title="Permalink to this heading"></a></h2>
+<h2>FB_ReadParameterInNC<a class="headerlink" href="#fb-readparameterinnc" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ReadParameterInNC</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">bExecute</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
@@ -3738,7 +3806,7 @@ END_ACTION
 </div>
 </section>
 <section id="fb-reducegantrydiff">
-<h2>FB_ReduceGantryDiff<a class="headerlink" href="#fb-reducegantrydiff" title="Permalink to this heading"></a></h2>
+<h2>FB_ReduceGantryDiff<a class="headerlink" href="#fb-reducegantrydiff" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ReduceGantryDiff</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">xStart</span>  <span class="p">:</span>       <span class="n">BOOL</span><span class="p">;</span>
@@ -3788,7 +3856,7 @@ END_ACTION
 </dl>
 </section>
 <section id="fb-writeparameterinnc">
-<h2>FB_WriteParameterInNC<a class="headerlink" href="#fb-writeparameterinnc" title="Permalink to this heading"></a></h2>
+<h2>FB_WriteParameterInNC<a class="headerlink" href="#fb-writeparameterinnc" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_WriteParameterInNC</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">bExecute</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
@@ -3864,7 +3932,7 @@ END_ACTION
 </div>
 </section>
 <section id="main">
-<h2>Main<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>Main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">Main</span>
 <span class="n">VAR</span>
     <span class="n">tpImAPLC</span> <span class="p">:</span> <span class="n">TP</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PT</span><span class="o">:=</span><span class="n">T</span><span class="c1">#10S);</span>
@@ -4384,70 +4452,6 @@ END_ACTION
 
     <span class="o">//</span> <span class="n">Logging</span>
     <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L3_RTD_1</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L3_RTD_2</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L3_RTD_3</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM2L3_RTD_1</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM2L3_RTD_2</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR2L3</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM2L3_RTD_3</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L4_RTD_1</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">2</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L4_RTD_2</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">MR1L4</span><span class="p">:</span><span class="n">HOMS</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">3</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ASLO</span> <span class="mf">0.1</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">C</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fM1L4_RTD_3</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
-
 <span class="n">END_VAR</span>
 <span class="o">//</span> <span class="n">MR1L3</span> <span class="n">BECKHOFF</span>
 <span class="n">MR1L3</span><span class="o">.</span><span class="n">fbRunHOMS</span><span class="p">(</span><span class="n">stYup</span><span class="o">:=</span><span class="n">M1</span><span class="p">,</span>
@@ -4720,17 +4724,17 @@ END_ACTION
 <span class="o">//</span> <span class="n">Logging</span>
 <span class="n">fbLogHandler</span><span class="p">();</span>
 
-<span class="n">fM1L3_RTD_1</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L3_RTD_1</span><span class="p">);</span>
-<span class="n">fM1L3_RTD_2</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L3_RTD_2</span><span class="p">);</span>
-<span class="n">fM1L3_RTD_3</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L3_RTD_3</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L3_Env_RTD_1</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L3_Env_RTD_2</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L3_Env_RTD_3</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
 
-<span class="n">fM2L3_RTD_1</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM2L3_RTD_1</span><span class="p">);</span>
-<span class="n">fM2L3_RTD_2</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM2L3_RTD_2</span><span class="p">);</span>
-<span class="n">fM2L3_RTD_3</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM2L3_RTD_3</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR2L3_Env_RTD_1</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR2L3_Env_RTD_2</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR2L3_Env_RTD_3</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
 
-<span class="n">fM1L4_RTD_1</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L4_RTD_1</span><span class="p">);</span>
-<span class="n">fM1L4_RTD_2</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L4_RTD_2</span><span class="p">);</span>
-<span class="n">fM1L4_RTD_3</span> <span class="o">:=</span> <span class="n">INT_TO_REAL</span><span class="p">(</span><span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">nM1L4_RTD_3</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L4_Env_RTD_1</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L4_Env_RTD_2</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
+<span class="n">GVL_RTDS</span><span class="o">.</span><span class="n">fbMR1L4_Env_RTD_3</span><span class="p">(</span><span class="n">fResolution</span><span class="o">:=</span><span class="mf">0.01</span><span class="p">);</span>
 
 <span class="n">END_PROGRAM</span>
 </pre></div>
@@ -4752,7 +4756,7 @@ END_ACTION
 </dl>
 </section>
 <section id="mc-smoothmover">
-<h2>MC_SmoothMover<a class="headerlink" href="#mc-smoothmover" title="Permalink to this heading"></a></h2>
+<h2>MC_SmoothMover<a class="headerlink" href="#mc-smoothmover" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">MC_SmoothMover</span>
 <span class="n">VAR_IN_OUT</span>
     <span class="n">Axis</span>    <span class="p">:</span>       <span class="n">AXIS_REF</span><span class="p">;</span>
@@ -4814,7 +4818,7 @@ END_ACTION
 </div>
 </section>
 <section id="p-serial-com">
-<h2>P_Serial_Com<a class="headerlink" href="#p-serial-com" title="Permalink to this heading"></a></h2>
+<h2>P_Serial_Com<a class="headerlink" href="#p-serial-com" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">P_Serial_Com</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">fbSerialLineControl_EL6001_P1</span><span class="p">:</span> <span class="n">SerialLineControl</span><span class="p">;</span>
@@ -4863,7 +4867,7 @@ END_ACTION
 </div>
 </section>
 <section id="piezoserial">
-<h2>PiezoSerial<a class="headerlink" href="#piezoserial" title="Permalink to this heading"></a></h2>
+<h2>PiezoSerial<a class="headerlink" href="#piezoserial" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PiezoSerial</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">PI</span> <span class="n">Serial</span>
@@ -4924,7 +4928,7 @@ END_ACTION
 </dl>
 </section>
 <section id="prg-coatingprotection">
-<h2>PRG_CoatingProtection<a class="headerlink" href="#prg-coatingprotection" title="Permalink to this heading"></a></h2>
+<h2>PRG_CoatingProtection<a class="headerlink" href="#prg-coatingprotection" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_CoatingProtection</span>
 <span class="n">VAR</span>
 <span class="o">//</span><span class="n">M1</span>
@@ -5025,7 +5029,7 @@ END_ACTION
 </dl>
 </section>
 <section id="prg-pmps">
-<h2>PRG_PMPS<a class="headerlink" href="#prg-pmps" title="Permalink to this heading"></a></h2>
+<h2>PRG_PMPS<a class="headerlink" href="#prg-pmps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PMPS</span>
 <span class="n">VAR</span>
     <span class="n">bMR1L3_OUT_Veto</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
@@ -5078,7 +5082,7 @@ END_ACTION
 </dl>
 </section>
 <section id="prg-states">
-<h2>PRG_States<a class="headerlink" href="#prg-states" title="Permalink to this heading"></a></h2>
+<h2>PRG_States<a class="headerlink" href="#prg-states" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_States</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">MR1L3</span> <span class="n">Coating</span> <span class="n">States</span>
@@ -5266,7 +5270,7 @@ END_ACTION
 </dl>
 </section>
 <section id="withinrange">
-<h2>WithinRange<a class="headerlink" href="#withinrange" title="Permalink to this heading"></a></h2>
+<h2>WithinRange<a class="headerlink" href="#withinrange" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION</span> <span class="n">WithinRange</span> <span class="p">:</span> <span class="n">BOOL</span>
 <span class="n">VAR_INPUT</span>
     <span class="n">ValA</span>    <span class="p">:</span>       <span class="n">REAL</span><span class="p">;</span> <span class="o">//</span><span class="n">New</span> <span class="n">position</span> <span class="n">to</span> <span class="n">evaluate</span>

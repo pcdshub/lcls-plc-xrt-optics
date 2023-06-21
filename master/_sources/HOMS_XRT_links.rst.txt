@@ -480,15 +480,42 @@ Links
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_PMPS.fbArbiterIO.i_stCurrentBP, TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE, IO Inputs^CurrentBP
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_state, TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE, SYNC Inputs^TxPDO state
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_PMPS.fbArbiterIO.xTxPDO_toggle, TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_PRE, SYNC Inputs^TxPDO toggle
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L3_RTD_1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL3202-0010_MR1L3_1, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L3_RTD_2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL3202-0010_MR1L3_2_3, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L3_RTD_3, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL3202-0010_MR1L3_2_3, RTD Inputs Channel 2^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L4_RTD_1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL3202-0010_MR1L4_1, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L4_RTD_2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL3202-0010_MR1L4_2_3, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM1L4_RTD_3, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL3202-0010_MR1L4_2_3, RTD Inputs Channel 2^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM2L3_RTD_1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL3202-0010_MR2L3_1, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM2L3_RTD_2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL3202-0010_MR2L3_2_3, RTD Inputs Channel 1^Value
-        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.nM2L3_RTD_3, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL3202-0010_MR2L3_2_3, RTD Inputs Channel 2^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14, RTD Inputs Channel 2^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bError, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 2^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 2^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 2^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14, RTD Inputs Channel 2^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bError, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bError, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 1^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 1^Value
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bError, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Error
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bOverrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Overrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bUnderrange, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 2^Status^Underrange
+        HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.iRaw, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14, RTD Inputs Channel 2^Value
         HOMS_XRT_PLC Instance, PlcTask Inputs^Main.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^M1L3-Yup, Outputs^ToPlc
         HOMS_XRT_PLC Instance, PlcTask Inputs^Main.M1.bLimitBackwardEnable, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Status^Status^Digital input 2
         HOMS_XRT_PLC Instance, PlcTask Inputs^Main.M1.bLimitForwardEnable, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Status^Status^Digital input 1

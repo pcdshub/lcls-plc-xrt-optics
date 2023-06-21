@@ -238,6 +238,7 @@ Axis 7: M1L4-Yup
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -11000
     General:UnitName, um
+    GroupId, 13
     Id, 7
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 200
@@ -269,6 +270,7 @@ Axis 8: M1L4-Ydwn
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -11000
     General:UnitName, um
+    GroupId, 14
     Id, 8
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 200
@@ -300,6 +302,7 @@ Axis 9: M1L4-Xup
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -2000
     General:UnitName, um
+    GroupId, 15
     Id, 9
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 1000
@@ -331,6 +334,7 @@ Axis 10: M1L4-Xdwn
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -2050
     General:UnitName, um
+    GroupId, 16
     Id, 10
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 1000
@@ -363,6 +367,7 @@ Axis 11: M1L4-Pitch
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -900
     General:UnitName, urad
+    GroupId, 17
     Id, 11
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 150
@@ -395,6 +400,7 @@ Axis 12: M1L4-Bender
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -26500
     General:UnitName, um
+    GroupId, 18
     Id, 12
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 150
@@ -426,6 +432,7 @@ Axis 13: M2L3-Yup
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -11750
     General:UnitName, um
+    GroupId, 7
     Id, 13
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 200
@@ -457,6 +464,7 @@ Axis 14: M2L3-Ydwn
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -11750
     General:UnitName, um
+    GroupId, 8
     Id, 14
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 200
@@ -488,6 +496,7 @@ Axis 15: M2L3-Xup
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -850
     General:UnitName, um
+    GroupId, 9
     Id, 15
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 1000
@@ -519,6 +528,7 @@ Axis 16: M2L3-Xdwn
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -865
     General:UnitName, um
+    GroupId, 10
     Id, 16
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 1000
@@ -551,6 +561,7 @@ Axis 17: M2L3-Pitch
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -212
     General:UnitName, urad
+    GroupId, 11
     Id, 17
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 150
@@ -581,6 +592,7 @@ Axis 18: M2L3-Bender
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, 20000
     General:UnitName, um
+    GroupId, 12
     Id, 18
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 150

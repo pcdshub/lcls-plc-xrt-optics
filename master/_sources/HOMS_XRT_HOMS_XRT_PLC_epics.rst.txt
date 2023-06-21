@@ -4515,7 +4515,43 @@ LCLS_General.FB_LogMessage
       - | io: input
 
 
-   
+  
+LCLS_General.FB_TempSensor
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):CONN_RBV
+      - bi
+      - $(SYMBOL).bConnected
+      - | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - $(PREFIX):ERR_RBV
+      - bi
+      - $(SYMBOL).bError
+      - | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - $(PREFIX):TEMP_RBV
+      - ai
+      - $(SYMBOL).fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+  
 LCLS_General.ST_PendingEvent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -46213,6 +46249,240 @@ Database Records
       - | io: input
 
 
+    * - MR1L3:HOMS:ENV:RTD:1:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_1.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:1:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_1.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:1:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L3_Env_RTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:2:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_2.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:2:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_2.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:2:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L3_Env_RTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:3:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_3.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:3:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L3_Env_RTD_3.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L3:HOMS:ENV:RTD:3:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L3_Env_RTD_3.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:1:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_1.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:1:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_1.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:1:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L4_Env_RTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:2:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_2.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:2:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_2.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:2:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L4_Env_RTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:3:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_3.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:3:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR1L4_Env_RTD_3.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR1L4:HOMS:ENV:RTD:3:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR1L4_Env_RTD_3.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:1:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_1.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:1:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_1.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:1:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR2L3_Env_RTD_1.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:2:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_2.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:2:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_2.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:2:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR2L3_Env_RTD_2.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:3:CONN_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_3.bConnected
+      - | field: EGU C
+        | field: ONAM Connected
+        | field: ZNAM Disconnected
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:3:ERR_RBV
+      - bi
+      - GVL_RTDS.fbMR2L3_Env_RTD_3.bError
+      - | field: EGU C
+        | field: ONAM True
+        | field: ZNAM False
+        | io: input
+
+
+    * - MR2L3:HOMS:ENV:RTD:3:TEMP_RBV
+      - ai
+      - GVL_RTDS.fbMR2L3_Env_RTD_3.fTemp
+      - | field: EGU C
+        | field: PREC 2
+        | io: input
+
+
     * - MR1L3:HOMS:MMS:YUP:PLC:bAllBackwardEnable_RBV
       - bi
       - Summary of axis permission to move backward
@@ -53116,78 +53386,6 @@ Database Records
       - ai
       - Main.MR2L3.fCurrGantryY_um
       - | field: EGU um
-        | io: input
-
-
-    * - MR1L3:HOMS:RTD:1_RBV
-      - ai
-      - Main.fM1L3_RTD_1
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR1L3:HOMS:RTD:2_RBV
-      - ai
-      - Main.fM1L3_RTD_2
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR1L3:HOMS:RTD:3_RBV
-      - ai
-      - Main.fM1L3_RTD_3
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR1L4:HOMS:RTD:1_RBV
-      - ai
-      - Main.fM1L4_RTD_1
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR1L4:HOMS:RTD:2_RBV
-      - ai
-      - Main.fM1L4_RTD_2
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR1L4:HOMS:RTD:3_RBV
-      - ai
-      - Main.fM1L4_RTD_3
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR2L3:HOMS:RTD:1_RBV
-      - ai
-      - Main.fM2L3_RTD_1
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR2L3:HOMS:RTD:2_RBV
-      - ai
-      - Main.fM2L3_RTD_2
-      - | field: ASLO 0.1
-        | field: EGU C
-        | io: input
-
-
-    * - MR2L3:HOMS:RTD:3_RBV
-      - ai
-      - Main.fM2L3_RTD_3
-      - | field: ASLO 0.1
-        | field: EGU C
         | io: input
 
 
