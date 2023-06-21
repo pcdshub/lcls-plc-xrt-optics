@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{C007E115-1A1B-DA93-103F-FDB135236BEC}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{5EF6A122-29A6-3613-9D05-5DD1880F707A}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -3064,7 +3064,7 @@
       <SubItem>
         <Name>i_xExecute</Name>
         <Type>BOOL</Type>
-        <Comment> rising edge execute </Comment>
+        <Comment> rising edge execute</Comment>
         <BitSize>8</BitSize>
         <BitOffs>32</BitOffs>
         <Properties>
@@ -3077,7 +3077,7 @@
       <SubItem>
         <Name>i_tTimeOut</Name>
         <Type>TIME</Type>
-        <Comment> Maximum wait time for reply </Comment>
+        <Comment> Maximum wait time for reply</Comment>
         <BitSize>32</BitSize>
         <BitOffs>64</BitOffs>
         <Default>
@@ -3208,7 +3208,7 @@
       <SubItem>
         <Name>q_sLastSentString</Name>
         <Type>STRING(80)</Type>
-        <Comment> Last String Sent to Serial Device - for debugging </Comment>
+        <Comment> Last String Sent to Serial Device - for debugging</Comment>
         <BitSize>648</BitSize>
         <BitOffs>8968</BitOffs>
         <Properties>
@@ -3221,7 +3221,7 @@
       <SubItem>
         <Name>q_sLastReceivedString</Name>
         <Type>STRING(80)</Type>
-        <Comment> Last String Received from Serial Device - for debugging </Comment>
+        <Comment> Last String Received from Serial Device - for debugging</Comment>
         <BitSize>648</BitSize>
         <BitOffs>9616</BitOffs>
         <Properties>
@@ -3383,7 +3383,7 @@
       <SubItem>
         <Name>i_xExecute</Name>
         <Type>BOOL</Type>
-        <Comment> rising edge execute </Comment>
+        <Comment> rising edge execute</Comment>
         <BitSize>8</BitSize>
         <BitOffs>32</BitOffs>
         <Properties>
@@ -3396,7 +3396,7 @@
       <SubItem>
         <Name>i_tTimeOut</Name>
         <Type>TIME</Type>
-        <Comment> Maximum wait time for reply </Comment>
+        <Comment> Maximum wait time for reply</Comment>
         <BitSize>32</BitSize>
         <BitOffs>64</BitOffs>
         <Default>
@@ -3452,7 +3452,7 @@
           <LBound>1</LBound>
           <Elements>50</Elements>
         </ArrayInfo>
-        <Comment> Last Strings Sent to Serial Device - for debugging </Comment>
+        <Comment> Last Strings Sent to Serial Device - for debugging</Comment>
         <BitSize>32400</BitSize>
         <BitOffs>2160</BitOffs>
         <Properties>
@@ -3469,7 +3469,7 @@
           <LBound>1</LBound>
           <Elements>50</Elements>
         </ArrayInfo>
-        <Comment> Last Strings Received from Serial Device - for debugging </Comment>
+        <Comment> Last Strings Received from Serial Device - for debugging</Comment>
         <BitSize>32400</BitSize>
         <BitOffs>34560</BitOffs>
         <Properties>
@@ -54285,7 +54285,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>SerialIO Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>GVL_SerialIO.Serial_stComIn_MR1L3</Name>
             <Comment> M1L3 In Serial Comm Array</Comment>
@@ -54416,7 +54416,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>SerialIO Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>GVL_SerialIO.Serial_stComOut_MR1L3</Name>
             <Comment> M1 Out Serual Comm Array</Comment>
@@ -54545,7 +54545,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>SerialIO Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>P_Serial_Com.fbSerialLineControl_EL6001_MR1L3</Name>
             <Comment> M1 Serial Comm Function Block</Comment>
@@ -54701,7 +54701,7 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PiezoDriver Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>Global_Variables.GLOBAL_FORMAT_HASH_PREFIX_TYPE</Name>
             <Comment> Global hash prefix type constant used for binary, octal or hexadecimal string format type </Comment>
@@ -55312,7 +55312,7 @@ Beckhoff</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">32</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>lcls_twincat_optics.GVL_TestStructs.TestPitch_LimitSwitches.diEncCnt</Name>
             <Comment>Raw encoder count</Comment>
@@ -60058,7 +60058,7 @@ Beckhoff</Comment>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">33</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>Main.M1.Axis.PlcToNc</Name>
             <BitSize>1024</BitSize>
@@ -61261,7 +61261,7 @@ Beckhoff</Comment>
           <AreaNo AreaType="Internal" CreateSymbols="true">35</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -67683,7 +67683,7 @@ Beckhoff</Comment>
               </SubItem>
               <SubItem>
                 <Name>.iBuild</Name>
-                <Value>0</Value>
+                <Value>1</Value>
               </SubItem>
               <SubItem>
                 <Name>.iRevision</Name>
@@ -67695,7 +67695,7 @@ Beckhoff</Comment>
               </SubItem>
               <SubItem>
                 <Name>.sVersion</Name>
-                <String>0.6.0</String>
+                <String>0.6.1</String>
               </SubItem>
             </Default>
             <Properties>
@@ -71580,7 +71580,7 @@ PMPS State Stage; bPowerSelf:=False</Comment>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">36</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>2</ContextId>
-          <ByteSize>82837504</ByteSize>
+          <ByteSize>82903040</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -71660,7 +71660,7 @@ PMPS State Stage; bPowerSelf:=False</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-06-21T11:07:38</Value>
+          <Value>2023-06-21T11:18:05</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
