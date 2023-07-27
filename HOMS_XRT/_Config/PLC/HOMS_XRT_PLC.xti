@@ -3327,13 +3327,6 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.MR1L3.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.MR1L3.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
 			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL3202-0010_MR1L3_1">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL3202-0010_MR1L3_2_3">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
-			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_MR1L3.MR1L3_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^Main.M5.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3420,16 +3413,16 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL1004_M1L4_STO">
 				<Link VarA="PlcTask Inputs^Main.MR1L4.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.MR1L4.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL3202-0010_MR1L4_1">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL3202-0010_MR1L4_2_3">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender">
 				<Link VarA="PlcTask Inputs^GVL_MR1L4.MR1L4_Pitch.diEncCnt" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3517,16 +3510,16 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL1004_M2L3_STO">
 				<Link VarA="PlcTask Inputs^Main.MR2L3.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.MR2L3.fbRunHOMS.bSTOEnable2" VarB="Channel 2^Input" AutoLink="true" Size="1"/>
-			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL3202-0010_MR2L3_1">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL3202-0010_MR2L3_2_3">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender">
 				<Link VarA="PlcTask Inputs^Main.M17.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
@@ -3611,6 +3604,13 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup">
 				<Link VarA="PlcTask Inputs^Main.M13.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true" Size="1"/>
 				<Link VarA="PlcTask Inputs^Main.M13.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14">
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_FFO">
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true" Size="1"/>
