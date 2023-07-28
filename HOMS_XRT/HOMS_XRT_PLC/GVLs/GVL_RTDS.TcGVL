@@ -3,31 +3,99 @@
   <GVL Name="GVL_RTDS" Id="{0b62862d-8567-4022-be19-38483cd606a9}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-    // M2K4 BENDER RTDs
-
-    // M1L3 RTDs
-    {attribute 'TcLinkTo' := 'TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value'}
-    nM1L3_RTD_1 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value'}
-    nM1L3_RTD_2 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value'}
-    nM1L3_RTD_3 AT %I* : INT;
-
-    // M2L3 RTDs
-    {attribute 'TcLinkTo' := 'TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value'}
-    nM2L3_RTD_1 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value'}
-    nM2L3_RTD_2 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value'}
-    nM2L3_RTD_3 AT %I* : INT;
-
-    // M1L4 RTDs
-    {attribute 'TcLinkTo' := 'TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Value'}
-    nM1L4_RTD_1 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Value'}
-    nM1L4_RTD_2 AT %I* : INT;
-    {attribute 'TcLinkTo' := 'TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Value'}
-    nM1L4_RTD_3 AT %I* : INT;
+    // MR1L3 RTDs
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L3:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    '}
+    nMR1L3_Env_RTD_1 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L3:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    '}
+    nMR1L3_Env_RTD_2 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L3:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    '}
+    nMR1L3_Env_RTD_3 : FB_TempSensor;
+    // MR2L3 RTDs
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR2L3:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    '}
+    nMR2L3_Env_RTD_1 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR2L3:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    '}
+    nMR2L3_Env_RTD_2 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR2L3:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    '}
+    nMR2L3_Env_RTD_3 : FB_TempSensor;
+    // MR1L4 RTDs
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L4:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    '}
+    nMR1L4_Env_RTD_1 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L4:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    '}
+    nMR1L4_Env_RTD_2 : FB_TempSensor;
+    {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error'}
+    {attribute 'pytmc' := '
+        pv: MR1L4:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    '}
+    nMR1L4_Env_RTD_3 : FB_TempSensor;
 
 END_VAR]]></Declaration>
   </GVL>
