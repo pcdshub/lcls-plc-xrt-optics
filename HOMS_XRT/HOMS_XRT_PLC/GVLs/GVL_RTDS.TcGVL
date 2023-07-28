@@ -13,7 +13,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L3_Env_RTD_1 : FB_TempSensor;
+    fbMR1L3_Env_RTD_1 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
                               .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
                               .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
@@ -23,7 +23,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L3_Env_RTD_2 : FB_TempSensor;
+    fbMR1L3_Env_RTD_2 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
                               .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
                               .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
@@ -33,7 +33,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L3_Env_RTD_3 : FB_TempSensor;
+    fbMR1L3_Env_RTD_3 : FB_TempSensor;
     // MR2L3 RTDs
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
                               .bUnderrange := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
@@ -44,7 +44,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR2L3_Env_RTD_1 : FB_TempSensor;
+    fbMR2L3_Env_RTD_1 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
                               .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
                               .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
@@ -54,7 +54,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR2L3_Env_RTD_2 : FB_TempSensor;
+    fbMR2L3_Env_RTD_2 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
                               .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
                               .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
@@ -64,7 +64,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR2L3_Env_RTD_3 : FB_TempSensor;
+    fbMR2L3_Env_RTD_3 : FB_TempSensor;
     // MR1L4 RTDs
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
                               .bUnderrange := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
@@ -75,7 +75,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L4_Env_RTD_1 : FB_TempSensor;
+    fbMR1L4_Env_RTD_1 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
                               .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
                               .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
@@ -85,7 +85,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L4_Env_RTD_2 : FB_TempSensor;
+    fbMR1L4_Env_RTD_2 : FB_TempSensor;
     {attribute 'TcLinkTo' := '.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
                               .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
                               .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
@@ -95,7 +95,7 @@ VAR_GLOBAL
         field: EGU C
         io: i
     '}
-    nMR1L4_Env_RTD_3 : FB_TempSensor;
+    fbMR1L4_Env_RTD_3 : FB_TempSensor;
 
 END_VAR]]></Declaration>
   </GVL>
