@@ -2636,25 +2636,6 @@ External Setpoint Generation:
 					<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM1L3_RTD_1</Name>
-					<Comment><![CDATA[ M2K4 BENDER RTDs
- M1L3 RTDs]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_RTDS.nM1L3_RTD_2</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_RTDS.nM1L3_RTD_3</Name>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_RTDS.nM2L3_RTD_1</Name>
-					<Comment><![CDATA[ M2L3 RTDs]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
 					<Name>GVL_MR1L3.MR1L3_Pitch.diEncCnt</Name>
 					<Comment><![CDATA[Raw encoder count]]></Comment>
 					<Type>LINT</Type>
@@ -2682,24 +2663,147 @@ External Setpoint Generation:
 					<Type>BIT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM2L3_RTD_2</Name>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_1.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM2L3_RTD_3</Name>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_2.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM1L4_RTD_1</Name>
-					<Comment><![CDATA[ M1L4 RTDs]]></Comment>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L3_Env_RTD_3.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM1L4_RTD_2</Name>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_1.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>GVL_RTDS.nM1L4_RTD_3</Name>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_2.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR2L3_Env_RTD_3.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_1.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_2.iRaw</Name>
+					<Type>INT</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bError</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bUnderrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bOverrange</Name>
+					<Type>BOOL</Type>
+				</Var>
+				<Var>
+					<Name>GVL_RTDS.fbMR1L4_Env_RTD_3.iRaw</Name>
 					<Type>INT</Type>
 				</Var>
 			</Vars>
@@ -3414,11 +3518,20 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E13">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^MR1L3-EL3202-0010-E14">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_2.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L3_Env_RTD_3.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL1004_M1L4_STO">
 				<Link VarA="PlcTask Inputs^Main.MR1L4.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
@@ -3511,11 +3624,20 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M7.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E13">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^MR1L4-EL3202-0010-E14">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM1L4_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_2.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR1L4_Env_RTD_3.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL1004_M2L3_STO">
 				<Link VarA="PlcTask Inputs^Main.MR2L3.fbRunHOMS.bSTOEnable1" VarB="Channel 1^Input" AutoLink="true" Size="1"/>
@@ -3606,11 +3728,20 @@ External Setpoint Generation:
 				<Link VarA="PlcTask Inputs^Main.M13.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true" Size="1"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E13">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_1" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^MR2L3-EL3202-0010-E14">
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_2" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_RTDS.nM2L3_RTD_3" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_2.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true" Size="1"/>
+				<Link VarA="PlcTask Inputs^GVL_RTDS.fbMR2L3_Env_RTD_3.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^HOMS^Term 1 (EK1200)^Term 34 (EK1521-0010)^Term 23 (EK1501-0010)^PMPS_FFO">
 				<Link VarA="PlcTask Outputs^GVL_PMPS.g_FastFaultOutput1.q_xFastFaultOut" VarB="Channel 1^Output" AutoLink="true" Size="1"/>

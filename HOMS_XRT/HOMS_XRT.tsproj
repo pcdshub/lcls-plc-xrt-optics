@@ -112,6 +112,7 @@
 				<Target BkhfOrder="VE2378134">
 					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
 					<ManualSelect>{6952449D-F68C-49A2-ADE4-8639D85B33A4}</ManualSelect>
+					<LicenseDevice DongleHardwareId="2"/>
 				</Target>
 			</Licenses>
 			<Tasks>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{5EF6A122-29A6-3613-9D05-5DD1880F707A}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{83527180-D098-1D9E-93E6-F1F73CDF7849}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComSerialLineMode_t</Name>
@@ -54173,6 +54173,171 @@ The BPTM will throw an error if the arbiter does not have enough space for the t
         <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
       </Hides>
     </DataType>
+    <DataType>
+      <Name Namespace="LCLS_General">FB_TempSensor</Name>
+      <BitSize>256</BitSize>
+      <SubItem>
+        <Name>fResolution</Name>
+        <Type>LREAL</Type>
+        <Comment> Resolution parameter from the Beckhoff docs. Default is 0.1 for 0.1 degree resolution</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <Value>0.1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fTemp</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: TEMP
+        io: input
+        field: EGU C
+        field: PREC 2
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bConnected</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CONN
+        io: input
+        field: ONAM Connected
+        field: ZNAM Disconnected
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>200</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bUnderrange</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>208</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOverrange</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>216</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iRaw</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>224</BitOffs>
+        <Properties>
+          <Property>
+            <Name>TcAddressType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Method>
+        <Name>__GetInterfaceReference</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>nInterfaceId</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Method>
+        <Name>__GetInterfacePointer</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>pRef</Name>
+          <Type PointerTo="2">DWORD</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{6782D19E-49E6-4E53-A280-FB39675852DF}" TcSmClass="TComPlcObjDef">
@@ -59782,85 +59947,6 @@ Beckhoff</Comment>
             <BitOffs>654431936</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM1L3_RTD_1</Name>
-            <Comment> M2K4 BENDER RTDs
- M1L3 RTDs</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L3_1]^RTD Inputs Channel 1^Value</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>654432032</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_RTDS.nM1L3_RTD_2</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 1^Value</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>654432048</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_RTDS.nM1L3_RTD_3</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L3_2_3]^RTD Inputs Channel 2^Value</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>654447200</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_RTDS.nM2L3_RTD_1</Name>
-            <Comment> M2L3 RTDs</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR2L3_1]^RTD Inputs Channel 1^Value</Value>
-              </Property>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>654447216</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_MR1L3.MR1L3_Pitch.diEncCnt</Name>
             <Comment>Raw encoder count</Comment>
             <BitSize>64</BitSize>
@@ -59958,100 +60044,544 @@ Beckhoff</Comment>
             <BitOffs>656399777</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM2L3_RTD_2</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
             <Properties>
               <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 1^Value</Value>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
               </Property>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
               </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
             </Properties>
-            <BitOffs>656534208</BitOffs>
+            <BitOffs>661483784</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM2L3_RTD_3</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
             <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR2L3_2_3]^RTD Inputs Channel 2^Value</Value>
-              </Property>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
               </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
             </Properties>
-            <BitOffs>656534224</BitOffs>
+            <BitOffs>661483792</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM1L4_RTD_1</Name>
-            <Comment> M1L4 RTDs</Comment>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_1.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
             <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L4_1]^RTD Inputs Channel 1^Value</Value>
-              </Property>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
               </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
             </Properties>
-            <BitOffs>656534240</BitOffs>
+            <BitOffs>661483800</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM1L4_RTD_2</Name>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_1.iRaw</Name>
             <BitSize>16</BitSize>
             <BaseType>INT</BaseType>
             <Properties>
               <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 1^Value</Value>
-              </Property>
-              <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
               </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
             </Properties>
-            <BitOffs>656534256</BitOffs>
+            <BitOffs>661483808</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_RTDS.nM1L4_RTD_3</Name>
-            <BitSize>16</BitSize>
-            <BaseType>INT</BaseType>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
             <Properties>
               <Property>
-                <Name>TcLinkTo</Name>
-                <Value>TIIB[EL3202-0010_MR1L4_2_3]^RTD Inputs Channel 2^Value</Value>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
               </Property>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Input</Value>
               </Property>
+            </Properties>
+            <BitOffs>661484040</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
               <Property>
-                <Name>TcVarGlobal</Name>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>656534272</BitOffs>
+            <BitOffs>661484048</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_2.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484056</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_2.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484296</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484304</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_3.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484312</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_3.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484552</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484560</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_1.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484568</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_1.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484808</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484816</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_2.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484824</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_2.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661484832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485064</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485072</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_3.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485080</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_3.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485088</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485328</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_1.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485336</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_1.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485344</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485576</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485584</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_2.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485592</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_2.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485600</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bError</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: ERR
+        io: input
+        field: ONAM True
+        field: ZNAM False
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485832</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bUnderrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_3.bOverrange</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485848</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_3.iRaw</Name>
+            <BitSize>16</BitSize>
+            <BaseType>INT</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcAddressType</Name>
+                <Value>Input</Value>
+              </Property>
+            </Properties>
+            <BitOffs>661485856</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
@@ -69611,159 +70141,6 @@ PMPS State Stage; bPowerSelf:=False</Comment>
             <BitOffs>646921728</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>Main.fM1L3_RTD_1</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L3:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706624</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM1L3_RTD_2</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L3:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706656</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM1L3_RTD_3</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L3:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706688</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM2L3_RTD_1</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR2L3:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706720</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM2L3_RTD_2</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR2L3:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706752</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM2L3_RTD_3</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR2L3:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706784</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM1L4_RTD_1</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L4:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706816</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM1L4_RTD_2</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L4:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706848</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>Main.fM1L4_RTD_3</Name>
-            <BitSize>32</BitSize>
-            <BaseType>REAL</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: MR1L4:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    </Value>
-              </Property>
-            </Properties>
-            <BitOffs>652706880</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>PRG_PMPS.nReq</Name>
             <BitSize>32</BitSize>
             <BaseType>UDINT</BaseType>
@@ -71575,6 +71952,243 @@ PMPS State Stage; bPowerSelf:=False</Comment>
             </Properties>
             <BitOffs>656595872</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_1</Name>
+            <Comment> MR1L3 RTDs</Comment>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L3:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661483584</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_2</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L3:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661483840</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L3_Env_RTD_3</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR1L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L3:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661484096</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_1</Name>
+            <Comment> MR2L3 RTDs</Comment>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR2L3:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661484352</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_2</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR2L3:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661484608</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR2L3_Env_RTD_3</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR2L3-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR2L3:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661484864</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_1</Name>
+            <Comment> MR1L4 RTDs</Comment>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E13]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L4:HOMS:ENV:RTD:1
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661485120</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_2</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 1^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L4:HOMS:ENV:RTD:2
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661485376</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_RTDS.fbMR1L4_Env_RTD_3</Name>
+            <BitSize>256</BitSize>
+            <BaseType Namespace="LCLS_General">FB_TempSensor</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>.iRaw := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Value;
+                              .bUnderrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Underrange;
+                              .bOverrange := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Overrange;
+                              .bError := TIIB[MR1L4-EL3202-0010-E14]^RTD Inputs Channel 2^Status^Error</Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: MR1L4:HOMS:ENV:RTD:3
+        field: EGU C
+        io: i
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>661485632</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">36</AreaNo>
@@ -71660,7 +72274,7 @@ PMPS State Stage; bPowerSelf:=False</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2023-06-21T11:18:05</Value>
+          <Value>2023-08-04T16:08:27</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

@@ -794,17 +794,17 @@ PRG_PMPS();
 // Logging
 fbLogHandler();
 
-GVL_RTDS.fbMR1L3_Env_RTD_1();
-GVL_RTDS.fbMR1L3_Env_RTD_2();
-GVL_RTDS.fbMR1L3_Env_RTD_3();
+GVL_RTDS.fbMR1L3_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR1L3_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR1L3_Env_RTD_3(fResolution:=0.01);
 
-GVL_RTDS.fbMR2L3_Env_RTD_1();
-GVL_RTDS.fbMR2L3_Env_RTD_2();
-GVL_RTDS.fbMR2L3_Env_RTD_3();
+GVL_RTDS.fbMR2L3_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR2L3_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR2L3_Env_RTD_3(fResolution:=0.01);
 
-GVL_RTDS.fbMR1L4_Env_RTD_1();
-GVL_RTDS.fbMR1L4_Env_RTD_2();
-GVL_RTDS.fbMR1L4_Env_RTD_3();
+GVL_RTDS.fbMR1L4_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR1L4_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR1L4_Env_RTD_3(fResolution:=0.01);
 
 
 
