@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="Main" Id="{ea0bf136-bb68-48b6-99e0-4530d55408e2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Main
 VAR
@@ -520,70 +520,6 @@ VAR
 
     // Logging
     fbLogHandler : FB_LogHandler;
-    {attribute 'pytmc' := '
-        pv: MR1L3:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L3_RTD_1 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR1L3:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L3_RTD_2 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR1L3:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L3_RTD_3 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR2L3:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM2L3_RTD_1 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR2L3:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM2L3_RTD_2 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR2L3:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM2L3_RTD_3 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR1L4:HOMS:RTD:1
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L4_RTD_1 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR1L4:HOMS:RTD:2
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L4_RTD_2 : REAL;
-    {attribute 'pytmc' := '
-        pv: MR1L4:HOMS:RTD:3
-        field: ASLO 0.1
-        field: EGU C
-        io: i
-    '}
-    fM1L4_RTD_3 : REAL;
-
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -858,17 +794,21 @@ PRG_PMPS();
 // Logging
 fbLogHandler();
 
-fM1L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_1);
-fM1L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_2);
-fM1L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L3_RTD_3);
+GVL_RTDS.fbMR1L3_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR1L3_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR1L3_Env_RTD_3(fResolution:=0.01);
 
-fM2L3_RTD_1 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_1);
-fM2L3_RTD_2 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_2);
-fM2L3_RTD_3 := INT_TO_REAL(GVL_RTDS.nM2L3_RTD_3);
+GVL_RTDS.fbMR2L3_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR2L3_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR2L3_Env_RTD_3(fResolution:=0.01);
 
-fM1L4_RTD_1 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_1);
-fM1L4_RTD_2 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_2);
-fM1L4_RTD_3 := INT_TO_REAL(GVL_RTDS.nM1L4_RTD_3);]]></ST>
+GVL_RTDS.fbMR1L4_Env_RTD_1(fResolution:=0.01);
+GVL_RTDS.fbMR1L4_Env_RTD_2(fResolution:=0.01);
+GVL_RTDS.fbMR1L4_Env_RTD_3(fResolution:=0.01);
+
+
+
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
