@@ -1,0 +1,30 @@
+HOMS_XRT
+--------
+
+.. toctree::
+    :maxdepth: 2
+    :caption: HOMS_XRT
+
+    HOMS_XRT_pragmas
+    HOMS_XRT_nc
+    HOMS_XRT_ethercat
+    HOMS_XRT_boxes
+    HOMS_XRT_links
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: HOMS_XRT_PLC
+
+    HOMS_XRT_HOMS_XRT_PLC_summary
+    HOMS_XRT_HOMS_XRT_PLC_epics
+    HOMS_XRT_HOMS_XRT_PLC_source
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
