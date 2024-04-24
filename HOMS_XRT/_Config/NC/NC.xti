@@ -2285,7 +2285,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="500"/>
+					<PosDiffControl Range="50"/>
 					<PID PosKp="50" PosExtKp="50" DeadBandPosition="0.4"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
@@ -2432,7 +2432,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="500"/>
+					<PosDiffControl Range="50"/>
 					<PID PosKp="50" PosExtKp="50" DeadBandPosition="0.4"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
@@ -2580,7 +2580,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="200"/>
+					<PosDiffControl Range="15"/>
 					<PID PosKp="2" PosExtKp="1" DeadBandPosition="0.01"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
@@ -3053,7 +3053,7 @@ External Setpoint Generation:
 			<Encoder Name="Enc" EncType="29">
 				<EncPara ScaleFactorNumerator="0.001" Offset="-25490.849" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-2000"/>
-					<SoftEndMaxControl Enable="true" Range="18500"/>
+					<SoftEndMaxControl Enable="true" Range="18750"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
 				</EncPara>
 				<Vars VarGrpType="1">
@@ -3167,7 +3167,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="500"/>
+					<PosDiffControl Range="50"/>
 					<PID PosKp="50" PosExtKp="50" DeadBandPosition="0.4"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
@@ -3200,7 +3200,7 @@ External Setpoint Generation:
 			<Encoder Name="Enc" EncType="29">
 				<EncPara ScaleFactorNumerator="0.001" Offset="-26628.83" MaxCount="#xffffffff">
 					<SoftEndMinControl Enable="true" Range="-2050"/>
-					<SoftEndMaxControl Enable="true" Range="18500"/>
+					<SoftEndMaxControl Enable="true" Range="18750"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
 				</EncPara>
 				<Vars VarGrpType="1">
@@ -3314,7 +3314,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="500"/>
+					<PosDiffControl Range="50"/>
 					<PID PosKp="50" PosExtKp="50" DeadBandPosition="0.4"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
@@ -3348,7 +3348,7 @@ External Setpoint Generation:
 				<EncPara ScaleFactorNumerator="0.001949317739" Offset="-19152.5" MaxCount="#xffffffff">
 					<FilterTime TPos="0.2"/>
 					<SoftEndMinControl Enable="true" Range="-900"/>
-					<SoftEndMaxControl Enable="true" Range="1000"/>
+					<SoftEndMaxControl Enable="true" Range="900"/>
 					<Inc RefSoftSyncMask="#x0000ffff"/>
 				</EncPara>
 				<Vars VarGrpType="1">
@@ -3462,7 +3462,7 @@ External Setpoint Generation:
 			</Drive>
 			<Controller Name="Ctrl" CtrType="2">
 				<CtrPara PriorControlFactor="1">
-					<PosDiffControl Range="200"/>
+					<PosDiffControl Range="30"/>
 					<PID PosKp="2" PosExtKp="1" DeadBandPosition="0.01"/>
 					<Observer BandWidth="20"/>
 				</CtrPara>
