@@ -298,7 +298,7 @@ Axis 9: M1L4-Xup
     Enc:Offset, -25490.849
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
-    Enc:SoftEndMaxControl:Range, 18500
+    Enc:SoftEndMaxControl:Range, 18750
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -2000
     General:UnitName, um
@@ -330,7 +330,7 @@ Axis 10: M1L4-Xdwn
     Enc:Offset, -26628.83
     Enc:ScaleFactorNumerator, 0.001
     Enc:SoftEndMaxControl:Enable, true
-    Enc:SoftEndMaxControl:Range, 18500
+    Enc:SoftEndMaxControl:Range, 18750
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -2050
     General:UnitName, um
@@ -363,7 +363,7 @@ Axis 11: M1L4-Pitch
     Enc:Offset, -19152.5
     Enc:ScaleFactorNumerator, 0.001949317739
     Enc:SoftEndMaxControl:Enable, true
-    Enc:SoftEndMaxControl:Range, 1000
+    Enc:SoftEndMaxControl:Range, 900
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -900
     General:UnitName, urad

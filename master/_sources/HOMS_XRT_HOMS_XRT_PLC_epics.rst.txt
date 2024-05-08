@@ -3581,102 +3581,6 @@ FB_Coating_States_noPMPS
       - | io: output
 
 
-   
-LCLS_General.FB_BasicStats
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):STATS:ALWAYS_CALC
-      - bo
-      - $(SYMBOL).bAlwaysCalc
-      - | io: output
-
-
-    * - $(PREFIX):STATS:ALWAYS_CALC_RBV
-      - bi
-      - $(SYMBOL).bAlwaysCalc
-      - | io: output
-
-
-    * - $(PREFIX):STATS:DATA_RBV
-      - ai
-      - $(SYMBOL).aSignal
-      - | io: input
-
-
-    * - $(PREFIX):STATS:EXECUTE
-      - bo
-      - $(SYMBOL).bExecute
-      - | io: output
-
-
-    * - $(PREFIX):STATS:EXECUTE_RBV
-      - bi
-      - $(SYMBOL).bExecute
-      - | io: output
-
-
-    * - $(PREFIX):STATS:MAX_RBV
-      - ai
-      - $(SYMBOL).fMax
-      - | io: input
-
-
-    * - $(PREFIX):STATS:MEAN_RBV
-      - ai
-      - $(SYMBOL).fMean
-      - | io: input
-
-
-    * - $(PREFIX):STATS:MIN_RBV
-      - ai
-      - $(SYMBOL).fMin
-      - | io: input
-
-
-    * - $(PREFIX):STATS:NELM_RBV
-      - longin
-      - $(SYMBOL).nElems
-      - | io: input
-
-
-    * - $(PREFIX):STATS:RANGE_RBV
-      - ai
-      - $(SYMBOL).fRange
-      - | io: input
-
-
-    * - $(PREFIX):STATS:RESET
-      - bo
-      - $(SYMBOL).bReset
-      - | io: output
-
-
-    * - $(PREFIX):STATS:RESET_RBV
-      - bi
-      - $(SYMBOL).bReset
-      - | io: output
-
-
-    * - $(PREFIX):STATS:STDEV_RBV
-      - ai
-      - $(SYMBOL).fStDev
-      - | io: input
-
-
-    * - $(PREFIX):STATS:VALID_RBV
-      - bi
-      - $(SYMBOL).bValid
-      - | io: input
-
-
      
 LCLS_General.FB_Listener
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4515,7 +4419,7 @@ LCLS_General.FB_LogMessage
       - | io: input
 
 
-  
+ 
 LCLS_General.FB_TempSensor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -4551,7 +4455,7 @@ LCLS_General.FB_TempSensor
         | io: input
 
 
-  
+ 
 LCLS_General.ST_PendingEvent
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -10673,7 +10577,139 @@ lcls_twincat_motion.FB_PositionStatePMPS_Base
       - | io: output
 
 
-        
+       
+lcls_twincat_motion.LCLS_General.FB_BasicStats
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):STATS:ALWAYS_CALC
+      - bo
+      - $(SYMBOL).bAlwaysCalc
+      - | io: output
+
+
+    * - $(PREFIX):STATS:ALWAYS_CALC_RBV
+      - bi
+      - $(SYMBOL).bAlwaysCalc
+      - | io: output
+
+
+    * - $(PREFIX):STATS:DATA_RBV
+      - ai
+      - $(SYMBOL).aSignal
+      - | io: input
+
+
+    * - $(PREFIX):STATS:EXECUTE
+      - bo
+      - $(SYMBOL).bExecute
+      - | io: output
+
+
+    * - $(PREFIX):STATS:EXECUTE_RBV
+      - bi
+      - $(SYMBOL).bExecute
+      - | io: output
+
+
+    * - $(PREFIX):STATS:MAX_RBV
+      - ai
+      - $(SYMBOL).fMax
+      - | io: input
+
+
+    * - $(PREFIX):STATS:MEAN_RBV
+      - ai
+      - $(SYMBOL).fMean
+      - | io: input
+
+
+    * - $(PREFIX):STATS:MIN_RBV
+      - ai
+      - $(SYMBOL).fMin
+      - | io: input
+
+
+    * - $(PREFIX):STATS:NELM_RBV
+      - longin
+      - $(SYMBOL).nElems
+      - | io: input
+
+
+    * - $(PREFIX):STATS:RANGE_RBV
+      - ai
+      - $(SYMBOL).fRange
+      - | io: input
+
+
+    * - $(PREFIX):STATS:RESET
+      - bo
+      - $(SYMBOL).bReset
+      - | io: output
+
+
+    * - $(PREFIX):STATS:RESET_RBV
+      - bi
+      - $(SYMBOL).bReset
+      - | io: output
+
+
+    * - $(PREFIX):STATS:RMS_RBV
+      - ai
+      - $(SYMBOL).fRMS
+      - | io: input
+
+
+    * - $(PREFIX):STATS:STDEV_RBV
+      - ai
+      - $(SYMBOL).fStDev
+      - | io: input
+
+
+    * - $(PREFIX):STATS:VALID_RBV
+      - bi
+      - $(SYMBOL).bValid
+      - | io: input
+
+
+   
+lcls_twincat_motion.LCLS_General.FB_LogMessage
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Reset
+      - bo
+      - Rising-edge reset of trip
+      - | io: output
+
+
+    * - $(PREFIX):Reset_RBV
+      - bi
+      - Rising-edge reset of trip
+      - | io: output
+
+
+    * - $(PREFIX):Tripped_RBV
+      - bi
+      - Log message FB tripped
+      - | io: input
+
+
+     
 lcls_twincat_optics.DUT_HOMS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

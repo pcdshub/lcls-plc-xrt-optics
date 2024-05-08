@@ -1,294 +1,1277 @@
-Box Hierarchy
--------------
 
-
-#. **Term 1 (EK1200) [ID: 1]**
-        EK1200-5000 EtherCAT Power supply (2A E-Bus)
-
-    #. Term 24 (EL9187) [ID: 24]
-            EL9187 Potential Connection, 8 x Ground
-
-
-
-    #. Term 13 (EL2008) [ID: 13]
-            EL2008 8Ch. Dig. Output 24V, 0.5A
-
-
-
-    #. Term 14 (EK1122) [ID: 14]
-            EK1122 2 port EtherCAT junction
-
-        #. **EK1100_M1L3 [ID: 6]**
-                EK1100 EtherCAT Coupler (2A E-Bus)
-
-            #. EL7041-1000_M1L3_Xup [ID: 7]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L3_Xdwn [ID: 8]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L3_Yup [ID: 9]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L3_Ydwn [ID: 10]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L3_PitchCoarse [ID: 11]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L3_Bender [ID: 3]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL6001_M1L3_PitchFine [ID: 4]
-                    EL6001 Interface (RS232)
-
-
-
-            #. EL5042_M1L3_Xupdwn [ID: 5]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M1L3_Yupdwn [ID: 37]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M1L3_PitchBender [ID: 38]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL1004_M1L3_STO [ID: 40]
-                    EL1004 4Ch. Dig. Input 24V, 3ms
-
-
-
-            #. EL9505_M1L3_BenderLims [ID: 41]
-                    EL9505 Power supply terminal 5V
-
-
-
-            #. MR1L3-EL3202-0010-E13 [ID: 69]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. MR1L3-EL3202-0010-E14 [ID: 70]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. Term 42 (EL9011) [ID: 42]
-                    EL9011 End Terminal
-
-
-
-
-
-        #. **EK1100_M1L4 [ID: 12]**
-                EK1100 EtherCAT Coupler (2A E-Bus)
-
-            #. EL7041-1000_M1L4_Xup [ID: 15]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L4_Xdwn [ID: 16]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L4_Yup [ID: 17]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L4_Ydwn [ID: 18]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L4_PitchCoarse [ID: 19]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M1L4_Bender [ID: 20]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL6001_M1L4_PitchFine [ID: 21]
-                    EL6001 Interface (RS232)
-
-
-
-            #. EL5042_M1L4_Xupdwn [ID: 22]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M1L4_Yupdwn [ID: 25]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M1L4_PitchBender [ID: 26]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL1004_M1L4_STO [ID: 27]
-                    EL1004 4Ch. Dig. Input 24V, 3ms
-
-
-
-            #. EL9505_M1L4_BenderLims [ID: 28]
-                    EL9505 Power supply terminal 5V
-
-
-
-            #. MR1L4-EL3202-0010-E13 [ID: 86]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. MR1L4-EL3202-0010-E14 [ID: 87]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. Term 29 (EL9011) [ID: 29]
-                    EL9011 End Terminal
-
-
-
-
-
-
-
-    #. Term 2 (EK1122) [ID: 2]
-            EK1122 2 port EtherCAT junction
-
-        #. **EK1100_M2L3 [ID: 43]**
-                EK1100 EtherCAT Coupler (2A E-Bus)
-
-            #. EL7041-1000_M2L3_Xup [ID: 44]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M2L3_Xdwn [ID: 45]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M2L3_Yup [ID: 46]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M2L3_Ydwn [ID: 47]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M2L3_PitchCoarse [ID: 48]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL7041-1000_M2L3_Bender [ID: 49]
-                    EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
-
-
-
-            #. EL6001_M2L3_PitchFine [ID: 50]
-                    EL6001 Interface (RS232)
-
-
-
-            #. EL5042_M2L3_Xupdwn [ID: 51]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M2L3_Yupdwn [ID: 52]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL5042_M2L3_PitchBender [ID: 53]
-                    EL5042 2Ch. BiSS-C Encoder
-
-
-
-            #. EL1004_M2L3_STO [ID: 54]
-                    EL1004 4Ch. Dig. Input 24V, 3ms
-
-
-
-            #. EL9505_M2L3_BenderLims [ID: 55]
-                    EL9505 Power supply terminal 5V
-
-
-
-            #. MR2L3-EL3202-0010-E13 [ID: 100]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. MR2L3-EL3202-0010-E14 [ID: 101]
-                    EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
-
-
-
-            #. Term 56 (EL9011) [ID: 56]
-                    EL9011 End Terminal
-
-
-
-
-
-
-
-    #. Term 34 (EK1521-0010) [ID: 34]
-            EK1521-0010 1 port EtherCAT junction (FX-SingleMode)
-
-        #. **Term 23 (EK1501-0010) [ID: 23]**
-                EK1501-0010 EtherCAT Coupler (2A E-Bus, FX-SingleMode, ID switch)
-
-            #. PMPS_FFO [ID: 35]
-                    EL2202 2Ch. Dig. Output 24V, 0.5A
-
-
-
-            #. PMPS_PRE [ID: 36]
-                    EL6695 EtherCAT Bridge terminal (Primary)
-
-
-
-            #. Term 39 (EL9011) [ID: 39]
-                    EL9011 End Terminal
-
-
-
-
-
-
-
-
-
+EtherCAT Terminals
+------------------
+
+.. raw:: html
+
+    <ul class="tree">
+
+
+
+      <li>
+    <details open>
+      <summary>
+            <table width="100%">
+      <tr>
+        <td width="10%">
+          ID=1:
+        </td>
+        <td width="75%">Term 1 (EK1200)
+        </td>
+        <td>        </td>
+      </tr>
+      <tr>
+        <td>
+                  </td>
+        <td colspan="2">
+          EK1200-5000 EtherCAT Power supply (2A E-Bus)
+        </td>
+      </tr>
+    </table>
+      </summary>
+      <ul>
+
+            <li>
+                  <table width="100%">
+                <tr>
+                  <td width="10%">
+                    ID=24:
+                  </td>
+                  <td width="75%">Term 24 (EL9187)
+                  </td>
+                  <td>        </td>
+                </tr>
+                <tr>
+                  <td>
+                            </td>
+                  <td colspan="2">
+                    EL9187 Potential Connection, 8 x Ground
+                  </td>
+                </tr>
+              </table>
+            </li>
+
+
+            <li>
+                  <table width="100%">
+                <tr>
+                  <td width="10%">
+                    ID=13:
+                  </td>
+                  <td width="75%">Term 13 (EL2008)
+                  </td>
+                  <td>        </td>
+                </tr>
+                <tr>
+                  <td>
+                            </td>
+                  <td colspan="2">
+                    EL2008 8Ch. Dig. Output 24V, 0.5A
+                  </td>
+                </tr>
+              </table>
+            </li>
+
+
+            <li>
+              <details open>
+                <summary>
+                      <table width="100%">
+                <tr>
+                  <td width="10%">
+                    ID=14:
+                  </td>
+                  <td width="75%">Term 14 (EK1122)
+                  </td>
+                  <td>        </td>
+                </tr>
+                <tr>
+                  <td>
+                            </td>
+                  <td colspan="2">
+                    EK1122 2 port EtherCAT junction
+                  </td>
+                </tr>
+              </table>
+                </summary>
+                <ul>
+
+                      <li>
+                        <details open>
+                          <summary>
+                                <table width="100%">
+                          <tr>
+                            <td width="10%">
+                              ID=6:
+                            </td>
+                            <td width="75%">EK1100_M1L3
+                            </td>
+                            <td>        </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                      </td>
+                            <td colspan="2">
+                              EK1100 EtherCAT Coupler (2A E-Bus)
+                            </td>
+                          </tr>
+                        </table>
+                          </summary>
+                          <ul>
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=7:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_Xup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=8:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_Xdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=9:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_Yup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=10:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_Ydwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=11:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_PitchCoarse
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=3:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L3_Bender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=4:
+                                      </td>
+                                      <td width="75%">EL6001_M1L3_PitchFine
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL6001 Interface (RS232)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=5:
+                                      </td>
+                                      <td width="75%">EL5042_M1L3_Xupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=37:
+                                      </td>
+                                      <td width="75%">EL5042_M1L3_Yupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=38:
+                                      </td>
+                                      <td width="75%">EL5042_M1L3_PitchBender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=40:
+                                      </td>
+                                      <td width="75%">EL1004_M1L3_STO
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL1004 4Ch. Dig. Input 24V, 3ms
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=41:
+                                      </td>
+                                      <td width="75%">EL9505_M1L3_BenderLims
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9505 Power supply terminal 5V
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=69:
+                                      </td>
+                                      <td width="75%">MR1L3-EL3202-0010-E13
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=70:
+                                      </td>
+                                      <td width="75%">MR1L3-EL3202-0010-E14
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=42:
+                                      </td>
+                                      <td width="75%">Term 42 (EL9011)
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9011 End Terminal
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+                          </ul>
+                        </details>
+                      </li>
+
+
+                      <li>
+                        <details open>
+                          <summary>
+                                <table width="100%">
+                          <tr>
+                            <td width="10%">
+                              ID=12:
+                            </td>
+                            <td width="75%">EK1100_M1L4
+                            </td>
+                            <td>        </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                      </td>
+                            <td colspan="2">
+                              EK1100 EtherCAT Coupler (2A E-Bus)
+                            </td>
+                          </tr>
+                        </table>
+                          </summary>
+                          <ul>
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=15:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_Xup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=16:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_Xdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=17:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_Yup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=18:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_Ydwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=19:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_PitchCoarse
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=20:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M1L4_Bender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=21:
+                                      </td>
+                                      <td width="75%">EL6001_M1L4_PitchFine
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL6001 Interface (RS232)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=22:
+                                      </td>
+                                      <td width="75%">EL5042_M1L4_Xupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=25:
+                                      </td>
+                                      <td width="75%">EL5042_M1L4_Yupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=26:
+                                      </td>
+                                      <td width="75%">EL5042_M1L4_PitchBender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=27:
+                                      </td>
+                                      <td width="75%">EL1004_M1L4_STO
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL1004 4Ch. Dig. Input 24V, 3ms
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=28:
+                                      </td>
+                                      <td width="75%">EL9505_M1L4_BenderLims
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9505 Power supply terminal 5V
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=86:
+                                      </td>
+                                      <td width="75%">MR1L4-EL3202-0010-E13
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=87:
+                                      </td>
+                                      <td width="75%">MR1L4-EL3202-0010-E14
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=29:
+                                      </td>
+                                      <td width="75%">Term 29 (EL9011)
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9011 End Terminal
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+                          </ul>
+                        </details>
+                      </li>
+
+                </ul>
+              </details>
+            </li>
+
+
+            <li>
+              <details open>
+                <summary>
+                      <table width="100%">
+                <tr>
+                  <td width="10%">
+                    ID=2:
+                  </td>
+                  <td width="75%">Term 2 (EK1122)
+                  </td>
+                  <td>        </td>
+                </tr>
+                <tr>
+                  <td>
+                            </td>
+                  <td colspan="2">
+                    EK1122 2 port EtherCAT junction
+                  </td>
+                </tr>
+              </table>
+                </summary>
+                <ul>
+
+                      <li>
+                        <details open>
+                          <summary>
+                                <table width="100%">
+                          <tr>
+                            <td width="10%">
+                              ID=43:
+                            </td>
+                            <td width="75%">EK1100_M2L3
+                            </td>
+                            <td>        </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                      </td>
+                            <td colspan="2">
+                              EK1100 EtherCAT Coupler (2A E-Bus)
+                            </td>
+                          </tr>
+                        </table>
+                          </summary>
+                          <ul>
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=44:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_Xup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=45:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_Xdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=46:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_Yup
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=47:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_Ydwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=48:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_PitchCoarse
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=49:
+                                      </td>
+                                      <td width="75%">EL7041-1000_M2L3_Bender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL7041-1000 1Ch. Stepper motor output stage (50V, 5A, standard)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=50:
+                                      </td>
+                                      <td width="75%">EL6001_M2L3_PitchFine
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL6001 Interface (RS232)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=51:
+                                      </td>
+                                      <td width="75%">EL5042_M2L3_Xupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=52:
+                                      </td>
+                                      <td width="75%">EL5042_M2L3_Yupdwn
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=53:
+                                      </td>
+                                      <td width="75%">EL5042_M2L3_PitchBender
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL5042 2Ch. BiSS-C Encoder
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=54:
+                                      </td>
+                                      <td width="75%">EL1004_M2L3_STO
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL1004 4Ch. Dig. Input 24V, 3ms
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=55:
+                                      </td>
+                                      <td width="75%">EL9505_M2L3_BenderLims
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9505 Power supply terminal 5V
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=100:
+                                      </td>
+                                      <td width="75%">MR2L3-EL3202-0010-E13
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=101:
+                                      </td>
+                                      <td width="75%">MR2L3-EL3202-0010-E14
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL3202-0010 2Ch. Ana. Input PT100 (RTD), High Precision
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=56:
+                                      </td>
+                                      <td width="75%">Term 56 (EL9011)
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9011 End Terminal
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+                          </ul>
+                        </details>
+                      </li>
+
+                </ul>
+              </details>
+            </li>
+
+
+            <li>
+              <details open>
+                <summary>
+                      <table width="100%">
+                <tr>
+                  <td width="10%">
+                    ID=34:
+                  </td>
+                  <td width="75%">Term 34 (EK1521-0010)
+                  </td>
+                  <td>        </td>
+                </tr>
+                <tr>
+                  <td>
+                            </td>
+                  <td colspan="2">
+                    EK1521-0010 1 port EtherCAT junction (FX-SingleMode)
+                  </td>
+                </tr>
+              </table>
+                </summary>
+                <ul>
+
+                      <li>
+                        <details open>
+                          <summary>
+                                <table width="100%">
+                          <tr>
+                            <td width="10%">
+                              ID=23:
+                            </td>
+                            <td width="75%">Term 23 (EK1501-0010)
+                            </td>
+                            <td>        </td>
+                          </tr>
+                          <tr>
+                            <td>
+                                      </td>
+                            <td colspan="2">
+                              EK1501-0010 EtherCAT Coupler (2A E-Bus, FX-SingleMode, ID switch)
+                            </td>
+                          </tr>
+                        </table>
+                          </summary>
+                          <ul>
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=35:
+                                      </td>
+                                      <td width="75%">PMPS_FFO
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL2202 2Ch. Dig. Output 24V, 0.5A
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=36:
+                                      </td>
+                                      <td width="75%">PMPS_PRE
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL6695 EtherCAT Bridge terminal (Primary)
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+
+                                <li>
+                                      <table width="100%">
+                                    <tr>
+                                      <td width="10%">
+                                        ID=39:
+                                      </td>
+                                      <td width="75%">Term 39 (EL9011)
+                                      </td>
+                                      <td>        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                                </td>
+                                      <td colspan="2">
+                                        EL9011 End Terminal
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </li>
+
+                          </ul>
+                        </details>
+                      </li>
+
+                </ul>
+              </details>
+            </li>
+
+      </ul>
+    </details>
+  </li>
+
+
+    </ul>

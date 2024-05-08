@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Data Types &mdash; pcdshub/lcls-plc-xrt-optics  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -14,7 +18,7 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
@@ -47,7 +51,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_nc.html">NC Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_ethercat.html">Box Hierarchy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_links.html">Links</a></li>
 </ul>
@@ -60,7 +64,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Data Types</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#fb-coating-states">FB_Coating_States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-coating-states-nopmps">FB_Coating_States_noPMPS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-basicstats">LCLS_General.FB_BasicStats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-listener">LCLS_General.FB_Listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-loghandler">LCLS_General.FB_LogHandler</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-general-fb-logmessage">LCLS_General.FB_LogMessage</a></li>
@@ -74,6 +77,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-fb-positionstatemove">lcls_twincat_motion.FB_PositionStateMove</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-fb-positionstatepmps">lcls_twincat_motion.FB_PositionStatePMPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-fb-positionstatepmps-base">lcls_twincat_motion.FB_PositionStatePMPS_Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-lcls-general-fb-basicstats">lcls_twincat_motion.LCLS_General.FB_BasicStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-motion-lcls-general-fb-logmessage">lcls_twincat_motion.LCLS_General.FB_LogMessage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-dut-homs">lcls_twincat_optics.DUT_HOMS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-fb-homsstats">lcls_twincat_optics.FB_HomsStats</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lcls-twincat-optics-fb-rmswatch">lcls_twincat_optics.FB_RMSWatch</a></li>
@@ -4649,132 +4654,6 @@
 <td><p>$(SYMBOL).enumSet</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="lcls-general-fb-basicstats">
-<h2>LCLS_General.FB_BasicStats<a class="headerlink" href="#lcls-general-fb-basicstats" title="Link to this heading"></a></h2>
-<table class="docutils align-center">
-<thead>
-<tr class="row-odd"><th class="head"><p>Record</p></th>
-<th class="head"><p>Type</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Pragma</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>$(PREFIX):STATS:ALWAYS_CALC</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bAlwaysCalc</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:ALWAYS_CALC_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bAlwaysCalc</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:DATA_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).aSignal</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:EXECUTE</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bExecute</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:EXECUTE_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bExecute</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:MAX_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).fMax</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:MEAN_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).fMean</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:MIN_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).fMin</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:NELM_RBV</p></td>
-<td><p>longin</p></td>
-<td><p>$(SYMBOL).nElems</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:RANGE_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).fRange</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:RESET</p></td>
-<td><p>bo</p></td>
-<td><p>$(SYMBOL).bReset</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:RESET_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bReset</p></td>
-<td><div class="line-block">
-<div class="line">io: output</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><p>$(PREFIX):STATS:STDEV_RBV</p></td>
-<td><p>ai</p></td>
-<td><p>$(SYMBOL).fStDev</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>$(PREFIX):STATS:VALID_RBV</p></td>
-<td><p>bi</p></td>
-<td><p>$(SYMBOL).bValid</p></td>
-<td><div class="line-block">
-<div class="line">io: input</div>
 </div>
 </td>
 </tr>
@@ -13681,6 +13560,178 @@
 <td><p>$(SYMBOL).bMaintMode</p></td>
 <td><div class="line-block">
 <div class="line">io: output</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lcls-twincat-motion-lcls-general-fb-basicstats">
+<h2>lcls_twincat_motion.LCLS_General.FB_BasicStats<a class="headerlink" href="#lcls-twincat-motion-lcls-general-fb-basicstats" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):STATS:ALWAYS_CALC</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bAlwaysCalc</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:ALWAYS_CALC_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bAlwaysCalc</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:DATA_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).aSignal</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:EXECUTE</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bExecute</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:EXECUTE_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bExecute</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:MAX_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fMax</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:MEAN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fMean</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:MIN_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fMin</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:NELM_RBV</p></td>
+<td><p>longin</p></td>
+<td><p>$(SYMBOL).nElems</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:RANGE_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fRange</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:RESET</p></td>
+<td><p>bo</p></td>
+<td><p>$(SYMBOL).bReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:RESET_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bReset</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:RMS_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fRMS</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):STATS:STDEV_RBV</p></td>
+<td><p>ai</p></td>
+<td><p>$(SYMBOL).fStDev</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):STATS:VALID_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>$(SYMBOL).bValid</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lcls-twincat-motion-lcls-general-fb-logmessage">
+<h2>lcls_twincat_motion.LCLS_General.FB_LogMessage<a class="headerlink" href="#lcls-twincat-motion-lcls-general-fb-logmessage" title="Link to this heading"></a></h2>
+<table class="docutils align-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Record</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Pragma</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$(PREFIX):Reset</p></td>
+<td><p>bo</p></td>
+<td><p>Rising-edge reset of trip</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$(PREFIX):Reset_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>Rising-edge reset of trip</p></td>
+<td><div class="line-block">
+<div class="line">io: output</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>$(PREFIX):Tripped_RBV</p></td>
+<td><p>bi</p></td>
+<td><p>Log message FB tripped</p></td>
+<td><div class="line-block">
+<div class="line">io: input</div>
 </div>
 </td>
 </tr>
@@ -82877,7 +82928,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -48,6 +48,90 @@ Links
         , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^Ready to enable
         , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^Torque reduced
         , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Warning
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Error
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Moving negative
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Moving positive
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Ready
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Ready to enable
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Torque reduced
+        , Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Warning
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Status^Status^Digital input 1
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Status^Status^Digital input 2
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Status^Status^Sync error
@@ -72,6 +156,54 @@ Links
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^Digital input 2
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^Sync error
         , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^TxPDO Toggle
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Digital input 1
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Digital input 2
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Sync error
+        , Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^TxPDO Toggle
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, WcState^InputToggle
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, WcState^WcState
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Ydwn, WcState^InputToggle
@@ -84,6 +216,30 @@ Links
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_PitchCoarse, WcState^WcState
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, WcState^InputToggle
         , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, WcState^WcState
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, WcState^InputToggle
+        , Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, WcState^WcState
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Control^Control^Enable
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Control^Control^Reduce torque
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Control^Control^Reset
@@ -102,12 +258,60 @@ Links
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Control^Control^Enable
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Control^Control^Reduce torque
         , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Reset
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Enable
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Reduce torque
+        , Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Reset
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Yup, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Ydwn, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Xup, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Xdwn, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_PitchCoarse, STM Velocity^Velocity
         , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL7041-1000_M1L3_Bender, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Velocity^Velocity
+        , Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Velocity^Velocity
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, WcState^InputToggle
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, WcState^WcState
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, WcState^InputToggle
@@ -120,12 +324,48 @@ Links
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, WcState^WcState
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, WcState^InputToggle
         , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^WcState
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^InputToggle
+        , Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^WcState
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, FB Inputs Channel 2^Position
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Xupdwn, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Xupdwn, FB Inputs Channel 2^Position
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 1^Position
         , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Position
+        , Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Position
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, FB Inputs Channel 1^Status^Diag
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, FB Inputs Channel 1^Status^Error
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_Yupdwn, FB Inputs Channel 1^Status^Input cycle counter
@@ -162,318 +402,78 @@ Links
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 2^Status^Ready
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 2^Status^TxPDO State
         , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 2^Status^Warning
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Error
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Moving negative
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Moving positive
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Ready
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Ready to enable
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Torque reduced
-        Axes^M1L4-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Warning
-        Axes^M1L4-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Digital input 1
-        Axes^M1L4-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Digital input 2
-        Axes^M1L4-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^Sync error
-        Axes^M1L4-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Bender, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, WcState^InputToggle
-        Axes^M1L4-Bender, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, WcState^WcState
-        Axes^M1L4-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Enable
-        Axes^M1L4-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Reduce torque
-        Axes^M1L4-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Control^Control^Reset
-        Axes^M1L4-Bender, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Bender, STM Velocity^Velocity
-        Axes^M1L4-Bender, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^InputToggle
-        Axes^M1L4-Bender, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^WcState
-        Axes^M1L4-Bender, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Position
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Diag
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Error
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Ready
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M1L4-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Warning
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Error
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Moving negative
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Moving positive
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Ready
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Ready to enable
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Torque reduced
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Warning
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Digital input 1
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Digital input 2
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^Sync error
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, WcState^InputToggle
-        Axes^M1L4-Pitch, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, WcState^WcState
-        Axes^M1L4-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Enable
-        Axes^M1L4-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Reduce torque
-        Axes^M1L4-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Control^Control^Reset
-        Axes^M1L4-Pitch, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_PitchCoarse, STM Velocity^Velocity
-        Axes^M1L4-Pitch, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^InputToggle
-        Axes^M1L4-Pitch, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, WcState^WcState
-        Axes^M1L4-Pitch, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Position
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Diag
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Error
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Ready
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M1L4-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Warning
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Error
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Moving negative
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Moving positive
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Ready
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Ready to enable
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Torque reduced
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Warning
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Digital input 1
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Digital input 2
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^Sync error
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, WcState^InputToggle
-        Axes^M1L4-Xdwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, WcState^WcState
-        Axes^M1L4-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Enable
-        Axes^M1L4-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Reduce torque
-        Axes^M1L4-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Control^Control^Reset
-        Axes^M1L4-Xdwn, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xdwn, STM Velocity^Velocity
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^InputToggle
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^WcState
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Position
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Diag
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Error
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Ready
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M1L4-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Warning
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Error
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Moving negative
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Moving positive
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Ready
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Ready to enable
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Torque reduced
-        Axes^M1L4-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Warning
-        Axes^M1L4-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Digital input 1
-        Axes^M1L4-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Digital input 2
-        Axes^M1L4-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^Sync error
-        Axes^M1L4-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Xup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, WcState^InputToggle
-        Axes^M1L4-Xup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, WcState^WcState
-        Axes^M1L4-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Enable
-        Axes^M1L4-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Reduce torque
-        Axes^M1L4-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Control^Control^Reset
-        Axes^M1L4-Xup, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Xup, STM Velocity^Velocity
-        Axes^M1L4-Xup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^InputToggle
-        Axes^M1L4-Xup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, WcState^WcState
-        Axes^M1L4-Xup, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Position
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Diag
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Error
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Ready
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M1L4-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Warning
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Error
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Moving negative
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Moving positive
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Ready
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Ready to enable
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Torque reduced
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Warning
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Digital input 1
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Digital input 2
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^Sync error
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, WcState^InputToggle
-        Axes^M1L4-Ydwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, WcState^WcState
-        Axes^M1L4-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Enable
-        Axes^M1L4-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Reduce torque
-        Axes^M1L4-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Control^Control^Reset
-        Axes^M1L4-Ydwn, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Ydwn, STM Velocity^Velocity
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^InputToggle
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^WcState
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Position
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Diag
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Error
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Ready
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M1L4-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Warning
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Error
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Moving negative
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Moving positive
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Ready
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Ready to enable
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Torque reduced
-        Axes^M1L4-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Warning
-        Axes^M1L4-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Digital input 1
-        Axes^M1L4-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Digital input 2
-        Axes^M1L4-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^Sync error
-        Axes^M1L4-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Status^Status^TxPDO Toggle
-        Axes^M1L4-Yup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, WcState^InputToggle
-        Axes^M1L4-Yup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, WcState^WcState
-        Axes^M1L4-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Enable
-        Axes^M1L4-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Reduce torque
-        Axes^M1L4-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Control^Control^Reset
-        Axes^M1L4-Yup, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL7041-1000_M1L4_Yup, STM Velocity^Velocity
-        Axes^M1L4-Yup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^InputToggle
-        Axes^M1L4-Yup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, WcState^WcState
-        Axes^M1L4-Yup, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Position
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Diag
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Error
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Ready
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M1L4-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Warning
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Error
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Moving negative
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Moving positive
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Ready
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Ready to enable
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Torque reduced
-        Axes^M2L3-Bender, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Warning
-        Axes^M2L3-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Digital input 1
-        Axes^M2L3-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Digital input 2
-        Axes^M2L3-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^Sync error
-        Axes^M2L3-Bender, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Bender, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, WcState^InputToggle
-        Axes^M2L3-Bender, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, WcState^WcState
-        Axes^M2L3-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Enable
-        Axes^M2L3-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Reduce torque
-        Axes^M2L3-Bender, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Control^Control^Reset
-        Axes^M2L3-Bender, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Bender, STM Velocity^Velocity
-        Axes^M2L3-Bender, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^InputToggle
-        Axes^M2L3-Bender, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^WcState
-        Axes^M2L3-Bender, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Position
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Diag
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Error
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Ready
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M2L3-Bender, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Warning
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Error
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Moving negative
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Moving positive
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Ready
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Ready to enable
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Torque reduced
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Warning
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Digital input 1
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Digital input 2
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^Sync error
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, WcState^InputToggle
-        Axes^M2L3-Pitch, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, WcState^WcState
-        Axes^M2L3-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Enable
-        Axes^M2L3-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Reduce torque
-        Axes^M2L3-Pitch, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Control^Control^Reset
-        Axes^M2L3-Pitch, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_PitchCoarse, STM Velocity^Velocity
-        Axes^M2L3-Pitch, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^InputToggle
-        Axes^M2L3-Pitch, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, WcState^WcState
-        Axes^M2L3-Pitch, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Position
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Diag
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Error
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Ready
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M2L3-Pitch, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Warning
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Error
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Moving negative
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Moving positive
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Ready
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Ready to enable
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Torque reduced
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Warning
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Digital input 1
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Digital input 2
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^Sync error
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, WcState^InputToggle
-        Axes^M2L3-Xdwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, WcState^WcState
-        Axes^M2L3-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Enable
-        Axes^M2L3-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Reduce torque
-        Axes^M2L3-Xdwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Control^Control^Reset
-        Axes^M2L3-Xdwn, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xdwn, STM Velocity^Velocity
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^InputToggle
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^WcState
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Position
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Diag
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Error
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Ready
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M2L3-Xdwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Warning
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Error
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Moving negative
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Moving positive
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Ready
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Ready to enable
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Torque reduced
-        Axes^M2L3-Xup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Warning
-        Axes^M2L3-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Digital input 1
-        Axes^M2L3-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Digital input 2
-        Axes^M2L3-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^Sync error
-        Axes^M2L3-Xup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Xup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, WcState^InputToggle
-        Axes^M2L3-Xup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, WcState^WcState
-        Axes^M2L3-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Enable
-        Axes^M2L3-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Reduce torque
-        Axes^M2L3-Xup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Control^Control^Reset
-        Axes^M2L3-Xup, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Xup, STM Velocity^Velocity
-        Axes^M2L3-Xup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^InputToggle
-        Axes^M2L3-Xup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, WcState^WcState
-        Axes^M2L3-Xup, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Position
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Diag
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Error
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Ready
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M2L3-Xup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Warning
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Error
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Moving negative
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Moving positive
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Ready
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Ready to enable
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Torque reduced
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Warning
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Digital input 1
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Digital input 2
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^Sync error
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, WcState^InputToggle
-        Axes^M2L3-Ydwn, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, WcState^WcState
-        Axes^M2L3-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Enable
-        Axes^M2L3-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Reduce torque
-        Axes^M2L3-Ydwn, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Control^Control^Reset
-        Axes^M2L3-Ydwn, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Ydwn, STM Velocity^Velocity
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^InputToggle
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^WcState
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Position
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Diag
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Error
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Input cycle counter
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Ready
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^TxPDO State
-        Axes^M2L3-Ydwn, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Warning
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Error
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Moving negative
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Moving positive
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Ready
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Ready to enable
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Torque reduced
-        Axes^M2L3-Yup, Drive^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Warning
-        Axes^M2L3-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Digital input 1
-        Axes^M2L3-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Digital input 2
-        Axes^M2L3-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^Sync error
-        Axes^M2L3-Yup, Drive^Inputs^In^nState2, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Status^Status^TxPDO Toggle
-        Axes^M2L3-Yup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, WcState^InputToggle
-        Axes^M2L3-Yup, Drive^Inputs^In^nState4, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, WcState^WcState
-        Axes^M2L3-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Enable
-        Axes^M2L3-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Reduce torque
-        Axes^M2L3-Yup, Drive^Outputs^Out^nCtrl1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Control^Control^Reset
-        Axes^M2L3-Yup, Drive^Outputs^Out^nDataOut2[0], TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL7041-1000_M2L3_Yup, STM Velocity^Velocity
-        Axes^M2L3-Yup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^InputToggle
-        Axes^M2L3-Yup, Enc^Inputs^In^nComState, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, WcState^WcState
-        Axes^M2L3-Yup, Enc^Inputs^In^nDataIn1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Position
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Diag
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Error
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Input cycle counter
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Ready
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^TxPDO State
-        Axes^M2L3-Yup, Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Yupdwn, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_Xupdwn, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 2 (EK1122)^EK1100_M2L3^EL5042_M2L3_PitchBender, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Yupdwn, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_Xupdwn, FB Inputs Channel 2^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Status^Warning
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Diag
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Error
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Input cycle counter
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Ready
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^TxPDO State
+        , Enc^Inputs^In^nState1, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 2^Status^Warning
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL.gAmsNetIDEcatMaster1, TIID^HOMS, InfoData^AmsNetId
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_MR1L3.MR1L3_Pitch.diEncCnt, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L3^EL5042_M1L3_PitchBender, FB Inputs Channel 1^Position
         HOMS_XRT_PLC Instance, PlcTask Inputs^GVL_MR1L4.MR1L4_Pitch.diEncCnt, TIID^HOMS^Term 1 (EK1200)^Term 14 (EK1122)^EK1100_M1L4^EL5042_M1L4_PitchBender, FB Inputs Channel 1^Position
