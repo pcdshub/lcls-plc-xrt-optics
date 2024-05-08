@@ -1,0 +1,600 @@
+
+NC Settings
+-----------
+
+.. csv-table::
+    :header: Axis ID, Name
+    :align: center
+
+        1, M1L3-Yup
+        2, M1L3-Ydwn
+        3, M1L3-Xup
+        4, M1L3-Xdwn
+        5, M1L3-Pitch
+        6, M1L3-Bender
+        7, M1L4-Yup
+        8, M1L4-Ydwn
+        9, M1L4-Xup
+        10, M1L4-Xdwn
+        11, M1L4-Pitch
+        12, M1L4-Bender
+        13, M2L3-Yup
+        14, M2L3-Ydwn
+        15, M2L3-Xup
+        16, M2L3-Xdwn
+        17, M2L3-Pitch
+        18, M2L3-Bender
+
+
+
+Axis 1: M1L3-Yup
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 1
+    Name, M1L3-Yup
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -13611
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12932
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -12130
+    General:UnitName, um
+    Id, 1
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 2: M1L3-Ydwn
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 2
+    Name, M1L3-Ydwn
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -13433.6
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12932
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -12130
+    General:UnitName, um
+    Id, 2
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 3: M1L3-Xup
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 3
+    Name, M1L3-Xup
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -25210.5
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 1452.7
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -6841
+    General:UnitName, um
+    Id, 3
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 4: M1L3-Xdwn
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 4
+    Name, M1L3-Xdwn
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -24971.8
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 1452.7
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -6841.9
+    General:UnitName, um
+    Id, 4
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 5: M1L3-Pitch
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 5
+    Name, M1L3-Pitch
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 390
+    Dynamic:Deceleration, 390
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:FilterTime:TPos, 0.2
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -21644.29
+    Enc:ScaleFactorNumerator, 0.001949317739
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 220
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -193
+    General:UnitName, urad
+    Id, 5
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
+
+Axis 6: M1L3-Bender
+^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 6
+    Name, M1L3-Bender
+    AxisFolder, M1L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 150
+    Dynamic:Deceleration, 150
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 27800
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 18000
+    General:UnitName, um
+    Id, 6
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
+
+Axis 7: M1L4-Yup
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 7
+    Name, M1L4-Yup
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -13496.029
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12000
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -11000
+    General:UnitName, um
+    GroupId, 13
+    Id, 7
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 8: M1L4-Ydwn
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 8
+    Name, M1L4-Ydwn
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -14872.55
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12075
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -11000
+    General:UnitName, um
+    GroupId, 14
+    Id, 8
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 9: M1L4-Xup
+^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 9
+    Name, M1L4-Xup
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -25490.849
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 18750
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -2000
+    General:UnitName, um
+    GroupId, 15
+    Id, 9
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 10: M1L4-Xdwn
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 10
+    Name, M1L4-Xdwn
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -26628.83
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 18750
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -2050
+    General:UnitName, um
+    GroupId, 16
+    Id, 10
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 11: M1L4-Pitch
+^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 11
+    Name, M1L4-Pitch
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 390
+    Dynamic:Deceleration, 390
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:FilterTime:TPos, 0.2
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -19152.5
+    Enc:ScaleFactorNumerator, 0.001949317739
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 900
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -900
+    General:UnitName, urad
+    GroupId, 17
+    Id, 11
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
+
+Axis 12: M1L4-Bender
+^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 12
+    Name, M1L4-Bender
+    AxisFolder, M1L4
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 50
+    Dynamic:AccelerationMaximum, 50
+    Dynamic:Deceleration, 50
+    Dynamic:DecelerationMaximum, 50
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -4295012.99
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, -16500
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -26500
+    General:UnitName, um
+    GroupId, 18
+    Id, 12
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
+
+Axis 13: M2L3-Yup
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 13
+    Name, M2L3-Yup
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -14279
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12530
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -11750
+    General:UnitName, um
+    GroupId, 7
+    Id, 13
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 14: M2L3-Ydwn
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 14
+    Name, M2L3-Ydwn
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 200
+    Dynamic:Deceleration, 200
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -16314.1
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 12531.5
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -11750
+    General:UnitName, um
+    GroupId, 8
+    Id, 14
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 200
+
+
+
+Axis 15: M2L3-Xup
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 15
+    Name, M2L3-Xup
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -25135.5
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 867.4
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -850
+    General:UnitName, um
+    GroupId, 9
+    Id, 15
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 16: M2L3-Xdwn
+^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 16
+    Name, M2L3-Xdwn
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 2000
+    Dynamic:Deceleration, 2000
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -24091
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 862.6
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -865
+    General:UnitName, um
+    GroupId, 10
+    Id, 16
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 1000
+
+
+
+Axis 17: M2L3-Pitch
+^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 17
+    Name, M2L3-Pitch
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 390
+    Dynamic:Deceleration, 390
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:FilterTime:TPos, 0.2
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:Offset, -17539
+    Enc:ScaleFactorNumerator, 0.001949317739
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 246
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, -212
+    General:UnitName, urad
+    GroupId, 11
+    Id, 17
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
+
+Axis 18: M2L3-Bender
+^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: Setting, Value
+    :align: center
+
+    Axis ID, 18
+    Name, M2L3-Bender
+    AxisFolder, M2L3
+    AxisType, 1
+    CreateSymbols, true
+    Dynamic:Acceleration, 150
+    Dynamic:Deceleration, 150
+    Dynamic:DelayTime, 0.008
+    Enc:EncType, 29
+    Enc:Inc:RefSoftSyncMask, #x0000ffff
+    Enc:MaxCount, #xffffffff
+    Enc:ScaleFactorNumerator, 0.001
+    Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 32000
+    Enc:SoftEndMinControl:Enable, true
+    Enc:SoftEndMinControl:Range, 20000
+    General:UnitName, um
+    GroupId, 12
+    Id, 18
+    OtherSettings:AllowMotionCmdToSlave, true
+    Velo:Maximum, 150
+
+
