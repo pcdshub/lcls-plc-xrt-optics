@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version='1.0' encoding='UTF-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -18,28 +18,30 @@
         <Event>
           <CommandType>Copy</CommandType>
           <DeploymentType>ActivateConfiguration</DeploymentType>
-          <Command1 />
-          <Command2 />
+          <Command1/>
+          <Command2/>
         </Event>
         <Event>
           <CommandType>Copy</CommandType>
           <DeploymentType>ActivateConfiguration</DeploymentType>
-          <Command1 />
-          <Command2 />
+          <Command1/>
+          <Command2/>
         </Event>
       </Events>
     </DeploymentEvents>
     <CombineIds>false</CombineIds>
-    <Released>false</Released>
+    <Released>true</Released>
     <CompilerDefines>L</CompilerDefines>
     <Company>SLAC</Company>
     <Title>lcls-plc-xrt-optics</Title>
-    <ProjectVersion>0.0.0</ProjectVersion>
+    <ProjectVersion>5.6.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Common\DUTs\ENUM_Coating_States.TcDUT">
       <SubType>Code</SubType>
-    </Compile>
+    </Compile><Compile Include="Version\Global_Version.TcGVL">
+            <SubType>Code</SubType>
+        </Compile>
     <Compile Include="Common\DUTs\E_GantryControl.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -249,16 +251,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common" />
-    <Folder Include="Common\DUTs" />
-    <Folder Include="Common\POUs" />
-    <Folder Include="Common\POUs\Helpers" />
-    <Folder Include="Common\POUs\HOMS_FBs" />
-    <Folder Include="GVLs" />
-    <Folder Include="TerminalStartupCommands" />
-    <Folder Include="POUs\Serial Comm" />
-    <Folder Include="VISUs" />
-    <Folder Include="POUs" />
+    <Folder Include="Common"/><Folder Include="Version"/>
+    <Folder Include="Common\DUTs"/>
+    <Folder Include="Common\POUs"/>
+    <Folder Include="Common\POUs\Helpers"/>
+    <Folder Include="Common\POUs\HOMS_FBs"/>
+    <Folder Include="GVLs"/>
+    <Folder Include="TerminalStartupCommands"/>
+    <Folder Include="POUs\Serial Comm"/>
+    <Folder Include="VISUs"/>
+    <Folder Include="POUs"/>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderReference Include="lcls-twincat-motion">
@@ -415,8 +417,8 @@
         <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
         <o>
           <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
         <o>
@@ -425,16 +427,16 @@
             <v>Rules</v>
             <o>
               <v n="Name">"Rules"</v>
-              <d n="SubKeys" t="Hashtable" />
-              <d n="Values" t="Hashtable" />
+              <d n="SubKeys" t="Hashtable"/>
+              <d n="Values" t="Hashtable"/>
             </o>
           </d>
-          <d n="Values" t="Hashtable" />
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
         <o>
           <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String">
             <v>ActiveVisuExtensionsLength</v>
             <v>0</v>
@@ -445,13 +447,13 @@
         <v>{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}</v>
         <o>
           <v n="Name">"{A3BBA713-63D7-4de6-BEC2-E3BAAD8789F8}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{C70B7845-2722-4a9b-A0EA-88C877A4B36F}</v>
         <o>
           <v n="Name">"{C70B7845-2722-4a9b-A0EA-88C877A4B36F}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String">
             <v>EnableMaxAuthenticationTrials</v>
             <v>true</v>
@@ -485,7 +487,7 @@
                   <l n="UserMembers" t="ArrayList" cet="Guid">
                     <v>481b6e06-e47e-452d-a77c-c1dd765bfbf6</v>
                   </l>
-                  <l n="GroupMembers" t="ArrayList" />
+                  <l n="GroupMembers" t="ArrayList"/>
                 </o>
                 <o>
                   <v n="Id">{04763ed7-6305-43b9-b8cb-24f6d39f4524}</v>
@@ -496,7 +498,7 @@
                   <l n="UserMembers" t="ArrayList" cet="Guid">
                     <v>481b6e06-e47e-452d-a77c-c1dd765bfbf6</v>
                   </l>
-                  <l n="GroupMembers" t="ArrayList" />
+                  <l n="GroupMembers" t="ArrayList"/>
                 </o>
               </a>
             </o>
@@ -512,13 +514,13 @@
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
         <o>
           <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
-          <d n="SubKeys" t="Hashtable" />
-          <d n="Values" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
+          <d n="Values" t="Hashtable"/>
         </o>
         <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
         <o>
           <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
-          <d n="SubKeys" t="Hashtable" />
+          <d n="SubKeys" t="Hashtable"/>
           <d n="Values" t="Hashtable" ckt="String" cvt="String">
             <v>SymbolLibraryConfiguration</v>
             <v>VisuSymbols (System);True
@@ -528,7 +530,7 @@
           </d>
         </o>
       </d>
-      <d n="Values" t="Hashtable" />
+      <d n="Values" t="Hashtable"/>
     </o>
         </Data>
         <TypeList>
