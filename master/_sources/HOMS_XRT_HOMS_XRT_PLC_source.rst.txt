@@ -5179,7 +5179,7 @@ PRG_States
             bMoveOk := TRUE,
             bValid := TRUE,
             sName := 'IN',
-            nEncoderCount := 23590530,
+            nEncoderCount := 23615689,
             fDelta := 1000,
             fVelocity := 150);
 

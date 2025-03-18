@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
@@ -5,22 +7,18 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-xrt-optics  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=5929fcd5"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -264,7 +262,7 @@ END_TYPE
     <span class="n">SAxisActPos</span>     <span class="p">:</span>       <span class="n">LREAL</span><span class="p">;</span> <span class="o">//</span><span class="n">Encoder</span> <span class="n">Readback</span>
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Parameters</span>
-    <span class="n">These</span> <span class="n">should</span> <span class="n">come</span> <span class="n">primarily</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">ESD</span> <span class="o">*</span><span class="p">)</span>
+    <span class="n">These</span> <span class="n">should</span> <span class="n">come</span> <span class="n">primarily</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">ESD</span> <span class="o">*</span><span class="p">)</span>
     <span class="n">DiffTol</span> <span class="p">:</span>       <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.200</span><span class="p">;</span> <span class="o">//</span><span class="n">Gantry</span> <span class="n">difference</span> <span class="n">tolerance</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
     <span class="n">DiffHys</span> <span class="p">:</span>       <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.050</span><span class="p">;</span> <span class="o">//</span><span class="n">Gantry</span> <span class="n">difference</span> <span class="n">hysteresis</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
 <span class="n">END_STRUCT</span>
@@ -283,7 +281,7 @@ END_TYPE
 <h2>HOMS_GantryAxis<a class="headerlink" href="#homs-gantryaxis" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">HOMS_GantryAxis</span> <span class="n">EXTENDS</span> <span class="n">ST_HOMSStepper</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
-    <span class="o">//</span><span class="n">Virtual</span> <span class="n">limit</span> <span class="n">switch</span> <span class="n">derived</span> <span class="kn">from</span> <span class="nn">gantry</span> <span class="n">difference</span>
+    <span class="o">//</span><span class="n">Virtual</span> <span class="n">limit</span> <span class="n">switch</span> <span class="n">derived</span> <span class="kn">from</span><span class="w"> </span><span class="nn">gantry</span> <span class="n">difference</span>
     <span class="n">DecoupledPositiveEnable</span> <span class="p">:</span>       <span class="n">BOOL</span><span class="p">;</span>
     <span class="n">DecoupledNegativeEnable</span> <span class="p">:</span>       <span class="n">BOOL</span><span class="p">;</span>
 
@@ -406,7 +404,7 @@ END_TYPE
 <span class="n">STRUCT</span>
         <span class="o">//</span><span class="n">Drive</span> <span class="n">Reference</span> <span class="p">(</span><span class="k">for</span> <span class="n">CoE</span><span class="p">)</span>
         <span class="n">stDriveRef</span>   <span class="p">:</span>      <span class="n">ST_DriveRef</span><span class="p">;</span> <span class="o">//</span><span class="n">Note</span><span class="p">,</span> <span class="n">ignore</span> <span class="n">the</span> <span class="n">ams</span> <span class="nb">id</span> <span class="ow">and</span> <span class="nb">type</span> <span class="n">parameters</span> <span class="k">for</span> <span class="n">our</span> <span class="n">purposes</span><span class="o">.</span>
-        <span class="o">//</span><span class="n">Ams</span> <span class="nb">id</span> <span class="n">comes</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">linked</span> <span class="k">global</span> <span class="n">variable</span>
+        <span class="o">//</span><span class="n">Ams</span> <span class="nb">id</span> <span class="n">comes</span> <span class="kn">from</span><span class="w"> </span><span class="nn">a</span> <span class="n">linked</span> <span class="k">global</span> <span class="n">variable</span>
         <span class="n">stPlcDriveRef</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PlcDriveRef</span><span class="p">;</span>
 
         <span class="n">AmsID</span>       <span class="p">:</span>       <span class="n">T_AmsNetId</span><span class="p">;</span>
@@ -526,7 +524,7 @@ END_TYPE
             <span class="n">fOutMinLimit</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
             <span class="n">bARWOnIPartOnly</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">);</span>
 
-    <span class="p">(</span><span class="o">*</span> <span class="n">Voltage</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">come</span> <span class="kn">from</span> <span class="nn">specifications</span> <span class="n">of</span> <span class="n">the</span> <span class="n">driver</span> <span class="o">*</span><span class="p">)</span>
+    <span class="p">(</span><span class="o">*</span> <span class="n">Voltage</span> <span class="n">ranges</span><span class="p">,</span> <span class="n">come</span> <span class="kn">from</span><span class="w"> </span><span class="nn">specifications</span> <span class="n">of</span> <span class="n">the</span> <span class="n">driver</span> <span class="o">*</span><span class="p">)</span>
         <span class="n">UpperVoltage</span>        <span class="p">:</span>       <span class="n">REAL</span> <span class="o">:=</span> <span class="n">cPiezoMaxVoltage</span><span class="p">;</span> <span class="o">//</span> <span class="n">E</span><span class="o">-</span><span class="mi">816</span> <span class="n">has</span> <span class="n">no</span> <span class="n">software</span> <span class="n">limits</span>
         <span class="n">LowerVoltage</span>        <span class="p">:</span>       <span class="n">REAL</span> <span class="o">:=</span> <span class="n">cPiezoMinVoltage</span><span class="p">;</span> <span class="o">//</span> <span class="n">E</span><span class="o">-</span><span class="mi">816</span> <span class="n">has</span> <span class="n">no</span> <span class="n">software</span> <span class="n">limits</span>
 <span class="n">END_STRUCT</span>
@@ -681,7 +679,7 @@ END_TYPE
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
-    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span> <span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
+    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span><span class="w"> </span><span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
     <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">13611000</span><span class="p">;</span>
     <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">13433600</span><span class="p">;</span>
     <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">25210500</span><span class="p">;</span>
@@ -709,7 +707,7 @@ END_TYPE
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
-    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span> <span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
+    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span><span class="w"> </span><span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
     <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">13663400</span><span class="p">;</span>
     <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">15043000</span><span class="p">;</span>
     <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">25569700</span><span class="p">;</span>
@@ -737,7 +735,7 @@ END_TYPE
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="o">//</span> <span class="n">Encoder</span> <span class="n">reference</span> <span class="n">values</span> <span class="ow">in</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">nm</span>
-    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span> <span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
+    <span class="o">//</span> <span class="n">Enc</span> <span class="n">Ref</span> <span class="n">Vals</span> <span class="kn">from</span><span class="w"> </span><span class="nn">alignment</span> <span class="mi">2020</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="mi">12</span>
     <span class="n">nYUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">14279350</span><span class="p">;</span>
     <span class="n">nYDWN_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">16316457</span><span class="p">;</span>
     <span class="n">nXUP_ENC_REF</span> <span class="p">:</span> <span class="n">ULINT</span> <span class="o">:=</span> <span class="mi">25135760</span><span class="p">;</span>
@@ -1377,7 +1375,7 @@ END_VAR
 <span class="p">(</span><span class="o">*</span><span class="n">Enabled</span><span class="o">*</span><span class="p">)</span>
 <span class="n">bEnabled</span><span class="o">:=</span><span class="n">fbPower</span><span class="o">.</span><span class="n">Status</span><span class="p">;</span>
 
-<span class="p">(</span><span class="o">*</span><span class="n">Error</span> <span class="kn">from</span> <span class="nn">functions</span> <span class="ow">and</span> <span class="n">Nc</span><span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Error</span> <span class="kn">from</span><span class="w"> </span><span class="nn">functions</span> <span class="ow">and</span> <span class="n">Nc</span><span class="o">*</span><span class="p">)</span>
 <span class="n">IF</span> <span class="n">fbPower</span><span class="o">.</span><span class="n">Error</span> <span class="n">AND</span> <span class="n">fbPower</span><span class="o">.</span><span class="n">Active</span> <span class="n">THEN</span>
     <span class="n">bError</span><span class="o">:=</span><span class="n">fbPower</span><span class="o">.</span><span class="n">Enable</span><span class="p">;</span>
     <span class="n">nErrorId</span><span class="o">:=</span><span class="n">fbPower</span><span class="o">.</span><span class="n">ErrorID</span><span class="p">;</span>
@@ -1489,7 +1487,7 @@ END_VAR
 <span class="p">(</span><span class="o">*</span><span class="n">Converese</span> <span class="n">nErrorID</span> <span class="n">to</span> <span class="n">string</span><span class="o">*</span><span class="p">)</span>
 <span class="n">sErrorMessage</span><span class="o">:=</span><span class="n">WORD_TO_HEXSTR</span><span class="p">(</span><span class="ow">in</span><span class="o">:=</span><span class="n">TO_WORD</span><span class="p">(</span><span class="n">nErrorID</span><span class="p">)</span> <span class="p">,</span> <span class="n">iPrecision</span><span class="o">:=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">bLoCase</span><span class="o">:=</span><span class="mi">0</span> <span class="p">);</span>
 
-<span class="p">(</span><span class="o">*</span><span class="n">Status</span> <span class="kn">from</span> <span class="nn">Nc</span><span class="o">*</span><span class="p">)</span>
+<span class="p">(</span><span class="o">*</span><span class="n">Status</span> <span class="kn">from</span><span class="w"> </span><span class="nn">Nc</span><span class="o">*</span><span class="p">)</span>
 <span class="n">Status</span><span class="o">:=</span><span class="n">Axis</span><span class="o">.</span><span class="n">Status</span><span class="p">;</span>
 
 <span class="p">(</span><span class="o">*</span><span class="n">Axis</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">motion</span> <span class="s2">&quot;motor&quot;</span><span class="o">*</span><span class="p">)</span>
@@ -1580,7 +1578,7 @@ END_VAR
 <span class="p">(</span><span class="o">*</span> <span class="n">A</span><span class="o">.</span> <span class="n">Wallace</span> <span class="mi">17</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">22</span>
 <span class="n">ElmoMC</span> <span class="n">Gold</span> <span class="n">DC</span> <span class="n">Bell</span> <span class="n">CoE</span> <span class="n">Read</span>
 
-<span class="n">This</span> <span class="n">FB</span> <span class="n">cyclically</span> <span class="n">reads</span> <span class="n">CoE</span> <span class="n">Parameters</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">ElmoMC</span> <span class="n">drives</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">FB</span> <span class="n">cyclically</span> <span class="n">reads</span> <span class="n">CoE</span> <span class="n">Parameters</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">ElmoMC</span> <span class="n">drives</span><span class="o">.</span>
 <span class="o">*</span><span class="p">)</span>
 
 <span class="n">CASE</span> <span class="n">CaseVar</span> <span class="n">OF</span>
@@ -2379,7 +2377,7 @@ END_FUNCTION_BLOCK
 <span class="p">(</span><span class="o">*</span> <span class="n">ElmoMC</span> <span class="n">Limit</span> <span class="n">State</span>
 <span class="n">A</span><span class="o">.</span> <span class="n">Wallace</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">25</span>
 
-<span class="n">Sets</span> <span class="n">the</span> <span class="n">high</span> <span class="ow">and</span> <span class="n">low</span> <span class="n">limit</span> <span class="n">switch</span> <span class="n">bools</span> <span class="n">based</span> <span class="n">on</span> <span class="nb">input</span> <span class="n">status</span> <span class="n">dint</span> <span class="kn">from</span> <span class="nn">ElmoMC</span> <span class="n">Drives</span> <span class="o">*</span><span class="p">)</span>
+<span class="n">Sets</span> <span class="n">the</span> <span class="n">high</span> <span class="ow">and</span> <span class="n">low</span> <span class="n">limit</span> <span class="n">switch</span> <span class="n">bools</span> <span class="n">based</span> <span class="n">on</span> <span class="nb">input</span> <span class="n">status</span> <span class="n">dint</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ElmoMC</span> <span class="n">Drives</span> <span class="o">*</span><span class="p">)</span>
 
 
 <span class="n">RLS</span>         <span class="o">:=</span> <span class="n">diInputs</span><span class="mf">.0</span><span class="p">;</span>
@@ -2405,7 +2403,7 @@ END_FUNCTION_BLOCK
 <span class="n">VAR_INPUT</span>
     <span class="n">bMirrorIn</span> <span class="p">:</span><span class="n">BOOL</span><span class="p">;</span> <span class="o">//</span><span class="n">Mirror</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">In</span> <span class="n">position</span>
     <span class="n">rCurrentEncoderPosition</span> <span class="p">:</span> <span class="n">DINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">encoder</span> <span class="n">position</span>
-    <span class="n">neVRange</span> <span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">ev</span> <span class="nb">range</span> <span class="kn">from</span> <span class="nn">stCurrentBeamParams</span>
+    <span class="n">neVRange</span> <span class="p">:</span> <span class="n">DWORD</span><span class="p">;</span> <span class="o">//</span> <span class="n">Current</span> <span class="n">ev</span> <span class="nb">range</span> <span class="kn">from</span><span class="w"> </span><span class="nn">stCurrentBeamParams</span>
     <span class="n">sDevName</span> <span class="p">:</span> <span class="n">STRING</span> <span class="o">:=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span> <span class="o">//</span> <span class="n">Device</span> <span class="n">name</span>
     <span class="n">rFirstCoatingPosition</span> <span class="p">:</span> <span class="n">DINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">Encoder</span> <span class="n">count</span><span class="o">/</span><span class="n">position</span> <span class="k">for</span> <span class="n">the</span> <span class="n">coating</span>
     <span class="n">rFirstCoatingPositionTolerance</span> <span class="p">:</span> <span class="n">DINT</span><span class="p">;</span> <span class="o">//</span> <span class="n">position</span> <span class="o">+/-</span> <span class="n">tolerance</span>
@@ -2994,7 +2992,7 @@ END_FUNCTION_BLOCK
         <span class="n">fbPI</span><span class="o">.</span><span class="n">fSetpointValue</span> <span class="o">:=</span> <span class="n">iq_Piezo</span><span class="o">.</span><span class="n">rReqAbsPos</span><span class="p">;</span>
     <span class="n">END_IF</span>
 
-    <span class="p">(</span><span class="o">*</span> <span class="n">The</span> <span class="nb">next</span> <span class="n">chunk</span> <span class="n">of</span> <span class="n">code</span> <span class="n">prevents</span> <span class="n">the</span> <span class="n">PI</span> <span class="n">block</span> <span class="kn">from</span> <span class="nn">winding</span> <span class="n">up</span><span class="o">.</span>
+    <span class="p">(</span><span class="o">*</span> <span class="n">The</span> <span class="nb">next</span> <span class="n">chunk</span> <span class="n">of</span> <span class="n">code</span> <span class="n">prevents</span> <span class="n">the</span> <span class="n">PI</span> <span class="n">block</span> <span class="kn">from</span><span class="w"> </span><span class="nn">winding</span> <span class="n">up</span><span class="o">.</span>
         <span class="n">First</span><span class="p">,</span> <span class="n">when</span> <span class="n">the</span> <span class="n">PI</span> <span class="n">block</span> <span class="n">begins</span> <span class="n">to</span> <span class="n">request</span> <span class="n">a</span> <span class="n">voltage</span> <span class="n">that</span> <span class="ow">is</span>
         <span class="n">beyond</span> <span class="n">the</span> <span class="n">permitted</span> <span class="nb">range</span> <span class="p">(</span><span class="n">this</span> <span class="nb">range</span> <span class="ow">is</span> <span class="n">affected</span> <span class="n">by</span> <span class="n">the</span> <span class="n">state</span>
         <span class="n">of</span> <span class="n">limit</span> <span class="n">switches</span><span class="o">/</span> <span class="ow">or</span> <span class="n">enable</span> <span class="n">fwd</span><span class="o">/</span><span class="n">bwd</span><span class="p">),</span> <span class="n">we</span> <span class="n">latch</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">position</span><span class="o">.</span>
@@ -5203,7 +5201,7 @@ END_ACTION
         <span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
         <span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
         <span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;IN&#39;</span><span class="p">,</span>
-        <span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="mi">23590530</span><span class="p">,</span>
+        <span class="n">nEncoderCount</span> <span class="o">:=</span> <span class="mi">23615689</span><span class="p">,</span>
         <span class="n">fDelta</span> <span class="o">:=</span> <span class="mi">1000</span><span class="p">,</span>
         <span class="n">fVelocity</span> <span class="o">:=</span> <span class="mi">150</span><span class="p">);</span>
 
@@ -5280,7 +5278,7 @@ END_ACTION
     <span class="n">ValA</span>    <span class="p">:</span>       <span class="n">REAL</span><span class="p">;</span> <span class="o">//</span><span class="n">New</span> <span class="n">position</span> <span class="n">to</span> <span class="n">evaluate</span>
     <span class="n">Center</span> <span class="p">:</span>        <span class="n">REAL</span><span class="p">;</span> <span class="o">//</span><span class="n">Current</span> <span class="n">position</span>
     <span class="n">Range</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span> <span class="o">//</span><span class="n">Span</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">range</span>
-    <span class="n">Offset</span>  <span class="p">:</span>       <span class="n">REAL</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span><span class="n">Offset</span> <span class="kn">from</span> <span class="nn">center</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">is</span> <span class="n">non</span><span class="o">-</span><span class="n">symetric</span>
+    <span class="n">Offset</span>  <span class="p">:</span>       <span class="n">REAL</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span><span class="n">Offset</span> <span class="kn">from</span><span class="w"> </span><span class="nn">center</span> <span class="k">if</span> <span class="n">the</span> <span class="nb">range</span> <span class="ow">is</span> <span class="n">non</span><span class="o">-</span><span class="n">symetric</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -5308,7 +5306,7 @@ END_ACTION
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
