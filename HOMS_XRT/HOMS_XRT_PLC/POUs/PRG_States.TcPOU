@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
   <POU Name="PRG_States" Id="{bcbd41ca-dab9-424c-b1f6-e39768e45455}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_States
 VAR
@@ -117,7 +117,7 @@ VAR
         bMoveOk := TRUE,
         bValid := TRUE,
         sName := 'IN',
-        nEncoderCount := 23590530,
+        nEncoderCount := 23615689,
         fDelta := 1000,
         fVelocity := 150);
 
