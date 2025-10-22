@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOMS_XRT &mdash; pcdshub/lcls-plc-xrt-optics  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pragmas" href="HOMS_XRT_pragmas.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            pcdshub/lcls-plc-xrt-optics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">HOMS_XRT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_pragmas.html">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_ethercat.html">EtherCAT Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_boxes.html">Boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_links.html">Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">HOMS_XRT_PLC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html">DUTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvls">GVLs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#pous">POUs</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">pcdshub/lcls-plc-xrt-optics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">HOMS_XRT</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="homs-xrt">
+<h1>HOMS_XRT<a class="headerlink" href="#homs-xrt" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">HOMS_XRT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_pragmas.html">Pragmas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_pragmas.html#homs-xrt-plc">HOMS_XRT_PLC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_nc.html">NC Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-1-m1l3-yup">Axis 1: M1L3-Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-2-m1l3-ydwn">Axis 2: M1L3-Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-3-m1l3-xup">Axis 3: M1L3-Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-4-m1l3-xdwn">Axis 4: M1L3-Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-5-m1l3-pitch">Axis 5: M1L3-Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-6-m1l3-bender">Axis 6: M1L3-Bender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-7-m1l4-yup">Axis 7: M1L4-Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-8-m1l4-ydwn">Axis 8: M1L4-Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-9-m1l4-xup">Axis 9: M1L4-Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-10-m1l4-xdwn">Axis 10: M1L4-Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-11-m1l4-pitch">Axis 11: M1L4-Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-12-m1l4-bender">Axis 12: M1L4-Bender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-13-m2l3-yup">Axis 13: M2L3-Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-14-m2l3-ydwn">Axis 14: M2L3-Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-15-m2l3-xup">Axis 15: M2L3-Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-16-m2l3-xdwn">Axis 16: M2L3-Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-17-m2l3-pitch">Axis 17: M2L3-Pitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_nc.html#axis-18-m2l3-bender">Axis 18: M2L3-Bender</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_ethercat.html">EtherCAT Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_boxes.html">Boxes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-1-ek1200">Term 1 (EK1200)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-2-ek1122">Term 2 (EK1122)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-bender">EL7041-1000_M1L3_Bender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el6001-m1l3-pitchfine">EL6001_M1L3_PitchFine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l3-xupdwn">EL5042_M1L3_Xupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#ek1100-m1l3">EK1100_M1L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-xup">EL7041-1000_M1L3_Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-xdwn">EL7041-1000_M1L3_Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-yup">EL7041-1000_M1L3_Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-ydwn">EL7041-1000_M1L3_Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l3-pitchcoarse">EL7041-1000_M1L3_PitchCoarse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#ek1100-m1l4">EK1100_M1L4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-13-el2008">Term 13 (EL2008)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-14-ek1122">Term 14 (EK1122)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-xup">EL7041-1000_M1L4_Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-xdwn">EL7041-1000_M1L4_Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-yup">EL7041-1000_M1L4_Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-ydwn">EL7041-1000_M1L4_Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-pitchcoarse">EL7041-1000_M1L4_PitchCoarse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m1l4-bender">EL7041-1000_M1L4_Bender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el6001-m1l4-pitchfine">EL6001_M1L4_PitchFine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l4-xupdwn">EL5042_M1L4_Xupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-23-ek1501-0010">Term 23 (EK1501-0010)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-24-el9187">Term 24 (EL9187)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l4-yupdwn">EL5042_M1L4_Yupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l4-pitchbender">EL5042_M1L4_PitchBender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el1004-m1l4-sto">EL1004_M1L4_STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el9505-m1l4-benderlims">EL9505_M1L4_BenderLims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-29-el9011">Term 29 (EL9011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-34-ek1521-0010">Term 34 (EK1521-0010)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#pmps-ffo">PMPS_FFO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#pmps-pre">PMPS_PRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l3-yupdwn">EL5042_M1L3_Yupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m1l3-pitchbender">EL5042_M1L3_PitchBender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-39-el9011">Term 39 (EL9011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el1004-m1l3-sto">EL1004_M1L3_STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el9505-m1l3-benderlims">EL9505_M1L3_BenderLims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-42-el9011">Term 42 (EL9011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#ek1100-m2l3">EK1100_M2L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-xup">EL7041-1000_M2L3_Xup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-xdwn">EL7041-1000_M2L3_Xdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-yup">EL7041-1000_M2L3_Yup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-ydwn">EL7041-1000_M2L3_Ydwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-pitchcoarse">EL7041-1000_M2L3_PitchCoarse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el7041-1000-m2l3-bender">EL7041-1000_M2L3_Bender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el6001-m2l3-pitchfine">EL6001_M2L3_PitchFine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m2l3-xupdwn">EL5042_M2L3_Xupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m2l3-yupdwn">EL5042_M2L3_Yupdwn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el5042-m2l3-pitchbender">EL5042_M2L3_PitchBender</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el1004-m2l3-sto">EL1004_M2L3_STO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#el9505-m2l3-benderlims">EL9505_M2L3_BenderLims</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#term-56-el9011">Term 56 (EL9011)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr1l3-el3202-0010-e13">MR1L3-EL3202-0010-E13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr1l3-el3202-0010-e14">MR1L3-EL3202-0010-E14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr1l4-el3202-0010-e13">MR1L4-EL3202-0010-E13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr1l4-el3202-0010-e14">MR1L4-EL3202-0010-E14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr2l3-el3202-0010-e13">MR2L3-EL3202-0010-E13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_boxes.html#mr2l3-el3202-0010-e14">MR2L3-EL3202-0010-E14</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_links.html">Links</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">HOMS_XRT_PLC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#symbols">Symbols</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#constants">Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#defaultglobals">DefaultGlobals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#generalconstants">GeneralConstants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#global-constants">Global_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#global-variables">Global_Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#global-version">Global_Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl">GVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-com-buffers">GVL_COM_Buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-constants">GVL_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-internal">GVL_INTERNAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-logger">GVL_Logger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr1l3">GVL_MR1L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr1l3-constants">GVL_MR1L3_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr1l4">GVL_MR1L4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr1l4-constants">GVL_MR1L4_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr2l3">GVL_MR2L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-mr2l3-constants">GVL_MR2L3_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-param-tcunit">GVL_Param_TcUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-pmps">GVL_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-rtds">GVL_RTDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-serialio">GVL_SerialIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-tcunit">GVL_TcUnit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#gvl-teststructs">GVL_TestStructs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#lcls-twincat-optics">lcls_twincat_optics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#motion-gvl">MOTION_GVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#p-serial-com">P_Serial_Com</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#parameterlist">ParameterList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#piezoserial">PiezoSerial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#pmps-gvl">PMPS_GVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#pmps-param">PMPS_PARAM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#pmps-tools">PMPS_TOOLS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#prg-coatingprotection">PRG_CoatingProtection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#prg-pmps">PRG_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#prg-states">PRG_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#tc-event-classes">TC_EVENT_CLASSES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#tc-events">TC_EVENTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#twincat-licenseinfovarlist">TwinCAT_LicenseInfoVarList</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_summary.html#twincat-systeminfovarlist">TwinCAT_SystemInfoVarList</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html">Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#fb-coating-states">FB_Coating_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#fb-coating-states-nopmps">FB_Coating_States_noPMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-fb-basicstats">LCLS_General.FB_BasicStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-fb-listener">LCLS_General.FB_Listener</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-fb-loghandler">LCLS_General.FB_LogHandler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-fb-logmessage">LCLS_General.FB_LogMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-fb-tempsensor">LCLS_General.FB_TempSensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-general-st-pendingevent">LCLS_General.ST_PendingEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-dut-motionstage">lcls_twincat_motion.DUT_MotionStage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-dut-positionstate">lcls_twincat_motion.DUT_PositionState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstatebase">lcls_twincat_motion.FB_PositionStateBase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstatebase-withpmps">lcls_twincat_motion.FB_PositionStateBase_WithPMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstateinout">lcls_twincat_motion.FB_PositionStateInOut</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstatemove">lcls_twincat_motion.FB_PositionStateMove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstatepmps">lcls_twincat_motion.FB_PositionStatePMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-motion-fb-positionstatepmps-base">lcls_twincat_motion.FB_PositionStatePMPS_Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-optics-dut-homs">lcls_twincat_optics.DUT_HOMS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-optics-fb-homsstats">lcls_twincat_optics.FB_HomsStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#lcls-twincat-optics-fb-rmswatch">lcls_twincat_optics.FB_RMSWatch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-fb-arbiter">PMPS.FB_Arbiter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-fb-beamparamassertionpool">PMPS.FB_BeamParamAssertionPool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-fb-hardwareffoutput">PMPS.FB_HardwareFFOutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-fb-subsystoarbiter-io">PMPS.FB_SubSysToArbiter_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-beamparams">PMPS.ST_BeamParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-bp-arbinternal">PMPS.ST_BP_ArbInternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-ff">PMPS.ST_FF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-ffinfo">PMPS.ST_FFInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-ffoverride">PMPS.ST_FFOverride</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-st-pmps-aperture">PMPS.ST_PMPS_Aperture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#pmps-t-hashtableentry">PMPS.T_HashTableEntry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#st-beamparams-io">ST_BeamParams_IO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#st-loggingeventinfo">ST_LoggingEventInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#st-pmps-aperture-io">ST_PMPS_Aperture_IO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html">DUTs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#e-gantrycontrol">E_GantryControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#e-gantrymode">E_GantryMode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#e-piezocontrol">E_PiezoControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#e-pitchcontrol">E_PitchControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#enum-coating-states">ENUM_Coating_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#homs-gantry">HOMS_Gantry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#homs-gantryaxis">HOMS_GantryAxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#homs-pitchmechanismold">HOMS_PitchMechanismOld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-abstractaxis">ST_AbstractAxis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-coeindsub">ST_CoEIndSub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-decoupledmotionpermits">ST_DecoupledMotionPermits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-elmogdcbellcoeparams">ST_ElmoGDCBellCoEParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-homsstepper">ST_HOMSStepper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-piezoaxisold">ST_PiezoAxisOld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#st-stepperstatus">ST_StepperStatus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvls">GVLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#global-version">Global_Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl">GVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-com-buffers">GVL_COM_Buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-constants">GVL_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr1l3">GVL_MR1L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr1l3-constants">GVL_MR1L3_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr1l4">GVL_MR1L4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr1l4-constants">GVL_MR1L4_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr2l3">GVL_MR2L3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-mr2l3-constants">GVL_MR2L3_Constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-pmps">GVL_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-rtds">GVL_RTDS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#gvl-serialio">GVL_SerialIO</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#pous">POUs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#f-piezoposition">F_PiezoPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-coating-states">FB_Coating_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-coating-states-nopmps">FB_Coating_States_noPMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-drive">FB_Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-elmogdcbellcoe">FB_ElmoGDCBellCoE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-elmomcuploaddriveparams">FB_ElmoMCUploadDriveParams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-elmostomonitor">FB_ElmoStoMonitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-gantry">FB_Gantry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-gantrydifferencemonitor">FB_GantryDifferenceMonitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-gantrydiffvirtuallimitswitch">FB_GantryDiffVirtualLimitSwitch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-initdriverefs">FB_InitDriveRefs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-limitswitchstate">FB_LimitSwitchState</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-mirrorcoatingprotection">FB_MirrorCoatingProtection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-pi-e621-serialdriverold">FB_PI_E621_SerialDriverOld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-pi-e621-serialtransaction">FB_PI_E621_SerialTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-piezocontrol">FB_PiezoControl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-pitchcontrolold">FB_PitchControlOld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-pitchsoftlimits">FB_PitchSoftLimits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-ptp">FB_PTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-readfloatparameter">FB_ReadFloatParameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-readparameterinnc">FB_ReadParameterInNC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-reducegantrydiff">FB_ReduceGantryDiff</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#fb-writeparameterinnc">FB_WriteParameterInNC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#main">Main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#mc-smoothmover">MC_SmoothMover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#p-serial-com">P_Serial_Com</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#piezoserial">PiezoSerial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#prg-coatingprotection">PRG_CoatingProtection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#prg-pmps">PRG_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#prg-states">PRG_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HOMS_XRT_HOMS_XRT_PLC_source.html#withinrange">WithinRange</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="HOMS_XRT_pragmas.html" class="btn btn-neutral float-right" title="Pragmas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
